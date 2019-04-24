@@ -72,7 +72,6 @@ public class Account_level_01_StepByStep_TopDown {
 	 Assert.assertTrue(driver.findElement(By.xpath("//td[text()='Manger Id : " + userIdInfo + "']")).isDisplayed());
   }
   
-
   
   @AfterClass
   public void afterClass() {

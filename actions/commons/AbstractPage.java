@@ -281,10 +281,14 @@ public class AbstractPage {
             javascriptExecutor.executeScript("window.location = '" + url + "'");
     }
     
-    public void uploadFilesBySendKeyToElement(WebDriver driver, String[] AllfilesPaths, String openButtonLocator, String uploadButtonLocator) {
-		for (String file:AllfilesPaths) {
-			WebElement openButtonElement = driver.findElement(By.xpath(openButtonLocator));
-			openButtonElement.sendKeys(file);	
+    public void uploadSingleFileBySendKeyToElement(WebDriver driver, String filePath, String openButtonLocator, String uploadButtonLocator) {
+    		driver.findElement(By.xpath(openButtonLocator)).sendKeys(filePath);
+    		driver.findElement(By.xpath(uploadButtonLocator)).click();
+    }
+    
+    public void uploadMultiFilesBySendKeyToElement(WebDriver driver, String[] allFilesPaths, String openButtonLocator, String uploadButtonLocator) {
+		for (String file:allFilesPaths) {
+			driver.findElement(By.xpath(openButtonLocator)).sendKeys(file);	
 		}
 		List <WebElement> allStartBtns = driver.findElements(By.xpath(uploadButtonLocator));
 		for (WebElement startButton : allStartBtns ){

@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="com.bankguru.account.Account_level_02_ApplyAbstractPage"/>
+      <class name="com.bankguru.account.Account_level_03_PageObject"/>
     </classes>
   </test> 
 </suite> 

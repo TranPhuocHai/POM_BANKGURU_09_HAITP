@@ -19,6 +19,7 @@ public class Validate_NewCustomer_01_Name {
 	LoginPageObject loginPage;
 	HomePageObject homePage;
 	NewCustomerPageObject newCustomerPage;
+	String newCustomerPageUrl;
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -43,10 +44,34 @@ public class Validate_NewCustomer_01_Name {
 		homePage.clickToNewCustomerButton();
 		
 		newCustomerPage = new NewCustomerPageObject(driver);
-		newCustomerPage.getNewCustomerPageUrl();
+		newCustomerPageUrl = newCustomerPage.getNewCustomerPageUrl();
 		newCustomerPage.clickToCustomerNameTextbox();
 		newCustomerPage.clickToDateOfBirthTexbox();
 		Assert.assertTrue(newCustomerPage.isCustomerNameMustNotBeBlankMessageDisplayed());
+	}
+	
+	@Test
+	public void TC_02_NameCanNotBeNumberic() {
+		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.inputNumericValueToCustomerNameTextbox();
+		Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageDisplayed());
+		
+	}
+	
+	@Test
+	public void TC_03_NameCanNotHaveSpecialCharacters() {
+		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.inputSpecialCharactersToCustomerNameTextbox();
+		Assert.assertTrue(newCustomerPage.isSpecialCharactersAreNotAllowedMessageDisplayed());
+		
+	}
+	
+	@Test
+	public void TC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.inputBlankSpaceToCustomerNameTextbox();
+		Assert.assertTrue(newCustomerPage.isFirstCharacterCanNotHaveSpaceMessageDisplayed());
+		
 	}
 
 	@AfterClass

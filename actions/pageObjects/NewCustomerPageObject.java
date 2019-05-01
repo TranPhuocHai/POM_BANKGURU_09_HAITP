@@ -12,8 +12,8 @@ public class NewCustomerPageObject extends AbstractPage {
 		this.driver = driver;
 	}
 
-	public void getNewCustomerPageUrl() {
-		getCurrentPageUrl(driver);
+	public String getNewCustomerPageUrl() {
+		return getCurrentPageUrl(driver);
 	}
 
 	public void clickToCustomerNameTextbox() {
@@ -35,6 +35,40 @@ public class NewCustomerPageObject extends AbstractPage {
 		waitForElementVisible(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX);
 		clickToElement(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX);
 		
+	}
+
+	public void openNewCustomerPageurl(String newCustomerPageUrl) {
+		openAnyUrl(driver, newCustomerPageUrl);
+	}
+
+	public void inputNumericValueToCustomerNameTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.NUMERIC_VALUE_NAME);
+		
+	}
+
+	public boolean isNumbersAreNotAllowedMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.NUMERIC_ARE_NOT_ALLOW_MESSAGE);
+	}
+
+	public void inputSpecialCharactersToCustomerNameTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.SPECIAL_CHARACTERS_NAME);
+		
+	}
+
+	public boolean isSpecialCharactersAreNotAllowedMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+	}
+
+	public void inputBlankSpaceToCustomerNameTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.BLANK_SPACE);
+		
+	}
+
+	public boolean isFirstCharacterCanNotHaveSpaceMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
 }

@@ -53,7 +53,7 @@ public class Account_level_03_PageObject {
 	 loginPage = new LoginPageObject(driver);
 	 Assert.assertTrue(loginPage.isLoginFormDisplayed());
 	 loginPage.inPutToUserIDTextbox(userIdInfo);
-	 loginPage.inPutToPassworTextbox(passwordInfo);
+	 loginPage.inPutToPasswordTextbox(passwordInfo);
 	 loginPage.clickToLoginButton();
 	 homePage = new HomePageObject(driver);
 	 homePage.isWelcomeMessageDisplayed();

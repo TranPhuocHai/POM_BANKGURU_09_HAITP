@@ -32,7 +32,7 @@ public class LoginPageObject extends AbstractPage {
 
 	}
 
-	public void inPutToPassworTextbox(String passwordInfo) {
+	public void inPutToPasswordTextbox(String passwordInfo) {
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passwordInfo);
 	}

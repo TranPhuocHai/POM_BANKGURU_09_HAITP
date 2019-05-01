@@ -71,4 +71,14 @@ public class NewCustomerPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewCustomerPageUI.FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
+	public void clickToAddressTextarea() {
+		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
+		clickToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
+		
+	}
+
+	public boolean isAddressFieldMustNotBeBlankMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.ADDRESS_FIELD_MUST_NOT_BE_BLANK_MESSAGE);
+	}
+
 }

@@ -14,7 +14,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 
-public class Validate_NewCustomer_01_Name {
+public class Validate_NewCustomer {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -73,7 +73,17 @@ public class Validate_NewCustomer_01_Name {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterCanNotHaveSpaceMessageDisplayed());
 		
 	}
+	
+	@Test
+	public void TC_05_AddressCanNotBeEmpty() {
+		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.clickToAddressTextarea();
+		newCustomerPage.clickToDateOfBirthTexbox();
+		Assert.assertTrue(newCustomerPage.isAddressFieldMustNotBeBlankMessageDisplayed());
+		
+	}
 
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

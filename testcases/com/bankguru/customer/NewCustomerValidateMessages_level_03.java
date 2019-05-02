@@ -23,7 +23,7 @@ public class NewCustomerValidateMessages_level_03 {
 	RegisterPageObject registerPage;
 	NewCustomerPageObject newCustomerPage;
 	String loginPageUrl, newCustomerPageUrl, userIdInfo, passwordInfo, email;
-	String [] numericNames, specialCharactersNames; 
+	String [] numericValues, specialCharacters; 
 	String blankSpace;
 
 	@BeforeClass
@@ -34,8 +34,9 @@ public class NewCustomerValidateMessages_level_03 {
 		driver.get("http://demo.guru99.com/v4");
 		email = "haitpauto" + randomNumber() + "@gmail.com";
 		blankSpace =" ";
-		numericNames = new String [] {"1234" , "name123"};
-		specialCharactersNames = new String [] {"name!@#","!@#"};
+		numericValues = new String [] {"1234" , "name123"};
+		specialCharacters = new String [] {"haitp!@#","!@#"};
+		
 		
 		
 
@@ -72,17 +73,17 @@ public class NewCustomerValidateMessages_level_03 {
 
 	@Test
 	public void TC_02_NameCanNotBeNumberic() {
-		for(String numericName: numericNames) {
-			newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		for(String numericName: numericValues) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 			newCustomerPage.inputNumericValueToCustomerNameTextbox(numericName);
-			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfNameDisplayed());
 		}
 	}
 
 	@Test
 	public void TC_03_NameCanNotHaveSpecialCharacters() {
-		for (String specialCharactersName: specialCharactersNames) {
-			newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		for (String specialCharactersName: specialCharacters) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 			newCustomerPage.inputSpecialCharactersToCustomerNameTextbox(specialCharactersName);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
 		}
@@ -90,7 +91,7 @@ public class NewCustomerValidateMessages_level_03 {
 
 	@Test
 	public void TC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {
-		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 		newCustomerPage.inputBlankSpaceToCustomerNameTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfNameCanNotHaveSpaceMessageDisplayed());
 
@@ -98,12 +99,97 @@ public class NewCustomerValidateMessages_level_03 {
 
 	@Test
 	public void TC_05_AddressCanNotBeEmpty() {
-		newCustomerPage.openNewCustomerPageurl(newCustomerPageUrl);
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 		newCustomerPage.clickToAddressTextarea();
 		newCustomerPage.clickToDateOfBirthTexbox();
 		Assert.assertTrue(newCustomerPage.isAddressFieldMustNotBeBlankMessageDisplayed());
+		
+	}
+	
+	@Test
+	public void TC_06_AdressCanNotHaveSpecialCharacters() {
+		for (String specialCharactersAddress: specialCharacters) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputSpecialCharactersToAdressTextbox(specialCharactersAddress);
+			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed());
+		}
+	}
+	
+	@Test
+	public void TC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+		newCustomerPage.inputBlankSpaceToAdressTextArea(blankSpace);
+		Assert.assertTrue(newCustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
 
 	}
+	
+	@Test
+	public void TC_08_CityCanNotBeEmpty() {
+		newCustomerPage.clickToCityTextbox();
+		newCustomerPage.clickToDateOfBirthTexbox();
+		Assert.assertTrue(newCustomerPage.isCityMustNotBeBlankMessageDisplayed());
+	}
+
+	@Test
+	public void TC_08_CityCanNotBeNumberic() {
+		for(String numericCity: numericValues) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputNumericValueToCityTextbox(numericCity);
+			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
+		}
+	}
+
+	@Test
+	public void TC_10_CityCanNotHaveSpecialCharacters() {
+		for (String specialCharactersCity: specialCharacters) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputSpecialCharactersToCityTextbox(specialCharactersCity);
+			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
+		}
+	}
+
+	@Test
+	public void TC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+		newCustomerPage.inputBlankSpaceToCityTextbox(blankSpace);
+		Assert.assertTrue(newCustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
+
+	}
+	
+	@Test
+	public void TC_12_StateCanNotBeEmpty() {
+		newCustomerPage.clickToStateTextbox();
+		newCustomerPage.clickToDateOfBirthTexbox();
+		Assert.assertTrue(newCustomerPage.isStateMustNotBeBlankMessageDisplayed());
+	}
+
+	@Test
+	public void TC_13_StateCanNotBeNumberic() {
+		for(String numericState: numericValues) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputNumericValueToStateTextbox(numericState);
+			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
+		}
+	}
+
+	@Test
+	public void TC_14_StateCanNotHaveSpecialCharacters() {
+		for (String specialCharactersState: specialCharacters) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputSpecialCharactersToStateTextbox(specialCharactersState);
+			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
+		}
+	}
+
+	@Test
+	public void TC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+		newCustomerPage.inputBlankSpaceToStateTextbox(blankSpace);
+		Assert.assertTrue(newCustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
+
+	}
+	
+	
 
 	@AfterClass
 	public void afterClass() {

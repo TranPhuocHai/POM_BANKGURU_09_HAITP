@@ -28,7 +28,7 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isCustomerNameMustNotBeBlankMessageDisplayed() {
-		return isControlDisplayed(driver, NewCustomerPageUI.CUSTOMER_NAME_MUST_NOT_BE_BLANK_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.NAME_MUST_NOT_BE_BLANK_MESSAGE);
 	}
 
 	public void clickToDateOfBirthTexbox() {
@@ -41,34 +41,34 @@ public class NewCustomerPageObject extends AbstractPage {
 		openAnyUrl(driver, newCustomerPageUrl);
 	}
 
-	public void inputNumericValueToCustomerNameTextbox() {
+	public void inputNumericValueToCustomerNameTextbox(String numericValue) {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.NUMERIC_VALUE_NAME);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, numericValue);
 		
 	}
 
 	public boolean isNumbersAreNotAllowedMessageDisplayed() {
-		return isControlDisplayed(driver, NewCustomerPageUI.NUMERIC_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.NAME_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
 	}
 
-	public void inputSpecialCharactersToCustomerNameTextbox() {
+	public void inputSpecialCharactersToCustomerNameTextbox(String specialChracters) {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.SPECIAL_CHARACTERS_NAME);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, specialChracters);
 		
 	}
 
-	public boolean isSpecialCharactersAreNotAllowedMessageDisplayed() {
-		return isControlDisplayed(driver, NewCustomerPageUI.SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+	public boolean isSpecialCharactersOfNameAreNotAllowedMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 	}
 
-	public void inputBlankSpaceToCustomerNameTextbox() {
+	public void inputBlankSpaceToCustomerNameTextbox(String blankSpace) {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, NewCustomerPageUI.BLANK_SPACE);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, blankSpace);
 		
 	}
 
-	public boolean isFirstCharacterCanNotHaveSpaceMessageDisplayed() {
-		return isControlDisplayed(driver, NewCustomerPageUI.FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+	public boolean isFirstCharacterOfNameCanNotHaveSpaceMessageDisplayed() {
+		return isControlDisplayed(driver, NewCustomerPageUI.NAME_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
 	public void clickToAddressTextarea() {

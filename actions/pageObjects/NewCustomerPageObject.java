@@ -194,6 +194,52 @@ public class NewCustomerPageObject extends AbstractPage {
 		waitForElementVisible(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
+
+	public void clickToPinTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		clickToElement(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		
+	}
+	
+	public boolean isPinMustNotBeBlankMessageDisplayed() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_MUST_NOT_BE_BLANK_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.PIN_MUST_NOT_BE_BLANK_MESSAGE);
+	}
+
+
+	public void inputChractersValueToPinTextbox(String characterPIN) {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, characterPIN);
+		
+	}
+
+	public boolean isPinCharacterAreNotAllowMessageDisplayed() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.PIN_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+	}
+
+	public void inputLessThan6DigitsToPinTextbox(String lessThan6Digits) {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, lessThan6Digits);
+		
+	}
+
+	public boolean isPinMustHave6DegitsMessageDisplayed() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_MUST_HAVE_6_DIGITS_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.PIN_MUST_HAVE_6_DIGITS_MESSAGE);
+	}
+
+	public void inputBlankSpaceToPinTextbox(String blankSpace) {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, blankSpace);
+		
+	}
+
+	public boolean isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.PIN_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+	}
+
 	
 
 }

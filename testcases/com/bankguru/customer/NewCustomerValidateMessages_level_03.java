@@ -23,7 +23,7 @@ public class NewCustomerValidateMessages_level_03 {
 	RegisterPageObject registerPage;
 	NewCustomerPageObject newCustomerPage;
 	String loginPageUrl, newCustomerPageUrl, userIdInfo, passwordInfo, email;
-	String [] numericValues, specialCharacters; 
+	String [] numericValues, specialCharacters, characterPINs, lessThan6DigitsList; 
 	String blankSpace;
 
 	@BeforeClass
@@ -36,6 +36,8 @@ public class NewCustomerValidateMessages_level_03 {
 		blankSpace =" ";
 		numericValues = new String [] {"1234" , "name123"};
 		specialCharacters = new String [] {"haitp!@#","!@#"};
+		characterPINs = new String [] {"123PIN","HAI321"};
+		lessThan6DigitsList = new String [] {"1","12","321","3214","32147" };
 		
 		
 		
@@ -125,6 +127,7 @@ public class NewCustomerValidateMessages_level_03 {
 	
 	@Test
 	public void TC_08_CityCanNotBeEmpty() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 		newCustomerPage.clickToCityTextbox();
 		newCustomerPage.clickToDateOfBirthTexbox();
 		Assert.assertTrue(newCustomerPage.isCityMustNotBeBlankMessageDisplayed());
@@ -158,6 +161,7 @@ public class NewCustomerValidateMessages_level_03 {
 	
 	@Test
 	public void TC_12_StateCanNotBeEmpty() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 		newCustomerPage.clickToStateTextbox();
 		newCustomerPage.clickToDateOfBirthTexbox();
 		Assert.assertTrue(newCustomerPage.isStateMustNotBeBlankMessageDisplayed());
@@ -186,6 +190,40 @@ public class NewCustomerValidateMessages_level_03 {
 		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
 		newCustomerPage.inputBlankSpaceToStateTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
+
+	}
+	
+	@Test
+	public void TC_16_PinCanNotBeEmpty() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+		newCustomerPage.clickToPinTextbox();
+		newCustomerPage.clickToDateOfBirthTexbox();
+		Assert.assertTrue(newCustomerPage.isPinMustNotBeBlankMessageDisplayed());
+	}
+	
+	public void TC_17_PinMustBeNumeric() {
+		for (String characterPIN:characterPINs) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputChractersValueToPinTextbox(characterPIN);
+			newCustomerPage.clickToDateOfBirthTexbox();
+			Assert.assertTrue(newCustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
+		}
+	}
+	
+	public void TC_18_PinMustHave6Degits() {
+		for (String lessThan6Digits:lessThan6DigitsList) {
+			newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+			newCustomerPage.inputLessThan6DigitsToPinTextbox(lessThan6Digits);
+			newCustomerPage.clickToDateOfBirthTexbox();
+			Assert.assertTrue(newCustomerPage.isPinMustHave6DegitsMessageDisplayed());
+		}
+	}
+	
+	@Test
+	public void TC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.openNewCustomerPageUrl(newCustomerPageUrl);
+		newCustomerPage.inputBlankSpaceToPinTextbox(blankSpace);
+		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
 
 	}
 	

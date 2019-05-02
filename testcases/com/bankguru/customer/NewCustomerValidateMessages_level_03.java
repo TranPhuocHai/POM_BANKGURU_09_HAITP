@@ -189,7 +189,6 @@ public class NewCustomerValidateMessages_level_03 {
 
 	}
 	
-	
 
 	@AfterClass
 	public void afterClass() {

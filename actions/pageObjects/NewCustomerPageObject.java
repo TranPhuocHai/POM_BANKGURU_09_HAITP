@@ -194,5 +194,6 @@ public class NewCustomerPageObject extends AbstractPage {
 		waitForElementVisible(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
+	
 
 }

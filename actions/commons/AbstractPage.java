@@ -68,6 +68,11 @@ public class AbstractPage {
 		driver.switchTo().alert().sendKeys(value);		
 	}
 	
+	public void clearTextElement(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		element.clear();
+	}
+	
 	public void clickToElement(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		element.click();

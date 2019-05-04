@@ -411,10 +411,17 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public void selectMaleGenderRadioButton() {
-		// TODO Auto-generated method stub
+		waitForElementVisible(driver, NewCustomerPageUI.MALE_RADIO_BUTTON);
+		checkToCheckBox(driver, NewCustomerPageUI.MALE_RADIO_BUTTON);
 		
 	}
-
+	
+	public void selectFemaleGenderRadioButton() {
+		waitForElementVisible(driver, NewCustomerPageUI.FEMALE_RADIO_BUTTON);
+		checkToCheckBox(driver, NewCustomerPageUI.FEMALE_RADIO_BUTTON);
+		
+	}
+	
 	public void removeDateOfBirthAttribute() {
 		// TODO Auto-generated method stub
 		
@@ -474,10 +481,73 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
+	public boolean isCustomerRegisteredSuccessfullyDisplayed() {
+		waitForElementVisible(driver, NewCustomerPageUI.REGISTER_CUSTOMER_SUCCESS_MESSAGE);
+		return isControlDisplayed(driver, NewCustomerPageUI.REGISTER_CUSTOMER_SUCCESS_MESSAGE);
+		
+	}
+	
 	public String getCustomerID() {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_ID);
 		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_ID);
 	}
+
+	public String getTextCustomerNameInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_NAME_INFOR);
+	}
+
+	public String getTextGenderInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.GENDER_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.GENDER_INFOR);
+	}
+
+	public String getDateOfBirthInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.DATE_OF_BIRTH_INFO_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.DATE_OF_BIRTH_INFO_INFOR);
+	}
+
+	public String getTextAdressInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.ADDRESS_INFOR);
+	}
+
+	public String getTextCityInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.CITY_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.CITY_INFOR);
+	}
+
+	public String getTextStateInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.STATE_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.STATE_INFOR);
+	}
+
+	public String getTextPinInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.PIN_INFOR);
+	}
+
+	public String getTextMobileNumberInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.MOBILE_NUMBER_INFOR);
+	}
+
+	public String getTextEmailInfo() {
+		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_INFOR);
+		return getTextElement(driver, NewCustomerPageUI.EMAIL_INFOR);
+	}
+
+	public void openHomePageUrl(String homePageUrl) {
+		openAnyUrl(driver, homePageUrl);
+		
+	}
+
+
+
+
+
+
+
 
 
 	

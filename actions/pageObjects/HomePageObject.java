@@ -30,4 +30,14 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
+	public String getHomePageUrl() {
+		return getCurrentPageUrl(driver);
+	}
+
+	public void clickToEditCustomerButton() {
+		waitForElementVisible(driver, HomePageUI.EDIT_CUSTOMER_BUTTON);
+		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_BUTTON);
+		
+	}
+
 }

@@ -16,6 +16,7 @@ public class NewCustomerPageUI {
 	public static final String SUBMIT_BUTTON = "//input[@type='submit']";
 	public static final String RESET_BUTTON = "//input[@type='reset']";
 	
+	public static final String REGISTER_CUSTOMER_SUCCESS_MESSAGE  = "//p[text()='Customer Registered Successfully!!!']";
 	public static final String CUSTOMER_ID = "//td[text()='Customer ID']/following-sibling::td";
 	public static final String CUSTOMER_NAME_INFOR = "//td[text()='Customer Name']/following-sibling::td";
 	public static final String GENDER_INFOR = "//td[text()='Gender']/following-sibling::td";

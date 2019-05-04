@@ -298,6 +298,7 @@ public class NewCustomerValidateMessages_level_03 {
 	public void afterClass() {
 		driver.quit();
 	}
+	
 
 	public int randomNumber() {
 		Random random = new Random();

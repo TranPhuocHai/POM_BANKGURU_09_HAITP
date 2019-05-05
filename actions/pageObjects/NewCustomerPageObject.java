@@ -423,7 +423,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 	
 	public void removeDateOfBirthAttribute() {
-		// TODO Auto-generated method stub
+		waitForElementVisible(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX);
+		removeAttributeInDOM(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX, "type");
 		
 	}
 
@@ -539,6 +540,54 @@ public class NewCustomerPageObject extends AbstractPage {
 
 	public void openHomePageUrl(String homePageUrl) {
 		openAnyUrl(driver, homePageUrl);
+		
+	}
+
+	public void clearNameTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
+		
+	}
+
+	public void clearAddresTextarea() {
+		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
+		clearTextElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
+		
+	}
+
+	public void clearCityTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.CITY_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.CITY_TEXTBOX);
+		
+	}
+
+	public void clearStateTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.STATE_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.STATE_TEXTBOX);
+		
+	}
+
+	public void clearPinTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.PIN_TEXTBOX);
+		
+	}
+
+	public void clearPhoneTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
+		
+	}
+
+	public void clearEmailTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
+		
+	}
+
+	public void clearPasswordTextbox() {
+		waitForElementVisible(driver, NewCustomerPageUI.PASSWORD_TEXTBOX);
+		clearTextElement(driver, NewCustomerPageUI.PASSWORD_TEXTBOX);
 		
 	}
 

@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import bankguru.EditCustomerPageUI;
+import bankguru.NewCustomerPageUI;
 import commons.AbstractPage;
 
 public class EditCustomerPageObject extends AbstractPage {
@@ -98,7 +99,7 @@ public class EditCustomerPageObject extends AbstractPage {
 		
 	}
 	
-	public void clickToStateTextbox() {
+	public void inputValidDataTo() {
 		waitForElementVisible(driver, EditCustomerPageUI.EDIT_STATE_TEXTBOX);
 		clickToElement(driver, EditCustomerPageUI.EDIT_STATE_TEXTBOX);
 		
@@ -487,6 +488,81 @@ public class EditCustomerPageObject extends AbstractPage {
 
 
 	public void clickToCustomerIDSubmitButton() {
+		waitForElementVisible(driver, EditCustomerPageUI.SUBMIT_CUTOMER_ID_BUTTON);
+		clickToElement(driver, EditCustomerPageUI.SUBMIT_CUTOMER_ID_BUTTON);
+		
+	}
+
+
+	public String getTextCustomerIDInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_CUSTOMER_ID);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_CUSTOMER_ID);
+	}
+	
+	public String getTextCustomerNameInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_CUSTOMER_NAME_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_CUSTOMER_NAME_INFOR);
+	}
+
+	public String getTextGenderInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_GENDER_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_GENDER_INFOR);
+	}
+
+	public String getDateOfBirthInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_DATE_OF_BIRTH_INFO_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_DATE_OF_BIRTH_INFO_INFOR);
+	}
+
+	public String getTextEditAdressInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_ADDRESS_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_ADDRESS_INFOR);
+	}
+
+	public String getTextEditCityInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_CITY_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_CITY_INFOR);
+	}
+
+	public String getTextEditStateInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_STATE_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_STATE_INFOR);
+	}
+
+	public String getTextEditPinInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_PIN_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_PIN_INFOR);
+	}
+
+	public String getTextEditMobileNumberInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_MOBILE_NUMBER_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_MOBILE_NUMBER_INFOR);
+	}
+
+	public String getTextEditEmailInfo() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_EMAIL_INFOR);
+		return getTextElement(driver, EditCustomerPageUI.EDIT_EMAIL_INFOR);
+	}
+
+
+
+	public void clickToStateTextbox() {
+		waitForElementVisible(driver, EditCustomerPageUI.EDIT_STATE_TEXTBOX);
+		clickToElement(driver, EditCustomerPageUI.EDIT_STATE_TEXTBOX);
+		
+	}
+
+
+
+	public void inputCustomerIDToCustomerIDTextbox(String customerID) {
+		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX, customerID);
+		
+	}
+
+
+
+	public void clicktoSubmitCustomerIDButton() {
 		waitForElementVisible(driver, EditCustomerPageUI.SUBMIT_CUTOMER_ID_BUTTON);
 		clickToElement(driver, EditCustomerPageUI.SUBMIT_CUTOMER_ID_BUTTON);
 		

@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -30,7 +31,9 @@ public class EditCustomerValidateMessages_level_3 {
 
 	@BeforeClass
 	public void beforeClass() {
-		driver = new FirefoxDriver();
+//		driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");

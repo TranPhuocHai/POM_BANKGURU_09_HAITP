@@ -17,6 +17,18 @@ public class EditCustomerPageUI {
 	
 	public static final String HOME_LINK = "//a[text()='Home']";
 	
+	public static final String EDIT_CUSTOMER_SUCCESS_MESSAGE  = "//p[text()='Customer details updated Successfully!!!']";
+	public static final String EDIT_CUSTOMER_ID = "//td[text()='Customer ID']/following-sibling::td";
+	public static final String EDIT_CUSTOMER_NAME_INFOR = "//td[text()='Customer Name']/following-sibling::td";
+	public static final String EDIT_GENDER_INFOR = "//td[text()='Gender']/following-sibling::td";
+	public static final String EDIT_DATE_OF_BIRTH_INFO_INFOR = "//td[text()='Birthdate']/following-sibling::td";
+	public static final String EDIT_ADDRESS_INFOR = "//td[text()='Address']/following-sibling::td";
+	public static final String EDIT_CITY_INFOR = "//td[text()='City']/following-sibling::td";
+	public static final String EDIT_STATE_INFOR = "//td[text()='State']/following-sibling::td";
+	public static final String EDIT_PIN_INFOR = "//td[text()='Pin']/following-sibling::td";
+	public static final String EDIT_MOBILE_NUMBER_INFOR = "//td[text()='Mobile No.']/following-sibling::td";
+	public static final String EDIT_EMAIL_INFOR = "//td[text()='Email']/following-sibling::td";
+	
 	public static final String CUSTOMER_ID_IS_REQUIRED_MESSAGE = "//label[text()='Customer ID is required']";
 	public static final String CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[text()='Customer ID']//following-sibling::td/label[text()='Characters are not allowed']";
 	public static final String CUSTOMER_ID_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[text()='Customer ID']//following-sibling::td/label[text()='Special characters are not allowed']";

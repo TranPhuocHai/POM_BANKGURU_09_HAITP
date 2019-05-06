@@ -570,6 +570,13 @@ public class EditCustomerPageObject extends AbstractPage {
 
 
 
+	public void openHomePageUrl(String homePageUrl) {
+		openAnyUrl(driver, homePageUrl);
+		
+	}
+
+
+
 
 
 

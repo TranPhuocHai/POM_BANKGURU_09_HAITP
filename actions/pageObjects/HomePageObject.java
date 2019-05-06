@@ -39,6 +39,12 @@ public class HomePageObject extends AbstractPage {
 		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_BUTTON);
 		
 	}
+	
+	public void clickToNewAccountButton() {
+		waitForElementVisible(driver, HomePageUI.NEW_ACCOUNT_BUTTON);
+		clickToElement(driver, HomePageUI.NEW_ACCOUNT_BUTTON);
+		
+	}
 
 	
 }

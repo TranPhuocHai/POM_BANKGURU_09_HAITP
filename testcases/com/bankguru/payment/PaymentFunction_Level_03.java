@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
@@ -24,19 +25,22 @@ public class PaymentFunction_Level_03 {
 	RegisterPageObject registerPage;
 	NewCustomerPageObject newCustomerPage;
 	EditCustomerPageObject editcustomerPage;
+	NewAccountPageObject newAccountPage;
 	String loginPageUrl, newCustomerPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
-	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber, validPassword, customerID, expectedGender;
+	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
+			validPassword, customerID, expectedGender;
 	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber;
+	String currentAmount;
 
 	@BeforeClass
 	public void beforeClass() {
 //		driver = new FirefoxDriver();
-		System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
-		
+
 		email = "haitran" + randomNumber() + "@gmail.com";
 		validName = "Jame Hugo";
 		expectedGender = "male";
@@ -48,7 +52,7 @@ public class PaymentFunction_Level_03 {
 		validPhoneNumber = "0987654321";
 		validEmailID = "jame" + randomNumber() + "@gmail.com";
 		validPassword = "idonknow12345678";
-		
+
 		editAdress = "01 Nguyen Van Linh";
 		editCity = "Da Nang";
 		editState = "Ngu Hanh Son";
@@ -56,7 +60,8 @@ public class PaymentFunction_Level_03 {
 		editPhoneNumber = "0975123456";
 		editEmailID = "haitp" + randomNumber() + "@gmail.com";
 		
-		
+		currentAmount = "50000";
+
 		loginPage = new LoginPageObject(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPageUrl = loginPage.getLoginPageUrl();
@@ -82,9 +87,9 @@ public class PaymentFunction_Level_03 {
 		newCustomerPageUrl = newCustomerPage.getNewCustomerPageUrl();
 
 	}
-	
+
 	@Test
-	public void TC_01_CreateNewCustomerSuccessfully () {
+	public void TC_01_CreateNewCustomerSuccessfully() {
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
 		newCustomerPage.removeDateOfBirthAttribute();
@@ -110,16 +115,16 @@ public class PaymentFunction_Level_03 {
 		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
 		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
 	}
-	
+
 	@Test
-	public void TC_02_EditNewCustomerSuccessfully () {
+	public void TC_02_EditNewCustomerSuccessfully() {
 		newCustomerPage.openHomePageUrl(homePageUrl);
 		homePage = new HomePageObject(driver);
 		homePage.clickToEditCustomerButton();
 		editcustomerPage = new EditCustomerPageObject(driver);
 		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
-		
+
 		editcustomerPage.clearAdressTextArea();
 		editcustomerPage.inputValidDataToAdressTextArea(editAdress);
 		editcustomerPage.clearCityTextBox();
@@ -133,7 +138,7 @@ public class PaymentFunction_Level_03 {
 		editcustomerPage.clearEmailTextBox();
 		editcustomerPage.inputValidDataToEmailTextbox(editEmailID);
 		editcustomerPage.clickToEditSubmitButton();
-		
+
 		Assert.assertEquals(editcustomerPage.getTextCustomerIDInfo(), customerID);
 		Assert.assertEquals(editcustomerPage.getTextCustomerNameInfo(), validName);
 		Assert.assertEquals(editcustomerPage.getTextGenderInfo(), expectedGender);
@@ -144,15 +149,27 @@ public class PaymentFunction_Level_03 {
 		Assert.assertEquals(editcustomerPage.getTextEditPinInfo(), editPin);
 		Assert.assertEquals(editcustomerPage.getTextEditMobileNumberInfo(), editPhoneNumber);
 		Assert.assertEquals(editcustomerPage.getTextEditEmailInfo(), editEmailID);
-		
-		
+
+	}
+
+	@Test
+	public void TC_03_AddNewAccount() {
+		editcustomerPage.openHomePageUrl(homePageUrl);
+		homePage = new HomePageObject(driver);
+		homePage.clickToNewAccountButton();
+		newAccountPage = new NewAccountPageObject(driver);
+		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
+		newAccountPage.selectCurrentInAccountType();
+		newAccountPage.inputAmountToInitialDeposit(currentAmount);
+		newAccountPage.clickToSubmitButton();
+		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
+		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), currentAmount);
 	}
 
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
 	}
-	
 
 	public int randomNumber() {
 		Random random = new Random();

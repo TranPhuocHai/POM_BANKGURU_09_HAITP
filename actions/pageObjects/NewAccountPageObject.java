@@ -14,8 +14,8 @@ public class NewAccountPageObject extends AbstractPage {
 	public String getTextCurrentAmount;
 
 	public void inputCustomerIDToCustomerIDTextbox(String customerID) {
-		waitForElementVisible(driver, NewAccountPageUI.NEW_ACCOUNT_SUBMIT_BUTTON);
-		sendKeyToElement(driver, NewAccountPageUI.NEW_ACCOUNT_SUBMIT_BUTTON, customerID);
+		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, customerID);
 		
 	}
 
@@ -44,6 +44,16 @@ public class NewAccountPageObject extends AbstractPage {
 	public String getTextCurrentAmount() {
 		waitForElementVisible(driver, NewAccountPageUI.CURRENT_AMOUNT_INFOR);
 		return getTextElement(driver, NewAccountPageUI.CURRENT_AMOUNT_INFOR);
+	}
+
+	public String getAccountID() {
+		waitForElementVisible(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
+		return getTextElement(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
+	}
+
+	public void openHomePageUrl(String homePageUrl) {
+		openAnyUrl(driver, homePageUrl);
+		
 	}
 
 	

@@ -5,12 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
@@ -26,11 +26,12 @@ public class PaymentFunction_Level_03 {
 	NewCustomerPageObject newCustomerPage;
 	EditCustomerPageObject editcustomerPage;
 	NewAccountPageObject newAccountPage;
+	DepositPageObject depositPage;
 	String loginPageUrl, newCustomerPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
 			validPassword, customerID, expectedGender;
 	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber;
-	String currentAmount;
+	String currentAmount, accountID, depositAmount;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -164,11 +165,22 @@ public class PaymentFunction_Level_03 {
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), currentAmount);
+		accountID = newAccountPage.getAccountID();
 	}
 
+	@Test
+	public void TC_04_TransferMoneyToCurrentAccount() {
+		newAccountPage.openHomePageUrl(homePageUrl);
+		homePage = new HomePageObject(driver);
+		homePage.clickToDepositButton();
+		depositPage = new DepositPageObject(driver);
+		
+		
+	}
+	
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+//		driver.quit();
 	}
 
 	public int randomNumber() {

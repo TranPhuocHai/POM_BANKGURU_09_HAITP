@@ -46,5 +46,11 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
+	public void clickToDepositButton() {
+		waitForElementVisible(driver, HomePageUI.DEPOSIT_BUTTON);
+		clickToElement(driver, HomePageUI.DEPOSIT_BUTTON);
+		
+	}
+
 	
 }

@@ -52,5 +52,11 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
+	public void clickToWithdrawButton() {
+		waitForElementVisible(driver, HomePageUI.WITHDRAW_BUTTON);
+		clickToElement(driver, HomePageUI.WITHDRAW_BUTTON);
+		
+	}
+
 	
 }

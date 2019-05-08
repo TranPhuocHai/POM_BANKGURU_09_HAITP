@@ -17,6 +17,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
+import pageObjects.WithdrawPageObject;
 
 public class PaymentFunction_Level_03 {
 	WebDriver driver;
@@ -27,11 +28,14 @@ public class PaymentFunction_Level_03 {
 	EditCustomerPageObject editcustomerPage;
 	NewAccountPageObject newAccountPage;
 	DepositPageObject depositPage;
+	WithdrawPageObject withdrawPage;
+	
 	String loginPageUrl, newCustomerPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
 			validPassword, customerID, expectedGender;
-	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber;
-	String currentAmount, accountID, depositAmount;
+	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID;	
+	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw;
+	String depositDescription, withdrawDescription;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -42,7 +46,7 @@ public class PaymentFunction_Level_03 {
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
 
-		email = "haitran" + randomNumber() + "@gmail.com";
+		email = "randoname" + randomNumber() + "@gmail.com";
 		validName = "Jame Hugo";
 		expectedGender = "male";
 		validDateOfBirth = "1988-07-31";
@@ -52,16 +56,24 @@ public class PaymentFunction_Level_03 {
 		validPin = "600000";
 		validPhoneNumber = "0987654321";
 		validEmailID = "jame" + randomNumber() + "@gmail.com";
-		validPassword = "idonknow12345678";
+		validPassword = "nopdontknow12";
 
 		editAdress = "01 Nguyen Van Linh";
 		editCity = "Da Nang";
 		editState = "Ngu Hanh Son";
 		editPin = "550000";
 		editPhoneNumber = "0975123456";
-		editEmailID = "haitp" + randomNumber() + "@gmail.com";
+		editEmailID = "redonaming" + randomNumber() + "@gmail.com";
 		
-		currentAmount = "50000";
+		currentAmount = 50000;
+		depositAmount = 5000;
+		currentBalanceAfterDeposit = currentAmount + depositAmount;
+		withdrawAmount = 15000;
+		currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
+		
+		depositDescription = "Deposit";
+		withdrawDescription = "Withdraw";
+		
 
 		loginPage = new LoginPageObject(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
@@ -161,10 +173,10 @@ public class PaymentFunction_Level_03 {
 		newAccountPage = new NewAccountPageObject(driver);
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
-		newAccountPage.inputAmountToInitialDeposit(currentAmount);
+		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
-		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), currentAmount);
+		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
 		accountID = newAccountPage.getAccountID();
 	}
 
@@ -174,7 +186,35 @@ public class PaymentFunction_Level_03 {
 		homePage = new HomePageObject(driver);
 		homePage.clickToDepositButton();
 		depositPage = new DepositPageObject(driver);
+		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
+		depositPage.inputAccountIDToAccountNoTextbox(accountID);
+		depositPage.inputAmountToAmountTextbox(String.valueOf(depositAmount));
+		depositPage.inputDescriptionToDescriptionTextbox(depositDescription);
+		depositPage.clickToDepositSubmitButton();
+		Assert.assertTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
+		Assert.assertEquals(depositPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterDeposit));
 		
+	}
+	
+	@Test
+	public void TC_05_WithdrawFromCurrentAccount() {
+		depositPage.openHomePageUrl(homePageUrl);
+		homePage = new HomePageObject(driver);
+		homePage.clickToWithdrawButton();
+		withdrawPage = new WithdrawPageObject(driver);
+		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
+		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
+		withdrawPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
+		withdrawPage.inputDescriptionToDescriptionTextbox(withdrawDescription);
+		withdrawPage.clickToWithdrawSubmitButton();
+		Assert.assertTrue(withdrawPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
+		Assert.assertEquals(withdrawPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
+		
+	}
+	
+	@Test
+	public void TC_06_TransferMoney() {
+		withdrawPage.openHomePageUrl(homePageUrl);
 		
 	}
 	

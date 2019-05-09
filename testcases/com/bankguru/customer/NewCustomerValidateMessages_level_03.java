@@ -28,12 +28,12 @@ public class NewCustomerValidateMessages_level_03 {
 
 	@BeforeClass
 	public void beforeClass() {
-//		driver = new FirefoxDriver();
 		System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
+		
 		email = "haitpauto" + randomNumber() + "@gmail.com";
 		blankSpace =" ";
 		numericValues = new String [] {"1234" , "name123"};

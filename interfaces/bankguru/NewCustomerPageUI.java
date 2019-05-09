@@ -63,5 +63,6 @@ public class NewCustomerPageUI {
 
 	public static final String PASSWORD_MUST_NOT_BE_BLANK_MESSAGE = "//label[text()='Password must not be blank']";
 
+	public static final String EDIT_CUSTOMER_LINK = "//a[text()='Edit Customer']";
 	
 }

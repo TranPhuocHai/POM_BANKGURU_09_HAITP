@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import bankguru.DepositPageUI;
 import bankguru.HomePageUI;
+import bankguru.NewAccountPageUI;
 import commons.AbstractPage;
 
 public class DepositPageObject extends AbstractPage {
@@ -32,8 +33,8 @@ public class DepositPageObject extends AbstractPage {
 	}
 
 	public void clickToDepositSubmitButton() {
-		waitForElementVisible(driver, DepositPageUI.DEPOSIT_SUBMIT_BUTTON);
-		clickToElement(driver, DepositPageUI.DEPOSIT_SUBMIT_BUTTON);
+		waitForElementVisible(driver, DepositPageUI.SUBMIT_BUTTON);
+		clickToElement(driver, DepositPageUI.SUBMIT_BUTTON);
 		
 	}
 
@@ -56,6 +57,12 @@ public class DepositPageObject extends AbstractPage {
 	public void inputDescriptionToDescriptionTextbox(String depositDescription) {
 		waitForElementVisible(driver, DepositPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, DepositPageUI.DESCRIPTION_TEXTBOX, depositDescription);
+		
+	}
+
+	public void clickToWithdrawButton() {
+		waitForElementVisible(driver, DepositPageUI.WITHDRAW_LINK);
+		clickToElement(driver, DepositPageUI.WITHDRAW_LINK);
 		
 	}
 

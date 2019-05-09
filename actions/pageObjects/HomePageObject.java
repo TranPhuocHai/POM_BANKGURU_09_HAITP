@@ -25,8 +25,8 @@ public class HomePageObject extends AbstractPage {
 	}
 
 	public void clickToNewCustomerButton() {
-		waitForElementVisible(driver, HomePageUI.NEW_CUSTOMER_BUTTON);
-		clickToElement(driver, HomePageUI.NEW_CUSTOMER_BUTTON);
+		waitForElementVisible(driver, HomePageUI.NEW_CUSTOMER_LINK);
+		clickToElement(driver, HomePageUI.NEW_CUSTOMER_LINK);
 		
 	}
 
@@ -35,26 +35,26 @@ public class HomePageObject extends AbstractPage {
 	}
 
 	public void clickToEditCustomerButton() {
-		waitForElementVisible(driver, HomePageUI.EDIT_CUSTOMER_BUTTON);
-		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_BUTTON);
+		waitForElementVisible(driver, HomePageUI.EDIT_CUSTOMER_LINK);
+		clickToElement(driver, HomePageUI.EDIT_CUSTOMER_LINK);
 		
 	}
 	
 	public void clickToNewAccountButton() {
-		waitForElementVisible(driver, HomePageUI.NEW_ACCOUNT_BUTTON);
-		clickToElement(driver, HomePageUI.NEW_ACCOUNT_BUTTON);
+		waitForElementVisible(driver, HomePageUI.NEW_ACCOUNT_LINK);
+		clickToElement(driver, HomePageUI.NEW_ACCOUNT_LINK);
 		
 	}
 
 	public void clickToDepositButton() {
-		waitForElementVisible(driver, HomePageUI.DEPOSIT_BUTTON);
-		clickToElement(driver, HomePageUI.DEPOSIT_BUTTON);
+		waitForElementVisible(driver, HomePageUI.DEPOSIT_LINK);
+		clickToElement(driver, HomePageUI.DEPOSIT_LINK);
 		
 	}
 
 	public void clickToWithdrawButton() {
-		waitForElementVisible(driver, HomePageUI.WITHDRAW_BUTTON);
-		clickToElement(driver, HomePageUI.WITHDRAW_BUTTON);
+		waitForElementVisible(driver, HomePageUI.WITHDRAW_LINK);
+		clickToElement(driver, HomePageUI.WITHDRAW_LINK);
 		
 	}
 

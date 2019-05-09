@@ -39,7 +39,6 @@ public class PaymentFunction_Level_03 {
 
 	@BeforeClass
 	public void beforeClass() {
-//		driver = new FirefoxDriver();
 		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -131,24 +130,22 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_02_EditNewCustomerSuccessfully() {
-		newCustomerPage.openHomePageUrl(homePageUrl);
-		homePage = new HomePageObject(driver);
-		homePage.clickToEditCustomerButton();
+		newCustomerPage.clickToEditCustomerLink();
 		editcustomerPage = new EditCustomerPageObject(driver);
 		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
 
 		editcustomerPage.clearAdressTextArea();
 		editcustomerPage.inputValidDataToAdressTextArea(editAdress);
-		editcustomerPage.clearCityTextBox();
+		editcustomerPage.clearCityTextbox();
 		editcustomerPage.inputValidDataToCityTextbox(editCity);
-		editcustomerPage.clearStateTextBox();
+		editcustomerPage.clearStateTextbox();
 		editcustomerPage.inputValidDataToStateTextbox(editState);
-		editcustomerPage.clearPinTextBox();
+		editcustomerPage.clearPinTextbox();
 		editcustomerPage.inputValidDataToPinTextbox(editPin);
-		editcustomerPage.clearPhoneTextBox();
+		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.inputValidDataToMobileNumberTextbox(editPhoneNumber);
-		editcustomerPage.clearEmailTextBox();
+		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.inputValidDataToEmailTextbox(editEmailID);
 		editcustomerPage.clickToEditSubmitButton();
 
@@ -167,9 +164,7 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_03_AddNewAccount() {
-		editcustomerPage.openHomePageUrl(homePageUrl);
-		homePage = new HomePageObject(driver);
-		homePage.clickToNewAccountButton();
+		editcustomerPage.clickToNewAccountButton();
 		newAccountPage = new NewAccountPageObject(driver);
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
@@ -182,9 +177,7 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_04_TransferMoneyToCurrentAccount() {
-		newAccountPage.openHomePageUrl(homePageUrl);
-		homePage = new HomePageObject(driver);
-		homePage.clickToDepositButton();
+		newAccountPage.clickToDepositButton();
 		depositPage = new DepositPageObject(driver);
 		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
 		depositPage.inputAccountIDToAccountNoTextbox(accountID);
@@ -198,9 +191,7 @@ public class PaymentFunction_Level_03 {
 	
 	@Test
 	public void TC_05_WithdrawFromCurrentAccount() {
-		depositPage.openHomePageUrl(homePageUrl);
-		homePage = new HomePageObject(driver);
-		homePage.clickToWithdrawButton();
+		depositPage.clickToWithdrawButton();
 		withdrawPage = new WithdrawPageObject(driver);
 		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
 		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
@@ -214,7 +205,6 @@ public class PaymentFunction_Level_03 {
 	
 	@Test
 	public void TC_06_TransferMoney() {
-		withdrawPage.openHomePageUrl(homePageUrl);
 		
 	}
 	

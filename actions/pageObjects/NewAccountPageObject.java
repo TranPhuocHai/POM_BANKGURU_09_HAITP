@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import bankguru.NewAccountPageUI;
+import bankguru.NewCustomerPageUI;
 import commons.AbstractPage;
 
 public class NewAccountPageObject extends AbstractPage {
@@ -31,8 +32,8 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, NewAccountPageUI.NEW_ACCOUNT_SUBMIT_BUTTON);
-		clickToElement(driver, NewAccountPageUI.NEW_ACCOUNT_SUBMIT_BUTTON);
+		waitForElementVisible(driver, NewAccountPageUI.SUBMIT_BUTTON);
+		clickToElement(driver, NewAccountPageUI.SUBMIT_BUTTON);
 		
 	}
 
@@ -51,10 +52,11 @@ public class NewAccountPageObject extends AbstractPage {
 		return getTextElement(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
 	}
 
-	public void openHomePageUrl(String homePageUrl) {
-		openAnyUrl(driver, homePageUrl);
-		
+	public void clickToDepositButton() {
+		waitForElementVisible(driver, NewAccountPageUI.DEPOSIT_LINK);
+		clickToElement(driver, NewAccountPageUI.DEPOSIT_LINK);
 	}
+
 
 	
 }

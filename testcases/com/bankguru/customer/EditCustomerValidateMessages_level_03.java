@@ -17,7 +17,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class EditCustomerValidateMessages_level_3 {
+public class EditCustomerValidateMessages_level_03 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -31,7 +31,6 @@ public class EditCustomerValidateMessages_level_3 {
 
 	@BeforeClass
 	public void beforeClass() {
-//		driver = new FirefoxDriver();
 		System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -119,7 +118,7 @@ public class EditCustomerValidateMessages_level_3 {
 	}
 	
 	@Test void TC_01_CustomerIDCanNotBeEmpty() {
-		editcustomerPage.clearCustomerIDTextBox();
+		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.clickToCustomerIDTexbox();
 		editcustomerPage.pressTABKeyToCustomerIDTextbox();
 		Assert.assertTrue(editcustomerPage.isCustomerIDIsRequiredMessageDisplayed());
@@ -128,7 +127,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearCustomerIDTextBox();
+		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.inputBlankSpaceToCustomerIDTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
 
@@ -137,7 +136,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterPhoneNumber:characterPhoneNumbers) {
-			editcustomerPage.clearCustomerIDTextBox();
+			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputChractersValueToCustomerIDTextbox(characterPhoneNumber);
 			Assert.assertTrue(editcustomerPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
 		}
@@ -147,7 +146,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_04_CustomerIDCanNotHaveSpecialCharacters() {
 		for (String specialPhoneNumber: specialPhoneNumbers) {
-			editcustomerPage.clearCustomerIDTextBox();
+			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputSpecialCharactersToCustomerIDTextbox(specialPhoneNumber);
 			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
 		}
@@ -156,7 +155,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_05_AddressCanNotBeEmpty() {
-		editcustomerPage.clearCustomerIDTextBox();
+		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.inputValidCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clickToCustomerIDSubmitButton();
 		editcustomerPage.clearAdressTextArea();
@@ -185,7 +184,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_08_CityCanNotBeEmpty() {
-		editcustomerPage.clearCityTextBox();
+		editcustomerPage.clearCityTextbox();
 		editcustomerPage.clickToCityTextbox();
 		editcustomerPage.pressTABKeyToCityTextbox();
 		Assert.assertTrue(editcustomerPage.isCityMustNotBeBlankMessageDisplayed());
@@ -194,7 +193,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_09_CityCanNotBeNumberic() {
 		for(String numericCity: numericValues) {
-			editcustomerPage.clearCityTextBox();
+			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputNumericValueToCityTextbox(numericCity);
 			Assert.assertTrue(editcustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
 		}
@@ -203,7 +202,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_10_CityCanNotHaveSpecialCharacters() {
 		for (String specialCharactersCity: specialCharacters) {
-			editcustomerPage.clearCityTextBox();
+			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputSpecialCharactersToCityTextbox(specialCharactersCity);
 			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
 		}
@@ -211,7 +210,7 @@ public class EditCustomerValidateMessages_level_3 {
 
 	@Test
 	public void TC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearCityTextBox();
+		editcustomerPage.clearCityTextbox();
 		editcustomerPage.inputBlankSpaceToCityTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
 
@@ -219,7 +218,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_12_StateCanNotBeEmpty() {
-		editcustomerPage.clearStateTextBox();
+		editcustomerPage.clearStateTextbox();
 		editcustomerPage.clickToStateTextbox();
 		editcustomerPage.pressTABKeyToStateTextbox();
 		Assert.assertTrue(editcustomerPage.isStateMustNotBeBlankMessageDisplayed());
@@ -228,7 +227,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_13_StateCanNotBeNumberic() {
 		for(String numericState: numericValues) {
-			editcustomerPage.clearStateTextBox();
+			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputNumericValueToStateTextbox(numericState);
 			Assert.assertTrue(editcustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
 		}
@@ -237,7 +236,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_14_StateCanNotHaveSpecialCharacters() {
 		for (String specialCharactersState: specialCharacters) {
-			editcustomerPage.clearStateTextBox();
+			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputSpecialCharactersToStateTextbox(specialCharactersState);
 			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
 		}
@@ -245,7 +244,7 @@ public class EditCustomerValidateMessages_level_3 {
 
 	@Test
 	public void TC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearStateTextBox();
+		editcustomerPage.clearStateTextbox();
 		editcustomerPage.inputBlankSpaceToStateTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
 
@@ -253,7 +252,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_16_PinCanNotBeEmpty() {
-		editcustomerPage.clearPinTextBox();
+		editcustomerPage.clearPinTextbox();
 		editcustomerPage.clickToPinTextbox();
 		editcustomerPage.pressTABKeyToPinTextbox();
 		Assert.assertTrue(editcustomerPage.isPinMustNotBeBlankMessageDisplayed());
@@ -262,7 +261,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_17_PinMustBeNumeric() {
 		for (String characterPIN:characterPINs) {
-			editcustomerPage.clearPinTextBox();
+			editcustomerPage.clearPinTextbox();
 			editcustomerPage.inputChractersValueToPinTextbox(characterPIN);
 			Assert.assertTrue(editcustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
 		}
@@ -271,7 +270,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_18_PinMustHave6Degits() {
 		for (String lessThan6Digits:lessThan6DigitsList) {
-			editcustomerPage.clearPinTextBox();
+			editcustomerPage.clearPinTextbox();
 			editcustomerPage.inputLessThan6DigitsToPinTextbox(lessThan6Digits);
 			Assert.assertTrue(editcustomerPage.isPinMustHave6DegitsMessageDisplayed());
 		}
@@ -279,7 +278,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearPinTextBox();
+		editcustomerPage.clearPinTextbox();
 		editcustomerPage.inputBlankSpaceToPinTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
 
@@ -287,7 +286,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_20_TelephoneCanNotBeEmpty() {
-		editcustomerPage.clearPhoneTextBox();
+		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.clickToMobileNumberTextbox();
 		editcustomerPage.pressTABKeyToMobileTextbox();
 		Assert.assertTrue(editcustomerPage.isPhoneMustNotBeBlankMessageDisplayed());
@@ -295,7 +294,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearPhoneTextBox();
+		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.inputBlankSpaceToMobileNumberTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
 
@@ -304,7 +303,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterPhoneNumber:characterPhoneNumbers) {
-			editcustomerPage.clearPhoneTextBox();
+			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputChractersValueToMobileNumberTextbox(characterPhoneNumber);
 			Assert.assertTrue(editcustomerPage.isPhoneCharacterAreNotAllowMessageDisplayed());
 		}
@@ -314,7 +313,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_23_TelephoneCanNotHaveSpecialCharacters() {
 		for (String specialPhoneNumber: specialPhoneNumbers) {
-			editcustomerPage.clearPhoneTextBox();
+			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputSpecialCharactersToMobileNumberTextbox(specialPhoneNumber);
 			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed());
 		}
@@ -322,7 +321,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_24_EmailCanNotBeEmpty() {
-		editcustomerPage.clearEmailTextBox();
+		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.clickToEmailTextbox();
 		editcustomerPage.pressTABKeyToEmailTextbox();
 		Assert.assertTrue(editcustomerPage.isEmailMustNotBeBlankMessageDisplayed());
@@ -331,7 +330,7 @@ public class EditCustomerValidateMessages_level_3 {
 	@Test
 	public void TC_25_EmailMustBeInCorrectFormat() {
 		for (String incorrectEmailID: incorrectEmailIDList) {
-			editcustomerPage.clearEmailTextBox();
+			editcustomerPage.clearEmailTextbox();
 			editcustomerPage.inputIncorrectEmailIDToEmailTextbox(incorrectEmailID);
 			Assert.assertTrue(editcustomerPage.isEmailIDIsNotValidMessageDisplayed());
 		}
@@ -339,7 +338,7 @@ public class EditCustomerValidateMessages_level_3 {
 	
 	@Test
 	public void TC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
-		editcustomerPage.clearEmailTextBox();
+		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.inputBlankSpaceToEmailTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());
 

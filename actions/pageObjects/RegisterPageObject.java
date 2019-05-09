@@ -27,13 +27,13 @@ public class RegisterPageObject extends AbstractPage{
 	}
 
 	public String getUserIDInfor() {
-		waitForElementVisible(driver, RegisterPageUI.USER_ID_TEXT);
-		return getTextElement(driver, RegisterPageUI.USER_ID_TEXT);
+		waitForElementVisible(driver, RegisterPageUI.USER_ID_INFOR);
+		return getTextElement(driver, RegisterPageUI.USER_ID_INFOR);
 	}
 
 	public String getPasswordInfor() {
-		waitForElementVisible(driver, RegisterPageUI.PASSWORD_TEXT);
-		return getTextElement(driver, RegisterPageUI.PASSWORD_TEXT);
+		waitForElementVisible(driver, RegisterPageUI.PASSWORD_INFOR);
+		return getTextElement(driver, RegisterPageUI.PASSWORD_INFOR);
 	}
 
 	public void openLoginPage(String loginPageUrl) {

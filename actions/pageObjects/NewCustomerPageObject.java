@@ -591,6 +591,11 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
+	public void clickToEditCustomerLink() {
+		waitForElementVisible(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
+		clickToElement(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
+	}
+
 
 
 

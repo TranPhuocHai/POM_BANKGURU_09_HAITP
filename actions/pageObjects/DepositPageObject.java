@@ -6,6 +6,7 @@ import bankguru.DepositPageUI;
 import bankguru.HomePageUI;
 import bankguru.NewAccountPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class DepositPageObject extends AbstractPage {
 	public DepositPageObject(WebDriver driver) {
@@ -60,10 +61,11 @@ public class DepositPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToWithdrawButton() {
+	public WithdrawPageObject clickToWithdrawButton() {
 		waitForElementVisible(driver, DepositPageUI.WITHDRAW_LINK);
 		clickToElement(driver, DepositPageUI.WITHDRAW_LINK);
-		
+		return PageFactoryManager.getWithdrawPage(driver);
+				
 	}
 
 

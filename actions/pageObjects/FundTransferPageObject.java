@@ -6,10 +6,9 @@ import bankguru.DepositPageUI;
 import bankguru.HomePageUI;
 import bankguru.WithdrawPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
-public class WithdrawPageObject extends AbstractPage {
-	public WithdrawPageObject(WebDriver driver) {
+public class FundTransferPageObject extends AbstractPage {
+	public FundTransferPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -59,12 +58,6 @@ public class WithdrawPageObject extends AbstractPage {
 		waitForElementVisible(driver, WithdrawPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, WithdrawPageUI.DESCRIPTION_TEXTBOX, withdrawDescription);
 		
-	}
-
-	public FundTransferPageObject clickToFundTransferLink() {
-		waitForElementVisible(driver, WithdrawPageUI.FUND_TRANSFER_LINK);
-		clickToElement(driver, WithdrawPageUI.FUND_TRANSFER_LINK);
-		return PageFactoryManager.getFundTransferPage(driver);
 	}
 
 

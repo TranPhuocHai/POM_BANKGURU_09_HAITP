@@ -11,20 +11,21 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import commons.PageFactoryManager;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class EditCustomerValidateMessages_level_03 {
+public class EditCustomerValidateMessages_level_05 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;
 	NewCustomerPageObject newCustomerPage;
 	EditCustomerPageObject editcustomerPage;
-	String loginPageUrl, newCustomerPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
+	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber, validPassword, customerID, expectedGender;
 	String [] numericValues, specialCharacters, characterPINs, lessThan6DigitsList, characterPhoneNumbers, specialPhoneNumbers, incorrectEmailIDList; 
 	String blankSpace;
@@ -59,29 +60,24 @@ public class EditCustomerValidateMessages_level_03 {
 		incorrectEmailIDList = new String [] {"guru99@gmail","guru99", "guru99@", "guru99@gmail.","guru99gmail.com"};
 
 		
-		loginPage = new LoginPageObject(driver);
+		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPageUrl = loginPage.getLoginPageUrl();
-		loginPage.clickToHereLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = loginPage.clickToHereLink();
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
 		userIdInfo = registerPage.getUserIDInfor();
 		passwordInfo = registerPage.getPasswordInfor();
-		registerPage.openLoginPage(loginPageUrl);
-		loginPage = new LoginPageObject(driver);
+		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
-		loginPage.clickToLoginButton();
-		homePage = new HomePageObject(driver);
+		homePage = loginPage.clickToLoginButton();
 		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		homePage.clickToNewCustomerButton();
-		newCustomerPage = new NewCustomerPageObject(driver);
-		newCustomerPageUrl = newCustomerPage.getNewCustomerPageUrl();
+		newCustomerPage = homePage.clickToNewCustomerButton();
 
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
@@ -108,12 +104,7 @@ public class EditCustomerValidateMessages_level_03 {
 		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
 		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
 		
-		newCustomerPage.openHomePageUrl(homePageUrl);		
-		homePage = new HomePageObject(driver);	
-		homePage.clickToEditCustomerButton();
-		
-		editcustomerPage = new EditCustomerPageObject(driver);
-		
+		editcustomerPage = newCustomerPage.clickToEditCustomerLink();
 
 	}
 	

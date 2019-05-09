@@ -10,8 +10,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import commons.PageFactoryManager;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
+import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
@@ -19,7 +21,7 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
-public class PaymentFunction_Level_03 {
+public class PaymentFunction_Level_05 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -29,8 +31,9 @@ public class PaymentFunction_Level_03 {
 	NewAccountPageObject newAccountPage;
 	DepositPageObject depositPage;
 	WithdrawPageObject withdrawPage;
+	FundTransferPageObject fundTransferPage;
 	
-	String loginPageUrl, newCustomerPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
+	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
 			validPassword, customerID, expectedGender;
 	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID;	
@@ -74,29 +77,24 @@ public class PaymentFunction_Level_03 {
 		withdrawDescription = "Withdraw";
 		
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPageUrl = loginPage.getLoginPageUrl();
-		loginPage.clickToHereLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = loginPage.clickToHereLink();
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
 		userIdInfo = registerPage.getUserIDInfor();
 		passwordInfo = registerPage.getPasswordInfor();
-		registerPage.openLoginPage(loginPageUrl);
-		loginPage = new LoginPageObject(driver);
+		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
-		loginPage.clickToLoginButton();
-		homePage = new HomePageObject(driver);
+		homePage = loginPage.clickToLoginButton();
 		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		homePage.clickToNewCustomerButton();
-		newCustomerPage = new NewCustomerPageObject(driver);
-		newCustomerPageUrl = newCustomerPage.getNewCustomerPageUrl();
+		newCustomerPage = homePage.clickToNewCustomerButton();
 
 	}
 
@@ -130,8 +128,7 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_02_EditNewCustomerSuccessfully() {
-		newCustomerPage.clickToEditCustomerLink();
-		editcustomerPage = new EditCustomerPageObject(driver);
+		editcustomerPage = newCustomerPage.clickToEditCustomerLink();
 		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
 
@@ -164,8 +161,7 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_03_AddNewAccount() {
-		editcustomerPage.clickToNewAccountButton();
-		newAccountPage = new NewAccountPageObject(driver);
+		newAccountPage = editcustomerPage.clickToNewAccountButton();
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
 		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
@@ -177,8 +173,7 @@ public class PaymentFunction_Level_03 {
 
 	@Test
 	public void TC_04_TransferMoneyToCurrentAccount() {
-		newAccountPage.clickToDepositButton();
-		depositPage = new DepositPageObject(driver);
+		depositPage = newAccountPage.clickToDepositButton();
 		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
 		depositPage.inputAccountIDToAccountNoTextbox(accountID);
 		depositPage.inputAmountToAmountTextbox(String.valueOf(depositAmount));
@@ -191,8 +186,7 @@ public class PaymentFunction_Level_03 {
 	
 	@Test
 	public void TC_05_WithdrawFromCurrentAccount() {
-		depositPage.clickToWithdrawButton();
-		withdrawPage = new WithdrawPageObject(driver);
+		withdrawPage = depositPage.clickToWithdrawButton();
 		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
 		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
 		withdrawPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
@@ -205,6 +199,8 @@ public class PaymentFunction_Level_03 {
 	
 	@Test
 	public void TC_06_TransferMoney() {
+		fundTransferPage = withdrawPage.clickToFundTransferLink();
+		
 		
 	}
 	
@@ -219,3 +215,13 @@ public class PaymentFunction_Level_03 {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

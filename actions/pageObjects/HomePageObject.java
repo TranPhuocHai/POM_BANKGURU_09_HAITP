@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import bankguru.HomePageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class HomePageObject extends AbstractPage {
 	public HomePageObject(WebDriver driver) {
@@ -24,9 +25,10 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
-	public void clickToNewCustomerButton() {
+	public NewCustomerPageObject clickToNewCustomerButton() {
 		waitForElementVisible(driver, HomePageUI.NEW_CUSTOMER_LINK);
 		clickToElement(driver, HomePageUI.NEW_CUSTOMER_LINK);
+		return PageFactoryManager.getNewCustomerPage(driver);
 		
 	}
 
@@ -56,6 +58,18 @@ public class HomePageObject extends AbstractPage {
 		waitForElementVisible(driver, HomePageUI.WITHDRAW_LINK);
 		clickToElement(driver, HomePageUI.WITHDRAW_LINK);
 		
+	}
+
+	public void clickLogOutButton() {
+		waitForElementVisible(driver, HomePageUI.LOG_OUT_BUTTON);
+		clickToElement(driver, HomePageUI.LOG_OUT_BUTTON);
+		
+	}
+
+	public LoginPageObject closeLogOutAlert() {
+		waitForAlertPresence(driver);
+		acceptAlert(driver);
+		return PageFactoryManager.getLoginPage(driver);
 	}
 
 	

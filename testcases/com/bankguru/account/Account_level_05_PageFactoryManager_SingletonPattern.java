@@ -57,6 +57,12 @@ public class Account_level_05_PageFactoryManager_SingletonPattern {
 		homePage.isUserIDDisplayed(userIdInfo);
 
 	}
+	@Test
+	public void TC_03_LogOutOfSystem() {
+		homePage.clickLogOutButton();
+		loginPage = homePage.closeLogOutAlert();
+		
+	}
 
 	@AfterClass
 	public void afterClass() {

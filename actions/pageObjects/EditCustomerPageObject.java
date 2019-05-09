@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import bankguru.EditCustomerPageUI;
 import bankguru.NewCustomerPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class EditCustomerPageObject extends AbstractPage {
 	WebDriver driver;
@@ -572,9 +573,10 @@ public class EditCustomerPageObject extends AbstractPage {
 
 
 
-	public void clickToNewAccountButton() {
+	public NewAccountPageObject clickToNewAccountButton() {
 		waitForElementVisible(driver, EditCustomerPageUI.NEW_ACCOUNT_LINK);
 		clickToElement(driver, EditCustomerPageUI.NEW_ACCOUNT_LINK);
+		return PageFactoryManager.getNewAccountPage(driver);
 		
 	}
 

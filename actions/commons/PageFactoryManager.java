@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
+import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
@@ -20,6 +21,7 @@ public class PageFactoryManager {
 	private static NewAccountPageObject newAccountPage;
 	private static DepositPageObject depositPage;
 	private static WithdrawPageObject withdrawPage;
+	private static FundTransferPageObject fundTransfer;
 	
 	public static HomePageObject getHomePage(WebDriver driver) {
 		if (homePage == null) {
@@ -75,6 +77,13 @@ public class PageFactoryManager {
 			withdrawPage = new WithdrawPageObject(driver);
 		}
 		return withdrawPage;
+	}
+	
+	public static FundTransferPageObject getFundTransferPage(WebDriver driver) {
+		if (fundTransfer == null) {
+			fundTransfer = new FundTransferPageObject(driver);
+		}
+		return fundTransfer;
 	}
 
 }

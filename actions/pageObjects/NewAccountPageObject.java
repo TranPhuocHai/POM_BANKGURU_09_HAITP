@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import bankguru.NewAccountPageUI;
 import bankguru.NewCustomerPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class NewAccountPageObject extends AbstractPage {
 	public NewAccountPageObject(WebDriver driver) {
@@ -52,9 +53,10 @@ public class NewAccountPageObject extends AbstractPage {
 		return getTextElement(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
 	}
 
-	public void clickToDepositButton() {
+	public DepositPageObject clickToDepositButton() {
 		waitForElementVisible(driver, NewAccountPageUI.DEPOSIT_LINK);
 		clickToElement(driver, NewAccountPageUI.DEPOSIT_LINK);
+		return PageFactoryManager.getDepositPage(driver);
 	}
 
 

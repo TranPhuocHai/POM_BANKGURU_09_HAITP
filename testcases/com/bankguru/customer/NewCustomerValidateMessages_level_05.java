@@ -11,12 +11,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import commons.PageFactoryManager;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class NewCustomerValidateMessages_level_03 {
+public class NewCustomerValidateMessages_level_05 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -44,28 +45,23 @@ public class NewCustomerValidateMessages_level_03 {
 		specialPhoneNumbers = new String [] {"097@!13546","!#123654", "0987654#@!"};
 		incorrectEmailIDList = new String [] {"guru99@gmail","guru99", "guru99@", "guru99@gmail.","guru99gmail.com"};
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPageUrl = loginPage.getLoginPageUrl();
-		loginPage.clickToHereLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = loginPage.clickToHereLink();
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
 		userIdInfo = registerPage.getUserIDInfor();
 		passwordInfo = registerPage.getPasswordInfor();
-		registerPage.openLoginPage(loginPageUrl);
-		loginPage = new LoginPageObject(driver);
+		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
-		loginPage.clickToLoginButton();
-		homePage = new HomePageObject(driver);
+		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		homePage.clickToNewCustomerButton();
-		newCustomerPage = new NewCustomerPageObject(driver);
-		newCustomerPageUrl = newCustomerPage.getNewCustomerPageUrl();
+		newCustomerPage = homePage.clickToNewCustomerButton();
 	}
 
 	@Test

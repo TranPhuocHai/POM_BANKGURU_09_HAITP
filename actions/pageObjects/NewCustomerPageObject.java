@@ -5,16 +5,12 @@ import org.openqa.selenium.WebDriver;
 
 import bankguru.NewCustomerPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class NewCustomerPageObject extends AbstractPage {
 	WebDriver driver;
 	public NewCustomerPageObject(WebDriver driver) {
 		this.driver = driver;
-	}
-
-	public String getNewCustomerPageUrl() {
-		return getCurrentPageUrl(driver);
-		
 	}
 
 	public void clickToCustomerNameTextbox() {
@@ -591,10 +587,12 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToEditCustomerLink() {
+	public EditCustomerPageObject clickToEditCustomerLink() {
 		waitForElementVisible(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
 		clickToElement(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
+		return PageFactoryManager.getEditCustomerPage(driver);
 	}
+
 
 
 

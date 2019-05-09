@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import bankguru.LoginPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class LoginPageObject extends AbstractPage {
 	WebDriver driver;
@@ -21,9 +22,10 @@ public class LoginPageObject extends AbstractPage {
 		return getCurrentPageUrl(driver);
 	}
 
-	public void clickToHereLink() {
+	public RegisterPageObject clickToHereLink() {
 		waitForElementVisible(driver, LoginPageUI.HERE_LINK);
 		clickToElement(driver, LoginPageUI.HERE_LINK);
+		return PageFactoryManager.getRegisterPage(driver);
 	}
 
 	public void inPutToUserIDTextbox(String userIdInfo) {
@@ -37,9 +39,10 @@ public class LoginPageObject extends AbstractPage {
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passwordInfo);
 	}
 
-	public void clickToLoginButton() {
+	public HomePageObject clickToLoginButton() {
 		waitForElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageFactoryManager.getHomePage(driver);
 
 	}
 

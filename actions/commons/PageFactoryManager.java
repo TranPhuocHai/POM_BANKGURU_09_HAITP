@@ -1,0 +1,80 @@
+package commons;
+
+import org.openqa.selenium.WebDriver;
+
+import pageObjects.DepositPageObject;
+import pageObjects.EditCustomerPageObject;
+import pageObjects.HomePageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.NewAccountPageObject;
+import pageObjects.NewCustomerPageObject;
+import pageObjects.RegisterPageObject;
+import pageObjects.WithdrawPageObject;
+
+public class PageFactoryManager {
+	private static HomePageObject homePage;
+	private static RegisterPageObject registerPage;
+	private static LoginPageObject loginPage;
+	private static NewCustomerPageObject newCustomerPage;
+	private static EditCustomerPageObject editCustomerPage;
+	private static NewAccountPageObject newAccountPage;
+	private static DepositPageObject depositPage;
+	private static WithdrawPageObject withdrawPage;
+	
+	public static HomePageObject getHomePage(WebDriver driver) {
+		if (homePage == null) {
+			homePage = new HomePageObject(driver);
+		}
+		return homePage;
+	}
+	
+	public static RegisterPageObject getRegisterPage(WebDriver driver) {
+		if (registerPage == null) {
+			registerPage = new RegisterPageObject(driver);
+		}
+		return registerPage;
+	}
+	
+	public static LoginPageObject getLoginPage(WebDriver driver) {
+		if (loginPage == null) {
+			loginPage = new LoginPageObject(driver);
+		}
+		return loginPage;
+	}
+	
+	public static NewCustomerPageObject getNewCustomerPage(WebDriver driver) {
+		if (newCustomerPage == null) {
+			newCustomerPage = new NewCustomerPageObject(driver);
+		}
+		return newCustomerPage;
+	}
+	
+	public static EditCustomerPageObject getEditCustomerPage(WebDriver driver) {
+		if (editCustomerPage == null) {
+			editCustomerPage = new EditCustomerPageObject(driver);
+		}
+		return editCustomerPage;
+	}
+	
+	public static NewAccountPageObject getNewAccountPage(WebDriver driver) {
+		if (newAccountPage == null) {
+			newAccountPage = new NewAccountPageObject(driver);
+		}
+		return newAccountPage;
+	}
+	
+	public static DepositPageObject getDepositPage(WebDriver driver) {
+		if (depositPage == null) {
+			depositPage = new DepositPageObject(driver);
+		}
+		return depositPage;
+	}
+	
+	public static WithdrawPageObject getWithdrawPage(WebDriver driver) {
+		if (withdrawPage == null) {
+			withdrawPage = new WithdrawPageObject(driver);
+		}
+		return withdrawPage;
+	}
+
+}

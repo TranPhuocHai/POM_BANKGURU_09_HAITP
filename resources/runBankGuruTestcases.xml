@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="com.bankguru.customer.EditCustomerValidateMessages_level_3"/>
+      <class name="com.bankguru.account.Account_level_05_PageFactoryManager_SingletonPattern"/>
     </classes>
   </test> 
 </suite> 

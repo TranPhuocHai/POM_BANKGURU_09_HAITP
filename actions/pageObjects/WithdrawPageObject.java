@@ -67,6 +67,12 @@ public class WithdrawPageObject extends AbstractPage {
 		return PageFactoryManager.getFundTransferPage(driver);
 	}
 
+	public NewAccountPageObject clickToNewAccountButton() {
+		waitForElementVisible(driver, WithdrawPageUI.NEW_ACCOUNT_LINK);
+		clickToElement(driver, WithdrawPageUI.NEW_ACCOUNT_LINK);
+		return PageFactoryManager.getNewAccountPage(driver);
+	}
+
 
 
 

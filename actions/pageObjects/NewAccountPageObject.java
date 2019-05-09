@@ -59,6 +59,12 @@ public class NewAccountPageObject extends AbstractPage {
 		return PageFactoryManager.getDepositPage(driver);
 	}
 
+	public FundTransferPageObject clickToFundTransferLink() {
+		waitForElementVisible(driver, NewAccountPageUI.FUND_TRANSFER_LINK);
+		clickToElement(driver, NewAccountPageUI.FUND_TRANSFER_LINK);
+		return PageFactoryManager.getFundTransferPage(driver);
+	}
+
 
 	
 }

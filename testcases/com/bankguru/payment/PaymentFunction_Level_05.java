@@ -36,9 +36,9 @@ public class PaymentFunction_Level_05 {
 	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
 			validPassword, customerID, expectedGender;
-	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID;	
-	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw;
-	String depositDescription, withdrawDescription;
+	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID, payeeAccountID;	
+	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw, transferAmount, currentBalanceAfterTransfer;
+	String depositDescription, withdrawDescription, fundTransferDescription;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -72,9 +72,13 @@ public class PaymentFunction_Level_05 {
 		currentBalanceAfterDeposit = currentAmount + depositAmount;
 		withdrawAmount = 15000;
 		currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
+		transferAmount = 10000;
+		currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
+		
 		
 		depositDescription = "Deposit";
 		withdrawDescription = "Withdraw";
+		fundTransferDescription = "Transfer";
 		
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
@@ -199,7 +203,19 @@ public class PaymentFunction_Level_05 {
 	
 	@Test
 	public void TC_06_TransferMoney() {
-		fundTransferPage = withdrawPage.clickToFundTransferLink();
+		newAccountPage = withdrawPage.clickToNewAccountButton();
+		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
+		newAccountPage.selectCurrentInAccountType();
+		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
+		newAccountPage.clickToSubmitButton();
+		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
+		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
+		payeeAccountID = newAccountPage.getAccountID();
+		fundTransferPage = newAccountPage.clickToFundTransferLink();
+		fundTransferPage.inPutPayersAccountNumber(accountID);
+		fundTransferPage.inPutPayeesAccountNumber(payeeAccountID);
+		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
+		fundTransferPage.inputDescriptionToDescriptionTextbox(fundTransferDescription);
 		
 		
 	}

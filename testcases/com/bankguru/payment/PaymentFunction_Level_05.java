@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.PageFactoryManager;
+import pageObjects.BalanceEnquiryPageObject;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.FundTransferPageObject;
@@ -32,6 +33,7 @@ public class PaymentFunction_Level_05 {
 	DepositPageObject depositPage;
 	WithdrawPageObject withdrawPage;
 	FundTransferPageObject fundTransferPage;
+	BalanceEnquiryPageObject balanceEnquiryPage;
 	
 	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
@@ -148,7 +150,7 @@ public class PaymentFunction_Level_05 {
 		editcustomerPage.inputValidDataToMobileNumberTextbox(editPhoneNumber);
 		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.inputValidDataToEmailTextbox(editEmailID);
-		editcustomerPage.clickToEditSubmitButton();
+		editcustomerPage.clickToSubmitButton();
 
 		Assert.assertEquals(editcustomerPage.getTextCustomerIDInfo(), customerID);
 		Assert.assertEquals(editcustomerPage.getTextCustomerNameInfo(), validName);
@@ -182,7 +184,7 @@ public class PaymentFunction_Level_05 {
 		depositPage.inputAccountIDToAccountNoTextbox(accountID);
 		depositPage.inputAmountToAmountTextbox(String.valueOf(depositAmount));
 		depositPage.inputDescriptionToDescriptionTextbox(depositDescription);
-		depositPage.clickToDepositSubmitButton();
+		depositPage.clickToSubmitButton();
 		Assert.assertTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(depositPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterDeposit));
 		
@@ -190,12 +192,12 @@ public class PaymentFunction_Level_05 {
 	
 	@Test
 	public void TC_05_WithdrawFromCurrentAccount() {
-		withdrawPage = depositPage.clickToWithdrawButton();
+		withdrawPage = depositPage.clickToWithdrawLink();
 		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
 		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
 		withdrawPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
 		withdrawPage.inputDescriptionToDescriptionTextbox(withdrawDescription);
-		withdrawPage.clickToWithdrawSubmitButton();
+		withdrawPage.clickToSubmitButton();
 		Assert.assertTrue(withdrawPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(withdrawPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
 		
@@ -216,7 +218,22 @@ public class PaymentFunction_Level_05 {
 		fundTransferPage.inPutPayeesAccountNumber(payeeAccountID);
 		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
 		fundTransferPage.inputDescriptionToDescriptionTextbox(fundTransferDescription);
+		fundTransferPage.clickToSubmitButton();
 		
+		Assert.assertTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
+		Assert.assertEquals(fundTransferPage.getTextPayerAccountNumber(),accountID);
+		Assert.assertEquals(fundTransferPage.getTextPayeeAccountNumber(),payeeAccountID);
+		Assert.assertEquals(fundTransferPage.getTextAmount(), String.valueOf(transferAmount));
+		
+	}
+	
+	@Test
+	public void TC_07_BalanceEnquiry() {
+		balanceEnquiryPage = fundTransferPage.clickToBalanceEnquiryLink();
+		balanceEnquiryPage.inputAccountNumber(accountID);
+		balanceEnquiryPage.clickSubmitButton();
+		Assert.assertTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
+		Assert.assertEquals(balanceEnquiryPage.getTextBalance(), String.valueOf(currentBalanceAfterTransfer));
 		
 	}
 	

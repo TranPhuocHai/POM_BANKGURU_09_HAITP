@@ -33,7 +33,7 @@ public class DepositPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToDepositSubmitButton() {
+	public void clickToSubmitButton() {
 		waitForElementVisible(driver, DepositPageUI.SUBMIT_BUTTON);
 		clickToElement(driver, DepositPageUI.SUBMIT_BUTTON);
 		
@@ -61,7 +61,7 @@ public class DepositPageObject extends AbstractPage {
 		
 	}
 
-	public WithdrawPageObject clickToWithdrawButton() {
+	public WithdrawPageObject clickToWithdrawLink() {
 		waitForElementVisible(driver, DepositPageUI.WITHDRAW_LINK);
 		clickToElement(driver, DepositPageUI.WITHDRAW_LINK);
 		return PageFactoryManager.getWithdrawPage(driver);

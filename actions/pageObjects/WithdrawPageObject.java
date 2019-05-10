@@ -33,7 +33,7 @@ public class WithdrawPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToWithdrawSubmitButton() {
+	public void clickToSubmitButton() {
 		waitForElementVisible(driver, WithdrawPageUI.SUBMIT_BUTTON);
 		clickToElement(driver, WithdrawPageUI.SUBMIT_BUTTON);
 		

@@ -2,6 +2,7 @@ package commons;
 
 import org.openqa.selenium.WebDriver;
 
+import pageObjects.BalanceEnquiryPageObject;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.FundTransferPageObject;
@@ -21,7 +22,8 @@ public class PageFactoryManager {
 	private static NewAccountPageObject newAccountPage;
 	private static DepositPageObject depositPage;
 	private static WithdrawPageObject withdrawPage;
-	private static FundTransferPageObject fundTransfer;
+	private static FundTransferPageObject fundTransferPage;
+	private static BalanceEnquiryPageObject balanceEnquiryPage;
 	
 	public static HomePageObject getHomePage(WebDriver driver) {
 		if (homePage == null) {
@@ -80,10 +82,17 @@ public class PageFactoryManager {
 	}
 	
 	public static FundTransferPageObject getFundTransferPage(WebDriver driver) {
-		if (fundTransfer == null) {
-			fundTransfer = new FundTransferPageObject(driver);
+		if (fundTransferPage == null) {
+			fundTransferPage = new FundTransferPageObject(driver);
 		}
-		return fundTransfer;
+		return fundTransferPage;
+	}
+	
+	public static BalanceEnquiryPageObject getBalanceEnquiryPage(WebDriver driver) {
+		if (balanceEnquiryPage == null) {
+			balanceEnquiryPage = new BalanceEnquiryPageObject(driver);
+		}
+		return balanceEnquiryPage;
 	}
 
 }

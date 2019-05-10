@@ -346,7 +346,7 @@ public class EditCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToEditSubmitButton() {
+	public void clickToSubmitButton() {
 		waitForElementVisible(driver, EditCustomerPageUI.SUBMIT_EDIT_BUTTON);
 		clickToElement(driver, EditCustomerPageUI.SUBMIT_EDIT_BUTTON);
 		

@@ -38,7 +38,5 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 	}
 
 
-
-
 	
 }

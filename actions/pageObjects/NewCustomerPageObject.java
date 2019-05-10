@@ -593,15 +593,6 @@ public class NewCustomerPageObject extends AbstractPage {
 		return PageFactoryManager.getEditCustomerPage(driver);
 	}
 
-
-
-
-
-
-
-
-
-
 	
 
 }

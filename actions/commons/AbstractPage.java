@@ -330,7 +330,6 @@ public class AbstractPage {
     	waitExplicit.until(ExpectedConditions.alertIsPresent());
     }
     
-    
 }
 
 

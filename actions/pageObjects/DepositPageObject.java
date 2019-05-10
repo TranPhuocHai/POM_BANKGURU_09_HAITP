@@ -69,7 +69,5 @@ public class DepositPageObject extends AbstractPage {
 	}
 
 
-
-
 	
 }

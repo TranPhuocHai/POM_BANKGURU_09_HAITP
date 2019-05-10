@@ -9,5 +9,6 @@ public class HomePageUI {
 	public static final String DEPOSIT_LINK = "//a[text()='Deposit']";
 	public static final String WITHDRAW_LINK = "//a[text()='Withdrawal']";
 	public static final String LOG_OUT_BUTTON = "//a[text()='Log out']";
+	
 
 }

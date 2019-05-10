@@ -65,6 +65,5 @@ public class NewAccountPageObject extends AbstractPage {
 		return PageFactoryManager.getFundTransferPage(driver);
 	}
 
-
 	
 }

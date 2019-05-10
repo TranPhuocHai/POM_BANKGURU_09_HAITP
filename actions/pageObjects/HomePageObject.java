@@ -72,5 +72,4 @@ public class HomePageObject extends AbstractPage {
 		return PageFactoryManager.getLoginPage(driver);
 	}
 
-	
 }

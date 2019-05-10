@@ -11,5 +11,6 @@ public class WithdrawPageUI {
 	public static final String CURRENT_BALANCE_INFOR = "//td[text()='Current Balance']//following-sibling::td";
 	public static final String FUND_TRANSFER_LINK = "//a[text()='Fund Transfer']";
 	public static final String NEW_ACCOUNT_LINK = "//a[text()='New Account']";
+	
 
 }

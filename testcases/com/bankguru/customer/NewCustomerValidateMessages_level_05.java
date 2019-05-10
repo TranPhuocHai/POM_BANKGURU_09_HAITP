@@ -305,3 +305,4 @@ public class NewCustomerValidateMessages_level_05 {
 	}
 
 }
+

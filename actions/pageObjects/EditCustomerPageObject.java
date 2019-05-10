@@ -581,14 +581,6 @@ public class EditCustomerPageObject extends AbstractPage {
 	}
 
 
-
-
-
-
-
-
-
-
 	
 
 }

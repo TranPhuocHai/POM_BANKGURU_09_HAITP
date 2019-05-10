@@ -6,6 +6,7 @@ import bankguru.BalanceEnquiryPageUI;
 import bankguru.FundTransferPageUI;
 import bankguru.WithdrawPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class BalanceEnquiryPageObject extends AbstractPage {
 	public BalanceEnquiryPageObject(WebDriver driver) {
@@ -35,6 +36,13 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 	public String getTextBalance() {
 		waitForElementVisible(driver, BalanceEnquiryPageUI.BALANCE_INFOR);
 		return getTextElement(driver, BalanceEnquiryPageUI.BALANCE_INFOR);
+	}
+
+	public DeleteAccountPageObject clickToDeleteAccountLink() {
+		waitForElementVisible(driver, BalanceEnquiryPageUI.DELETE_ACCOUNT_LINK);
+		clickToElement(driver, BalanceEnquiryPageUI.DELETE_ACCOUNT_LINK);
+		return PageFactoryManager.getDeleteAccountPage(driver);
+		
 	}
 
 

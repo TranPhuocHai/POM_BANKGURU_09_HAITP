@@ -66,10 +66,24 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
-	public LoginPageObject closeLogOutAlert() {
+	public LoginPageObject acceptLogOutAlert() {
 		waitForAlertPresence(driver);
 		acceptAlert(driver);
 		return PageFactoryManager.getLoginPage(driver);
+	}
+
+	public DeleteCustomerPageObject clickToDeleteCustomerLink() {
+		waitForElementVisible(driver, HomePageUI.DELETE_CUSTOMER_LINK);
+		clickToElement(driver, HomePageUI.DELETE_CUSTOMER_LINK);
+		return PageFactoryManager.getDeleteCustomerPage(driver);
+		
+	}
+
+	public DeleteAccountPageObject clickToDeleteAccountLink() {
+		waitForElementVisible(driver, HomePageUI.DELETE_ACCOUNT_LINK);
+		clickToElement(driver, HomePageUI.DELETE_ACCOUNT_LINK);
+		return PageFactoryManager.getDeleteAccountPage(driver);
+		
 	}
 
 }

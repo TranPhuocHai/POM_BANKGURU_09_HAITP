@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 
 import commons.PageFactoryManager;
 import pageObjects.BalanceEnquiryPageObject;
+import pageObjects.DeleteAccountPageObject;
+import pageObjects.DeleteCustomerPageObject;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.FundTransferPageObject;
@@ -34,6 +36,8 @@ public class PaymentFunction_Level_05 {
 	WithdrawPageObject withdrawPage;
 	FundTransferPageObject fundTransferPage;
 	BalanceEnquiryPageObject balanceEnquiryPage;
+	DeleteAccountPageObject deleteAccountPage;
+	DeleteCustomerPageObject deleteCustomerPage;
 	
 	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
@@ -237,9 +241,40 @@ public class PaymentFunction_Level_05 {
 		
 	}
 	
+	@Test
+	public void TC_08_DeleteAccount() {
+		deleteAccountPage = balanceEnquiryPage.clickToDeleteAccountLink();
+		deleteAccountPage.inputAccountNumber(accountID);
+		deleteAccountPage.clickSubmitButton();
+		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Account?");
+		deleteAccountPage.acceptConfirmDeleteAlert();
+		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(),"Account Deleted Sucessfully");
+		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
+		deleteAccountPage = homePage.clickToDeleteAccountLink();
+		deleteAccountPage.inputAccountNumber(payeeAccountID);
+		deleteAccountPage.clickSubmitButton();
+		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Account?");
+		deleteAccountPage.acceptConfirmDeleteAlert();
+		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(),"Account Deleted Sucessfully");
+		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
+		
+	}
+	
+	@Test
+	public void TC_09_DeleteCustomer() {
+		deleteCustomerPage = homePage.clickToDeleteCustomerLink();
+		deleteCustomerPage.inputCustomerIDNumber(customerID);
+		deleteCustomerPage.clickSubmitButton();
+		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Customer?");
+		deleteCustomerPage.acceptConfirmDeleteAlert();
+		Assert.assertEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(),"Customer deleted Successfully");
+		homePage = deleteCustomerPage.acceptDeleteSuccessAlert();
+		
+	}
+	
 	@AfterClass
 	public void afterClass() {
-//		driver.quit();
+		driver.quit();
 	}
 
 	public int randomNumber() {

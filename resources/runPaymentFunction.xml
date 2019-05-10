@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="com.bankguru.payment.PaymentFunction_Level_03"/>
+      <class name="com.bankguru.payment.PaymentFunction_Level_05"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

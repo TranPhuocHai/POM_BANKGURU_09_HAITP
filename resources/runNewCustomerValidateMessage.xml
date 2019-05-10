@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="com.bankguru.customer.NewCustomerValidateMessages_level_03"/>
+      <class name="com.bankguru.customer.NewCustomerValidateMessages_level_05"/>
     </classes>
   </test> 
 </suite> 

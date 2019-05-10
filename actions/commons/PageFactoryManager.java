@@ -3,6 +3,8 @@ package commons;
 import org.openqa.selenium.WebDriver;
 
 import pageObjects.BalanceEnquiryPageObject;
+import pageObjects.DeleteAccountPageObject;
+import pageObjects.DeleteCustomerPageObject;
 import pageObjects.DepositPageObject;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.FundTransferPageObject;
@@ -24,6 +26,8 @@ public class PageFactoryManager {
 	private static WithdrawPageObject withdrawPage;
 	private static FundTransferPageObject fundTransferPage;
 	private static BalanceEnquiryPageObject balanceEnquiryPage;
+	private static DeleteAccountPageObject deleteAccountPage;
+	private static DeleteCustomerPageObject deleteCustomerPage;
 	
 	public static HomePageObject getHomePage(WebDriver driver) {
 		if (homePage == null) {
@@ -93,6 +97,20 @@ public class PageFactoryManager {
 			balanceEnquiryPage = new BalanceEnquiryPageObject(driver);
 		}
 		return balanceEnquiryPage;
+	}
+	
+	public static DeleteAccountPageObject getDeleteAccountPage(WebDriver driver) {
+		if (deleteAccountPage == null) {
+			deleteAccountPage = new DeleteAccountPageObject(driver);
+		}
+		return deleteAccountPage;
+	}
+	
+	public static DeleteCustomerPageObject getDeleteCustomerPage(WebDriver driver) {
+		if (deleteCustomerPage == null) {
+			deleteCustomerPage = new DeleteCustomerPageObject(driver);
+		}
+		return deleteCustomerPage;
 	}
 
 }

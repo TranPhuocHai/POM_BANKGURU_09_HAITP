@@ -60,7 +60,7 @@ public class Account_level_05_PageFactoryManager_SingletonPattern {
 	@Test
 	public void TC_03_LogOutOfSystem() {
 		homePage.clickLogOutButton();
-		loginPage = homePage.closeLogOutAlert();
+		loginPage = homePage.acceptLogOutAlert();
 		
 	}
 

@@ -38,7 +38,7 @@ public class EditCustomerValidateMessages_level_05 {
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
 
-		email = "haitpauto" + randomNumber() + "@gmail.com";
+		email = "khainam" + randomNumber() + "@gmail.com";
 		validName = "Tran Phuoc Hai";
 		expectedGender = "male";
 		validDateOfBirth = "1988-07-31";
@@ -47,7 +47,7 @@ public class EditCustomerValidateMessages_level_05 {
 		validState = "Hoan Kiem";
 		validPin = "600000";
 		validPhoneNumber = "0987654321";
-		validEmailID = "haitp" + randomNumber() + "@gmail.com";
+		validEmailID = "khain" + randomNumber() + "@gmail.com";
 		validPassword = "idonknow12345678";
 
 		blankSpace =" ";

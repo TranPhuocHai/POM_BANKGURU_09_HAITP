@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Run allI">
 <suite-files>
+	<suite-file path = "runBankGuruTestcases.xml"/>
 	<suite-file path = "runNewCustomerValidateMessage.xml"/>
 	<suite-file path = "runEditCustomerValidateMessage.xml"/>
+	<suite-file path = "runPaymentFunction.xml"/>
 </suite-files>
   
 </suite> 

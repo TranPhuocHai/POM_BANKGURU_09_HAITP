@@ -5,9 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.PageFactoryManager;
@@ -24,7 +27,7 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
-public class PaymentFunction_Level_05 {
+public class PaymentFunction_Level_06 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -38,23 +41,35 @@ public class PaymentFunction_Level_05 {
 	BalanceEnquiryPageObject balanceEnquiryPage;
 	DeleteAccountPageObject deleteAccountPage;
 	DeleteCustomerPageObject deleteCustomerPage;
-	
+
 	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
 	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
 			validPassword, customerID, expectedGender;
-	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID, payeeAccountID;	
-	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw, transferAmount, currentBalanceAfterTransfer;
+	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID, payeeAccountID;
+	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw,
+			transferAmount, currentBalanceAfterTransfer;
 	String depositDescription, withdrawDescription, fundTransferDescription;
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeClass(String browserName) {
+		if (browserName.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("headless");
+			option.addArguments("window-size=1280x1024");
+			driver = new ChromeDriver(option);
+		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
 
-		email = "randoname" + randomNumber() + "@gmail.com";
+		email = "tpkcdnam" + randomNumber() + "@gmail.com";
 		validName = "Jame Hugo";
 		expectedGender = "male";
 		validDateOfBirth = "1988-07-31";
@@ -72,7 +87,7 @@ public class PaymentFunction_Level_05 {
 		editPin = "550000";
 		editPhoneNumber = "0975123456";
 		editEmailID = "redonaming" + randomNumber() + "@gmail.com";
-		
+
 		currentAmount = 50000;
 		depositAmount = 5000;
 		currentBalanceAfterDeposit = currentAmount + depositAmount;
@@ -80,12 +95,10 @@ public class PaymentFunction_Level_05 {
 		currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
 		transferAmount = 10000;
 		currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
-		
-		
+
 		depositDescription = "Deposit";
 		withdrawDescription = "Withdraw";
 		fundTransferDescription = "Transfer";
-		
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
@@ -191,9 +204,9 @@ public class PaymentFunction_Level_05 {
 		depositPage.clickToSubmitButton();
 		Assert.assertTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(depositPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterDeposit));
-		
+
 	}
-	
+
 	@Test
 	public void TC_05_WithdrawFromCurrentAccount() {
 		withdrawPage = depositPage.clickToWithdrawLink();
@@ -204,9 +217,9 @@ public class PaymentFunction_Level_05 {
 		withdrawPage.clickToSubmitButton();
 		Assert.assertTrue(withdrawPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(withdrawPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
-		
+
 	}
-	
+
 	@Test
 	public void TC_06_TransferMoney() {
 		newAccountPage = withdrawPage.clickToNewAccountButton();
@@ -223,14 +236,14 @@ public class PaymentFunction_Level_05 {
 		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
 		fundTransferPage.inputDescriptionToDescriptionTextbox(fundTransferDescription);
 		fundTransferPage.clickToSubmitButton();
-		
+
 		Assert.assertTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
-		Assert.assertEquals(fundTransferPage.getTextPayerAccountNumber(),accountID);
-		Assert.assertEquals(fundTransferPage.getTextPayeeAccountNumber(),payeeAccountID);
+		Assert.assertEquals(fundTransferPage.getTextPayerAccountNumber(), accountID);
+		Assert.assertEquals(fundTransferPage.getTextPayeeAccountNumber(), payeeAccountID);
 		Assert.assertEquals(fundTransferPage.getTextAmount(), String.valueOf(transferAmount));
-		
+
 	}
-	
+
 	@Test
 	public void TC_07_BalanceEnquiry() {
 		balanceEnquiryPage = fundTransferPage.clickToBalanceEnquiryLink();
@@ -238,40 +251,43 @@ public class PaymentFunction_Level_05 {
 		balanceEnquiryPage.clickSubmitButton();
 		Assert.assertTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(balanceEnquiryPage.getTextBalance(), String.valueOf(currentBalanceAfterTransfer));
-		
+
 	}
-	
+
 	@Test
 	public void TC_08_DeleteAccount() {
 		deleteAccountPage = balanceEnquiryPage.clickToDeleteAccountLink();
 		deleteAccountPage.inputAccountNumber(accountID);
 		deleteAccountPage.clickSubmitButton();
-		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Account?");
+		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
+				"Do you really want to delete this Account?");
 		deleteAccountPage.acceptConfirmDeleteAlert();
-		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(),"Account Deleted Sucessfully");
+		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
 		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
 		deleteAccountPage = homePage.clickToDeleteAccountLink();
 		deleteAccountPage.inputAccountNumber(payeeAccountID);
 		deleteAccountPage.clickSubmitButton();
-		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Account?");
+		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
+				"Do you really want to delete this Account?");
 		deleteAccountPage.acceptConfirmDeleteAlert();
-		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(),"Account Deleted Sucessfully");
+		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
 		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
-		
+
 	}
-	
+
 	@Test
 	public void TC_09_DeleteCustomer() {
 		deleteCustomerPage = homePage.clickToDeleteCustomerLink();
 		deleteCustomerPage.inputCustomerIDNumber(customerID);
 		deleteCustomerPage.clickSubmitButton();
-		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),"Do you really want to delete this Customer?");
+		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),
+				"Do you really want to delete this Customer?");
 		deleteCustomerPage.acceptConfirmDeleteAlert();
-		Assert.assertEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(),"Customer deleted Successfully");
+		Assert.assertEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(), "Customer deleted Successfully");
 		homePage = deleteCustomerPage.acceptDeleteSuccessAlert();
-		
+
 	}
-	
+
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
@@ -283,14 +299,3 @@ public class PaymentFunction_Level_05 {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-

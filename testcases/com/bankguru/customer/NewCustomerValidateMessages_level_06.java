@@ -5,10 +5,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.PageFactoryManager;
@@ -17,33 +19,45 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class NewCustomerValidateMessages_level_05 {
+public class NewCustomerValidateMessages_level_06 {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
 	RegisterPageObject registerPage;
 	NewCustomerPageObject newCustomerPage;
 	String loginPageUrl, newCustomerPageUrl, userIdInfo, passwordInfo, email;
-	String [] numericValues, specialCharacters, characterPINs, lessThan6DigitsList, characterPhoneNumbers, specialPhoneNumbers, incorrectEmailIDList; 
+	String[] numericValues, specialCharacters, characterPINs, lessThan6DigitsList, characterPhoneNumbers,
+			specialPhoneNumbers, incorrectEmailIDList;
 	String blankSpace;
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
-		driver = new ChromeDriver();
+	public void beforeClass(String browserName) {
+		if (browserName.equalsIgnoreCase("firefox")) {
+			driver = new FirefoxDriver();
+		} else if (browserName.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("headless");
+			option.addArguments("window-size=1280x1024");
+			driver = new ChromeDriver(option);
+		}
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
-		
-		email = "haitpauto" + randomNumber() + "@gmail.com";
-		blankSpace =" ";
-		numericValues = new String [] {"1234" , "name123"};
-		specialCharacters = new String [] {"haitp!@#","!@#"};
-		characterPINs = new String [] {"123PIN","HAI321"};
-		lessThan6DigitsList = new String [] {"1","12","321","3214","32147" };
-		characterPhoneNumbers = new String [] {"haitp","12 1234"};
-		specialPhoneNumbers = new String [] {"097@!13546","!#123654", "0987654#@!"};
-		incorrectEmailIDList = new String [] {"guru99@gmail","guru99", "guru99@", "guru99@gmail.","guru99gmail.com"};
+
+		email = "haimivkn" + randomNumber() + "@gmail.com";
+		blankSpace = " ";
+		numericValues = new String[] { "1234", "name123" };
+		specialCharacters = new String[] { "haitp!@#", "!@#" };
+		characterPINs = new String[] { "123PIN", "HAI321" };
+		lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
+		characterPhoneNumbers = new String[] { "haitp", "12 1234" };
+		specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+		incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
@@ -73,7 +87,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_02_NameCanNotBeNumberic() {
-		for(String numericName: numericValues) {
+		for (String numericName : numericValues) {
 			newCustomerPage.clearNameTextbox();
 			newCustomerPage.inputNumericValueToCustomerNameTextbox(numericName);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfNameDisplayed());
@@ -82,7 +96,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_03_NameCanNotHaveSpecialCharacters() {
-		for (String specialCharactersName: specialCharacters) {
+		for (String specialCharactersName : specialCharacters) {
 			newCustomerPage.clearNameTextbox();
 			newCustomerPage.inputSpecialCharactersToCustomerNameTextbox(specialCharactersName);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
@@ -103,18 +117,18 @@ public class NewCustomerValidateMessages_level_05 {
 		newCustomerPage.clickToAddressTextarea();
 		newCustomerPage.pressTABKeyToAddressTextArea();
 		Assert.assertTrue(newCustomerPage.isAddressFieldMustNotBeBlankMessageDisplayed());
-		
+
 	}
-	
+
 	@Test
 	public void TC_06_AdressCanNotHaveSpecialCharacters() {
-		for (String specialCharactersAddress: specialCharacters) {
+		for (String specialCharactersAddress : specialCharacters) {
 			newCustomerPage.clearAddresTextarea();
 			newCustomerPage.inputSpecialCharactersToAdressTextArea(specialCharactersAddress);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void TC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearAddresTextarea();
@@ -122,7 +136,7 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_08_CityCanNotBeEmpty() {
 		newCustomerPage.clearCityTextbox();
@@ -133,7 +147,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_08_CityCanNotBeNumberic() {
-		for(String numericCity: numericValues) {
+		for (String numericCity : numericValues) {
 			newCustomerPage.clearCityTextbox();
 			newCustomerPage.inputNumericValueToCityTextbox(numericCity);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
@@ -142,7 +156,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_10_CityCanNotHaveSpecialCharacters() {
-		for (String specialCharactersCity: specialCharacters) {
+		for (String specialCharactersCity : specialCharacters) {
 			newCustomerPage.clearCityTextbox();
 			newCustomerPage.inputSpecialCharactersToCityTextbox(specialCharactersCity);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
@@ -156,7 +170,7 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_12_StateCanNotBeEmpty() {
 		newCustomerPage.clearStateTextbox();
@@ -167,7 +181,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_13_StateCanNotBeNumberic() {
-		for(String numericState: numericValues) {
+		for (String numericState : numericValues) {
 			newCustomerPage.clearStateTextbox();
 			newCustomerPage.inputNumericValueToStateTextbox(numericState);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
@@ -176,7 +190,7 @@ public class NewCustomerValidateMessages_level_05 {
 
 	@Test
 	public void TC_14_StateCanNotHaveSpecialCharacters() {
-		for (String specialCharactersState: specialCharacters) {
+		for (String specialCharactersState : specialCharacters) {
 			newCustomerPage.clearStateTextbox();
 			newCustomerPage.inputSpecialCharactersToStateTextbox(specialCharactersState);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
@@ -190,7 +204,7 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_16_PinCanNotBeEmpty() {
 		newCustomerPage.clearPinTextbox();
@@ -198,25 +212,25 @@ public class NewCustomerValidateMessages_level_05 {
 		newCustomerPage.pressTABKeyToPinTextbox();
 		Assert.assertTrue(newCustomerPage.isPinMustNotBeBlankMessageDisplayed());
 	}
-	
+
 	@Test
 	public void TC_17_PinMustBeNumeric() {
-		for (String characterPIN:characterPINs) {
+		for (String characterPIN : characterPINs) {
 			newCustomerPage.clearPinTextbox();
 			newCustomerPage.inputChractersValueToPinTextbox(characterPIN);
 			Assert.assertTrue(newCustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void TC_18_PinMustHave6Degits() {
-		for (String lessThan6Digits:lessThan6DigitsList) {
+		for (String lessThan6Digits : lessThan6DigitsList) {
 			newCustomerPage.clearPinTextbox();
 			newCustomerPage.inputLessThan6DigitsToPinTextbox(lessThan6Digits);
 			Assert.assertTrue(newCustomerPage.isPinMustHave6DegitsMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void TC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPinTextbox();
@@ -224,7 +238,7 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_20_TelephoneCanNotBeEmpty() {
 		newCustomerPage.clearPhoneTextbox();
@@ -232,7 +246,7 @@ public class NewCustomerValidateMessages_level_05 {
 		newCustomerPage.pressTABKeyToMobileTextbox();
 		Assert.assertTrue(newCustomerPage.isPhoneMustNotBeBlankMessageDisplayed());
 	}
-	
+
 	@Test
 	public void TC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPhoneTextbox();
@@ -240,26 +254,26 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
-		for (String characterPhoneNumber:characterPhoneNumbers) {
+		for (String characterPhoneNumber : characterPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
 			newCustomerPage.inputChractersValueToMobileNumberTextbox(characterPhoneNumber);
 			Assert.assertTrue(newCustomerPage.isPhoneCharacterAreNotAllowMessageDisplayed());
 		}
-		
+
 	}
-	
+
 	@Test
 	public void TC_23_TelephoneCanNotHaveSpecialCharacters() {
-		for (String specialPhoneNumber: specialPhoneNumbers) {
+		for (String specialPhoneNumber : specialPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
 			newCustomerPage.inputSpecialCharactersToMobileNumberTextbox(specialPhoneNumber);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void TC_24_EmailCanNotBeEmpty() {
 		newCustomerPage.clearEmailTextbox();
@@ -267,16 +281,16 @@ public class NewCustomerValidateMessages_level_05 {
 		newCustomerPage.pressTABKeyToEmailTextbox();
 		Assert.assertTrue(newCustomerPage.isEmailMustNotBeBlankMessageDisplayed());
 	}
-	
+
 	@Test
 	public void TC_25_EmailMustBeInCorrectFormat() {
-		for (String incorrectEmailID: incorrectEmailIDList) {
+		for (String incorrectEmailID : incorrectEmailIDList) {
 			newCustomerPage.clearEmailTextbox();
 			newCustomerPage.inputIncorrectEmailIDToEmailTextbox(incorrectEmailID);
 			Assert.assertTrue(newCustomerPage.isEmailIDIsNotValidMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void TC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearEmailTextbox();
@@ -284,7 +298,7 @@ public class NewCustomerValidateMessages_level_05 {
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());
 
 	}
-	
+
 	@Test
 	public void TC_27_PasswordCanNotBeEmpty() {
 		newCustomerPage.clearPasswordTextbox();
@@ -297,7 +311,6 @@ public class NewCustomerValidateMessages_level_05 {
 	public void afterClass() {
 		driver.quit();
 	}
-	
 
 	public int randomNumber() {
 		Random random = new Random();
@@ -305,4 +318,3 @@ public class NewCustomerValidateMessages_level_05 {
 	}
 
 }
-

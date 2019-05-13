@@ -16,101 +16,53 @@ import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
 public class PageFactoryManager {
-	private static HomePageObject homePage;
-	private static RegisterPageObject registerPage;
-	private static LoginPageObject loginPage;
-	private static NewCustomerPageObject newCustomerPage;
-	private static EditCustomerPageObject editCustomerPage;
-	private static NewAccountPageObject newAccountPage;
-	private static DepositPageObject depositPage;
-	private static WithdrawPageObject withdrawPage;
-	private static FundTransferPageObject fundTransferPage;
-	private static BalanceEnquiryPageObject balanceEnquiryPage;
-	private static DeleteAccountPageObject deleteAccountPage;
-	private static DeleteCustomerPageObject deleteCustomerPage;
 	
 	public static HomePageObject getHomePage(WebDriver driver) {
-		if (homePage == null) {
-			homePage = new HomePageObject(driver);
-		}
-		return homePage;
+		return new HomePageObject(driver);
 	}
 	
 	public static RegisterPageObject getRegisterPage(WebDriver driver) {
-		if (registerPage == null) {
-			registerPage = new RegisterPageObject(driver);
-		}
-		return registerPage;
+		return new RegisterPageObject(driver);
 	}
 	
 	public static LoginPageObject getLoginPage(WebDriver driver) {
-		if (loginPage == null) {
-			loginPage = new LoginPageObject(driver);
-		}
-		return loginPage;
+		return new LoginPageObject(driver);
 	}
 	
 	public static NewCustomerPageObject getNewCustomerPage(WebDriver driver) {
-		if (newCustomerPage == null) {
-			newCustomerPage = new NewCustomerPageObject(driver);
-		}
-		return newCustomerPage;
+		return new NewCustomerPageObject(driver);
 	}
 	
 	public static EditCustomerPageObject getEditCustomerPage(WebDriver driver) {
-		if (editCustomerPage == null) {
-			editCustomerPage = new EditCustomerPageObject(driver);
-		}
-		return editCustomerPage;
+		return new EditCustomerPageObject(driver);
 	}
 	
 	public static NewAccountPageObject getNewAccountPage(WebDriver driver) {
-		if (newAccountPage == null) {
-			newAccountPage = new NewAccountPageObject(driver);
-		}
-		return newAccountPage;
+		return new NewAccountPageObject(driver);
 	}
 	
 	public static DepositPageObject getDepositPage(WebDriver driver) {
-		if (depositPage == null) {
-			depositPage = new DepositPageObject(driver);
-		}
-		return depositPage;
+		return new DepositPageObject(driver);
 	}
 	
 	public static WithdrawPageObject getWithdrawPage(WebDriver driver) {
-		if (withdrawPage == null) {
-			withdrawPage = new WithdrawPageObject(driver);
-		}
-		return withdrawPage;
+		return new WithdrawPageObject(driver);
 	}
 	
 	public static FundTransferPageObject getFundTransferPage(WebDriver driver) {
-		if (fundTransferPage == null) {
-			fundTransferPage = new FundTransferPageObject(driver);
-		}
-		return fundTransferPage;
+		return new FundTransferPageObject(driver);
 	}
 	
 	public static BalanceEnquiryPageObject getBalanceEnquiryPage(WebDriver driver) {
-		if (balanceEnquiryPage == null) {
-			balanceEnquiryPage = new BalanceEnquiryPageObject(driver);
-		}
-		return balanceEnquiryPage;
+		return new BalanceEnquiryPageObject(driver);
 	}
 	
 	public static DeleteAccountPageObject getDeleteAccountPage(WebDriver driver) {
-		if (deleteAccountPage == null) {
-			deleteAccountPage = new DeleteAccountPageObject(driver);
-		}
-		return deleteAccountPage;
+		return new DeleteAccountPageObject(driver);
 	}
 	
 	public static DeleteCustomerPageObject getDeleteCustomerPage(WebDriver driver) {
-		if (deleteCustomerPage == null) {
-			deleteCustomerPage = new DeleteCustomerPageObject(driver);
-		}
-		return deleteCustomerPage;
+		return new DeleteCustomerPageObject(driver);
 	}
 
 }

@@ -1,24 +1,21 @@
 package com.bankguru.account;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.AbstractTest;
 import commons.PageFactoryManager;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Account_level_06_MultiBrowserAndParallelTesting {
+public class Account_level_06_MultiBrowserAndParallelTesting extends AbstractTest{
 	WebDriver driver;
 	String userIdInfo, passwordInfo, loginPageUrl, email;
 	HomePageObject homePage;
@@ -28,22 +25,7 @@ public class Account_level_06_MultiBrowserAndParallelTesting {
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		if (browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-			ChromeOptions option = new ChromeOptions();
-			option.addArguments("headless");
-			option.addArguments("window-size=1280x1024");
-			driver = new ChromeDriver(option);
-		}
-
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("http://demo.guru99.com/v4");
+		driver = openMultiBrowser(browserName);
 		email = "micvkn" + randomNumber() + "@gmail.com";
 		loginPage = PageFactoryManager.getLoginPage(driver);
 	}

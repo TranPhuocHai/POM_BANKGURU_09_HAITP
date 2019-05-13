@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="tests" thread-counts="3">
+
+	<test name="Test on CHROME HEADLESS">
+		<parameter name="browser" value="chromeheadless" />
+		<classes>
+			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+		</classes>
+	</test>
+	
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+		</classes>
+	</test>
+
+	<test name="Test on CHROME">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
+			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+		</classes>
+	</test>
+	
+	
+	
+</suite> 

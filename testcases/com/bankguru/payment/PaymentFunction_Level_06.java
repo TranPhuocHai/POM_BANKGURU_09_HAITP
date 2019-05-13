@@ -13,6 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import commons.AbstractTest;
 import commons.PageFactoryManager;
 import pageObjects.BalanceEnquiryPageObject;
 import pageObjects.DeleteAccountPageObject;
@@ -27,7 +28,7 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
-public class PaymentFunction_Level_06 {
+public class PaymentFunction_Level_06 extends AbstractTest{
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -53,22 +54,7 @@ public class PaymentFunction_Level_06 {
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		if (browserName.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-			driver = new ChromeDriver();
-		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-			ChromeOptions option = new ChromeOptions();
-			option.addArguments("headless");
-			option.addArguments("window-size=1280x1024");
-			driver = new ChromeDriver(option);
-		}
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("http://demo.guru99.com/v4");
-
+		driver = openMultiBrowser(browserName);
 		email = "tpkcdnam" + randomNumber() + "@gmail.com";
 		validName = "Jame Hugo";
 		expectedGender = "male";

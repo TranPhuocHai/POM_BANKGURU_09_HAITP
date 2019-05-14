@@ -28,7 +28,7 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
-public class PaymentFunction_Level_06 extends AbstractTest{
+public class PaymentFunction_L6 extends AbstractTest{
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;
@@ -266,8 +266,7 @@ public class PaymentFunction_Level_06 extends AbstractTest{
 		deleteCustomerPage = homePage.clickToDeleteCustomerLink();
 		deleteCustomerPage.inputCustomerIDNumber(customerID);
 		deleteCustomerPage.clickSubmitButton();
-		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),
-				"Do you really want to delete this Customer?");
+		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),	"Do you really want to delete this Customer?");
 		deleteCustomerPage.acceptConfirmDeleteAlert();
 		Assert.assertEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(), "Customer deleted Successfully");
 		homePage = deleteCustomerPage.acceptDeleteSuccessAlert();

@@ -5,9 +5,9 @@
 		<parameter name="browser" value="chromeheadless" />
 		<classes>
 			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
-			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_L6" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_L6" />
+			<class name="com.bankguru.payment.PaymentFunction_L6" />
 		</classes>
 	</test>
 	
@@ -15,9 +15,9 @@
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
-			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_L6" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_L6" />
+			<class name="com.bankguru.payment.PaymentFunction_L6" />
 		</classes>
 	</test>
 
@@ -25,9 +25,9 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.bankguru.account.Account_level_06_MultiBrowserAndParallelTesting" />
-			<class name="com.bankguru.customer.EditCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.customer.NewCustomerValidateMessages_level_06" />
-			<class name="com.bankguru.payment.PaymentFunction_Level_06" />
+			<class name="com.bankguru.customer.EditCustomerValidateMessages_L6" />
+			<class name="com.bankguru.customer.NewCustomerValidateMessages_L6" />
+			<class name="com.bankguru.payment.PaymentFunction_L6" />
 		</classes>
 	</test>
 	

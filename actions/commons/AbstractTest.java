@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class AbstractTest {
 	private WebDriver driver;
@@ -21,6 +22,9 @@ public class AbstractTest {
 			option.addArguments("headless");
 			option.addArguments("window-size=1366x768");
 			driver = new ChromeDriver(option);
+		} else if (browserName.equalsIgnoreCase("ie")) {
+			System.setProperty("webdriver.ie.driver", ".\\resources\\IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

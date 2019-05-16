@@ -1,21 +1,23 @@
-package com.bankguru.account;
+package com.bankguru.user;
+
+import org.testng.annotations.Test;
+
+import pageObjects.HomePageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.RegisterPageObject;
+
+import org.testng.annotations.BeforeClass;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
-import commons.PageFactoryManager;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
-
-public class Account_level_05_PageFactoryManager_SingletonPattern {
+public class Account_level_03_PageObject {
 	WebDriver driver;
 	String userIdInfo, passwordInfo, loginPageUrl, email;
 	HomePageObject homePage;
@@ -29,15 +31,16 @@ public class Account_level_05_PageFactoryManager_SingletonPattern {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
-		email = "mickn" + randomNumber() + "@gmail.com";
-		loginPage = PageFactoryManager.getLoginPage(driver);
+		email = "haitpauto" + randomNumber() + "@gmail.com";
 	}
 
 	@Test
 	public void TC_01_RegisterToSystem() {
+		loginPage = new LoginPageObject(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPageUrl = loginPage.getLoginPageUrl();
-		registerPage = loginPage.clickToHereLink();
+		loginPage.clickToHereLink();
+		registerPage = new RegisterPageObject(driver);
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
@@ -48,20 +51,16 @@ public class Account_level_05_PageFactoryManager_SingletonPattern {
 
 	@Test
 	public void TC_02_LoginToSystem() {
-		loginPage = registerPage.openLoginPage(loginPageUrl);
+		registerPage.openLoginPage(loginPageUrl);
+		loginPage = new LoginPageObject(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
-		homePage = loginPage.clickToLoginButton();
+		loginPage.clickToLoginButton();
+		homePage = new HomePageObject(driver);
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
 
-	}
-	@Test
-	public void TC_03_LogOutOfSystem() {
-		homePage.clickLogOutButton();
-		loginPage = homePage.acceptLogOutAlert();
-		
 	}
 
 	@AfterClass
@@ -75,4 +74,3 @@ public class Account_level_05_PageFactoryManager_SingletonPattern {
 	}
 
 }
-

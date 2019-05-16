@@ -21,7 +21,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class EditCustomerValidateMessages_L6 extends AbstractTest {
+public class EditCustomer extends AbstractTest {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;

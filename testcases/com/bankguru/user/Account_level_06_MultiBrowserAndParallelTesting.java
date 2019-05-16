@@ -1,4 +1,4 @@
-package com.bankguru.account;
+package com.bankguru.user;
 
 import java.util.Random;
 

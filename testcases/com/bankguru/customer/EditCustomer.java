@@ -78,7 +78,7 @@ public class EditCustomer extends AbstractTest {
 		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.clickToNewCustomerButton();
+		newCustomerPage = homePage.clickToNewCustomerLink();
 
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
@@ -110,7 +110,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	void TC_01_CustomerIDCanNotBeEmpty() {
+	void EC_01_CustomerIDCanNotBeEmpty() {
 		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.clickToCustomerIDTexbox();
 		editcustomerPage.pressTABKeyToCustomerIDTextbox();
@@ -119,7 +119,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.inputBlankSpaceToCustomerIDTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
@@ -127,7 +127,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
+	public void EC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputChractersValueToCustomerIDTextbox(characterPhoneNumber);
@@ -137,7 +137,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_04_CustomerIDCanNotHaveSpecialCharacters() {
+	public void EC_04_CustomerIDCanNotHaveSpecialCharacters() {
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputSpecialCharactersToCustomerIDTextbox(specialPhoneNumber);
@@ -146,7 +146,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_05_AddressCanNotBeEmpty() {
+	public void EC_05_AddressCanNotBeEmpty() {
 		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.inputValidCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clickToCustomerIDSubmitButton();
@@ -158,7 +158,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_06_AdressCanNotHaveSpecialCharacters() {
+	public void EC_06_AdressCanNotHaveSpecialCharacters() {
 		for (String specialCharactersAddress : specialCharacters) {
 			editcustomerPage.clearAdressTextArea();
 			editcustomerPage.inputSpecialCharactersToAdressTextArea(specialCharactersAddress);
@@ -167,7 +167,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearAdressTextArea();
 		editcustomerPage.inputBlankSpaceToAdressTextArea(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
@@ -175,7 +175,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_08_CityCanNotBeEmpty() {
+	public void EC_08_CityCanNotBeEmpty() {
 		editcustomerPage.clearCityTextbox();
 		editcustomerPage.clickToCityTextbox();
 		editcustomerPage.pressTABKeyToCityTextbox();
@@ -183,7 +183,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_09_CityCanNotBeNumberic() {
+	public void EC_09_CityCanNotBeNumberic() {
 		for (String numericCity : numericValues) {
 			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputNumericValueToCityTextbox(numericCity);
@@ -192,7 +192,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_10_CityCanNotHaveSpecialCharacters() {
+	public void EC_10_CityCanNotHaveSpecialCharacters() {
 		for (String specialCharactersCity : specialCharacters) {
 			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputSpecialCharactersToCityTextbox(specialCharactersCity);
@@ -201,7 +201,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearCityTextbox();
 		editcustomerPage.inputBlankSpaceToCityTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
@@ -209,7 +209,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_12_StateCanNotBeEmpty() {
+	public void EC_12_StateCanNotBeEmpty() {
 		editcustomerPage.clearStateTextbox();
 		editcustomerPage.clickToStateTextbox();
 		editcustomerPage.pressTABKeyToStateTextbox();
@@ -217,7 +217,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_13_StateCanNotBeNumberic() {
+	public void EC_13_StateCanNotBeNumberic() {
 		for (String numericState : numericValues) {
 			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputNumericValueToStateTextbox(numericState);
@@ -226,7 +226,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_14_StateCanNotHaveSpecialCharacters() {
+	public void EC_14_StateCanNotHaveSpecialCharacters() {
 		for (String specialCharactersState : specialCharacters) {
 			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputSpecialCharactersToStateTextbox(specialCharactersState);
@@ -235,7 +235,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearStateTextbox();
 		editcustomerPage.inputBlankSpaceToStateTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
@@ -243,7 +243,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_16_PinCanNotBeEmpty() {
+	public void EC_16_PinCanNotBeEmpty() {
 		editcustomerPage.clearPinTextbox();
 		editcustomerPage.clickToPinTextbox();
 		editcustomerPage.pressTABKeyToPinTextbox();
@@ -251,7 +251,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_17_PinMustBeNumeric() {
+	public void EC_17_PinMustBeNumeric() {
 		for (String characterPIN : characterPINs) {
 			editcustomerPage.clearPinTextbox();
 			editcustomerPage.inputChractersValueToPinTextbox(characterPIN);
@@ -260,7 +260,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_18_PinMustHave6Degits() {
+	public void EC_18_PinMustHave6Degits() {
 		for (String lessThan6Digits : lessThan6DigitsList) {
 			editcustomerPage.clearPinTextbox();
 			editcustomerPage.inputLessThan6DigitsToPinTextbox(lessThan6Digits);
@@ -269,7 +269,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearPinTextbox();
 		editcustomerPage.inputBlankSpaceToPinTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
@@ -277,7 +277,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_20_TelephoneCanNotBeEmpty() {
+	public void EC_20_TelephoneCanNotBeEmpty() {
 		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.clickToMobileNumberTextbox();
 		editcustomerPage.pressTABKeyToMobileTextbox();
@@ -285,7 +285,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.inputBlankSpaceToMobileNumberTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
@@ -293,7 +293,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
+	public void EC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputChractersValueToMobileNumberTextbox(characterPhoneNumber);
@@ -303,7 +303,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_23_TelephoneCanNotHaveSpecialCharacters() {
+	public void EC_23_TelephoneCanNotHaveSpecialCharacters() {
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputSpecialCharactersToMobileNumberTextbox(specialPhoneNumber);
@@ -312,7 +312,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_24_EmailCanNotBeEmpty() {
+	public void EC_24_EmailCanNotBeEmpty() {
 		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.clickToEmailTextbox();
 		editcustomerPage.pressTABKeyToEmailTextbox();
@@ -320,7 +320,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_25_EmailMustBeInCorrectFormat() {
+	public void EC_25_EmailMustBeInCorrectFormat() {
 		for (String incorrectEmailID : incorrectEmailIDList) {
 			editcustomerPage.clearEmailTextbox();
 			editcustomerPage.inputIncorrectEmailIDToEmailTextbox(incorrectEmailID);
@@ -329,7 +329,7 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void TC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
+	public void EC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.inputBlankSpaceToEmailTextbox(blankSpace);
 		Assert.assertTrue(editcustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());

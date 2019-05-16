@@ -54,5 +54,7 @@ public class NewCustomerPageUI {
 	public static final String EMAIL_ID_IS_NOT_VALID_MESSAGE = "//td[text()='E-mail']//following-sibling::td/label[text()='Email-ID is not valid']";
 	public static final String PASSWORD_MUST_NOT_BE_BLANK_MESSAGE = "//label[text()='Password must not be blank']";
 	public static final String EDIT_CUSTOMER_LINK = "//a[text()='Edit Customer']";
+	public static final String DELETE_CUSTOMER_LINK = "//a[text()='Delete Customer']";
+	
 	
 }

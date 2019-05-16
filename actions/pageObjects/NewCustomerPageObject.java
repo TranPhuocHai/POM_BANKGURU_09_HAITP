@@ -593,6 +593,12 @@ public class NewCustomerPageObject extends AbstractPage {
 		return PageFactoryManager.getEditCustomerPage(driver);
 	}
 
+	public DeleteCustomerPageObject clickToDeleteCustomerLink() {
+		waitForElementVisible(driver, NewCustomerPageUI.DELETE_CUSTOMER_LINK);
+		clickToElement(driver, NewCustomerPageUI.DELETE_CUSTOMER_LINK);
+		return PageFactoryManager.getDeleteCustomerPage(driver);
+	}
+
 	
 
 }

@@ -103,7 +103,7 @@ public class Payment extends AbstractTest{
 		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.clickToNewCustomerButton();
+		newCustomerPage = homePage.clickToNewCustomerLink();
 
 	}
 

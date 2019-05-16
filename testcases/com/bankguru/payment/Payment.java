@@ -28,7 +28,7 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
-public class PaymentFunction_L6 extends AbstractTest{
+public class Payment extends AbstractTest{
 	WebDriver driver;
 	LoginPageObject loginPage;
 	HomePageObject homePage;

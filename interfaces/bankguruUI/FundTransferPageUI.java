@@ -1,4 +1,4 @@
-package bankguru;
+package bankguruUI;
 
 public class FundTransferPageUI {
 	public static final String FUND_TRANSFER_MESSAGE = "//p[text()='Fund transfer']";

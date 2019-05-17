@@ -2,8 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.NewAccountPageUI;
-import bankguru.NewCustomerPageUI;
+import bankguruUI.NewAccountPageUI;
+import bankguruUI.NewCustomerPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

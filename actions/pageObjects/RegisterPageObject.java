@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.RegisterPageUI;
+import bankguruUI.RegisterPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

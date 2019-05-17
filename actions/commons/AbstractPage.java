@@ -12,7 +12,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+
+import bankguruUI.AbstractPageUI;
+import pageObjects.BalanceEnquiryPageObject;
+import pageObjects.DeleteAccountPageObject;
+import pageObjects.DeleteCustomerPageObject;
+import pageObjects.DepositPageObject;
+import pageObjects.EditCustomerPageObject;
+import pageObjects.FundTransferPageObject;
+import pageObjects.NewAccountPageObject;
+import pageObjects.NewCustomerPageObject;
+import pageObjects.WithdrawPageObject;
 
 public class AbstractPage {
 	WebElement element;
@@ -330,7 +340,74 @@ public class AbstractPage {
     	waitExplicit.until(ExpectedConditions.alertIsPresent());
     }
     
+    public NewCustomerPageObject openNewCutomerPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.NEW_CUSTOMER_LINK);
+    	clickToElement(driver, AbstractPageUI.NEW_CUSTOMER_LINK);
+    	return PageFactoryManager.getNewCustomerPage(driver);
+    }
+    
+    public EditCustomerPageObject openEditCutomerPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.EDIT_CUSTOMER_LINK);
+    	clickToElement(driver, AbstractPageUI.EDIT_CUSTOMER_LINK);
+    	return PageFactoryManager.getEditCustomerPage(driver);
+    }
+    
+    
+    public DeleteCustomerPageObject openDeleteCutomerPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.DELETE_CUSTOMER_LINK);
+    	clickToElement(driver, AbstractPageUI.DELETE_CUSTOMER_LINK);
+    	return PageFactoryManager.getDeleteCustomerPage(driver);
+    }
+    
+    
+    public NewAccountPageObject openNewAccountPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+    	clickToElement(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+    	return PageFactoryManager.getNewAccountPage(driver);
+    }
+    
+    public DeleteAccountPageObject openDeleteAccountPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+    	clickToElement(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+    	return PageFactoryManager.getDeleteAccountPage(driver);
+    }
+    
+    
+    public DepositPageObject openDepositPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.DEPOSIT_LINK);
+    	clickToElement(driver, AbstractPageUI.DEPOSIT_LINK);
+    	return PageFactoryManager.getDepositPage(driver);
+    }
+    
+    
+    public WithdrawPageObject openWithdrawalPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.WITHDRAWAL_LINK);
+    	clickToElement(driver, AbstractPageUI.WITHDRAWAL_LINK);
+    	return PageFactoryManager.getWithdrawPage(driver);
+    }
+    
+    public FundTransferPageObject openFundTransferPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.FUN_TRANSFER_LINK);
+    	clickToElement(driver, AbstractPageUI.FUN_TRANSFER_LINK);
+    	return PageFactoryManager.getFundTransferPage(driver);
+    }
+    
+    
+    public BalanceEnquiryPageObject openBalanceEnquiryPage(WebDriver driver) {
+    	waitForElementVisible(driver, AbstractPageUI.BALANCE_ENQUIRY_LINK);
+    	clickToElement(driver, AbstractPageUI.BALANCE_ENQUIRY_LINK);
+    	return PageFactoryManager.getBalanceEnquiryPage(driver);
+    }
+    
+    
+    
+    
+    
+    
+    
 }
+
+
 
 
 

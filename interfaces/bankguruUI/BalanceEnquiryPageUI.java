@@ -1,4 +1,4 @@
-package bankguru;
+package bankguruUI;
 
 public class BalanceEnquiryPageUI {
 	public static final String BALANCE_ENQUIRY_FORM_MESSAGE = "//p[text()='Balance Enquiry Form']";

@@ -1,7 +1,8 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import bankguru.HomePageUI;
+
+import bankguruUI.HomePageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 
@@ -25,12 +26,6 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
-	public NewCustomerPageObject clickToNewCustomerLink() {
-		waitForElementVisible(driver, HomePageUI.NEW_CUSTOMER_LINK);
-		clickToElement(driver, HomePageUI.NEW_CUSTOMER_LINK);
-		return PageFactoryManager.getNewCustomerPage(driver);
-		
-	}
 
 	public String getHomePageUrl() {
 		return getCurrentPageUrl(driver);

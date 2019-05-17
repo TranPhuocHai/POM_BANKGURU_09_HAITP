@@ -1,4 +1,4 @@
-package bankguru;
+package bankguruUI;
 
 public class LoginPageUI {
 	public static final String LOGIN_FORM = "//form[@name='frmLogin']";

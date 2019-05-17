@@ -1,4 +1,4 @@
-package bankguru;
+package bankguruUI;
 
 public class NewAccountPageUI {
 	public static final String ADD_NEW_ACCOUNT_FORM_MESSAGE = "//p[text()='Add new account form']";

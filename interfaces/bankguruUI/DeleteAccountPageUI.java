@@ -1,4 +1,4 @@
-package bankguru;
+package bankguruUI;
 
 public class DeleteAccountPageUI {
 	public static final String DELETE_ACCOUNT_FORM_MESSAGE = "//p[text()='Delete Account Form']";

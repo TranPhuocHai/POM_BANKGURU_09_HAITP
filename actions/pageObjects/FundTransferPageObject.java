@@ -2,8 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguru.FundTransferPageUI;
-import bankguru.WithdrawPageUI;
+import bankguruUI.FundTransferPageUI;
+import bankguruUI.WithdrawPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

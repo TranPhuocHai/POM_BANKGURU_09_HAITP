@@ -74,7 +74,7 @@ public class DeleteCustomer extends AbstractTest {
 		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.clickToNewCustomerLink();
+		newCustomerPage = homePage.openNewCutomerPage(driver);
 
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
@@ -101,8 +101,7 @@ public class DeleteCustomer extends AbstractTest {
 		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
 		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
 
-		deleteCustomerPage = newCustomerPage.clickToDeleteCustomerLink();
-
+		deleteCustomerPage = newCustomerPage.openDeleteCutomerPage(driver);
 	}
 
 	@Test

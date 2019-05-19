@@ -12,7 +12,5 @@ public class NewAccountPageUI {
 	public static final String ACCOUNT_ID_INFOR = "//td[text()='Account ID']/following-sibling::td";
 	public static final String DATE_OF_OPENING_INFOR = "//td[text()='Date of Opening']/following-sibling::td";
 	public static final String ACCOUNT_TYPE_INFOR = "//td[text()='Account Type']/following-sibling::td";
-	public static final String DEPOSIT_LINK = "//a[text()='Deposit']";
-	public static final String FUND_TRANSFER_LINK = "//a[text()='Fund Transfer']";
 
 }

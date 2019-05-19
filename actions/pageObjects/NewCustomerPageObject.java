@@ -587,18 +587,5 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public EditCustomerPageObject clickToEditCustomerLink() {
-		waitForElementVisible(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
-		clickToElement(driver, NewCustomerPageUI.EDIT_CUSTOMER_LINK);
-		return PageFactoryManager.getEditCustomerPage(driver);
-	}
-
-	public DeleteCustomerPageObject clickToDeleteCustomerLink() {
-		waitForElementVisible(driver, NewCustomerPageUI.DELETE_CUSTOMER_LINK);
-		clickToElement(driver, NewCustomerPageUI.DELETE_CUSTOMER_LINK);
-		return PageFactoryManager.getDeleteCustomerPage(driver);
-	}
-
-	
 
 }

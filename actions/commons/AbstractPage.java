@@ -84,11 +84,13 @@ public class AbstractPage {
 	}
 	
 	public void clickToElement(WebDriver driver, String locator) {
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		element.click();
 	}
 	
-	public void sendKeyToElement(WebDriver driver, String locator, String value) {		
+	public void sendKeyToElement(WebDriver driver, String locator, String value) {	
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(value);
 	}
@@ -136,6 +138,7 @@ public class AbstractPage {
 	}
 	
 	public String getTextElement(WebDriver driver, String locator) {
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		return element.getText();		
 	}
@@ -160,6 +163,7 @@ public class AbstractPage {
 	}
 	
 	public boolean isControlDisplayed(WebDriver driver, String locator) {
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		return element.isDisplayed();
 	}
@@ -252,9 +256,18 @@ public class AbstractPage {
 		action.sendKeys(element, key).perform();
 	}
 	
-	public void highlightElement(WebDriver driver, WebElement element) {
+	public void highlightElement(WebDriver driver, String locator) {
 		javascriptExecutor = (JavascriptExecutor) driver;
-		javascriptExecutor.executeScript("arguments[0].style.border='6px groove red'", element);
+		element = driver.findElement(By.xpath(locator));
+		String originalStyle = element.getAttribute("Style");
+		javascriptExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", "border:3px solid red; border-style: dashed;");
+		try {
+			Thread.sleep(50);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		javascriptExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", originalStyle);
+		
     }
 
     public Object executeForBrowser(WebDriver driver, String javascript) {
@@ -367,8 +380,8 @@ public class AbstractPage {
     }
     
     public DeleteAccountPageObject openDeleteAccountPage(WebDriver driver) {
-    	waitForElementVisible(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
-    	clickToElement(driver, AbstractPageUI.NEW_ACCOUNT_LINK);
+    	waitForElementVisible(driver, AbstractPageUI.DELETE_ACCOUNT_LINK);
+    	clickToElement(driver, AbstractPageUI.DELETE_ACCOUNT_LINK);
     	return PageFactoryManager.getDeleteAccountPage(driver);
     }
     

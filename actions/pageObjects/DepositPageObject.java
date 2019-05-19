@@ -61,13 +61,6 @@ public class DepositPageObject extends AbstractPage {
 		
 	}
 
-	public WithdrawPageObject clickToWithdrawLink() {
-		waitForElementVisible(driver, DepositPageUI.WITHDRAW_LINK);
-		clickToElement(driver, DepositPageUI.WITHDRAW_LINK);
-		return PageFactoryManager.getWithdrawPage(driver);
-				
-	}
-
 
 	
 }

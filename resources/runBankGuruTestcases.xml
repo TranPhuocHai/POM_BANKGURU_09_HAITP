@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite" parallel="false">
 
-	<test name="Test on CHROME HEADLESS">
-		<parameter name="browser" value="chromeheadless" />
-		<classes>
-			<class name="com.bankguru.customer.DeleteCustomer" />
-		</classes>
-	</test>
 
 	<test name="Test on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
+			<class name="com.bankguru.customer.NewCustomer" />
+			<class name="com.bankguru.customer.EditCustomer" />
 			<class name="com.bankguru.customer.DeleteCustomer" />
+			<class name="com.bankguru.payment.Payment" />
 		</classes>
 	</test>
 
 	<test name="Test on CHROME">
 		<parameter name="browser" value="chrome" />
 		<classes>
+			<class name="com.bankguru.customer.NewCustomer" />
+			<class name="com.bankguru.customer.EditCustomer" />
 			<class name="com.bankguru.customer.DeleteCustomer" />
+			<class name="com.bankguru.payment.Payment" />
 		</classes>
 	</test>
 
-	<test name="Test on IE">
-		<parameter name="browser" value="ie" />
-		<classes>
-			<class name="com.bankguru.customer.DeleteCustomer" />
-		</classes>
-	</test>
-
+<!-- 	<test name="Test on CHROME HEADLESS"> -->
+<!-- 		<parameter name="browser" value="chromeheadless" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.bankguru.customer.NewCustomer" /> -->
+<!-- 			<class name="com.bankguru.customer.EditCustomer" /> -->
+<!-- 			<class name="com.bankguru.customer.DeleteCustomer" /> -->
+<!-- 			<class name="com.bankguru.payment.Payment" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 </suite> 

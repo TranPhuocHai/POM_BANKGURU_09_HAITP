@@ -51,7 +51,6 @@ public class EditCustomerPageUI {
 	public static final String EMAIL_MUST_NOT_BE_BLANK_MESSAGE = "//label[text()='Email-ID must not be blank']";
 	public static final String EMAIL_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE = "//td[text()='E-mail']//following-sibling::td/label[text()='First character can not have space']";
 	public static final String EMAIL_ID_IS_NOT_VALID_MESSAGE = "//td[text()='E-mail']//following-sibling::td/label[text()='Email-ID is not valid']";
-	public static final String NEW_ACCOUNT_LINK = "//a[text()='New Account']";
 	
 	
 }

@@ -74,13 +74,6 @@ public class FundTransferPageObject extends AbstractPage {
 	}
 
 
-	public BalanceEnquiryPageObject clickToBalanceEnquiryLink() {
-		waitForElementVisible(driver, FundTransferPageUI.BALANCE_ENQUIRY_LINK);
-		clickToElement(driver, FundTransferPageUI.BALANCE_ENQUIRY_LINK);
-		return PageFactoryManager.getBalanceEnquiryPage(driver);
-	}
-
-
 
 	
 }

@@ -53,17 +53,6 @@ public class NewAccountPageObject extends AbstractPage {
 		return getTextElement(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
 	}
 
-	public DepositPageObject clickToDepositButton() {
-		waitForElementVisible(driver, NewAccountPageUI.DEPOSIT_LINK);
-		clickToElement(driver, NewAccountPageUI.DEPOSIT_LINK);
-		return PageFactoryManager.getDepositPage(driver);
-	}
-
-	public FundTransferPageObject clickToFundTransferLink() {
-		waitForElementVisible(driver, NewAccountPageUI.FUND_TRANSFER_LINK);
-		clickToElement(driver, NewAccountPageUI.FUND_TRANSFER_LINK);
-		return PageFactoryManager.getFundTransferPage(driver);
-	}
 
 	
 }

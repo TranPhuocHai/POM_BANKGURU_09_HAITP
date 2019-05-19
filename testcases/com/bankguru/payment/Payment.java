@@ -104,7 +104,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_01_CreateNewCustomerSuccessfully() {
+	public void PM_01_CreateNewCustomer() {
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
 		newCustomerPage.removeDateOfBirthAttribute();
@@ -132,7 +132,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_02_EditNewCustomerSuccessfully() {
+	public void PM_02_EditNewCustomer() {
 		editcustomerPage = newCustomerPage.openEditCutomerPage(driver);
 		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
@@ -165,7 +165,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_03_AddNewAccount() {
+	public void PM_03_AddNewAccount() {
 		newAccountPage = editcustomerPage.openNewAccountPage(driver);
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
@@ -177,7 +177,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_04_TransferMoneyToCurrentAccount() {
+	public void PM_04_TransferMoneyToCurrentAccount() {
 		depositPage = newAccountPage.openDepositPage(driver);
 		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
 		depositPage.inputAccountIDToAccountNoTextbox(accountID);
@@ -190,7 +190,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_05_WithdrawFromCurrentAccount() {
+	public void PM_05_WithdrawFromCurrentAccount() {
 		withdrawPage = depositPage.openWithdrawalPage(driver);
 		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
 		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
@@ -203,7 +203,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_06_TransferMoney() {
+	public void PM_06_TransferMoney() {
 		newAccountPage = withdrawPage.openNewAccountPage(driver);
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
@@ -227,7 +227,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_07_BalanceEnquiry() {
+	public void PM_07_BalanceEnquiry() {
 		balanceEnquiryPage = fundTransferPage.openBalanceEnquiryPage(driver);
 		balanceEnquiryPage.inputAccountNumber(accountID);
 		balanceEnquiryPage.clickSubmitButton();
@@ -237,7 +237,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_08_DeleteAccount() {
+	public void PM_08_DeleteAccount() {
 		deleteAccountPage = balanceEnquiryPage.openDeleteAccountPage(driver);
 		deleteAccountPage.inputAccountNumber(accountID);
 		deleteAccountPage.clickSubmitButton();
@@ -246,7 +246,7 @@ public class Payment extends AbstractTest {
 		deleteAccountPage.acceptConfirmDeleteAlert();
 		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
 		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
-		deleteAccountPage = homePage.clickToDeleteAccountLink();
+		deleteAccountPage = homePage.openDeleteAccountPage(driver);
 		deleteAccountPage.inputAccountNumber(payeeAccountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
@@ -258,7 +258,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void TC_09_DeleteCustomer() {
+	public void PM_09_DeleteCustomer() {
 		deleteCustomerPage = homePage.openDeleteCutomerPage(driver);
 		deleteCustomerPage.inputCustomerIDNumber(customerID);
 		deleteCustomerPage.clickSubmitButton();

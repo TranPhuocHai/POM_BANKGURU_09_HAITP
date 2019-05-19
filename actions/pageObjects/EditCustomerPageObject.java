@@ -572,15 +572,6 @@ public class EditCustomerPageObject extends AbstractPage {
 	}
 
 
-
-	public NewAccountPageObject clickToNewAccountButton() {
-		waitForElementVisible(driver, EditCustomerPageUI.NEW_ACCOUNT_LINK);
-		clickToElement(driver, EditCustomerPageUI.NEW_ACCOUNT_LINK);
-		return PageFactoryManager.getNewAccountPage(driver);
-		
-	}
-
-
 	
 
 }

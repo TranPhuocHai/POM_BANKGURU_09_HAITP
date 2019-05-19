@@ -38,12 +38,6 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 		return getTextElement(driver, BalanceEnquiryPageUI.BALANCE_INFOR);
 	}
 
-	public DeleteAccountPageObject clickToDeleteAccountLink() {
-		waitForElementVisible(driver, BalanceEnquiryPageUI.DELETE_ACCOUNT_LINK);
-		clickToElement(driver, BalanceEnquiryPageUI.DELETE_ACCOUNT_LINK);
-		return PageFactoryManager.getDeleteAccountPage(driver);
-		
-	}
 
 
 	

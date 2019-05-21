@@ -23,4 +23,5 @@ public class NewAccountPageUI {
 	public static final String INITIAL_DEPOSIT_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[contains(text(),'Initial deposit')]//following-sibling::td/label[text()='Special characters are not allowed']";
 	public static final String INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE = "//td[contains(text(),'Initial deposit')]//following-sibling::td/label[text()='First character can not have space']";
 
+
 }

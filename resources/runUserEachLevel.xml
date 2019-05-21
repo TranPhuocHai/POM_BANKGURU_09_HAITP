@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+
+
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.bankguru.user.Account_level_07_WebDriverLifeCycle_ActionChain" />
+		</classes>
+	</test>
+
+</suite> 

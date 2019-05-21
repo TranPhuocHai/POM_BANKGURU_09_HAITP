@@ -25,62 +25,57 @@ import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawPageObject;
 
 public class Payment extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	NewCustomerPageObject newCustomerPage;
-	EditCustomerPageObject editcustomerPage;
-	NewAccountPageObject newAccountPage;
-	DepositPageObject depositPage;
-	WithdrawPageObject withdrawPage;
-	FundTransferPageObject fundTransferPage;
-	BalanceEnquiryPageObject balanceEnquiryPage;
-	DeleteAccountPageObject deleteAccountPage;
-	DeleteCustomerPageObject deleteCustomerPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private RegisterPageObject registerPage;
+	private NewCustomerPageObject newCustomerPage;
+	private EditCustomerPageObject editcustomerPage;
+	private NewAccountPageObject newAccountPage;
+	private DepositPageObject depositPage;
+	private WithdrawPageObject withdrawPage;
+	private FundTransferPageObject fundTransferPage;
+	private BalanceEnquiryPageObject balanceEnquiryPage;
+	private DeleteAccountPageObject deleteAccountPage;
+	private DeleteCustomerPageObject deleteCustomerPage;
 
-	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
-	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
-			validPassword, customerID, expectedGender;
-	String editEmailID, editAdress, editCity, editState, editPin, editPhoneNumber, accountID, payeeAccountID;
-	int currentAmount, depositAmount, currentBalanceAfterDeposit, withdrawAmount, currentBalanceAfterWithdraw,
-			transferAmount, currentBalanceAfterTransfer;
-	String depositDescription, withdrawDescription, fundTransferDescription;
+	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID, payeeAccountID;
 
+	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String validName = "Jame Hugo";
+	private String expectedGender = "male";
+	private String validDateOfBirth = "1988-07-31";
+	private String validAdress = "100 Ho Guom";
+	private String validCity = "Ha Noi";
+	private String validState = "Hoan Kiem";
+	private String validPin = "600000";
+	private String validPhoneNumber = "0987654321";
+	private String validEmailID = "jame" + randomNumber() + "@gmail.com";
+	private String validPassword = "nopdontknow12";
+	
+	private String editAdress = "01 Nguyen Van Linh";
+	private String editCity = "Da Nang";
+	private String editState = "Ngu Hanh Son";
+	private String editPin = "550000";
+	private String editPhoneNumber = "0975123456";
+	private String editEmailID = "redonaming" + randomNumber() + "@gmail.com";
+	
+	private int currentAmount = 50000;
+	private int depositAmount = 5000;
+	private int currentBalanceAfterDeposit = currentAmount + depositAmount;
+	private int withdrawAmount = 15000;
+	private int currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
+	private int transferAmount = 10000;
+	private int currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
+	
+	private String depositDescription = "Deposit";
+	private String withdrawDescription = "Withdraw";
+	private String fundTransferDescription = "Transfer";
+	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
-		email = "tpkcdnam" + randomNumber() + "@gmail.com";
-		validName = "Jame Hugo";
-		expectedGender = "male";
-		validDateOfBirth = "1988-07-31";
-		validAdress = "100 Ho Guom";
-		validCity = "Ha Noi";
-		validState = "Hoan Kiem";
-		validPin = "600000";
-		validPhoneNumber = "0987654321";
-		validEmailID = "jame" + randomNumber() + "@gmail.com";
-		validPassword = "nopdontknow12";
-
-		editAdress = "01 Nguyen Van Linh";
-		editCity = "Da Nang";
-		editState = "Ngu Hanh Son";
-		editPin = "550000";
-		editPhoneNumber = "0975123456";
-		editEmailID = "redonaming" + randomNumber() + "@gmail.com";
-
-		currentAmount = 50000;
-		depositAmount = 5000;
-		currentBalanceAfterDeposit = currentAmount + depositAmount;
-		withdrawAmount = 15000;
-		currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
-		transferAmount = 10000;
-		currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
-
-		depositDescription = "Deposit";
-		withdrawDescription = "Withdraw";
-		fundTransferDescription = "Transfer";
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
@@ -96,7 +91,6 @@ public class Payment extends AbstractTest {
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
 		homePage = loginPage.clickToLoginButton();
-		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
 		newCustomerPage = homePage.openNewCutomerPage(driver);

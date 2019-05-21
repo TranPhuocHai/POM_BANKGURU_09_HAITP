@@ -17,29 +17,27 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
 public class NewCustomer extends AbstractTest{
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	NewCustomerPageObject newCustomerPage;
-	String loginPageUrl, newCustomerPageUrl, userIdInfo, passwordInfo, email;
-	String[] numericValues, specialCharacters, characterPINs, lessThan6DigitsList, characterPhoneNumbers,
-			specialPhoneNumbers, incorrectEmailIDList;
-	String blankSpace;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private RegisterPageObject registerPage;
+	private NewCustomerPageObject newCustomerPage;
+	private String loginPageUrl, userIdInfo, passwordInfo;
+	
+	private String email = "haimivkn" + randomNumber() + "@gmail.com";
+	private String blankSpace = " ";
+	private String[] numericValues = new String[] { "1234", "name123" };
+	private String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
+	private String[] characterPINs = new String[] { "123PIN", "HAI321" };
+	private String[] lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
+	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
+	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String[] incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
-		email = "haimivkn" + randomNumber() + "@gmail.com";
-		blankSpace = " ";
-		numericValues = new String[] { "1234", "name123" };
-		specialCharacters = new String[] { "haitp!@#", "!@#" };
-		characterPINs = new String[] { "123PIN", "HAI321" };
-		lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
-		characterPhoneNumbers = new String[] { "haitp", "12 1234" };
-		specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
-		incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());

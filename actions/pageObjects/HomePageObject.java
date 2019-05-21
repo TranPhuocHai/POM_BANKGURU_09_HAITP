@@ -27,11 +27,6 @@ public class HomePageObject extends AbstractPage {
 	}
 
 
-	public String getHomePageUrl() {
-		return getCurrentPageUrl(driver);
-	}
-	
-
 	public void clickLogOutButton() {
 		waitForElementVisible(driver, HomePageUI.LOG_OUT_BUTTON);
 		clickToElement(driver, HomePageUI.LOG_OUT_BUTTON);

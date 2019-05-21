@@ -18,44 +18,35 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
 public class DeleteCustomer extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	NewCustomerPageObject newCustomerPage;
-	DeleteCustomerPageObject deleteCustomerPage;
-	String loginPageUrl, homePageUrl, userIdInfo, passwordInfo, email;
-	String validEmailID, validDateOfBirth, validName, validAdress, validCity, validState, validPin, validPhoneNumber,
-			validPassword, customerID, expectedGender;
-	String[] numericValues, specialCharacters, characterPINs, lessThan6DigitsList, characterPhoneNumbers,
-			specialPhoneNumbers, incorrectEmailIDList;
-	String blankSpace;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private RegisterPageObject registerPage;
+	private NewCustomerPageObject newCustomerPage;
+	private DeleteCustomerPageObject deleteCustomerPage;
+	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
+	
+	private String email = "khainammvc" + randomNumber() + "@gmail.com";
+	private String validName = "Tran Phuoc Hai";
+	private String expectedGender = "male";
+	private String validDateOfBirth = "1988-07-31";
+	private String validAdress = "100 Ho Guom";
+	private String validCity = "Ha Noi";
+	private String validState = "Hoan Kiem";
+	private String validPin = "600000";
+	private String validPhoneNumber = "0987654321";
+	private String validEmailID = "khain" + randomNumber() + "@gmail.com";
+	private String validPassword = "idonknow12345678";
+	private String blankSpace = " ";
+	
+	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
+	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
 
-		email = "khainammvc" + randomNumber() + "@gmail.com";
-		validName = "Tran Phuoc Hai";
-		expectedGender = "male";
-		validDateOfBirth = "1988-07-31";
-		validAdress = "100 Ho Guom";
-		validCity = "Ha Noi";
-		validState = "Hoan Kiem";
-		validPin = "600000";
-		validPhoneNumber = "0987654321";
-		validEmailID = "khain" + randomNumber() + "@gmail.com";
-		validPassword = "idonknow12345678";
-
-		blankSpace = " ";
-		numericValues = new String[] { "1234", "name123" };
-		specialCharacters = new String[] { "haitp!@#", "!@#" };
-		characterPINs = new String[] { "123PIN", "HAI321" };
-		lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
-		characterPhoneNumbers = new String[] { "haitp", "12 1234" };
-		specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
-		incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
@@ -71,7 +62,6 @@ public class DeleteCustomer extends AbstractTest {
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
 		homePage = loginPage.clickToLoginButton();
-		homePageUrl = homePage.getHomePageUrl();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
 		newCustomerPage = homePage.openNewCutomerPage(driver);

@@ -50,11 +50,6 @@ public class WithdrawPageObject extends AbstractPage {
 		return getTextElement(driver, WithdrawPageUI.CURRENT_BALANCE_INFOR);
 	}
 
-	public void openHomePageUrl(String homePageUrl) {
-		openAnyUrl(driver, homePageUrl);
-		
-	}
-
 	public void inputDescriptionToDescriptionTextbox(String withdrawDescription) {
 		waitForElementVisible(driver, WithdrawPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, WithdrawPageUI.DESCRIPTION_TEXTBOX, withdrawDescription);

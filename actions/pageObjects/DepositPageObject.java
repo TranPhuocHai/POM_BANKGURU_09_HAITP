@@ -50,11 +50,6 @@ public class DepositPageObject extends AbstractPage {
 		return getTextElement(driver, DepositPageUI.CURRENT_BALANCE_INFOR);
 	}
 
-	public void openHomePageUrl(String homePageUrl) {
-		openAnyUrl(driver, homePageUrl);
-		
-	}
-
 	public void inputDescriptionToDescriptionTextbox(String depositDescription) {
 		waitForElementVisible(driver, DepositPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, DepositPageUI.DESCRIPTION_TEXTBOX, depositDescription);

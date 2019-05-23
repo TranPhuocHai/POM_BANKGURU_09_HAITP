@@ -8,7 +8,7 @@ import bankguruUI.DeleteAccountPageUI;
 import bankguruUI.DeleteCustomerPageUI;
 import bankguruUI.EditCustomerPageUI;
 import bankguruUI.FundTransferPageUI;
-import bankguruUI.WithdrawPageUI;
+import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

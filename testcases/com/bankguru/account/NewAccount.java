@@ -25,7 +25,7 @@ public class NewAccount extends AbstractTest{
 	private NewCustomerPageObject newCustomerPage;
 	private NewAccountPageObject newAccountPage;
 	
-	private String loginPageUrl, userIdInfo, passwordInfo, customerID;	
+	private String loginPageUrl, userIdInfo, passwordInfo;	
 	private String email = "khainammvc" + randomNumber() + "@gmail.com";
 	private String validName = "Tran Phuoc Hai";
 	private String expectedGender = "male";
@@ -63,7 +63,9 @@ public class NewAccount extends AbstractTest{
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.openNewCutomerPage(driver);
+		
+		homePage.openMultiplePage(driver, "New Customer");
+		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
@@ -78,7 +80,6 @@ public class NewAccount extends AbstractTest{
 		newCustomerPage.inputValidDataToPasswordTextbox(validPassword);
 		newCustomerPage.clickToSubmitButton();
 		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
-		customerID = newCustomerPage.getCustomerID();
 
 		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
 		Assert.assertEquals(newCustomerPage.getTextGenderInfo(), expectedGender);
@@ -90,8 +91,8 @@ public class NewAccount extends AbstractTest{
 		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
 		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
 
-		newAccountPage = newCustomerPage.openNewAccountPage(driver);
-
+		newCustomerPage.openMultiplePage(driver, "New Account");
+		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 	}
 	
 	@Test

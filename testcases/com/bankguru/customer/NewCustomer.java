@@ -55,7 +55,8 @@ public class NewCustomer extends AbstractTest{
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.openNewCutomerPage(driver);
+		homePage.openMultiplePage(driver, "New Customer");
+		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 	}
 
 	@Test

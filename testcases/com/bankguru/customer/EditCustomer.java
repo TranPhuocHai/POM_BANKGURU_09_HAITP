@@ -73,7 +73,8 @@ public class EditCustomer extends AbstractTest {
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.openNewCutomerPage(driver);
+		homePage.openMultiplePage(driver, "New Customer");
+		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
 		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
@@ -100,8 +101,8 @@ public class EditCustomer extends AbstractTest {
 		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
 		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
 
-		editcustomerPage = newCustomerPage.openEditCutomerPage(driver);
-
+		newCustomerPage.openMultiplePage(driver, "Edit Customer");
+		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
 	}
 
 	@Test

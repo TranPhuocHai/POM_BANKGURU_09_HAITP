@@ -22,21 +22,10 @@ public class DeleteCustomer extends AbstractTest {
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
-	private NewCustomerPageObject newCustomerPage;
 	private DeleteCustomerPageObject deleteCustomerPage;
-	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
+	private String loginPageUrl, userIdInfo, passwordInfo;
 	
 	private String email = "khainammvc" + randomNumber() + "@gmail.com";
-	private String validName = "Tran Phuoc Hai";
-	private String expectedGender = "male";
-	private String validDateOfBirth = "1988-07-31";
-	private String validAdress = "100 Ho Guom";
-	private String validCity = "Ha Noi";
-	private String validState = "Hoan Kiem";
-	private String validPin = "600000";
-	private String validPhoneNumber = "0987654321";
-	private String validEmailID = "khain" + randomNumber() + "@gmail.com";
-	private String validPassword = "idonknow12345678";
 	private String blankSpace = " ";
 	
 	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
@@ -64,34 +53,9 @@ public class DeleteCustomer extends AbstractTest {
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.openNewCutomerPage(driver);
 
-		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
-		newCustomerPage.selectMaleGenderRadioButton();
-		newCustomerPage.removeDateOfBirthAttribute();
-		newCustomerPage.inputValidDataToDateOfBirthTextbox(validDateOfBirth);
-		newCustomerPage.inputValidDataToAdressTextArea(validAdress);
-		newCustomerPage.inputValidDataToCityTextbox(validCity);
-		newCustomerPage.inputValidDataToStateTextbox(validState);
-		newCustomerPage.inputValidDataToPinTextbox(validPin);
-		newCustomerPage.inputValidDataToMobileNumberTextbox(validPhoneNumber);
-		newCustomerPage.inputValidDataToEmailTextbox(validEmailID);
-		newCustomerPage.inputValidDataToPasswordTextbox(validPassword);
-		newCustomerPage.clickToSubmitButton();
-		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
-		customerID = newCustomerPage.getCustomerID();
-
-		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
-		Assert.assertEquals(newCustomerPage.getTextGenderInfo(), expectedGender);
-		Assert.assertEquals(newCustomerPage.getDateOfBirthInfo(), validDateOfBirth);
-		Assert.assertEquals(newCustomerPage.getTextAdressInfo(), validAdress);
-		Assert.assertEquals(newCustomerPage.getTextCityInfo(), validCity);
-		Assert.assertEquals(newCustomerPage.getTextStateInfo(), validState);
-		Assert.assertEquals(newCustomerPage.getTextPinInfo(), validPin);
-		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
-		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
-
-		deleteCustomerPage = newCustomerPage.openDeleteCutomerPage(driver);
+		homePage.openMultiplePage(driver, "Delete Customer");
+		deleteCustomerPage = PageFactoryManager.getDeleteCustomerPage(driver);
 	}
 
 	@Test

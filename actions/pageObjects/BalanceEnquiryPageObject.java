@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import bankguruUI.BalanceEnquiryPageUI;
 import bankguruUI.FundTransferPageUI;
-import bankguruUI.WithdrawPageUI;
+import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

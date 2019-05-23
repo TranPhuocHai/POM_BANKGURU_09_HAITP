@@ -22,7 +22,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
-import pageObjects.WithdrawPageObject;
+import pageObjects.WithdrawalPageObject;
 
 public class Payment extends AbstractTest {
 	private WebDriver driver;
@@ -33,7 +33,7 @@ public class Payment extends AbstractTest {
 	private EditCustomerPageObject editcustomerPage;
 	private NewAccountPageObject newAccountPage;
 	private DepositPageObject depositPage;
-	private WithdrawPageObject withdrawPage;
+	private WithdrawalPageObject withdrawalPage;
 	private FundTransferPageObject fundTransferPage;
 	private BalanceEnquiryPageObject balanceEnquiryPage;
 	private DeleteAccountPageObject deleteAccountPage;
@@ -52,14 +52,14 @@ public class Payment extends AbstractTest {
 	private String validPhoneNumber = "0987654321";
 	private String validEmailID = "jame" + randomNumber() + "@gmail.com";
 	private String validPassword = "nopdontknow12";
-	
+
 	private String editAdress = "01 Nguyen Van Linh";
 	private String editCity = "Da Nang";
 	private String editState = "Ngu Hanh Son";
 	private String editPin = "550000";
 	private String editPhoneNumber = "0975123456";
 	private String editEmailID = "redonaming" + randomNumber() + "@gmail.com";
-	
+
 	private int currentAmount = 50000;
 	private int depositAmount = 5000;
 	private int currentBalanceAfterDeposit = currentAmount + depositAmount;
@@ -67,11 +67,11 @@ public class Payment extends AbstractTest {
 	private int currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
 	private int transferAmount = 10000;
 	private int currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
-	
+
 	private String depositDescription = "Deposit";
 	private String withdrawDescription = "Withdraw";
 	private String fundTransferDescription = "Transfer";
-	
+
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -93,7 +93,9 @@ public class Payment extends AbstractTest {
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		newCustomerPage = homePage.openNewCutomerPage(driver);
+		
+		homePage.openMultiplePage(driver, "New Customer");
+		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
 	}
 
@@ -127,7 +129,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_02_EditNewCustomer() {
-		editcustomerPage = newCustomerPage.openEditCutomerPage(driver);
+		newCustomerPage.openMultiplePage(driver, "Edit Customer");
+		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
+
 		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
 
@@ -160,7 +164,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_03_AddNewAccount() {
-		newAccountPage = editcustomerPage.openNewAccountPage(driver);
+		editcustomerPage.openMultiplePage(driver, "New Account");
+		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
+
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
 		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
@@ -172,7 +178,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_04_TransferMoneyToCurrentAccount() {
-		depositPage = newAccountPage.openDepositPage(driver);
+		newAccountPage.openMultiplePage(driver, "Deposit");
+		depositPage = PageFactoryManager.getDepositPage(driver);
+
 		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
 		depositPage.inputAccountIDToAccountNoTextbox(accountID);
 		depositPage.inputAmountToAmountTextbox(String.valueOf(depositAmount));
@@ -185,20 +193,24 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_05_WithdrawFromCurrentAccount() {
-		withdrawPage = depositPage.openWithdrawalPage(driver);
-		Assert.assertTrue(withdrawPage.isAmountWithdrawFormDisplayed());
-		withdrawPage.inputAccountIDToAccountNoTextbox(accountID);
-		withdrawPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
-		withdrawPage.inputDescriptionToDescriptionTextbox(withdrawDescription);
-		withdrawPage.clickToSubmitButton();
-		Assert.assertTrue(withdrawPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
-		Assert.assertEquals(withdrawPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
+		depositPage.openMultiplePage(driver, "Withdrawal");
+		withdrawalPage = PageFactoryManager.getWithdrawalPage(driver);
+
+		Assert.assertTrue(withdrawalPage.isAmountWithdrawFormDisplayed());
+		withdrawalPage.inputAccountIDToAccountNoTextbox(accountID);
+		withdrawalPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
+		withdrawalPage.inputDescriptionToDescriptionTextbox(withdrawDescription);
+		withdrawalPage.clickToSubmitButton();
+		Assert.assertTrue(withdrawalPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
+		Assert.assertEquals(withdrawalPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
 
 	}
 
 	@Test
 	public void PM_06_TransferMoney() {
-		newAccountPage = withdrawPage.openNewAccountPage(driver);
+		withdrawalPage.openMultiplePage(driver, "New Account");
+		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
+
 		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
 		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
@@ -206,7 +218,10 @@ public class Payment extends AbstractTest {
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
 		payeeAccountID = newAccountPage.getAccountID();
-		fundTransferPage = newAccountPage.openFundTransferPage(driver);
+
+		newAccountPage.openMultiplePage(driver, "Fund Transfer");
+		fundTransferPage = PageFactoryManager.getFundTransferPage(driver);
+
 		fundTransferPage.inPutPayersAccountNumber(accountID);
 		fundTransferPage.inPutPayeesAccountNumber(payeeAccountID);
 		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
@@ -222,7 +237,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_07_BalanceEnquiry() {
-		balanceEnquiryPage = fundTransferPage.openBalanceEnquiryPage(driver);
+		fundTransferPage.openMultiplePage(driver, "Balance Enquiry");
+		balanceEnquiryPage = PageFactoryManager.getBalanceEnquiryPage(driver);
+
 		balanceEnquiryPage.inputAccountNumber(accountID);
 		balanceEnquiryPage.clickSubmitButton();
 		Assert.assertTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
@@ -232,7 +249,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_08_DeleteAccount() {
-		deleteAccountPage = balanceEnquiryPage.openDeleteAccountPage(driver);
+		balanceEnquiryPage.openMultiplePage(driver, "Delete Account");
+		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
+
 		deleteAccountPage.inputAccountNumber(accountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
@@ -240,7 +259,10 @@ public class Payment extends AbstractTest {
 		deleteAccountPage.acceptConfirmDeleteAlert();
 		Assert.assertEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
 		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
-		deleteAccountPage = homePage.openDeleteAccountPage(driver);
+		
+		homePage.openMultiplePage(driver, "Delete Account");		
+		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
+
 		deleteAccountPage.inputAccountNumber(payeeAccountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
@@ -253,7 +275,9 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_09_DeleteCustomer() {
-		deleteCustomerPage = homePage.openDeleteCutomerPage(driver);
+		homePage.openMultiplePage(driver, "Delete Customer");
+		deleteCustomerPage = PageFactoryManager.getDeleteCustomerPage(driver);
+		
 		deleteCustomerPage.inputCustomerIDNumber(customerID);
 		deleteCustomerPage.clickSubmitButton();
 		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),

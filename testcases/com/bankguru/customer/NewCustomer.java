@@ -70,7 +70,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_02_NameCanNotBeNumberic() {
 		for (String numericName : numericValues) {
 			newCustomerPage.clearNameTextbox();
-			newCustomerPage.inputNumericValueToCustomerNameTextbox(numericName);
+			newCustomerPage.inputValueToCustomerNameTextbox(numericName);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfNameDisplayed());
 		}
 	}
@@ -79,7 +79,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_03_NameCanNotHaveSpecialCharacters() {
 		for (String specialCharactersName : specialCharacters) {
 			newCustomerPage.clearNameTextbox();
-			newCustomerPage.inputSpecialCharactersToCustomerNameTextbox(specialCharactersName);
+			newCustomerPage.inputValueToCustomerNameTextbox(specialCharactersName);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
 		}
 	}
@@ -87,7 +87,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearNameTextbox();
-		newCustomerPage.inputBlankSpaceToCustomerNameTextbox(blankSpace);
+		newCustomerPage.inputValueToCustomerNameTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfNameCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -105,7 +105,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_06_AdressCanNotHaveSpecialCharacters() {
 		for (String specialCharactersAddress : specialCharacters) {
 			newCustomerPage.clearAddresTextarea();
-			newCustomerPage.inputSpecialCharactersToAdressTextArea(specialCharactersAddress);
+			newCustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed());
 		}
 	}
@@ -113,7 +113,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearAddresTextarea();
-		newCustomerPage.inputBlankSpaceToAdressTextArea(blankSpace);
+		newCustomerPage.inputValueToAdressTextArea(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -130,7 +130,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_08_CityCanNotBeNumberic() {
 		for (String numericCity : numericValues) {
 			newCustomerPage.clearCityTextbox();
-			newCustomerPage.inputNumericValueToCityTextbox(numericCity);
+			newCustomerPage.inputValueToCityTextbox(numericCity);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
 		}
 	}
@@ -139,7 +139,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_10_CityCanNotHaveSpecialCharacters() {
 		for (String specialCharactersCity : specialCharacters) {
 			newCustomerPage.clearCityTextbox();
-			newCustomerPage.inputSpecialCharactersToCityTextbox(specialCharactersCity);
+			newCustomerPage.inputValueToCityTextbox(specialCharactersCity);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
 		}
 	}
@@ -147,7 +147,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearCityTextbox();
-		newCustomerPage.inputBlankSpaceToCityTextbox(blankSpace);
+		newCustomerPage.inputValueToCityTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -164,7 +164,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_13_StateCanNotBeNumberic() {
 		for (String numericState : numericValues) {
 			newCustomerPage.clearStateTextbox();
-			newCustomerPage.inputNumericValueToStateTextbox(numericState);
+			newCustomerPage.inputValueToStateTextbox(numericState);
 			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
 		}
 	}
@@ -173,7 +173,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_14_StateCanNotHaveSpecialCharacters() {
 		for (String specialCharactersState : specialCharacters) {
 			newCustomerPage.clearStateTextbox();
-			newCustomerPage.inputSpecialCharactersToStateTextbox(specialCharactersState);
+			newCustomerPage.inputValueToStateTextbox(specialCharactersState);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
 		}
 	}
@@ -181,7 +181,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearStateTextbox();
-		newCustomerPage.inputBlankSpaceToStateTextbox(blankSpace);
+		newCustomerPage.inputValueToStateTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -198,7 +198,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_17_PinMustBeNumeric() {
 		for (String characterPIN : characterPINs) {
 			newCustomerPage.clearPinTextbox();
-			newCustomerPage.inputChractersValueToPinTextbox(characterPIN);
+			newCustomerPage.inputValueToPinTextbox(characterPIN);
 			Assert.assertTrue(newCustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
 		}
 	}
@@ -207,7 +207,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_18_PinMustHave6Degits() {
 		for (String lessThan6Digits : lessThan6DigitsList) {
 			newCustomerPage.clearPinTextbox();
-			newCustomerPage.inputLessThan6DigitsToPinTextbox(lessThan6Digits);
+			newCustomerPage.inputValueToPinTextbox(lessThan6Digits);
 			Assert.assertTrue(newCustomerPage.isPinMustHave6DegitsMessageDisplayed());
 		}
 	}
@@ -215,7 +215,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPinTextbox();
-		newCustomerPage.inputBlankSpaceToPinTextbox(blankSpace);
+		newCustomerPage.inputValueToPinTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -231,7 +231,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPhoneTextbox();
-		newCustomerPage.inputBlankSpaceToMobileNumberTextbox(blankSpace);
+		newCustomerPage.inputValueToMobileNumberTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
 
 	}
@@ -240,7 +240,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
-			newCustomerPage.inputChractersValueToMobileNumberTextbox(characterPhoneNumber);
+			newCustomerPage.inputValueToMobileNumberTextbox(characterPhoneNumber);
 			Assert.assertTrue(newCustomerPage.isPhoneCharacterAreNotAllowMessageDisplayed());
 		}
 
@@ -250,7 +250,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_23_TelephoneCanNotHaveSpecialCharacters() {
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
-			newCustomerPage.inputSpecialCharactersToMobileNumberTextbox(specialPhoneNumber);
+			newCustomerPage.inputValueToMobileNumberTextbox(specialPhoneNumber);
 			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed());
 		}
 	}
@@ -267,7 +267,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_25_EmailMustBeInCorrectFormat() {
 		for (String incorrectEmailID : incorrectEmailIDList) {
 			newCustomerPage.clearEmailTextbox();
-			newCustomerPage.inputIncorrectEmailIDToEmailTextbox(incorrectEmailID);
+			newCustomerPage.inputValueToEmailTextbox(incorrectEmailID);
 			Assert.assertTrue(newCustomerPage.isEmailIDIsNotValidMessageDisplayed());
 		}
 	}
@@ -275,7 +275,7 @@ public class NewCustomer extends AbstractTest{
 	@Test
 	public void NC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearEmailTextbox();
-		newCustomerPage.inputBlankSpaceToEmailTextbox(blankSpace);
+		newCustomerPage.inputValueToEmailTextbox(blankSpace);
 		Assert.assertTrue(newCustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());
 
 	}

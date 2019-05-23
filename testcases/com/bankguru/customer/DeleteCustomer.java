@@ -28,8 +28,8 @@ public class DeleteCustomer extends AbstractTest {
 	private String email = "khainammvc" + randomNumber() + "@gmail.com";
 	private String blankSpace = " ";
 	
-	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
-	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String[] characterValues = new String[] { "haitp", "12 1234" };
+	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters("browser")
 	@BeforeClass
@@ -70,16 +70,16 @@ public class DeleteCustomer extends AbstractTest {
 	@Test
 	public void DC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
 		deleteCustomerPage.clearCustomerIDTextbox();
-		deleteCustomerPage.inputBlankSpaceToCustomerIDTextbox(blankSpace);
+		deleteCustomerPage.inputValueToCustomerIDTextbox(blankSpace);
 		Assert.assertTrue(deleteCustomerPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
 
 	}
 
 	@Test
 	public void DC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
-		for (String characterPhoneNumber : characterPhoneNumbers) {
+		for (String charactervalue : characterValues) {
 			deleteCustomerPage.clearCustomerIDTextbox();
-			deleteCustomerPage.inputChractersValueToCustomerIDTextbox(characterPhoneNumber);
+			deleteCustomerPage.inputValueToCustomerIDTextbox(charactervalue);
 			Assert.assertTrue(deleteCustomerPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
 		}
 
@@ -87,9 +87,9 @@ public class DeleteCustomer extends AbstractTest {
 
 	@Test
 	public void DC_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialPhoneNumber : specialPhoneNumbers) {
+		for (String specialValue : specialValues) {
 			deleteCustomerPage.clearCustomerIDTextbox();
-			deleteCustomerPage.inputSpecialCharactersToCustomerIDTextbox(specialPhoneNumber);
+			deleteCustomerPage.inputValueToCustomerIDTextbox(specialValue);
 			Assert.assertTrue(deleteCustomerPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
 		}
 	}

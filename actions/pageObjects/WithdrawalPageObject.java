@@ -21,9 +21,9 @@ public class WithdrawalPageObject extends AbstractPage {
 		
 	}
 
-	public void inputAccountIDToAccountNoTextbox(String accountID) {
+	public void inputValueToAccountNoTextbox(String value) {
 		waitForElementVisible(driver, WithdrawalPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, WithdrawalPageUI.ACCOUNT_NO_TEXTBOX, accountID);
+		sendKeyToElement(driver, WithdrawalPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 
@@ -50,9 +50,9 @@ public class WithdrawalPageObject extends AbstractPage {
 		return getTextElement(driver, WithdrawalPageUI.CURRENT_BALANCE_INFOR);
 	}
 
-	public void inputDescriptionToDescriptionTextbox(String withdrawDescription) {
+	public void inputValueToDescriptionTextbox(String value) {
 		waitForElementVisible(driver, WithdrawalPageUI.DESCRIPTION_TEXTBOX);
-		sendKeyToElement(driver, WithdrawalPageUI.DESCRIPTION_TEXTBOX, withdrawDescription);
+		sendKeyToElement(driver, WithdrawalPageUI.DESCRIPTION_TEXTBOX, value);
 		
 	}
 

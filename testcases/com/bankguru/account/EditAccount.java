@@ -11,23 +11,26 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageFactoryManager;
+import pageObjects.EditAccountPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class NewAccount extends AbstractTest{
+public class EditAccount extends AbstractTest{
 	private WebDriver driver;
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private NewCustomerPageObject newCustomerPage;
 	private NewAccountPageObject newAccountPage;
-	
-	private String loginPageUrl, userIdInfo, passwordInfo;	
-	private String email = "khainammvc" + randomNumber() + "@gmail.com";
-	private String validName = "Tran Phuoc Hai";
+	private EditAccountPageObject editAccountPage;
+
+	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
+
+	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
 	private String validAdress = "100 Ho Guom";
@@ -35,12 +38,13 @@ public class NewAccount extends AbstractTest{
 	private String validState = "Hoan Kiem";
 	private String validPin = "600000";
 	private String validPhoneNumber = "0987654321";
-	private String validEmailID = "khain" + randomNumber() + "@gmail.com";
-	private String validPassword = "idonknow12345678";
-	
-	private String blankSpace = " ";
-	private String[] characterValues = new String[] { "haitp", "12 1234" };
-	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String validEmailID = "jame" + randomNumber() + "@gmail.com";
+	private String validPassword = "nopdontknow12";
+
+	private int currentAmount = 50000;
+	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
+	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+
 
 	@Parameters("browser")
 	@BeforeClass
@@ -80,6 +84,8 @@ public class NewAccount extends AbstractTest{
 		newCustomerPage.inputValueToPasswordTextbox(validPassword);
 		newCustomerPage.clickToSubmitButton();
 		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
+		
+		customerID = newCustomerPage.getCustomerID();
 
 		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
 		Assert.assertEquals(newCustomerPage.getTextGenderInfo(), expectedGender);
@@ -93,82 +99,44 @@ public class NewAccount extends AbstractTest{
 
 		newCustomerPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
-	}
-	
-	@Test
-	public void NC_01_CustomerIDCanNotBeEmpty() {
-		newAccountPage.clearCustomerIDTextbox();
-		newAccountPage.clickToCustomerIDTexbox();
-		newAccountPage.pressTABKeyToCustomerIDTextbox();
-		Assert.assertTrue(newAccountPage.isCustomerIDIsRequiredMessageDisplayed());
+
+		newAccountPage.inputValueToCustomerIDTextbox(customerID);
+		newAccountPage.selectCurrentInAccountType();
+		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
+		newAccountPage.clickToSubmitButton();
+		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
+		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
+		accountID = newAccountPage.getAccountID();
 		
+		newAccountPage.openMultiplePage(driver, "Edit Account");
+		editAccountPage = PageFactoryManager.getEditAccountPage(driver);
 	}
 	
 	@Test
-	public void NC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
-		newAccountPage.clearCustomerIDTextbox();
-		newAccountPage.inputValueToCustomerIDTextbox(blankSpace);
-		Assert.assertTrue(newAccountPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
-		
+	public void EA_01_AccountNumberCanNotBeEmpty() {
+		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.clickToAccountNumberTexbox();
+		editAccountPage.pressTABKeyToAccountNumberTextbox();
+		Assert.assertTrue(editAccountPage.isAccountNumberMustNotBeBlankDisplayed());
 	}
 	
 	@Test
-	public void NC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
-		for (String characterValue : characterValues) {
-			newAccountPage.clearCustomerIDTextbox();
-			newAccountPage.inputValueToCustomerIDTextbox(characterValue);
-			Assert.assertTrue(newAccountPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
-		}
-		
-	}
-	
-	@Test
-	public void NC_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialValue : specialValues) {
-			newAccountPage.clearCustomerIDTextbox();
-			newAccountPage.inputValueToCustomerIDTextbox(specialValue);
-			Assert.assertTrue(newAccountPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
+	public void EA_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
+		for (String characterAccountNo : characterAccountNos) {
+			editAccountPage.clearAccountNumberTextbox();
+			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
+			Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 		}
 	}
 	
 	@Test
-	public void NC_05_InitialDepositCanNotBeEmpty() {
-		newAccountPage.clearInitialDepositTextbox();
-		newAccountPage.clickToInitialDepositTexbox();
-		newAccountPage.pressTABKeyToInitialDepositTextbox();
-		Assert.assertTrue(newAccountPage.isInitialDepositMustNotBeBlankMessageDisplayed());
-
-	}
-
-	@Test
-	public void NC_06_InitialDepositCanNotHaveFirstCharacterAsBlankSpace() {
-		newAccountPage.clearInitialDepositTextbox();
-		newAccountPage.inputValueToInitialDepositTextbox(blankSpace);
-		Assert.assertTrue(newAccountPage.isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed());
-
-	}
-
-	@Test
-	public void NC_07_InitialDepositCharacterOrIncludeSpaceAreNotAllow() {
-		for (String characterValue : characterValues) {
-			newAccountPage.clearInitialDepositTextbox();
-			newAccountPage.inputValueToInitialDepositTextbox(characterValue);
-			Assert.assertTrue(newAccountPage.isInitialDepositCharacterAreNotAllowMessageDisplayed());
-		}
-
-	}
-
-	@Test
-	public void NC_08_InitialDepositCanNotHaveSpecialCharacters() {
-		for (String specialValue : specialValues) {
-			newAccountPage.clearInitialDepositTextbox();
-			newAccountPage.inputValueToInitialDepositTextbox(specialValue);
-			Assert.assertTrue(newAccountPage.isSpecialCharactersOfInitialDepositAreNotAllowedMessageDisplayed());
+	public void EA_03_AccountNumberCanNotHaveSpecialCharacters() {
+		for (String specialAccountNo : specialAccountNos) {
+			editAccountPage.clearAccountNumberTextbox();
+			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
+			Assert.assertTrue(editAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
 		}
 	}
-
-	
-
 
 	@AfterClass
 	public void afterClass() {

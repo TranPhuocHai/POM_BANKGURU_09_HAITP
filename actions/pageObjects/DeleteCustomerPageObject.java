@@ -19,13 +19,6 @@ public class DeleteCustomerPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	
-	
-	public void inputCustomerIDNumber(String customerID) {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, customerID);
-		
-	}
 
 	public void clickSubmitButton() {
 		waitForElementVisible(driver, DeleteCustomerPageUI.SUBMIT_BUTTON);
@@ -78,9 +71,9 @@ public class DeleteCustomerPageObject extends AbstractPage {
 		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
 	}
 
-	public void inputBlankSpaceToCustomerIDTextbox(String blankSpace) {
+	public void inputValueToCustomerIDTextbox(String value) {
 		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, blankSpace);
+		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
 	}
 
@@ -89,21 +82,9 @@ public class DeleteCustomerPageObject extends AbstractPage {
 		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
-	public void inputChractersValueToCustomerIDTextbox(String characterCustomerID) {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, characterCustomerID);
-		
-	}
-
 	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
 		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-	}
-
-	public void inputSpecialCharactersToCustomerIDTextbox(String specialCustomerID) {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, specialCustomerID);
-		
 	}
 
 	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {

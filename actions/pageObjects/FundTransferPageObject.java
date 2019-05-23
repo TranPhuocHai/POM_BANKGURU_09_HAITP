@@ -15,23 +15,23 @@ public class FundTransferPageObject extends AbstractPage {
 	WebDriver driver;
 
 
-	public void inputDescriptionToDescriptionTextbox(String fundTransferDescription) {
+	public void inputValueToDescriptionTextbox(String value) {
 		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
-		sendKeyToElement(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX, fundTransferDescription);
+		sendKeyToElement(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX, value);
 		
 	}
 
 
-	public void inPutPayersAccountNumber(String accountID) {
+	public void inPutValueToPayersAccountNumber(String value) {
 		waitForElementVisible(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX, accountID);
+		sendKeyToElement(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 
 
-	public void inPutPayeesAccountNumber(String payeeAccountID) {
+	public void inPutValueToPayeesAccountNumber(String value) {
 		waitForElementVisible(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX, payeeAccountID);
+		sendKeyToElement(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 

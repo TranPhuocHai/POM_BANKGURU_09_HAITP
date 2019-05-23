@@ -17,6 +17,7 @@ public class NewCustomerPageUI {
 	public static final String RESET_BUTTON = "//input[@type='reset']";
 	public static final String REGISTER_CUSTOMER_SUCCESS_MESSAGE  = "//p[text()='Customer Registered Successfully!!!']";
 	public static final String CUSTOMER_ID = "//td[text()='Customer ID']/following-sibling::td";
+	
 	public static final String CUSTOMER_NAME_INFOR = "//td[text()='Customer Name']/following-sibling::td";
 	public static final String GENDER_INFOR = "//td[text()='Gender']/following-sibling::td";
 	public static final String DATE_OF_BIRTH_INFO_INFOR = "//td[text()='Birthdate']/following-sibling::td";
@@ -26,6 +27,7 @@ public class NewCustomerPageUI {
 	public static final String PIN_INFOR = "//td[text()='Pin']/following-sibling::td";
 	public static final String MOBILE_NUMBER_INFOR = "//td[text()='Mobile No.']/following-sibling::td";
 	public static final String EMAIL_INFOR = "//td[text()='Email']/following-sibling::td";
+	
 	public static final String NAME_MUST_NOT_BE_BLANK_MESSAGE = "//label[text()='Customer name must not be blank']";
 	public static final String NAME_NUMERIC_ARE_NOT_ALLOW_MESSAGE = "//td[text()='Customer Name']//following-sibling::td/label[text()='Numbers are not allowed']";
 	public static final String NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[text()='Customer Name']//following-sibling::td/label[text()='Special characters are not allowed']";

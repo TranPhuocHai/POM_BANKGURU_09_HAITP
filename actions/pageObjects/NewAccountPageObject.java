@@ -17,20 +17,14 @@ public class NewAccountPageObject extends AbstractPage {
 	WebDriver driver;
 	public String getTextCurrentAmount;
 
-	public void inputCustomerIDToCustomerIDTextbox(String customerID) {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, customerID);
-		
-	}
-
 	public void selectCurrentInAccountType() {
 		waitForElementVisible(driver, NewAccountPageUI.ACCOUNT_TYPE_DROPDOWN);
 		selectItemInDropdown(driver, NewAccountPageUI.ACCOUNT_TYPE_DROPDOWN, "Current");
 	}
 
-	public void inputAmountToInitialDeposit(String currentAmount) {
+	public void inputValueToInitialDepositTextbox(String value) {
 		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, currentAmount);
+		sendKeyToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, value);
 		
 	}
 
@@ -83,26 +77,15 @@ public class NewAccountPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewAccountPageUI.CUSTOMER_ID_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
-	public void inputBlankSpaceToCustomerIDTextbox(String blankSpace) {
+	public void inputValueToCustomerIDTextbox(String value) {
 		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, blankSpace);
+		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
-	}
-
-	public void inputChractersValueToCustomerIDTextbox(String characterCustomerID) {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, characterCustomerID);
 	}
 
 	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
 		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewAccountPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-	}
-
-	public void inputSpecialCharactersToCustomerIDTextbox(String specialCharacter) {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, specialCharacter);
-		
 	}
 
 	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {
@@ -131,31 +114,15 @@ public class NewAccountPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_MUST_NOT_BE_BLANK_MESSAGE);
 	}
 
-	public void inputBlankSpaceToInitialDepositTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, blankSpace);
-	}
 
 	public boolean isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed() {
 		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
-	public void inputChractersValueToInitialDepositTextbox(String characterValue) {
-		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, characterValue);
-		
-	}
-
 	public boolean isInitialDepositCharacterAreNotAllowMessageDisplayed() {
 		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-	}
-
-	public void inputSpecialCharactersToInitialDepositTextbox(String specialCharacter) {
-		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, specialCharacter);
-		
 	}
 
 	public boolean isSpecialCharactersOfInitialDepositAreNotAllowedMessageDisplayed() {

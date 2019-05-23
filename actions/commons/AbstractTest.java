@@ -31,9 +31,9 @@ public class AbstractTest {
 			driver = new InternetExplorerDriver();
 		}
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://demo.guru99.com/v4");
+		driver.get(Constants.DEV_APP_URL);
 		return driver;
 	}
 

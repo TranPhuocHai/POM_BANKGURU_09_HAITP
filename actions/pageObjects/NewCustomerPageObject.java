@@ -42,9 +42,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputNumericValueToCustomerNameTextbox(String numericName) {
+	public void inputValueToCustomerNameTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, numericName);
+		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, value);
 		
 	}
 
@@ -54,21 +54,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputSpecialCharactersToCustomerNameTextbox(String specialChracterName) {
-		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, specialChracterName);
-		
-	}
-
 	public boolean isSpecialCharactersOfNameAreNotAllowedMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		
-	}
-
-	public void inputBlankSpaceToCustomerNameTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, blankSpace);
 		
 	}
 
@@ -90,21 +78,15 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputSpecialCharactersToAdressTextArea(String specialCharactersAddress) {
+	public void inputValueToAdressTextArea(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
-		sendKeyToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA, specialCharactersAddress);
+		sendKeyToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA, value);
 		
 	}
 
 	public boolean isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.ADDRESS_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		
-	}
-
-	public void inputBlankSpaceToAdressTextArea(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
-		sendKeyToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA, blankSpace);
 		
 	}
 
@@ -126,9 +108,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputNumericValueToCityTextbox(String numericCity) {
+	public void inputValueToCityTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.CITY_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CITY_TEXTBOX, numericCity);
+		sendKeyToElement(driver, NewCustomerPageUI.CITY_TEXTBOX, value);
 		
 	}
 
@@ -138,21 +120,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputSpecialCharactersToCityTextbox(String specialCharactersCity) {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CITY_TEXTBOX, specialCharactersCity);
-		
-	}
-
 	public boolean isSpecialCharactersOfCityAreNotAllowedMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.CITY_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.CITY_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		
-	}
-
-	public void inputBlankSpaceToCityTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CITY_TEXTBOX, blankSpace);
 		
 	}
 
@@ -174,9 +144,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputNumericValueToStateTextbox(String numericState) {
+	public void inputValueToStateTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.STATE_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.STATE_TEXTBOX, numericState);
+		sendKeyToElement(driver, NewCustomerPageUI.STATE_TEXTBOX, value);
 		
 	}
 
@@ -186,21 +156,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputSpecialCharactersToStateTextbox(String specialCharactersState) {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.STATE_TEXTBOX, specialCharactersState);
-		
-	}
-
 	public boolean isSpecialCharactersOfStateAreNotAllowedMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.STATE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.STATE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		
-	}
-
-	public void inputBlankSpaceToStateTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.STATE_TEXTBOX, blankSpace);
 		
 	}
 
@@ -222,9 +180,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputChractersValueToPinTextbox(String characterPIN) {
+	public void inputValueToPinTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, characterPIN);
+		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, value);
 		
 	}
 
@@ -234,21 +192,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputLessThan6DigitsToPinTextbox(String lessThan6Digits) {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, lessThan6Digits);
-		
-	}
-
 	public boolean isPinMustHave6DegitsMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.PIN_MUST_HAVE_6_DIGITS_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.PIN_MUST_HAVE_6_DIGITS_MESSAGE);
-		
-	}
-
-	public void inputBlankSpaceToPinTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, blankSpace);
 		
 	}
 
@@ -318,9 +264,9 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 	
-	public void inputBlankSpaceToMobileNumberTextbox(String blankSpace) {
+	public void inputValueToMobileNumberTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX, blankSpace);
+		sendKeyToElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX, value);
 		
 	}
 
@@ -329,22 +275,10 @@ public class NewCustomerPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 		
 	}
-	
-	public void inputChractersValueToMobileNumberTextbox(String characterPhoneNumber) {
-		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX, characterPhoneNumber);
-		
-	}
 
 	public boolean isPhoneCharacterAreNotAllowMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.PHONE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		
-	}
-	
-	public void inputSpecialCharactersToMobileNumberTextbox(String specialCharactersPhone) {
-		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX, specialCharactersPhone);
 		
 	}
 
@@ -366,21 +300,15 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputIncorrectEmailIDToEmailTextbox(String incorrectEmailID) {
+	public void inputValueToEmailTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX, incorrectEmailID);
+		sendKeyToElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX, value);
 		
 	}
 
 	public boolean isEmailIDIsNotValidMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_ID_IS_NOT_VALID_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.EMAIL_ID_IS_NOT_VALID_MESSAGE);
-	}
-
-	public void inputBlankSpaceToEmailTextbox(String blankSpace) {
-		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX, blankSpace);
-		
 	}
 
 	public boolean isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed() {
@@ -397,13 +325,6 @@ public class NewCustomerPageObject extends AbstractPage {
 	public boolean isPasswordMustNotBeBlankMessageDisplayed() {
 		waitForElementVisible(driver, NewCustomerPageUI.PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
 		return isControlDisplayed(driver, NewCustomerPageUI.PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
-	}
-
-	
-	public void inputValidDataToCustomerNameTextbox(String validName) {
-		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CUSTOMER_NAME_TEXTBOX, validName);
-		
 	}
 
 	public void selectMaleGenderRadioButton() {
@@ -424,51 +345,16 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputValidDataToDateOfBirthTextbox(String validDateOfBirth) {
+	public void inputValueToDateOfBirthTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX, validDateOfBirth);
+		sendKeyToElement(driver, NewCustomerPageUI.DATE_OF_BIRTH_TEXTBOX, value);
 		
 	}
 
-	public void inputValidDataToAdressTextArea(String validAdress) {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
-		sendKeyToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA, validAdress);
-		
-	}
 
-	public void inputValidDataToCityTextbox(String validCity) {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.CITY_TEXTBOX, validCity);
-		
-	}
-
-	public void inputValidDataToStateTextbox(String validState) {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.STATE_TEXTBOX, validState);
-		
-	}
-
-	public void inputValidDataToPinTextbox(String validPin) {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.PIN_TEXTBOX, validPin);
-		
-	}
-
-	public void inputValidDataToMobileNumberTextbox(String validPhoneNumber) {
-		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.MOBILE_NUMBER_TEXTBOX, validPhoneNumber);
-		
-	}
-
-	public void inputValidDataToEmailTextbox(String validEmailID) {
-		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.EMAIL_TEXTBOX, validEmailID);
-		
-	}
-
-	public void inputValidDataToPasswordTextbox(String validPassword) {
+	public void inputValueToPasswordTextbox(String value) {
 		waitForElementVisible(driver, NewCustomerPageUI.PASSWORD_TEXTBOX);
-		sendKeyToElement(driver, NewCustomerPageUI.PASSWORD_TEXTBOX, validPassword);
+		sendKeyToElement(driver, NewCustomerPageUI.PASSWORD_TEXTBOX, value);
 		
 	}
 

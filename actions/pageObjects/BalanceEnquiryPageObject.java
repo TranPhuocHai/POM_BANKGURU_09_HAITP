@@ -15,9 +15,9 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public void inputAccountNumber(String accountID) {
+	public void inputValueToAccountNumber(String value) {
 		waitForElementVisible(driver, BalanceEnquiryPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, BalanceEnquiryPageUI.ACCOUNT_NO_TEXTBOX, accountID);
+		sendKeyToElement(driver, BalanceEnquiryPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 

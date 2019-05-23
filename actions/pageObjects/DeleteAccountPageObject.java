@@ -16,9 +16,9 @@ public class DeleteAccountPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public void inputAccountNumber(String accountID) {
+	public void inputValueToAccountNumber(String value) {
 		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NO_TEXTBOX, accountID);
+		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 

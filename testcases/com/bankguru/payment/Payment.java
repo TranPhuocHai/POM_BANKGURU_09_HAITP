@@ -101,17 +101,17 @@ public class Payment extends AbstractTest {
 
 	@Test
 	public void PM_01_CreateNewCustomer() {
-		newCustomerPage.inputValidDataToCustomerNameTextbox(validName);
+		newCustomerPage.inputValueToCustomerNameTextbox(validName);
 		newCustomerPage.selectMaleGenderRadioButton();
 		newCustomerPage.removeDateOfBirthAttribute();
-		newCustomerPage.inputValidDataToDateOfBirthTextbox(validDateOfBirth);
-		newCustomerPage.inputValidDataToAdressTextArea(validAdress);
-		newCustomerPage.inputValidDataToCityTextbox(validCity);
-		newCustomerPage.inputValidDataToStateTextbox(validState);
-		newCustomerPage.inputValidDataToPinTextbox(validPin);
-		newCustomerPage.inputValidDataToMobileNumberTextbox(validPhoneNumber);
-		newCustomerPage.inputValidDataToEmailTextbox(validEmailID);
-		newCustomerPage.inputValidDataToPasswordTextbox(validPassword);
+		newCustomerPage.inputValueToDateOfBirthTextbox(validDateOfBirth);
+		newCustomerPage.inputValueToAdressTextArea(validAdress);
+		newCustomerPage.inputValueToCityTextbox(validCity);
+		newCustomerPage.inputValueToStateTextbox(validState);
+		newCustomerPage.inputValueToPinTextbox(validPin);
+		newCustomerPage.inputValueToMobileNumberTextbox(validPhoneNumber);
+		newCustomerPage.inputValueToEmailTextbox(validEmailID);
+		newCustomerPage.inputValueToPasswordTextbox(validPassword);
 		newCustomerPage.clickToSubmitButton();
 		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
 		customerID = newCustomerPage.getCustomerID();
@@ -132,21 +132,21 @@ public class Payment extends AbstractTest {
 		newCustomerPage.openMultiplePage(driver, "Edit Customer");
 		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
 
-		editcustomerPage.inputCustomerIDToCustomerIDTextbox(customerID);
+		editcustomerPage.inputValueToCustomerIDTextbox(customerID);
 		editcustomerPage.clicktoSubmitCustomerIDButton();
 
 		editcustomerPage.clearAdressTextArea();
-		editcustomerPage.inputValidDataToAdressTextArea(editAdress);
+		editcustomerPage.inputValueToAdressTextArea(editAdress);
 		editcustomerPage.clearCityTextbox();
-		editcustomerPage.inputValidDataToCityTextbox(editCity);
+		editcustomerPage.inputValueToCityTextbox(editCity);
 		editcustomerPage.clearStateTextbox();
-		editcustomerPage.inputValidDataToStateTextbox(editState);
+		editcustomerPage.inputValueToStateTextbox(editState);
 		editcustomerPage.clearPinTextbox();
-		editcustomerPage.inputValidDataToPinTextbox(editPin);
+		editcustomerPage.inputValueToPinTextbox(editPin);
 		editcustomerPage.clearPhoneTextbox();
-		editcustomerPage.inputValidDataToMobileNumberTextbox(editPhoneNumber);
+		editcustomerPage.inputValueToMobileNumberTextbox(editPhoneNumber);
 		editcustomerPage.clearEmailTextbox();
-		editcustomerPage.inputValidDataToEmailTextbox(editEmailID);
+		editcustomerPage.inputValueToEmailTextbox(editEmailID);
 		editcustomerPage.clickToSubmitButton();
 
 		Assert.assertEquals(editcustomerPage.getTextCustomerIDInfo(), customerID);
@@ -167,9 +167,9 @@ public class Payment extends AbstractTest {
 		editcustomerPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 
-		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
+		newAccountPage.inputValueToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
-		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
+		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
@@ -182,8 +182,8 @@ public class Payment extends AbstractTest {
 		depositPage = PageFactoryManager.getDepositPage(driver);
 
 		Assert.assertTrue(depositPage.isAmountDepositFormDisplayed());
-		depositPage.inputAccountIDToAccountNoTextbox(accountID);
-		depositPage.inputAmountToAmountTextbox(String.valueOf(depositAmount));
+		depositPage.inputValueToAccountNoTextbox(accountID);
+		depositPage.inputValueToAmountTextbox(String.valueOf(depositAmount));
 		depositPage.inputDescriptionToDescriptionTextbox(depositDescription);
 		depositPage.clickToSubmitButton();
 		Assert.assertTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
@@ -197,9 +197,9 @@ public class Payment extends AbstractTest {
 		withdrawalPage = PageFactoryManager.getWithdrawalPage(driver);
 
 		Assert.assertTrue(withdrawalPage.isAmountWithdrawFormDisplayed());
-		withdrawalPage.inputAccountIDToAccountNoTextbox(accountID);
+		withdrawalPage.inputValueToAccountNoTextbox(accountID);
 		withdrawalPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
-		withdrawalPage.inputDescriptionToDescriptionTextbox(withdrawDescription);
+		withdrawalPage.inputValueToDescriptionTextbox(withdrawDescription);
 		withdrawalPage.clickToSubmitButton();
 		Assert.assertTrue(withdrawalPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(withdrawalPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
@@ -211,9 +211,9 @@ public class Payment extends AbstractTest {
 		withdrawalPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 
-		newAccountPage.inputCustomerIDToCustomerIDTextbox(customerID);
+		newAccountPage.inputValueToCustomerIDTextbox(customerID);
 		newAccountPage.selectCurrentInAccountType();
-		newAccountPage.inputAmountToInitialDeposit(String.valueOf(currentAmount));
+		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
@@ -222,10 +222,10 @@ public class Payment extends AbstractTest {
 		newAccountPage.openMultiplePage(driver, "Fund Transfer");
 		fundTransferPage = PageFactoryManager.getFundTransferPage(driver);
 
-		fundTransferPage.inPutPayersAccountNumber(accountID);
-		fundTransferPage.inPutPayeesAccountNumber(payeeAccountID);
+		fundTransferPage.inPutValueToPayersAccountNumber(accountID);
+		fundTransferPage.inPutValueToPayeesAccountNumber(payeeAccountID);
 		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
-		fundTransferPage.inputDescriptionToDescriptionTextbox(fundTransferDescription);
+		fundTransferPage.inputValueToDescriptionTextbox(fundTransferDescription);
 		fundTransferPage.clickToSubmitButton();
 
 		Assert.assertTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
@@ -240,7 +240,7 @@ public class Payment extends AbstractTest {
 		fundTransferPage.openMultiplePage(driver, "Balance Enquiry");
 		balanceEnquiryPage = PageFactoryManager.getBalanceEnquiryPage(driver);
 
-		balanceEnquiryPage.inputAccountNumber(accountID);
+		balanceEnquiryPage.inputValueToAccountNumber(accountID);
 		balanceEnquiryPage.clickSubmitButton();
 		Assert.assertTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
 		Assert.assertEquals(balanceEnquiryPage.getTextBalance(), String.valueOf(currentBalanceAfterTransfer));
@@ -252,7 +252,7 @@ public class Payment extends AbstractTest {
 		balanceEnquiryPage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 
-		deleteAccountPage.inputAccountNumber(accountID);
+		deleteAccountPage.inputValueToAccountNumber(accountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
 				"Do you really want to delete this Account?");
@@ -263,7 +263,7 @@ public class Payment extends AbstractTest {
 		homePage.openMultiplePage(driver, "Delete Account");		
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 
-		deleteAccountPage.inputAccountNumber(payeeAccountID);
+		deleteAccountPage.inputValueToAccountNumber(payeeAccountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
 				"Do you really want to delete this Account?");
@@ -278,7 +278,7 @@ public class Payment extends AbstractTest {
 		homePage.openMultiplePage(driver, "Delete Customer");
 		deleteCustomerPage = PageFactoryManager.getDeleteCustomerPage(driver);
 		
-		deleteCustomerPage.inputCustomerIDNumber(customerID);
+		deleteCustomerPage.inputValueToCustomerIDTextbox(customerID);
 		deleteCustomerPage.clickSubmitButton();
 		Assert.assertEquals(deleteCustomerPage.getTextConfirmDeleteAlert(),
 				"Do you really want to delete this Customer?");

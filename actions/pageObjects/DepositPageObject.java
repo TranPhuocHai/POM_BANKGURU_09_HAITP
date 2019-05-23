@@ -21,15 +21,15 @@ public class DepositPageObject extends AbstractPage {
 		
 	}
 
-	public void inputAccountIDToAccountNoTextbox(String accountID) {
+	public void inputValueToAccountNoTextbox(String value) {
 		waitForElementVisible(driver, DepositPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, DepositPageUI.ACCOUNT_NO_TEXTBOX, accountID);
+		sendKeyToElement(driver, DepositPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 
-	public void inputAmountToAmountTextbox(String depositAmount) {
+	public void inputValueToAmountTextbox(String value) {
 		waitForElementVisible(driver, DepositPageUI.AMOUNT_TEXTBOX);
-		sendKeyToElement(driver, DepositPageUI.AMOUNT_TEXTBOX, depositAmount);
+		sendKeyToElement(driver, DepositPageUI.AMOUNT_TEXTBOX, value);
 		
 	}
 

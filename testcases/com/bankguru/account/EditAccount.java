@@ -9,16 +9,19 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.bankguru.customer.EditCustomer;
+
 import commons.AbstractTest;
 import commons.PageFactoryManager;
 import pageObjects.EditAccountPageObject;
+import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class EditAccount extends AbstractTest{
+public class EditAccount extends AbstractTest {
 	private WebDriver driver;
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
@@ -40,11 +43,11 @@ public class EditAccount extends AbstractTest{
 	private String validPhoneNumber = "0987654321";
 	private String validEmailID = "jame" + randomNumber() + "@gmail.com";
 	private String validPassword = "nopdontknow12";
+	private String blankSpace = " ";
 
 	private int currentAmount = 50000;
 	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
 	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
-
 
 	@Parameters("browser")
 	@BeforeClass
@@ -67,7 +70,7 @@ public class EditAccount extends AbstractTest{
 		homePage = loginPage.clickToLoginButton();
 		homePage.isWelcomeMessageDisplayed();
 		homePage.isUserIDDisplayed(userIdInfo);
-		
+
 		homePage.openMultiplePage(driver, "New Customer");
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
@@ -84,7 +87,7 @@ public class EditAccount extends AbstractTest{
 		newCustomerPage.inputValueToPasswordTextbox(validPassword);
 		newCustomerPage.clickToSubmitButton();
 		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
-		
+
 		customerID = newCustomerPage.getCustomerID();
 
 		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
@@ -107,11 +110,11 @@ public class EditAccount extends AbstractTest{
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
 		accountID = newAccountPage.getAccountID();
-		
+
 		newAccountPage.openMultiplePage(driver, "Edit Account");
 		editAccountPage = PageFactoryManager.getEditAccountPage(driver);
 	}
-	
+
 	@Test
 	public void EA_01_AccountNumberCanNotBeEmpty() {
 		editAccountPage.clearAccountNumberTextbox();
@@ -119,7 +122,7 @@ public class EditAccount extends AbstractTest{
 		editAccountPage.pressTABKeyToAccountNumberTextbox();
 		Assert.assertTrue(editAccountPage.isAccountNumberMustNotBeBlankDisplayed());
 	}
-	
+
 	@Test
 	public void EA_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterAccountNo : characterAccountNos) {
@@ -128,7 +131,7 @@ public class EditAccount extends AbstractTest{
 			Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 		}
 	}
-	
+
 	@Test
 	public void EA_03_AccountNumberCanNotHaveSpecialCharacters() {
 		for (String specialAccountNo : specialAccountNos) {
@@ -136,6 +139,31 @@ public class EditAccount extends AbstractTest{
 			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
 			Assert.assertTrue(editAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
 		}
+	}
+
+	@Test
+	public void EA_04_AccountNumberFirstCharacterMustNotBeBlank() {
+		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.inputValueToAccountNumberTextbox(blankSpace);
+		Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+
+	}
+	
+	@Test
+	public void EA_05_ValidAccountNumber() {
+		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.inputValueToAccountNumberTextbox(accountID);
+		editAccountPage.clickAccountNumberSubmitButton();
+		Assert.assertTrue(editAccountPage.isEditCustomerFormDispayed());
+	}
+	
+	@Test
+	public void EA_06_EditAccountSuccess() {
+		editAccountPage.selectSavingsInAccountType();
+		editAccountPage.clickEditAccountSubmitButton();
+		Assert.assertTrue(editAccountPage.isAccountDetailsUpdatedSuccessfullyDispayed());
+		Assert.assertEquals(editAccountPage.getTextAccountTypeInfor(), "Savings");
+		
 	}
 
 	@AfterClass

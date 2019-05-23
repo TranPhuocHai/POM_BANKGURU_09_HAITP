@@ -5,11 +5,12 @@
 	<test name="Test on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.bankguru.customer.NewCustomer" />
-			<class name="com.bankguru.customer.EditCustomer" />
-			<class name="com.bankguru.customer.DeleteCustomer" />
-			<class name="com.bankguru.payment.Payment" />
-			<class name="com.bankguru.account.NewAccount" />
+<!-- 			<class name="com.bankguru.customer.NewCustomer" /> -->
+<!-- 			<class name="com.bankguru.customer.EditCustomer" /> -->
+<!-- 			<class name="com.bankguru.customer.DeleteCustomer" /> -->
+<!-- 			<class name="com.bankguru.payment.Payment" /> -->
+<!-- 			<class name="com.bankguru.account.NewAccount" /> -->
+			<class name="com.bankguru.account.EditAccount" />
 		</classes>
 	</test>
 

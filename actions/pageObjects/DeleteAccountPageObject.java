@@ -1,9 +1,11 @@
 package pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.BalanceEnquiryPageUI;
 import bankguruUI.DeleteAccountPageUI;
+import bankguruUI.EditAccountPageUI;
 import bankguruUI.FundTransferPageUI;
 import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
@@ -17,8 +19,8 @@ public class DeleteAccountPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public void inputValueToAccountNumber(String value) {
-		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NO_TEXTBOX, value);
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX, value);
 		
 	}
 
@@ -46,6 +48,45 @@ public class DeleteAccountPageObject extends AbstractPage {
 	public String getTextDeleteSuccessAlertAlert() {
 		waitForAlertPresence(driver);
 		return getTextAlert(driver);
+	}
+
+	public void clearAccountNumberTextbox() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		clearTextElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		
+	}
+
+	public void clickToAccountNumberTexbox() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		clickToElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		
+	}
+
+	public void pressTABKeyToAccountNumberTextbox() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		sendKeyBoardToElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX, Keys.TAB);
+		
+	}
+
+	public boolean isAccountNumberMustNotBeBlankDisplayed() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
+		return isControlDisplayed(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
+	}
+
+	public void inputValueToAccountNumberTextbox(String value) {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX, value);
+		
+	}
+
+	public boolean isAccountNumberCharacterAreNotAllowMessageDisplayed() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+	}
+
+	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
+		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 	}
 
 	

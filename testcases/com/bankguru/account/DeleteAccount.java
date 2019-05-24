@@ -8,23 +8,24 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import commons.AbstractTest;
 import commons.PageFactoryManager;
-import pageObjects.EditAccountPageObject;
+import pageObjects.DeleteAccountPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class EditAccount extends AbstractTest {
+public class DeleteAccount extends AbstractTest {
 	private WebDriver driver;
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private NewCustomerPageObject newCustomerPage;
 	private NewAccountPageObject newAccountPage;
-	private EditAccountPageObject editAccountPage;
+	private DeleteAccountPageObject deleteAccountPage;
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
 
@@ -107,60 +108,44 @@ public class EditAccount extends AbstractTest {
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
 		accountID = newAccountPage.getAccountID();
 
-		newAccountPage.openMultiplePage(driver, "Edit Account");
-		editAccountPage = PageFactoryManager.getEditAccountPage(driver);
+		newAccountPage.openMultiplePage(driver, "Delete Account");
+		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 	}
 
 	@Test
-	public void EA_01_AccountNumberCanNotBeEmpty() {
-		editAccountPage.clearAccountNumberTextbox();
-		editAccountPage.clickToAccountNumberTexbox();
-		editAccountPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(editAccountPage.isAccountNumberMustNotBeBlankDisplayed());
+	public void DA_01_AccountNumberCanNotBeEmpty() {
+		deleteAccountPage.clearAccountNumberTextbox();
+		deleteAccountPage.clickToAccountNumberTexbox();
+		deleteAccountPage.pressTABKeyToAccountNumberTextbox();
+		Assert.assertTrue(deleteAccountPage.isAccountNumberMustNotBeBlankDisplayed());
 	}
 
 	@Test
-	public void EA_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
+	public void DA_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterAccountNo : characterAccountNos) {
-			editAccountPage.clearAccountNumberTextbox();
-			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			deleteAccountPage.clearAccountNumberTextbox();
+			deleteAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
+			Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 		}
 	}
 
 	@Test
-	public void EA_03_AccountNumberCanNotHaveSpecialCharacters() {
+	public void DA_03_AccountNumberCanNotHaveSpecialCharacters() {
 		for (String specialAccountNo : specialAccountNos) {
-			editAccountPage.clearAccountNumberTextbox();
-			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(editAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			deleteAccountPage.clearAccountNumberTextbox();
+			deleteAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
+			Assert.assertTrue(deleteAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
 		}
 	}
 
 	@Test
-	public void EA_04_AccountNumberFirstCharacterMustNotBeBlank() {
-		editAccountPage.clearAccountNumberTextbox();
-		editAccountPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+	public void DA_04_AccountNumberFirstCharacterMustNotBeBlank() {
+		deleteAccountPage.clearAccountNumberTextbox();
+		deleteAccountPage.inputValueToAccountNumberTextbox(blankSpace);
+		Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 
 	}
 	
-	@Test
-	public void EA_05_ValidAccountNumber() {
-		editAccountPage.clearAccountNumberTextbox();
-		editAccountPage.inputValueToAccountNumberTextbox(accountID);
-		editAccountPage.clickAccountNumberSubmitButton();
-		Assert.assertTrue(editAccountPage.isEditCustomerFormDispayed());
-	}
-	
-	@Test
-	public void EA_06_EditAccountSuccess() {
-		editAccountPage.selectSavingsInAccountType();
-		editAccountPage.clickEditAccountSubmitButton();
-		Assert.assertTrue(editAccountPage.isAccountDetailsUpdatedSuccessfullyDispayed());
-		Assert.assertEquals(editAccountPage.getTextAccountTypeInfor(), "Savings");
-		
-	}
 
 	@AfterClass
 	public void afterClass() {

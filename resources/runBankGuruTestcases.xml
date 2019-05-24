@@ -10,6 +10,8 @@
 			<class name="com.bankguru.customer.DeleteCustomer" />
 			<class name="com.bankguru.payment.Payment" />
 			<class name="com.bankguru.account.NewAccount" />
+			<class name="com.bankguru.account.EditAccount" />
+			<class name="com.bankguru.account.DeleteAccount" />
 		</classes>
 	</test>
 
@@ -21,6 +23,8 @@
 			<class name="com.bankguru.customer.DeleteCustomer" />
 			<class name="com.bankguru.payment.Payment" />
 			<class name="com.bankguru.account.NewAccount" />
+			<class name="com.bankguru.account.EditAccount" />
+			<class name="com.bankguru.account.DeleteAccount" />
 		</classes>
 	</test>
 	
@@ -32,6 +36,8 @@
 			<class name="com.bankguru.customer.DeleteCustomer" />
 			<class name="com.bankguru.payment.Payment" />
 			<class name="com.bankguru.account.NewAccount" />
+			<class name="com.bankguru.account.EditAccount" />
+			<class name="com.bankguru.account.DeleteAccount" />
 		</classes>
 	</test>
 
@@ -43,6 +49,8 @@
 			<class name="com.bankguru.customer.DeleteCustomer" />
 			<class name="com.bankguru.payment.Payment" />
 			<class name="com.bankguru.account.NewAccount" />
+			<class name="com.bankguru.account.EditAccount" />
+			<class name="com.bankguru.account.DeleteAccount" />
 		</classes>
 	</test>
 

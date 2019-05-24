@@ -252,7 +252,7 @@ public class Payment extends AbstractTest {
 		balanceEnquiryPage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 
-		deleteAccountPage.inputValueToAccountNumber(accountID);
+		deleteAccountPage.inputValueToAccountNumberTextbox(accountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
 				"Do you really want to delete this Account?");
@@ -263,7 +263,7 @@ public class Payment extends AbstractTest {
 		homePage.openMultiplePage(driver, "Delete Account");		
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 
-		deleteAccountPage.inputValueToAccountNumber(payeeAccountID);
+		deleteAccountPage.inputValueToAccountNumberTextbox(payeeAccountID);
 		deleteAccountPage.clickSubmitButton();
 		Assert.assertEquals(deleteAccountPage.getTextConfirmDeleteAlert(),
 				"Do you really want to delete this Account?");

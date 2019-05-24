@@ -11,21 +11,21 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageFactoryManager;
-import pageObjects.DeleteAccountPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.MiniStatementPageObject;
 import pageObjects.NewAccountPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class DeleteAccount extends AbstractTest {
+public class MiniStatement extends AbstractTest {
 	private WebDriver driver;
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private NewCustomerPageObject newCustomerPage;
 	private NewAccountPageObject newAccountPage;
-	private DeleteAccountPageObject deleteAccountPage;
+	private MiniStatementPageObject miniStatementPage;
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
 
@@ -108,43 +108,51 @@ public class DeleteAccount extends AbstractTest {
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
 		accountID = newAccountPage.getAccountID();
 
-		newAccountPage.openMultiplePage(driver, "Delete Account");
-		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
-		Assert.assertTrue(deleteAccountPage.isDeleteAccountFormDisplayed());
+		newAccountPage.openMultiplePage(driver, "Mini Statement");
+		miniStatementPage = PageFactoryManager.getMiniStatementPage(driver);
+		Assert.assertTrue(miniStatementPage.isMiniStatementFormDisplayed());
 	}
 
 	@Test
-	public void DA_01_AccountNumberCanNotBeEmpty() {
-		deleteAccountPage.clearAccountNumberTextbox();
-		deleteAccountPage.clickToAccountNumberTexbox();
-		deleteAccountPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(deleteAccountPage.isAccountNumberMustNotBeBlankDisplayed());
+	public void MS_01_AccountNumberCanNotBeEmpty() {
+		miniStatementPage.clearAccountNumberTextbox();
+		miniStatementPage.clickToAccountNumberTexbox();
+		miniStatementPage.pressTABKeyToAccountNumberTextbox();
+		Assert.assertTrue(miniStatementPage.isAccountNumberMustNotBeBlankDisplayed());
 	}
 
 	@Test
-	public void DA_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
+	public void MS_02_AccountNumberCharacterOrIncludeSpaceAreNotAllow() {
 		for (String characterAccountNo : characterAccountNos) {
-			deleteAccountPage.clearAccountNumberTextbox();
-			deleteAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			miniStatementPage.clearAccountNumberTextbox();
+			miniStatementPage.inputValueToAccountNumberTextbox(characterAccountNo);
+			Assert.assertTrue(miniStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 		}
 	}
 
 	@Test
-	public void DA_03_AccountNumberCanNotHaveSpecialCharacters() {
+	public void MS_03_AccountNumberCanNotHaveSpecialCharacters() {
 		for (String specialAccountNo : specialAccountNos) {
-			deleteAccountPage.clearAccountNumberTextbox();
-			deleteAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(deleteAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			miniStatementPage.clearAccountNumberTextbox();
+			miniStatementPage.inputValueToAccountNumberTextbox(specialAccountNo);
+			Assert.assertTrue(miniStatementPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
 		}
 	}
 
 	@Test
-	public void DA_04_AccountNumberFirstCharacterMustNotBeBlank() {
-		deleteAccountPage.clearAccountNumberTextbox();
-		deleteAccountPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+	public void MS_04_AccountNumberFirstCharacterMustNotBeBlank() {
+		miniStatementPage.clearAccountNumberTextbox();
+		miniStatementPage.inputValueToAccountNumberTextbox(blankSpace);
+		Assert.assertTrue(miniStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
 
+	}
+	
+	@Test
+	public void MS_05_ValidAccountNumber() {
+		miniStatementPage.clearAccountNumberTextbox();
+		miniStatementPage.inputValueToAccountNumberTextbox(accountID);
+		miniStatementPage.clickAccountNumberSubmitButton();
+		Assert.assertTrue(miniStatementPage.isLastFiveTransactionDetailsDispayed(accountID));
 	}
 	
 

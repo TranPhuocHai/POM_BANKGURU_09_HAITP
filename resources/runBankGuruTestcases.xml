@@ -12,6 +12,7 @@
 			<class name="com.bankguru.account.NewAccount" />
 			<class name="com.bankguru.account.EditAccount" />
 			<class name="com.bankguru.account.DeleteAccount" />
+			<class name="com.bankguru.account.MiniStatement" />
 		</classes>
 	</test>
 
@@ -25,9 +26,10 @@
 			<class name="com.bankguru.account.NewAccount" />
 			<class name="com.bankguru.account.EditAccount" />
 			<class name="com.bankguru.account.DeleteAccount" />
+			<class name="com.bankguru.account.MiniStatement" />
 		</classes>
 	</test>
-	
+
 	<test name="Test on IE">
 		<parameter name="browser" value="ie" />
 		<classes>
@@ -38,6 +40,7 @@
 			<class name="com.bankguru.account.NewAccount" />
 			<class name="com.bankguru.account.EditAccount" />
 			<class name="com.bankguru.account.DeleteAccount" />
+			<class name="com.bankguru.account.MiniStatement" />
 		</classes>
 	</test>
 
@@ -51,6 +54,7 @@
 			<class name="com.bankguru.account.NewAccount" />
 			<class name="com.bankguru.account.EditAccount" />
 			<class name="com.bankguru.account.DeleteAccount" />
+			<class name="com.bankguru.account.MiniStatement" />
 		</classes>
 	</test>
 

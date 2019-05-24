@@ -18,12 +18,6 @@ public class DeleteAccountPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public void inputValueToAccountNumber(String value) {
-		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_TEXTBOX, value);
-		
-	}
-
 	public void clickSubmitButton() {
 		waitForElementVisible(driver, DeleteAccountPageUI.SUBMIT_BUTTON);
 		clickToElement(driver, DeleteAccountPageUI.SUBMIT_BUTTON);
@@ -87,6 +81,11 @@ public class DeleteAccountPageObject extends AbstractPage {
 	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
 		waitForElementVisible(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 		return isControlDisplayed(driver, DeleteAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+	}
+
+	public boolean isDeleteAccountFormDisplayed() {
+		waitForElementVisible(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
+		return isControlDisplayed(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
 	}
 
 	

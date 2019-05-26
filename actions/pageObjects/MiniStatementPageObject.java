@@ -2,15 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-
-import bankguruUI.DeleteAccountPageUI;
-import bankguruUI.DepositPageUI;
-import bankguruUI.EditAccountPageUI;
-import bankguruUI.HomePageUI;
 import bankguruUI.MiniStatementPageUI;
-import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class MiniStatementPageObject extends AbstractPage {
 	public MiniStatementPageObject(WebDriver driver) {

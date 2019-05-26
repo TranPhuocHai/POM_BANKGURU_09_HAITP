@@ -12,7 +12,8 @@
 <!-- 			<class name="com.bankguru.account.NewAccount" /> -->
 <!-- 			<class name="com.bankguru.account.EditAccount" /> -->
 <!-- 			<class name="com.bankguru.account.DeleteAccount" /> -->
-						<class name="com.bankguru.account.MiniStatement" />
+<!-- 						<class name="com.bankguru.account.MiniStatement" /> -->
+						<class name="com.bankguru.account.CustomisedStatement" />
 		</classes>
 	</test>
 

@@ -5,5 +5,7 @@ public class HomePageUI {
 	public static final String WELCOME_USER_ID_TEXT = "//td[text()='Manger Id : %s']";
 	public static final String LOG_OUT_BUTTON = "//a[text()='Log out']";
 	
+	public static final String LOGIN_FORM = "//form[@name='frmLogin']";
+	
 
 }

@@ -2,6 +2,7 @@ package commons;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -195,6 +196,42 @@ public class AbstractPage {
 		return element.isDisplayed();
 	}
 	
+	public boolean isControlUnDisplayed(WebDriver driver, String locator) {
+		overrideGlobleTimeout(driver, Constants.SHORT_TIMEOUT);
+		List <WebElement> elements = driver.findElements(By.xpath(locator));
+		if (elements.size()==0) {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return true;
+		}
+		else if(elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return true;
+		}
+		else {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return false;
+		}
+	}
+	
+	public boolean isControlUnDisplayed(WebDriver driver, String locator, String... values) {
+		overrideGlobleTimeout(driver, Constants.SHORT_TIMEOUT);
+		locator = String.format(locator, (Object[]) values);
+		List <WebElement> elements = driver.findElements(By.xpath(locator));
+		if (elements.size()==0) {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return true;
+		}
+		else if(elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return true;
+		}
+		else {
+			overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+			return false;
+		}
+	}
+	
+	
 	public boolean isControlEnabled(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		return element.isEnabled();
@@ -377,9 +414,20 @@ public class AbstractPage {
     }
     
     public void waitForElementInvisible(WebDriver driver, String locator) {
-    	waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
     	byLocator = By.xpath(locator);
+    	overrideGlobleTimeout(driver, Constants.SHORT_TIMEOUT);
     	waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
+    	overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+    	
+    }
+    
+    public void waitForElementInvisible(WebDriver driver, String locator, String...values) {
+    	locator = String.format(locator, (Object[]) values);
+    	byLocator = By.xpath(locator);
+    	overrideGlobleTimeout(driver, Constants.SHORT_TIMEOUT);
+    	waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(byLocator));
+    	overrideGlobleTimeout(driver, Constants.LONG_TIMEOUT);
+    	
     }
     
     public void waitForAlertPresence(WebDriver driver) {
@@ -392,6 +440,9 @@ public class AbstractPage {
     	clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
     }
     
+    public void overrideGlobleTimeout(WebDriver driver, int timeOut) {
+    	driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
+    }
     
     
     

@@ -39,4 +39,9 @@ public class HomePageObject extends AbstractPage {
 		return PageFactoryManager.getLoginPage(driver);
 	}
 
+	public boolean isLoginFormUndisplayed() {
+		waitForElementInvisible(driver, HomePageUI.LOGIN_FORM);
+		return isControlUnDisplayed(driver, HomePageUI.LOGIN_FORM);
+	}
+
 }

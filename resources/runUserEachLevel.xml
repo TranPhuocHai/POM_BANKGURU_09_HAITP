@@ -5,7 +5,7 @@
 	<test name="Test on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.bankguru.user.Account_level_08_DynamicLocator_RestParam" />
+			<class name="com.bankguru.user.Account_level_09_ElementUndisplayed_OverrideTimeOut" />
 		</classes>
 	</test>
 

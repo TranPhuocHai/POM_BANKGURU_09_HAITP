@@ -3,10 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.DepositPageUI;
-import bankguruUI.HomePageUI;
-import bankguruUI.NewAccountPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class DepositPageObject extends AbstractPage {
 	public DepositPageObject(WebDriver driver) {

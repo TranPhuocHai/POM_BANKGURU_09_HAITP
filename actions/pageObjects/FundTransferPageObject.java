@@ -3,9 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.FundTransferPageUI;
-import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class FundTransferPageObject extends AbstractPage {
 	public FundTransferPageObject(WebDriver driver) {

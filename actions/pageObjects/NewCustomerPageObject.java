@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import bankguruUI.AbstractPageUI;
 import bankguruUI.NewCustomerPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class NewCustomerPageObject extends AbstractPage {
 	WebDriver driver;

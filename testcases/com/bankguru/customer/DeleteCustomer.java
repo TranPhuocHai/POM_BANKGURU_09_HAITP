@@ -14,7 +14,6 @@ import commons.PageFactoryManager;
 import pageObjects.DeleteCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
 public class DeleteCustomer extends AbstractTest {

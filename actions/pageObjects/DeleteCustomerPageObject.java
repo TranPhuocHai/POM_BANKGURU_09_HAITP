@@ -3,12 +3,7 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.BalanceEnquiryPageUI;
-import bankguruUI.DeleteAccountPageUI;
 import bankguruUI.DeleteCustomerPageUI;
-import bankguruUI.EditCustomerPageUI;
-import bankguruUI.FundTransferPageUI;
-import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 

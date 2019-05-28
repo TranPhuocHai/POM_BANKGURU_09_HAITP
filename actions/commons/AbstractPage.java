@@ -15,15 +15,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import bankguruUI.AbstractPageUI;
-import pageObjects.BalanceEnquiryPageObject;
-import pageObjects.DeleteAccountPageObject;
-import pageObjects.DeleteCustomerPageObject;
-import pageObjects.DepositPageObject;
-import pageObjects.EditCustomerPageObject;
-import pageObjects.FundTransferPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.WithdrawalPageObject;
 
 public class AbstractPage {
 	WebElement element;

@@ -2,11 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.DepositPageUI;
-import bankguruUI.HomePageUI;
 import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class WithdrawalPageObject extends AbstractPage {
 	public WithdrawalPageObject(WebDriver driver) {

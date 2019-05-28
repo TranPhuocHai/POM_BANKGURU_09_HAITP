@@ -3,10 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.BalanceEnquiryPageUI;
-import bankguruUI.FundTransferPageUI;
-import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class BalanceEnquiryPageObject extends AbstractPage {
 	public BalanceEnquiryPageObject(WebDriver driver) {

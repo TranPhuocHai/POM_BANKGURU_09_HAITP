@@ -27,7 +27,7 @@ public class DeleteAccount extends AbstractTest {
 	private NewAccountPageObject newAccountPage;
 	private DeleteAccountPageObject deleteAccountPage;
 
-	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
+	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
 
 	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
@@ -106,7 +106,6 @@ public class DeleteAccount extends AbstractTest {
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
-		accountID = newAccountPage.getAccountID();
 
 		newAccountPage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);

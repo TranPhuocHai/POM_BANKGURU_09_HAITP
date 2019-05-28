@@ -4,11 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.EditAccountPageUI;
-import bankguruUI.EditCustomerPageUI;
-import bankguruUI.NewAccountPageUI;
-import bankguruUI.NewCustomerPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class EditAccountPageObject extends AbstractPage {
 	WebDriver driver;

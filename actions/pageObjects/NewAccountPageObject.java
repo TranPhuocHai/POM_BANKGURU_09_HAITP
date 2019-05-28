@@ -3,11 +3,8 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.EditCustomerPageUI;
 import bankguruUI.NewAccountPageUI;
-import bankguruUI.NewCustomerPageUI;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class NewAccountPageObject extends AbstractPage {
 	public NewAccountPageObject(WebDriver driver) {

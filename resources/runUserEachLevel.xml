@@ -5,7 +5,8 @@
 	<test name="Test on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.bankguru.user.Account_level_09_ElementUndisplayed_OverrideTimeOut" />
+<!-- 			<class name="com.bankguru.user.Account_level_09_ElementUndisplayed_OverrideTimeOut" /> -->
+			<class name="com.bankguru.customer.NewCustomer" />
 		</classes>
 	</test>
 

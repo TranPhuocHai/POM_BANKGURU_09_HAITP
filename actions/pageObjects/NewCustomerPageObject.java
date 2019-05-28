@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.NewCustomerPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
@@ -26,8 +27,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isCustomerNameMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.NAME_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.NAME_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Customer name");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Customer name");
 		
 	}
 
@@ -49,20 +50,20 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isNumbersAreNotAllowedMessageOfNameDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.NAME_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.NAME_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "Customer Name");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "Customer Name");
 		
 	}
 
 	public boolean isSpecialCharactersOfNameAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.NAME_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer Name");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer Name");
 		
 	}
 
 	public boolean isFirstCharacterOfNameCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.NAME_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.NAME_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer Name");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer Name");
 		
 	}
 
@@ -73,8 +74,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isAddressFieldMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_FIELD_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.ADDRESS_FIELD_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Address Field");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Address Field");
 		
 	}
 
@@ -85,14 +86,14 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.ADDRESS_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Address");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Address");
 		
 	}
 
 	public boolean isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.ADDRESS_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Address");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Address");
 		
 	}
 
@@ -103,8 +104,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isCityMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.CITY_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "City Field");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "City Field");
 		
 	}
 
@@ -115,20 +116,20 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isNumbersAreNotAllowedMessageOfCityDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.CITY_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "City");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "City");
 		
 	}
 
 	public boolean isSpecialCharactersOfCityAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.CITY_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "City");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "City");
 		
 	}
 
 	public boolean isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.CITY_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "City");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "City");
 		
 	}
 	
@@ -139,8 +140,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isStateMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.STATE_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "State");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "State");
 		
 	}
 
@@ -151,20 +152,20 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isNumbersAreNotAllowedMessageOfStateDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.STATE_NUMERIC_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "State");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, "State");
 		
 	}
 
 	public boolean isSpecialCharactersOfStateAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.STATE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "State");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "State");
 		
 	}
 
 	public boolean isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.STATE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "State");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "State");
 		
 	}
 
@@ -175,8 +176,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 	
 	public boolean isPinMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PIN_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "PIN Code");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "PIN Code");
 		
 	}
 
@@ -187,8 +188,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isPinCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PIN_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "PIN");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "PIN");
 		
 	}
 
@@ -199,8 +200,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PIN_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "PIN");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "PIN");
 		
 	}
 
@@ -259,8 +260,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 	
 	public boolean isPhoneMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PHONE_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Mobile no");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Mobile no");
 		
 	}
 	
@@ -271,20 +272,20 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PHONE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Mobile Number");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Mobile Number");
 		
 	}
 
 	public boolean isPhoneCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PHONE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Mobile Number" );
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Mobile Number");
 		
 	}
 
 	public boolean isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PHONE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PHONE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Mobile Number");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Mobile Number");
 		
 	}
 
@@ -295,8 +296,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isEmailMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.EMAIL_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Email-ID");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Email-ID");
 		
 	}
 
@@ -312,8 +313,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.EMAIL_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "E-mail");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "E-mail");
 	}
 
 	public void clickToPasswordTextbox() {
@@ -323,8 +324,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isPasswordMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, NewCustomerPageUI.PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, NewCustomerPageUI.PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Password");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Password");
 	}
 
 	public void selectMaleGenderRadioButton() {

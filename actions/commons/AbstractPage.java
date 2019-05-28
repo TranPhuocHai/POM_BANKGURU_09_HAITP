@@ -317,7 +317,7 @@ public class AbstractPage {
 		String originalStyle = element.getAttribute("Style");
 		javascriptExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", "border:3px solid red; border-style: dashed;");
 		try {
-			Thread.sleep(50);
+			Thread.sleep(Constants.HIGHLIGHT_ELEMENT_TIMEOUT_FOR_DEMO);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

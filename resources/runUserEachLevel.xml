@@ -7,6 +7,7 @@
 		<classes>
 <!-- 			<class name="com.bankguru.user.Account_level_09_ElementUndisplayed_OverrideTimeOut" /> -->
 			<class name="com.bankguru.customer.NewCustomer" />
+			<class name="com.bankguru.customer.EditCustomer" />
 		</classes>
 	</test>
 

@@ -20,9 +20,8 @@ public class HomePageObject extends AbstractPage {
 	}
 
 	public boolean isUserIDDisplayed(String userIdInfo) {
-		String FORMAT_USER_ID_TEXT = String.format(HomePageUI.WELCOME_USER_ID_TEXT, userIdInfo);
-		waitForElementVisible(driver, FORMAT_USER_ID_TEXT);
-		return isControlDisplayed(driver, FORMAT_USER_ID_TEXT);
+		waitForElementVisible(driver, HomePageUI.WELCOME_USER_ID_TEXT, userIdInfo);
+		return isControlDisplayed(driver, HomePageUI.WELCOME_USER_ID_TEXT, userIdInfo);
 		
 	}
 

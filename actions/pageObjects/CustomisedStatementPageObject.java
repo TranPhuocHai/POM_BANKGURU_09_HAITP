@@ -103,8 +103,8 @@ public class CustomisedStatementPageObject extends AbstractPage {
 	}
 
 	public void clickSubmitButton() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, CustomisedStatementPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 
 	}
 

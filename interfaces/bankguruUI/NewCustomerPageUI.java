@@ -13,8 +13,6 @@ public class NewCustomerPageUI {
 	public static final String MOBILE_NUMBER_TEXTBOX = "//input[@name='telephoneno']";
 	public static final String EMAIL_TEXTBOX = "//input[@name='emailid']";
 	public static final String PASSWORD_TEXTBOX = "//input[@name='password']";	
-//	public static final String SUBMIT_BUTTON = "//input[@type='submit']";
-//	public static final String RESET_BUTTON = "//input[@type='reset']";
 	public static final String REGISTER_CUSTOMER_SUCCESS_MESSAGE  = "//p[text()='Customer Registered Successfully!!!']";
 	public static final String CUSTOMER_ID = "//td[text()='Customer ID']/following-sibling::td";
 	

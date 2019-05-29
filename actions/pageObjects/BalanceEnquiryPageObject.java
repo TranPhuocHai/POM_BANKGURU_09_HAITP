@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.BalanceEnquiryPageUI;
 import commons.AbstractPage;
 
@@ -25,14 +26,13 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 	}
 
 	public boolean isBalanceDetailsMessageDisplayed(String accountID) {
-		String FORMAT_BALANCE_DETAILS_MESSAGE = String.format(BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
-		waitForElementVisible(driver, FORMAT_BALANCE_DETAILS_MESSAGE);
-		return isControlDisplayed(driver, FORMAT_BALANCE_DETAILS_MESSAGE);
+		waitForElementVisible(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
+		return isControlDisplayed(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
 	}
 
 	public String getTextBalance() {
-		waitForElementVisible(driver, BalanceEnquiryPageUI.BALANCE_INFOR);
-		return getTextElement(driver, BalanceEnquiryPageUI.BALANCE_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Balance");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Balance");
 	}
 
 

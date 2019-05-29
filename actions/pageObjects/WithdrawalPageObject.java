@@ -43,11 +43,6 @@ public class WithdrawalPageObject extends AbstractPage {
 		return isControlDisplayed(driver, FORMAT_TRANSACTION_DETAILS_MESSAGE);
 	}
 
-	public String getTextCurrentBalance() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
-	}
-
 	public void inputValueToDescriptionTextbox(String value) {
 		waitForElementVisible(driver, WithdrawalPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, WithdrawalPageUI.DESCRIPTION_TEXTBOX, value);

@@ -13,7 +13,6 @@ public class EditCustomerPageUI {
 	public static final String RESET_EDIT_BUTTON = "//input[@type='reset']";
 	public static final String HOME_LINK = "//a[text()='Home']";
 	public static final String SUCCESS_MESSAGE  = "//p[text()='Customer details updated Successfully!!!']";
-	public static final String CUSTOMER_ID = "//td[text()='Customer ID']/following-sibling::td";
 	public static final String PIN_MUST_HAVE_6_DIGITS_MESSAGE = "//td[text()='PIN']//following-sibling::td/label[text()='PIN Code must have 6 Digits']";
 	public static final String EMAIL_ID_IS_NOT_VALID_MESSAGE = "//td[text()='E-mail']//following-sibling::td/label[text()='Email-ID is not valid']";
 	

@@ -42,8 +42,8 @@ public class Account_level_07_WebDriverLifeCycle_ActionChain extends AbstractTes
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
-		userIdInfo = registerPage.getUserIDInfor();
-		passwordInfo = registerPage.getPasswordInfor();
+		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
+		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
 
 	}
 

@@ -72,10 +72,6 @@ public class EditAccountPageObject extends AbstractPage {
 		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_DETAILS_UPLOADED_SUCCESS_INFOR);
 		return isControlDisplayed(driver, EditAccountPageUI.ACCOUNT_DETAILS_UPLOADED_SUCCESS_INFOR);
 	}
-	public String getTextAccountTypeInfor() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account Type");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account Type");
-	}
 
 
 }

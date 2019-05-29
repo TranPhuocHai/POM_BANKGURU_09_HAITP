@@ -28,16 +28,6 @@ public class RegisterPageObject extends AbstractPage{
 		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
 	}
 
-	public String getUserIDInfor() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "User ID :");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "User ID :");
-	}
-
-	public String getPasswordInfor() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Password :");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Password :");
-	}
-
 	public LoginPageObject openLoginPage(String loginPageUrl) {
 		openAnyUrl(driver, loginPageUrl);
 		return PageFactoryManager.getLoginPage(driver);

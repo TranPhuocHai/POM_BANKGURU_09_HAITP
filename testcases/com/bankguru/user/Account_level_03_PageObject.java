@@ -41,8 +41,8 @@ public class Account_level_03_PageObject {
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
-		userIdInfo = registerPage.getUserIDInfor();
-		passwordInfo = registerPage.getPasswordInfor();
+		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
+		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
 
 	}
 

@@ -54,25 +54,5 @@ public class FundTransferPageObject extends AbstractPage {
 		return isControlDisplayed(driver, FundTransferPageUI.FUND_TRANSFER_DETAILS_MESSAGE);
 	}
 
-
-	public String getTextPayerAccountNumber() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "From Account Number");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "From Account Number");
-	}
-
-
-	public String getTextPayeeAccountNumber() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "To Account Number");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "To Account Number");
-	}
-
-
-	public String getTextAmount() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Amount");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Amount");
-	}
-
-
-
 	
 }

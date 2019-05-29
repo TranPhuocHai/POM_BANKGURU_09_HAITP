@@ -58,8 +58,8 @@ public class MiniStatement extends AbstractTest {
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
-		userIdInfo = registerPage.getUserIDInfor();
-		passwordInfo = registerPage.getPasswordInfor();
+		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
+		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
 		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
@@ -87,15 +87,15 @@ public class MiniStatement extends AbstractTest {
 
 		customerID = newCustomerPage.getCustomerID();
 
-		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
-		Assert.assertEquals(newCustomerPage.getTextGenderInfo(), expectedGender);
-		Assert.assertEquals(newCustomerPage.getDateOfBirthInfo(), validDateOfBirth);
-		Assert.assertEquals(newCustomerPage.getTextAdressInfo(), validAdress);
-		Assert.assertEquals(newCustomerPage.getTextCityInfo(), validCity);
-		Assert.assertEquals(newCustomerPage.getTextStateInfo(), validState);
-		Assert.assertEquals(newCustomerPage.getTextPinInfo(), validPin);
-		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
-		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
 
 		newCustomerPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
@@ -105,8 +105,8 @@ public class MiniStatement extends AbstractTest {
 		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
-		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
-		accountID = newAccountPage.getAccountID();
+		Assert.assertEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		accountID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
 
 		newAccountPage.openMultiplePage(driver, "Mini Statement");
 		miniStatementPage = PageFactoryManager.getMiniStatementPage(driver);

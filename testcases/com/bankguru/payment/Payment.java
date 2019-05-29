@@ -84,8 +84,8 @@ public class Payment extends AbstractTest {
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
-		userIdInfo = registerPage.getUserIDInfor();
-		passwordInfo = registerPage.getPasswordInfor();
+		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
+		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
 		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);
@@ -116,15 +116,15 @@ public class Payment extends AbstractTest {
 		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
 		customerID = newCustomerPage.getCustomerID();
 
-		Assert.assertEquals(newCustomerPage.getTextCustomerNameInfo(), validName);
-		Assert.assertEquals(newCustomerPage.getTextGenderInfo(), expectedGender);
-		Assert.assertEquals(newCustomerPage.getDateOfBirthInfo(), validDateOfBirth);
-		Assert.assertEquals(newCustomerPage.getTextAdressInfo(), validAdress);
-		Assert.assertEquals(newCustomerPage.getTextCityInfo(), validCity);
-		Assert.assertEquals(newCustomerPage.getTextStateInfo(), validState);
-		Assert.assertEquals(newCustomerPage.getTextPinInfo(), validPin);
-		Assert.assertEquals(newCustomerPage.getTextMobileNumberInfo(), validPhoneNumber);
-		Assert.assertEquals(newCustomerPage.getTextEmailInfo(), validEmailID);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
+		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
 	}
 
 	@Test
@@ -149,16 +149,16 @@ public class Payment extends AbstractTest {
 		editcustomerPage.inputValueToEmailTextbox(editEmailID);
 		editcustomerPage.clickToSubmitButton();
 
-		Assert.assertEquals(editcustomerPage.getTextCustomerIDInfo(), customerID);
-		Assert.assertEquals(editcustomerPage.getTextCustomerNameInfo(), validName);
-		Assert.assertEquals(editcustomerPage.getTextGenderInfo(), expectedGender);
-		Assert.assertEquals(editcustomerPage.getDateOfBirthInfo(), validDateOfBirth);
-		Assert.assertEquals(editcustomerPage.getTextEditAdressInfo(), editAdress);
-		Assert.assertEquals(editcustomerPage.getTextEditCityInfo(), editCity);
-		Assert.assertEquals(editcustomerPage.getTextEditStateInfo(), editState);
-		Assert.assertEquals(editcustomerPage.getTextEditPinInfo(), editPin);
-		Assert.assertEquals(editcustomerPage.getTextEditMobileNumberInfo(), editPhoneNumber);
-		Assert.assertEquals(editcustomerPage.getTextEditEmailInfo(), editEmailID);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Customer ID"), customerID);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Address"), editAdress);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "City"), editCity);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "State"), editState);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Pin"), editPin);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Mobile No."), editPhoneNumber);
+		Assert.assertEquals(editcustomerPage.getTextDynamicInfo(driver, "Email"), editEmailID);
 
 	}
 
@@ -172,8 +172,8 @@ public class Payment extends AbstractTest {
 		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
-		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
-		accountID = newAccountPage.getAccountID();
+		Assert.assertEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		accountID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
 	}
 
 	@Test
@@ -187,7 +187,7 @@ public class Payment extends AbstractTest {
 		depositPage.inputDescriptionToDescriptionTextbox(depositDescription);
 		depositPage.clickToSubmitButton();
 		Assert.assertTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
-		Assert.assertEquals(depositPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterDeposit));
+		Assert.assertEquals(depositPage.getTextDynamicInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterDeposit));
 
 	}
 
@@ -202,7 +202,7 @@ public class Payment extends AbstractTest {
 		withdrawalPage.inputValueToDescriptionTextbox(withdrawDescription);
 		withdrawalPage.clickToSubmitButton();
 		Assert.assertTrue(withdrawalPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
-		Assert.assertEquals(withdrawalPage.getTextCurrentBalance(), String.valueOf(currentBalanceAfterWithdraw));
+		Assert.assertEquals(withdrawalPage.getTextDynamicInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterWithdraw));
 
 	}
 
@@ -216,8 +216,8 @@ public class Payment extends AbstractTest {
 		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
 		newAccountPage.clickToSubmitButton();
 		Assert.assertTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
-		Assert.assertEquals(newAccountPage.getTextCurrentAmount(), String.valueOf(currentAmount));
-		payeeAccountID = newAccountPage.getAccountID();
+		Assert.assertEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		payeeAccountID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
 
 		newAccountPage.openMultiplePage(driver, "Fund Transfer");
 		fundTransferPage = PageFactoryManager.getFundTransferPage(driver);
@@ -229,9 +229,9 @@ public class Payment extends AbstractTest {
 		fundTransferPage.clickToSubmitButton();
 
 		Assert.assertTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
-		Assert.assertEquals(fundTransferPage.getTextPayerAccountNumber(), accountID);
-		Assert.assertEquals(fundTransferPage.getTextPayeeAccountNumber(), payeeAccountID);
-		Assert.assertEquals(fundTransferPage.getTextAmount(), String.valueOf(transferAmount));
+		Assert.assertEquals(fundTransferPage.getTextDynamicInfo(driver, "From Account Number"), accountID);
+		Assert.assertEquals(fundTransferPage.getTextDynamicInfo(driver, "To Account Number"), payeeAccountID);
+		Assert.assertEquals(fundTransferPage.getTextDynamicInfo(driver, "Amount"), String.valueOf(transferAmount));
 
 	}
 
@@ -243,7 +243,7 @@ public class Payment extends AbstractTest {
 		balanceEnquiryPage.inputValueToAccountNumber(accountID);
 		balanceEnquiryPage.clickSubmitButton();
 		Assert.assertTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
-		Assert.assertEquals(balanceEnquiryPage.getTextBalance(), String.valueOf(currentBalanceAfterTransfer));
+		Assert.assertEquals(balanceEnquiryPage.getTextDynamicInfo(driver, "Balance"), String.valueOf(currentBalanceAfterTransfer));
 
 	}
 

@@ -42,11 +42,6 @@ public class DepositPageObject extends AbstractPage {
 		return isControlDisplayed(driver, DepositPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
 	}
 
-	public String getTextCurrentBalance() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
-	}
-
 	public void inputDescriptionToDescriptionTextbox(String depositDescription) {
 		waitForElementVisible(driver, DepositPageUI.DESCRIPTION_TEXTBOX);
 		sendKeyToElement(driver, DepositPageUI.DESCRIPTION_TEXTBOX, depositDescription);

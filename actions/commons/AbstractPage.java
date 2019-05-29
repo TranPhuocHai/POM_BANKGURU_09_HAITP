@@ -435,6 +435,10 @@ public class AbstractPage {
     	driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
     }
     
+	public String getTextDynamicInfo(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
+	}
     
 }
 

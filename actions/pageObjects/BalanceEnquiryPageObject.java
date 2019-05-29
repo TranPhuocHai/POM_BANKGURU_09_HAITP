@@ -30,11 +30,6 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 		return isControlDisplayed(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
 	}
 
-	public String getTextBalance() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Balance");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Balance");
-	}
-
 
 
 	

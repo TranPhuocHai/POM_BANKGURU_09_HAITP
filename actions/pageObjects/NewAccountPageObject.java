@@ -37,16 +37,6 @@ public class NewAccountPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewAccountPageUI.ACCOUNT_GENERATED_SUCCESS_MESSAGE);
 	}
 
-	public String getTextCurrentAmount() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Amount");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Amount");
-	}
-
-	public String getAccountID() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account ID");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account ID");
-	}
-
 	public void clearCustomerIDTextbox() {
 		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
 		clearTextElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);

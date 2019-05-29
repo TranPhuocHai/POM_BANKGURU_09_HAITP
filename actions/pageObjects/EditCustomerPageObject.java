@@ -366,57 +366,6 @@ public class EditCustomerPageObject extends AbstractPage {
 	}
 
 
-	public String getTextCustomerIDInfo() {
-		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID);
-		return getTextElement(driver, EditCustomerPageUI.CUSTOMER_ID);
-	}
-	
-	public String getTextCustomerNameInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
-	}
-
-	public String getTextGenderInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
-	}
-
-	public String getDateOfBirthInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
-	}
-
-	public String getTextEditAdressInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
-	}
-
-	public String getTextEditCityInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
-	}
-
-	public String getTextEditStateInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
-	}
-
-	public String getTextEditPinInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
-	}
-
-	public String getTextEditMobileNumberInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
-	}
-
-	public String getTextEditEmailInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
-	}
-
-
 
 	public void clickToStateTextbox() {
 		waitForElementVisible(driver, EditCustomerPageUI.STATE_TEXTBOX);

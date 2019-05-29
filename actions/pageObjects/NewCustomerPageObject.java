@@ -375,50 +375,6 @@ public class NewCustomerPageObject extends AbstractPage {
 		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_ID);
 	}
 
-	public String getTextCustomerNameInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
-	}
-
-	public String getTextGenderInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
-	}
-
-	public String getDateOfBirthInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
-	}
-
-	public String getTextAdressInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
-	}
-
-	public String getTextCityInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
-	}
-
-	public String getTextStateInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
-	}
-
-	public String getTextPinInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
-	}
-
-	public String getTextMobileNumberInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
-	}
-
-	public String getTextEmailInfo() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
-	}
 
 	public void openHomePageUrl(String homePageUrl) {
 		openAnyUrl(driver, homePageUrl);

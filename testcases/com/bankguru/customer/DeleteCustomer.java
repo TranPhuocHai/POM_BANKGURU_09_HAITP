@@ -43,8 +43,8 @@ public class DeleteCustomer extends AbstractTest {
 		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
 		registerPage.inPutToEmailIDTextbox(email);
 		registerPage.clickToSubmitButton();
-		userIdInfo = registerPage.getUserIDInfor();
-		passwordInfo = registerPage.getPasswordInfor();
+		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
+		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
 		loginPage = registerPage.openLoginPage(loginPageUrl);
 		Assert.assertTrue(loginPage.isLoginFormDisplayed());
 		loginPage.inPutToUserIDTextbox(userIdInfo);

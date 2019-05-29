@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.DeleteCustomerPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
@@ -16,8 +17,8 @@ public class DeleteCustomerPageObject extends AbstractPage {
 
 
 	public void clickSubmitButton() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, DeleteCustomerPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 
@@ -62,8 +63,8 @@ public class DeleteCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isCustomerIDIsRequiredMessageDisplayed() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
-		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
+		return isControlDisplayed(driver, AbstractPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
 	}
 
 	public void inputValueToCustomerIDTextbox(String value) {
@@ -73,18 +74,18 @@ public class DeleteCustomerPageObject extends AbstractPage {
 	}
 
 	public boolean isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
-		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
 	}
 
 	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
 	}
 
 	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, DeleteCustomerPageUI.CUSTOMER_ID_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
 	}
 
 

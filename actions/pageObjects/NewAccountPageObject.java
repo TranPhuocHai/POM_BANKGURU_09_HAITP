@@ -27,8 +27,8 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, NewAccountPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, NewAccountPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
 		
 	}
 
@@ -38,13 +38,13 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public String getTextCurrentAmount() {
-		waitForElementVisible(driver, NewAccountPageUI.CURRENT_AMOUNT_INFOR);
-		return getTextElement(driver, NewAccountPageUI.CURRENT_AMOUNT_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Amount");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Amount");
 	}
 
 	public String getAccountID() {
-		waitForElementVisible(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
-		return getTextElement(driver, NewAccountPageUI.ACCOUNT_ID_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account ID");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account ID");
 	}
 
 	public void clearCustomerIDTextbox() {
@@ -71,8 +71,8 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public boolean isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer id");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer id");
 	}
 
 	public void inputValueToCustomerIDTextbox(String value) {
@@ -82,13 +82,13 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
 	}
 
 	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
 	}
 
 	public void clearInitialDepositTextbox() {
@@ -114,18 +114,18 @@ public class NewAccountPageObject extends AbstractPage {
 
 
 	public boolean isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Initial deposit");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Initial deposit");
+		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
+		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);
 	}
 
 	public boolean isInitialDepositCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Initial deposit");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Initial deposit");
+		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 	}
 
 	public boolean isSpecialCharactersOfInitialDepositAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Initial deposit");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Initial deposit");
+		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		return isControlDisplayed(driver, NewAccountPageUI.INITIAL_DEPOSIT_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
 	}
 
 	

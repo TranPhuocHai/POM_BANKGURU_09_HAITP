@@ -7,6 +7,12 @@ public class AbstractPageUI {
 	public static final String DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[text()='%s']//following-sibling::td/label[text()='Characters are not allowed']";
 	public static final String DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE = "//td[text()='%s']//following-sibling::td/label[text()='First character can not have space']";
 	public static final String DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE = "//td[text()='%s']//following-sibling::td/label[text()='Special characters are not allowed']";
-	
+	public static final String DYNAMIC_TABLE_INFOR = "//td[text()='%s']//following-sibling::td";
 	public static final String CUSTOMER_ID_IS_REQUIRED_MESSAGE = "//label[text()='Customer ID is required']";
+
+	public static final String ACCOUNT_SUBMIT_BUTTON = "//input[@name='AccSubmit']";
+	public static final String ACCOUNT_RESET_BUTTON = "//input[@name='res']";
+
+	public static final String SUBMIT_BUTTON = "//input[@type='submit']";
+	public static final String RESET_BUTTON = "//input[@type='reset']";
 }

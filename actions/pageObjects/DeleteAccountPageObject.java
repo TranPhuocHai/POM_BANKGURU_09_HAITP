@@ -16,8 +16,8 @@ public class DeleteAccountPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public void clickSubmitButton() {
-		waitForElementVisible(driver, DeleteAccountPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, DeleteAccountPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 	}
 	
 	public void acceptConfirmDeleteAlert() {

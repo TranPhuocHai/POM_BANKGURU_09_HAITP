@@ -359,8 +359,8 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, NewCustomerPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, NewCustomerPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
 		
 	}
 
@@ -376,48 +376,48 @@ public class NewCustomerPageObject extends AbstractPage {
 	}
 
 	public String getTextCustomerNameInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_NAME_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_NAME_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Customer Name");
 	}
 
 	public String getTextGenderInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.GENDER_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.GENDER_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Gender");
 	}
 
 	public String getDateOfBirthInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.DATE_OF_BIRTH_INFO_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.DATE_OF_BIRTH_INFO_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Birthdate");
 	}
 
 	public String getTextAdressInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.ADDRESS_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Address");
 	}
 
 	public String getTextCityInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.CITY_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.CITY_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "City");
 	}
 
 	public String getTextStateInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.STATE_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.STATE_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "State");
 	}
 
 	public String getTextPinInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.PIN_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.PIN_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Pin");
 	}
 
 	public String getTextMobileNumberInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.MOBILE_NUMBER_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.MOBILE_NUMBER_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Mobile No.");
 	}
 
 	public String getTextEmailInfo() {
-		waitForElementVisible(driver, NewCustomerPageUI.EMAIL_INFOR);
-		return getTextElement(driver, NewCustomerPageUI.EMAIL_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Email");
 	}
 
 	public void openHomePageUrl(String homePageUrl) {

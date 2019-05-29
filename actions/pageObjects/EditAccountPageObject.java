@@ -50,8 +50,8 @@ public class EditAccountPageObject extends AbstractPage {
 	}
 	
 	public void clickAccountNumberSubmitButton() {
-		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);
-		clickToElement(driver, EditAccountPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 	public boolean isEditCustomerFormDispayed() {
@@ -64,8 +64,8 @@ public class EditAccountPageObject extends AbstractPage {
 		
 	}
 	public void clickEditAccountSubmitButton() {
-		waitForElementVisible(driver, EditAccountPageUI.EDIT_ACCOUNT_SUBMIT_BUTTON);
-		clickToElement(driver, EditAccountPageUI.EDIT_ACCOUNT_SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 	public boolean isAccountDetailsUpdatedSuccessfullyDispayed() {
@@ -73,8 +73,8 @@ public class EditAccountPageObject extends AbstractPage {
 		return isControlDisplayed(driver, EditAccountPageUI.ACCOUNT_DETAILS_UPLOADED_SUCCESS_INFOR);
 	}
 	public String getTextAccountTypeInfor() {
-		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_TYPE_INFOR);
-		return getTextElement(driver, EditAccountPageUI.ACCOUNT_TYPE_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account Type");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Account Type");
 	}
 
 

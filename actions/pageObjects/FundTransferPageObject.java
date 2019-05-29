@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.FundTransferPageUI;
 import commons.AbstractPage;
 
@@ -42,8 +43,8 @@ public class FundTransferPageObject extends AbstractPage {
 
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, FundTransferPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, FundTransferPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 
@@ -55,20 +56,20 @@ public class FundTransferPageObject extends AbstractPage {
 
 
 	public String getTextPayerAccountNumber() {
-		waitForElementVisible(driver, FundTransferPageUI.PAYER_ACCOUNT_NUMBER_INFOR);
-		return getTextElement(driver, FundTransferPageUI.PAYER_ACCOUNT_NUMBER_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "From Account Number");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "From Account Number");
 	}
 
 
 	public String getTextPayeeAccountNumber() {
-		waitForElementVisible(driver, FundTransferPageUI.PAYEE_ACCOUNT_NUMBER_INFOR);
-		return getTextElement(driver, FundTransferPageUI.PAYEE_ACCOUNT_NUMBER_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "To Account Number");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "To Account Number");
 	}
 
 
 	public String getTextAmount() {
-		waitForElementVisible(driver, FundTransferPageUI.AMOUNT_INFOR);
-		return getTextElement(driver, FundTransferPageUI.AMOUNT_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Amount");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Amount");
 	}
 
 

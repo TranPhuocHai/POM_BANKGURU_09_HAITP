@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.DepositPageUI;
 import commons.AbstractPage;
 
@@ -31,20 +32,19 @@ public class DepositPageObject extends AbstractPage {
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, DepositPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, DepositPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 
 	public boolean isCorrectTracsactionDetailsMessageDisplayed(String accountID) {
-		String FORMAT_TRANSACTION_DETAILS_MESSAGE = String.format(DepositPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
-		waitForElementVisible(driver, FORMAT_TRANSACTION_DETAILS_MESSAGE);
-		return isControlDisplayed(driver, FORMAT_TRANSACTION_DETAILS_MESSAGE);
+		waitForElementVisible(driver, DepositPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
+		return isControlDisplayed(driver, DepositPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
 	}
 
 	public String getTextCurrentBalance() {
-		waitForElementVisible(driver, DepositPageUI.CURRENT_BALANCE_INFOR);
-		return getTextElement(driver, DepositPageUI.CURRENT_BALANCE_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
 	}
 
 	public void inputDescriptionToDescriptionTextbox(String depositDescription) {

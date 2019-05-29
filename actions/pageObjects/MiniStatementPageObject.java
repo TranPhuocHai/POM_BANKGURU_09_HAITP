@@ -59,8 +59,8 @@ public class MiniStatementPageObject extends AbstractPage {
 	}
 
 	public void clickAccountNumberSubmitButton() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);
-		clickToElement(driver, MiniStatementPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 

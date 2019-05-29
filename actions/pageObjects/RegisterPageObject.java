@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.RegisterPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
@@ -23,18 +24,18 @@ public class RegisterPageObject extends AbstractPage{
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, RegisterPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, RegisterPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
 	}
 
 	public String getUserIDInfor() {
-		waitForElementVisible(driver, RegisterPageUI.USER_ID_INFOR);
-		return getTextElement(driver, RegisterPageUI.USER_ID_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "User ID :");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "User ID :");
 	}
 
 	public String getPasswordInfor() {
-		waitForElementVisible(driver, RegisterPageUI.PASSWORD_INFOR);
-		return getTextElement(driver, RegisterPageUI.PASSWORD_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Password :");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Password :");
 	}
 
 	public LoginPageObject openLoginPage(String loginPageUrl) {

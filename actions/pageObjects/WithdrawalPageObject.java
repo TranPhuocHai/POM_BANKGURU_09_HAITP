@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.WithdrawalPageUI;
 import commons.AbstractPage;
 
@@ -31,8 +32,8 @@ public class WithdrawalPageObject extends AbstractPage {
 	}
 
 	public void clickToSubmitButton() {
-		waitForElementVisible(driver, WithdrawalPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, WithdrawalPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 
@@ -43,8 +44,8 @@ public class WithdrawalPageObject extends AbstractPage {
 	}
 
 	public String getTextCurrentBalance() {
-		waitForElementVisible(driver, WithdrawalPageUI.CURRENT_BALANCE_INFOR);
-		return getTextElement(driver, WithdrawalPageUI.CURRENT_BALANCE_INFOR);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, "Current Balance");
 	}
 
 	public void inputValueToDescriptionTextbox(String value) {

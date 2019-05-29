@@ -2,6 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+
+import bankguruUI.AbstractPageUI;
 import bankguruUI.ChangePasswordPageUI;
 import commons.AbstractPage;
 
@@ -30,8 +32,8 @@ public class ChangePasswordPageObject extends AbstractPage {
 	}
 
 	public boolean isOldPasswordMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, ChangePasswordPageUI.OLD_PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, ChangePasswordPageUI.OLD_PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Old Password");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Old Password");
 	}
 
 	public void clearNewPasswordTextbox() {
@@ -53,8 +55,8 @@ public class ChangePasswordPageObject extends AbstractPage {
 	}
 
 	public boolean isNewPasswordMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, ChangePasswordPageUI.NEW_PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
-		return isControlDisplayed(driver, ChangePasswordPageUI.NEW_PASSWORD_MUST_NOT_BE_BLANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "New Password");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "New Password");
 	}
 
 	public void inputValueToNewPasswordTextbox(String value) {

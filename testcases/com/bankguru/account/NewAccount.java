@@ -26,7 +26,7 @@ public class NewAccount extends AbstractTest{
 	private NewAccountPageObject newAccountPage;
 	
 	private String loginPageUrl, userIdInfo, passwordInfo;	
-	private String email = "khainammvc" + randomNumber() + "@gmail.com";
+	private String email = "khnammivc" + randomNumber() + "@gmail.com";
 	private String validName = "Tran Phuoc Hai";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -108,7 +108,7 @@ public class NewAccount extends AbstractTest{
 	public void NC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
 		newAccountPage.clearCustomerIDTextbox();
 		newAccountPage.inputValueToCustomerIDTextbox(blankSpace);
-		Assert.assertTrue(newAccountPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newAccountPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer id"));
 		
 	}
 	
@@ -117,7 +117,7 @@ public class NewAccount extends AbstractTest{
 		for (String characterValue : characterValues) {
 			newAccountPage.clearCustomerIDTextbox();
 			newAccountPage.inputValueToCustomerIDTextbox(characterValue);
-			Assert.assertTrue(newAccountPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(newAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer id"));
 		}
 		
 	}
@@ -127,7 +127,7 @@ public class NewAccount extends AbstractTest{
 		for (String specialValue : specialValues) {
 			newAccountPage.clearCustomerIDTextbox();
 			newAccountPage.inputValueToCustomerIDTextbox(specialValue);
-			Assert.assertTrue(newAccountPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer id"));
 		}
 	}
 	
@@ -136,7 +136,7 @@ public class NewAccount extends AbstractTest{
 		newAccountPage.clearInitialDepositTextbox();
 		newAccountPage.clickToInitialDepositTexbox();
 		newAccountPage.pressTABKeyToInitialDepositTextbox();
-		Assert.assertTrue(newAccountPage.isInitialDepositMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Initial Deposit"));
 
 	}
 

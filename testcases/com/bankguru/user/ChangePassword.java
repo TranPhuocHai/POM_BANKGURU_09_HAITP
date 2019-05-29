@@ -27,7 +27,7 @@ public class ChangePassword extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "muntibonemdh" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -104,7 +104,7 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.clearOldPasswordTextbox();
 		changePasswordPage.clickToOldPasswordTextbox();
 		changePasswordPage.pressTabKeyToOldPasswordTextbox();
-		Assert.assertTrue(changePasswordPage.isOldPasswordMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(changePasswordPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Old Password"));
 
 	}
 
@@ -113,7 +113,7 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.clearNewPasswordTextbox();
 		changePasswordPage.clickToNewPasswordTextbox();
 		changePasswordPage.pressTabKeyToNewPasswordTextbox();
-		Assert.assertTrue(changePasswordPage.isNewPasswordMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(changePasswordPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "New Password"));
 
 	}
 

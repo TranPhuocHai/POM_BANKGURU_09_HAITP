@@ -37,25 +37,10 @@ public class CustomisedStatementPageObject extends AbstractPage {
 
 	}
 
-	public boolean isAccountNumberMustNotBeBlankDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
-	}
-
 	public void inputValueToAccountNumberTextbox(String value) {
 		waitForElementVisible(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
 		sendKeyToElement(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_TEXTBOX, value);
 
-	}
-
-	public boolean isAccountNumberCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
-	}
-
-	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
 
 	public void clearMinimumTransactionValueTextbox() {
@@ -70,16 +55,6 @@ public class CustomisedStatementPageObject extends AbstractPage {
 
 	}
 
-	public boolean isMinimumTransactionValueCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
-	}
-
-	public boolean isSpecialCharactersOfMinimumTransactionValueAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
-	}
-
 	public void clearNumberOfTransactionTextbox() {
 		waitForElementVisible(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_TEXTBOX);
 		clearTextElement(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_TEXTBOX);
@@ -90,16 +65,6 @@ public class CustomisedStatementPageObject extends AbstractPage {
 		waitForElementVisible(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_TEXTBOX);
 		sendKeyToElement(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_TEXTBOX, value);
 
-	}
-
-	public boolean isNumberOfTransactionCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
-	}
-
-	public boolean isSpecialCharactersOfNumberOfTransactionAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
 	}
 
 	public void clickSubmitButton() {

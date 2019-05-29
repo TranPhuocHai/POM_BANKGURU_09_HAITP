@@ -73,21 +73,5 @@ public class DeleteCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public boolean isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer ID");
-	}
-
-	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-	}
-
-	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer ID");
-	}
-
-
 	
 }

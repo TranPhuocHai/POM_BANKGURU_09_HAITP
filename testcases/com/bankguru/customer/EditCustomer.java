@@ -26,7 +26,7 @@ public class EditCustomer extends AbstractTest {
 	private EditCustomerPageObject editcustomerPage;
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
 	
-	private String email = "khainammvc" + randomNumber() + "@gmail.com";
+	private String email = "haitgsdh" + randomNumber() + "@gmail.com";
 	private String validName = "Tran Phuoc Hai";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -114,7 +114,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearCustomerIDTextbox();
 		editcustomerPage.inputValueToCustomerIDTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer ID"));
 
 	}
 
@@ -123,7 +123,7 @@ public class EditCustomer extends AbstractTest {
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputValueToCustomerIDTextbox(characterPhoneNumber);
-			Assert.assertTrue(editcustomerPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer ID"));
 		}
 
 	}
@@ -133,7 +133,7 @@ public class EditCustomer extends AbstractTest {
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			editcustomerPage.clearCustomerIDTextbox();
 			editcustomerPage.inputValueToCustomerIDTextbox(specialPhoneNumber);
-			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer ID"));
 		}
 	}
 
@@ -145,7 +145,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearAdressTextArea();
 		editcustomerPage.clickToAddressTextarea();
 		editcustomerPage.pressTABKeyToAddressTextArea();
-		Assert.assertTrue(editcustomerPage.isAddressFieldMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Address Field"));
 
 	}
 
@@ -154,7 +154,7 @@ public class EditCustomer extends AbstractTest {
 		for (String specialCharactersAddress : specialCharacters) {
 			editcustomerPage.clearAdressTextArea();
 			editcustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
-			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Address"));
 		}
 	}
 
@@ -162,7 +162,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearAdressTextArea();
 		editcustomerPage.inputValueToAdressTextArea(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Address"));
 
 	}
 
@@ -171,7 +171,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearCityTextbox();
 		editcustomerPage.clickToCityTextbox();
 		editcustomerPage.pressTABKeyToCityTextbox();
-		Assert.assertTrue(editcustomerPage.isCityMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "City Field"));
 	}
 
 	@Test
@@ -179,7 +179,7 @@ public class EditCustomer extends AbstractTest {
 		for (String numericCity : numericValues) {
 			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputValueToCityTextbox(numericCity);
-			Assert.assertTrue(editcustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "City"));
 		}
 	}
 
@@ -188,7 +188,7 @@ public class EditCustomer extends AbstractTest {
 		for (String specialCharactersCity : specialCharacters) {
 			editcustomerPage.clearCityTextbox();
 			editcustomerPage.inputValueToCityTextbox(specialCharactersCity);
-			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "City"));
 		}
 	}
 
@@ -196,7 +196,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearCityTextbox();
 		editcustomerPage.inputValueToCityTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "City"));
 
 	}
 
@@ -205,7 +205,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearStateTextbox();
 		editcustomerPage.clickToStateTextbox();
 		editcustomerPage.pressTABKeyToStateTextbox();
-		Assert.assertTrue(editcustomerPage.isStateMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "State"));
 	}
 
 	@Test
@@ -213,7 +213,7 @@ public class EditCustomer extends AbstractTest {
 		for (String numericState : numericValues) {
 			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputValueToStateTextbox(numericState);
-			Assert.assertTrue(editcustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "State"));
 		}
 	}
 
@@ -222,7 +222,7 @@ public class EditCustomer extends AbstractTest {
 		for (String specialCharactersState : specialCharacters) {
 			editcustomerPage.clearStateTextbox();
 			editcustomerPage.inputValueToStateTextbox(specialCharactersState);
-			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "State"));
 		}
 	}
 
@@ -230,7 +230,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearStateTextbox();
 		editcustomerPage.inputValueToStateTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "State"));
 
 	}
 
@@ -239,7 +239,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearPinTextbox();
 		editcustomerPage.clickToPinTextbox();
 		editcustomerPage.pressTABKeyToPinTextbox();
-		Assert.assertTrue(editcustomerPage.isPinMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "PIN Code"));
 	}
 
 	@Test
@@ -247,7 +247,7 @@ public class EditCustomer extends AbstractTest {
 		for (String characterPIN : characterPINs) {
 			editcustomerPage.clearPinTextbox();
 			editcustomerPage.inputValueToPinTextbox(characterPIN);
-			Assert.assertTrue(editcustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "PIN"));
 		}
 	}
 
@@ -264,7 +264,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearPinTextbox();
 		editcustomerPage.inputValueToPinTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "PIN"));
 
 	}
 
@@ -273,14 +273,14 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.clickToMobileNumberTextbox();
 		editcustomerPage.pressTABKeyToMobileTextbox();
-		Assert.assertTrue(editcustomerPage.isPhoneMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Mobile no"));
 	}
 
 	@Test
 	public void EC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearPhoneTextbox();
 		editcustomerPage.inputValueToMobileNumberTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Mobile Number"));
 
 	}
 
@@ -289,7 +289,7 @@ public class EditCustomer extends AbstractTest {
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputValueToMobileNumberTextbox(characterPhoneNumber);
-			Assert.assertTrue(editcustomerPage.isPhoneCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Mobile Number" ));
 		}
 
 	}
@@ -299,7 +299,7 @@ public class EditCustomer extends AbstractTest {
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			editcustomerPage.clearPhoneTextbox();
 			editcustomerPage.inputValueToMobileNumberTextbox(specialPhoneNumber);
-			Assert.assertTrue(editcustomerPage.isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editcustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Mobile Number"));
 		}
 	}
 
@@ -308,7 +308,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.clickToEmailTextbox();
 		editcustomerPage.pressTABKeyToEmailTextbox();
-		Assert.assertTrue(editcustomerPage.isEmailMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Email-ID"));
 	}
 
 	@Test
@@ -324,7 +324,7 @@ public class EditCustomer extends AbstractTest {
 	public void EC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
 		editcustomerPage.clearEmailTextbox();
 		editcustomerPage.inputValueToEmailTextbox(blankSpace);
-		Assert.assertTrue(editcustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
 
 	}
 

@@ -24,7 +24,7 @@ public class DeleteCustomer extends AbstractTest {
 	private DeleteCustomerPageObject deleteCustomerPage;
 	private String loginPageUrl, userIdInfo, passwordInfo;
 	
-	private String email = "khainammvc" + randomNumber() + "@gmail.com";
+	private String email = "nammkhaimic" + randomNumber() + "@gmail.com";
 	private String blankSpace = " ";
 	
 	private String[] characterValues = new String[] { "haitp", "12 1234" };
@@ -70,7 +70,7 @@ public class DeleteCustomer extends AbstractTest {
 	public void DC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
 		deleteCustomerPage.clearCustomerIDTextbox();
 		deleteCustomerPage.inputValueToCustomerIDTextbox(blankSpace);
-		Assert.assertTrue(deleteCustomerPage.isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(deleteCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer ID"));
 
 	}
 
@@ -79,7 +79,7 @@ public class DeleteCustomer extends AbstractTest {
 		for (String charactervalue : characterValues) {
 			deleteCustomerPage.clearCustomerIDTextbox();
 			deleteCustomerPage.inputValueToCustomerIDTextbox(charactervalue);
-			Assert.assertTrue(deleteCustomerPage.isCustomerIDCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(deleteCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer ID"));
 		}
 
 	}
@@ -89,7 +89,7 @@ public class DeleteCustomer extends AbstractTest {
 		for (String specialValue : specialValues) {
 			deleteCustomerPage.clearCustomerIDTextbox();
 			deleteCustomerPage.inputValueToCustomerIDTextbox(specialValue);
-			Assert.assertTrue(deleteCustomerPage.isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(deleteCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer ID"));
 		}
 	}
 

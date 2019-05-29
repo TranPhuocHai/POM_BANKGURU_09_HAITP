@@ -38,9 +38,8 @@ public class WithdrawalPageObject extends AbstractPage {
 	}
 
 	public boolean isCorrectTracsactionDetailsMessageDisplayed(String accountID) {
-		String FORMAT_TRANSACTION_DETAILS_MESSAGE = String.format(WithdrawalPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
-		waitForElementVisible(driver, FORMAT_TRANSACTION_DETAILS_MESSAGE);
-		return isControlDisplayed(driver, FORMAT_TRANSACTION_DETAILS_MESSAGE);
+		waitForElementVisible(driver, WithdrawalPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
+		return isControlDisplayed(driver, WithdrawalPageUI.TRANSACTION_DETAILS_MESSAGE, accountID);
 	}
 
 	public void inputValueToDescriptionTextbox(String value) {

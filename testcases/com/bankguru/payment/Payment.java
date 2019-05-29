@@ -41,7 +41,7 @@ public class Payment extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID, payeeAccountID;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "tiquibanamh" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";

@@ -14,6 +14,5 @@ public class Constants {
 	public static final String LIVE_GURU_FRONT_END = "http://live.guru99.com/";
 	public static final String LIVE_GURU_BACK_END = "http://live.guru99.com/index.php/backendlogin";
 	
-	
 
 }

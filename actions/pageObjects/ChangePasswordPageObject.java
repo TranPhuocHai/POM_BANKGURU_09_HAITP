@@ -31,11 +31,6 @@ public class ChangePasswordPageObject extends AbstractPage {
 		
 	}
 
-	public boolean isOldPasswordMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Old Password");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Old Password");
-	}
-
 	public void clearNewPasswordTextbox() {
 		waitForElementVisible(driver, ChangePasswordPageUI.NEW_PASSWORD_TEXTBOX);
 		clearTextElement(driver, ChangePasswordPageUI.NEW_PASSWORD_TEXTBOX);
@@ -52,11 +47,6 @@ public class ChangePasswordPageObject extends AbstractPage {
 		waitForElementVisible(driver, ChangePasswordPageUI.NEW_PASSWORD_TEXTBOX);
 		sendKeyBoardToElement(driver, ChangePasswordPageUI.NEW_PASSWORD_TEXTBOX, Keys.TAB);
 		
-	}
-
-	public boolean isNewPasswordMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "New Password");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "New Password");
 	}
 
 	public void inputValueToNewPasswordTextbox(String value) {

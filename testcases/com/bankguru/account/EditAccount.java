@@ -28,7 +28,7 @@ public class EditAccount extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "tpkcdnuio" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -116,7 +116,7 @@ public class EditAccount extends AbstractTest {
 		editAccountPage.clearAccountNumberTextbox();
 		editAccountPage.clickToAccountNumberTexbox();
 		editAccountPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(editAccountPage.isAccountNumberMustNotBeBlankDisplayed());
+		Assert.assertTrue(editAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
 	}
 
 	@Test
@@ -124,7 +124,7 @@ public class EditAccount extends AbstractTest {
 		for (String characterAccountNo : characterAccountNos) {
 			editAccountPage.clearAccountNumberTextbox();
 			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(editAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -133,7 +133,7 @@ public class EditAccount extends AbstractTest {
 		for (String specialAccountNo : specialAccountNos) {
 			editAccountPage.clearAccountNumberTextbox();
 			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(editAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(editAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -141,7 +141,7 @@ public class EditAccount extends AbstractTest {
 	public void EA_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		editAccountPage.clearAccountNumberTextbox();
 		editAccountPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(editAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(editAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 
 	}
 	

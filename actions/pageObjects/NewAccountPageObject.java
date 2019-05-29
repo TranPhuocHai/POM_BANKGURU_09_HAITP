@@ -60,25 +60,10 @@ public class NewAccountPageObject extends AbstractPage {
 		return isControlDisplayed(driver, AbstractPageUI.CUSTOMER_ID_IS_REQUIRED_MESSAGE);
 	}
 
-	public boolean isFirstCharacterOfCustomerIDCanNotHaveSpaceMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer id");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE, "Customer id");
-	}
-
 	public void inputValueToCustomerIDTextbox(String value) {
 		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
 		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
-	}
-
-	public boolean isCustomerIDCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
-	}
-
-	public boolean isSpecialCharactersOfCustomerIDAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Customer id");
 	}
 
 	public void clearInitialDepositTextbox() {
@@ -96,12 +81,6 @@ public class NewAccountPageObject extends AbstractPage {
 		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX);
 		sendKeyBoardToElement(driver, NewAccountPageUI.INITIAL_DEPOSIT_TEXTBOX, Keys.TAB);
 	}
-
-	public boolean isInitialDepositMustNotBeBlankMessageDisplayed() {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Initial Deposit");
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Initial Deposit");
-	}
-
 
 	public boolean isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed() {
 		waitForElementVisible(driver, NewAccountPageUI.INITIAL_DEPOSIT_FIRST_CHARACTERS_CAN_NOT_HAVE_SPACE_MESSAGE);

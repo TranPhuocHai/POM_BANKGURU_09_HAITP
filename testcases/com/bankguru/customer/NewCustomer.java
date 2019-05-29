@@ -24,7 +24,7 @@ public class NewCustomer extends AbstractTest{
 	private NewCustomerPageObject newCustomerPage;
 	private String loginPageUrl, userIdInfo, passwordInfo;
 	
-	private String email = "haimivkn" + randomNumber() + "@gmail.com";
+	private String email = "haimivknghbv" + randomNumber() + "@gmail.com";
 	private String blankSpace = " ";
 	private String[] numericValues = new String[] { "1234", "name123" };
 	private String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
@@ -63,7 +63,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_01_NameCanNotBeEmpty() {
 		newCustomerPage.clickToCustomerNameTextbox();
 		newCustomerPage.pressTABKeyToCustomerNameTextBox();
-		Assert.assertTrue(newCustomerPage.isCustomerNameMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Customer name"));
 	}
 
 	@Test
@@ -71,7 +71,7 @@ public class NewCustomer extends AbstractTest{
 		for (String numericName : numericValues) {
 			newCustomerPage.clearNameTextbox();
 			newCustomerPage.inputValueToCustomerNameTextbox(numericName);
-			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfNameDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "Customer Name"));
 		}
 	}
 
@@ -88,7 +88,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearNameTextbox();
 		newCustomerPage.inputValueToCustomerNameTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfNameCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer Name"));
 
 	}
 
@@ -97,7 +97,7 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearAddresTextarea();
 		newCustomerPage.clickToAddressTextarea();
 		newCustomerPage.pressTABKeyToAddressTextArea();
-		Assert.assertTrue(newCustomerPage.isAddressFieldMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Address Field"));
 
 	}
 
@@ -106,7 +106,7 @@ public class NewCustomer extends AbstractTest{
 		for (String specialCharactersAddress : specialCharacters) {
 			newCustomerPage.clearAddresTextarea();
 			newCustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
-			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfAddressAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Address"));
 		}
 	}
 
@@ -114,7 +114,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearAddresTextarea();
 		newCustomerPage.inputValueToAdressTextArea(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfAddressCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Address"));
 
 	}
 
@@ -123,7 +123,7 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearCityTextbox();
 		newCustomerPage.clickToCityTextbox();
 		newCustomerPage.pressTABKeyToCityTextbox();
-		Assert.assertTrue(newCustomerPage.isCityMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "City Field"));
 	}
 
 	@Test
@@ -131,7 +131,7 @@ public class NewCustomer extends AbstractTest{
 		for (String numericCity : numericValues) {
 			newCustomerPage.clearCityTextbox();
 			newCustomerPage.inputValueToCityTextbox(numericCity);
-			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfCityDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "City"));
 		}
 	}
 
@@ -140,7 +140,7 @@ public class NewCustomer extends AbstractTest{
 		for (String specialCharactersCity : specialCharacters) {
 			newCustomerPage.clearCityTextbox();
 			newCustomerPage.inputValueToCityTextbox(specialCharactersCity);
-			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfCityAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "City"));
 		}
 	}
 
@@ -148,7 +148,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearCityTextbox();
 		newCustomerPage.inputValueToCityTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfCityCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "City"));
 
 	}
 
@@ -157,7 +157,7 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearStateTextbox();
 		newCustomerPage.clickToStateTextbox();
 		newCustomerPage.pressTABKeyToStateTextbox();
-		Assert.assertTrue(newCustomerPage.isStateMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "State"));
 	}
 
 	@Test
@@ -165,7 +165,7 @@ public class NewCustomer extends AbstractTest{
 		for (String numericState : numericValues) {
 			newCustomerPage.clearStateTextbox();
 			newCustomerPage.inputValueToStateTextbox(numericState);
-			Assert.assertTrue(newCustomerPage.isNumbersAreNotAllowedMessageOfStateDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "State"));
 		}
 	}
 
@@ -174,7 +174,7 @@ public class NewCustomer extends AbstractTest{
 		for (String specialCharactersState : specialCharacters) {
 			newCustomerPage.clearStateTextbox();
 			newCustomerPage.inputValueToStateTextbox(specialCharactersState);
-			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfStateAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "State"));
 		}
 	}
 
@@ -182,7 +182,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearStateTextbox();
 		newCustomerPage.inputValueToStateTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfStateCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "State"));
 
 	}
 
@@ -191,7 +191,7 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearPinTextbox();
 		newCustomerPage.clickToPinTextbox();
 		newCustomerPage.pressTABKeyToPinTextbox();
-		Assert.assertTrue(newCustomerPage.isPinMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "PIN Code"));
 	}
 
 	@Test
@@ -199,7 +199,7 @@ public class NewCustomer extends AbstractTest{
 		for (String characterPIN : characterPINs) {
 			newCustomerPage.clearPinTextbox();
 			newCustomerPage.inputValueToPinTextbox(characterPIN);
-			Assert.assertTrue(newCustomerPage.isPinCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "PIN"));
 		}
 	}
 
@@ -216,7 +216,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPinTextbox();
 		newCustomerPage.inputValueToPinTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPinCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "PIN"));
 
 	}
 
@@ -225,14 +225,14 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearPhoneTextbox();
 		newCustomerPage.clickToMobileNumberTextbox();
 		newCustomerPage.pressTABKeyToMobileTextbox();
-		Assert.assertTrue(newCustomerPage.isPhoneMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Mobile no"));
 	}
 
 	@Test
 	public void NC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearPhoneTextbox();
 		newCustomerPage.inputValueToMobileNumberTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfPhoneCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Mobile Number"));
 
 	}
 
@@ -241,7 +241,7 @@ public class NewCustomer extends AbstractTest{
 		for (String characterPhoneNumber : characterPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
 			newCustomerPage.inputValueToMobileNumberTextbox(characterPhoneNumber);
-			Assert.assertTrue(newCustomerPage.isPhoneCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Mobile Number"));
 		}
 
 	}
@@ -251,7 +251,7 @@ public class NewCustomer extends AbstractTest{
 		for (String specialPhoneNumber : specialPhoneNumbers) {
 			newCustomerPage.clearPhoneTextbox();
 			newCustomerPage.inputValueToMobileNumberTextbox(specialPhoneNumber);
-			Assert.assertTrue(newCustomerPage.isSpecialCharactersOfPhoneAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Mobile Number"));
 		}
 	}
 
@@ -276,7 +276,7 @@ public class NewCustomer extends AbstractTest{
 	public void NC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
 		newCustomerPage.clearEmailTextbox();
 		newCustomerPage.inputValueToEmailTextbox(blankSpace);
-		Assert.assertTrue(newCustomerPage.isFirstCharacterOfEmailCanNotHaveSpaceMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
 
 	}
 
@@ -285,7 +285,7 @@ public class NewCustomer extends AbstractTest{
 		newCustomerPage.clearPasswordTextbox();
 		newCustomerPage.clickToPasswordTextbox();
 		newCustomerPage.pressTABKeyToPasswordTextbox();
-		Assert.assertTrue(newCustomerPage.isPasswordMustNotBeBlankMessageDisplayed());
+		Assert.assertTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Password"));
 	}
 
 	@AfterClass

@@ -29,7 +29,7 @@ public class DeleteAccount extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "tvtkcdnamsa" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -117,7 +117,7 @@ public class DeleteAccount extends AbstractTest {
 		deleteAccountPage.clearAccountNumberTextbox();
 		deleteAccountPage.clickToAccountNumberTexbox();
 		deleteAccountPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(deleteAccountPage.isAccountNumberMustNotBeBlankDisplayed());
+		Assert.assertTrue(deleteAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
 	}
 
 	@Test
@@ -125,7 +125,7 @@ public class DeleteAccount extends AbstractTest {
 		for (String characterAccountNo : characterAccountNos) {
 			deleteAccountPage.clearAccountNumberTextbox();
 			deleteAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(deleteAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -134,7 +134,7 @@ public class DeleteAccount extends AbstractTest {
 		for (String specialAccountNo : specialAccountNos) {
 			deleteAccountPage.clearAccountNumberTextbox();
 			deleteAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(deleteAccountPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(deleteAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -142,7 +142,7 @@ public class DeleteAccount extends AbstractTest {
 	public void DA_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		deleteAccountPage.clearAccountNumberTextbox();
 		deleteAccountPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(deleteAccountPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(deleteAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 
 	}
 	

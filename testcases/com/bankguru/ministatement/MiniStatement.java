@@ -29,7 +29,7 @@ public class MiniStatement extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "babonliemth" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -118,7 +118,7 @@ public class MiniStatement extends AbstractTest {
 		miniStatementPage.clearAccountNumberTextbox();
 		miniStatementPage.clickToAccountNumberTexbox();
 		miniStatementPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(miniStatementPage.isAccountNumberMustNotBeBlankDisplayed());
+		Assert.assertTrue(miniStatementPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
 	}
 
 	@Test
@@ -126,7 +126,7 @@ public class MiniStatement extends AbstractTest {
 		for (String characterAccountNo : characterAccountNos) {
 			miniStatementPage.clearAccountNumberTextbox();
 			miniStatementPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(miniStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(miniStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -135,7 +135,7 @@ public class MiniStatement extends AbstractTest {
 		for (String specialAccountNo : specialAccountNos) {
 			miniStatementPage.clearAccountNumberTextbox();
 			miniStatementPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(miniStatementPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(miniStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -143,7 +143,7 @@ public class MiniStatement extends AbstractTest {
 	public void MS_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		miniStatementPage.clearAccountNumberTextbox();
 		miniStatementPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(miniStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(miniStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 
 	}
 	

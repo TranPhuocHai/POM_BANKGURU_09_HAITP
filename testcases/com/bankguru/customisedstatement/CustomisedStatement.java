@@ -29,7 +29,7 @@ public class CustomisedStatement extends AbstractTest {
 
 	private String loginPageUrl, userIdInfo, passwordInfo, customerID, accountID;
 
-	private String email = "tpkcdnam" + randomNumber() + "@gmail.com";
+	private String email = "tphaikhainamv" + randomNumber() + "@gmail.com";
 	private String validName = "Jame Hugo";
 	private String expectedGender = "male";
 	private String validDateOfBirth = "1988-07-31";
@@ -120,7 +120,7 @@ public class CustomisedStatement extends AbstractTest {
 		customisedStatementPage.clearAccountNumberTextbox();
 		customisedStatementPage.clickToAccountNumberTexbox();
 		customisedStatementPage.pressTABKeyToAccountNumberTextbox();
-		Assert.assertTrue(customisedStatementPage.isAccountNumberMustNotBeBlankDisplayed());
+		Assert.assertTrue(customisedStatementPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
 	}
 
 	@Test
@@ -128,7 +128,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String characterAccountNo : characterValues) {
 			customisedStatementPage.clearAccountNumberTextbox();
 			customisedStatementPage.inputValueToAccountNumberTextbox(characterAccountNo);
-			Assert.assertTrue(customisedStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -137,7 +137,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialAccountNo : specialValues) {
 			customisedStatementPage.clearAccountNumberTextbox();
 			customisedStatementPage.inputValueToAccountNumberTextbox(specialAccountNo);
-			Assert.assertTrue(customisedStatementPage.isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
 		}
 	}
 
@@ -145,7 +145,7 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		customisedStatementPage.clearAccountNumberTextbox();
 		customisedStatementPage.inputValueToAccountNumberTextbox(blankSpace);
-		Assert.assertTrue(customisedStatementPage.isAccountNumberCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
 
 	}
 	
@@ -154,7 +154,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String CharacterMinimumTransactionValue : characterValues) {
 			customisedStatementPage.clearMinimumTransactionValueTextbox();
 			customisedStatementPage.inputValueToMinimumTransactionValueTextbox(CharacterMinimumTransactionValue);
-			Assert.assertTrue(customisedStatementPage.isMinimumTransactionValueCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Minimum Transaction Value"));
 		}
 	}
 	
@@ -164,7 +164,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialMinimumTransactionValue : specialValues) {
 			customisedStatementPage.clearMinimumTransactionValueTextbox();
 			customisedStatementPage.inputValueToMinimumTransactionValueTextbox(specialMinimumTransactionValue);
-			Assert.assertTrue(customisedStatementPage.isSpecialCharactersOfMinimumTransactionValueAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Minimum Transaction Value"));
 		}
 	}
 	
@@ -172,7 +172,7 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_07_MinimumTransactionValueFirstCharacterMustNotBeBlank() {
 		customisedStatementPage.clearMinimumTransactionValueTextbox();
 		customisedStatementPage.inputValueToMinimumTransactionValueTextbox(blankSpace);
-		Assert.assertTrue(customisedStatementPage.isMinimumTransactionValueCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Minimum Transaction Value"));
 		
 	}
 	
@@ -181,7 +181,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String CharacterNumberOfTransaction : characterValues) {
 			customisedStatementPage.clearNumberOfTransactionTextbox();
 			customisedStatementPage.inputValueToNumberOfTransactionTextbox(CharacterNumberOfTransaction);
-			Assert.assertTrue(customisedStatementPage.isNumberOfTransactionCharacterAreNotAllowMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Number of Transaction"));
 		}
 	}
 	
@@ -191,7 +191,7 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialNumberOfTransaction : specialValues) {
 			customisedStatementPage.clearNumberOfTransactionTextbox();
 			customisedStatementPage.inputValueToNumberOfTransactionTextbox(specialNumberOfTransaction);
-			Assert.assertTrue(customisedStatementPage.isSpecialCharactersOfNumberOfTransactionAreNotAllowedMessageDisplayed());
+			Assert.assertTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Number of Transaction"));
 		}
 	}
 
@@ -199,7 +199,7 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_10_NumberOfTransactionFirstCharacterMustNotBeBlank() {
 		customisedStatementPage.clearNumberOfTransactionTextbox();
 		customisedStatementPage.inputValueToNumberOfTransactionTextbox(blankSpace);
-		Assert.assertTrue(customisedStatementPage.isNumberOfTransactionCharacterAreNotAllowMessageDisplayed());
+		Assert.assertTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Number of Transaction"));
 
 	}
 	

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.EditAccountPageUI;
 import commons.AbstractPage;
 
@@ -34,18 +35,20 @@ public class EditAccountPageObject extends AbstractPage {
 		
 	}
 	public boolean isAccountNumberMustNotBeBlankDisplayed() {
-		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
-		return isControlDisplayed(driver, EditAccountPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
 	}
 	
 	public boolean isAccountNumberCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, EditAccountPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
+	
 	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, EditAccountPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
+	
 	public void clickAccountNumberSubmitButton() {
 		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);
 		clickToElement(driver, EditAccountPageUI.ACCOUNT_NUMBER_SUBMIT_BUTTON);

@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.CustomisedStatementPageUI;
 import commons.AbstractPage;
 
@@ -37,8 +38,8 @@ public class CustomisedStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isAccountNumberMustNotBeBlankDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
 	}
 
 	public void inputValueToAccountNumberTextbox(String value) {
@@ -48,13 +49,13 @@ public class CustomisedStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isAccountNumberCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
 
 	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
 
 	public void clearMinimumTransactionValueTextbox() {
@@ -70,13 +71,13 @@ public class CustomisedStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isMinimumTransactionValueCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.MINIMUM_TRANSACTION_VALUE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.MINIMUM_TRANSACTION_VALUE_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
 	}
 
 	public boolean isSpecialCharactersOfMinimumTransactionValueAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.MINIMUM_TRANSACTION_VALUE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.MINIMUM_TRANSACTION_VALUE_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Minimum Transaction Value");
 	}
 
 	public void clearNumberOfTransactionTextbox() {
@@ -92,13 +93,13 @@ public class CustomisedStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isNumberOfTransactionCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
 	}
 
 	public boolean isSpecialCharactersOfNumberOfTransactionAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, CustomisedStatementPageUI.NUMBER_OF_TRANSACTION_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Number of Transaction");
 	}
 
 	public void clickSubmitButton() {

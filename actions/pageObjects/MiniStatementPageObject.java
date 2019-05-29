@@ -2,6 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+
+import bankguruUI.AbstractPageUI;
 import bankguruUI.MiniStatementPageUI;
 import commons.AbstractPage;
 
@@ -36,8 +38,8 @@ public class MiniStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isAccountNumberMustNotBeBlankDisplayed() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
-		return isControlDisplayed(driver, MiniStatementPageUI.ACCOUNT_NUMBER_MUST_NOT_BE_BANK_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, "Account Number");
 	}
 
 	public void inputValueToAccountNumberTextbox(String value) {
@@ -47,13 +49,13 @@ public class MiniStatementPageObject extends AbstractPage {
 	}
 
 	public boolean isAccountNumberCharacterAreNotAllowMessageDisplayed() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, MiniStatementPageUI.ACCOUNT_NUMBER_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
 
 	public boolean isSpecialCharactersOfAccountNumberAreNotAllowedMessageDisplayed() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
-		return isControlDisplayed(driver, MiniStatementPageUI.ACCOUNT_NUMBER_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, "Account No");
 	}
 
 	public void clickAccountNumberSubmitButton() {

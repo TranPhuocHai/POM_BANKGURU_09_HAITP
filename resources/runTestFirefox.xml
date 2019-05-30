@@ -15,6 +15,7 @@
 				<class name="com.bankguru.ministatement.MiniStatement" />
 				<class name="com.bankguru.customisedstatement.CustomisedStatement" />
 				<class name="com.bankguru.user.ChangePassword" />
+				<class name="com.bankguru.fundtransfer.FundTransfer" />
 		</classes>
 	</test>
 

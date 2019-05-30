@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.AbstractPageUI;
@@ -54,5 +55,65 @@ public class FundTransferPageObject extends AbstractPage {
 		return isControlDisplayed(driver, FundTransferPageUI.FUND_TRANSFER_DETAILS_MESSAGE);
 	}
 
+
+	public void clearPayersAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);
+		clearTextElement(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);
+		
+	}
+
+
+	public void clickToPayersAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);
+		clickToElement(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);
+	}
+
+
+	public void pressTABKeyToPayersAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX);	
+		sendKeyBoardToElement(driver, FundTransferPageUI.PAYERS_ACCOUNT_NO_TEXTBOX, Keys.TAB);
+	}
+	
+	public void clearPayeesAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);
+		clearTextElement(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);
+		
+	}
+	
+	public void clickToPayeesAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);
+		clickToElement(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);
+	}
+
+	public void pressTABKeyToPayeesAccountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX);	
+		sendKeyBoardToElement(driver, FundTransferPageUI.PAYEES_ACCOUNT_NO_TEXTBOX, Keys.TAB);
+	}
+
+
+	public void clearAmountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.AMOUNT_TEXTBOX);
+		clearTextElement(driver, FundTransferPageUI.AMOUNT_TEXTBOX);
+		
+	}
+
+
+	public void clickToAmountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.AMOUNT_TEXTBOX);
+		clickToElement(driver, FundTransferPageUI.AMOUNT_TEXTBOX);		
+	}
+
+
+	public void pressTABKeyToAmountTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.AMOUNT_TEXTBOX);	
+		sendKeyBoardToElement(driver, FundTransferPageUI.AMOUNT_TEXTBOX, Keys.TAB);		
+	}
+
+
+	public boolean isDescriptionCanNotBeBlankMessageDisplayed() {
+		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_CAN_NOT_BE_BLANK_MESSAGE);
+		return isControlDisplayed(driver, FundTransferPageUI.DESCRIPTION_CAN_NOT_BE_BLANK_MESSAGE);
+	}
+	
 	
 }

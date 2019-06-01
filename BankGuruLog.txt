@@ -1,0 +1,27 @@
+2019-06-01 18:59:11,859 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 01 - open Login Page
+2019-06-01 18:59:11,861 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-01 18:59:12,007 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:12,009 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 03 - Get Login Page url
+2019-06-01 18:59:12,014 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 04 - Click to 'here' link
+2019-06-01 18:59:12,146 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 05 - Verify Register Page displayed
+2019-06-01 18:59:14,593 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:14,594 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 06 - Input to Email ID textbox
+2019-06-01 18:59:14,741 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 07 - Click to Submit button
+2019-06-01 18:59:15,863 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 08 - Get UserID and Password Infor
+2019-06-01 18:59:16,631 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 09 - Open Login Page
+2019-06-01 18:59:17,690 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 10 - Verify Login Form displayed
+2019-06-01 18:59:17,770 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:17,770 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 11 - Input to userID and Password textboxes
+2019-06-01 18:59:18,431 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 11 - Click to Login button
+2019-06-01 18:59:18,896 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 12 - Verify Welcome message of Home page displayed
+2019-06-01 18:59:20,258 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:20,258 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 13 - Verify User ID infor displayed
+2019-06-01 18:59:20,334 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:20,334 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 14 - Click to New Customer link
+2019-06-01 18:59:21,446 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 01 - Click to Customer Name textbox
+2019-06-01 18:59:21,883 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 02 - Press TAB key
+2019-06-01 18:59:21,959 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 03 - Verify correct message displayed
+2019-06-01 18:59:22,042 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
+2019-06-01 18:59:22,044 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 01 - Clear Customer Name textbox
+2019-06-01 18:59:22,087 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 02 - Input to Customer Name textbox
+2019-06-01 18:59:22,195 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 03 - Verify correct message displayed

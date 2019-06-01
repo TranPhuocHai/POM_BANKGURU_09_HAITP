@@ -2,7 +2,6 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.AbstractPageUI;
 import bankguruUI.BalanceEnquiryPageUI;
 import commons.AbstractPage;
 

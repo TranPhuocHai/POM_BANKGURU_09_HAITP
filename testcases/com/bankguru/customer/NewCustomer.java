@@ -3,7 +3,6 @@ package com.bankguru.customer;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -90,248 +89,285 @@ public class NewCustomer extends AbstractTest{
 
 	@Test
 	public void NC_01_NameCanNotBeEmpty() {
-		log.info("Name Can Not Be Empty: Step 01 - Click to Customer Name textbox");
+		
+		log.info("NameCanNotBeEmpty: Step 01 - Click to Customer Name textbox");
 		newCustomerPage.clickToCustomerNameTextbox();
 		
-		log.info("Name Can Not Be Empty: Step 02 - Press TAB key");
+		log.info("NameCanNotBeEmpty: Step 02 - Press TAB key");
 		newCustomerPage.pressTABKeyToCustomerNameTextBox();
 		
-		log.info("Name Can Not Be Empty: Step 03 - Verify correct message displayed");
+		log.info("NameCanNotBeEmpty: Step 03 - Verify correct message displayed");
 		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Customer name"));
 	}
 
 	@Test
 	public void NC_02_NameCanNotBeNumberic() {
 		for (String numericName : numericValues) {
-			log.info("Name Can Not Be Numeric: Step 01 - Clear Customer Name textbox");
+			
+			log.info("NameCanNotBeNumeric: Step 01 - Clear Customer Name textbox");
 			newCustomerPage.clearNameTextbox();
 			
-			log.info("Name Can Not Be Numeric: Step 02 - Input to Customer Name textbox");
+			log.info("NameCanNotBeNumeric: Step 02 - Input to Customer Name textbox");
 			newCustomerPage.inputValueToCustomerNameTextbox(numericName);
 			
-			log.info("Name Can Not Be Numeric: Step 03 - Verify correct message displayed");
-			verifyFalse(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "Customer Nam"));
+			log.info("NameCanNotBeNumeric: Step 03 - Verify correct message displayed");
+			verifyFalse(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "Customer Name"));
 			
-			log.info("Name Can Not Be Numeric: Step 04 - Clear Customer Name textbox");
-			newCustomerPage.clearNameTextbox();
-			
-			log.info("Name Can Not Be Numeric: Step 05 - Verify correct message displayed");
-			newCustomerPage.inputValueToCustomerNameTextbox("@#sd");
 		}
 	}
 
-//	@Test
-//	public void NC_03_NameCanNotHaveSpecialCharacters() {
-//		for (String specialCharactersName : specialCharacters) {
-//			newCustomerPage.clearNameTextbox();
-//			newCustomerPage.inputValueToCustomerNameTextbox(specialCharactersName);
-//			verifyTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
-//		}
-//	}
-//
-//	@Test
-//	public void NC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearNameTextbox();
-//		newCustomerPage.inputValueToCustomerNameTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer Name"));
-//
-//	}
-//
-//	@Test
-//	public void NC_05_AddressCanNotBeEmpty() {
-//		newCustomerPage.clearAddresTextarea();
-//		newCustomerPage.clickToAddressTextarea();
-//		newCustomerPage.pressTABKeyToAddressTextArea();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Address Field"));
-//
-//	}
-//
-//	@Test
-//	public void NC_06_AdressCanNotHaveSpecialCharacters() {
-//		for (String specialCharactersAddress : specialCharacters) {
-//			newCustomerPage.clearAddresTextarea();
-//			newCustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
-//			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Address"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearAddresTextarea();
-//		newCustomerPage.inputValueToAdressTextArea(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Address"));
-//
-//	}
-//
-//	@Test
-//	public void NC_08_CityCanNotBeEmpty() {
-//		newCustomerPage.clearCityTextbox();
-//		newCustomerPage.clickToCityTextbox();
-//		newCustomerPage.pressTABKeyToCityTextbox();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "City Field"));
-//	}
-//
-//	@Test
-//	public void NC_08_CityCanNotBeNumberic() {
-//		for (String numericCity : numericValues) {
-//			newCustomerPage.clearCityTextbox();
-//			newCustomerPage.inputValueToCityTextbox(numericCity);
-//			verifyTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "City"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_10_CityCanNotHaveSpecialCharacters() {
-//		for (String specialCharactersCity : specialCharacters) {
-//			newCustomerPage.clearCityTextbox();
-//			newCustomerPage.inputValueToCityTextbox(specialCharactersCity);
-//			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "City"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearCityTextbox();
-//		newCustomerPage.inputValueToCityTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "City"));
-//
-//	}
-//
-//	@Test
-//	public void NC_12_StateCanNotBeEmpty() {
-//		newCustomerPage.clearStateTextbox();
-//		newCustomerPage.clickToStateTextbox();
-//		newCustomerPage.pressTABKeyToStateTextbox();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "State"));
-//	}
-//
-//	@Test
-//	public void NC_13_StateCanNotBeNumberic() {
-//		for (String numericState : numericValues) {
-//			newCustomerPage.clearStateTextbox();
-//			newCustomerPage.inputValueToStateTextbox(numericState);
-//			verifyTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "State"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_14_StateCanNotHaveSpecialCharacters() {
-//		for (String specialCharactersState : specialCharacters) {
-//			newCustomerPage.clearStateTextbox();
-//			newCustomerPage.inputValueToStateTextbox(specialCharactersState);
-//			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "State"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearStateTextbox();
-//		newCustomerPage.inputValueToStateTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "State"));
-//
-//	}
-//
-//	@Test
-//	public void NC_16_PinCanNotBeEmpty() {
-//		newCustomerPage.clearPinTextbox();
-//		newCustomerPage.clickToPinTextbox();
-//		newCustomerPage.pressTABKeyToPinTextbox();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "PIN Code"));
-//	}
-//
-//	@Test
-//	public void NC_17_PinMustBeNumeric() {
-//		for (String characterPIN : characterPINs) {
-//			newCustomerPage.clearPinTextbox();
-//			newCustomerPage.inputValueToPinTextbox(characterPIN);
-//			verifyTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "PIN"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_18_PinMustHave6Degits() {
-//		for (String lessThan6Digits : lessThan6DigitsList) {
-//			newCustomerPage.clearPinTextbox();
-//			newCustomerPage.inputValueToPinTextbox(lessThan6Digits);
-//			verifyTrue(newCustomerPage.isPinMustHave6DegitsMessageDisplayed());
-//		}
-//	}
-//
-//	@Test
-//	public void NC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearPinTextbox();
-//		newCustomerPage.inputValueToPinTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "PIN"));
-//
-//	}
-//
-//	@Test
-//	public void NC_20_TelephoneCanNotBeEmpty() {
-//		newCustomerPage.clearPhoneTextbox();
-//		newCustomerPage.clickToMobileNumberTextbox();
-//		newCustomerPage.pressTABKeyToMobileTextbox();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Mobile no"));
-//	}
-//
-//	@Test
-//	public void NC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearPhoneTextbox();
-//		newCustomerPage.inputValueToMobileNumberTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Mobile Number"));
-//
-//	}
-//
-//	@Test
-//	public void NC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
-//		for (String characterPhoneNumber : characterPhoneNumbers) {
-//			newCustomerPage.clearPhoneTextbox();
-//			newCustomerPage.inputValueToMobileNumberTextbox(characterPhoneNumber);
-//			verifyTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Mobile Number"));
-//		}
-//
-//	}
-//
-//	@Test
-//	public void NC_23_TelephoneCanNotHaveSpecialCharacters() {
-//		for (String specialPhoneNumber : specialPhoneNumbers) {
-//			newCustomerPage.clearPhoneTextbox();
-//			newCustomerPage.inputValueToMobileNumberTextbox(specialPhoneNumber);
-//			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Mobile Number"));
-//		}
-//	}
-//
-//	@Test
-//	public void NC_24_EmailCanNotBeEmpty() {
-//		newCustomerPage.clearEmailTextbox();
-//		newCustomerPage.clickToEmailTextbox();
-//		newCustomerPage.pressTABKeyToEmailTextbox();
-//		verifyTrue(newCustomerPage.isEmailMustNotBeBlankMessageDisplayed());
-//	}
-//
-//	@Test
-//	public void NC_25_EmailMustBeInCorrectFormat() {
-//		for (String incorrectEmailID : incorrectEmailIDList) {
-//			newCustomerPage.clearEmailTextbox();
-//			newCustomerPage.inputValueToEmailTextbox(incorrectEmailID);
-//			verifyTrue(newCustomerPage.isEmailIDIsNotValidMessageDisplayed());
-//		}
-//	}
-//
-//	@Test
-//	public void NC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
-//		newCustomerPage.clearEmailTextbox();
-//		newCustomerPage.inputValueToEmailTextbox(blankSpace);
-//		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
-//
-//	}
-//
-//	@Test
-//	public void NC_27_PasswordCanNotBeEmpty() {
-//		newCustomerPage.clearPasswordTextbox();
-//		newCustomerPage.clickToPasswordTextbox();
-//		newCustomerPage.pressTABKeyToPasswordTextbox();
-//		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Password"));
-//	}
+	@Test
+	public void NC_03_NameCanNotHaveSpecialCharacters() {
+		for (String specialCharactersName : specialCharacters) {
+			
+			log.info("NameCanNotHaveSpecialCharacters: Step 01 - Clear Customer Name textbox");
+			newCustomerPage.clearNameTextbox();
+			
+			log.info("NameCanNotHaveSpecialCharacters: Step 02 - Input to Customer Name textbox");
+			newCustomerPage.inputValueToCustomerNameTextbox(specialCharactersName);
+			
+			log.info("NameCanNotHaveSpecialCharacters: Step 03 - Verify correct message displayed");
+			verifyTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
+		}
+	}
+
+	@Test
+	public void NC_04_NameCanNotHaveFirstCharacterAsBlankSpace() {		
+		
+		log.info("NameCanNotHaveFirstCharacterAsBlankSpace: Step 01 - Clear Customer Name textbox");
+		newCustomerPage.clearNameTextbox();
+		
+		log.info("NameCanNotHaveFirstCharacterAsBlankSpace: Step 02 - Input to Customer Name textbox");
+		newCustomerPage.inputValueToCustomerNameTextbox(blankSpace);
+		
+		log.info("NameCanNotHaveFirstCharacterAsBlankSpace: Step 03 - Verify correct message displayed");
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer Name"));
+
+	}
+
+	@Test
+	public void NC_05_AddressCanNotBeEmpty() {
+		
+		log.info("AddressCanNotBeEmpty: Step 01 - Clear Address textbox");
+		newCustomerPage.clearAddresTextarea();
+		
+		log.info("AddressCanNotBeEmpty: Step 02 - Click to Address textbox");
+		newCustomerPage.clickToAddressTextarea();
+		
+		log.info("AddressCanNotBeEmpty: Step 03 - Press TAB key");
+		newCustomerPage.pressTABKeyToAddressTextArea();
+		
+		log.info("AddressCanNotBeEmpty: Step 04 - Verify correct message displayed");
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Address Field"));
+
+	}
+
+	@Test
+	public void NC_06_AdressCanNotHaveSpecialCharacters() {
+		for (String specialCharactersAddress : specialCharacters) {
+			
+			log.info("AdressCanNotHaveSpecialCharacters: Step 01 - Clear Address textbox");
+			newCustomerPage.clearAddresTextarea();
+			
+			log.info("AdressCanNotHaveSpecialCharacters: Step 02 - Input to Address textbox");
+			newCustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
+			
+			log.info("AdressCanNotHaveSpecialCharacters: Step 03 - Verify correct message displayed");
+			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Address"));
+		}
+	}
+
+	@Test
+	public void NC_07_AddressCanNotHaveFirstCharacterAsBlankSpace() {
+		
+		log.info("AddressCanNotHaveFirstCharacterAsBlankSpace: Step 01 - Clear Address textbox");
+		newCustomerPage.clearAddresTextarea();
+		
+		log.info("AddressCanNotHaveFirstCharacterAsBlankSpace: Step 02 - Input to Address textbox");
+		newCustomerPage.inputValueToAdressTextArea(blankSpace);
+		
+		log.info("AddressCanNotHaveFirstCharacterAsBlankSpace: Step 03 - Verify correct message displayed");
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Address"));
+
+	}
+
+	@Test
+	public void NC_08_CityCanNotBeEmpty() {
+		
+		log.info("CityCanNotBeEmpty: Step 01 - Clear City textbox");
+		newCustomerPage.clearCityTextbox();
+		
+		log.info("CityCanNotBeEmpty: Step 02 - Click to City textbox");
+		newCustomerPage.clickToCityTextbox();
+		
+		log.info("CityCanNotBeEmpty: Step 03 - Press TAB key");
+		newCustomerPage.pressTABKeyToCityTextbox();
+		
+		log.info("AddressCanNotHaveFirstCharacterAsBlankSpace: Step 03 - Verify correct message displayed");
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "City Field"));
+	}
+
+	@Test
+	public void NC_08_CityCanNotBeNumberic() {
+		for (String numericCity : numericValues) {
+			newCustomerPage.clearCityTextbox();
+			newCustomerPage.inputValueToCityTextbox(numericCity);
+			verifyTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "City"));
+		}
+	}
+
+	@Test
+	public void NC_10_CityCanNotHaveSpecialCharacters() {
+		for (String specialCharactersCity : specialCharacters) {
+			newCustomerPage.clearCityTextbox();
+			newCustomerPage.inputValueToCityTextbox(specialCharactersCity);
+			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "City"));
+		}
+	}
+
+	@Test
+	public void NC_11_CityCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.clearCityTextbox();
+		newCustomerPage.inputValueToCityTextbox(blankSpace);
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "City"));
+
+	}
+
+	@Test
+	public void NC_12_StateCanNotBeEmpty() {
+		newCustomerPage.clearStateTextbox();
+		newCustomerPage.clickToStateTextbox();
+		newCustomerPage.pressTABKeyToStateTextbox();
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "State"));
+	}
+
+	@Test
+	public void NC_13_StateCanNotBeNumberic() {
+		for (String numericState : numericValues) {
+			newCustomerPage.clearStateTextbox();
+			newCustomerPage.inputValueToStateTextbox(numericState);
+			verifyTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "State"));
+		}
+	}
+
+	@Test
+	public void NC_14_StateCanNotHaveSpecialCharacters() {
+		for (String specialCharactersState : specialCharacters) {
+			newCustomerPage.clearStateTextbox();
+			newCustomerPage.inputValueToStateTextbox(specialCharactersState);
+			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "State"));
+		}
+	}
+
+	@Test
+	public void NC_15_StateCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.clearStateTextbox();
+		newCustomerPage.inputValueToStateTextbox(blankSpace);
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "State"));
+
+	}
+
+	@Test
+	public void NC_16_PinCanNotBeEmpty() {
+		newCustomerPage.clearPinTextbox();
+		newCustomerPage.clickToPinTextbox();
+		newCustomerPage.pressTABKeyToPinTextbox();
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "PIN Code"));
+	}
+
+	@Test
+	public void NC_17_PinMustBeNumeric() {
+		for (String characterPIN : characterPINs) {
+			newCustomerPage.clearPinTextbox();
+			newCustomerPage.inputValueToPinTextbox(characterPIN);
+			verifyTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "PIN"));
+		}
+	}
+
+	@Test
+	public void NC_18_PinMustHave6Degits() {
+		for (String lessThan6Digits : lessThan6DigitsList) {
+			newCustomerPage.clearPinTextbox();
+			newCustomerPage.inputValueToPinTextbox(lessThan6Digits);
+			verifyTrue(newCustomerPage.isPinMustHave6DegitsMessageDisplayed());
+		}
+	}
+
+	@Test
+	public void NC_19_PinCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.clearPinTextbox();
+		newCustomerPage.inputValueToPinTextbox(blankSpace);
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "PIN"));
+
+	}
+
+	@Test
+	public void NC_20_TelephoneCanNotBeEmpty() {
+		newCustomerPage.clearPhoneTextbox();
+		newCustomerPage.clickToMobileNumberTextbox();
+		newCustomerPage.pressTABKeyToMobileTextbox();
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Mobile no"));
+	}
+
+	@Test
+	public void NC_21_TelephoneCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.clearPhoneTextbox();
+		newCustomerPage.inputValueToMobileNumberTextbox(blankSpace);
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Mobile Number"));
+
+	}
+
+	@Test
+	public void NC_22_TelephoneCharacterOrIncludeSpaceAreNotAllow() {
+		for (String characterPhoneNumber : characterPhoneNumbers) {
+			newCustomerPage.clearPhoneTextbox();
+			newCustomerPage.inputValueToMobileNumberTextbox(characterPhoneNumber);
+			verifyTrue(newCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Mobile Number"));
+		}
+
+	}
+
+	@Test
+	public void NC_23_TelephoneCanNotHaveSpecialCharacters() {
+		for (String specialPhoneNumber : specialPhoneNumbers) {
+			newCustomerPage.clearPhoneTextbox();
+			newCustomerPage.inputValueToMobileNumberTextbox(specialPhoneNumber);
+			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Mobile Number"));
+		}
+	}
+
+	@Test
+	public void NC_24_EmailCanNotBeEmpty() {
+		newCustomerPage.clearEmailTextbox();
+		newCustomerPage.clickToEmailTextbox();
+		newCustomerPage.pressTABKeyToEmailTextbox();
+		verifyTrue(newCustomerPage.isEmailMustNotBeBlankMessageDisplayed());
+	}
+
+	@Test
+	public void NC_25_EmailMustBeInCorrectFormat() {
+		for (String incorrectEmailID : incorrectEmailIDList) {
+			newCustomerPage.clearEmailTextbox();
+			newCustomerPage.inputValueToEmailTextbox(incorrectEmailID);
+			verifyTrue(newCustomerPage.isEmailIDIsNotValidMessageDisplayed());
+		}
+	}
+
+	@Test
+	public void NC_26_EmailCanNotHaveFirstCharacterAsBlankSpace() {
+		newCustomerPage.clearEmailTextbox();
+		newCustomerPage.inputValueToEmailTextbox(blankSpace);
+		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
+
+	}
+
+	@Test
+	public void NC_27_PasswordCanNotBeEmpty() {
+		newCustomerPage.clearPasswordTextbox();
+		newCustomerPage.clickToPasswordTextbox();
+		newCustomerPage.pressTABKeyToPasswordTextbox();
+		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Password"));
+	}
 
 	@AfterClass
 	public void afterClass() {

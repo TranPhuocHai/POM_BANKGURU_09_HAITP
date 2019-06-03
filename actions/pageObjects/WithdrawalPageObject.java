@@ -20,8 +20,8 @@ public class WithdrawalPageObject extends AbstractPage {
 	}
 
 	public void inputValueToAccountNoTextbox(String value) {
-		waitForElementVisible(driver, WithdrawalPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, WithdrawalPageUI.ACCOUNT_NO_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 

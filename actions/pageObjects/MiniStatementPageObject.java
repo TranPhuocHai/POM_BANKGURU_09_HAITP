@@ -20,26 +20,26 @@ public class MiniStatementPageObject extends AbstractPage {
 	}
 
 	public void clearAccountNumberTextbox() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
-		clearTextElement(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		clearTextElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
 		
 	}
 
 	public void clickToAccountNumberTexbox() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
-		clickToElement(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
 		
 	}
 
 	public void pressTABKeyToAccountNumberTextbox() {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
-		sendKeyBoardToElement(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX, Keys.TAB);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		sendKeyBoardToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, Keys.TAB);
 		
 	}
 
 	public void inputValueToAccountNumberTextbox(String value) {
-		waitForElementVisible(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX);
-		sendKeyToElement(driver, MiniStatementPageUI.ACCOUNT_NUMBER_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 

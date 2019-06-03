@@ -114,6 +114,26 @@ public class FundTransferPageObject extends AbstractPage {
 		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_CAN_NOT_BE_BLANK_MESSAGE);
 		return isControlDisplayed(driver, FundTransferPageUI.DESCRIPTION_CAN_NOT_BE_BLANK_MESSAGE);
 	}
+
+
+	public void clearDescriptionTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
+		clearTextElement(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
+	}
+
+
+	public void clickToDescriptionTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
+		clickToElement(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
+		
+	}
+
+
+	public void pressTABKeyToDescriptionTextbox() {
+		waitForElementVisible(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX);
+		sendKeyBoardToElement(driver, FundTransferPageUI.DESCRIPTION_TEXTBOX, Keys.TAB);
+		
+	}
 	
 	
 }

@@ -44,7 +44,7 @@ public class EditAccountPageObject extends AbstractPage {
 		waitForElementVisible(driver, EditAccountPageUI.EDIT_CUSTOMER_FORM);
 		return isControlDisplayed(driver, EditAccountPageUI.EDIT_CUSTOMER_FORM);
 	}
-	public void selectSavingsInAccountType() {
+	public void selectSavingsInAccountTypeDropdown() {
 		waitForElementVisible(driver, EditAccountPageUI.ACCOUNT_TYPE_DROPDOWN);
 		selectItemInDropdown(driver, EditAccountPageUI.ACCOUNT_TYPE_DROPDOWN, "Savings");
 		

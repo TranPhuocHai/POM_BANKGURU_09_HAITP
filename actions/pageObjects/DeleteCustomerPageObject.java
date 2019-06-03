@@ -4,7 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.AbstractPageUI;
-import bankguruUI.DeleteCustomerPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 
@@ -45,20 +44,20 @@ public class DeleteCustomerPageObject extends AbstractPage {
 	}
 
 	public void clearCustomerIDTextbox() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		clearTextElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clearTextElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 	public void clickToCustomerIDTexbox() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		clickToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clickToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 	public void pressTABKeyToCustomerIDTextbox() {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyBoardToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyBoardToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
 		
 	}
 
@@ -68,8 +67,8 @@ public class DeleteCustomerPageObject extends AbstractPage {
 	}
 
 	public void inputValueToCustomerIDTextbox(String value) {
-		waitForElementVisible(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, DeleteCustomerPageUI.CUSTOMER_ID_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
 	}
 

@@ -38,20 +38,20 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public void clearCustomerIDTextbox() {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		clearTextElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clearTextElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 	public void clickToCustomerIDTexbox() {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		clickToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clickToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 	public void pressTABKeyToCustomerIDTextbox() {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyBoardToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyBoardToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
 		
 	}
 
@@ -61,8 +61,8 @@ public class NewAccountPageObject extends AbstractPage {
 	}
 
 	public void inputValueToCustomerIDTextbox(String value) {
-		waitForElementVisible(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, NewAccountPageUI.CUSTOMER_ID_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
 	}
 

@@ -21,7 +21,7 @@ public class EditCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void inputValueToAdressTextArea(String value) {
+	public void inputValueToAddressTextArea(String value) {
 		waitForElementVisible(driver, EditCustomerPageUI.ADDRESS_TEXTAREA);
 		sendKeyToElement(driver, EditCustomerPageUI.ADDRESS_TEXTAREA, value);
 		
@@ -138,7 +138,7 @@ public class EditCustomerPageObject extends AbstractPage {
 
 
 
-	public void clearAdressTextArea() {
+	public void clearAddressTextArea() {
 		waitForElementVisible(driver, EditCustomerPageUI.ADDRESS_TEXTAREA);
 		clearTextElement(driver, EditCustomerPageUI.ADDRESS_TEXTAREA);
 		
@@ -186,16 +186,16 @@ public class EditCustomerPageObject extends AbstractPage {
 
 
 	public void clickToCustomerIDTexbox() {
-		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		clickToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clickToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 
 
 	public void pressTABKeyToCustomerIDTextbox() {
-		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyBoardToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyBoardToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, Keys.TAB);	
 		
 	}
 
@@ -207,15 +207,15 @@ public class EditCustomerPageObject extends AbstractPage {
 	}
 
 	public void clearCustomerIDTextbox() {
-		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		clearTextElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		clearTextElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
 		
 	}
 
 
 	public void inputValueToCustomerIDTextbox(String value) {
-		waitForElementVisible(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX);
-		sendKeyToElement(driver, EditCustomerPageUI.CUSTOMER_ID_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.CUSTOMER_ID_TEXTBOX, value);
 		
 	}
 

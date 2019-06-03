@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruUI.AbstractPageUI;
 import bankguruUI.BalanceEnquiryPageUI;
 import commons.AbstractPage;
 
@@ -13,14 +14,14 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public void inputValueToAccountNumber(String value) {
-		waitForElementVisible(driver, BalanceEnquiryPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, BalanceEnquiryPageUI.ACCOUNT_NO_TEXTBOX, value);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
 		
 	}
 
 	public void clickSubmitButton() {
-		waitForElementVisible(driver, BalanceEnquiryPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, BalanceEnquiryPageUI.SUBMIT_BUTTON);
+		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
 		
 	}
 

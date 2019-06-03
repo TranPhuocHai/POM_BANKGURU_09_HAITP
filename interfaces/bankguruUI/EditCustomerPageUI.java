@@ -2,7 +2,6 @@ package bankguruUI;
 
 public class EditCustomerPageUI {
 	
-	public static final String CUSTOMER_ID_TEXTBOX = "//input[@name='cusid']";
 	public static final String ADDRESS_TEXTAREA = "//textarea[@name='addr']";	
 	public static final String CITY_TEXTBOX = "//input[@name='city']";
 	public static final String STATE_TEXTBOX = "//input[@name='state']";

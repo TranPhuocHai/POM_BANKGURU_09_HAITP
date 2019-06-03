@@ -48,7 +48,7 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void clickToAddressTextarea() {
+	public void clickToAddressTextArea() {
 		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
 		clickToElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
 		
@@ -240,12 +240,6 @@ public class NewCustomerPageObject extends AbstractPage {
 		return isControlDisplayed(driver, NewCustomerPageUI.REGISTER_CUSTOMER_SUCCESS_MESSAGE);
 		
 	}
-	
-	public String getCustomerID() {
-		waitForElementVisible(driver, NewCustomerPageUI.CUSTOMER_ID);
-		return getTextElement(driver, NewCustomerPageUI.CUSTOMER_ID);
-	}
-
 
 	public void openHomePageUrl(String homePageUrl) {
 		openAnyUrl(driver, homePageUrl);
@@ -258,7 +252,7 @@ public class NewCustomerPageObject extends AbstractPage {
 		
 	}
 
-	public void clearAddresTextarea() {
+	public void clearAddresTextArea() {
 		waitForElementVisible(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
 		clearTextElement(driver, NewCustomerPageUI.ADDRESS_TEXTAREA);
 		

@@ -2,7 +2,6 @@ package bankguruUI;
 
 public class NewAccountPageUI {
 	public static final String ADD_NEW_ACCOUNT_FORM_MESSAGE = "//p[text()='Add new account form']";
-	public static final String CUSTOMER_ID_TEXTBOX = "//input[@name='cusid']";
 	public static final String ACCOUNT_TYPE_DROPDOWN = "//select[@name='selaccount']";
 	public static final String INITIAL_DEPOSIT_TEXTBOX = "//input[@name='inideposit']";
 	public static final String ACCOUNT_GENERATED_SUCCESS_MESSAGE = "//p[text()='Account Generated Successfully!!!']";

@@ -15,4 +15,8 @@ public class AbstractPageUI {
 
 	public static final String SUBMIT_BUTTON = "//input[@type='submit']";
 	public static final String RESET_BUTTON = "//input[@type='reset']";
+	
+	public static final String CUSTOMER_ID_TEXTBOX = "//input[@name='cusid']";
+	
+	public static final String ACCOUNT_NO_TEXTBOX = "//input[@name='accountno']";
 }

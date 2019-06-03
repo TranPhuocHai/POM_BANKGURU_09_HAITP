@@ -3,7 +3,6 @@ package com.bankguru.account;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -47,113 +46,214 @@ public class NewAccount extends AbstractTest{
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
 
+		log.info("Precondition: Step 01 - open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		Assert.assertTrue(loginPage.isLoginFormDisplayed());
+		
+		log.info("Precondition: Step 02 - Verify Login Form displayed");
+		verifyTrue(loginPage.isLoginFormDisplayed());
+		
+		log.info("Precondition: Step 03 - Get Login Page url");
 		loginPageUrl = loginPage.getLoginPageUrl();
+		
+		log.info("Precondition: Step 04 - Click to 'here' link");
 		registerPage = loginPage.clickToHereLink();
-		Assert.assertTrue(registerPage.isRegisterPageDisplayed());
+		
+		log.info("Precondition: Step 05 - Verify Register Page displayed");
+		verifyTrue(registerPage.isRegisterPageDisplayed());
+		
+		log.info("Precondition: Step 06 - Input to 'Email ID' textbox");
 		registerPage.inPutToEmailIDTextbox(email);
+		
+		log.info("Precondition: Step 07 - Click to Submit button");
 		registerPage.clickToSubmitButton();
+		
+		log.info("Precondition: Step 08 - Get UserID and Password Infor");
 		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
 		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
+		
+		log.info("Precondition: Step 09 - Open Login Page");
 		loginPage = registerPage.openLoginPage(loginPageUrl);
-		Assert.assertTrue(loginPage.isLoginFormDisplayed());
+		
+		log.info("Precondition: Step 10 - Verify Login Form displayed");
+		verifyTrue(loginPage.isLoginFormDisplayed());
+		
+		log.info("Precondition: Step 11 - Input to 'userID' and 'Password' textboxes");
 		loginPage.inPutToUserIDTextbox(userIdInfo);
 		loginPage.inPutToPasswordTextbox(passwordInfo);
-		homePage = loginPage.clickToLoginButton();
-		homePage.isWelcomeMessageDisplayed();
-		homePage.isUserIDDisplayed(userIdInfo);
 		
+		log.info("Precondition: Step 11 - Click to Login button");
+		homePage = loginPage.clickToLoginButton();
+		
+		log.info("Precondition: Step 12 - Verify Welcome message of Home page displayed");
+		verifyTrue(homePage.isWelcomeMessageDisplayed());
+		
+		log.info("Precondition: Step 13 - Verify User ID infor displayed");
+		verifyTrue(homePage.isUserIDDisplayed(userIdInfo));
+		
+		log.info("Precondition: Step 14 - Click to 'New Customer' link");
 		homePage.openMultiplePage(driver, "New Customer");
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
+		log.info("Precondition: Step 15 - Input to 'Customer Name' textbox");
 		newCustomerPage.inputValueToCustomerNameTextbox(validName);
+		
+		log.info("Precondition: Step 16 - Select Male gender");
 		newCustomerPage.selectMaleGenderRadioButton();
+		
+		log.info("Precondition: Step 17 - Remove Date Of Birth attribute");
 		newCustomerPage.removeDateOfBirthAttribute();
+		
+		log.info("Precondition: Step 18 - Input to Date Of Birth textbox");
 		newCustomerPage.inputValueToDateOfBirthTextbox(validDateOfBirth);
+		
+		log.info("Precondition: Step 19 - Input to 'Address' text area");
 		newCustomerPage.inputValueToAdressTextArea(validAdress);
+		
+		log.info("Precondition: Step 20 - Input to 'City' textbox");
 		newCustomerPage.inputValueToCityTextbox(validCity);
+		
+		log.info("Precondition: Step 21 - Input to 'State' textbox");
 		newCustomerPage.inputValueToStateTextbox(validState);
+		
+		log.info("Precondition: Step 22 - Input to 'PIN' textbox");
 		newCustomerPage.inputValueToPinTextbox(validPin);
+		
+		log.info("Precondition: Step 23 - Input to 'Mobile Number' textbox");
 		newCustomerPage.inputValueToMobileNumberTextbox(validPhoneNumber);
+		
+		log.info("Precondition: Step 24 - Input to 'Email' textbox");
 		newCustomerPage.inputValueToEmailTextbox(validEmailID);
+		
+		log.info("Precondition: Step 25 - Input to 'Password' textbox");
 		newCustomerPage.inputValueToPasswordTextbox(validPassword);
+		
+		log.info("Precondition: Step 26 - Click to Submit button");
 		newCustomerPage.clickToSubmitButton();
-		newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed();
+		
+		log.info("Precondition: Step 27 - Verify 'Customer Registered Successfully!!!' message displayed");
+		verifyTrue(newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed());
 
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
-		Assert.assertEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
+		log.info("Precondition: Step 28 - Verify all infor of new customer are correct");
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
+		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
 
+		log.info("Precondition: Step 29 - Click To 'New Account' link");
 		newCustomerPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 	}
 	
 	@Test
 	public void NC_01_CustomerIDCanNotBeEmpty() {
+
+		log.info("CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox");
 		newAccountPage.clearCustomerIDTextbox();
+
+		log.info("CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox");
 		newAccountPage.clickToCustomerIDTexbox();
+
+		log.info("CustomerIDCanNotBeEmpty: Step 03 - Press TAB key");
 		newAccountPage.pressTABKeyToCustomerIDTextbox();
-		Assert.assertTrue(newAccountPage.isCustomerIDIsRequiredMessageDisplayed());
-		
+
+		log.info("CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed");
+		verifyTrue(newAccountPage.isCustomerIDIsRequiredMessageDisplayed());
+
 	}
 	
 	@Test
-	public void NC_02_CustomerIDCanNotHaveFirstCharacterAsBlankSpace() {
+	public void NC_02_CustomerIDCanNotHaveFirstBlankSpace() {
+
+		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox");
 		newAccountPage.clearCustomerIDTextbox();
+
+		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox");
 		newAccountPage.inputValueToCustomerIDTextbox(blankSpace);
-		Assert.assertTrue(newAccountPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer id"));
-		
+
+		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
+		verifyTrue(newAccountPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer id"));
+
 	}
 	
 	@Test
-	public void NC_03_CustomerIDCharacterOrIncludeSpaceAreNotAllow() {
-		for (String characterValue : characterValues) {
+	public void NC_03_CustomerIDCharacterAreNotAllowed() {
+		for (String charactervalue : characterValues) {
+
+			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearCustomerIDTextbox();
-			newAccountPage.inputValueToCustomerIDTextbox(characterValue);
-			Assert.assertTrue(newAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer id"));
+
+			log.info("CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox");
+			newAccountPage.inputValueToCustomerIDTextbox(charactervalue);
+
+			log.info("CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
+			verifyTrue(newAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer id"));
 		}
-		
+
 	}
 	
 	@Test
 	public void NC_04_CustomerIDCanNotHaveSpecialCharacters() {
 		for (String specialValue : specialValues) {
+
+			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearCustomerIDTextbox();
+
+			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox");
 			newAccountPage.inputValueToCustomerIDTextbox(specialValue);
-			Assert.assertTrue(newAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer id"));
+
+			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyTrue(newAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer id"));
 		}
 	}
 	
 	@Test
 	public void NC_05_InitialDepositCanNotBeEmpty() {
+		
+		log.info("InitialDepositCanNotBeEmpty: Step 01 - Clear 'Initial deposit' textbox");
 		newAccountPage.clearInitialDepositTextbox();
+		
+		log.info("InitialDepositCanNotBeEmpty: Step 02 - Click to 'Initial deposit' textbox");
 		newAccountPage.clickToInitialDepositTexbox();
+		
+		log.info("InitialDepositCanNotBeEmpty: Step 03 - Press TAB key");
 		newAccountPage.pressTABKeyToInitialDepositTextbox();
-		Assert.assertTrue(newAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Initial Deposit"));
+		
+		log.info("InitialDepositCanNotBeEmpty: Step 04 - Verify 'Initial Deposit must not be blank' message displayed");
+		verifyTrue(newAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Initial Deposit"));
 
 	}
 
 	@Test
-	public void NC_06_InitialDepositCanNotHaveFirstCharacterAsBlankSpace() {
+	public void NC_06_InitialDepositCanNotHaveFirstBlankSpace() {
+		
+		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 01 - Clear 'Initial deposit' textbox");
 		newAccountPage.clearInitialDepositTextbox();
+		
+		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 02 - Input to 'Initial deposit' textbox");
 		newAccountPage.inputValueToInitialDepositTextbox(blankSpace);
-		Assert.assertTrue(newAccountPage.isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed());
+		
+		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
+		verifyTrue(newAccountPage.isFirstCharacterOfInitialDepositCanNotHaveSpaceMessageDisplayed());
 
 	}
 
 	@Test
-	public void NC_07_InitialDepositCharacterOrIncludeSpaceAreNotAllow() {
+	public void NC_07_InitialDepositCharacterAreNotAllowed() {
 		for (String characterValue : characterValues) {
+			
+			log.info("InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearInitialDepositTextbox();
+			
+			log.info("InitialDepositCharacterAreNotAllowed: Step 02 - Input to 'Initial deposit' textbox");
 			newAccountPage.inputValueToInitialDepositTextbox(characterValue);
-			Assert.assertTrue(newAccountPage.isInitialDepositCharacterAreNotAllowMessageDisplayed());
+			
+			log.info("InitialDepositCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
+			verifyTrue(newAccountPage.isInitialDepositCharacterAreNotAllowMessageDisplayed());
 		}
 
 	}
@@ -161,9 +261,15 @@ public class NewAccount extends AbstractTest{
 	@Test
 	public void NC_08_InitialDepositCanNotHaveSpecialCharacters() {
 		for (String specialValue : specialValues) {
+			
+			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearInitialDepositTextbox();
+			
+			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 02 - Input to 'Initial deposit' textbox");
 			newAccountPage.inputValueToInitialDepositTextbox(specialValue);
-			Assert.assertTrue(newAccountPage.isSpecialCharactersOfInitialDepositAreNotAllowedMessageDisplayed());
+			
+			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyTrue(newAccountPage.isSpecialCharactersOfInitialDepositAreNotAllowedMessageDisplayed());
 		}
 	}
 

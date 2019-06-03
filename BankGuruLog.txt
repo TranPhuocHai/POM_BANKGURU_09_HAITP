@@ -1,27 +1,152 @@
-2019-06-01 18:59:11,859 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 01 - open Login Page
-2019-06-01 18:59:11,861 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 02 - Verify Login Form displayed
-2019-06-01 18:59:12,007 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:12,009 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 03 - Get Login Page url
-2019-06-01 18:59:12,014 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 04 - Click to 'here' link
-2019-06-01 18:59:12,146 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 05 - Verify Register Page displayed
-2019-06-01 18:59:14,593 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:14,594 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 06 - Input to Email ID textbox
-2019-06-01 18:59:14,741 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 07 - Click to Submit button
-2019-06-01 18:59:15,863 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 08 - Get UserID and Password Infor
-2019-06-01 18:59:16,631 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 09 - Open Login Page
-2019-06-01 18:59:17,690 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 10 - Verify Login Form displayed
-2019-06-01 18:59:17,770 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:17,770 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 11 - Input to userID and Password textboxes
-2019-06-01 18:59:18,431 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 11 - Click to Login button
-2019-06-01 18:59:18,896 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 12 - Verify Welcome message of Home page displayed
-2019-06-01 18:59:20,258 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:20,258 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 13 - Verify User ID infor displayed
-2019-06-01 18:59:20,334 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:20,334 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 14 - Click to New Customer link
-2019-06-01 18:59:21,446 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 01 - Click to Customer Name textbox
-2019-06-01 18:59:21,883 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 02 - Press TAB key
-2019-06-01 18:59:21,959 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Empty: Step 03 - Verify correct message displayed
-2019-06-01 18:59:22,042 INFO  com.bankguru.customer.NewCustomer - ===PASSED==
-2019-06-01 18:59:22,044 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 01 - Clear Customer Name textbox
-2019-06-01 18:59:22,087 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 02 - Input to Customer Name textbox
-2019-06-01 18:59:22,195 INFO  com.bankguru.customer.NewCustomer - Name Can Not Be Numeric: Step 03 - Verify correct message displayed
+2019-06-03 16:17:27,703 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 01 - open Login Page
+2019-06-03 16:17:27,706 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-03 16:17:27,862 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:27,863 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 03 - Get Login Page url
+2019-06-03 16:17:27,869 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 04 - Click to 'here' link
+2019-06-03 16:17:28,010 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 05 - Verify Register Page displayed
+2019-06-03 16:17:29,987 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:29,987 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 06 - Input to 'Email ID' textbox
+2019-06-03 16:17:30,436 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 07 - Click to Submit button
+2019-06-03 16:17:31,581 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 08 - Get UserID and Password Infor
+2019-06-03 16:17:32,357 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 09 - Open Login Page
+2019-06-03 16:17:33,701 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 10 - Verify Login Form displayed
+2019-06-03 16:17:33,779 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:33,779 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 11 - Input to userID and Password textboxes
+2019-06-03 16:17:34,363 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 11 - Click to Login button
+2019-06-03 16:17:34,807 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 12 - Verify Welcome message of Home page displayed
+2019-06-03 16:17:36,166 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:36,166 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 13 - Verify User ID infor displayed
+2019-06-03 16:17:36,547 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:36,547 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 14 - Click to 'New Customer' link
+2019-06-03 16:17:37,695 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 15 - Input to Customer Name textbox
+2019-06-03 16:17:38,120 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 16 - Select Male gender
+2019-06-03 16:17:38,148 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 17 - Remove Date Of Birth attribute
+2019-06-03 16:17:38,179 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 18 - Input to Date Of Birth textbox
+2019-06-03 16:17:38,293 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 19 - Input to 'Address' text area
+2019-06-03 16:17:38,426 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 20 - Input to 'City' textbox
+2019-06-03 16:17:38,532 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 21 - Input to 'State' textbox
+2019-06-03 16:17:38,644 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 22 - Input to 'PIN' textbox
+2019-06-03 16:17:38,753 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 23 - Input to 'Mobile Number' textbox
+2019-06-03 16:17:38,865 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 24 - Input to 'Email' textbox
+2019-06-03 16:17:39,008 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 25 - Input to 'Password' textbox
+2019-06-03 16:17:39,131 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 26 - Click to Submit button
+2019-06-03 16:17:40,651 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 27 - Verify 'Customer Registered Successfully!!!' message displayed
+2019-06-03 16:17:41,067 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,067 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 28 - Verify all infor of new customer are correct
+2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Tran Phuoc Hai
+2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Tran Phuoc Hai
+2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = male
+2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = male
+2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 1988-07-31
+2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 1988-07-31
+2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 100 Ho Guom
+2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 100 Ho Guom
+2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Ha Noi
+2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Ha Noi
+2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,551 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Hoan Kiem
+2019-06-03 16:17:41,551 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Hoan Kiem
+2019-06-03 16:17:41,552 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,552 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 600000
+2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 600000
+2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,713 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 0987654321
+2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 0987654321
+2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,798 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = khain752234@gmail.com
+2019-06-03 16:17:41,798 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = khain752234@gmail.com
+2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
+2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 39 - Click To 'Fund Transfer' link
+2019-06-03 16:17:43,511 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:43,548 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Click to 'Payers Account' textbox
+2019-06-03 16:17:43,992 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-03 16:17:44,068 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 04 - Verify 'Payers Account Number must not be blank' message displayed
+2019-06-03 16:17:44,157 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:44,157 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:44,213 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
+2019-06-03 16:17:44,303 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:44,446 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:44,446 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:44,481 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
+2019-06-03 16:17:44,659 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:44,781 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:44,782 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:44,819 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-03 16:17:44,932 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:45,015 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:45,015 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:45,050 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-03 16:17:45,475 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:45,549 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:45,549 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-03 16:17:45,573 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-03 16:17:45,700 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:45,782 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:45,784 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:45,819 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Click to 'Payees Account' textbox
+2019-06-03 16:17:45,949 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-03 16:17:46,019 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 04 - Verify 'Payees Account Number must not be blank' message displayed
+2019-06-03 16:17:46,098 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:46,099 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:46,137 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
+2019-06-03 16:17:46,223 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:46,304 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:46,304 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:46,323 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
+2019-06-03 16:17:46,447 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:46,530 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:46,531 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:46,561 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-03 16:17:46,677 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:46,756 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:46,756 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:46,797 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-03 16:17:46,928 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:47,018 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:47,018 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-03 16:17:47,052 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-03 16:17:47,186 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:47,265 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:47,265 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:47,311 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 02 - Click to 'Amount' textbox
+2019-06-03 16:17:47,468 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-03 16:17:47,546 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 04 - Verify 'Amount field must not be blank' message displayed
+2019-06-03 16:17:47,655 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:47,655 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:47,718 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
+2019-06-03 16:17:47,827 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:47,916 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:47,916 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:47,947 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
+2019-06-03 16:17:48,041 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-03 16:17:48,135 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:48,135 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:48,166 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-03 16:17:48,291 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:48,369 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:48,369 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:48,400 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-03 16:17:48,525 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:48,603 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:48,603 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-03 16:17:48,635 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-03 16:17:48,744 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-03 16:17:48,822 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-03 16:17:48,822 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 01 - Clear 'Description' textbox
+2019-06-03 16:17:48,853 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 02 - Click to 'Description' textbox
+2019-06-03 16:17:49,027 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 03 - Press TAB key
+2019-06-03 16:17:49,089 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 04 - Verify 'Description can not be blank' message displayed
+2019-06-03 16:17:49,167 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===

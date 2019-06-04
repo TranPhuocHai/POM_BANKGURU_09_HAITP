@@ -1,152 +1,1230 @@
-2019-06-03 16:17:27,703 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 01 - open Login Page
-2019-06-03 16:17:27,706 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 02 - Verify Login Form displayed
-2019-06-03 16:17:27,862 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:27,863 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 03 - Get Login Page url
-2019-06-03 16:17:27,869 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 04 - Click to 'here' link
-2019-06-03 16:17:28,010 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 05 - Verify Register Page displayed
-2019-06-03 16:17:29,987 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:29,987 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 06 - Input to 'Email ID' textbox
-2019-06-03 16:17:30,436 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 07 - Click to Submit button
-2019-06-03 16:17:31,581 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 08 - Get UserID and Password Infor
-2019-06-03 16:17:32,357 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 09 - Open Login Page
-2019-06-03 16:17:33,701 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 10 - Verify Login Form displayed
-2019-06-03 16:17:33,779 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:33,779 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 11 - Input to userID and Password textboxes
-2019-06-03 16:17:34,363 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 11 - Click to Login button
-2019-06-03 16:17:34,807 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 12 - Verify Welcome message of Home page displayed
-2019-06-03 16:17:36,166 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:36,166 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 13 - Verify User ID infor displayed
-2019-06-03 16:17:36,547 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:36,547 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 14 - Click to 'New Customer' link
-2019-06-03 16:17:37,695 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 15 - Input to Customer Name textbox
-2019-06-03 16:17:38,120 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 16 - Select Male gender
-2019-06-03 16:17:38,148 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 17 - Remove Date Of Birth attribute
-2019-06-03 16:17:38,179 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 18 - Input to Date Of Birth textbox
-2019-06-03 16:17:38,293 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 19 - Input to 'Address' text area
-2019-06-03 16:17:38,426 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 20 - Input to 'City' textbox
-2019-06-03 16:17:38,532 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 21 - Input to 'State' textbox
-2019-06-03 16:17:38,644 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 22 - Input to 'PIN' textbox
-2019-06-03 16:17:38,753 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 23 - Input to 'Mobile Number' textbox
-2019-06-03 16:17:38,865 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 24 - Input to 'Email' textbox
-2019-06-03 16:17:39,008 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 25 - Input to 'Password' textbox
-2019-06-03 16:17:39,131 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 26 - Click to Submit button
-2019-06-03 16:17:40,651 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 27 - Verify 'Customer Registered Successfully!!!' message displayed
-2019-06-03 16:17:41,067 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,067 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 28 - Verify all infor of new customer are correct
-2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Tran Phuoc Hai
-2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Tran Phuoc Hai
-2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,133 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = male
-2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = male
-2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,214 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 1988-07-31
-2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 1988-07-31
-2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,299 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 100 Ho Guom
-2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 100 Ho Guom
-2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,383 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Ha Noi
-2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Ha Noi
-2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,477 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,551 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = Hoan Kiem
-2019-06-03 16:17:41,551 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = Hoan Kiem
-2019-06-03 16:17:41,552 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,552 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 600000
-2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 600000
-2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,632 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,713 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = 0987654321
-2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = 0987654321
-2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,714 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,798 INFO  com.bankguru.fundtransfer.FundTransfer - Actual = khain752234@gmail.com
-2019-06-03 16:17:41,798 INFO  com.bankguru.fundtransfer.FundTransfer - Expected = khain752234@gmail.com
-2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - Compare value = true
-2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:41,799 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 39 - Click To 'Fund Transfer' link
-2019-06-03 16:17:43,511 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:43,548 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Click to 'Payers Account' textbox
-2019-06-03 16:17:43,992 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Press TAB key
-2019-06-03 16:17:44,068 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 04 - Verify 'Payers Account Number must not be blank' message displayed
-2019-06-03 16:17:44,157 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:44,157 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:44,213 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
-2019-06-03 16:17:44,303 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:44,446 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:44,446 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:44,481 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
-2019-06-03 16:17:44,659 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:44,781 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:44,782 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:44,819 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
-2019-06-03 16:17:44,932 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:45,015 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:45,015 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:45,050 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
-2019-06-03 16:17:45,475 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:45,549 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:45,549 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
-2019-06-03 16:17:45,573 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
-2019-06-03 16:17:45,700 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:45,782 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:45,784 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:45,819 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Click to 'Payees Account' textbox
-2019-06-03 16:17:45,949 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Press TAB key
-2019-06-03 16:17:46,019 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 04 - Verify 'Payees Account Number must not be blank' message displayed
-2019-06-03 16:17:46,098 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:46,099 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:46,137 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
-2019-06-03 16:17:46,223 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:46,304 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:46,304 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:46,323 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
-2019-06-03 16:17:46,447 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:46,530 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:46,531 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:46,561 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
-2019-06-03 16:17:46,677 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:46,756 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:46,756 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:46,797 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
-2019-06-03 16:17:46,928 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:47,018 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:47,018 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
-2019-06-03 16:17:47,052 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
-2019-06-03 16:17:47,186 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:47,265 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:47,265 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:47,311 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 02 - Click to 'Amount' textbox
-2019-06-03 16:17:47,468 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 03 - Press TAB key
-2019-06-03 16:17:47,546 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 04 - Verify 'Amount field must not be blank' message displayed
-2019-06-03 16:17:47,655 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:47,655 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:47,718 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
-2019-06-03 16:17:47,827 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:47,916 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:47,916 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:47,947 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
-2019-06-03 16:17:48,041 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-03 16:17:48,135 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:48,135 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:48,166 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
-2019-06-03 16:17:48,291 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:48,369 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:48,369 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:48,400 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
-2019-06-03 16:17:48,525 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:48,603 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:48,603 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
-2019-06-03 16:17:48,635 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
-2019-06-03 16:17:48,744 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-03 16:17:48,822 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
-2019-06-03 16:17:48,822 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 01 - Clear 'Description' textbox
-2019-06-03 16:17:48,853 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 02 - Click to 'Description' textbox
-2019-06-03 16:17:49,027 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 03 - Press TAB key
-2019-06-03 16:17:49,089 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 04 - Verify 'Description can not be blank' message displayed
-2019-06-03 16:17:49,167 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:34:17,434 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 01 - open Login Page
+2019-06-04 16:34:17,437 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 02 - Verify Login Form displayed
+2019-06-04 16:34:17,640 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
+2019-06-04 16:34:17,641 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 03 - Get Login Page url
+2019-06-04 16:34:17,648 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 04 - Click to 'here' link
+2019-06-04 16:34:20,819 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 05 - Verify Register Page displayed
+2019-06-04 16:34:20,923 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
+2019-06-04 16:34:20,924 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 06 - Input to Email ID textbox
+2019-06-04 16:34:21,172 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 07 - Click to Submit button
+2019-06-04 16:34:23,185 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 08 - Get UserID and Password Infor
+2019-06-04 16:34:24,063 INFO  com.bankguru.user.Common_01_RegisterToSystem - OS name= windows 10
+2019-06-04 16:34:24,674 INFO  com.bankguru.user.Common_01_RegisterToSystem - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:34:31,867 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 01 - Open Login Page
+2019-06-04 16:34:31,867 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:34:32,075 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:32,075 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:34:33,206 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 04 - Click to Login button
+2019-06-04 16:34:33,974 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:34:35,725 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:35,725 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:34:35,893 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:35,893 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 17 - Click to 'New Customer' link
+2019-06-04 16:34:36,149 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 08 - Input to 'Customer Name' textbox
+2019-06-04 16:34:38,179 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 09 - Select Male gender
+2019-06-04 16:34:38,217 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 10 - Remove Date Of Birth attribute
+2019-06-04 16:34:38,264 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 11 - Input to 'Date Of Birth' textbox
+2019-06-04 16:34:38,454 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 12 - Input to 'Adress' text area
+2019-06-04 16:34:38,651 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 13 - Input to 'City' textbox
+2019-06-04 16:34:38,808 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 14 - Input to 'State' textbox
+2019-06-04 16:34:39,266 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 15 - Input to 'Pin' textbox
+2019-06-04 16:34:39,406 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 16 - Input to 'Mobile Number' textbox
+2019-06-04 16:34:39,555 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 17 - Input to 'Email' textbox
+2019-06-04 16:34:39,735 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 18 - Input to 'Password' textbox
+2019-06-04 16:34:39,893 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 19 - Click to Submit button
+2019-06-04 16:34:42,523 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 20 - Verify 'Customer Registered Successfully!!!' message displayed
+2019-06-04 16:34:42,946 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:42,946 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 21 - Get 'Customer ID'
+2019-06-04 16:34:43,053 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 22 - Verify all infor of new customer are correct
+2019-06-04 16:34:43,151 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Tran Phuoc Hai
+2019-06-04 16:34:43,151 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Tran Phuoc Hai
+2019-06-04 16:34:43,151 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,151 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,247 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = male
+2019-06-04 16:34:43,247 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = male
+2019-06-04 16:34:43,247 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,247 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,348 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 1988-07-31
+2019-06-04 16:34:43,348 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 1988-07-31
+2019-06-04 16:34:43,348 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,348 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,458 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 100 Ho Guom
+2019-06-04 16:34:43,458 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 100 Ho Guom
+2019-06-04 16:34:43,458 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,458 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,587 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Ha Noi
+2019-06-04 16:34:43,587 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Ha Noi
+2019-06-04 16:34:43,588 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,588 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,685 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Hoan Kiem
+2019-06-04 16:34:43,685 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Hoan Kiem
+2019-06-04 16:34:43,685 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,685 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,778 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 600000
+2019-06-04 16:34:43,778 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 600000
+2019-06-04 16:34:43,778 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,778 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,868 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 0987654321
+2019-06-04 16:34:43,868 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 0987654321
+2019-06-04 16:34:43,869 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,869 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = khain800167@gmail.com
+2019-06-04 16:34:43,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = khain800167@gmail.com
+2019-06-04 16:34:43,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-04 16:34:43,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-04 16:34:43,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - OS name= windows 10
+2019-06-04 16:34:44,636 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:34:51,841 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 01 - Open Login Page
+2019-06-04 16:34:51,841 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:34:52,042 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:52,042 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:34:53,172 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 04 - Click to Login button
+2019-06-04 16:34:53,940 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:34:55,678 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:55,679 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:34:55,872 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:55,872 INFO  com.bankguru.customer.NewCustomer - Precondition: Step 07 - Click to New Customer link
+2019-06-04 16:34:57,171 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeEmpty: Step 01 - Click to 'Customer Name' textbox
+2019-06-04 16:34:57,342 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeEmpty: Step 02 - Press TAB key
+2019-06-04 16:34:57,467 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeEmpty: Step 03 - Verify 'Customer name must not be blank' message displayed
+2019-06-04 16:34:57,574 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:57,576 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 01 - Clear 'Customer Name' textbox
+2019-06-04 16:34:57,639 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 02 - Input to 'Customer Name' textbox
+2019-06-04 16:34:57,768 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:34:57,876 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:57,876 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 01 - Clear 'Customer Name' textbox
+2019-06-04 16:34:57,921 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 02 - Input to 'Customer Name' textbox
+2019-06-04 16:34:58,056 INFO  com.bankguru.customer.NewCustomer - NameCanNotBeNumeric: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:34:58,147 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:58,149 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 01 - Clear 'Customer Name' textbox
+2019-06-04 16:34:58,214 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer Name' textbox
+2019-06-04 16:34:58,358 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:34:58,780 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:58,780 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 01 - Clear 'Customer Name' textbox
+2019-06-04 16:34:58,822 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer Name' textbox
+2019-06-04 16:34:58,952 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:34:59,049 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:59,051 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer Name' textbox
+2019-06-04 16:34:59,094 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer Name' textbox
+2019-06-04 16:34:59,228 INFO  com.bankguru.customer.NewCustomer - NameCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:34:59,327 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:59,329 INFO  com.bankguru.customer.NewCustomer - AddressCanNotBeEmpty: Step 01 - Clear 'Address' text area
+2019-06-04 16:34:59,443 INFO  com.bankguru.customer.NewCustomer - AddressCanNotBeEmpty: Step 02 - Click to 'Address' text area
+2019-06-04 16:34:59,601 INFO  com.bankguru.customer.NewCustomer - AddressCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:34:59,716 INFO  com.bankguru.customer.NewCustomer - AddressCanNotBeEmpty: Step 04 - Verify 'Address Field must not be blank' message displayed
+2019-06-04 16:34:59,821 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:34:59,823 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area
+2019-06-04 16:34:59,875 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:00,046 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:00,152 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:00,152 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area
+2019-06-04 16:35:00,194 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:00,322 INFO  com.bankguru.customer.NewCustomer - AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:00,464 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:00,465 INFO  com.bankguru.customer.NewCustomer - AddressCanNotHaveBlankSpace: Step 01 - Clear 'Address' text area
+2019-06-04 16:35:00,510 INFO  com.bankguru.customer.NewCustomer - AddressCanNotHaveBlankSpace: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:00,636 INFO  com.bankguru.customer.NewCustomer - AddressCanNotHaveBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:00,748 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:00,750 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeEmpty: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:00,793 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeEmpty: Step 02 - Click to 'City' textbox
+2019-06-04 16:35:00,947 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:01,046 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeEmpty: Step 04 - Verify 'City Field must not be blank' message displayed
+2019-06-04 16:35:01,153 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:01,154 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:01,199 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:01,323 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:01,423 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:01,423 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:01,488 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:01,623 INFO  com.bankguru.customer.NewCustomer - CityCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:01,720 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:01,721 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:01,762 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:01,899 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:01,995 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:01,995 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:02,044 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:02,161 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:02,265 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:02,267 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveFirstBlankSpace: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:02,318 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveFirstBlankSpace: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:02,463 INFO  com.bankguru.customer.NewCustomer - CityCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:02,585 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:02,586 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeEmpty: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:02,623 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeEmpty: Step 02 - Click to 'State' textbox
+2019-06-04 16:35:02,765 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:02,866 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeEmpty: Step 04 - Verify 'State must not be blank' message displayed
+2019-06-04 16:35:02,990 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:02,991 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:03,030 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:03,194 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:03,306 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:03,306 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:03,343 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:03,483 INFO  com.bankguru.customer.NewCustomer - StateCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:03,576 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:03,577 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:03,614 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:03,745 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:03,843 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:03,843 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:03,885 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:04,010 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:04,097 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:04,098 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveFirstBlankSpace: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:04,136 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveFirstBlankSpace: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:04,244 INFO  com.bankguru.customer.NewCustomer - StateCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:04,342 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:04,343 INFO  com.bankguru.customer.NewCustomer - PinCanNotBeEmpty: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:04,703 INFO  com.bankguru.customer.NewCustomer - PinCanNotBeEmpty: Step 02 - Click to 'PIN' textbox
+2019-06-04 16:35:04,853 INFO  com.bankguru.customer.NewCustomer - PinCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:04,943 INFO  com.bankguru.customer.NewCustomer - PinCanNotBeEmpty: Step 04 - Verify 'PIN Code must not be blank' message displayed
+2019-06-04 16:35:05,038 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:05,039 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:05,082 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:05,253 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:05,369 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:05,369 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:05,458 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:05,619 INFO  com.bankguru.customer.NewCustomer - PinMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:05,725 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:05,726 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:05,771 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:05,882 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:06,005 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:06,005 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:06,050 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:06,156 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:06,285 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:06,285 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:06,337 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:06,527 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:06,706 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:06,706 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:06,759 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:06,902 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:07,010 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:07,010 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:07,054 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:07,178 INFO  com.bankguru.customer.NewCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:07,272 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:07,273 INFO  com.bankguru.customer.NewCustomer - PinCanNotHaveFirstBlankSpace: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:07,318 INFO  com.bankguru.customer.NewCustomer - PinCanNotHaveFirstBlankSpace: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:07,444 INFO  com.bankguru.customer.NewCustomer - PinCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:07,541 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:07,542 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotBeEmpty: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:07,587 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotBeEmpty: Step 02 - Click to 'Mobile Number' textbox
+2019-06-04 16:35:07,735 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:07,828 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotBeEmpty: Step 04 - Verify 'Mobile no must not be blank' message displayed
+2019-06-04 16:35:07,932 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:07,933 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:07,980 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:08,089 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:08,180 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:08,181 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:08,220 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:08,354 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:08,467 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:08,467 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:08,510 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:08,644 INFO  com.bankguru.customer.NewCustomer - MobileNumberCharactersAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:08,754 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:08,756 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:08,804 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:08,944 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:09,041 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:09,041 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:09,085 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:09,214 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:09,312 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:09,312 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:09,352 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:09,499 INFO  com.bankguru.customer.NewCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:09,607 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:09,609 INFO  com.bankguru.customer.NewCustomer - EmailCanNotBeEmpty: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:09,661 INFO  com.bankguru.customer.NewCustomer - EmailCanNotBeEmpty: Step 02 - Click to 'Email' textbox
+2019-06-04 16:35:09,816 INFO  com.bankguru.customer.NewCustomer - EmailCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:09,910 INFO  com.bankguru.customer.NewCustomer - EmailCanNotBeEmpty: Step 04 - Verify 'Email-ID must not be blank' message displayed
+2019-06-04 16:35:10,008 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:10,009 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:10,048 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:10,189 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:10,293 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:10,293 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:10,341 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:10,461 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:10,558 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:10,558 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:10,605 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:10,737 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:10,828 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:10,828 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:10,869 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:11,006 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:11,107 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:11,107 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:11,153 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:11,288 INFO  com.bankguru.customer.NewCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:11,383 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:11,384 INFO  com.bankguru.customer.NewCustomer - EmailCanNotHaveFirstBlankSpace: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:11,455 INFO  com.bankguru.customer.NewCustomer - EmailCanNotHaveFirstBlankSpace: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:11,562 INFO  com.bankguru.customer.NewCustomer - EmailCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:11,661 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:11,663 INFO  com.bankguru.customer.NewCustomer - PasswordCanNotBeEmpty: Step 01 - Clear 'Password' textbox
+2019-06-04 16:35:11,705 INFO  com.bankguru.customer.NewCustomer - PasswordCanNotBeEmpty: Step 02 - Click to 'Password' textbox
+2019-06-04 16:35:11,853 INFO  com.bankguru.customer.NewCustomer - PasswordCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:11,946 INFO  com.bankguru.customer.NewCustomer - PasswordCanNotBeEmpty: Step 04 - Verify 'Password must not be blank' message displayed
+2019-06-04 16:35:12,045 INFO  com.bankguru.customer.NewCustomer - ===PASSED===
+2019-06-04 16:35:12,046 INFO  com.bankguru.customer.NewCustomer - OS name= windows 10
+2019-06-04 16:35:12,922 INFO  com.bankguru.customer.NewCustomer - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:35:21,016 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 01 - Open Login Page
+2019-06-04 16:35:21,016 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:35:21,222 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:21,222 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:35:21,939 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 04 - Click to Login button
+2019-06-04 16:35:23,000 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:35:25,225 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:25,225 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:35:25,333 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:25,333 INFO  com.bankguru.customer.EditCustomer - Precondition: Step 07 - Click To 'Edit Customer' link
+2019-06-04 16:35:26,762 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:35:27,136 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox
+2019-06-04 16:35:27,294 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:27,445 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotBeEmpty: Step 04 - Verify ''Customer ID' is required' message displayed
+2019-06-04 16:35:27,548 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:27,549 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:35:27,604 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:27,715 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:27,834 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:27,835 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:27,879 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:28,012 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:28,112 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:28,112 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:28,152 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:28,277 INFO  com.bankguru.customer.EditCustomer - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:28,687 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:28,688 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:28,727 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:28,864 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:28,952 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:28,952 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:28,994 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:29,136 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:29,225 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:29,225 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:29,263 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:29,394 INFO  com.bankguru.customer.EditCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:29,481 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:29,482 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 01 - 'Customer ID' Number textbox
+2019-06-04 16:35:29,519 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:35:29,629 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 03 - Click to 'Customer ID' textbox
+2019-06-04 16:35:31,836 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 04 - Clear 'Address' text area
+2019-06-04 16:35:32,235 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 05 - Click to 'Address' text area
+2019-06-04 16:35:32,389 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 06 - Press TAB key
+2019-06-04 16:35:32,494 INFO  com.bankguru.customer.EditCustomer - AddressCanNotBeEmpty: Step 07 - Verify 'Address Field must not be blank' message displayed
+2019-06-04 16:35:32,581 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:32,582 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area
+2019-06-04 16:35:32,628 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:32,755 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:32,849 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:32,849 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area
+2019-06-04 16:35:32,892 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:33,010 INFO  com.bankguru.customer.EditCustomer - AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:33,101 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:33,102 INFO  com.bankguru.customer.EditCustomer - AddressCanNotHaveBlankSpace: Step 01 - Clear 'Address' text area
+2019-06-04 16:35:33,140 INFO  com.bankguru.customer.EditCustomer - AddressCanNotHaveBlankSpace: Step 02 - Input to 'Address' text area
+2019-06-04 16:35:33,330 INFO  com.bankguru.customer.EditCustomer - AddressCanNotHaveBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:33,746 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:33,747 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeEmpty: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:33,793 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeEmpty: Step 02 - Click to 'City' textbox
+2019-06-04 16:35:33,931 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:34,018 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeEmpty: Step 04 - Verify 'City Field must not be blank' message displayed
+2019-06-04 16:35:34,112 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:34,113 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:34,159 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:34,266 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:34,358 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:34,358 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:34,393 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:34,527 INFO  com.bankguru.customer.EditCustomer - CityCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:34,674 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:34,676 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:34,733 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:34,964 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:35,085 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:35,085 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:35,143 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:35,281 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:35,385 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:35,387 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveFirstBlankSpace: Step 01 - Clear 'City' textbox
+2019-06-04 16:35:35,428 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveFirstBlankSpace: Step 02 - Input to 'City' textbox
+2019-06-04 16:35:35,597 INFO  com.bankguru.customer.EditCustomer - CityCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:35,729 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:35,730 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeEmpty: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:35,785 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeEmpty: Step 02 - Click to 'State' textbox
+2019-06-04 16:35:36,012 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:36,149 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeEmpty: Step 04 - Verify 'State must not be blank' message displayed
+2019-06-04 16:35:36,267 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:36,268 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:36,318 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:36,442 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:36,534 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:36,534 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:36,577 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:36,710 INFO  com.bankguru.customer.EditCustomer - StateCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed
+2019-06-04 16:35:36,811 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:36,812 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:36,851 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:36,996 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:37,091 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:37,091 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:37,133 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:37,248 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:37,346 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:37,347 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveFirstBlankSpace: Step 01 - Clear 'State' textbox
+2019-06-04 16:35:37,391 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveFirstBlankSpace: Step 02 - Input to 'State' textbox
+2019-06-04 16:35:37,512 INFO  com.bankguru.customer.EditCustomer - StateCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:37,602 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:37,603 INFO  com.bankguru.customer.EditCustomer - PinCanNotBeEmpty: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:37,659 INFO  com.bankguru.customer.EditCustomer - PinCanNotBeEmpty: Step 02 - Click to 'PIN' textbox
+2019-06-04 16:35:37,807 INFO  com.bankguru.customer.EditCustomer - PinCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:37,918 INFO  com.bankguru.customer.EditCustomer - PinCanNotBeEmpty: Step 04 - Verify 'PIN Code must not be blank' message displayed
+2019-06-04 16:35:38,032 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:38,033 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:38,095 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:38,225 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:38,323 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:38,323 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:38,374 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:38,537 INFO  com.bankguru.customer.EditCustomer - PinMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:38,622 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:38,624 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:38,665 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:38,815 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:38,907 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:38,907 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:38,949 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:39,091 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:39,221 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:39,222 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:39,295 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:39,776 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:39,884 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:39,884 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:39,927 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:40,055 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:40,144 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:40,145 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:40,184 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:40,297 INFO  com.bankguru.customer.EditCustomer - PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed
+2019-06-04 16:35:40,394 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:40,395 INFO  com.bankguru.customer.EditCustomer - PinCanNotHaveFirstBlankSpace: Step 01 - Clear 'PIN' textbox
+2019-06-04 16:35:40,431 INFO  com.bankguru.customer.EditCustomer - PinCanNotHaveFirstBlankSpace: Step 02 - Input to 'PIN' textbox
+2019-06-04 16:35:40,540 INFO  com.bankguru.customer.EditCustomer - PinCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:40,627 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:40,628 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotBeEmpty: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:40,668 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotBeEmpty: Step 02 - Click to 'Mobile Number' textbox
+2019-06-04 16:35:40,812 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:40,897 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotBeEmpty: Step 04 - Verify 'Mobile no must not be blank' message displayed
+2019-06-04 16:35:40,990 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:40,993 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:41,031 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:41,175 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:41,310 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:41,312 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:41,357 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:41,479 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:41,567 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:41,567 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:41,614 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:41,732 INFO  com.bankguru.customer.EditCustomer - MobileNumberCharactersAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:35:41,821 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:41,822 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:41,862 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:42,103 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:42,239 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:42,239 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:42,299 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:42,493 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:42,739 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:42,739 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox
+2019-06-04 16:35:42,789 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Mobile Number' textbox
+2019-06-04 16:35:42,944 INFO  com.bankguru.customer.EditCustomer - MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:35:43,045 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:43,046 INFO  com.bankguru.customer.EditCustomer - EmailCanNotBeEmpty: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:43,094 INFO  com.bankguru.customer.EditCustomer - EmailCanNotBeEmpty: Step 02 - Click to 'Email' textbox
+2019-06-04 16:35:43,243 INFO  com.bankguru.customer.EditCustomer - EmailCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:35:43,360 INFO  com.bankguru.customer.EditCustomer - EmailCanNotBeEmpty: Step 04 - Verify 'Email-ID must not be blank' message displayed
+2019-06-04 16:35:43,457 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:43,458 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:43,507 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:43,657 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:43,759 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:43,759 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:43,798 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:43,923 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:44,018 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:44,018 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:44,058 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:44,199 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:44,290 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:44,290 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:44,332 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:44,478 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:44,600 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:44,600 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:44,691 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:44,846 INFO  com.bankguru.customer.EditCustomer - EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed
+2019-06-04 16:35:44,944 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:44,945 INFO  com.bankguru.customer.EditCustomer - EmailCanNotHaveFirstBlankSpace: Step 01 - Clear 'Email' textbox
+2019-06-04 16:35:44,982 INFO  com.bankguru.customer.EditCustomer - EmailCanNotHaveFirstBlankSpace: Step 02 - input to 'Email' textbox
+2019-06-04 16:35:45,089 INFO  com.bankguru.customer.EditCustomer - EmailCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:35:45,177 INFO  com.bankguru.customer.EditCustomer - ===PASSED===
+2019-06-04 16:35:45,178 INFO  com.bankguru.customer.EditCustomer - OS name= windows 10
+2019-06-04 16:35:45,756 INFO  com.bankguru.customer.EditCustomer - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:35:53,929 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 01 - Open Login Page
+2019-06-04 16:35:53,929 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:35:54,111 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:35:54,111 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:35:55,194 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 04 - Click to Login button
+2019-06-04 16:35:55,941 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:35:58,145 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:35:58,145 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:35:58,248 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:35:58,248 INFO  com.bankguru.customer.DeleteCustomer - Precondition: Step 07 - Click to 'Delete Customer' link
+2019-06-04 16:36:00,347 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:36:00,721 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox
+2019-06-04 16:36:00,863 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:36:00,972 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed
+2019-06-04 16:36:01,063 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:01,064 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:36:01,115 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:01,240 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:36:01,332 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:01,333 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:01,393 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:01,522 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:01,604 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:01,604 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:01,641 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:01,766 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:02,172 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:02,173 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:02,213 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:02,348 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:02,430 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:02,430 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:02,483 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:02,600 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:02,683 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:02,684 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:02,720 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:02,851 INFO  com.bankguru.customer.DeleteCustomer - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:02,937 INFO  com.bankguru.customer.DeleteCustomer - ===PASSED===
+2019-06-04 16:36:02,938 INFO  com.bankguru.customer.DeleteCustomer - OS name= windows 10
+2019-06-04 16:36:03,548 INFO  com.bankguru.customer.DeleteCustomer - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:36:10,060 INFO  com.bankguru.account.NewAccount - Precondition: Step 01 - Open Login Page
+2019-06-04 16:36:10,061 INFO  com.bankguru.account.NewAccount - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:36:10,225 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:10,225 INFO  com.bankguru.account.NewAccount - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:36:11,382 INFO  com.bankguru.account.NewAccount - Precondition: Step 04 - Click to Login button
+2019-06-04 16:36:12,133 INFO  com.bankguru.account.NewAccount - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:36:13,899 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:13,900 INFO  com.bankguru.account.NewAccount - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:36:13,987 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:13,987 INFO  com.bankguru.account.NewAccount - Precondition: Step 07 - Click To 'New Account' link
+2019-06-04 16:36:15,431 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:36:15,837 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox
+2019-06-04 16:36:16,001 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:36:16,113 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed
+2019-06-04 16:36:16,210 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:16,211 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox
+2019-06-04 16:36:16,267 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:16,381 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:36:16,488 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:16,488 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:16,532 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:16,652 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:16,770 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:16,770 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:16,819 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:17,316 INFO  com.bankguru.account.NewAccount - CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:17,416 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:17,417 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:17,458 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:17,597 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:17,692 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:17,692 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:17,728 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:17,858 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:17,946 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:17,946 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox
+2019-06-04 16:36:17,982 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:36:18,127 INFO  com.bankguru.account.NewAccount - CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:18,213 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:18,214 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotBeEmpty: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:18,261 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotBeEmpty: Step 02 - Click to 'Initial deposit' textbox
+2019-06-04 16:36:18,410 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:36:18,497 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotBeEmpty: Step 04 - Verify 'Initial Deposit must not be blank' message displayed
+2019-06-04 16:36:18,582 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:18,583 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveFirstBlankSpace: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:18,624 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveFirstBlankSpace: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:18,733 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed
+2019-06-04 16:36:18,825 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:18,826 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:18,873 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:19,001 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:19,095 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:19,095 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:19,135 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:19,261 INFO  com.bankguru.account.NewAccount - InitialDepositCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:19,350 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:19,351 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:19,389 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:19,516 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:19,602 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:19,602 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:19,642 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:19,767 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:19,863 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:19,863 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox
+2019-06-04 16:36:19,902 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 02 - Input to 'Initial deposit' textbox
+2019-06-04 16:36:20,034 INFO  com.bankguru.account.NewAccount - InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:20,124 INFO  com.bankguru.account.NewAccount - ===PASSED===
+2019-06-04 16:36:20,124 INFO  com.bankguru.account.NewAccount - OS name= windows 10
+2019-06-04 16:36:20,608 INFO  com.bankguru.account.NewAccount - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:36:27,295 INFO  com.bankguru.account.EditAccount - Precondition: Step 01 - Open Login Page
+2019-06-04 16:36:27,295 INFO  com.bankguru.account.EditAccount - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:36:27,515 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:27,515 INFO  com.bankguru.account.EditAccount - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:36:28,282 INFO  com.bankguru.account.EditAccount - Precondition: Step 04 - Click to Login button
+2019-06-04 16:36:29,362 INFO  com.bankguru.account.EditAccount - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:36:31,338 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:31,338 INFO  com.bankguru.account.EditAccount - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:36:31,427 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:31,427 INFO  com.bankguru.account.EditAccount - Precondition: Step 07 - Click To 'New Account' link
+2019-06-04 16:36:32,281 INFO  com.bankguru.account.EditAccount - Precondition: Step 08 - Click To 'New Account' link
+2019-06-04 16:36:33,076 INFO  com.bankguru.account.EditAccount - Precondition: Step 09 - select 'Current' in 'Account type' dropdown
+2019-06-04 16:36:33,256 INFO  com.bankguru.account.EditAccount - Precondition: Step 10 - Input to Initial deposit textbox
+2019-06-04 16:36:33,411 INFO  com.bankguru.account.EditAccount - Precondition: Step 11 - Click to Submit button
+2019-06-04 16:36:36,257 INFO  com.bankguru.account.EditAccount - Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed
+2019-06-04 16:36:36,677 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:36,677 INFO  com.bankguru.account.EditAccount - Precondition: Step 13 - Veirfy current amount is correct
+2019-06-04 16:36:36,784 INFO  com.bankguru.account.EditAccount - Actual = 50000
+2019-06-04 16:36:36,784 INFO  com.bankguru.account.EditAccount - Expected = 50000
+2019-06-04 16:36:36,784 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-04 16:36:36,784 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:36,785 INFO  com.bankguru.account.EditAccount - Precondition: Step 14 - Get Account ID infor
+2019-06-04 16:36:36,878 INFO  com.bankguru.account.EditAccount - Precondition: Step 15 - Click to 'Edit Account' link
+2019-06-04 16:36:39,426 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:39,487 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
+2019-06-04 16:36:39,646 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:36:39,758 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
+2019-06-04 16:36:39,850 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:39,851 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:39,897 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:40,016 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:40,109 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:40,110 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:40,151 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:40,274 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:40,366 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:40,367 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:40,406 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:40,560 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:40,971 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:40,971 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:41,008 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:41,134 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:41,223 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:41,223 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:41,262 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:41,391 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:36:41,473 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:41,474 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:41,519 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:41,638 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:36:41,731 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:41,732 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:36:41,769 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:36:41,877 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 03 - Click to submit button
+2019-06-04 16:36:44,507 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 04 - Verify Edit Customer form displayed
+2019-06-04 16:36:44,958 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:44,959 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 01 - Select 'Saving' in 'Account type' dropdown
+2019-06-04 16:36:45,167 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 02 - Click to Submit button
+2019-06-04 16:36:48,011 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 03 - Verify 'Account details updated successfully' message displayed
+2019-06-04 16:36:48,436 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:48,436 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 04 - Verify Account type is 'Savings'
+2019-06-04 16:36:48,531 INFO  com.bankguru.account.EditAccount - Actual = Savings
+2019-06-04 16:36:48,531 INFO  com.bankguru.account.EditAccount - Expected = Savings
+2019-06-04 16:36:48,531 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-04 16:36:48,531 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-04 16:36:48,532 INFO  com.bankguru.account.EditAccount - OS name= windows 10
+2019-06-04 16:36:49,039 INFO  com.bankguru.account.EditAccount - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:36:55,964 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 01 - Open Login Page
+2019-06-04 16:36:55,964 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:36:56,140 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:36:56,140 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:36:56,741 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 04 - Click to Login button
+2019-06-04 16:36:57,505 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:36:59,745 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:36:59,745 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:36:59,858 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:36:59,859 INFO  com.bankguru.account.DeleteAccount - Precondition: Step 07 - Click to 'Delete Account' link
+2019-06-04 16:37:02,240 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:02,241 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:02,296 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
+2019-06-04 16:37:02,456 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:37:02,569 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
+2019-06-04 16:37:02,683 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:02,683 INFO  com.bankguru.account.DeleteAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:02,730 INFO  com.bankguru.account.DeleteAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:02,872 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:02,961 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:02,961 INFO  com.bankguru.account.DeleteAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:03,003 INFO  com.bankguru.account.DeleteAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:03,132 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:03,222 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:03,223 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:03,273 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:03,727 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:03,809 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:03,809 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:03,846 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:03,974 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:04,060 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:04,061 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:04,097 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:04,226 INFO  com.bankguru.account.DeleteAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:04,332 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:04,332 INFO  com.bankguru.account.DeleteAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:04,380 INFO  com.bankguru.account.DeleteAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:04,496 INFO  com.bankguru.account.DeleteAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:04,589 INFO  com.bankguru.account.DeleteAccount - ===PASSED===
+2019-06-04 16:37:04,590 INFO  com.bankguru.account.DeleteAccount - OS name= windows 10
+2019-06-04 16:37:05,108 INFO  com.bankguru.account.DeleteAccount - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:37:12,417 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 01 - Open Login Page
+2019-06-04 16:37:12,417 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:37:12,587 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:12,587 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:37:13,312 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 04 - Click to Login button
+2019-06-04 16:37:14,510 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:37:16,210 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:16,210 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:37:16,301 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:16,301 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 07 - Click To 'New Account' link
+2019-06-04 16:37:17,111 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 08 - Click To 'New Account' link
+2019-06-04 16:37:17,641 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 09 - select 'Current' in 'Account type' dropdown
+2019-06-04 16:37:17,822 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 10 - Input to Initial deposit textbox
+2019-06-04 16:37:17,947 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 11 - Click to Submit button
+2019-06-04 16:37:20,457 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed
+2019-06-04 16:37:20,882 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:20,882 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 13 - Veirfy current amount is correct
+2019-06-04 16:37:20,974 INFO  com.bankguru.ministatement.MiniStatement - Actual = 50000
+2019-06-04 16:37:20,974 INFO  com.bankguru.ministatement.MiniStatement - Expected = 50000
+2019-06-04 16:37:20,974 INFO  com.bankguru.ministatement.MiniStatement - Compare value = true
+2019-06-04 16:37:20,974 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:20,974 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 14 - Get Account ID infor
+2019-06-04 16:37:21,070 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 15 - Click to 'Mini Statement' link
+2019-06-04 16:37:23,377 INFO  com.bankguru.ministatement.MiniStatement - Precondition: Step 16 - Veify Mini Statement form displayed
+2019-06-04 16:37:23,806 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:23,806 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:23,854 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
+2019-06-04 16:37:23,997 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:37:24,099 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
+2019-06-04 16:37:24,195 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:24,196 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:24,245 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:24,376 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:24,492 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:24,492 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:24,531 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:24,661 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:24,758 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:24,759 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:24,802 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:25,267 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:25,353 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:25,353 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:25,389 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:25,513 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:25,611 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:25,611 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:25,648 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:25,774 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:25,861 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:25,862 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:25,902 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:26,002 INFO  com.bankguru.ministatement.MiniStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:26,085 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:26,086 INFO  com.bankguru.ministatement.MiniStatement - ValidAccountNumber: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:26,126 INFO  com.bankguru.ministatement.MiniStatement - ValidAccountNumber: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:26,238 INFO  com.bankguru.ministatement.MiniStatement - ValidAccountNumber: Step 03 - Click to submit button
+2019-06-04 16:37:28,157 INFO  com.bankguru.ministatement.MiniStatement - ValidAccountNumber: Step 04 - Verify Last Five Transaction Details message displayed
+2019-06-04 16:37:28,892 INFO  com.bankguru.ministatement.MiniStatement - ===PASSED===
+2019-06-04 16:37:28,893 INFO  com.bankguru.ministatement.MiniStatement - OS name= windows 10
+2019-06-04 16:37:29,403 INFO  com.bankguru.ministatement.MiniStatement - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:37:36,302 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 01 - Open Login Page
+2019-06-04 16:37:36,302 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:37:36,525 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:36,525 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:37:37,708 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 04 - Click to Login button
+2019-06-04 16:37:38,449 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:37:40,271 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:40,271 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:37:40,488 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:40,489 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 07 - Click To 'New Account' link
+2019-06-04 16:37:40,768 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 08 - Click To 'New Account' link
+2019-06-04 16:37:41,974 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 09 - select 'Current' in 'Account type' dropdown
+2019-06-04 16:37:42,147 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 10 - Input to Initial deposit textbox
+2019-06-04 16:37:42,269 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 11 - Click to Submit button
+2019-06-04 16:37:44,910 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed
+2019-06-04 16:37:45,355 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:45,355 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 13 - Veirfy current amount is correct
+2019-06-04 16:37:45,446 INFO  com.bankguru.customisedstatement.CustomisedStatement - Actual = 50000
+2019-06-04 16:37:45,447 INFO  com.bankguru.customisedstatement.CustomisedStatement - Expected = 50000
+2019-06-04 16:37:45,447 INFO  com.bankguru.customisedstatement.CustomisedStatement - Compare value = true
+2019-06-04 16:37:45,447 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:45,447 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 14 - Get Account ID infor
+2019-06-04 16:37:45,542 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 15 - Click to 'Customised Statement' link
+2019-06-04 16:37:47,795 INFO  com.bankguru.customisedstatement.CustomisedStatement - Precondition: Step 16 - Verify 'Customized Statement Form' displayed
+2019-06-04 16:37:48,206 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:48,207 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:48,249 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
+2019-06-04 16:37:48,394 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-04 16:37:48,493 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
+2019-06-04 16:37:48,576 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:48,577 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:48,629 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:48,753 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:48,857 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:48,857 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:48,903 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:49,033 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:49,123 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:49,123 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:49,167 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:49,607 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:49,691 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:49,691 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:49,727 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:49,860 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:49,946 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:49,947 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:49,984 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:50,113 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:50,198 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:50,198 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:50,238 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:50,343 INFO  com.bankguru.customisedstatement.CustomisedStatement - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:50,442 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:50,443 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:50,482 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:50,596 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:50,689 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:50,689 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:50,734 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:50,857 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:51,005 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:51,006 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,070 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,262 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:51,433 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:51,434 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,482 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,688 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:51,782 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:51,782 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,825 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:51,969 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:52,056 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:52,057 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 01 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:52,098 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 02 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:52,226 INFO  com.bankguru.customisedstatement.CustomisedStatement - MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:52,322 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:52,323 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:52,373 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:52,495 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:52,581 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:52,581 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:52,624 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:52,757 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:52,852 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:52,853 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:52,896 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:53,062 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:53,153 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:53,153 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:53,198 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:53,348 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:53,448 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:53,448 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:53,525 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:53,724 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:37:53,824 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:53,825 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionFirstCharacterMustNotBeBlank: Step 01 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:53,867 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionFirstCharacterMustNotBeBlank: Step 02 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:53,998 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:37:54,100 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:54,101 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 01 - Clear 'Account Number' textbox
+2019-06-04 16:37:54,158 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 02 - Input to 'Account Number' textbox
+2019-06-04 16:37:54,379 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 03 - Clear 'Minimum Transaction Value' textbox
+2019-06-04 16:37:54,450 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 04 - Input to 'Minimum Transaction Value' textbox
+2019-06-04 16:37:54,599 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 05 - Clear 'Number of Transaction' textbox
+2019-06-04 16:37:54,647 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 06 - Input to 'Number of Transaction' textbox
+2019-06-04 16:37:54,759 INFO  com.bankguru.customisedstatement.CustomisedStatement - InputValidInforAndVerifyCustomisedStatementDisplayed: Step 07 - Click to Submit button
+2019-06-04 16:37:57,707 INFO  com.bankguru.customisedstatement.CustomisedStatement - NumberOfTransactionFirstCharacterMustNotBeBlank: Step 03 - Verify Transaction Details message displayed
+2019-06-04 16:37:57,843 INFO  com.bankguru.customisedstatement.CustomisedStatement - ===PASSED===
+2019-06-04 16:37:57,844 INFO  com.bankguru.customisedstatement.CustomisedStatement - OS name= windows 10
+2019-06-04 16:37:58,359 INFO  com.bankguru.customisedstatement.CustomisedStatement - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:38:06,495 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 01 - Open Login Page
+2019-06-04 16:38:06,495 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:38:06,688 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:06,688 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:38:07,918 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 04 - Click to Login button
+2019-06-04 16:38:08,685 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:38:10,772 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:10,772 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:38:10,876 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:10,876 INFO  com.bankguru.fundtransfer.FundTransfer - Precondition: Step 07 - Click To 'Fund Transfer' link
+2019-06-04 16:38:12,595 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:13,006 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Click to 'Payers Account' textbox
+2019-06-04 16:38:13,167 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-04 16:38:13,274 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 04 - Verify 'Payers Account Number must not be blank' message displayed
+2019-06-04 16:38:13,371 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:13,372 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:13,427 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
+2019-06-04 16:38:13,554 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:13,655 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:13,655 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:13,699 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox
+2019-06-04 16:38:13,824 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:13,921 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:13,922 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:13,965 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-04 16:38:14,431 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:14,521 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:14,521 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:14,563 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-04 16:38:14,682 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:14,776 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:14,776 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox
+2019-06-04 16:38:14,829 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox
+2019-06-04 16:38:14,954 INFO  com.bankguru.fundtransfer.FundTransfer - PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:15,038 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:15,039 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:15,082 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Click to 'Payees Account' textbox
+2019-06-04 16:38:15,218 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-04 16:38:15,306 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 04 - Verify 'Payees Account Number must not be blank' message displayed
+2019-06-04 16:38:15,394 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:15,395 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:15,434 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
+2019-06-04 16:38:15,553 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:15,646 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:15,647 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:15,684 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox
+2019-06-04 16:38:15,815 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:15,911 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:15,912 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:15,954 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-04 16:38:16,085 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:16,168 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:16,168 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:16,212 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-04 16:38:16,366 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:16,477 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:16,477 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox
+2019-06-04 16:38:16,521 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox
+2019-06-04 16:38:16,676 INFO  com.bankguru.fundtransfer.FundTransfer - PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:16,763 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:16,764 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:16,804 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 02 - Click to 'Amount' textbox
+2019-06-04 16:38:16,952 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 03 - Press TAB key
+2019-06-04 16:38:17,046 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustNotBeBlank: Step 04 - Verify 'Amount field must not be blank' message displayed
+2019-06-04 16:38:17,132 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:17,133 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:17,174 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
+2019-06-04 16:38:17,288 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:17,373 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:17,373 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:17,414 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox
+2019-06-04 16:38:17,526 INFO  com.bankguru.fundtransfer.FundTransfer - AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-04 16:38:17,621 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:17,622 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:17,702 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-04 16:38:17,889 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:18,033 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:18,034 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:18,084 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-04 16:38:18,252 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:18,355 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:18,355 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox
+2019-06-04 16:38:18,396 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox
+2019-06-04 16:38:18,534 INFO  com.bankguru.fundtransfer.FundTransfer - AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-04 16:38:18,620 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:18,621 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 01 - Clear 'Description' textbox
+2019-06-04 16:38:18,665 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 02 - Click to 'Description' textbox
+2019-06-04 16:38:18,807 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 03 - Press TAB key
+2019-06-04 16:38:18,903 INFO  com.bankguru.fundtransfer.FundTransfer - DescriptionMustNotBeBlank: Step 04 - Verify 'Description can not be blank' message displayed
+2019-06-04 16:38:18,993 INFO  com.bankguru.fundtransfer.FundTransfer - ===PASSED===
+2019-06-04 16:38:18,993 INFO  com.bankguru.fundtransfer.FundTransfer - OS name= windows 10
+2019-06-04 16:38:19,455 INFO  com.bankguru.fundtransfer.FundTransfer - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:38:26,795 INFO  com.bankguru.user.ChangePassword - Precondition: Step 01 - Open Login Page
+2019-06-04 16:38:26,795 INFO  com.bankguru.user.ChangePassword - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:38:26,973 INFO  com.bankguru.user.ChangePassword - ===PASSED===
+2019-06-04 16:38:26,973 INFO  com.bankguru.user.ChangePassword - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:38:28,107 INFO  com.bankguru.user.ChangePassword - Precondition: Step 04 - Click to Login button
+2019-06-04 16:38:28,891 INFO  com.bankguru.user.ChangePassword - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:38:30,585 INFO  com.bankguru.user.ChangePassword - ===PASSED===
+2019-06-04 16:38:30,585 INFO  com.bankguru.user.ChangePassword - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:38:30,673 INFO  com.bankguru.user.ChangePassword - ===PASSED===
+2019-06-04 16:38:30,673 INFO  com.bankguru.user.ChangePassword - Precondition: Step 07 - Click To 'Change Password' link
+2019-06-04 16:38:31,929 INFO  com.bankguru.user.ChangePassword - OldPasswordMustNotBeBank: Step 01 - Clear 'Old Password' textbox
+2019-06-04 16:38:32,312 INFO  com.bankguru.user.ChangePassword - OldPasswordMustNotBeBank: Step 02 - Click to 'Old Password' textbox
+2019-06-04 16:38:32,468 INFO  com.bankguru.user.ChangePassword - OldPasswordMustNotBeBank: Step 03 - Press TAB key
+2019-06-04 16:38:32,581 INFO  com.bankguru.user.ChangePassword - OldPasswordMustNotBeBank: Step 04 - Verify 'Old Password must not be blank' message displayed
+2019-06-04 16:38:32,674 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotBeBank: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:32,719 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotBeBank: Step 02 - Click to 'New Password' textbox
+2019-06-04 16:38:32,865 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotBeBank: Step 03 - Press TAB key
+2019-06-04 16:38:32,982 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotBeBank: Step 04 - Verify 'New Password must not be blank' message displayed
+2019-06-04 16:38:33,073 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneNumericValue: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:33,111 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneNumericValue: Step 02 - Input to 'New Password' textbox
+2019-06-04 16:38:33,259 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneNumericValue: Step 03 - Verify 'Enter at-least one numeric value' message displayed
+2019-06-04 16:38:33,348 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneSpecialCharacter: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:33,389 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneSpecialCharacter: Step 02 - Input to 'New Password' textbox
+2019-06-04 16:38:33,860 INFO  com.bankguru.user.ChangePassword - NewPasswordMustHaveAtLeastOneSpecialCharacter: Step 03 - Verify 'Enter at-least one special character' message displayed
+2019-06-04 16:38:33,946 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:33,983 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 02 - Input to 'New Password' textbox
+2019-06-04 16:38:34,122 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 03 - Verify 'Choose a difficult Password' message displayed
+2019-06-04 16:38:34,204 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:34,246 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 02 - Input to 'New Password' textbox
+2019-06-04 16:38:34,395 INFO  com.bankguru.user.ChangePassword - NewPasswordMustNotIncludeStringPassword: Step 03 - Verify 'Choose a difficult Password' message displayed
+2019-06-04 16:38:34,489 INFO  com.bankguru.user.ChangePassword - ConfirmPasswordAndNewPasswordMustBeMatched: Step 01 - Clear 'New Password' textbox
+2019-06-04 16:38:34,530 INFO  com.bankguru.user.ChangePassword - ConfirmPasswordAndNewPasswordMustBeMatched: Step 02 - Input 'New Password' textbox
+2019-06-04 16:38:34,648 INFO  com.bankguru.user.ChangePassword - ConfirmPasswordAndNewPasswordMustBeMatched: Step 03 - Clear 'Confirm Password' textbox
+2019-06-04 16:38:34,688 INFO  com.bankguru.user.ChangePassword - ConfirmPasswordAndNewPasswordMustBeMatched: Step 04 - Input 'Confirm Password' textbox
+2019-06-04 16:38:34,809 INFO  com.bankguru.user.ChangePassword - ConfirmPasswordAndNewPasswordMustBeMatched: Step 05 - Verify 'Passwords do not Match' message displayed
+2019-06-04 16:38:34,892 INFO  com.bankguru.user.ChangePassword - OS name= windows 10
+2019-06-04 16:38:35,433 INFO  com.bankguru.user.ChangePassword - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-04 16:38:49,910 INFO  com.bankguru.payment.Payment - Precondition: Step 01 - Open Login Page
+2019-06-04 16:38:49,910 INFO  com.bankguru.payment.Payment - Precondition: Step 02 - Verify Login Form displayed
+2019-06-04 16:38:50,059 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:38:50,059 INFO  com.bankguru.payment.Payment - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-04 16:38:50,912 INFO  com.bankguru.payment.Payment - Precondition: Step 04 - Click to Login button
+2019-06-04 16:38:51,986 INFO  com.bankguru.payment.Payment - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-04 16:38:54,258 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:38:54,258 INFO  com.bankguru.payment.Payment - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-04 16:38:54,457 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:38:54,457 INFO  com.bankguru.payment.Payment - EditCustomer: Step 01 - Click to 'Delete Customer' link
+2019-06-04 16:38:56,334 INFO  com.bankguru.payment.Payment - EditCustomer: Step 02 - Input to 'Customer ID' textbox
+2019-06-04 16:38:56,459 INFO  com.bankguru.payment.Payment - EditCustomer: Step 03 - Click to Submit textbox
+2019-06-04 16:38:58,174 INFO  com.bankguru.payment.Payment - EditCustomer: Step 04 - Clear 'Address' Text Area
+2019-06-04 16:38:58,267 INFO  com.bankguru.payment.Payment - EditCustomer: Step 05 - Input to 'Address' Text Area
+2019-06-04 16:38:58,731 INFO  com.bankguru.payment.Payment - EditCustomer: Step 06 - Clear 'City' textbox
+2019-06-04 16:38:58,789 INFO  com.bankguru.payment.Payment - EditCustomer: Step 07 - Input to 'City' textbox
+2019-06-04 16:38:58,928 INFO  com.bankguru.payment.Payment - EditCustomer: Step 08 - Clear 'State' textbox
+2019-06-04 16:38:58,970 INFO  com.bankguru.payment.Payment - EditCustomer: Step 09 - Input to 'State' textbox
+2019-06-04 16:38:59,113 INFO  com.bankguru.payment.Payment - EditCustomer: Step 10 - Clear 'PIN' textbox
+2019-06-04 16:38:59,160 INFO  com.bankguru.payment.Payment - EditCustomer: Step 11 - Input to 'PIN' textbox
+2019-06-04 16:38:59,290 INFO  com.bankguru.payment.Payment - EditCustomer: Step 12 - Clear 'Mobile Number' textbox
+2019-06-04 16:38:59,354 INFO  com.bankguru.payment.Payment - EditCustomer: Step 13 - Input to 'Mobile Number' textbox
+2019-06-04 16:38:59,480 INFO  com.bankguru.payment.Payment - EditCustomer: Step 14 - Clear 'Email' textbox
+2019-06-04 16:38:59,522 INFO  com.bankguru.payment.Payment - EditCustomer: Step 15 - Input to 'Email' textbox
+2019-06-04 16:39:00,202 INFO  com.bankguru.payment.Payment - EditCustomer: Step 16 - Click to Submit button
+2019-06-04 16:39:02,454 INFO  com.bankguru.payment.Payment - EditCustomer: Step 17 - Verify all infor of edit customer are correct
+2019-06-04 16:39:02,873 INFO  com.bankguru.payment.Payment - Actual = 548
+2019-06-04 16:39:02,873 INFO  com.bankguru.payment.Payment - Expected = 548
+2019-06-04 16:39:02,873 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:02,873 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:02,961 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
+2019-06-04 16:39:02,961 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
+2019-06-04 16:39:02,961 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:02,961 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,055 INFO  com.bankguru.payment.Payment - Actual = male
+2019-06-04 16:39:03,055 INFO  com.bankguru.payment.Payment - Expected = male
+2019-06-04 16:39:03,055 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,055 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,146 INFO  com.bankguru.payment.Payment - Actual = 1988-07-31
+2019-06-04 16:39:03,146 INFO  com.bankguru.payment.Payment - Expected = 1988-07-31
+2019-06-04 16:39:03,146 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,146 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,233 INFO  com.bankguru.payment.Payment - Actual = 01 Nguyen Van Linh
+2019-06-04 16:39:03,233 INFO  com.bankguru.payment.Payment - Expected = 01 Nguyen Van Linh
+2019-06-04 16:39:03,234 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,234 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,324 INFO  com.bankguru.payment.Payment - Actual = Da Nang
+2019-06-04 16:39:03,324 INFO  com.bankguru.payment.Payment - Expected = Da Nang
+2019-06-04 16:39:03,325 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,325 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,420 INFO  com.bankguru.payment.Payment - Actual = Ngu Hanh Son
+2019-06-04 16:39:03,420 INFO  com.bankguru.payment.Payment - Expected = Ngu Hanh Son
+2019-06-04 16:39:03,420 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,420 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,520 INFO  com.bankguru.payment.Payment - Actual = 550000
+2019-06-04 16:39:03,520 INFO  com.bankguru.payment.Payment - Expected = 550000
+2019-06-04 16:39:03,520 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,520 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,657 INFO  com.bankguru.payment.Payment - Actual = 0975123456
+2019-06-04 16:39:03,657 INFO  com.bankguru.payment.Payment - Expected = 0975123456
+2019-06-04 16:39:03,657 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,657 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,775 INFO  com.bankguru.payment.Payment - Actual = hai.gsd@gmail.com
+2019-06-04 16:39:03,775 INFO  com.bankguru.payment.Payment - Expected = hai.gsd@gmail.com
+2019-06-04 16:39:03,775 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:03,775 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:03,776 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 01 - Click to 'New Account' link
+2019-06-04 16:39:05,224 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 02 - Input to 'New Account' link
+2019-06-04 16:39:05,369 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 03 - Select 'Current' in 'Account type' dropdown
+2019-06-04 16:39:05,573 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 04 - Input to 'Initial deposit' link
+2019-06-04 16:39:05,699 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 05 - Click to Submit button
+2019-06-04 16:39:08,442 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 06 - Verify 'Account Generated Successfully' message displayed
+2019-06-04 16:39:08,871 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:08,871 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 07 - Verify Current amount is correct
+2019-06-04 16:39:08,971 INFO  com.bankguru.payment.Payment - Actual = 50000
+2019-06-04 16:39:08,971 INFO  com.bankguru.payment.Payment - Expected = 50000
+2019-06-04 16:39:08,971 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:08,971 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:08,971 INFO  com.bankguru.payment.Payment - AddNewAccount: Step 08 - Get Account ID infor
+2019-06-04 16:39:09,065 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 01 - Click to 'Deposit' link 
+2019-06-04 16:39:11,216 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 02 - Verify Amount Deposit form displayed
+2019-06-04 16:39:11,921 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:11,921 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 03 - Input to 'Account Number' textbox
+2019-06-04 16:39:12,065 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 04 - Input to 'Amount' textbox
+2019-06-04 16:39:12,197 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 05 - Input to 'Description' textbox
+2019-06-04 16:39:12,344 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 07 - Click to Submit button
+2019-06-04 16:39:14,529 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 08 - Verify Tracsaction Details message displayed
+2019-06-04 16:39:15,030 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:15,030 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 09 - Verify Current Balance is correct
+2019-06-04 16:39:15,119 INFO  com.bankguru.payment.Payment - Actual = 55000
+2019-06-04 16:39:15,119 INFO  com.bankguru.payment.Payment - Expected = 55000
+2019-06-04 16:39:15,119 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:15,119 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:15,120 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 01 - Click to 'Withdrawal' link 
+2019-06-04 16:39:16,664 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 02 - Verify Amount Withdraw form displayed
+2019-06-04 16:39:17,138 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:17,138 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 03 - Input to 'Account Number' textbox
+2019-06-04 16:39:17,329 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 04 - Input to 'Amount' textbox
+2019-06-04 16:39:17,471 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 05 - Input to 'Description' textbox
+2019-06-04 16:39:17,597 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 06 - Click to Submit button
+2019-06-04 16:39:19,616 INFO  com.bankguru.payment.Payment - WithdrawFromCurrentAccount: Step 07 - Verify Tracsaction Details message displayed
+2019-06-04 16:39:20,039 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:20,040 INFO  com.bankguru.payment.Payment - TransferMoneyToCurrentAccount: Step 08 - Verify Current Balance is correct
+2019-06-04 16:39:20,126 INFO  com.bankguru.payment.Payment - Actual = 40000
+2019-06-04 16:39:20,126 INFO  com.bankguru.payment.Payment - Expected = 40000
+2019-06-04 16:39:20,126 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:20,126 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:20,127 INFO  com.bankguru.payment.Payment - TransferMoney: Step 04 - Click to 'Fund Transfer' link 
+2019-06-04 16:39:22,912 INFO  com.bankguru.payment.Payment - TransferMoney: Step 04 - Input to 'Payers Account Number' textbox 
+2019-06-04 16:39:23,371 INFO  com.bankguru.payment.Payment - TransferMoney: Step 05 - Input to 'Payees Account Number' textbox 
+2019-06-04 16:39:23,593 INFO  com.bankguru.payment.Payment - TransferMoney: Step 06 - Input to 'Amount' textbox 
+2019-06-04 16:39:23,784 INFO  com.bankguru.payment.Payment - TransferMoney: Step 07 - Input to 'Description' textbox 
+2019-06-04 16:39:24,092 INFO  com.bankguru.payment.Payment - TransferMoney: Step 08 - Click to Submit button
+2019-06-04 16:39:26,035 INFO  com.bankguru.payment.Payment - TransferMoney: Step 09 - Verify FundTransfer Details message displayed
+2019-06-04 16:39:26,482 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:26,482 INFO  com.bankguru.payment.Payment - TransferMoney: Step 10 - Verify Payers Account is correct
+2019-06-04 16:39:26,572 INFO  com.bankguru.payment.Payment - Actual = 61188
+2019-06-04 16:39:26,572 INFO  com.bankguru.payment.Payment - Expected = 61188
+2019-06-04 16:39:26,572 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:26,573 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:26,573 INFO  com.bankguru.payment.Payment - TransferMoney: Step 11 - Verify Payees Account is correct
+2019-06-04 16:39:26,661 INFO  com.bankguru.payment.Payment - Actual = 61185
+2019-06-04 16:39:26,661 INFO  com.bankguru.payment.Payment - Expected = 61185
+2019-06-04 16:39:26,661 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:26,661 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:26,661 INFO  com.bankguru.payment.Payment - TransferMoney: Step 12 - Verify Transferred amount is correct
+2019-06-04 16:39:26,756 INFO  com.bankguru.payment.Payment - Actual = 10000
+2019-06-04 16:39:26,756 INFO  com.bankguru.payment.Payment - Expected = 10000
+2019-06-04 16:39:26,756 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:26,756 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:26,757 INFO  com.bankguru.payment.Payment - BalanceEnquiry: Step 01 - Click to 'Balance Enquiry' link 
+2019-06-04 16:39:28,417 INFO  com.bankguru.payment.Payment - BalanceEnquiry: Step 02 - Input to 'Account Number' textbox 
+2019-06-04 16:39:28,882 INFO  com.bankguru.payment.Payment - BalanceEnquiry: Step 03 - Click to Submit button
+2019-06-04 16:39:31,140 INFO  com.bankguru.payment.Payment - TransferMoney: Step 04 - Verify Balance Details message displayed
+2019-06-04 16:39:31,255 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:31,255 INFO  com.bankguru.payment.Payment - TransferMoney: Step 05 - Verify current balance after Transferring is correct
+2019-06-04 16:39:31,354 INFO  com.bankguru.payment.Payment - Actual = 30000
+2019-06-04 16:39:31,354 INFO  com.bankguru.payment.Payment - Expected = 30000
+2019-06-04 16:39:31,354 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:31,354 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:31,355 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 01 - Click to 'Delete Account' link 
+2019-06-04 16:39:32,750 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 02 - Input to 'Account Number' textbox 
+2019-06-04 16:39:33,204 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 03 - Click to Submit button
+2019-06-04 16:39:33,376 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-04 16:39:33,405 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-04 16:39:33,406 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-04 16:39:33,406 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:33,406 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:33,406 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 05 - Accept alert
+2019-06-04 16:39:33,438 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
+2019-06-04 16:39:34,068 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
+2019-06-04 16:39:34,068 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
+2019-06-04 16:39:34,068 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:34,068 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:34,068 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 07 - Accept alert
+2019-06-04 16:39:34,109 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 08 - Click to 'Delete Account' link 
+2019-06-04 16:39:37,335 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 01 - Click to 'Delete Account' link 
+2019-06-04 16:39:38,990 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 02 - Input to 'Account Number' textbox 
+2019-06-04 16:39:39,472 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 03 - Click to Submit button
+2019-06-04 16:39:39,654 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-04 16:39:39,675 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-04 16:39:39,675 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-04 16:39:39,675 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:39,675 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:39,675 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 05 - Accept alert
+2019-06-04 16:39:39,723 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
+2019-06-04 16:39:40,376 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
+2019-06-04 16:39:40,376 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
+2019-06-04 16:39:40,376 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:40,376 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:40,376 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 07 - Accept alert
+2019-06-04 16:39:40,420 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 08 - Click to 'Delete Account' link 
+2019-06-04 16:39:43,625 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 01 - Click to 'Delete Account' link 
+2019-06-04 16:39:45,667 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 02 - Input to 'Account Number' textbox 
+2019-06-04 16:39:46,143 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 03 - Click to Submit button
+2019-06-04 16:39:46,332 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-04 16:39:46,350 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-04 16:39:46,350 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-04 16:39:46,350 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:46,350 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:46,350 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 05 - Accept alert
+2019-06-04 16:39:46,387 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
+2019-06-04 16:39:47,052 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
+2019-06-04 16:39:47,052 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
+2019-06-04 16:39:47,052 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:47,052 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:47,052 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 07 - Accept alert
+2019-06-04 16:39:47,098 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 08 - Click to 'Delete Account' link 
+2019-06-04 16:39:50,519 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 01 - Click to 'Delete Account' link 
+2019-06-04 16:39:53,102 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 02 - Input to 'Account Number' textbox 
+2019-06-04 16:39:53,249 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 03 - Click to Submit button
+2019-06-04 16:39:53,429 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-04 16:39:53,447 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-04 16:39:53,447 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-04 16:39:53,447 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:53,447 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:53,447 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 05 - Accept alert
+2019-06-04 16:39:53,485 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
+2019-06-04 16:39:54,167 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
+2019-06-04 16:39:54,167 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
+2019-06-04 16:39:54,167 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:54,168 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:54,168 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 07 - Accept alert
+2019-06-04 16:39:54,250 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 08 - Click to 'Delete Account' link 
+2019-06-04 16:39:56,461 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 01 - Click to 'Delete Customer' link 
+2019-06-04 16:39:59,109 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 02 - Input to 'Customer ID' textbox 
+2019-06-04 16:39:59,562 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 03 - Click to Submit button
+2019-06-04 16:39:59,738 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed
+2019-06-04 16:39:59,755 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Customer?
+2019-06-04 16:39:59,755 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Customer?
+2019-06-04 16:39:59,756 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:39:59,756 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:39:59,756 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 05 - Accept alert
+2019-06-04 16:39:59,795 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 06 - Verify 'Customer deleted Successfully' alert displayed
+2019-06-04 16:40:00,449 INFO  com.bankguru.payment.Payment - Actual = Customer deleted Successfully
+2019-06-04 16:40:00,449 INFO  com.bankguru.payment.Payment - Expected = Customer deleted Successfully
+2019-06-04 16:40:00,449 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-04 16:40:00,449 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-04 16:40:00,449 INFO  com.bankguru.payment.Payment - DeleteCustomer: Step 07 - Accept alert
+2019-06-04 16:40:00,497 INFO  com.bankguru.payment.Payment - OS name= windows 10
+2019-06-04 16:40:01,093 INFO  com.bankguru.payment.Payment - -------------QUIT BROWSER SUCCESSFULLY -----------------

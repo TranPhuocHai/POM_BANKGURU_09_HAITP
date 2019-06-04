@@ -1,160 +1,60 @@
 package com.bankguru.customer;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.bankguru.user.Common_01_RegisterToSystem;
+
 import commons.AbstractTest;
 import commons.PageFactoryManager;
 import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.RegisterPageObject;
 
 public class EditCustomer extends AbstractTest {
-	private WebDriver driver;
-	private LoginPageObject loginPage;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private NewCustomerPageObject newCustomerPage;
-	private EditCustomerPageObject editcustomerPage;
-	private String loginPageUrl, userIdInfo, passwordInfo, customerID;
+	WebDriver driver;
+	LoginPageObject loginPage;
+	HomePageObject homePage;
+	EditCustomerPageObject editcustomerPage;
 	
-	private String email = "haitgsdh" + randomNumber() + "@gmail.com";
-	private String validName = "Tran Phuoc Hai";
-	private String expectedGender = "male";
-	private String validDateOfBirth = "1988-07-31";
-	private String validAdress = "100 Ho Guom";
-	private String validCity = "Ha Noi";
-	private String validState = "Hoan Kiem";
-	private String validPin = "600000";
-	private String validPhoneNumber = "0987654321";
-	private String validEmailID = "khain" + randomNumber() + "@gmail.com";
-	private String validPassword = "idonknow12345678";
-	
-	private String blankSpace = " ";
-	private String[] numericValues = new String[] { "1234", "name123" };
-	private String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
-	private String[] characterPINs = new String[] { "123PIN", "HAI321" };
-	private String[] lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
-	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
-	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
-	private String[] incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
+	String blankSpace = " ";
+	String[] numericValues = new String[] { "1234", "name123" };
+	String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
+	String[] characterPINs = new String[] { "123PIN", "HAI321" };
+	String[] lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
+	String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
+	String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	String[] incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
 
-
-		log.info("Precondition: Step 01 - open Login Page");
+		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
 		
-		log.info("Precondition: Step 03 - Get Login Page url");
-		loginPageUrl = loginPage.getLoginPageUrl();
+		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
+		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
 		
-		log.info("Precondition: Step 04 - Click to 'here' link");
-		registerPage = loginPage.clickToHereLink();
-		
-		log.info("Precondition: Step 05 - Verify Register Page displayed");
-		verifyTrue(registerPage.isRegisterPageDisplayed());
-		
-		log.info("Precondition: Step 06 - Input to Email ID textbox");
-		registerPage.inPutToEmailIDTextbox(email);
-		
-		log.info("Precondition: Step 07 - Click to Submit button");
-		registerPage.clickToSubmitButton();
-		
-		log.info("Precondition: Step 08 - Get UserID and Password Infor");
-		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
-		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
-		
-		log.info("Precondition: Step 09 - Open Login Page");
-		loginPage = registerPage.openLoginPage(loginPageUrl);
-		
-		log.info("Precondition: Step 10 - Verify Login Form displayed");
-		verifyTrue(loginPage.isLoginFormDisplayed());
-		
-		log.info("Precondition: Step 11 - Input to userID and Password textboxes");
-		loginPage.inPutToUserIDTextbox(userIdInfo);
-		loginPage.inPutToPasswordTextbox(passwordInfo);
-		
-		log.info("Precondition: Step 11 - Click to Login button");
+		log.info("Precondition: Step 04 - Click to Login button");
 		homePage = loginPage.clickToLoginButton();
 		
-		log.info("Precondition: Step 12 - Verify Welcome message of Home page displayed");
+		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
 		
-		log.info("Precondition: Step 13 - Verify User ID infor displayed");
-		verifyTrue(homePage.isUserIDDisplayed(userIdInfo));
-		
-		log.info("Precondition: Step 14 - Click to 'New Customer' link");
-		homePage.openMultiplePage(driver, "New Customer");
-		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
+		log.info("Precondition: Step 06 - Verify User ID infor displayed");
+		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 
-		log.info("Precondition: Step 15 - Input to 'Customer Name' textbox");
-		newCustomerPage.inputValueToCustomerNameTextbox(validName);
-		
-		log.info("Precondition: Step 16 - Select Male gender");
-		newCustomerPage.selectMaleGenderRadioButton();
-		
-		log.info("Precondition: Step 17 - Remove Date Of Birth attribute");
-		newCustomerPage.removeDateOfBirthAttribute();
-		
-		log.info("Precondition: Step 18 - Input to 'Date Of Birth' textbox");
-		newCustomerPage.inputValueToDateOfBirthTextbox(validDateOfBirth);
-		
-		log.info("Precondition: Step 19 - Input to 'Adress' text area");
-		newCustomerPage.inputValueToAdressTextArea(validAdress);
-		
-		log.info("Precondition: Step 20 - Input to 'City' textbox");
-		newCustomerPage.inputValueToCityTextbox(validCity);
-		
-		log.info("Precondition: Step 21 - Input to 'State' textbox");
-		newCustomerPage.inputValueToStateTextbox(validState);
-		
-		log.info("Precondition: Step 22 - Input to 'Pin' textbox");
-		newCustomerPage.inputValueToPinTextbox(validPin);
-		
-		log.info("Precondition: Step 23 - Input to 'Mobile Number' textbox");
-		newCustomerPage.inputValueToMobileNumberTextbox(validPhoneNumber);
-		
-		log.info("Precondition: Step 24 - Input to 'Email' textbox");
-		newCustomerPage.inputValueToEmailTextbox(validEmailID);
-		
-		log.info("Precondition: Step 25 - Input to 'Password' textbox");
-		newCustomerPage.inputValueToPasswordTextbox(validPassword);
-		
-		log.info("Precondition: Step 26 - Click to Submit button");
-		newCustomerPage.clickToSubmitButton();
-		
-		log.info("Precondition: Step 27 - Verify 'Customer Registered Successfully!!!' message displayed");
-		verifyTrue(newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed());
-		
-		log.info("Precondition: Step 28 - Get 'Customer ID'");
-		customerID = newCustomerPage.getTextDynamicInfo(driver, "Customer ID");
-
-		log.info("Precondition: Step 29 - Verify all infor of new customer are correct");
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), validName);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), expectedGender);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), validDateOfBirth);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
-
-		log.info("Precondition: Step 30 - Click To 'Edit Customer' link");
-		newCustomerPage.openMultiplePage(driver, "Edit Customer");		
+		log.info("Precondition: Step 07 - Click To 'Edit Customer' link");
+		homePage.openMultiplePage(driver, "Edit Customer");		
 		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
 	}
 
@@ -227,7 +127,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clearCustomerIDTextbox();
 		
 		log.info("AddressCanNotBeEmpty: Step 02 - Input to 'Customer ID' textbox");
-		editcustomerPage.inputValueToCustomerIDTextbox(customerID);
+		editcustomerPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
 		
 		log.info("AddressCanNotBeEmpty: Step 03 - Click to 'Customer ID' textbox");
 		editcustomerPage.clickToCustomerIDSubmitButton();
@@ -520,16 +420,16 @@ public class EditCustomer extends AbstractTest {
 	public void EC_24_EmailCanNotBeEmpty() {
 		
 		log.info("EmailCanNotBeEmpty: Step 01 - Clear 'Email' textbox");
-		newCustomerPage.clearEmailTextbox();
+		editcustomerPage.clearEmailTextbox();
 		
 		log.info("EmailCanNotBeEmpty: Step 02 - Click to 'Email' textbox");
-		newCustomerPage.clickToEmailTextbox();
+		editcustomerPage.clickToEmailTextbox();
 		
 		log.info("EmailCanNotBeEmpty: Step 03 - Press TAB key");
-		newCustomerPage.pressTABKeyToEmailTextbox();
+		editcustomerPage.pressTABKeyToEmailTextbox();
 		
 		log.info("EmailCanNotBeEmpty: Step 04 - Verify 'Email-ID must not be blank' message displayed");
-		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Email-ID"));
+		verifyTrue(editcustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Email-ID"));
 	}
 
 	@Test
@@ -537,13 +437,13 @@ public class EditCustomer extends AbstractTest {
 		for (String incorrectEmailID : incorrectEmailIDList) {
 			
 			log.info("EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox");
-			newCustomerPage.clearEmailTextbox();
+			editcustomerPage.clearEmailTextbox();
 			
 			log.info("EmailMustBeInCorrectFormat: Step 02 - input to 'Email' textbox");
-			newCustomerPage.inputValueToEmailTextbox(incorrectEmailID);
+			editcustomerPage.inputValueToEmailTextbox(incorrectEmailID);
 			
 			log.info("EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed");
-			verifyTrue(newCustomerPage.isEmailIDIsNotValidMessageDisplayed());
+			verifyTrue(editcustomerPage.isEmailIDIsNotValidMessageDisplayed());
 		}
 	}
 
@@ -551,25 +451,19 @@ public class EditCustomer extends AbstractTest {
 	public void EC_26_EmailCanNotHaveFirstBlankSpace() {
 		
 		log.info("EmailCanNotHaveFirstBlankSpace: Step 01 - Clear 'Email' textbox");
-		newCustomerPage.clearEmailTextbox();
+		editcustomerPage.clearEmailTextbox();
 		
 		log.info("EmailCanNotHaveFirstBlankSpace: Step 02 - input to 'Email' textbox");
-		newCustomerPage.inputValueToEmailTextbox(blankSpace);
+		editcustomerPage.inputValueToEmailTextbox(blankSpace);
 		
 		log.info("EmailCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
+		verifyTrue(editcustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "E-mail"));
 
 	}
 
-	@AfterClass
-
+	@AfterClass (alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
-	}
-
-	public int randomNumber() {
-		Random random = new Random();
-		return random.nextInt(999999);
+		closeBrowserAndDriver(driver);
 	}
 
 }

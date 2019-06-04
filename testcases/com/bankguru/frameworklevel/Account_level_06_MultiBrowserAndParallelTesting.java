@@ -1,4 +1,4 @@
-package com.bankguru.user;
+package com.bankguru.frameworklevel;
 
 import java.util.Random;
 
@@ -11,20 +11,16 @@ import org.testng.annotations.Test;
 
 import commons.AbstractTest;
 import commons.PageFactoryManager;
-import pageObjects.DepositPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Account_level_07_WebDriverLifeCycle_ActionChain extends AbstractTest {
+public class Account_level_06_MultiBrowserAndParallelTesting extends AbstractTest{
 	WebDriver driver;
 	String userIdInfo, passwordInfo, loginPageUrl, email;
 	HomePageObject homePage;
 	LoginPageObject loginPage;
 	RegisterPageObject registerPage;
-	NewCustomerPageObject newCustomerPage;
-	DepositPageObject depositPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -60,9 +56,9 @@ public class Account_level_07_WebDriverLifeCycle_ActionChain extends AbstractTes
 	}
 
 	@Test
-	public void TC_03_OpenMutiPage() {
-//		newCustomerPage = homePage.openNewCutomerPage(driver);
-//		depositPage = newCustomerPage.openDepositPage(driver);
+	public void TC_03_LogOutOfSystem() {
+		homePage.clickLogOutButton();
+		loginPage = homePage.acceptLogOutAlert();
 
 	}
 

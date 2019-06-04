@@ -1,12 +1,12 @@
 package com.bankguru.customer;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.bankguru.user.Common_01_RegisterToSystem;
 
 import commons.AbstractTest;
 import commons.PageFactoryManager;
@@ -16,14 +16,12 @@ import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
 public class NewCustomer extends AbstractTest{
-	private WebDriver driver;
-	private LoginPageObject loginPage;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private NewCustomerPageObject newCustomerPage;
-	private String loginPageUrl, userIdInfo, passwordInfo;
+	WebDriver driver;
+	LoginPageObject loginPage;
+	HomePageObject homePage;
+	RegisterPageObject registerPage;
+	NewCustomerPageObject newCustomerPage;
 	
-	private String email = "haimrtvknghbv" + randomNumber() + "@gmail.com";
 	private String blankSpace = " ";
 	private String[] numericValues = new String[] { "1234", "name123" };
 	private String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
@@ -37,52 +35,26 @@ public class NewCustomer extends AbstractTest{
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
-
-		log.info("Precondition: Step 01 - open Login Page");
+		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
 		
-		log.info("Precondition: Step 03 - Get Login Page url");
-		loginPageUrl = loginPage.getLoginPageUrl();
+		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
+		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
 		
-		log.info("Precondition: Step 04 - Click to 'here' link");
-		registerPage = loginPage.clickToHereLink();
-		
-		log.info("Precondition: Step 05 - Verify Register Page displayed");
-		verifyTrue(registerPage.isRegisterPageDisplayed());
-		
-		log.info("Precondition: Step 06 - Input to Email ID textbox");
-		registerPage.inPutToEmailIDTextbox(email);
-		
-		log.info("Precondition: Step 07 - Click to Submit button");
-		registerPage.clickToSubmitButton();
-		
-		log.info("Precondition: Step 08 - Get UserID and Password Infor");
-		userIdInfo = registerPage.getTextDynamicInfo(driver, "User ID :");
-		passwordInfo = registerPage.getTextDynamicInfo(driver, "Password :");
-		
-		log.info("Precondition: Step 09 - Open Login Page");
-		loginPage = registerPage.openLoginPage(loginPageUrl);
-		
-		log.info("Precondition: Step 10 - Verify Login Form displayed");
-		verifyTrue(loginPage.isLoginFormDisplayed());
-		
-		log.info("Precondition: Step 11 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(userIdInfo);
-		loginPage.inPutToPasswordTextbox(passwordInfo);
-		
-		log.info("Precondition: Step 11 - Click to Login button");
+		log.info("Precondition: Step 04 - Click to Login button");
 		homePage = loginPage.clickToLoginButton();
 		
-		log.info("Precondition: Step 12 - Verify Welcome message of Home page displayed");
+		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
 		
-		log.info("Precondition: Step 13 - Verify User ID infor displayed");
-		verifyTrue(homePage.isUserIDDisplayed(userIdInfo));
+		log.info("Precondition: Step 06 - Verify User ID infor displayed");
+		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 		
-		log.info("Precondition: Step 14 - Click to New Customer link");
+		log.info("Precondition: Step 07 - Click to New Customer link");
 		homePage.openMultiplePage(driver, "New Customer");
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 	}
@@ -493,14 +465,9 @@ public class NewCustomer extends AbstractTest{
 		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Password"));
 	}
 
-	@AfterClass
+	@AfterClass (alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
-	}
-
-	public int randomNumber() {
-		Random random = new Random();
-		return random.nextInt(999999);
+		closeBrowserAndDriver(driver);
 	}
 
 }

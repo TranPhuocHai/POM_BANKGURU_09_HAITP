@@ -1,4 +1,4 @@
-package com.bankguru.user;
+package com.bankguru.frameworklevel;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

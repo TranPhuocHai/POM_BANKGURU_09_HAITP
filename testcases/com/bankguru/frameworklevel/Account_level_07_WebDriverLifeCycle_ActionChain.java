@@ -1,4 +1,4 @@
-package com.bankguru.user;
+package com.bankguru.frameworklevel;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Account_level_08_DynamicLocator_RestParam extends AbstractTest {
+public class Account_level_07_WebDriverLifeCycle_ActionChain extends AbstractTest {
 	WebDriver driver;
 	String userIdInfo, passwordInfo, loginPageUrl, email;
 	HomePageObject homePage;
@@ -61,11 +61,9 @@ public class Account_level_08_DynamicLocator_RestParam extends AbstractTest {
 
 	@Test
 	public void TC_03_OpenMutiPage() {
-		homePage.openMultiplePage(driver, "New Customer");
-		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
-		
-		newCustomerPage.openMultiplePage(driver, "Deposit");
-		depositPage = PageFactoryManager.getDepositPage(driver);
+//		newCustomerPage = homePage.openNewCutomerPage(driver);
+//		depositPage = newCustomerPage.openDepositPage(driver);
+
 	}
 
 	@AfterClass

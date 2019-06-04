@@ -1,4 +1,4 @@
-package com.bankguru.user;
+package com.bankguru.frameworklevel;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;

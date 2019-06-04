@@ -66,8 +66,6 @@ public class Payment extends AbstractTest {
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
 
-		driver = openMultiBrowser(browserName);
-
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
 		

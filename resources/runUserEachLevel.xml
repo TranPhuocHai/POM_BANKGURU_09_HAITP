@@ -9,9 +9,7 @@
 	<test name="Test on FIREFOX">
 		<parameter name="browser" value="firefox" />
 		<classes>
-<!-- 			<class name="com.bankguru.user.Account_level_09_ElementUndisplayed_OverrideTimeOut" /> -->
-			<class name="com.bankguru.customer.NewCustomer" />
-			<class name="com.bankguru.customer.EditCustomer" />
+			<class name="com.bankguru.frameworklevel.Account_level_10_AssertVsVerify_Log_Report" />
 		</classes>
 	</test>
 

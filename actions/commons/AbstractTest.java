@@ -13,6 +13,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AbstractTest {
 
 	private WebDriver driver;
@@ -28,22 +30,22 @@ public class AbstractTest {
 			profile.setPreference("network.proxy.type", 0);
 			driver = new FirefoxDriver(profile);
 		} else if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("headless");
 			option.addArguments("window-size=1366x768");
 			driver = new ChromeDriver(option);
 		} else if (browserName.equalsIgnoreCase("ie")) {
-			System.setProperty("webdriver.ie.driver", ".\\resources\\IEDriverServer.exe");
+			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get(Constants.DEV_APP_URL);
+		driver.get(Constants.BANKGURU_DEV_APP_URL);
 		return driver;
 	}
 

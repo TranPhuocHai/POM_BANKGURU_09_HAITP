@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -13,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 import bankguruUI.AbstractPageUI;
 
@@ -23,6 +25,8 @@ public class AbstractPage {
 	WebDriverWait waitExplicit;
 	Actions action;
 	By byLocator;
+	Log log;
+	boolean status;
 
 	public void openAnyUrl(WebDriver driver, String url) {
 		driver.get(url);
@@ -176,15 +180,39 @@ public class AbstractPage {
 
 	public boolean isControlDisplayed(WebDriver driver, String locator) {
 		highlightElement(driver, locator);
-		element = driver.findElement(By.xpath(locator));
-		return element.isDisplayed();
+		try {
+			element = driver.findElement(By.xpath(locator));
+			if (element.isDisplayed()) {
+				status = true;
+			}
+		} catch (Exception ex) {
+			Reporter.log("=========================== Element not displayed==============================");
+			Reporter.log(ex.getMessage());
+			System.err.println("=========================== Element not displayed==============================");
+			System.err.println(ex.getMessage() + "\n");
+			status = false;
+		}
+
+		return status;
 	}
 
 	public boolean isControlDisplayed(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		highlightElement(driver, locator);
-		element = driver.findElement(By.xpath(locator));
-		return element.isDisplayed();
+		try {
+			element = driver.findElement(By.xpath(locator));
+			if (element.isDisplayed()) {
+				status = true;
+			}
+		} catch (Exception ex) {
+			Reporter.log("=========================== Element not displayed==============================");
+			Reporter.log(ex.getMessage());
+			System.err.println("=========================== Element not displayed==============================");
+			System.err.println(ex.getMessage() + "\n");
+			status = false;
+		}
+
+		return status;
 	}
 
 	public boolean isControlUnDisplayed(WebDriver driver, String locator) {
@@ -382,14 +410,28 @@ public class AbstractPage {
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
 		byLocator = By.xpath(locator);
-		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		try {
+			waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		} catch (Exception ex) {
+			Reporter.log("================================== Wait for element not visible===================================");
+			Reporter.log(ex.getMessage());
+			System.err.println("================================== Wait for element not visible===================================");
+			System.err.println(ex.getMessage() + "\n");
+		}
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locator, String... values) {
 		waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
 		locator = String.format(locator, (Object[]) values);
 		byLocator = By.xpath(locator);
-		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		try {
+			waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
+		} catch (Exception ex) {
+			Reporter.log("================================== Wait for element not visible===================================");
+			Reporter.log(ex.getMessage());
+			System.err.println("================================== Wait for element not visible===================================");
+			System.err.println(ex.getMessage() + "\n");
+		}
 	}
 
 	public void waitForElementClickable(WebDriver driver, String locator) {

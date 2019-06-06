@@ -111,6 +111,7 @@ l
 
 			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
 			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
+			
 
 			log.info("AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed");
 			verifyTrue(editAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));

@@ -35,22 +35,24 @@ public class NewCustomer extends AbstractTest{
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = openMultiBrowser(browserName);
+		
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		
+
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
-		
+
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
-		
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
-		
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
+
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
+
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
-		
+
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 		
@@ -63,13 +65,13 @@ public class NewCustomer extends AbstractTest{
 	public void NC_01_NameCanNotBeEmpty() {
 		
 		log.info("NameCanNotBeEmpty: Step 01 - Click to 'Customer Name' textbox");
-		newCustomerPage.clickToCustomerNameTextbox();
+		newCustomerPage.clickToDynamicTextboxOrTextArea(driver, "name");
 		
 		log.info("NameCanNotBeEmpty: Step 02 - Press TAB key");
-		newCustomerPage.pressTABKeyToCustomerNameTextBox();
+		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "name");
 		
 		log.info("NameCanNotBeEmpty: Step 03 - Verify 'Customer name must not be blank' message displayed");
-		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Customer name"));
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Customer name must not be blank");
 	}
 
 	@Test
@@ -77,13 +79,13 @@ public class NewCustomer extends AbstractTest{
 		for (String numericName : numericValues) {
 			
 			log.info("NameCanNotBeNumeric: Step 01 - Clear 'Customer Name' textbox");
-			newCustomerPage.clearNameTextbox();
+			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
 			
 			log.info("NameCanNotBeNumeric: Step 02 - Input to 'Customer Name' textbox");
-			newCustomerPage.inputValueToCustomerNameTextbox(numericName);
+			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", numericName);
 			
 			log.info("NameCanNotBeNumeric: Step 03 - Verify 'Numbers are not allowed' message displayed");
-			verifyTrue(newCustomerPage.isDynamicNumbersAreNotAllowedMessageDisplayed(driver, "Customer Name"));
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Numbers are not allowed");
 			
 		}
 	}
@@ -93,13 +95,13 @@ public class NewCustomer extends AbstractTest{
 		for (String specialCharactersName : specialCharacters) {
 			
 			log.info("NameCanNotHaveSpecialCharacters: Step 01 - Clear 'Customer Name' textbox");
-			newCustomerPage.clearNameTextbox();
+			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
 			
 			log.info("NameCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer Name' textbox");
-			newCustomerPage.inputValueToCustomerNameTextbox(specialCharactersName);
+			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", specialCharactersName);
 			
 			log.info("NameCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(newCustomerPage.isSpecialCharactersOfNameAreNotAllowedMessageDisplayed());
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Special characters are not allowed");
 		}
 	}
 
@@ -107,13 +109,13 @@ public class NewCustomer extends AbstractTest{
 	public void NC_04_NameCanNotHaveFirstBlankSpace() {		
 		
 		log.info("NameCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer Name' textbox");
-		newCustomerPage.clearNameTextbox();
+		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
 		
 		log.info("NameCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer Name' textbox");
-		newCustomerPage.inputValueToCustomerNameTextbox(blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", blankSpace);
 		
 		log.info("NameCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer Name"));
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "First character can not have space");
 
 	}
 
@@ -121,16 +123,16 @@ public class NewCustomer extends AbstractTest{
 	public void NC_05_AddressCanNotBeEmpty() {
 		
 		log.info("AddressCanNotBeEmpty: Step 01 - Clear 'Address' text area");
-		newCustomerPage.clearAddresTextArea();
+		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
 		
 		log.info("AddressCanNotBeEmpty: Step 02 - Click to 'Address' text area");
-		newCustomerPage.clickToAddressTextArea();
+		newCustomerPage.clickToDynamicTextboxOrTextArea(driver, "addr");
 		
 		log.info("AddressCanNotBeEmpty: Step 03 - Press TAB key");
-		newCustomerPage.pressTABKeyToAddressTextArea();
+		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "addr");
 		
 		log.info("AddressCanNotBeEmpty: Step 04 - Verify 'Address Field must not be blank' message displayed");
-		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Address Field"));
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "Address Field must not be blank");
 
 	}
 
@@ -139,13 +141,13 @@ public class NewCustomer extends AbstractTest{
 		for (String specialCharactersAddress : specialCharacters) {
 			
 			log.info("AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area");
-			newCustomerPage.clearAddresTextArea();
+			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
 			
 			log.info("AdressCanNotHaveSpecialCharacters: Step 02 - Input to 'Address' text area");
-			newCustomerPage.inputValueToAdressTextArea(specialCharactersAddress);
+			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", specialCharactersAddress);
 			
 			log.info("AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(newCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Address"));
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "Special characters are not allowed");
 		}
 	}
 
@@ -153,13 +155,13 @@ public class NewCustomer extends AbstractTest{
 	public void NC_07_AddressCanNotHaveBlankSpace() {
 		
 		log.info("AddressCanNotHaveBlankSpace: Step 01 - Clear 'Address' text area");
-		newCustomerPage.clearAddresTextArea();
+		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
 		
 		log.info("AddressCanNotHaveBlankSpace: Step 02 - Input to 'Address' text area");
-		newCustomerPage.inputValueToAdressTextArea(blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", blankSpace);
 		
 		log.info("AddressCanNotHaveBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyTrue(newCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Address"));
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "First character can not have space");
 
 	}
 
@@ -167,16 +169,16 @@ public class NewCustomer extends AbstractTest{
 	public void NC_08_CityCanNotBeEmpty() {
 		
 		log.info("CityCanNotBeEmpty: Step 01 - Clear 'City' textbox");
-		newCustomerPage.clearCityTextbox();
+		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
 		
 		log.info("CityCanNotBeEmpty: Step 02 - Click to 'City' textbox");
-		newCustomerPage.clickToCityTextbox();
+		newCustomerPage.clickToDynamicTextboxOrTextArea(driver, "city");
 		
 		log.info("CityCanNotBeEmpty: Step 03 - Press TAB key");
-		newCustomerPage.pressTABKeyToCityTextbox();
+		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "city");
 		
 		log.info("CityCanNotBeEmpty: Step 04 - Verify 'City Field must not be blank' message displayed");
-		verifyTrue(newCustomerPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "City Field"));
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), "City Field must not be blank");
 	}
 
 	@Test

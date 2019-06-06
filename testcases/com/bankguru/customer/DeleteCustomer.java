@@ -15,14 +15,14 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 
 public class DeleteCustomer extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	DeleteCustomerPageObject deleteCustomerPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private DeleteCustomerPageObject deleteCustomerPage;
 
-	String blankSpace = " ";
-	String[] characterValues = new String[] { "haitp", "12 1234" };
-	String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String blankSpace = " ";
+	private String[] characterValues = new String[] { "haitp", "12 1234" };
+	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters("browser")
 	@BeforeClass
@@ -31,20 +31,21 @@ public class DeleteCustomer extends AbstractTest {
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		
+
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
-		
+
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
-		
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
-		
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
+
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
+
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
-		
+
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 
@@ -57,16 +58,16 @@ public class DeleteCustomer extends AbstractTest {
 	public void DC_01_CustomerIDCanNotBeEmpty() {
 
 		log.info("CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox");
-		deleteCustomerPage.clearCustomerIDTextbox();
+		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox");
-		deleteCustomerPage.clickToCustomerIDTexbox();
+		deleteCustomerPage.clickToDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotBeEmpty: Step 03 - Press TAB key");
-		deleteCustomerPage.pressTABKeyToCustomerIDTextbox();
+		deleteCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed");
-		verifyTrue(deleteCustomerPage.isCustomerIDIsRequiredMessageDisplayed());
+		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Customer ID is required");
 
 	}
 
@@ -74,13 +75,13 @@ public class DeleteCustomer extends AbstractTest {
 	public void DC_02_CustomerIDCanNotHaveFirstBlankSpace() {
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox");
-		deleteCustomerPage.clearCustomerIDTextbox();
+		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox");
-		deleteCustomerPage.inputValueToCustomerIDTextbox(blankSpace);
+		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", blankSpace);
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyTrue(deleteCustomerPage.isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(driver, "Customer ID"));
+		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "First character can not have space");
 
 	}
 
@@ -89,13 +90,13 @@ public class DeleteCustomer extends AbstractTest {
 		for (String charactervalue : characterValues) {
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
-			deleteCustomerPage.clearCustomerIDTextbox();
+			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox");
-			deleteCustomerPage.inputValueToCustomerIDTextbox(charactervalue);
+			deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", charactervalue);
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(deleteCustomerPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Customer ID"));
+			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Characters are not allowed");
 		}
 
 	}
@@ -105,13 +106,13 @@ public class DeleteCustomer extends AbstractTest {
 		for (String specialValue : specialValues) {
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
-			deleteCustomerPage.clearCustomerIDTextbox();
+			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox");
-			deleteCustomerPage.inputValueToCustomerIDTextbox(specialValue);
+			deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", specialValue);
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(deleteCustomerPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Customer ID"));
+			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Special characters are not allowed");
 		}
 	}
 

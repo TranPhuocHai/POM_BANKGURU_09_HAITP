@@ -17,17 +17,18 @@ import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
 
 public class EditAccount extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	NewAccountPageObject newAccountPage;
-	EditAccountPageObject editAccountPage;
-	public static String ACCOUNT_ID;
-	String blankSpace = " ";
-	int currentAmount = 50000;
-	String[] characterAccountNos = new String[] { "haitp", "12 1234" };
-	String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private NewAccountPageObject newAccountPage;
+	private EditAccountPageObject editAccountPage;
+	private String blankSpace = " ";
+	private int currentAmount = 50000;
+	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
+	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
+	public static String ACCOUNT_ID;
+	
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
@@ -110,11 +111,11 @@ public class EditAccount extends AbstractTest {
 			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
-			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
+			editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", characterAccountNo);
 			
 
 			log.info("AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(editAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
+			verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
 		}
 	}
 
@@ -124,13 +125,12 @@ public class EditAccount extends AbstractTest {
 
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox");
 			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
-
+			
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox");
-			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
-
-			log.info(
-					"AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(editAccountPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
+			editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", specialAccountNo);
+			
+			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Special characters are not allowed");
 		}
 	}
 
@@ -139,13 +139,12 @@ public class EditAccount extends AbstractTest {
 
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox");
 		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
-
+		
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox");
-		editAccountPage.inputValueToAccountNumberTextbox(blankSpace);
-
-		log.info(
-				"AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyTrue(editAccountPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
+		editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", blankSpace);
+		
+		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
+		verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
 
 	}
 
@@ -156,26 +155,26 @@ public class EditAccount extends AbstractTest {
 		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("ValidAccountNumber: Step 02 - Input to 'Account Number' textbox");
-		editAccountPage.inputValueToAccountNumberTextbox(ACCOUNT_ID);
+		editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", ACCOUNT_ID);
 
 		log.info("ValidAccountNumber: Step 03 - Click to submit button");
-		editAccountPage.clickAccountNumberSubmitButton();
+		editAccountPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("ValidAccountNumber: Step 04 - Verify Edit Customer form displayed");
-		verifyTrue(editAccountPage.isEditCustomerFormDispayed());
+		verifyTrue(editAccountPage.isDynamicPageTitleDisplayed(driver, "Edit Account Entry Form"));
 	}
 
 	@Test
 	public void EA_06_EditAccountSuccess() {
 
 		log.info("EditAccountSuccess: Step 01 - Select 'Saving' in 'Account type' dropdown");
-		editAccountPage.selectSavingsInAccountTypeDropdown();
+		editAccountPage.selectItemInDynamicDropdown(driver, "a_type", "Saving");
 
 		log.info("EditAccountSuccess: Step 02 - Click to Submit button");
-		editAccountPage.clickEditAccountSubmitButton();
+		editAccountPage.clickToDynamicButton(driver, "AccSubmit");
 
-		log.info("EditAccountSuccess: Step 03 - Verify 'Account details updated successfully' message displayed");
-		verifyTrue(editAccountPage.isAccountDetailsUpdatedSuccessfullyDispayed());
+		log.info("EditAccountSuccess: Step 03 - Verify 'Account details updated successfully!!!' message displayed");
+		verifyTrue(editAccountPage.isDynamicPageTitleDisplayed(driver, "Account details updated Successfully!!!"));
 
 		log.info("EditAccountSuccess: Step 04 - Verify Account type is 'Savings'");
 		verifyEquals(editAccountPage.getTextDynamicTableInfo(driver, "Account Type"), "Savings");

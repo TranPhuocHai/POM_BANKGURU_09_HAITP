@@ -101,7 +101,7 @@ public class EditAccount extends AbstractTest {
 		log.info("AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed");
 		verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Account Number must not be blank");
 	}
-l
+
 	@Test
 	public void EA_02_AccountNumberCharacterAreNotAllowed() {
 		for (String characterAccountNo : characterAccountNos) {

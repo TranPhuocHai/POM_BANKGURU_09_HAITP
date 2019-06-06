@@ -3,7 +3,6 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import bankguruUI.AbstractPageUI;
-import bankguruUI.RegisterPageUI;
 import commons.AbstractPage;
 import commons.PageFactoryManager;
 
@@ -14,19 +13,19 @@ public class RegisterPageObject extends AbstractPage{
 	}
 
 	public boolean isRegisterPageDisplayed() {
-		waitForElementVisible(driver, RegisterPageUI.EMAIL_ID_TEXTBOX);
-		return isControlDisplayed(driver, RegisterPageUI.EMAIL_ID_TEXTBOX);
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "emailid");
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "emailid");
 	}
 
-	public void inPutToEmailIDTextbox(String email) {
-		waitForElementVisible(driver, RegisterPageUI.EMAIL_ID_TEXTBOX);	
-		sendKeyToElement(driver, RegisterPageUI.EMAIL_ID_TEXTBOX, email);
-	}
-
-	public void clickToSubmitButton() {
-		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
-		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
-	}
+//	public void inPutToEmailIDTextbox(String email) {
+//		waitForElementVisible(driver, RegisterPageUI.EMAIL_ID_TEXTBOX);	
+//		sendKeyToElement(driver, RegisterPageUI.EMAIL_ID_TEXTBOX, email);
+//	}
+//
+//	public void clickToSubmitButton() {
+//		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
+//		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
+//	}
 
 	public LoginPageObject openLoginPage(String loginPageUrl) {
 		openAnyUrl(driver, loginPageUrl);

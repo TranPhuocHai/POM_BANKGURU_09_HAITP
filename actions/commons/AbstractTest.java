@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
@@ -156,5 +157,11 @@ public class AbstractTest {
 		}
 
 	}
+	
+	public int randomNumber() {
+		Random random = new Random();
+		return random.nextInt(999999);
+	}
+	
 
 }

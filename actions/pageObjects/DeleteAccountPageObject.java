@@ -15,10 +15,10 @@ public class DeleteAccountPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public void clickSubmitButton() {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
-		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
-	}
+//	public void clickSubmitButton() {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+//		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+//	}
 	
 	public void acceptConfirmDeleteAlert() {
 		waitForAlertPresence(driver);
@@ -40,36 +40,36 @@ public class DeleteAccountPageObject extends AbstractPage {
 		waitForAlertPresence(driver);
 		return getTextAlert(driver);
 	}
+//
+//	public void clearAccountNumberTextbox() {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		clearTextElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		
+//	}
+//
+//	public void clickToAccountNumberTexbox() {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		clickToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		
+//	}
+//
+//	public void pressTABKeyToAccountNumberTextbox() {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		sendKeyBoardToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, Keys.TAB);
+//		
+//	}
+//
+//
+//	public void inputValueToAccountNumberTextbox(String value) {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
+//		
+//	}
 
-	public void clearAccountNumberTextbox() {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		clearTextElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		
-	}
-
-	public void clickToAccountNumberTexbox() {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		clickToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		
-	}
-
-	public void pressTABKeyToAccountNumberTextbox() {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyBoardToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, Keys.TAB);
-		
-	}
-
-
-	public void inputValueToAccountNumberTextbox(String value) {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
-		
-	}
-
-	public boolean isDeleteAccountFormDisplayed() {
-		waitForElementVisible(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
-		return isControlDisplayed(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
-	}
+//	public boolean isDeleteAccountFormDisplayed() {
+//		waitForElementVisible(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
+//		return isControlDisplayed(driver, DeleteAccountPageUI.DELETE_ACCOUNT_FORM);
+//	}
 
 	
 }

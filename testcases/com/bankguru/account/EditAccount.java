@@ -35,47 +35,51 @@ public class EditAccount extends AbstractTest {
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-
+		
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
-
+		
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
-
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
-
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
+		
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
+		
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
-
+		
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 
 		log.info("Precondition: Step 07 - Click To 'New Account' link");
 		homePage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
+		
+		log.info("Precondition: Step 08 - Verify Title 'Add new account form' displayed");
+		newAccountPage.isDynamicPageTitleDisplayed(driver, "Add new account form");
 
-		log.info("Precondition: Step 08 - Click To 'New Account' link");
-		newAccountPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
+		log.info("Precondition: Step 09 - Input to 'Customer id' textbox ");
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", Common_02_CreateNewCustomer.CUSTOMER_ID);
 
-		log.info("Precondition: Step 09 - select 'Current' in 'Account type' dropdown");
-		newAccountPage.selectCurrentInAccountType();
+		log.info("Precondition: Step 10 - select 'Current' in 'Account type' dropdown");
+		newAccountPage.selectItemInDynamicDropdown(driver, "selaccount", "Current");
 
-		log.info("Precondition: Step 10 - Input to Initial deposit textbox");
-		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
+		log.info("Precondition: Step 11 - Input to 'Initial deposit' textbox");
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", String.valueOf(currentAmount));
 
 		log.info("Precondition: Step 11 - Click to Submit button");
-		newAccountPage.clickToSubmitButton();
+		newAccountPage.clickToDynamicButton(driver, "button2");
 
 		log.info("Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed");
-		verifyTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Account generated successfully"));
 
 		log.info("Precondition: Step 13 - Veirfy current amount is correct");
-		verifyEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
 
 		log.info("Precondition: Step 14 - Get Account ID infor");
-		ACCOUNT_ID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
+		ACCOUNT_ID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
 
 		log.info("Precondition: Step 15 - Click to 'Edit Account' link");
 		newAccountPage.openMultiplePage(driver, "Edit Account");
@@ -86,24 +90,24 @@ public class EditAccount extends AbstractTest {
 	public void EA_01_AccountNumberCanNotBeEmpty() {
 
 		log.info("AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox");
-		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox");
-		editAccountPage.clickToAccountNumberTexbox();
+		editAccountPage.clickToDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("AccountNumberCanNotBeEmpty: Step 03 - Press TAB key");
-		editAccountPage.pressTABKeyToAccountNumberTextbox();
+		editAccountPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed");
-		verifyTrue(editAccountPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
+		verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Account Number must not be blank");
 	}
-
+l
 	@Test
 	public void EA_02_AccountNumberCharacterAreNotAllowed() {
 		for (String characterAccountNo : characterAccountNos) {
 
 			log.info("AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox");
-			editAccountPage.clearAccountNumberTextbox();
+			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
 			editAccountPage.inputValueToAccountNumberTextbox(characterAccountNo);
@@ -118,7 +122,7 @@ public class EditAccount extends AbstractTest {
 		for (String specialAccountNo : specialAccountNos) {
 
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox");
-			editAccountPage.clearAccountNumberTextbox();
+			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox");
 			editAccountPage.inputValueToAccountNumberTextbox(specialAccountNo);
@@ -133,7 +137,7 @@ public class EditAccount extends AbstractTest {
 	public void EA_04_AccountNumberFirstCharacterMustNotBeBlank() {
 
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox");
-		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox");
 		editAccountPage.inputValueToAccountNumberTextbox(blankSpace);
@@ -148,7 +152,7 @@ public class EditAccount extends AbstractTest {
 	public void EA_05_ValidAccountNumber() {
 
 		log.info("ValidAccountNumber: Step 01 - Clear 'Account Number' textbox");
-		editAccountPage.clearAccountNumberTextbox();
+		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
 		log.info("ValidAccountNumber: Step 02 - Input to 'Account Number' textbox");
 		editAccountPage.inputValueToAccountNumberTextbox(ACCOUNT_ID);
@@ -173,7 +177,7 @@ public class EditAccount extends AbstractTest {
 		verifyTrue(editAccountPage.isAccountDetailsUpdatedSuccessfullyDispayed());
 
 		log.info("EditAccountSuccess: Step 04 - Verify Account type is 'Savings'");
-		verifyEquals(editAccountPage.getTextDynamicInfo(driver, "Account Type"), "Savings");
+		verifyEquals(editAccountPage.getTextDynamicTableInfo(driver, "Account Type"), "Savings");
 
 	}
 

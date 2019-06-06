@@ -1,7 +1,5 @@
 package com.bankguru.customer;
 
-import java.util.Random;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -22,18 +20,17 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 	NewCustomerPageObject newCustomerPage;
 	EditCustomerPageObject editcustomerPage;
 	public static String CUSTOMER_ID;
-	
-	String email = "redohabaid" + randomNumber() + "@gmail.com";
 	public static String VALID_NAME = "Tran Phuoc Hai";
 	public static String EXPECTED_GENDER = "male";
 	public static String VALID_DOB = "1988-07-31";
-	String validAdress = "100 Ho Guom";
-	String validCity = "Ha Noi";
-	String validState = "Hoan Kiem";
-	String validPin = "600000";
-	String validPhoneNumber = "0987654321";
-	String validEmailID = "khain" + randomNumber() + "@gmail.com";
-	String validPassword = "idonknow12345678";
+	
+	private String address = "100 Dia Chi";
+	private String city = "Ha Noi";
+	private String state = "Hoan Kiem";
+	private String pin = "600000";
+	private String mobileNumber = "0987654321";
+	private String email = "haitp" + randomNumber() + "@gmail.com";
+	private String password = "sdhgd3123";
 
 	@Parameters("browser")
 	@BeforeTest
@@ -47,11 +44,12 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		verifyTrue(loginPage.isLoginFormDisplayed());
 		
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
 		
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
 		
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
@@ -64,64 +62,59 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
 		log.info("Precondition: Step 08 - Input to 'Customer Name' textbox");
-		newCustomerPage.inputValueToCustomerNameTextbox(VALID_NAME);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", VALID_NAME);
 		
 		log.info("Precondition: Step 09 - Select Male gender");
-		newCustomerPage.selectMaleGenderRadioButton();
+		newCustomerPage.checkToDynamicCheckboxOrRadioButton(driver, "m");
 		
-		log.info("Precondition: Step 10 - Remove Date Of Birth attribute");
-		newCustomerPage.removeDateOfBirthAttribute();
+		log.info("Precondition: Step 10 - Remove 'type' attribute of Date of Birth textbox");
+		newCustomerPage.removeAtrributeDynamicTextbox(driver, "dob", "type");
 		
 		log.info("Precondition: Step 11 - Input to 'Date Of Birth' textbox");
-		newCustomerPage.inputValueToDateOfBirthTextbox(VALID_DOB);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "dob", VALID_DOB);
 		
 		log.info("Precondition: Step 12 - Input to 'Adress' text area");
-		newCustomerPage.inputValueToAdressTextArea(validAdress);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", address);
 		
 		log.info("Precondition: Step 13 - Input to 'City' textbox");
-		newCustomerPage.inputValueToCityTextbox(validCity);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", city);
 		
 		log.info("Precondition: Step 14 - Input to 'State' textbox");
-		newCustomerPage.inputValueToStateTextbox(validState);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", state);
 		
 		log.info("Precondition: Step 15 - Input to 'Pin' textbox");
-		newCustomerPage.inputValueToPinTextbox(validPin);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", pin);
 		
 		log.info("Precondition: Step 16 - Input to 'Mobile Number' textbox");
-		newCustomerPage.inputValueToMobileNumberTextbox(validPhoneNumber);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", mobileNumber);
 		
 		log.info("Precondition: Step 17 - Input to 'Email' textbox");
-		newCustomerPage.inputValueToEmailTextbox(validEmailID);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", email);
 		
 		log.info("Precondition: Step 18 - Input to 'Password' textbox");
-		newCustomerPage.inputValueToPasswordTextbox(validPassword);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "password", password);
 		
-		log.info("Precondition: Step 19 - Click to Submit button");
-		newCustomerPage.clickToSubmitButton();
+		log.info("Precondition: Step 19 - Click to 'Submit' button");
+		newCustomerPage.clickToDynamicButton(driver, "sub");
 		
-		log.info("Precondition: Step 20 - Verify 'Customer Registered Successfully!!!' message displayed");
-		verifyTrue(newCustomerPage.isCustomerRegisteredSuccessfullyDisplayed());
+		log.info("Precondition: Step 20 - Verify title 'Customer Registered Successfully!!!' displayed");
+		verifyTrue(newCustomerPage.isDynamicPageTitleDisplayed(driver, "Customer Registered Successfully!!!"));
 		
 		log.info("Precondition: Step 21 - Get 'Customer ID'");
-		CUSTOMER_ID = newCustomerPage.getTextDynamicInfo(driver, "Customer ID");
+		CUSTOMER_ID = newCustomerPage.getTextDynamicTableInfo(driver, "Customer ID");
 
 		log.info("Precondition: Step 22 - Verify all infor of new customer are correct");
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Customer Name"), VALID_NAME);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Gender"), EXPECTED_GENDER);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Birthdate"), VALID_DOB);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Address"), validAdress);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "City"), validCity);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "State"), validState);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Pin"), validPin);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Mobile No."), validPhoneNumber);
-		verifyEquals(newCustomerPage.getTextDynamicInfo(driver, "Email"), validEmailID);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Customer Name"), VALID_NAME);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Gender"), EXPECTED_GENDER);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Birthdate"), VALID_DOB);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Address"), address);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "City"), city);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "State"), state);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Pin"), pin);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), mobileNumber);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Email"), email);
 		
 		closeBrowserAndDriver(driver);
-	}
-
-	public int randomNumber() {
-		Random random = new Random();
-		return random.nextInt(999999);
 	}
 
 }

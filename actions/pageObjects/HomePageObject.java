@@ -20,17 +20,17 @@ public class HomePageObject extends AbstractPage {
 	}
 
 	public boolean isUserIDDisplayed(String userIdInfo) {
-		waitForElementVisible(driver, HomePageUI.WELCOME_USER_ID_TEXT, userIdInfo);
-		return isControlDisplayed(driver, HomePageUI.WELCOME_USER_ID_TEXT, userIdInfo);
+		waitForElementVisible(driver, HomePageUI.DYNAMIC_WELCOME_USER_ID_TEXT, userIdInfo);
+		return isControlDisplayed(driver, HomePageUI.DYNAMIC_WELCOME_USER_ID_TEXT, userIdInfo);
 		
 	}
 
 
-	public void clickLogOutButton() {
-		waitForElementVisible(driver, HomePageUI.LOG_OUT_BUTTON);
-		clickToElement(driver, HomePageUI.LOG_OUT_BUTTON);
-		
-	}
+//	public void clickLogOutButton() {
+//		waitForElementVisible(driver, HomePageUI.LOG_OUT_BUTTON);
+//		clickToElement(driver, HomePageUI.LOG_OUT_BUTTON);
+//		
+//	}
 
 	public LoginPageObject acceptLogOutAlert() {
 		waitForAlertPresence(driver);

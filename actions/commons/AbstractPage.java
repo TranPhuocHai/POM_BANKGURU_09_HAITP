@@ -1,6 +1,7 @@
 package commons;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -76,6 +77,13 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.clear();
 	}
+	
+	public void clearTextElement(WebDriver driver, String locator, String... values) {
+		locator = String.format(locator, (Object[]) values);
+		highlightElement(driver, locator);
+		element = driver.findElement(By.xpath(locator));
+		element.clear();
+	}
 
 	public void clickToElement(WebDriver driver, String locator) {
 
@@ -103,11 +111,18 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(sendKeyValue);
 	}
-
+	
 	public void selectItemInDropdown(WebDriver driver, String locator, String value) {
 		element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
 		select.selectByVisibleText(value);
+	}
+
+	public void selectItemInDropdown(WebDriver driver, String locator, String expectedValueInDropdown, String... values) {
+		locator = String.format(locator, (Object[]) values);
+		element = driver.findElement(By.xpath(locator));
+		Select select = new Select(element);
+		select.selectByVisibleText(expectedValueInDropdown);
 	}
 
 	public String getSelectedItemInDropdown(WebDriver driver, String locator) {
@@ -164,7 +179,15 @@ public class AbstractPage {
 		return elements.size();
 	}
 
-	public void checkToCheckBox(WebDriver driver, String locator) {
+	public void checkToCheckBoxOrRadioButton(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		if (!element.isSelected()) {
+			element.click();
+		}
+	}
+	
+	public void checkToCheckBoxOrRadioButton(WebDriver driver, String locator, String... values) {
+		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		if (!element.isSelected()) {
 			element.click();
@@ -332,6 +355,14 @@ public class AbstractPage {
 		action = new Actions(driver);
 		action.sendKeys(element, key).perform();
 	}
+	
+	public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key, String... values) {
+		locator = String.format(locator, (Object[]) values);
+		highlightElement(driver, locator);
+		element = driver.findElement(By.xpath(locator));
+		action = new Actions(driver);
+		action.sendKeys(element, key).perform();
+	}
 
 	public void highlightElement(WebDriver driver, String locator) {
 		javascriptExecutor = (JavascriptExecutor) driver;
@@ -366,6 +397,13 @@ public class AbstractPage {
 
 	public void removeAttributeInDOM(WebDriver driver, String locator, String attribute) {
 		javascriptExecutor = (JavascriptExecutor) driver;
+		element = driver.findElement(By.xpath(locator));
+		javascriptExecutor.executeScript("arguments[0].removeAttribute('" + attribute + "');", element);
+	}
+	
+	public void removeAttributeInDOM(WebDriver driver, String locator, String attribute, String... values ) {
+		javascriptExecutor = (JavascriptExecutor) driver;
+		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		javascriptExecutor.executeScript("arguments[0].removeAttribute('" + attribute + "');", element);
 	}
@@ -471,35 +509,132 @@ public class AbstractPage {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
-	public String getTextDynamicInfo(WebDriver driver, String fieldName) {
+
+//	public boolean isDynamicMustNotBeBlankMessageDisplayed(WebDriver driver, String fieldName) {
+//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
+//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
+//	}
+//
+//	public boolean isDynamicCharactersAreNotAllowMessageDisplayed(WebDriver driver, String fieldName) {
+//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//	}
+//
+//	public boolean isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
+//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//	}
+//
+//	public boolean isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(WebDriver driver, String fieldName) {
+//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
+//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
+//	}
+//
+//	public boolean isDynamicNumbersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
+//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
+//
+//	}
+
+	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
 		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
 	}
-
-	public boolean isDynamicMustNotBeBlankMessageDisplayed(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
+	
+	public void clickToDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		
 	}
-
-	public boolean isDynamicCharactersAreNotAllowMessageDisplayed(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+	
+	public void clearDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		clearTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		
 	}
-
-	public boolean isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
+	
+	public void pressTABKeyToDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		sendKeyBoardToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, Keys.TAB, fieldName);
+		
 	}
-
-	public boolean isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
+	
+	public void inputToDynamicTextboxOrTextArea(WebDriver driver, String fieldName, String sendKeyValue ) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		sendKeyToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, sendKeyValue, fieldName);
+		
 	}
-
-	public boolean isDynamicNumbersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
-
+	
+	public void checkToDynamicCheckboxOrRadioButton(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, fieldName);
+		checkToCheckBoxOrRadioButton(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, fieldName);
+	}
+	
+	
+	public void clickToDynamicButton(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
+		checkToCheckBoxOrRadioButton(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
+	}
+	
+	public void selectItemInDynamicDropdown(WebDriver driver, String fieldName, String expectedValueInDropdown) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
+		selectItemInDropdown(driver, AbstractPageUI.DYNAMIC_DROPDOWN, expectedValueInDropdown, fieldName);
+	}
+	
+	public String getTextDynamicValidateMessage(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_VALIDATE_MESSAGE, fieldName);
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_VALIDATE_MESSAGE, fieldName);
+		
+	}
+	
+	public boolean isDynamicPageTitleDisplayed(WebDriver driver, String message) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
+		
+	}
+	
+	public void removeAtrributeDynamicTextbox(WebDriver driver, String fieldName, String attribute) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

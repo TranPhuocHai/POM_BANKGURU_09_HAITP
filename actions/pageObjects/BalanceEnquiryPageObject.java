@@ -12,25 +12,25 @@ public class BalanceEnquiryPageObject extends AbstractPage {
 	}
 
 	WebDriver driver;
+//
+//	public void inputValueToAccountNumber(String value) {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
+//		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
+//		
+//	}
+//
+//	public void clickSubmitButton() {
+//		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+//		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
+//		
+//	}
 
-	public void inputValueToAccountNumber(String value) {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX);
-		sendKeyToElement(driver, AbstractPageUI.ACCOUNT_NO_TEXTBOX, value);
-		
-	}
-
-	public void clickSubmitButton() {
-		waitForElementVisible(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
-		clickToElement(driver, AbstractPageUI.ACCOUNT_SUBMIT_BUTTON);
-		
-	}
-
-	public boolean isBalanceDetailsMessageDisplayed(String accountID) {
-		waitForElementVisible(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
-		return isControlDisplayed(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
-	}
-
-
+//	public boolean isBalanceDetailsMessageDisplayed(String accountID) {
+//		waitForElementVisible(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
+//		return isControlDisplayed(driver, BalanceEnquiryPageUI.BALANCE_DETAILS_MESSAGE, accountID);
+//	}
+//
+//
 
 	
 }

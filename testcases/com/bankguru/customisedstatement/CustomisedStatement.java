@@ -77,10 +77,10 @@ public class CustomisedStatement extends AbstractTest {
 		verifyTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 
 		log.info("Precondition: Step 13 - Veirfy current amount is correct");
-		verifyEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
 
 		log.info("Precondition: Step 14 - Get Account ID infor");
-		ACCOUNT_ID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
+		ACCOUNT_ID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
 		
 		log.info("Precondition: Step 15 - Click to 'Customised Statement' link");
 		newAccountPage.openMultiplePage(driver, "Customised Statement");

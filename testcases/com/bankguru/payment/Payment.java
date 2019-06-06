@@ -141,16 +141,16 @@ public class Payment extends AbstractTest {
 		editcustomerPage.clickToSubmitButton();
 
 		log.info("EditCustomer: Step 17 - Verify all infor of edit customer are correct");
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Customer ID"), Common_02_CreateNewCustomer.CUSTOMER_ID);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Customer Name"), Common_02_CreateNewCustomer.VALID_NAME);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Gender"), Common_02_CreateNewCustomer.EXPECTED_GENDER);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Birthdate"), Common_02_CreateNewCustomer.VALID_DOB);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Address"), editAdress);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "City"), editCity);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "State"), editState);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Pin"), editPin);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Mobile No."), editPhoneNumber);
-		verifyEquals(editcustomerPage.getTextDynamicInfo(driver, "Email"), editEmailID);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Customer ID"), Common_02_CreateNewCustomer.CUSTOMER_ID);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Customer Name"), Common_02_CreateNewCustomer.VALID_NAME);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Gender"), Common_02_CreateNewCustomer.EXPECTED_GENDER);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Birthdate"), Common_02_CreateNewCustomer.VALID_DOB);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Address"), editAdress);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "City"), editCity);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "State"), editState);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Pin"), editPin);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), editPhoneNumber);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Email"), editEmailID);
 
 	}
 
@@ -177,10 +177,10 @@ public class Payment extends AbstractTest {
 		verifyTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
 
 		log.info("AddNewAccount: Step 07 - Verify Current amount is correct");
-		verifyEquals(newAccountPage.getTextDynamicInfo(driver, "Current Amount"), String.valueOf(currentAmount));
+		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
 
 		log.info("AddNewAccount: Step 08 - Get Account ID infor");
-		accountID = newAccountPage.getTextDynamicInfo(driver, "Account ID");
+		accountID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
 	}
 
 	@Test
@@ -209,7 +209,7 @@ public class Payment extends AbstractTest {
 		verifyTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 
 		log.info("TransferMoneyToCurrentAccount: Step 09 - Verify Current Balance is correct");
-		verifyEquals(depositPage.getTextDynamicInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterDeposit));
+		verifyEquals(depositPage.getTextDynamicTableInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterDeposit));
 
 	}
 
@@ -239,7 +239,7 @@ public class Payment extends AbstractTest {
 		verifyTrue(withdrawalPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
 
 		log.info("TransferMoneyToCurrentAccount: Step 08 - Verify Current Balance is correct");
-		verifyEquals(withdrawalPage.getTextDynamicInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterWithdraw));
+		verifyEquals(withdrawalPage.getTextDynamicTableInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterWithdraw));
 
 	}
 
@@ -269,13 +269,13 @@ public class Payment extends AbstractTest {
 		verifyTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
 
 		log.info("TransferMoney: Step 10 - Verify Payers Account is correct");
-		verifyEquals(fundTransferPage.getTextDynamicInfo(driver, "From Account Number"), accountID);
+		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "From Account Number"), accountID);
 
 		log.info("TransferMoney: Step 11 - Verify Payees Account is correct");
-		verifyEquals(fundTransferPage.getTextDynamicInfo(driver, "To Account Number"), EditAccount.ACCOUNT_ID);
+		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "To Account Number"), EditAccount.ACCOUNT_ID);
 
 		log.info("TransferMoney: Step 12 - Verify Transferred amount is correct");
-		verifyEquals(fundTransferPage.getTextDynamicInfo(driver, "Amount"), String.valueOf(transferAmount));
+		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "Amount"), String.valueOf(transferAmount));
 
 	}
 
@@ -296,7 +296,7 @@ public class Payment extends AbstractTest {
 		verifyTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
 
 		log.info("TransferMoney: Step 05 - Verify current balance after Transferring is correct");
-		verifyEquals(balanceEnquiryPage.getTextDynamicInfo(driver, "Balance"), String.valueOf(currentBalanceAfterTransfer));
+		verifyEquals(balanceEnquiryPage.getTextDynamicTableInfo(driver, "Balance"), String.valueOf(currentBalanceAfterTransfer));
 
 	}
 

@@ -25,13 +25,6 @@ public class HomePageObject extends AbstractPage {
 		
 	}
 
-
-//	public void clickLogOutButton() {
-//		waitForElementVisible(driver, HomePageUI.LOG_OUT_BUTTON);
-//		clickToElement(driver, HomePageUI.LOG_OUT_BUTTON);
-//		
-//	}
-
 	public LoginPageObject acceptLogOutAlert() {
 		waitForAlertPresence(driver);
 		acceptAlert(driver);

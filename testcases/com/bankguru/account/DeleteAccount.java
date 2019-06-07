@@ -13,22 +13,16 @@ import commons.PageFactoryManager;
 import pageObjects.DeleteAccountPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.RegisterPageObject;
 
 public class DeleteAccount extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	NewCustomerPageObject newCustomerPage;
-	NewAccountPageObject newAccountPage;
-	DeleteAccountPageObject deleteAccountPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private DeleteAccountPageObject deleteAccountPage;
 	
-	String blankSpace = " ";
-	String[] characterAccountNos = new String[] { "haitp", "12 1234" };
-	String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String blankSpace = " ";
+	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
+	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters("browser")
 	@BeforeClass

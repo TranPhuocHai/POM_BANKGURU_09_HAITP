@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
 import com.bankguru.customer.Common_02_CreateNewCustomer;
-import com.bankguru.customisedstatement.CustomisedStatement;
-import com.bankguru.ministatement.MiniStatement;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
 import commons.AbstractTest;
@@ -23,43 +21,41 @@ import pageObjects.FundTransferPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewAccountPageObject;
-import pageObjects.RegisterPageObject;
 import pageObjects.WithdrawalPageObject;
 
 public class Payment extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	EditCustomerPageObject editcustomerPage;
-	NewAccountPageObject newAccountPage;
-	DepositPageObject depositPage;
-	WithdrawalPageObject withdrawalPage;
-	FundTransferPageObject fundTransferPage;
-	BalanceEnquiryPageObject balanceEnquiryPage;
-	DeleteAccountPageObject deleteAccountPage;
-	DeleteCustomerPageObject deleteCustomerPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private EditCustomerPageObject editcustomerPage;
+	private NewAccountPageObject newAccountPage;
+	private DepositPageObject depositPage;
+	private WithdrawalPageObject withdrawalPage;
+	private FundTransferPageObject fundTransferPage;
+	private BalanceEnquiryPageObject balanceEnquiryPage;
+	private DeleteAccountPageObject deleteAccountPage;
+	private DeleteCustomerPageObject deleteCustomerPage;
 
-	String accountID ;
+	private String PayerAccountID;
 
-	String editAdress = "01 Nguyen Van Linh";
-	String editCity = "Da Nang";
-	String editState = "Ngu Hanh Son";
-	String editPin = "550000";
-	String editPhoneNumber = "0975123456";
-	String editEmailID = "hai.gsd@gmail.com";
+	private String editAdress = "01 Nguyen Van Linh";
+	private String editCity = "Da Nang";
+	private String editState = "Ngu Hanh Son";
+	private String editPin = "550000";
+	private String editPhoneNumber = "0975123456";
+	private String editEmailID = "hai.gsd@gmail.com";
 
-	int currentAmount = 50000;
-	int depositAmount = 5000;
-	int currentBalanceAfterDeposit = currentAmount + depositAmount;
-	int withdrawAmount = 15000;
-	int currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
-	int transferAmount = 10000;
-	int currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
+	private int currentAmount = 50000;
+	private int depositAmount = 5000;
+	private int currentBalanceAfterDeposit = currentAmount + depositAmount;
+	private int withdrawAmount = 15000;
+	private int currentBalanceAfterWithdraw = currentBalanceAfterDeposit - withdrawAmount;
+	private int transferAmount = 10000;
+	private int currentBalanceAfterTransfer = currentBalanceAfterWithdraw - transferAmount;
 
-	String depositDescription = "Deposit";
-	String withdrawDescription = "Withdraw";
-	String fundTransferDescription = "Transfer";
+	private String depositDescription = "Deposit";
+	private String withdrawDescription = "Withdraw";
+	private String fundTransferDescription = "Transfer";
 
 	@Parameters("browser")
 	@BeforeClass
@@ -68,25 +64,24 @@ public class Payment extends AbstractTest {
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		
+
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
-		
+
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
-		
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
-		
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
+
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
+
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
-		
+
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
-
 	}
-
 
 	@Test
 	public void PM_01_EditCustomer() {
@@ -96,51 +91,54 @@ public class Payment extends AbstractTest {
 		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
 
 		log.info("EditCustomer: Step 02 - Input to 'Customer ID' textbox");
-		editcustomerPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", Common_02_CreateNewCustomer.CUSTOMER_ID);
 
 		log.info("EditCustomer: Step 03 - Click to Submit textbox");
-		editcustomerPage.clicktoSubmitCustomerIDButton();
+		editcustomerPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("EditCustomer: Step 04 - Clear 'Address' Text Area");
-		editcustomerPage.clearAddressTextArea();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
 
 		log.info("EditCustomer: Step 05 - Input to 'Address' Text Area");
-		editcustomerPage.inputValueToAddressTextArea(editAdress);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", editAdress);
 
 		log.info("EditCustomer: Step 06 - Clear 'City' textbox");
-		editcustomerPage.clearCityTextbox();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
 
 		log.info("EditCustomer: Step 07 - Input to 'City' textbox");
-		editcustomerPage.inputValueToCityTextbox(editCity);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", editCity);
 
 		log.info("EditCustomer: Step 08 - Clear 'State' textbox");
-		editcustomerPage.clearStateTextbox();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
 
 		log.info("EditCustomer: Step 09 - Input to 'State' textbox");
-		editcustomerPage.inputValueToStateTextbox(editState);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", editState);
 
 		log.info("EditCustomer: Step 10 - Clear 'PIN' textbox");
-		editcustomerPage.clearPinTextbox();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
 
 		log.info("EditCustomer: Step 11 - Input to 'PIN' textbox");
-		editcustomerPage.inputValueToPinTextbox(editPin);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", editPin);
 
 		log.info("EditCustomer: Step 12 - Clear 'Mobile Number' textbox");
-		editcustomerPage.clearPhoneTextbox();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
 
 		log.info("EditCustomer: Step 13 - Input to 'Mobile Number' textbox");
-		editcustomerPage.inputValueToMobileNumberTextbox(editPhoneNumber);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", editPhoneNumber);
 
 		log.info("EditCustomer: Step 14 - Clear 'Email' textbox");
-		editcustomerPage.clearEmailTextbox();
+		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");
 
 		log.info("EditCustomer: Step 15 - Input to 'Email' textbox");
-		editcustomerPage.inputValueToEmailTextbox(editEmailID);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", editEmailID);
 
 		log.info("EditCustomer: Step 16 - Click to Submit button");
-		editcustomerPage.clickToSubmitButton();
+		editcustomerPage.clickToDynamicButton(driver, "sub");
 
-		log.info("EditCustomer: Step 17 - Verify all infor of edit customer are correct");
+		log.info("EditCustomer: Step 17 - Verify 'Customer details updated Successfully!!!' message displayed");
+		verifyTrue(editcustomerPage.isDynamicPageTitleDisplayed(driver, "Customer details updated Successfully!!!"));
+
+		log.info("EditCustomer: Step 18 - Verify all infor of edit customer are correct");
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Customer ID"), Common_02_CreateNewCustomer.CUSTOMER_ID);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Customer Name"), Common_02_CreateNewCustomer.VALID_NAME);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Gender"), Common_02_CreateNewCustomer.EXPECTED_GENDER);
@@ -161,26 +159,26 @@ public class Payment extends AbstractTest {
 		editcustomerPage.openMultiplePage(driver, "New Account");
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 
-		log.info("AddNewAccount: Step 02 - Input to 'New Account' link");
-		newAccountPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
+		log.info("AddNewAccount: Step 02 - Input to 'Customer id' textbox");
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", Common_02_CreateNewCustomer.CUSTOMER_ID);
 
 		log.info("AddNewAccount: Step 03 - Select 'Current' in 'Account type' dropdown");
-		newAccountPage.selectCurrentInAccountType();
+		newAccountPage.selectItemInDynamicDropdown(driver, "selaccount", "Current");
 
-		log.info("AddNewAccount: Step 04 - Input to 'Initial deposit' link");
-		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
+		log.info("AddNewAccount: Step 04 - Input to 'Initial deposit' textbox");
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", String.valueOf(currentAmount));
 
 		log.info("AddNewAccount: Step 05 - Click to Submit button");
-		newAccountPage.clickToSubmitButton();
+		newAccountPage.clickToDynamicButton(driver, "button2");
 
 		log.info("AddNewAccount: Step 06 - Verify 'Account Generated Successfully' message displayed");
-		verifyTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Account Generated Successfully!!!"));
 
 		log.info("AddNewAccount: Step 07 - Verify Current amount is correct");
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
 
 		log.info("AddNewAccount: Step 08 - Get Account ID infor");
-		accountID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
+		PayerAccountID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
 	}
 
 	@Test
@@ -191,22 +189,22 @@ public class Payment extends AbstractTest {
 		depositPage = PageFactoryManager.getDepositPage(driver);
 
 		log.info("TransferMoneyToCurrentAccount: Step 02 - Verify Amount Deposit form displayed");
-		verifyTrue(depositPage.isAmountDepositFormDisplayed());
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Amount Deposit Form"));
 
 		log.info("TransferMoneyToCurrentAccount: Step 03 - Input to 'Account Number' textbox");
-		depositPage.inputValueToAccountNoTextbox(accountID);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", PayerAccountID);
 
 		log.info("TransferMoneyToCurrentAccount: Step 04 - Input to 'Amount' textbox");
-		depositPage.inputValueToAmountTextbox(String.valueOf(depositAmount));
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "ammount", String.valueOf(depositAmount));
 
 		log.info("TransferMoneyToCurrentAccount: Step 05 - Input to 'Description' textbox");
-		depositPage.inputDescriptionToDescriptionTextbox(depositDescription);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "desc", depositDescription);
 
 		log.info("TransferMoneyToCurrentAccount: Step 07 - Click to Submit button");
-		depositPage.clickToSubmitButton();
+		depositPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("TransferMoneyToCurrentAccount: Step 08 - Verify Tracsaction Details message displayed");
-		verifyTrue(depositPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, ("Transaction details of Deposit for Account " + PayerAccountID)));
 
 		log.info("TransferMoneyToCurrentAccount: Step 09 - Verify Current Balance is correct");
 		verifyEquals(depositPage.getTextDynamicTableInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterDeposit));
@@ -221,22 +219,22 @@ public class Payment extends AbstractTest {
 		withdrawalPage = PageFactoryManager.getWithdrawalPage(driver);
 
 		log.info("WithdrawFromCurrentAccount: Step 02 - Verify Amount Withdraw form displayed");
-		verifyTrue(withdrawalPage.isAmountWithdrawFormDisplayed());
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Amount Withdrawal Form"));
 
 		log.info("WithdrawFromCurrentAccount: Step 03 - Input to 'Account Number' textbox");
-		withdrawalPage.inputValueToAccountNoTextbox(accountID);
+		withdrawalPage.inputToDynamicTextboxOrTextArea(driver, "accountno", PayerAccountID);
 
 		log.info("WithdrawFromCurrentAccount: Step 04 - Input to 'Amount' textbox");
-		withdrawalPage.inputAmountToAmountTextbox(String.valueOf(withdrawAmount));
+		withdrawalPage.inputToDynamicTextboxOrTextArea(driver, "ammount", String.valueOf(withdrawAmount));
 
 		log.info("WithdrawFromCurrentAccount: Step 05 - Input to 'Description' textbox");
-		withdrawalPage.inputValueToDescriptionTextbox(withdrawDescription);
+		withdrawalPage.inputToDynamicTextboxOrTextArea(driver, "desc", withdrawDescription);
 
 		log.info("WithdrawFromCurrentAccount: Step 06 - Click to Submit button");
-		withdrawalPage.clickToSubmitButton();
+		withdrawalPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("WithdrawFromCurrentAccount: Step 07 - Verify Tracsaction Details message displayed");
-		verifyTrue(withdrawalPage.isCorrectTracsactionDetailsMessageDisplayed(accountID));
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, ("Transaction details of Withdrawal for Account " + PayerAccountID)));
 
 		log.info("TransferMoneyToCurrentAccount: Step 08 - Verify Current Balance is correct");
 		verifyEquals(withdrawalPage.getTextDynamicTableInfo(driver, "Current Balance"), String.valueOf(currentBalanceAfterWithdraw));
@@ -246,35 +244,35 @@ public class Payment extends AbstractTest {
 	@Test
 	public void PM_05_TransferMoney() {
 
-		log.info("TransferMoney: Step 04 - Click to 'Fund Transfer' link ");
+		log.info("TransferMoney: Step 01 - Click to 'Fund Transfer' link ");
 		withdrawalPage.openMultiplePage(driver, "Fund Transfer");
 		fundTransferPage = PageFactoryManager.getFundTransferPage(driver);
 
-		log.info("TransferMoney: Step 04 - Input to 'Payers Account Number' textbox ");
-		fundTransferPage.inPutValueToPayersAccountNumber(accountID);
+		log.info("TransferMoney: Step 02 - Input to 'Payers Account Number' textbox ");
+		fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payersaccount", PayerAccountID);
 
-		log.info("TransferMoney: Step 05 - Input to 'Payees Account Number' textbox ");
-		fundTransferPage.inPutValueToPayeesAccountNumber(EditAccount.ACCOUNT_ID);
+		log.info("TransferMoney: Step 03 - Input to 'Payees Account Number' textbox ");
+		fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payeeaccount", EditAccount.ACCOUNT_ID);
 
-		log.info("TransferMoney: Step 06 - Input to 'Amount' textbox ");
-		fundTransferPage.inputAmountToAmountTextbox(String.valueOf(transferAmount));
+		log.info("TransferMoney: Step 04 - Input to 'Amount' textbox ");
+		fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "ammount", String.valueOf(transferAmount));
 
-		log.info("TransferMoney: Step 07 - Input to 'Description' textbox ");
-		fundTransferPage.inputValueToDescriptionTextbox(fundTransferDescription);
+		log.info("TransferMoney: Step 05 - Input to 'Description' textbox ");
+		fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "desc", fundTransferDescription);
 
-		log.info("TransferMoney: Step 08 - Click to Submit button");
-		fundTransferPage.clickToSubmitButton();
+		log.info("TransferMoney: Step 06 - Click to Submit button");
+		fundTransferPage.clickToDynamicButton(driver, "AccSubmit");
 
-		log.info("TransferMoney: Step 09 - Verify FundTransfer Details message displayed");
-		verifyTrue(fundTransferPage.isFundTransferDetailsMessageDisplayed());
+		log.info("TransferMoney: Step 07 - Verify FundTransfer Details message displayed");
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Fund Transfer Details"));
 
-		log.info("TransferMoney: Step 10 - Verify Payers Account is correct");
-		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "From Account Number"), accountID);
+		log.info("TransferMoney: Step 08 - Verify Payers Account is correct");
+		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "From Account Number"), PayerAccountID);
 
-		log.info("TransferMoney: Step 11 - Verify Payees Account is correct");
+		log.info("TransferMoney: Step 09 - Verify Payees Account is correct");
 		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "To Account Number"), EditAccount.ACCOUNT_ID);
 
-		log.info("TransferMoney: Step 12 - Verify Transferred amount is correct");
+		log.info("TransferMoney: Step 10 - Verify Transferred amount is correct");
 		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "Amount"), String.valueOf(transferAmount));
 
 	}
@@ -286,84 +284,89 @@ public class Payment extends AbstractTest {
 		fundTransferPage.openMultiplePage(driver, "Balance Enquiry");
 		balanceEnquiryPage = PageFactoryManager.getBalanceEnquiryPage(driver);
 
+		log.info("BalanceEnquiry: Step 02 - Verify Balance Enquiry Form message displayed");
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Balance Enquiry Form"));
+
 		log.info("BalanceEnquiry: Step 02 - Input to 'Account Number' textbox ");
-		balanceEnquiryPage.inputValueToAccountNumber(accountID);
+		fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "accountno", PayerAccountID);
 
 		log.info("BalanceEnquiry: Step 03 - Click to Submit button");
-		balanceEnquiryPage.clickSubmitButton();
+		balanceEnquiryPage.clickToDynamicButton(driver, "AccSubmit");
 
-		log.info("TransferMoney: Step 04 - Verify Balance Details message displayed");
-		verifyTrue(balanceEnquiryPage.isBalanceDetailsMessageDisplayed(accountID));
+		log.info("BalanceEnquiry: Step 04 - Verify Balance Details message displayed");
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, ("Balance Details for Account " + PayerAccountID)));
 
-		log.info("TransferMoney: Step 05 - Verify current balance after Transferring is correct");
+		log.info("BalanceEnquiry: Step 05 - Verify current balance after Transferring is correct");
 		verifyEquals(balanceEnquiryPage.getTextDynamicTableInfo(driver, "Balance"), String.valueOf(currentBalanceAfterTransfer));
 
 	}
 
 	@Test
 	public void PM_07_DeleteAccount() {
-		
-		String[] allAccountIDs = {accountID, EditAccount.ACCOUNT_ID, CustomisedStatement.ACCOUNT_ID, MiniStatement.ACCOUNT_ID} ;
-		
-		for (String eachAccountID : allAccountIDs) {			
-		
+		String[] allAccountIDs = {PayerAccountID, EditAccount.ACCOUNT_ID };
+
 		log.info("DeleteAccount: Step 01 - Click to 'Delete Account' link ");
 		balanceEnquiryPage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 
-		log.info("DeleteAccount: Step 02 - Input to 'Account Number' textbox ");
-		deleteAccountPage.inputValueToAccountNumberTextbox(eachAccountID);
-		
-		log.info("DeleteAccount: Step 03 - Click to Submit button");
-		deleteAccountPage.clickSubmitButton();
-		
-		log.info("DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed");
-		verifyEquals(deleteAccountPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Account?");
-		
-		log.info("DeleteAccount: Step 05 - Accept alert");
-		deleteAccountPage.acceptConfirmDeleteAlert();
-		
-		log.info("DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed");
-		verifyEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
-		
-		log.info("DeleteAccount: Step 07 - Accept alert");
-		homePage = deleteAccountPage.acceptDeleteSuccessAlert();
-		
-		log.info("DeleteAccount: Step 08 - Click to 'Delete Account' link ");
-		homePage.openMultiplePage(driver, "Delete Account");
-		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
+		for (String eachAccountID : allAccountIDs) {
+
+			log.info("DeleteAccount: Step 02 - Verify Delete Account Form message displayed");
+			verifyTrue(deleteAccountPage.isDynamicPageTitleDisplayed(driver, "Delete Account Form"));
+
+			log.info("DeleteAccount: Step 03 - Input to 'Account Number' textbox ");
+			deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", eachAccountID);
+
+			log.info("DeleteAccount: Step 04 - Click to Submit button");
+			deleteAccountPage.clickToDynamicButton(driver, "AccSubmit");
+
+			log.info("DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed");
+			verifyEquals(deleteAccountPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Account?");
+
+			log.info("DeleteAccount: Step 05 - Accept alert");
+			deleteAccountPage.acceptConfirmDeleteAccountAlert();
+
+			log.info("DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed");
+			verifyEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
+
+			log.info("DeleteAccount: Step 07 - Accept alert");
+			homePage = deleteAccountPage.acceptDeleteSuccessAlert();
+
+			log.info("DeleteAccount: Step 08 - Click to 'Delete Account' link ");
+			homePage.openMultiplePage(driver, "Delete Account");
+			deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
 		}
 
 	}
 
 	@Test
 	public void PM_08_DeleteCustomer() {
-		
+
 		log.info("DeleteCustomer: Step 01 - Click to 'Delete Customer' link ");
 		homePage.openMultiplePage(driver, "Delete Customer");
 		deleteCustomerPage = PageFactoryManager.getDeleteCustomerPage(driver);
 
 		log.info("DeleteCustomer: Step 02 - Input to 'Customer ID' textbox ");
-		deleteCustomerPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
-		
+		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", Common_02_CreateNewCustomer.CUSTOMER_ID);
+
 		log.info("DeleteCustomer: Step 03 - Click to Submit button");
-		deleteCustomerPage.clickSubmitButton();
-		
+		deleteCustomerPage.clickToDynamicButton(driver, "AccSubmit");
+
 		log.info("DeleteCustomer: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed");
 		verifyEquals(deleteCustomerPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Customer?");
-		
+
 		log.info("DeleteCustomer: Step 05 - Accept alert");
 		deleteCustomerPage.acceptConfirmDeleteAlert();
-		
+
 		log.info("DeleteCustomer: Step 06 - Verify 'Customer deleted Successfully' alert displayed");
 		verifyEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(), "Customer deleted Successfully");
-		
+
 		log.info("DeleteCustomer: Step 07 - Accept alert");
 		homePage = deleteCustomerPage.acceptDeleteSuccessAlert();
 
 	}
 
-	@AfterClass (alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}

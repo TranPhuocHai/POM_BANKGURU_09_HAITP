@@ -1,7 +1,6 @@
 package commons;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -508,33 +507,6 @@ public class AbstractPage {
 	public void overrideGlobleTimeout(WebDriver driver, int timeOut) {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
-
-
-//	public boolean isDynamicMustNotBeBlankMessageDisplayed(WebDriver driver, String fieldName) {
-//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
-//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_MUST_NOT_BE_BLANK_MESSAGE, fieldName);
-//	}
-//
-//	public boolean isDynamicCharactersAreNotAllowMessageDisplayed(WebDriver driver, String fieldName) {
-//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//	}
-//
-//	public boolean isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
-//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_SPECIAL_CHARACTERS_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//	}
-//
-//	public boolean isDynamicFirstCharacterCanNotHaveSpaceMessageDisplayed(WebDriver driver, String fieldName) {
-//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
-//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_FIRST_CHARACTER_CAN_NOT_HAVE_SPACE_MESSAGE, fieldName);
-//	}
-//
-//	public boolean isDynamicNumbersAreNotAllowedMessageDisplayed(WebDriver driver, String fieldName) {
-//		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_NUMERIC_ARE_NOT_ALLOW_MESSAGE, fieldName);
-//
-//	}
 
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);

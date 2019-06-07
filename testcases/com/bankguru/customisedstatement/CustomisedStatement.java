@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.customer.Common_02_CreateNewCustomer;
+import com.bankguru.account.EditAccount;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
 import commons.AbstractTest;
@@ -14,23 +14,18 @@ import commons.PageFactoryManager;
 import pageObjects.CustomisedStatementPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.RegisterPageObject;
 
 public class CustomisedStatement extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	NewAccountPageObject newAccountPage;
-	CustomisedStatementPageObject customisedStatementPage;
-	public static String ACCOUNT_ID;
-	String blankSpace = " ";
-	String numberOfTransaction = "1";
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private CustomisedStatementPageObject customisedStatementPage;
+	private String blankSpace = " ";
+	private String numberOfTransaction = "1";
 
-	String currentAmount = "50000";
-	String[] characterValues = new String[] { "haitp", "12 1234" };
-	String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String currentAmount = "50000";
+	private String[] characterValues = new String[] { "haitp", "12 1234" };
+	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 	
 
 	@Parameters("browser")
@@ -45,11 +40,12 @@ public class CustomisedStatement extends AbstractTest {
 		verifyTrue(loginPage.isLoginFormDisplayed());
 
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
 
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
 
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
@@ -57,53 +53,28 @@ public class CustomisedStatement extends AbstractTest {
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 
-		log.info("Precondition: Step 07 - Click To 'New Account' link");
-		homePage.openMultiplePage(driver, "New Account");
-		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
-
-		log.info("Precondition: Step 08 - Click To 'New Account' link");
-		newAccountPage.inputValueToCustomerIDTextbox(Common_02_CreateNewCustomer.CUSTOMER_ID);
-
-		log.info("Precondition: Step 09 - select 'Current' in 'Account type' dropdown");
-		newAccountPage.selectCurrentInAccountType();
-
-		log.info("Precondition: Step 10 - Input to Initial deposit textbox");
-		newAccountPage.inputValueToInitialDepositTextbox(String.valueOf(currentAmount));
-
-		log.info("Precondition: Step 11 - Click to Submit button");
-		newAccountPage.clickToSubmitButton();
-
-		log.info("Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed");
-		verifyTrue(newAccountPage.isAccountGeneratedSuccessfullyMessageDisplayed());
-
-		log.info("Precondition: Step 13 - Veirfy current amount is correct");
-		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
-
-		log.info("Precondition: Step 14 - Get Account ID infor");
-		ACCOUNT_ID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
-		
-		log.info("Precondition: Step 15 - Click to 'Customised Statement' link");
-		newAccountPage.openMultiplePage(driver, "Customised Statement");
+		log.info("Precondition: Step 07 - Click to 'Customised Statement' link");
+		homePage.openMultiplePage(driver, "Customised Statement");
 		customisedStatementPage = PageFactoryManager.getCustomisedStatementPage(driver);
 		
-		log.info("Precondition: Step 16 - Verify 'Customized Statement Form' displayed");
-		verifyTrue(customisedStatementPage.isCustomisedStatementFormDisplayed());
+		log.info("Precondition: Step 08 - Verify 'Customized Statement Form' displayed");
+		verifyTrue(customisedStatementPage.isDynamicPageTitleDisplayed(driver, "Customized Statement Form"));
 	}
 	
 	@Test
 	public void CS_01_AccountNumberCanNotBeEmpty() {
 		
 		log.info("AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox");
-		customisedStatementPage.clearAccountNumberTextbox();
-		
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
+
 		log.info("AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox");
-		customisedStatementPage.clickToAccountNumberTexbox();
-		
-		log.info("AccountNumberCanNotBeEmpty: Step 03 - Press TAB key");
-		customisedStatementPage.pressTABKeyToAccountNumberTextbox();
-		
+		customisedStatementPage.clickToDynamicTextboxOrTextArea(driver, "accountno");
+
+		log.info("AccountNumberCanNotBeEmpty: Step 03 - Click to 'Minimum Transaction Value' textbox");
+		customisedStatementPage.clickToDynamicTextboxOrTextArea(driver, "amountlowerlimit");
+
 		log.info("AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed");
-		verifyTrue(customisedStatementPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Account Number"));
+		verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Account Number must not be blank");
 	}
 
 	@Test
@@ -111,13 +82,14 @@ public class CustomisedStatement extends AbstractTest {
 		for (String characterValue : characterValues) {
 			
 			log.info("AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox");
-			customisedStatementPage.clearAccountNumberTextbox();
-			
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
+
 			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
-			customisedStatementPage.inputValueToAccountNumberTextbox(characterValue);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", characterValue);
 			
+
 			log.info("AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
 		}
 	}
 
@@ -126,13 +98,13 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialValue : specialValues) {
 			
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox");
-			customisedStatementPage.clearAccountNumberTextbox();
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 			
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox");
-			customisedStatementPage.inputValueToAccountNumberTextbox(specialValue);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", specialValue);
 			
 			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Account No"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Special characters are not allowed");
 		}
 	}
 
@@ -140,28 +112,28 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox");
-		customisedStatementPage.clearAccountNumberTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox");
-		customisedStatementPage.inputValueToAccountNumberTextbox(blankSpace);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", blankSpace);
 		
 		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Account No"));
+		verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
 
 	}
 	
 	@Test
 	public void CS_05_MinimumTransactionValueCharacterAreNotAllowed() {
-		for (String CharacterMinimumTransactionValue : characterValues) {
+		for (String characterMinimumTransactionValue : characterValues) {
 			
 			log.info("MinimumTransactionValueCharacterAreNotAllowed: Step 01 - Clear 'Minimum Transaction Value' textbox");
-			customisedStatementPage.clearMinimumTransactionValueTextbox();
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 			
 			log.info("MinimumTransactionValueCharacterAreNotAllowed: Step 02 - Input to 'Minimum Transaction Value' textbox");
-			customisedStatementPage.inputValueToMinimumTransactionValueTextbox(CharacterMinimumTransactionValue);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", characterMinimumTransactionValue);
 			
 			log.info("MinimumTransactionValueCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Minimum Transaction Value"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Minimum Transaction Value"), "Characters are not allowed");
 		}
 	}
 	
@@ -170,13 +142,14 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialMinimumTransactionValue : specialValues) {
 			
 			log.info("MinimumTransactionValueCanNotHaveSpecialCharacters: Step 01 - Clear 'Minimum Transaction Value' textbox");
-			customisedStatementPage.clearMinimumTransactionValueTextbox();
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 			
 			log.info("MinimumTransactionValueCanNotHaveSpecialCharacters: Step 02 - Input to 'Minimum Transaction Value' textbox");
-			customisedStatementPage.inputValueToMinimumTransactionValueTextbox(specialMinimumTransactionValue);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", specialMinimumTransactionValue);
+			
 			
 			log.info("MinimumTransactionValueCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Minimum Transaction Value"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Minimum Transaction Value"), "Special characters are not allowed");
 		}
 	}
 	
@@ -184,13 +157,13 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_07_MinimumTransactionValueFirstCharacterMustNotBeBlank() {
 		
 		log.info("MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 01 - Clear 'Minimum Transaction Value' textbox");
-		customisedStatementPage.clearMinimumTransactionValueTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 		
 		log.info("MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 02 - Input to 'Minimum Transaction Value' textbox");
-		customisedStatementPage.inputValueToMinimumTransactionValueTextbox(blankSpace);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", blankSpace);
 		
 		log.info("MinimumTransactionValueFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Minimum Transaction Value"));
+		verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Minimum Transaction Value"), "Characters are not allowed");
 		
 	}
 	
@@ -199,13 +172,13 @@ public class CustomisedStatement extends AbstractTest {
 		for (String CharacterNumberOfTransaction : characterValues) {
 			
 			log.info("NumberOfTransactionCharacterAreNotAllowed: Step 01 - Clear 'Number of Transaction' textbox");
-			customisedStatementPage.clearNumberOfTransactionTextbox();
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
 			
 			log.info("NumberOfTransactionCharacterAreNotAllowed: Step 02 - Input to 'Number of Transaction' textbox");
-			customisedStatementPage.inputValueToNumberOfTransactionTextbox(CharacterNumberOfTransaction);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "numtransaction", CharacterNumberOfTransaction);
 			
 			log.info("NumberOfTransactionCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Number of Transaction"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Number of Transaction"), "Characters are not allowed");
 		}
 	}
 
@@ -214,13 +187,13 @@ public class CustomisedStatement extends AbstractTest {
 		for (String specialNumberOfTransaction : specialValues) {
 			
 			log.info("NumberOfTransactionCanNotHaveSpecialCharacters: Step 01 - Clear 'Number of Transaction' textbox");
-			customisedStatementPage.clearNumberOfTransactionTextbox();
+			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
 			
 			log.info("NumberOfTransactionCanNotHaveSpecialCharacters: Step 02 - Input to 'Number of Transaction' textbox");
-			customisedStatementPage.inputValueToNumberOfTransactionTextbox(specialNumberOfTransaction);
+			customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "numtransaction", specialNumberOfTransaction);
 			
 			log.info("NumberOfTransactionCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(customisedStatementPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Number of Transaction"));
+			verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Number of Transaction"), "Special characters are not allowed");
 		}
 	}
 
@@ -228,13 +201,13 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_10_NumberOfTransactionFirstCharacterMustNotBeBlank() {
 		
 		log.info("NumberOfTransactionFirstCharacterMustNotBeBlank: Step 01 - Clear 'Number of Transaction' textbox");
-		customisedStatementPage.clearNumberOfTransactionTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
 		
 		log.info("NumberOfTransactionFirstCharacterMustNotBeBlank: Step 02 - Input to 'Number of Transaction' textbox");
-		customisedStatementPage.inputValueToNumberOfTransactionTextbox(blankSpace);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "numtransaction", blankSpace);
 		
 		log.info("NumberOfTransactionFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyTrue(customisedStatementPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Number of Transaction"));
+		verifyEquals(customisedStatementPage.getTextDynamicValidateMessage(driver, "Number of Transaction"), "Characters are not allowed");
 
 	}
 	
@@ -242,28 +215,28 @@ public class CustomisedStatement extends AbstractTest {
 	public void CS_11_InputValidInforAndVerifyCustomisedStatementDisplayed() {
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 01 - Clear 'Account Number' textbox");
-		customisedStatementPage.clearAccountNumberTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 02 - Input to 'Account Number' textbox");
-		customisedStatementPage.inputValueToAccountNumberTextbox(ACCOUNT_ID);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", EditAccount.ACCOUNT_ID);
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 03 - Clear 'Minimum Transaction Value' textbox");
-		customisedStatementPage.clearMinimumTransactionValueTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 04 - Input to 'Minimum Transaction Value' textbox");
-		customisedStatementPage.inputValueToMinimumTransactionValueTextbox(currentAmount);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", currentAmount);
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 05 - Clear 'Number of Transaction' textbox");
-		customisedStatementPage.clearNumberOfTransactionTextbox();
+		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 06 - Input to 'Number of Transaction' textbox");
-		customisedStatementPage.inputValueToNumberOfTransactionTextbox(numberOfTransaction);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "numtransaction", numberOfTransaction);
 		
 		log.info("InputValidInforAndVerifyCustomisedStatementDisplayed: Step 07 - Click to Submit button");
-		customisedStatementPage.clickSubmitButton();		
+		customisedStatementPage.clickToDynamicButton(driver, "AccSubmit");	
 		
-		log.info("NumberOfTransactionFirstCharacterMustNotBeBlank: Step 03 - Verify Transaction Details message displayed");
-		verifyTrue(customisedStatementPage.isTransactionDetailsFormDisplayed(ACCOUNT_ID));
+		log.info("NumberOfTransactionFirstCharacterMustNotBeBlank: Step 08 - Verify Transaction Details message displayed");
+		verifyTrue(customisedStatementPage.isTransactionDetailsFormDisplayed(EditAccount.ACCOUNT_ID));
 	}
 
 	

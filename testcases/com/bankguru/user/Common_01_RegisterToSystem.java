@@ -30,8 +30,7 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 		verifyTrue(loginPage.isLoginFormDisplayed());
 
 		log.info("CreateUser: Step 03 - Click to 'here' link");
-		loginPage.openMultiplePage(driver, "here");
-		registerPage = PageFactoryManager.getRegisterPage(driver);
+		registerPage = loginPage.clickToHereLink();
 
 		log.info("CreateUser: Step 04 - Verify Register Page displayed");
 		verifyTrue(registerPage.isRegisterPageDisplayed());

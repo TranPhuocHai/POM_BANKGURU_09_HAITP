@@ -22,29 +22,11 @@ public class LoginPageObject extends AbstractPage {
 		return getCurrentPageUrl(driver);
 	}
 
-//	public RegisterPageObject clickToHereLink() {
-//		waitForElementVisible(driver, LoginPageUI.HERE_LINK);
-//		clickToElement(driver, LoginPageUI.HERE_LINK);
-//		return PageFactoryManager.getRegisterPage(driver);
-//	}
-//
-//	public void inPutToUserIDTextbox(String userIdInfo) {
-//		waitForElementVisible(driver, LoginPageUI.USER_ID_TEXTBOX);
-//		sendKeyToElement(driver, LoginPageUI.USER_ID_TEXTBOX, userIdInfo);
-//
-//	}
-//
-//	public void inPutToPasswordTextbox(String passwordInfo) {
-//		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
-//		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, passwordInfo);
-//	}
-//
-//	public HomePageObject clickToLoginButton() {
-//		waitForElementVisible(driver, LoginPageUI.LOGIN_BUTTON);
-//		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-//		return PageFactoryManager.getHomePage(driver);
-//
-//	}
+	public RegisterPageObject clickToHereLink() {
+		waitForElementVisible(driver, LoginPageUI.HERE_LINK);
+		clickToElement(driver, LoginPageUI.HERE_LINK);
+		return PageFactoryManager.getRegisterPage(driver);
+	}
 
 }
 

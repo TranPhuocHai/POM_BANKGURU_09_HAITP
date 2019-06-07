@@ -129,7 +129,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "inideposit");
 
 		log.info("InitialDepositCanNotBeEmpty: Step 04 - Verify 'Initial Deposit must not be blank' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), "Initial Deposit must not be blank");
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), "Initial Deposit must not be blank");
 
 	}
 
@@ -143,7 +143,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", blankSpace);
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), "First character can not have space");
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), "First character can not have space");
 
 	}
 
@@ -158,7 +158,7 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", characterValue);
 
 			log.info("InitialDepositCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), "Characters are not allowed");
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), "Characters are not allowed");
 		}
 
 	}
@@ -174,7 +174,7 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", specialValue);
 
 			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), "Special characters are not allowed");
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), "Special characters are not allowed");
 		}
 	}
 

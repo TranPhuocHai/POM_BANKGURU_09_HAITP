@@ -15,13 +15,13 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 
 public class FundTransfer extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	FundTransferPageObject fundTransferPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private FundTransferPageObject fundTransferPage;
 
-	String[] characterValues = new String[] { "haitp", "12 1234" };
-	String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
+	private String[] characterValues = new String[] { "haitp", "12 1234" };
+	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters("browser")
 	@BeforeClass
@@ -30,20 +30,21 @@ public class FundTransfer extends AbstractTest {
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);
-		
+
 		log.info("Precondition: Step 02 - Verify Login Form displayed");
 		verifyTrue(loginPage.isLoginFormDisplayed());
-		
+
 		log.info("Precondition: Step 03 - Input to userID and 'Password' textboxes");
-		loginPage.inPutToUserIDTextbox(Common_01_RegisterToSystem.USER_ID_INFOR);
-		loginPage.inPutToPasswordTextbox(Common_01_RegisterToSystem.PASSWORD_INFOR);
-		
-		log.info("Precondition: Step 04 - Click to Login button");
-		homePage = loginPage.clickToLoginButton();
-		
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "uid", Common_01_RegisterToSystem.USER_ID_INFOR);
+		loginPage.inputToDynamicTextboxOrTextArea(driver, "password", Common_01_RegisterToSystem.PASSWORD_INFOR);
+
+		log.info("Precondition: Step 04 - Click to Login button to move to HomePage Url");
+		loginPage.clickToDynamicButton(driver, "btnLogin");
+		homePage = PageFactoryManager.getHomePage(driver);
+
 		log.info("Precondition: Step 05 - Verify Welcome message of Home page displayed");
 		verifyTrue(homePage.isWelcomeMessageDisplayed());
-		
+
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 
@@ -56,16 +57,16 @@ public class FundTransfer extends AbstractTest {
 	public void FT_01_PayersAccountMustNotBeBlank() {
 		
 		log.info("PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox");
-		fundTransferPage.clearPayersAccountTextbox();
+		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
 		
 		log.info("PayersAccountMustNotBeBlank: Step 02 - Click to 'Payers Account' textbox");
-		fundTransferPage.clickToPayersAccountTextbox();
+		fundTransferPage.clickToDynamicTextboxOrTextArea(driver, "payersaccount");
 		
 		log.info("PayersAccountMustNotBeBlank: Step 03 - Press TAB key");
-		fundTransferPage.pressTABKeyToPayersAccountTextbox();
+		fundTransferPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "payersaccount");
 		
 		log.info("PayersAccountMustNotBeBlank: Step 04 - Verify 'Payers Account Number must not be blank' message displayed");
-		verifyTrue(fundTransferPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Payers Account Number"));
+		verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payers account no"), "Payers Account Number must not be blank");
 	}
 	
 	@Test
@@ -73,13 +74,13 @@ public class FundTransfer extends AbstractTest {
 		for (String characterValue : characterValues) {
 			
 			log.info("PayersAccountMustNotBeBlank: Step 01 - Clear 'Payers Account' textbox");
-			fundTransferPage.clearPayersAccountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
 			
 			log.info("PayersAccountMustNotBeBlank: Step 02 - Input to 'Payers Account' textbox");
-			fundTransferPage.inPutValueToPayersAccountNumber(characterValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payersaccount", characterValue);
 			
 			log.info("PayersAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Payers account no"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payers account no"), "Characters are not allowed");
 		}
 	}
 	
@@ -88,13 +89,13 @@ public class FundTransfer extends AbstractTest {
 		for (String specialValue : specialValues) {
 			
 			log.info("PayersAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payers Account' textbox");
-			fundTransferPage.clearPayersAccountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
 			
 			log.info("PayersAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payers Account' textbox");
-			fundTransferPage.inPutValueToPayersAccountNumber(specialValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payersaccount", specialValue);
 			
 			log.info("PayersAccountMustNotBeBlank: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Payers account no"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payers account no"), "Special characters are not allowed");
 		}
 	}
 
@@ -102,16 +103,16 @@ public class FundTransfer extends AbstractTest {
 	public void FT_04_PayeesAccountMustNotBeBlank() {
 		
 		log.info("PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox");
-		fundTransferPage.clearPayeesAccountTextbox();
+		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
 		
 		log.info("PayeesAccountMustNotBeBlank: Step 02 - Click to 'Payees Account' textbox");
-		fundTransferPage.clickToPayeesAccountTextbox();
+		fundTransferPage.clickToDynamicTextboxOrTextArea(driver, "payeeaccount");;
 		
 		log.info("PayeesAccountMustNotBeBlank: Step 03 - Press TAB key");
-		fundTransferPage.pressTABKeyToPayeesAccountTextbox();
+		fundTransferPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "payeeaccount");
 		
 		log.info("PayeesAccountMustNotBeBlank: Step 04 - Verify 'Payees Account Number must not be blank' message displayed");
-		verifyTrue(fundTransferPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Payees Account Number"));
+		verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payees account no"), "Payees Account Number must not be blank");
 	}
 	
 	@Test
@@ -119,13 +120,13 @@ public class FundTransfer extends AbstractTest {
 		for (String characterValue : characterValues) {
 			
 			log.info("PayeesAccountMustNotBeBlank: Step 01 - Clear 'Payees Account' textbox");
-			fundTransferPage.clearPayeesAccountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
 			
 			log.info("PayeesAccountMustNotBeBlank: Step 02 - Input to 'Payees Account' textbox");
-			fundTransferPage.inPutValueToPayeesAccountNumber(characterValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payeeaccount", characterValue);			
 			
 			log.info("PayeesAccountMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Payees account no"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payees account no"), "Characters are not allowed");
 		}
 	}
 	
@@ -134,13 +135,13 @@ public class FundTransfer extends AbstractTest {
 		for (String specialValue : specialValues) {
 			
 			log.info("PayeesAccountCanNotHaveSpecialCharacters: Step 01 - Clear 'Payees Account' textbox");
-			fundTransferPage.clearPayeesAccountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
 			
 			log.info("PayeesAccountCanNotHaveSpecialCharacters: Step 02 - Input to 'Payees Account' textbox");
-			fundTransferPage.inPutValueToPayeesAccountNumber(specialValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "payeeaccount", specialValue);	
 			
 			log.info("PayeesAccountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Payees account no"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Payees account no"), "Special characters are not allowed");
 		}
 	}
 	
@@ -148,16 +149,16 @@ public class FundTransfer extends AbstractTest {
 	public void FT_07_AmountMustNotBeBlank() {
 		
 		log.info("AmountMustNotBeBlank: Step 01 - Clear 'Amount' textbox");
-		fundTransferPage.clearAmountTextbox();
+		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");
 		
 		log.info("AmountMustNotBeBlank: Step 02 - Click to 'Amount' textbox");
-		fundTransferPage.clickToAmountTextbox();
+		fundTransferPage.clickToDynamicTextboxOrTextArea(driver, "ammount");
 		
 		log.info("AmountMustNotBeBlank: Step 03 - Press TAB key");
-		fundTransferPage.pressTABKeyToAmountTextbox();
+		fundTransferPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "ammount");
 		
 		log.info("AmountMustNotBeBlank: Step 04 - Verify 'Amount field must not be blank' message displayed");
-		verifyTrue(fundTransferPage.isDynamicMustNotBeBlankMessageDisplayed(driver, "Amount field"));
+		verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Amount"), "Amount field must not be blank");
 	}
 
 	@Test
@@ -165,13 +166,13 @@ public class FundTransfer extends AbstractTest {
 		for (String characterValue : characterValues) {
 			
 			log.info("AmountMustBeNumeric: Step 01 - Clear 'Amount' textbox");
-			fundTransferPage.clearAmountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");
 			
 			log.info("AmountMustBeNumeric: Step 02 - Input to 'Amount' textbox");
-			fundTransferPage.inputAmountToAmountTextbox(characterValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "ammount", characterValue);	
 			
 			log.info("AmountMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicCharactersAreNotAllowMessageDisplayed(driver, "Amount"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Amount"), "Characters are not allowed");
 		}
 	}
 	
@@ -180,13 +181,13 @@ public class FundTransfer extends AbstractTest {
 		for (String specialValue : specialValues) {
 			
 			log.info("AmountCanNotHaveSpecialCharacters: Step 01 - Clear 'Amount' textbox");
-			fundTransferPage.clearAmountTextbox();
+			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");
 			
 			log.info("AmountCanNotHaveSpecialCharacters: Step 02 - Input to 'Amount' textbox");
-			fundTransferPage.inputAmountToAmountTextbox(specialValue);
+			fundTransferPage.inputToDynamicTextboxOrTextArea(driver, "ammount", specialValue);	
 			
 			log.info("AmountCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyTrue(fundTransferPage.isDynamicSpecialCharactersAreNotAllowedMessageDisplayed(driver, "Amount"));
+			verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Amount"), "Special characters are not allowed");
 		}
 	}
 	
@@ -194,16 +195,16 @@ public class FundTransfer extends AbstractTest {
 	public void FT_10_DescriptionMustNotBeBlank() {
 		
 		log.info("DescriptionMustNotBeBlank: Step 01 - Clear 'Description' textbox");
-		fundTransferPage.clearDescriptionTextbox();
+		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "desc");
 		
 		log.info("DescriptionMustNotBeBlank: Step 02 - Click to 'Description' textbox");
-		fundTransferPage.clickToDescriptionTextbox();
+		fundTransferPage.clickToDynamicTextboxOrTextArea(driver, "desc");
 		
 		log.info("DescriptionMustNotBeBlank: Step 03 - Press TAB key");
-		fundTransferPage.pressTABKeyToDescriptionTextbox();
+		fundTransferPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "desc");
 		
 		log.info("DescriptionMustNotBeBlank: Step 04 - Verify 'Description can not be blank' message displayed");
-		verifyTrue(fundTransferPage.isDescriptionCanNotBeBlankMessageDisplayed());
+		verifyEquals(fundTransferPage.getTextDynamicValidateMessage(driver, "Description"), "Description can not be blank");
 	}
 
 	@AfterClass (alwaysRun = true)

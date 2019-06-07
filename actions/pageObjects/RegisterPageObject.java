@@ -17,16 +17,6 @@ public class RegisterPageObject extends AbstractPage{
 		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "emailid");
 	}
 
-//	public void inPutToEmailIDTextbox(String email) {
-//		waitForElementVisible(driver, RegisterPageUI.EMAIL_ID_TEXTBOX);	
-//		sendKeyToElement(driver, RegisterPageUI.EMAIL_ID_TEXTBOX, email);
-//	}
-//
-//	public void clickToSubmitButton() {
-//		waitForElementVisible(driver, AbstractPageUI.SUBMIT_BUTTON);
-//		clickToElement(driver, AbstractPageUI.SUBMIT_BUTTON);
-//	}
-
 	public LoginPageObject openLoginPage(String loginPageUrl) {
 		openAnyUrl(driver, loginPageUrl);
 		return PageFactoryManager.getLoginPage(driver);

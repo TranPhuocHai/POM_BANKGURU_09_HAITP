@@ -74,7 +74,7 @@ public class EditAccount extends AbstractTest {
 		newAccountPage.clickToDynamicButton(driver, "button2");
 
 		log.info("Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed");
-		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Account generated successfully"));
+		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, "Account Generated Successfully!!!"));
 
 		log.info("Precondition: Step 13 - Veirfy current amount is correct");
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), String.valueOf(currentAmount));
@@ -85,6 +85,9 @@ public class EditAccount extends AbstractTest {
 		log.info("Precondition: Step 15 - Click to 'Edit Account' link");
 		newAccountPage.openMultiplePage(driver, "Edit Account");
 		editAccountPage = PageFactoryManager.getEditAccountPage(driver);
+		
+		log.info("Precondition: Step 16 - Veify 'Edit Account Form' title displayed");
+		verifyTrue(editAccountPage.isDynamicPageTitleDisplayed(driver, "Edit Account Form"));
 	}
 
 	@Test
@@ -168,7 +171,7 @@ public class EditAccount extends AbstractTest {
 	public void EA_06_EditAccountSuccess() {
 
 		log.info("EditAccountSuccess: Step 01 - Select 'Saving' in 'Account type' dropdown");
-		editAccountPage.selectItemInDynamicDropdown(driver, "a_type", "Saving");
+		editAccountPage.selectItemInDynamicDropdown(driver, "a_type", "Savings");
 
 		log.info("EditAccountSuccess: Step 02 - Click to Submit button");
 		editAccountPage.clickToDynamicButton(driver, "AccSubmit");

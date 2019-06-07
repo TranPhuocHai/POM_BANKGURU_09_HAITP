@@ -72,7 +72,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed");
-		verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Customer ID is required");
+		verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), "Customer ID is required");
 
 	}
 
@@ -86,7 +86,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", blankSpace);
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "First character can not have space");
+		verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), "First character can not have space");
 
 	}
 
@@ -101,7 +101,7 @@ public class EditCustomer extends AbstractTest {
 			editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", charactervalue);
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Characters are not allowed");
+			verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), "Characters are not allowed");
 		}
 
 	}
@@ -117,7 +117,7 @@ public class EditCustomer extends AbstractTest {
 			editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", specialValue);
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer id"), "Special characters are not allowed");
+			verifyEquals(editcustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), "Special characters are not allowed");
 		}
 	}
 

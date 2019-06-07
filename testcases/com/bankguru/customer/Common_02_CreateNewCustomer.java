@@ -8,17 +8,15 @@ import com.bankguru.user.Common_01_RegisterToSystem;
 
 import commons.AbstractTest;
 import commons.PageFactoryManager;
-import pageObjects.EditCustomerPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.NewCustomerPageObject;
 
 public class Common_02_CreateNewCustomer extends AbstractTest {
-	WebDriver driver;
-	LoginPageObject loginPage;
-	HomePageObject homePage;
-	NewCustomerPageObject newCustomerPage;
-	EditCustomerPageObject editcustomerPage;
+	private WebDriver driver;
+	private LoginPageObject loginPage;
+	private HomePageObject homePage;
+	private NewCustomerPageObject newCustomerPage;
 	public static String CUSTOMER_ID;
 	public static String VALID_NAME = "Tran Phuoc Hai";
 	public static String EXPECTED_GENDER = "male";

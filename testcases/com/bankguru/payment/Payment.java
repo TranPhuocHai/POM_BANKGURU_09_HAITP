@@ -301,8 +301,9 @@ public class Payment extends AbstractTest {
 
 	}
 
+	@Parameters("browser")
 	@Test
-	public void PM_07_DeleteAccount() {
+	public void PM_07_DeleteAccount(String browserName) {
 		String[] allAccountIDs = {PayerAccountID, EditAccount.ACCOUNT_ID };
 
 		log.info("DeleteAccount: Step 01 - Click to 'Delete Account' link ");
@@ -321,13 +322,19 @@ public class Payment extends AbstractTest {
 			deleteAccountPage.clickToDynamicButton(driver, "AccSubmit");
 
 			log.info("DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed");
-			verifyEquals(deleteAccountPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Account?");
+			if (!browserName.equals("ie") ) {
+				verifyEquals(deleteAccountPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Account?");
+				
+			}
 
 			log.info("DeleteAccount: Step 05 - Accept alert");
 			deleteAccountPage.acceptConfirmDeleteAccountAlert();
 
 			log.info("DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed");
-			verifyEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
+			if (!browserName.equals("ie") ) {
+				verifyEquals(deleteAccountPage.getTextDeleteSuccessAlertAlert(), "Account Deleted Sucessfully");
+				
+			}
 
 			log.info("DeleteAccount: Step 07 - Accept alert");
 			homePage = deleteAccountPage.acceptDeleteSuccessAlert();
@@ -339,8 +346,9 @@ public class Payment extends AbstractTest {
 
 	}
 
+	@Parameters("browser")
 	@Test
-	public void PM_08_DeleteCustomer() {
+	public void PM_08_DeleteCustomer(String browserName) {
 
 		log.info("DeleteCustomer: Step 01 - Click to 'Delete Customer' link ");
 		homePage.openMultiplePage(driver, "Delete Customer");
@@ -353,13 +361,19 @@ public class Payment extends AbstractTest {
 		deleteCustomerPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("DeleteCustomer: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed");
-		verifyEquals(deleteCustomerPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Customer?");
+		if (!browserName.equals("ie") ) {
+			verifyEquals(deleteCustomerPage.getTextConfirmDeleteAlert(), "Do you really want to delete this Customer?");
+			
+		}
 
 		log.info("DeleteCustomer: Step 05 - Accept alert");
 		deleteCustomerPage.acceptConfirmDeleteAlert();
 
 		log.info("DeleteCustomer: Step 06 - Verify 'Customer deleted Successfully' alert displayed");
-		verifyEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(), "Customer deleted Successfully");
+		if (!browserName.equals("ie") ) {
+			verifyEquals(deleteCustomerPage.getTextDeleteSuccessAlertAlert(), "Customer deleted Successfully");
+			
+		}
 
 		log.info("DeleteCustomer: Step 07 - Accept alert");
 		homePage = deleteCustomerPage.acceptDeleteSuccessAlert();

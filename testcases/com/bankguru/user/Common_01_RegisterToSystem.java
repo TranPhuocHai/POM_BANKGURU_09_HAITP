@@ -15,8 +15,8 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 	private WebDriver driver;
 	private LoginPageObject loginPage;
 	private RegisterPageObject registerPage;
-	private String email = "muntibonemdh" + randomNumber() + "@gmail.com";
 	public static String USER_ID_INFOR, PASSWORD_INFOR;
+	private String email = "tran.phuoc" + randomNumber() + "@gmail.com";
 
 	@Parameters("browser")
 	@BeforeTest

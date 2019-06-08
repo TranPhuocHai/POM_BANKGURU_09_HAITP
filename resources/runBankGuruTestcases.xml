@@ -3,7 +3,7 @@
 
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JunitXMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
 
 
@@ -48,24 +48,6 @@
 		</classes>
 	</test>
 
-	<test name="Test on IE">
-		<parameter name="browser" value="ie" />
-		<classes>
-				<class name="com.bankguru.user.Common_01_RegisterToSystem" />
-				<class name="com.bankguru.customer.Common_02_CreateNewCustomer" />				
-				<class name="com.bankguru.customer.NewCustomer" />
-				<class name="com.bankguru.customer.EditCustomer" />
-				<class name="com.bankguru.customer.DeleteCustomer" />
-				<class name="com.bankguru.account.NewAccount" />
-				<class name="com.bankguru.account.EditAccount" />
-				<class name="com.bankguru.account.DeleteAccount" />
-				<class name="com.bankguru.ministatement.MiniStatement" />
-				<class name="com.bankguru.customisedstatement.CustomisedStatement" />
-				<class name="com.bankguru.fundtransfer.FundTransfer" />
-				<class name="com.bankguru.user.ChangePassword" />
-				<class name="com.bankguru.payment.Payment" />
-		</classes>
-	</test>
 
 	<test name="Test on CHROME HEADLESS">
 		<parameter name="browser" value="chromeheadless" />
@@ -86,4 +68,23 @@
 		</classes>
 	</test>
 
+<!-- 	<test name="Test on IE"> -->
+<!-- 		<parameter name="browser" value="ie" /> -->
+<!-- 		<classes> -->
+<!-- 				<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
+<!-- 				<class name="com.bankguru.customer.Common_02_CreateNewCustomer" />				 -->
+<!-- 				<class name="com.bankguru.customer.NewCustomer" /> -->
+<!-- 				<class name="com.bankguru.customer.EditCustomer" /> -->
+<!-- 				<class name="com.bankguru.customer.DeleteCustomer" /> -->
+<!-- 				<class name="com.bankguru.account.NewAccount" /> -->
+<!-- 				<class name="com.bankguru.account.EditAccount" /> -->
+<!-- 				<class name="com.bankguru.account.DeleteAccount" /> -->
+<!-- 				<class name="com.bankguru.ministatement.MiniStatement" /> -->
+<!-- 				<class name="com.bankguru.customisedstatement.CustomisedStatement" /> -->
+<!-- 				<class name="com.bankguru.fundtransfer.FundTransfer" /> -->
+<!-- 				<class name="com.bankguru.user.ChangePassword" /> -->
+<!-- 				<class name="com.bankguru.payment.Payment" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
 </suite> 

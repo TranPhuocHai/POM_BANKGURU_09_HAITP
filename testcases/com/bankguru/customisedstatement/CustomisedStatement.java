@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 import com.bankguru.account.EditAccount;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.CustomisedStatementPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.CustomisedStatementPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
 
 public class CustomisedStatement extends AbstractTest {
 	private WebDriver driver;

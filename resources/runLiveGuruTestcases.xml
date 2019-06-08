@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+
+
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<parameter name="frontendurl" value="http://live.guru99.com" />
+		<parameter name="backendurl" value="http://live.guru99.com/index.php/backendlogin" />
+		<classes>
+				<class name="" />
+		</classes>
+	</test>
+
+
+	<test name="Test on CHROME">
+		<parameter name="browser" value="firefox" />
+		<parameter name="frontendurl" value="http://live.guru99.com" />
+		<parameter name="backendurl" value="http://live.guru99.com/index.php/backendlogin" />
+		<classes>
+				<class name="" />
+		</classes>
+	</test>
+
+
+	<test name="Test on CHROME HEADLESS">
+		<parameter name="browser" value="firefox" />
+		<parameter name="frontendurl" value="http://live.guru99.com" />
+		<parameter name="backendurl" value="http://live.guru99.com/index.php/backendlogin" />
+		<classes>
+				<class name="" />
+		</classes>
+	</test>
+
+<!-- 		<test name="Test on IE"> -->
+<!-- 			<parameter name="browser" value="firefox" /> -->
+<!-- 			<parameter name="frontendurl" value="http://live.guru99.com" /> -->
+<!-- 			<parameter name="backendurl" value="http://live.guru99.com/index.php/backendlogin" /> -->
+<!-- 			<classes> -->
+<!-- 					<class name="" /> -->
+<!-- 			</classes> -->
+<!-- 		</test> -->
+	
+</suite> 

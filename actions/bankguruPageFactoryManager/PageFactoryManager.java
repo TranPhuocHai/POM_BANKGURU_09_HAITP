@@ -1,23 +1,23 @@
-package commons;
+package bankguruPageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 
-import pageObjects.BalanceEnquiryPageObject;
-import pageObjects.ChangePasswordPageObject;
-import pageObjects.CustomisedStatementPageObject;
-import pageObjects.DeleteAccountPageObject;
-import pageObjects.DeleteCustomerPageObject;
-import pageObjects.DepositPageObject;
-import pageObjects.EditAccountPageObject;
-import pageObjects.EditCustomerPageObject;
-import pageObjects.FundTransferPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.MiniStatementPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.NewCustomerPageObject;
-import pageObjects.RegisterPageObject;
-import pageObjects.WithdrawalPageObject;
+import bankguruPageObjects.BalanceEnquiryPageObject;
+import bankguruPageObjects.ChangePasswordPageObject;
+import bankguruPageObjects.CustomisedStatementPageObject;
+import bankguruPageObjects.DeleteAccountPageObject;
+import bankguruPageObjects.DeleteCustomerPageObject;
+import bankguruPageObjects.DepositPageObject;
+import bankguruPageObjects.EditAccountPageObject;
+import bankguruPageObjects.EditCustomerPageObject;
+import bankguruPageObjects.FundTransferPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
+import bankguruPageObjects.MiniStatementPageObject;
+import bankguruPageObjects.NewAccountPageObject;
+import bankguruPageObjects.NewCustomerPageObject;
+import bankguruPageObjects.RegisterPageObject;
+import bankguruPageObjects.WithdrawalPageObject;
 
 public class PageFactoryManager {
 	

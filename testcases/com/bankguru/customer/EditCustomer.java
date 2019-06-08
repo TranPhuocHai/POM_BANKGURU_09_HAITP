@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 
 import com.bankguru.user.Common_01_RegisterToSystem;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.EditCustomerPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.EditCustomerPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
 
 public class EditCustomer extends AbstractTest {
 	private WebDriver driver;

@@ -1,9 +1,9 @@
-package pageObjects;
+package bankguruPageObjects;
 
 import org.openqa.selenium.WebDriver;
 
+import bankguruPageFactoryManager.PageFactoryManager;
 import commons.AbstractPage;
-import commons.PageFactoryManager;
 
 public class DeleteCustomerPageObject extends AbstractPage {
 	public DeleteCustomerPageObject(WebDriver driver) {

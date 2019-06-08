@@ -6,10 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.LoginPageObject;
+import bankguruPageObjects.RegisterPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
 
 public class Common_01_RegisterToSystem extends AbstractTest {
 	private WebDriver driver;

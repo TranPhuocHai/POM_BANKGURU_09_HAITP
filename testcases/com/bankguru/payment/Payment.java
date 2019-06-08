@@ -10,18 +10,18 @@ import com.bankguru.account.EditAccount;
 import com.bankguru.customer.Common_02_CreateNewCustomer;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.BalanceEnquiryPageObject;
+import bankguruPageObjects.DeleteAccountPageObject;
+import bankguruPageObjects.DeleteCustomerPageObject;
+import bankguruPageObjects.DepositPageObject;
+import bankguruPageObjects.EditCustomerPageObject;
+import bankguruPageObjects.FundTransferPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
+import bankguruPageObjects.NewAccountPageObject;
+import bankguruPageObjects.WithdrawalPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.BalanceEnquiryPageObject;
-import pageObjects.DeleteAccountPageObject;
-import pageObjects.DeleteCustomerPageObject;
-import pageObjects.DepositPageObject;
-import pageObjects.EditCustomerPageObject;
-import pageObjects.FundTransferPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.NewAccountPageObject;
-import pageObjects.WithdrawalPageObject;
 
 public class Payment extends AbstractTest {
 	private WebDriver driver;

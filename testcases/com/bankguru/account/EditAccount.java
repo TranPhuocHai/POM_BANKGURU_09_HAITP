@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 import com.bankguru.customer.Common_02_CreateNewCustomer;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.EditAccountPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
+import bankguruPageObjects.NewAccountPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.EditAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.NewAccountPageObject;
 
 public class EditAccount extends AbstractTest {
 	private WebDriver driver;

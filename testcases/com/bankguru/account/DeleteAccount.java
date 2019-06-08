@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 
 import com.bankguru.user.Common_01_RegisterToSystem;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.DeleteAccountPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.DeleteAccountPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
 
 public class DeleteAccount extends AbstractTest {
 	private WebDriver driver;

@@ -6,11 +6,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import bankguruPageFactoryManager.PageFactoryManager;
+import bankguruPageObjects.ChangePasswordPageObject;
+import bankguruPageObjects.HomePageObject;
+import bankguruPageObjects.LoginPageObject;
 import commons.AbstractTest;
-import commons.PageFactoryManager;
-import pageObjects.ChangePasswordPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
 
 public class ChangePassword extends AbstractTest {
 	private WebDriver driver;

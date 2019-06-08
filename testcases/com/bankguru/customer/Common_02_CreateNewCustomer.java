@@ -30,10 +30,10 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 	private String email = "haitp" + randomNumber() + "@gmail.com";
 	private String password = "sdhgd3123";
 
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeTest
-	public void CreateNewCustomerSuccessfully(String browserName) {
-		driver = openMultiBrowser(browserName);
+	public void beforeClass(String browserName, String url) {
+		driver = openMultiBrowser(browserName, url);
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);

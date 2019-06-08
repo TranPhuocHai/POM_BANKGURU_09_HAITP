@@ -28,10 +28,10 @@ public class CustomisedStatement extends AbstractTest {
 	private String[] specialValues = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 	
 
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = openMultiBrowser(browserName);
+	public void beforeClass(String browserName, String url) {
+		driver = openMultiBrowser(browserName, url);
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);

@@ -508,6 +508,9 @@ public class AbstractPage {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
+	
+	/* ============================== BANKGURU Dynamic Locator method ==============================  */
+	
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
 		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
@@ -573,6 +576,8 @@ public class AbstractPage {
 }
 
 
+
+/* =================================== LIVEGURU Dynamic Locator method ===========================================  */
 
 
 

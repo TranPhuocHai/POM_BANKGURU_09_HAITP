@@ -18,10 +18,10 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 	public static String USER_ID_INFOR, PASSWORD_INFOR;
 	private String email = "tran.phuoc" + randomNumber() + "@gmail.com";
 
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeTest
-	public void CreateUser(String browserName) {
-		driver = openMultiBrowser(browserName);
+	public void beforeClass(String browserName, String urlName) {
+		driver = openMultiBrowser(browserName, urlName);
 
 		log.info("CreateUser: Step 01 - open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);

@@ -29,10 +29,10 @@ public class NewCustomer extends AbstractTest {
 	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 	private String[] incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = openMultiBrowser(browserName);
+	public void beforeClass(String browserName, String url) {
+		driver = openMultiBrowser(browserName, url);
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);

@@ -29,10 +29,10 @@ public class EditAccount extends AbstractTest {
 
 	public static String ACCOUNT_ID;
 	
-	@Parameters("browser")
+	@Parameters({"browser","url"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = openMultiBrowser(browserName);
+	public void beforeClass(String browserName, String url) {
+		driver = openMultiBrowser(browserName, url);
 
 		log.info("Precondition: Step 01 - Open Login Page");
 		loginPage = PageFactoryManager.getLoginPage(driver);

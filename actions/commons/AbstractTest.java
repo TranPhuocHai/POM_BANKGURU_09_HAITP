@@ -25,7 +25,7 @@ public class AbstractTest {
 		log = LogFactory.getLog(getClass());
 	}
 
-	protected WebDriver openMultiBrowser(String browserName) {
+	protected WebDriver openMultiBrowser(String browserName, String url) {
 		if (browserName.equalsIgnoreCase("firefox")) {
 			FirefoxProfile profile = new FirefoxProfile();
 			profile.setPreference("network.proxy.type", 0);
@@ -46,8 +46,16 @@ public class AbstractTest {
 
 		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get(Constants.BANKGURU_DEV_APP_URL);
-		return driver;
+
+		if (url.equalsIgnoreCase("bankguru")) {
+			driver.get(Constants.BANKGURU_DEV_APP_URL);
+		} else if (url.equalsIgnoreCase("livegurufrontend")) {
+			driver.get(Constants.LIVEGURU_FRONT_END);
+		} else if (url.equalsIgnoreCase("livegurubackend")) {
+			driver.get(Constants.LIVEGURU_BACK_END);
+		}
+
+			return driver;
 	}
 
 	private boolean checkPassed(boolean condition) {
@@ -157,11 +165,10 @@ public class AbstractTest {
 		}
 
 	}
-	
+
 	public int randomNumber() {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
-	
 
 }

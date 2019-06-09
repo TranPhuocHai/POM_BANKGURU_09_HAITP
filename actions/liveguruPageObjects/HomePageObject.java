@@ -1,5 +1,16 @@
 package liveguruPageObjects;
 
-public class HomePageObject {
+import org.openqa.selenium.WebDriver;
+
+import commons.AbstractPage;
+
+public class HomePageObject extends AbstractPage{
+	public HomePageObject(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	WebDriver driver;
+
+
 
 }

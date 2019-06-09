@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import bankguruUI.AbstractPageUI;
+import liveguruUI.LiveGuruAbstractPageUI;
 
 public class AbstractPage {
 	WebElement element;
@@ -572,12 +573,32 @@ public class AbstractPage {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
+	
+	/* =================================== LIVEGURU Dynamic Locator method ===========================================  */
+
+	public void inputToDynamicTextboxLiveGuru(WebDriver driver,  String fieldName, String sendKeyValue) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX, fieldName);
+		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX, sendKeyValue, fieldName);
+		
+	}
+	
+	public void clickToAccountMenu(WebDriver driver) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
+		clickToElement(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
+		
+	}
+	
+	public void clickToDynamicLink(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+		clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+		
+	}
 
 }
 
 
 
-/* =================================== LIVEGURU Dynamic Locator method ===========================================  */
+
 
 
 

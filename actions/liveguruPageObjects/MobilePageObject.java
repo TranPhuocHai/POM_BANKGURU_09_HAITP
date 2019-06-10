@@ -30,6 +30,12 @@ public class MobilePageObject extends AbstractPage{
 		
 	}
 
+	public void clickToDynamicAddToCartButton(String productName) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+		clickToElement(driver, MobilePageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+		
+	}
+
 
 
 }

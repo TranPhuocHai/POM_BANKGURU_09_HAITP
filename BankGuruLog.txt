@@ -1,23 +1,35 @@
-2019-06-10 17:35:25,947 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 01 - Get HomePage
-2019-06-10 17:35:25,952 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 02 - Get HomePage Url
-2019-06-10 17:35:25,967 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 03 - Click to Account Menu
-2019-06-10 17:35:26,202 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 04 - Click to Register link
-2019-06-10 17:35:27,177 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 05 - Verify Create An Account form display
-2019-06-10 17:35:27,280 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
-2019-06-10 17:35:27,282 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 06 - Input to First Name textbox
-2019-06-10 17:35:27,406 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 07 - Input to Middle Name textbox
-2019-06-10 17:35:28,070 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 08 - Input to Last Name textbox
-2019-06-10 17:35:28,198 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 09 - Input to Email textbox
-2019-06-10 17:35:28,349 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 10 - Input to First Name textbox
-2019-06-10 17:35:28,476 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 11 - Input to First Name textbox
-2019-06-10 17:35:28,590 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 12 - Click to Register button
-2019-06-10 17:35:30,580 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 13 - Click to Register button
-2019-06-10 17:35:30,677 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
-2019-06-10 17:35:30,677 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 14 - open Home Page
-2019-06-10 17:35:31,816 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 15 - Click to Account Menu
-2019-06-10 17:35:31,993 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 16 - Click to My Account link
-2019-06-10 17:35:32,977 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 16 - getTextXXXXXXX
-2019-06-10 17:35:33,089 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 17 - verify tXXXXXXX
-2019-06-10 17:35:33,089 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
-2019-06-10 17:35:33,092 INFO  com.liveguru.customer.FrontEnd22 - OS name= windows 10
-2019-06-10 17:35:33,609 INFO  com.liveguru.customer.FrontEnd22 - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-10 20:21:10,114 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 01 - Get HomePage
+2019-06-10 20:21:10,116 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 02 - Get HomePage Url
+2019-06-10 20:21:10,124 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 03 - Click to Account Menu
+2019-06-10 20:21:10,782 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 04 - Click to Register link
+2019-06-10 20:21:11,826 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 05 - Verify Create An Account form display
+2019-06-10 20:21:12,406 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:12,408 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 06 - Input to First Name textbox
+2019-06-10 20:21:12,986 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 07 - Input to Middle Name textbox
+2019-06-10 20:21:13,575 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 08 - Input to Last Name textbox
+2019-06-10 20:21:14,154 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 09 - Input to Email textbox
+2019-06-10 20:21:14,757 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 10 - Input to First Name textbox
+2019-06-10 20:21:15,338 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 11 - Input to First Name textbox
+2019-06-10 20:21:15,934 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 12 - Click to Register button
+2019-06-10 20:21:18,087 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 13 - Click to Register button
+2019-06-10 20:21:18,653 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:18,654 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 01 - open Home Page
+2019-06-10 20:21:18,657 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 01 - open Home Page
+2019-06-10 20:21:19,566 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 02 - Click to Account Menu
+2019-06-10 20:21:20,189 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 03 - Click to My Account link
+2019-06-10 20:21:21,224 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 04 - Get Text Infor box
+2019-06-10 20:21:21,803 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 05 - verify infor box displayed correct full name and email
+2019-06-10 20:21:21,803 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:21,803 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 06 - Verify My Dasboard text displayed
+2019-06-10 20:21:22,359 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:22,359 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 07 - click to ACCOUNT INFORMATION link
+2019-06-10 20:21:23,689 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 08 - Verify First Name is correct
+2019-06-10 20:21:24,250 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:24,250 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 09 - Verify Middle Name is correct
+2019-06-10 20:21:24,806 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:24,806 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 10 - Verify Last Name is correct
+2019-06-10 20:21:25,358 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:25,358 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 11 - Verify Email is correct
+2019-06-10 20:21:25,929 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-10 20:21:25,930 INFO  com.liveguru.customer.FrontEndUserRole - OS name= windows 10
+2019-06-10 20:21:26,222 INFO  com.liveguru.customer.FrontEndUserRole - -------------QUIT BROWSER SUCCESSFULLY -----------------

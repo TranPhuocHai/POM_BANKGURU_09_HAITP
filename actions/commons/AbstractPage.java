@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import bankguruUI.AbstractPageUI;
+import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
+import liveguruPageObjects.HomePageObject;
 import liveguruUI.LiveGuruAbstractPageUI;
 
 public class AbstractPage {
@@ -591,6 +593,12 @@ public class AbstractPage {
 	public void clickToDynamicLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
 		clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+		
+	}
+	
+	public HomePageObject openHomePage(WebDriver driver, String url) {
+		openAnyUrl(driver, url);
+		return LiveGuruPageFactoryManager.getHomePage(driver);
 		
 	}
 

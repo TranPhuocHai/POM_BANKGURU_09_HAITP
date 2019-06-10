@@ -31,11 +31,7 @@ public class RegisterPageObject extends AbstractPage {
 		
 	}
 
-	public HomePageObject openHomePage(String url) {
-		openAnyUrl(driver, url);
-		return LiveGuruPageFactoryManager.getHomePage(driver);
-		
-	}
+
 
 
 }

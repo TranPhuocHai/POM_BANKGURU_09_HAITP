@@ -19,6 +19,7 @@ public class MyAccountPageObject extends AbstractPage {
 
 	public void clickToDynamicMyAccountLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);
+		clickToElement(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);
 		
 	}
 

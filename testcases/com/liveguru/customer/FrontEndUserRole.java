@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import commons.AbstractTest;
 import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruPageObjects.HomePageObject;
+import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
 
@@ -17,12 +18,15 @@ public class FrontEndUserRole extends AbstractTest{
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private MyAccountPageObject myAccountPage;
+	private MobilePageObject mobilePage;
+	
 	private String  firstName = "Hai";
 	private String  middleName = "Phuoc";
 	private String  lastName = "Tran";
 	private String email = "haitp" + randomNumber() + "@gmail.com";
 	private String password = "123654";
 	public static String HOME_PAGE_URL;
+	private String listCost, detailsCost;
 	
 	@Parameters({"browser","url"})
 	@BeforeTest
@@ -79,20 +83,20 @@ public class FrontEndUserRole extends AbstractTest{
 	public void FE_02_VerifyUserInformation() {
 		
 		log.info("VerifyUserInformation: Step 01 - open Home Page");
-		homePage = registerPage.openHomePage(HOME_PAGE_URL);
+		homePage = registerPage.openHomePage(driver, HOME_PAGE_URL);
 		
 		log.info("VerifyUserInformation: Step 02 - Click to Account Menu");
 		homePage.clickToAccountMenu(driver);
 		
 		log.info("VerifyUserInformation: Step 03 - Click to My Account link");
 		homePage.clickToDynamicLink(driver,"My Account");
-		myAccountPage = LiveGuruPageFactoryManager.getMyAccount(driver);
+		myAccountPage = LiveGuruPageFactoryManager.getMyAccountPage(driver);
 		
 		log.info("VerifyUserInformation: Step 04 - Verify My Dasboard text displayed");
 		verifyTrue(myAccountPage.isMyDashBoardTextDisplayed());
 		
 		log.info("VerifyUserInformation: Step 05 - click to ACCOUNT INFORMATION link");
-		myAccountPage.clickToDynamicMyAccountLink(driver,"ACCOUNT INFORMATION");
+		myAccountPage.clickToDynamicMyAccountLink(driver,"Account Information");
 		
 		log.info("VerifyUserInformation: Step 06 - Verify First Name is correct");
 		verifyTrue(myAccountPage.isDynamicInforInTextboxCorrect(driver, "firstname", firstName));
@@ -106,6 +110,32 @@ public class FrontEndUserRole extends AbstractTest{
 		log.info("VerifyUserInformation: Step 09 - Verify Email is correct");
 		verifyTrue(myAccountPage.isDynamicInforInTextboxCorrect(driver, "email", email));
 	}
+	
+	@Test
+	public void FE_03_VerifyCostProduct() {
+		log.info("VeifyCostProduct: Step 01 - open Home Page");
+		homePage = myAccountPage.openHomePage(driver, HOME_PAGE_URL);
+
+		log.info("VeifyCostProduct: Step 02 - Click to 'MOBILE' link");
+		homePage.clickToDynamicLink(driver,"Mobile");
+		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
+		
+		log.info("VeifyCostProduct: Step 03 - Get Cost of Sony Xperia in list page");
+		listCost = mobilePage.getCostDynamicProductInMobileListPage("Sony Xperia");
+		
+		log.info("VeifyCostProduct: Step 04 - Click to Sony Xperia details");
+		mobilePage.clickToDynamicProductLink("Sony Xperia");
+		
+		log.info("VeifyCostProduct: Step 05 - Get Cost of Sony Xperia in details page");
+		detailsCost = mobilePage.getCostDynamicProductInMobileDetailsPage("Sony Xperia");
+		
+		log.info("VeifyCostProduct: Step 06 - Verify cost of product in list page and details page are equal");
+		verifyEquals(listCost, detailsCost);
+		
+	}
+	
+	
+	
 	
 	@AfterClass (alwaysRun = true)
 	public void afterClass() {

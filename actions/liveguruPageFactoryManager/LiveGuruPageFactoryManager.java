@@ -3,6 +3,7 @@ package liveguruPageFactoryManager;
 import org.openqa.selenium.WebDriver;
 
 import liveguruPageObjects.HomePageObject;
+import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
 
@@ -16,8 +17,12 @@ public class LiveGuruPageFactoryManager {
 		return new RegisterPageObject(driver);
 	}
 	
-	public static MyAccountPageObject getMyAccount(WebDriver driver) {
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
 		return new MyAccountPageObject(driver);
+	}
+	
+	public static MobilePageObject getMobilePage(WebDriver driver) {
+		return new MobilePageObject(driver);
 	}
 	
 

@@ -34,7 +34,6 @@ public class FrontEnd22 extends AbstractTest{
 	public void BeforeTest(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
 
-		
 	}
 	
 	@Test

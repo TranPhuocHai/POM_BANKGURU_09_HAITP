@@ -27,6 +27,11 @@ public class MyAccountPageObject extends AbstractPage {
 		waitForElementVisible(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, FieldName, valueToVerify);		
 		return isControlDisplayed(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, FieldName, valueToVerify);	
 	}
+
+	public String getTextInforBox(WebDriver driver) {
+		waitForElementVisible(driver, MyAccountPageUI.INFOR_BOX);
+		return getTextElement(driver, MyAccountPageUI.INFOR_BOX);
+	}
 	
 
 }

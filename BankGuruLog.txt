@@ -1,41 +1,23 @@
-2019-06-10 16:21:41,414 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 01 - Get HomePage
-2019-06-10 16:21:41,418 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 02 - Get HomePage Url
-2019-06-10 16:21:41,428 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 03 - Click to Account Menu
-2019-06-10 16:21:41,655 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 04 - Click to Register link
-2019-06-10 16:21:42,600 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 05 - Verify Create An Account form display
-2019-06-10 16:21:42,706 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:42,708 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 06 - Input to First Name textbox
-2019-06-10 16:21:42,828 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 07 - Input to Middle Name textbox
-2019-06-10 16:21:43,293 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 08 - Input to Last Name textbox
-2019-06-10 16:21:43,422 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 09 - Input to Email textbox
-2019-06-10 16:21:43,565 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 10 - Input to First Name textbox
-2019-06-10 16:21:43,687 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 11 - Input to First Name textbox
-2019-06-10 16:21:43,806 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 12 - Click to Register button
-2019-06-10 16:21:45,872 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 13 - Click to Register button
-2019-06-10 16:21:45,988 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:45,990 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 01 - open Home Page
-2019-06-10 16:21:46,870 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 02 - Click to Account Menu
-2019-06-10 16:21:47,033 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 03 - Click to My Account link
-2019-06-10 16:21:47,733 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 04 - Verify My Dasboard text displayed
-2019-06-10 16:21:47,833 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:47,833 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 05 - click to ACCOUNT INFORMATION link
-2019-06-10 16:21:48,523 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 06 - Verify First Name is correct
-2019-06-10 16:21:48,624 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:48,624 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 07 - Verify Middle Name is correct
-2019-06-10 16:21:48,723 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:48,724 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 08 - Verify Last Name is correct
-2019-06-10 16:21:48,821 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:48,821 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 09 - Verify Email is correct
-2019-06-10 16:21:48,912 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:48,914 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 01 - open Home Page
-2019-06-10 16:21:49,489 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 02 - Click to 'MOBILE' link
-2019-06-10 16:21:51,601 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 03 - Get Cost of Sony Xperia in list page
-2019-06-10 16:21:51,704 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 04 - Click to Sony Xperia details
-2019-06-10 16:21:54,733 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 05 - Get Cost of Sony Xperia in details page
-2019-06-10 16:21:54,910 INFO  com.liveguru.customer.FrontEndUserRole - VeifyCostProduct: Step 06 - Verify cost of product in list page and details page are equal
-2019-06-10 16:21:54,910 INFO  com.liveguru.customer.FrontEndUserRole - Actual = $100.00
-2019-06-10 16:21:54,910 INFO  com.liveguru.customer.FrontEndUserRole - Expected = $100.00
-2019-06-10 16:21:54,910 INFO  com.liveguru.customer.FrontEndUserRole - Compare value = true
-2019-06-10 16:21:54,910 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-10 16:21:54,911 INFO  com.liveguru.customer.FrontEndUserRole - OS name= windows 10
-2019-06-10 16:21:55,464 INFO  com.liveguru.customer.FrontEndUserRole - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-10 17:35:25,947 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 01 - Get HomePage
+2019-06-10 17:35:25,952 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 02 - Get HomePage Url
+2019-06-10 17:35:25,967 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 03 - Click to Account Menu
+2019-06-10 17:35:26,202 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 04 - Click to Register link
+2019-06-10 17:35:27,177 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 05 - Verify Create An Account form display
+2019-06-10 17:35:27,280 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
+2019-06-10 17:35:27,282 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 06 - Input to First Name textbox
+2019-06-10 17:35:27,406 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 07 - Input to Middle Name textbox
+2019-06-10 17:35:28,070 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 08 - Input to Last Name textbox
+2019-06-10 17:35:28,198 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 09 - Input to Email textbox
+2019-06-10 17:35:28,349 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 10 - Input to First Name textbox
+2019-06-10 17:35:28,476 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 11 - Input to First Name textbox
+2019-06-10 17:35:28,590 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 12 - Click to Register button
+2019-06-10 17:35:30,580 INFO  com.liveguru.customer.FrontEnd22 - RegisterToSystem: Step 13 - Click to Register button
+2019-06-10 17:35:30,677 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
+2019-06-10 17:35:30,677 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 14 - open Home Page
+2019-06-10 17:35:31,816 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 15 - Click to Account Menu
+2019-06-10 17:35:31,993 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 16 - Click to My Account link
+2019-06-10 17:35:32,977 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 16 - getTextXXXXXXX
+2019-06-10 17:35:33,089 INFO  com.liveguru.customer.FrontEnd22 - VerifyUserInformation: Step 17 - verify tXXXXXXX
+2019-06-10 17:35:33,089 INFO  com.liveguru.customer.FrontEnd22 - ===PASSED===
+2019-06-10 17:35:33,092 INFO  com.liveguru.customer.FrontEnd22 - OS name= windows 10
+2019-06-10 17:35:33,609 INFO  com.liveguru.customer.FrontEnd22 - -------------QUIT BROWSER SUCCESSFULLY -----------------

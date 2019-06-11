@@ -2,7 +2,7 @@ package com.liveguru.customer;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -28,7 +28,7 @@ public class FrontEndUserRole extends AbstractTest{
 	private String inforBox;
 	
 	@Parameters({"browser","url"})
-	@BeforeTest
+	@BeforeClass
 	public void BeforeTest(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
 		

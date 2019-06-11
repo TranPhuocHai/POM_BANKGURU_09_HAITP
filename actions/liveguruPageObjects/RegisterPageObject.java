@@ -3,7 +3,6 @@ package liveguruPageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
-import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruUI.RegisterPageUI;
 
 public class RegisterPageObject extends AbstractPage {
@@ -16,12 +15,6 @@ public class RegisterPageObject extends AbstractPage {
 	public boolean isResgisterFormDisplayed() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_FORM);
 		return isControlDisplayed(driver, RegisterPageUI.REGISTER_FORM);
-	}
-
-	public void clickToRegisterButton() {
-		waitForElementVisible(driver, RegisterPageUI.REGISTER_BUTTON);
-		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
-		
 	}
 
 	public boolean isRegisterSuccessMessageDisplayed() {

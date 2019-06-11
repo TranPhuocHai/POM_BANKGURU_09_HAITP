@@ -36,6 +36,35 @@ public class MobilePageObject extends AbstractPage{
 		
 	}
 
+	public boolean isShoppingCartMessageDisplayed() {
+		waitForElementVisible(driver, MobilePageUI.SHOPPING_CART_MESSAGE);
+		return isControlDisplayed(driver, MobilePageUI.SHOPPING_CART_MESSAGE);
+		
+	}
+
+	public boolean isDynamicProductLinkDisplayed(String productName) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_PRODUCT_LINK, productName);
+		return isControlDisplayed(driver, MobilePageUI.DYNAMIC_PRODUCT_LINK, productName);
+	}
+
+	public boolean isDiscountTitleDisplayed(String cuponCode) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
+		return isControlDisplayed(driver, MobilePageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
+		
+	}
+	
+	public String getTextDiscountMoney(String cuponCode) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
+		return getTextElement(driver, MobilePageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
+		
+	}
+
+	public String getTextGrandTotalMoney() {
+		waitForElementVisible(driver, MobilePageUI.GRANT_TOTAL_MONEY);
+		return getTextElement(driver, MobilePageUI.GRANT_TOTAL_MONEY);
+		
+	}
+
 
 
 }

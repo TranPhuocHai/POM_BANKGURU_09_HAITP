@@ -72,7 +72,7 @@ public class FrontEndUserRole extends AbstractTest{
 		registerPage.inputToDynamicTextboxLiveGuru(driver, "confirmation", password);
 		
 		log.info("RegisterToSystem: Step 12 - Click to Register button");
-		registerPage.clickToRegisterButton();
+		registerPage.clickToDynamicLiveGuruButton(driver, "Register");
 		
 		log.info("RegisterToSystem: Step 13 - Click to Register button");
 		verifyTrue(registerPage.isRegisterSuccessMessageDisplayed());
@@ -82,7 +82,8 @@ public class FrontEndUserRole extends AbstractTest{
 	public void TC_02_VerifyUserInformation() {
 		
 		log.info("VerifyUserInformation: Step 01 - open Home Page");
-		homePage = registerPage.openHomePage(driver, HOME_PAGE_URL);
+		registerPage.openAnyUrl(driver, FrontEndUserRole.HOME_PAGE_URL);
+		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 		
 		log.info("VerifyUserInformation: Step 02 - Click to Account Menu");
 		homePage.clickToAccountMenu(driver);

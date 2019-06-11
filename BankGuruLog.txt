@@ -1,65 +1,79 @@
-2019-06-11 11:31:09,642 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 01 - Get HomePage
-2019-06-11 11:31:09,646 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 02 - Get HomePage Url
-2019-06-11 11:31:09,659 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 03 - Click to Account Menu
-2019-06-11 11:31:10,400 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 04 - Click to Register link
-2019-06-11 11:31:11,953 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 05 - Verify Create An Account form display
-2019-06-11 11:31:12,554 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:12,556 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 06 - Input to First Name textbox
-2019-06-11 11:31:13,173 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 07 - Input to Middle Name textbox
-2019-06-11 11:31:13,824 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 08 - Input to Last Name textbox
-2019-06-11 11:31:14,890 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 09 - Input to Email textbox
-2019-06-11 11:31:15,538 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 10 - Input to First Name textbox
-2019-06-11 11:31:16,181 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 11 - Input to First Name textbox
-2019-06-11 11:31:16,810 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 12 - Click to Register button
-2019-06-11 11:31:19,529 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 13 - Click to Register button
-2019-06-11 11:31:20,145 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:20,148 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 01 - open Home Page
-2019-06-11 11:31:22,303 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 02 - Click to Account Menu
-2019-06-11 11:31:22,982 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 03 - Click to My Account link
-2019-06-11 11:31:24,433 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 04 - Get Text Infor box
-2019-06-11 11:31:25,089 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 05 - verify infor box displayed correct full name and email
-2019-06-11 11:31:25,089 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:25,089 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 06 - Verify My Dasboard text displayed
-2019-06-11 11:31:25,714 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:25,714 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 07 - click to ACCOUNT INFORMATION link
-2019-06-11 11:31:27,808 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 08 - Verify First Name is correct
-2019-06-11 11:31:28,413 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:28,413 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 09 - Verify Middle Name is correct
-2019-06-11 11:31:29,001 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:29,001 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 10 - Verify Last Name is correct
-2019-06-11 11:31:29,593 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:29,593 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 11 - Verify Email is correct
-2019-06-11 11:31:30,186 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
-2019-06-11 11:31:30,188 INFO  com.liveguru.customer.FrontEndUserRole - OS name= windows 10
-2019-06-11 11:31:30,686 INFO  com.liveguru.customer.FrontEndUserRole - -------------QUIT BROWSER SUCCESSFULLY -----------------
-2019-06-11 11:31:30,688 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 01 - open Home Page
-2019-06-11 11:31:30,688 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 02 - Click to 'MOBILE' link
-2019-06-11 11:31:33,582 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 03 - Get Cost of Sony Xperia in list page
-2019-06-11 11:31:34,213 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 04 - Click to Sony Xperia details
-2019-06-11 11:31:38,165 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 05 - Get Cost of Sony Xperia in details page
-2019-06-11 11:31:38,813 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 06 - Verify cost of product in list page and details page are equal
-2019-06-11 11:31:38,813 INFO  com.liveguru.order.OrderFunction - Actual = $100.00
-2019-06-11 11:31:38,813 INFO  com.liveguru.order.OrderFunction - Expected = $100.00
-2019-06-11 11:31:38,813 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-11 11:31:38,813 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-11 11:31:38,814 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 01 - open Home Page
-2019-06-11 11:31:39,709 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 02 - Click to 'MOBILE' link
-2019-06-11 11:31:41,540 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 03 - Click Add to Cart IPhone
-2019-06-11 11:31:44,166 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 04 - Verify 'SHOPPING CART' message displayed
-2019-06-11 11:31:44,798 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-11 11:31:44,798 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 05 - Input Cupon code to 'DISCOUNT CODES' textbox
-2019-06-11 11:31:45,437 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 06 - Click APPLY button
-2019-06-11 11:31:51,587 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 07 - Verify Correct Discount title displayed
-2019-06-11 11:31:52,214 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-11 11:31:52,215 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 08 - Verify Correct Discount money appears
-2019-06-11 11:31:52,823 INFO  com.liveguru.order.OrderFunction - Actual = -$25.00
-2019-06-11 11:31:52,823 INFO  com.liveguru.order.OrderFunction - Expected = -$25.00
-2019-06-11 11:31:52,823 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-11 11:31:52,823 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-11 11:31:52,823 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 09 - Verify Grand Total are correct after discounting
-2019-06-11 11:31:53,439 INFO  com.liveguru.order.OrderFunction - Actual = $500.00
-2019-06-11 11:31:53,439 INFO  com.liveguru.order.OrderFunction - Expected = $500.00
-2019-06-11 11:31:53,439 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-11 11:31:53,439 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-11 11:31:53,440 INFO  com.liveguru.order.OrderFunction - OS name= windows 10
-2019-06-11 11:31:53,913 INFO  com.liveguru.order.OrderFunction - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-11 17:12:09,983 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 01 - Get HomePage
+2019-06-11 17:12:09,986 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 02 - Get HomePage Url
+2019-06-11 17:12:10,001 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 03 - Click to Account Menu
+2019-06-11 17:12:10,780 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 04 - Click to Register link
+2019-06-11 17:12:12,964 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 05 - Verify Create An Account form display
+2019-06-11 17:12:13,548 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:13,549 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 06 - Input to First Name textbox
+2019-06-11 17:12:14,167 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 07 - Input to Middle Name textbox
+2019-06-11 17:12:14,806 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 08 - Input to Last Name textbox
+2019-06-11 17:12:15,791 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 09 - Input to Email textbox
+2019-06-11 17:12:16,442 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 10 - Input to First Name textbox
+2019-06-11 17:12:17,068 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 11 - Input to First Name textbox
+2019-06-11 17:12:17,695 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 12 - Click to Register button
+2019-06-11 17:12:20,080 INFO  com.liveguru.customer.FrontEndUserRole - RegisterToSystem: Step 13 - Click to Register button
+2019-06-11 17:12:20,669 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:20,672 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 01 - open Home Page
+2019-06-11 17:12:21,659 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 02 - Click to Account Menu
+2019-06-11 17:12:22,360 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 03 - Click to My Account link
+2019-06-11 17:12:23,830 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 04 - Get Text Infor box
+2019-06-11 17:12:24,456 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 05 - verify infor box displayed correct full name and email
+2019-06-11 17:12:24,456 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:24,456 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 06 - Verify My Dasboard text displayed
+2019-06-11 17:12:25,057 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:25,057 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 07 - click to ACCOUNT INFORMATION link
+2019-06-11 17:12:26,520 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 08 - Verify First Name is correct
+2019-06-11 17:12:27,138 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:27,138 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 09 - Verify Middle Name is correct
+2019-06-11 17:12:27,776 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:27,776 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 10 - Verify Last Name is correct
+2019-06-11 17:12:28,376 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:28,376 INFO  com.liveguru.customer.FrontEndUserRole - VerifyUserInformation: Step 11 - Verify Email is correct
+2019-06-11 17:12:28,961 INFO  com.liveguru.customer.FrontEndUserRole - ===PASSED===
+2019-06-11 17:12:28,970 INFO  com.liveguru.customer.FrontEndUserRole - OS name= windows 10
+2019-06-11 17:12:29,461 INFO  com.liveguru.customer.FrontEndUserRole - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-11 17:12:29,461 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 01 - open Home Page
+2019-06-11 17:12:29,461 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 02 - Click to 'MOBILE' link
+2019-06-11 17:12:31,465 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 03 - Get Cost of Sony Xperia in list page
+2019-06-11 17:12:32,102 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 04 - Click to Sony Xperia details
+2019-06-11 17:12:34,424 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 05 - Get Cost of Sony Xperia in details page
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - VeifyCostProduct: Step 06 - Verify cost of product in list page and details page are equal
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - Actual = $100.00
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - Expected = $100.00
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:35,125 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 01 - open Home Page
+2019-06-11 17:12:36,040 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 02 - Click to 'MOBILE' link
+2019-06-11 17:12:37,580 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 03 - Click Add to Cart IPhone
+2019-06-11 17:12:40,083 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 04 - Verify 'SHOPPING CART' message displayed
+2019-06-11 17:12:40,708 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:40,708 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 05 - Input Cupon code to 'DISCOUNT CODES' textbox
+2019-06-11 17:12:41,393 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 06 - Click APPLY button
+2019-06-11 17:12:43,897 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 07 - Verify Correct Discount title displayed
+2019-06-11 17:12:44,545 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:44,545 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 08 - Verify Correct Discount money appears
+2019-06-11 17:12:45,176 INFO  com.liveguru.order.OrderFunction - Actual = -$25.00
+2019-06-11 17:12:45,176 INFO  com.liveguru.order.OrderFunction - Expected = -$25.00
+2019-06-11 17:12:45,176 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-11 17:12:45,176 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:45,176 INFO  com.liveguru.order.OrderFunction - VerifyDiscountCuponWorksCorrectly: Step 09 - Verify Grand Total are correct after discounting
+2019-06-11 17:12:45,799 INFO  com.liveguru.order.OrderFunction - Actual = $500.00
+2019-06-11 17:12:45,799 INFO  com.liveguru.order.OrderFunction - Expected = $500.00
+2019-06-11 17:12:45,799 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-11 17:12:45,799 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:45,799 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 01 - open Home Page
+2019-06-11 17:12:46,779 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 02 - Click to 'MOBILE' link
+2019-06-11 17:12:48,421 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 03 - Click Add to Cart IPhone
+2019-06-11 17:12:51,207 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 04 - Verify 'SHOPPING CART' message displayed
+2019-06-11 17:12:51,827 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:51,827 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 05 - Clear QTY textbox of Sony Xperia
+2019-06-11 17:12:52,475 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 06 - Input To QTY textbox of Sony Xperia
+2019-06-11 17:12:53,162 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 07 - Click To UPDATE button of Sony Xperia
+2019-06-11 17:12:55,484 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 08 - Get text error message of Sony Xperia
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - CanNotAddMoreThan500Items: Step 09 - Verify '* The maximum quantity allowed for purchase is 500.' message of Sony Xperia displayed
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - Actual = * The maximum quantity allowed for purchase is 500.
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - Expected = * The maximum quantity allowed for purchase is 500.
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-11 17:12:56,096 INFO  com.liveguru.order.OrderFunction - OS name= windows 10
+2019-06-11 17:12:56,550 INFO  com.liveguru.order.OrderFunction - -------------QUIT BROWSER SUCCESSFULLY -----------------

@@ -31,7 +31,6 @@ public class FrontEndUserRole extends AbstractTest{
 	@BeforeTest
 	public void BeforeTest(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
-
 		
 	}
 	
@@ -63,7 +62,7 @@ public class FrontEndUserRole extends AbstractTest{
 		registerPage.inputToDynamicTextboxLiveGuru(driver, "lastname", lastName);
 		
 		log.info("RegisterToSystem: Step 09 - Input to Email textbox");
-		registerPage.inputToDynamicTextboxLiveGuru(driver, "email_address", email);
+		registerPage.inputToDynamicTextboxLiveGuru(driver, "email", email);
 		
 		log.info("RegisterToSystem: Step 10 - Input to First Name textbox");
 		registerPage.inputToDynamicTextboxLiveGuru(driver, "password", password);

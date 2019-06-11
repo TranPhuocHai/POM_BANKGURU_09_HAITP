@@ -17,10 +17,11 @@ public class OrderFunction extends AbstractTest{
 	private WebDriver driver;
 	private HomePageObject homePage;
 	private MobilePageObject mobilePage;
-	private String listCost, detailsCost;
+	private String listCost, detailsCost, errorMessage;
 	private String cuponCode = "GURU50";
 	private String discountMoney = "-$25.00";
 	private String grantTotal = "$500.00";
+	private String productQuantity = "501";
 	/* NOTE: Discount Function is facing with a bug that discount money is not deducted in Grand Total */
 	
 	@Parameters({"browser","url"})
@@ -88,6 +89,40 @@ public class OrderFunction extends AbstractTest{
 	}
 	
 	@Test
+	public void TC_03_CanNotAddMoreThan500Items() {
+		
+		log.info("CanNotAddMoreThan500Items: Step 01 - open Home Page");
+		mobilePage.openAnyUrl(driver, FrontEndUserRole.HOME_PAGE_URL);
+		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
+		
+		log.info("CanNotAddMoreThan500Items: Step 02 - Click to 'MOBILE' link");
+		homePage.clickToDynamicLink(driver,"Mobile");
+		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
+		
+		log.info("CanNotAddMoreThan500Items: Step 03 - Click Add to Cart IPhone");
+		mobilePage.clickToDynamicAddToCartButton("Sony Xperia");
+		
+		log.info("CanNotAddMoreThan500Items: Step 04 - Verify 'SHOPPING CART' message displayed");
+		verifyTrue(mobilePage.isShoppingCartMessageDisplayed());
+		
+		log.info("CanNotAddMoreThan500Items: Step 05 - Clear QTY textbox of Sony Xperia");
+		mobilePage.clearDynamicQTYTextbox("Sony Xperia");
+		
+		log.info("CanNotAddMoreThan500Items: Step 06 - Input To QTY textbox of Sony Xperia");
+		mobilePage.inputToDynamicQTYTextbox("Sony Xperia", productQuantity);
+		
+		log.info("CanNotAddMoreThan500Items: Step 07 - Click To UPDATE button of Sony Xperia");
+		mobilePage.clickToDynamiUpdateButton("Sony Xperia");
+		
+		log.info("CanNotAddMoreThan500Items: Step 08 - Get text error message of Sony Xperia");
+		errorMessage = mobilePage.getTextDynamicErrorMessage("Sony Xperia");
+		
+		log.info("CanNotAddMoreThan500Items: Step 09 - Verify '* The maximum quantity allowed for purchase is 500.' message of Sony Xperia displayed");
+		verifyEquals(errorMessage.trim(), "* The maximum quantity allowed for purchase is 500.");
+		
+		
+	}
+	
 	
 	
 	

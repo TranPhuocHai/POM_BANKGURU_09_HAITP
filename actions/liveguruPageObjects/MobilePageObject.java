@@ -65,6 +65,30 @@ public class MobilePageObject extends AbstractPage{
 		
 	}
 
+	public void clearDynamicQTYTextbox(String productName) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_QTY_TEXTBOX, productName);
+		clearTextElement(driver, MobilePageUI.DYNAMIC_QTY_TEXTBOX, productName);
+		
+	}
+
+	public void inputToDynamicQTYTextbox(String productName, String productQuantity) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_QTY_TEXTBOX, productName);
+		sendKeyToElement(driver, MobilePageUI.DYNAMIC_QTY_TEXTBOX, productQuantity, productName);
+		
+		
+	}
+
+	public void clickToDynamiUpdateButton(String productName) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_UPDATE_BUTTON, productName);
+		clickToElement(driver, MobilePageUI.DYNAMIC_UPDATE_BUTTON, productName);
+		
+	}
+
+	public String getTextDynamicErrorMessage(String productName) {
+		waitForElementVisible(driver, MobilePageUI.DYNAMIC_ERROR_MESSAGE, productName);
+		return getTextElement(driver, MobilePageUI.DYNAMIC_ERROR_MESSAGE, productName);
+	}
+
 
 
 }

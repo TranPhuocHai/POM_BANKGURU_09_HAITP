@@ -4,15 +4,14 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 
-public class MobilePageObject extends AbstractPage{
-	public MobilePageObject(WebDriver driver) {
+public class TVPageObject extends AbstractPage{
+	public TVPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	WebDriver driver;
+
+
 	
-
-
-
 
 }

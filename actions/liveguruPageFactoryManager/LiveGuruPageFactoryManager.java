@@ -6,6 +6,7 @@ import liveguruPageObjects.HomePageObject;
 import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
+import liveguruPageObjects.TVPageObject;
 
 public class LiveGuruPageFactoryManager {
 	
@@ -23,6 +24,10 @@ public class LiveGuruPageFactoryManager {
 	
 	public static MobilePageObject getMobilePage(WebDriver driver) {
 		return new MobilePageObject(driver);
+	}
+	
+	public static TVPageObject getTVPage(WebDriver driver) {
+		return new TVPageObject(driver);
 	}
 	
 

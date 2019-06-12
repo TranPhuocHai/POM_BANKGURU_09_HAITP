@@ -77,7 +77,7 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.clear();
 	}
-	
+
 	public void clearTextElement(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		highlightElement(driver, locator);
@@ -111,7 +111,7 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		element.sendKeys(sendKeyValue);
 	}
-	
+
 	public void selectItemInDropdown(WebDriver driver, String locator, String value) {
 		element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
@@ -174,6 +174,10 @@ public class AbstractPage {
 		return element.getText();
 	}
 
+	public String getParentWindowID(WebDriver driver) {
+		return driver.getWindowHandle();
+	}
+
 	public int countElementNumber(WebDriver driver, String locator) {
 		elements = driver.findElements(By.xpath(locator));
 		return elements.size();
@@ -185,7 +189,7 @@ public class AbstractPage {
 			element.click();
 		}
 	}
-	
+
 	public void checkToCheckBoxOrRadioButton(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
@@ -355,7 +359,7 @@ public class AbstractPage {
 		action = new Actions(driver);
 		action.sendKeys(element, key).perform();
 	}
-	
+
 	public void sendKeyBoardToElement(WebDriver driver, String locator, Keys key, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		highlightElement(driver, locator);
@@ -400,8 +404,8 @@ public class AbstractPage {
 		element = driver.findElement(By.xpath(locator));
 		javascriptExecutor.executeScript("arguments[0].removeAttribute('" + attribute + "');", element);
 	}
-	
-	public void removeAttributeInDOM(WebDriver driver, String locator, String attribute, String... values ) {
+
+	public void removeAttributeInDOM(WebDriver driver, String locator, String attribute, String... values) {
 		javascriptExecutor = (JavascriptExecutor) driver;
 		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
@@ -509,136 +513,212 @@ public class AbstractPage {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
-	
-	/* ============================== BANKGURU Dynamic Locator method ==============================  */
-	
+	/*
+	 * ============================== BANKGURU Dynamic Locator method
+	 * ==============================
+	 */
+
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
 		return getTextElement(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
 	}
-	
-	public void clickToDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+
+	public void clickToDynamicTextboxOrTextArea(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
-		
+
 	}
-	
-	public void clearDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+
+	public void clearDynamicTextboxOrTextArea(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		clearTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
-		
+
 	}
-	
-	public void pressTABKeyToDynamicTextboxOrTextArea(WebDriver driver, String fieldName ) {
+
+	public void pressTABKeyToDynamicTextboxOrTextArea(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		sendKeyBoardToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, Keys.TAB, fieldName);
-		
+
 	}
-	
-	public void inputToDynamicTextboxOrTextArea(WebDriver driver, String fieldName, String sendKeyValue ) {
+
+	public void inputToDynamicTextboxOrTextArea(WebDriver driver, String fieldName, String sendKeyValue) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		sendKeyToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, sendKeyValue, fieldName);
-		
+
 	}
-	
+
 	public void checkToDynamicCheckboxOrRadioButton(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, fieldName);
 		checkToCheckBoxOrRadioButton(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON, fieldName);
 	}
-	
-	
+
 	public void clickToDynamicButton(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
 		checkToCheckBoxOrRadioButton(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
 	}
-	
+
 	public void selectItemInDynamicDropdown(WebDriver driver, String fieldName, String expectedValueInDropdown) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
 		selectItemInDropdown(driver, AbstractPageUI.DYNAMIC_DROPDOWN, expectedValueInDropdown, fieldName);
 	}
-	
+
 	public String getTextDynamicValidateMessage(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_VALIDATE_MESSAGE, fieldName);
 		return getTextElement(driver, AbstractPageUI.DYNAMIC_VALIDATE_MESSAGE, fieldName);
-		
+
 	}
-	
+
 	public boolean isDynamicPageTitleDisplayed(WebDriver driver, String message) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
 		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
-		
+
 	}
-	
+
 	public void removeAtrributeDynamicTextbox(WebDriver driver, String fieldName, String attribute) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
-	
-	/* =================================== LIVEGURU Dynamic Locator method ===========================================  */
 
-	public void inputToDynamicTextboxLiveGuru(WebDriver driver,  String fieldName, String sendKeyValue) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX, fieldName);
-		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX, sendKeyValue, fieldName);
-		
+	/*
+	 * =================================== LIVEGURU Dynamic Locator method
+	 * ===========================================
+	 */
+
+	public void inputToDynamicTextboxTextAreaLiveGuru(WebDriver driver, String fieldName, String sendKeyValue) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
+		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, sendKeyValue, fieldName);
+
 	}
-	
+
 	public void clickToAccountMenu(WebDriver driver) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
 		clickToElement(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
-		
+
 	}
-	
+
 	public void clickToDynamicLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
 		clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
-		
+
 	}
 
 	public void clickToDynamicLiveGuruButton(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
 		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
+	}
+
+	public String getCostDynamicProductInMobileListPage(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_PRICE_IN_LIST_PAGE, productName);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_PRICE_IN_LIST_PAGE, productName);
+
+	}
+
+	public String getCostDynamicProductInMobileDetailsPage(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_PRICE_IN_DETAILS_PAGE, productName);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_PRICE_IN_DETAILS_PAGE, productName);
+
+	}
+
+	public void clickToDynamicProductLink(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+
+	}
+
+	public void clickToDynamicAddToCartButton(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+
+	}
+
+	public boolean isShoppingCartMessageDisplayed(WebDriver driver) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
+
+	}
+
+	public boolean isDynamicProductLinkDisplayed(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+	}
+	
+	public boolean isDiscountTitleDisplayed(WebDriver driver, String cuponCode) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
 		
 	}
 
+	public boolean isDynamicProductAddedToWishListMessageDisplayed(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
+
+	}
+
+	public String getTextDiscountMoney(WebDriver driver,String cuponCode) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
+
+	}
+
+	public String getTextGrandTotalMoney(WebDriver driver) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.GRANT_TOTAL_MONEY);
+		return getTextElement(driver, LiveGuruAbstractPageUI.GRANT_TOTAL_MONEY);
+
+	}
+
+	public void clearDynamicQTYTextbox(WebDriver driver,String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
+		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
+
+	}
+
+	public void inputToDynamicQTYTextbox(WebDriver driver, String productName, String productQuantity) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
+		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productQuantity, productName);
+
+	}
+
+	public void clickToDynamiUpdateButton(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
+		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
+
+	}
+
+	public String getTextDynamicErrorMessage(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ERROR_MESSAGE, productName);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ERROR_MESSAGE, productName);
+	}
+
+	public void clickToAddToCompareLinkOfDynamicProduct(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
+		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
+		
+	}
+	
+	public void clickToAddToWishlistLinkOfDynamicProduct(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
+		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
+
+	}
+
+	public boolean isDynamicLiveGuruPageTitleDisplayed(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
+	}
+	
+
+	public boolean isYourWishListHasBeenSharedMessageDisplayed(WebDriver driver) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
+		
+	}
+	
+
+	public boolean isCorrectNumberItemOfDynamicProductDisplayed(WebDriver driver, String productName, String numberOfItem) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_QTY, productName, numberOfItem);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_QTY, productName, numberOfItem);
+		
+	}
+	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

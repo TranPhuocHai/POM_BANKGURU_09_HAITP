@@ -12,11 +12,6 @@ public class MyAccountPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public boolean isMyDashBoardTextDisplayed() {
-		waitForElementVisible(driver, MyAccountPageUI.MY_DASHBOARD_TEXT);
-		return isControlDisplayed(driver, MyAccountPageUI.MY_DASHBOARD_TEXT);
-	}
-
 	public void clickToDynamicMyAccountLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);
 		clickToElement(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);

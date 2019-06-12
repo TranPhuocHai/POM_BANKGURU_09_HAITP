@@ -11,7 +11,6 @@
 		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="livegurufrontend" />
 		<classes>
-			<class name="com.liveguru.customer.FrontEndUserRole" />
 			<class name="com.liveguru.order.OrderFunction" />
 		</classes>
 	</test>

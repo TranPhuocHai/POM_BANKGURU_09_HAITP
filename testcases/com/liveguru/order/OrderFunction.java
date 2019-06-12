@@ -296,8 +296,6 @@ public class OrderFunction extends AbstractTest{
 		log.info("SharingWishlist: Step 10 - Verify there's 1 item LG LCD in 'MY WISHLIST' page");
 		verifyTrue(TVPage.isCorrectNumberItemOfDynamicProductDisplayed(driver, "LG LCD", "1"));
 		
-		
-		
 	}
 	
 	

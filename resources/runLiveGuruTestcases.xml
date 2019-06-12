@@ -7,8 +7,8 @@
 	</listeners>
 
 
-	<test name="Test on FIREFOX">
-		<parameter name="browser" value="firefox" />
+	<test name="Test on CHROME">
+		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="livegurufrontend" />
 		<classes>
 			<class name="com.liveguru.order.OrderFunction" />

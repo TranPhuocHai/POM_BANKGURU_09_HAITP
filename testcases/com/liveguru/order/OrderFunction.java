@@ -12,6 +12,7 @@ import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
 import liveguruPageObjects.TVPageObject;
+import liveguruUI.LiveGuruAbstractPageUI;
 
 public class OrderFunction extends AbstractTest{
 	private WebDriver driver;
@@ -275,7 +276,7 @@ public class OrderFunction extends AbstractTest{
 		TVPage.clickToAddToWishlistLinkOfDynamicProduct(driver, "LG LCD");
 		
 		log.info("SharingWishlist: Step 04 - verify message 'LG LCD has been added to your wishlist. Click here to continue shopping.' displayed");
-		TVPage.isDynamicProductAddedToWishListMessageDisplayed(driver, "LG LCD");
+		verifyEquals(TVPage.getTextDynamicProductAddedToWishListMessageDisplayed(driver, "LG LCD"),"LG LCD has been added to your wishlist. Click here to continue shopping.");
 		
 		log.info("SharingWishlist: Step 05 - Click to 'SHARE WISHLIST' button");
 		TVPage.clickToDynamicLiveGuruButton(driver, "Share Wishlist");

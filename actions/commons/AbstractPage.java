@@ -647,10 +647,10 @@ public class AbstractPage {
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
 		
 	}
-
-	public boolean isDynamicProductAddedToWishListMessageDisplayed(WebDriver driver, String productName) {
+	
+	public String getTextDynamicProductAddedToWishListMessageDisplayed(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
 
 	}
 

@@ -1,5 +1,7 @@
 package commons;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -170,5 +172,11 @@ public class AbstractTest {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
+	
+    public String TodayYYYYMMdd() {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
+        return formatter.format(date);
+    }
 
 }

@@ -55,7 +55,7 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		log.info("Precondition: Step 06 - Verify User ID infor displayed");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
 		
-		log.info("Precondition: Step 17 - Click to 'New Customer' link");
+		log.info("Precondition: Step 07 - Click to 'New Customer' link");
 		homePage.openMultiplePage(driver, "New Customer");
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 

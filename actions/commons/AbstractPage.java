@@ -579,10 +579,26 @@ public class AbstractPage {
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
+	public Object getTextInforInDynamicTextboxTextArea (WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+	}
+
 	/*
-	 * =================================== LIVEGURU Dynamic Locator method
+	 * =================== LIVEGURU Dynamic Locator method
 	 * ===========================================
 	 */
+	
+	
+	public void acceptAnyAlert(WebDriver driver) {
+		waitForAlertPresence(driver);
+		acceptAlert(driver);
+	}
+	
+	public String getTextAnyAlert(WebDriver driver) {
+		waitForAlertPresence(driver);
+		return getTextAlert(driver);
+	}
 
 	public void inputToDynamicTextboxTextAreaLiveGuru(WebDriver driver, String fieldName, String sendKeyValue) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
@@ -641,20 +657,20 @@ public class AbstractPage {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
 	}
-	
+
 	public boolean isDiscountTitleDisplayed(WebDriver driver, String cuponCode) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_TITLE, cuponCode);
-		
+
 	}
-	
+
 	public String getTextDynamicProductAddedToWishListMessageDisplayed(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
 		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_ADDED_MESSAGE, productName);
 
 	}
 
-	public String getTextDiscountMoney(WebDriver driver,String cuponCode) {
+	public String getTextDiscountMoney(WebDriver driver, String cuponCode) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
 		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_DISCOUNT_MONEY, cuponCode);
 
@@ -666,7 +682,7 @@ public class AbstractPage {
 
 	}
 
-	public void clearDynamicQTYTextbox(WebDriver driver,String productName) {
+	public void clearDynamicQTYTextbox(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
 		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
 
@@ -692,9 +708,9 @@ public class AbstractPage {
 	public void clickToAddToCompareLinkOfDynamicProduct(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
 		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
-		
+
 	}
-	
+
 	public void clickToAddToWishlistLinkOfDynamicProduct(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
 		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
@@ -705,20 +721,17 @@ public class AbstractPage {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
 	}
-	
 
 	public boolean isYourWishListHasBeenSharedMessageDisplayed(WebDriver driver) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
-		
+
 	}
-	
 
 	public boolean isCorrectNumberItemOfDynamicProductDisplayed(WebDriver driver, String productName, String numberOfItem) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_QTY, productName, numberOfItem);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_QTY, productName, numberOfItem);
-		
+
 	}
-	
 
 }

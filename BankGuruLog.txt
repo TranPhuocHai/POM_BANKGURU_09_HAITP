@@ -1,2 +1,10 @@
-2019-06-13 16:10:27,398 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 01 - open Login Page
-2019-06-13 16:10:27,405 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 02 - Verify Login Form displayed
+2019-06-13 22:14:34,195 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 01 - open Login Page
+2019-06-13 22:14:34,200 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 02 - Verify Login Form displayed
+2019-06-13 22:15:03,585 INFO  com.bankguru.customer.NewCustomer - OS name= windows 10
+2019-06-13 22:15:03,585 INFO  com.bankguru.customer.NewCustomer - 
+2019-06-13 22:15:03,591 INFO  com.bankguru.account.NewAccount - OS name= windows 10
+2019-06-13 22:15:03,591 INFO  com.bankguru.account.NewAccount - 
+2019-06-13 22:15:03,598 INFO  com.bankguru.account.EditAccount - OS name= windows 10
+2019-06-13 22:15:03,598 INFO  com.bankguru.account.EditAccount - 
+2019-06-13 22:15:03,607 INFO  com.bankguru.payment.Payment - OS name= windows 10
+2019-06-13 22:15:03,607 INFO  com.bankguru.payment.Payment - 

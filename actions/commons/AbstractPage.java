@@ -579,9 +579,13 @@ public class AbstractPage {
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
-	public Object getTextInforInDynamicTextboxTextArea (WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
-		return getTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+	public boolean isCorrectInforOfDynamicTextbox (WebDriver driver, String fieldName, String value) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
+	}
+	public boolean isCorrectInforOfDynamicTextArea (WebDriver driver, String fieldName, String text) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
+		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
 	}
 
 	/*

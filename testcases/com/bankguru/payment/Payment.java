@@ -56,7 +56,7 @@ public class Payment extends AbstractTest {
 	private String editState = "Ngu Hanh Son";
 	private String editPin = "550000";
 	private String editPhoneNumber = "0975123456";
-	private String editEmailID = "hai.gsd@gmail.com";
+	private String editEmail = "hai.gsd@gmail.com";
 
 	private int intCurrentAmount = 50000;
 	private int intDepositAmount = 5000;
@@ -180,15 +180,15 @@ public class Payment extends AbstractTest {
 		editcustomerPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("EditCustomer: Step 04 - Verify all infor of Customer are correct before starting edit");
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "name"), name);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "gender"), gender);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "dob"), dateOfBirth);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "addr"), address);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "city"), city);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "state"), state);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "pinno"), pin);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "telephoneno"), mobileNumber);
-		verifyEquals(editcustomerPage.getTextInforInDynamicTextboxTextArea(driver, "emailid"), email);
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "name", name));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "gender", gender));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "dob", dateOfBirth));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextArea(driver, "addr", address));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "city", city));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "state", state));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "pinno", pin));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "telephoneno", mobileNumber));
+		verifyTrue(editcustomerPage.isCorrectInforOfDynamicTextbox(driver, "emailid", email));
 
 		log.info("EditCustomer: Step 05 - Clear 'Address' Text Area");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
@@ -224,7 +224,7 @@ public class Payment extends AbstractTest {
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");
 
 		log.info("EditCustomer: Step 16 - Input to 'Email' textbox");
-		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", editEmailID);
+		editcustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", editEmail);
 
 		log.info("EditCustomer: Step 17 - Click to Submit button");
 		editcustomerPage.clickToDynamicButton(driver, "sub");
@@ -242,7 +242,7 @@ public class Payment extends AbstractTest {
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "State"), editState);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Pin"), editPin);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), editPhoneNumber);
-		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Email"), editEmailID);
+		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Email"), editEmail);
 
 	}
 
@@ -274,7 +274,7 @@ public class Payment extends AbstractTest {
 		log.info("AddNewAccount: Step 08 - Verify all infor are correct");
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Customer ID"), customerID);
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Customer Name"), name);
-		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Email"), email);
+		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Email"), editEmail);
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Account Type"), "Current");
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Date of Opening"), TodayYYYYMMdd());
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), currentAmount);
@@ -378,7 +378,7 @@ public class Payment extends AbstractTest {
 		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "From Account Number"), payerAccountID);
 
 		log.info("TransferMoney: Step 09 - Verify Payees Account is correct");
-		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "To Account Number"), email);
+		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "To Account Number"), EditAccount.ACCOUNT_ID);
 
 		log.info("TransferMoney: Step 10 - Verify Transferred amount is correct");
 		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "Amount"), transferAmount);
@@ -535,7 +535,7 @@ public class Payment extends AbstractTest {
 		
 		log.info("DeleteCustomer: Step 13 - Verify 'Customer does not exist!' alert displayed");
 		if (!browserName.equals("ie")) {
-			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Customer does not exist!");
+			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Customer does not exist!!");
 
 		}
 

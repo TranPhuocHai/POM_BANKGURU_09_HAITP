@@ -7,6 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
+import com.bankguru.customer.EditCustomer;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
 import bankguruPageFactoryManager.PageFactoryManager;
@@ -247,7 +248,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void Payment_03_AddNewAccount() {
+	public void Payment_03_CreateNewAccountAndCheckCurrentAccount() {
 
 		log.info("AddNewAccount: Step 01 - Click to 'New Account' link");
 		editcustomerPage.openMultiplePage(driver, "New Account");
@@ -316,7 +317,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void Payment_05_WithdrawFromCurrentAccount() {
+	public void Payment_05_WithdrawalMoneyFromCurrentAccount() {
 
 		log.info("WithdrawFromCurrentAccount: Step 01 - Click to 'Withdrawal' link ");
 		depositPage.openMultiplePage(driver, "Withdrawal");
@@ -350,7 +351,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void Payment_06_TransferMoney() {
+	public void Payment_06_TransferMoneyToAnotherAccount() {
 
 		log.info("TransferMoney: Step 01 - Click to 'Fund Transfer' link ");
 		withdrawalPage.openMultiplePage(driver, "Fund Transfer");
@@ -389,7 +390,7 @@ public class Payment extends AbstractTest {
 	}
 
 	@Test
-	public void Payment_07_BalanceEnquiry() {
+	public void Payment_07_CheckCurrentAccountBalance() {
 
 		log.info("BalanceEnquiry: Step 01 - Click to 'Balance Enquiry' link ");
 		fundTransferPage.openMultiplePage(driver, "Balance Enquiry");
@@ -416,9 +417,8 @@ public class Payment extends AbstractTest {
 
 	}
 
-	@Parameters("browser")
 	@Test
-	public void Payment_08_DeleteAccount(String browserName) {
+	public void Payment_08_DeleteCurrentAccountAndVerify() {
 
 		log.info("DeleteAccount: Step 01 - Click to 'Delete Account' link ");
 		balanceEnquiryPage.openMultiplePage(driver, "Delete Account");
@@ -434,18 +434,16 @@ public class Payment extends AbstractTest {
 		deleteAccountPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("DeleteAccount: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteAccountPage.getTextAnyAlert(driver), "Do you really want to delete this Account?");
-
 		}
 
 		log.info("DeleteAccount: Step 05 - Accept alert");
 		deleteAccountPage.acceptAnyAlert(driver);
 
 		log.info("DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteAccountPage.getTextAnyAlert(driver), "Account Deleted Sucessfully");
-
 		}
 
 		log.info("DeleteAccount: Step 07 - Accept alert");
@@ -460,9 +458,8 @@ public class Payment extends AbstractTest {
 		deleteAccountPage.clickToDynamicButton(driver, "AccSubmit");
 		
 		log.info("DeleteAccount: Step 09 - Verify 'Do you really want to delete this Account?' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteAccountPage.getTextAlert(driver), "Do you really want to delete this Account?");
-			
 		}
 		
 		log.info("DeleteAccount: Step 10 - Accept alert");
@@ -470,9 +467,8 @@ public class Payment extends AbstractTest {
 		
 		
 		log.info("DeleteAccount: Step 11 - Verify 'Account does not exist?' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteAccountPage.getTextAnyAlert(driver), "Account does not exist");
-
 		}
 		
 		log.info("DeleteAccount: Step 12 - Accept alert");
@@ -481,9 +477,8 @@ public class Payment extends AbstractTest {
 
 	}
 
-	@Parameters("browser")
 	@Test
-	public void Payment_09_DeleteCustomer(String browserName) {
+	public void Payment_09_DeleteCustomerAndVerify() {
 
 		log.info("DeleteCustomer: Step 01 - Click to 'Delete Customer' link ");
 		deleteAccountPage.openMultiplePage(driver, "Delete Customer");
@@ -496,18 +491,16 @@ public class Payment extends AbstractTest {
 		deleteCustomerPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("DeleteCustomer: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Do you really want to delete this Customer?");
-
 		}
 
 		log.info("DeleteCustomer: Step 05 - Accept alert");
 		deleteCustomerPage.acceptAnyAlert(driver);
 
 		log.info("DeleteCustomer: Step 06 - Verify 'Customer deleted Successfully' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Customer deleted Successfully");
-
 		}
 
 		log.info("DeleteCustomer: Step 07 - Accept alert");
@@ -525,18 +518,16 @@ public class Payment extends AbstractTest {
 		deleteCustomerPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("DeleteCustomer: Step 11 - Verify 'Do you really want to delete this Customer?' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Do you really want to delete this Customer?");
-			
 		}
 		
 		log.info("DeleteCustomer: Step 12 - Accept alert");
 		deleteCustomerPage.acceptAnyAlert(driver);
 		
 		log.info("DeleteCustomer: Step 13 - Verify 'Customer does not exist!' alert displayed");
-		if (!browserName.equals("ie")) {
+		if (!driver.toString().toLowerCase().contains("internet explorer")) {
 			verifyEquals(deleteCustomerPage.getTextAnyAlert(driver), "Customer does not exist!!");
-
 		}
 
 		log.info("DeleteCustomer: Step 14 - Accept alert");

@@ -183,10 +183,9 @@ public class AbstractTest {
 		int month = nowUTC.getMonthOfYear();
 		if (month <10) {
 			return "0"+month;
-		} else {
+		} 
 		return String.valueOf(month);
 		}
-	}
 	
 	public String getCurrentYear() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);

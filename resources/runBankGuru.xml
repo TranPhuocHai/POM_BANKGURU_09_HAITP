@@ -7,8 +7,8 @@
 	</listeners>
 
 
-	<test name="Test on FIREFOX">
-		<parameter name="browser" value="firefox" />
+	<test name="Test on CHROME">
+		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="bankguru" />
 		<classes>
 			<class name="com.bankguru.user.Common_01_RegisterToSystem" />

@@ -3,7 +3,6 @@ package bankguruUI;
 public class AbstractPageUI {
 	public static final String DYNAMIC_LINK = "//ul[@class='menusubnav']//a[text()='%s']";
 	public static final String DYNAMIC_TABLE_INFOR = "//td[text()='%s']//following-sibling::td";
-	
 	public static final String DYNAMIC_TEXTBOX_TEXTAREA = "(//textarea | // input) [@name='%s']";
 	public static final String DYNAMIC_TEXTBOX_WITH_INFO = "//input[@name='%s' and @value='%s']";
 	public static final String DYNAMIC_TEXT_AREA_WITH_INFO = "//textarea[@name='%s' and text()='%s']";

@@ -513,10 +513,7 @@ public class AbstractPage {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
-	/*
-	 * ============================== BANKGURU Dynamic Locator method
-	 * ==============================
-	 */
+	/* =========================== BANKGURU Dynamic Locator method =============================*/
 
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
@@ -579,19 +576,16 @@ public class AbstractPage {
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
-	public boolean isCorrectInforOfDynamicTextbox (WebDriver driver, String fieldName, String value) {
+	public boolean isCorrectInforOfDynamicTextboxDisplayed (WebDriver driver, String fieldName, String value) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
 		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
 	}
-	public boolean isCorrectInforOfDynamicTextArea (WebDriver driver, String fieldName, String text) {
+	public boolean isCorrectInforOfDynamicTextAreaDisplayed (WebDriver driver, String fieldName, String text) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
 		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
 	}
 
-	/*
-	 * =================== LIVEGURU Dynamic Locator method
-	 * ===========================================
-	 */
+	/* =================== LIVEGURU Dynamic Locator method ==============================*/
 	
 	
 	public void acceptAnyAlert(WebDriver driver) {

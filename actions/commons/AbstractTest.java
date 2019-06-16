@@ -172,10 +172,10 @@ public class AbstractTest {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
+	
 	public String getCurrentDay() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		return String.valueOf(nowUTC.getDayOfMonth());
-		
 	}
 	
 	public String getCurrentMonth() {
@@ -183,18 +183,15 @@ public class AbstractTest {
 		int month = nowUTC.getMonthOfYear();
 		if (month <10) {
 			return "0"+month;
-		}
-		
+		} else {
 		return String.valueOf(month);
-		
+		}
 	}
 	
 	public String getCurrentYear() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		return String.valueOf(nowUTC.getYear());
-		
 	}
-	
     public String getToday() {
         String today = getCurrentYear() + "-" + getCurrentMonth()+ "-" + getCurrentDay();
         return today;

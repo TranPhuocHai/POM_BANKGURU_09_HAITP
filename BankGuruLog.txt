@@ -1,503 +1,503 @@
-2019-06-16 17:03:58,937 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 01 - open Login Page
-2019-06-16 17:03:58,941 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 02 - Verify Login Form displayed
-2019-06-16 17:03:59,126 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
-2019-06-16 17:03:59,128 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 03 - Click to 'here' link
-2019-06-16 17:04:00,952 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 04 - Verify Register Page displayed
-2019-06-16 17:04:01,132 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
-2019-06-16 17:04:01,132 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 05 - Input to Email ID textbox
-2019-06-16 17:04:01,389 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 06 - Click to Submit button
-2019-06-16 17:04:02,420 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 07 - Get UserID and Password Infor
-2019-06-16 17:04:02,784 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 08 - Quit browser
-2019-06-16 17:04:02,785 INFO  com.bankguru.user.Common_01_RegisterToSystem - OS name= windows 10
-2019-06-16 17:04:03,547 INFO  com.bankguru.user.Common_01_RegisterToSystem - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
-2019-06-16 17:04:09,796 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 01 - Open Login Page
-2019-06-16 17:04:09,796 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 02 - Verify Login Form displayed
-2019-06-16 17:04:09,976 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:09,976 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
-2019-06-16 17:04:10,412 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 04 - Click to Login button to move to HomePage Url
-2019-06-16 17:04:11,623 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
-2019-06-16 17:04:11,818 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:11,818 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 06 - Verify User ID infor displayed
-2019-06-16 17:04:11,989 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:11,989 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 07 - Click to 'New Customer' link
-2019-06-16 17:04:12,796 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 08 - Input to 'Customer Name' textbox
-2019-06-16 17:04:13,057 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 09 - Select Male gender
-2019-06-16 17:04:13,100 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 10 - Remove 'type' attribute of Date of Birth textbox
-2019-06-16 17:04:13,139 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 11 - Input to 'Date Of Birth' textbox
-2019-06-16 17:04:13,352 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 12 - Input to 'Adress' text area
-2019-06-16 17:04:13,571 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 13 - Input to 'City' textbox
-2019-06-16 17:04:13,782 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 14 - Input to 'State' textbox
-2019-06-16 17:04:13,997 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 15 - Input to 'Pin' textbox
-2019-06-16 17:04:14,201 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 16 - Input to 'Mobile Number' textbox
-2019-06-16 17:04:14,420 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 17 - Input to 'Email' textbox
-2019-06-16 17:04:14,683 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 18 - Input to 'Password' textbox
-2019-06-16 17:04:14,886 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 19 - Click to 'Submit' button
-2019-06-16 17:04:16,040 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 20 - Verify title 'Customer Registered Successfully!!!' displayed
-2019-06-16 17:04:16,230 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:16,230 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 21 - Get 'Customer ID'
-2019-06-16 17:04:16,444 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 22 - Verify all infor of new customer are correct
-2019-06-16 17:04:16,619 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Tran Phuoc Hai
-2019-06-16 17:04:16,620 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Tran Phuoc Hai
-2019-06-16 17:04:16,620 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:16,620 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:16,795 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = male
-2019-06-16 17:04:16,795 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = male
-2019-06-16 17:04:16,795 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:16,795 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:16,965 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 1988-07-31
-2019-06-16 17:04:16,966 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 1988-07-31
-2019-06-16 17:04:16,966 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:16,966 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:17,140 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 100 Dia Chi
-2019-06-16 17:04:17,140 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 100 Dia Chi
-2019-06-16 17:04:17,140 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:17,140 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:17,318 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Ha Noi
-2019-06-16 17:04:17,318 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Ha Noi
-2019-06-16 17:04:17,318 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:17,318 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:17,486 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Hoan Kiem
-2019-06-16 17:04:17,486 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Hoan Kiem
-2019-06-16 17:04:17,486 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:17,486 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:17,655 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 600000
-2019-06-16 17:04:17,655 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 600000
-2019-06-16 17:04:17,655 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:17,655 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:17,827 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 0987654321
-2019-06-16 17:04:17,827 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 0987654321
-2019-06-16 17:04:17,827 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:17,827 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:18,005 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = haitp655342@gmail.com
-2019-06-16 17:04:18,005 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = haitp655342@gmail.com
-2019-06-16 17:04:18,005 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
-2019-06-16 17:04:18,005 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
-2019-06-16 17:04:18,006 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - OS name= windows 10
-2019-06-16 17:04:18,724 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
-2019-06-16 17:04:24,623 INFO  com.bankguru.account.EditAccount - Precondition: Step 01 - Open Login Page
-2019-06-16 17:04:24,623 INFO  com.bankguru.account.EditAccount - Precondition: Step 02 - Verify Login Form displayed
-2019-06-16 17:04:24,802 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:24,802 INFO  com.bankguru.account.EditAccount - Precondition: Step 03 - Input to userID and 'Password' textboxes
-2019-06-16 17:04:25,248 INFO  com.bankguru.account.EditAccount - Precondition: Step 04 - Click to Login button to move to HomePage Url
-2019-06-16 17:04:26,506 INFO  com.bankguru.account.EditAccount - Precondition: Step 05 - Verify Welcome message of Home page displayed
-2019-06-16 17:04:26,699 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:26,699 INFO  com.bankguru.account.EditAccount - Precondition: Step 06 - Verify User ID infor displayed
-2019-06-16 17:04:26,869 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:26,869 INFO  com.bankguru.account.EditAccount - Precondition: Step 07 - Click To 'New Account' link
-2019-06-16 17:04:27,643 INFO  com.bankguru.account.EditAccount - Precondition: Step 08 - Verify Title 'Add new account form' displayed
-2019-06-16 17:04:27,838 INFO  com.bankguru.account.EditAccount - Precondition: Step 09 - Input to 'Customer id' textbox 
-2019-06-16 17:04:28,044 INFO  com.bankguru.account.EditAccount - Precondition: Step 10 - select 'Current' in 'Account type' dropdown
-2019-06-16 17:04:28,141 INFO  com.bankguru.account.EditAccount - Precondition: Step 11 - Input to 'Initial deposit' textbox
-2019-06-16 17:04:28,347 INFO  com.bankguru.account.EditAccount - Precondition: Step 11 - Click to Submit button
-2019-06-16 17:04:29,671 INFO  com.bankguru.account.EditAccount - Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed
-2019-06-16 17:04:29,867 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:29,867 INFO  com.bankguru.account.EditAccount - Precondition: Step 13 - Veirfy current amount is correct
-2019-06-16 17:04:30,045 INFO  com.bankguru.account.EditAccount - Actual = 50000
-2019-06-16 17:04:30,046 INFO  com.bankguru.account.EditAccount - Expected = 50000
-2019-06-16 17:04:30,046 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:30,046 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:30,046 INFO  com.bankguru.account.EditAccount - Precondition: Step 14 - Get Account ID infor
-2019-06-16 17:04:30,217 INFO  com.bankguru.account.EditAccount - Precondition: Step 15 - Click to 'Edit Account' link
-2019-06-16 17:04:31,126 INFO  com.bankguru.account.EditAccount - Precondition: Step 16 - Veify 'Edit Account Form' title displayed
-2019-06-16 17:04:31,331 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:31,336 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:31,516 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
-2019-06-16 17:04:31,703 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
-2019-06-16 17:04:31,889 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
-2019-06-16 17:04:32,063 INFO  com.bankguru.account.EditAccount - Actual = Account Number must not be blank
-2019-06-16 17:04:32,064 INFO  com.bankguru.account.EditAccount - Expected = Account Number must not be blank
-2019-06-16 17:04:32,064 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:32,064 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:32,065 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:32,228 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:32,417 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-16 17:04:32,577 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
-2019-06-16 17:04:32,577 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
-2019-06-16 17:04:32,577 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:32,577 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:32,577 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:32,737 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:32,921 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-16 17:04:33,078 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
-2019-06-16 17:04:33,078 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
-2019-06-16 17:04:33,078 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:33,078 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:33,080 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:33,246 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:33,444 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-16 17:04:33,608 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
-2019-06-16 17:04:33,608 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
-2019-06-16 17:04:33,608 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:33,608 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:33,608 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:33,777 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:33,959 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-16 17:04:34,120 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
-2019-06-16 17:04:34,120 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
-2019-06-16 17:04:34,120 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:34,120 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:34,120 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:34,283 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:34,489 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
-2019-06-16 17:04:34,652 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
-2019-06-16 17:04:34,652 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
-2019-06-16 17:04:34,652 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:34,652 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:34,653 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:34,817 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:34,986 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
-2019-06-16 17:04:35,143 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
-2019-06-16 17:04:35,143 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
-2019-06-16 17:04:35,143 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:35,143 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:35,144 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 01 - Clear 'Account Number' textbox
-2019-06-16 17:04:35,307 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 02 - Input to 'Account Number' textbox
-2019-06-16 17:04:35,493 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 03 - Click to submit button
-2019-06-16 17:04:37,127 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 04 - Verify Edit Customer form displayed
-2019-06-16 17:04:37,318 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:37,319 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 01 - Select 'Saving' in 'Account type' dropdown
-2019-06-16 17:04:37,404 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 02 - Click to Submit button
-2019-06-16 17:04:39,240 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 03 - Verify 'Account details updated successfully!!!' message displayed
-2019-06-16 17:04:39,429 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:39,429 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 04 - Verify Account type is 'Savings'
-2019-06-16 17:04:39,597 INFO  com.bankguru.account.EditAccount - Actual = Savings
-2019-06-16 17:04:39,597 INFO  com.bankguru.account.EditAccount - Expected = Savings
-2019-06-16 17:04:39,597 INFO  com.bankguru.account.EditAccount - Compare value = true
-2019-06-16 17:04:39,597 INFO  com.bankguru.account.EditAccount - ===PASSED===
-2019-06-16 17:04:39,598 INFO  com.bankguru.account.EditAccount - OS name= windows 10
-2019-06-16 17:04:40,308 INFO  com.bankguru.account.EditAccount - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
-2019-06-16 17:04:46,088 INFO  com.bankguru.payment.Payment - Precondition: Step 01 - Open Login Page
-2019-06-16 17:04:46,088 INFO  com.bankguru.payment.Payment - Precondition: Step 02 - Verify Login Form displayed
-2019-06-16 17:04:46,262 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:46,263 INFO  com.bankguru.payment.Payment - Precondition: Step 03 - Input to userID and 'Password' textboxes
-2019-06-16 17:04:46,699 INFO  com.bankguru.payment.Payment - Precondition: Step 04 - Click to Login button to move to HomePage Url
-2019-06-16 17:04:47,960 INFO  com.bankguru.payment.Payment - Precondition: Step 05 - Verify Welcome message of Home page displayed
-2019-06-16 17:04:48,152 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:48,152 INFO  com.bankguru.payment.Payment - Precondition: Step 06 - Verify User ID infor displayed
-2019-06-16 17:04:48,314 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:48,315 INFO  com.bankguru.payment.Payment - Payment_01: Step 01 - Click to 'New Customer' link
-2019-06-16 17:04:49,271 INFO  com.bankguru.payment.Payment - Payment_01: Step 02 - Input to 'Customer Name' textbox
-2019-06-16 17:04:49,544 INFO  com.bankguru.payment.Payment - Payment_01: Step 03 - Select Male gender
-2019-06-16 17:04:49,580 INFO  com.bankguru.payment.Payment - Payment_01: Step 04 - Remove 'type' attribute of Date of Birth textbox
-2019-06-16 17:04:49,620 INFO  com.bankguru.payment.Payment - Payment_01: Step 05 - Input to 'Date Of Birth' textbox
-2019-06-16 17:04:49,841 INFO  com.bankguru.payment.Payment - Payment_01: Step 06 - Input to 'Adress' text area
-2019-06-16 17:04:50,063 INFO  com.bankguru.payment.Payment - Payment_01: Step 07 - Input to 'City' textbox
-2019-06-16 17:04:50,272 INFO  com.bankguru.payment.Payment - Payment_01: Step 08 - Input to 'State' textbox
-2019-06-16 17:04:50,483 INFO  com.bankguru.payment.Payment - Payment_01: Step 09 - Input to 'Pin' textbox
-2019-06-16 17:04:50,688 INFO  com.bankguru.payment.Payment - Payment_01: Step 10 - Input to 'Mobile Number' textbox
-2019-06-16 17:04:50,905 INFO  com.bankguru.payment.Payment - Payment_01: Step 11 - Input to 'Email' textbox
-2019-06-16 17:04:51,175 INFO  com.bankguru.payment.Payment - Payment_01: Step 12 - Input to 'Password' textbox
-2019-06-16 17:04:51,380 INFO  com.bankguru.payment.Payment - Payment_01: Step 13 - Click to 'Submit' button
-2019-06-16 17:04:52,483 INFO  com.bankguru.payment.Payment - Payment_01: Step 14 - Verify title 'Customer Registered Successfully!!!' displayed
-2019-06-16 17:04:52,673 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:52,673 INFO  com.bankguru.payment.Payment - Payment_01: Step 15 - Get 'Customer ID'
-2019-06-16 17:04:52,850 INFO  com.bankguru.payment.Payment - Payment_01: Step 16 - Verify all informations of new customer are correct
-2019-06-16 17:04:53,030 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
-2019-06-16 17:04:53,030 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
-2019-06-16 17:04:53,030 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,030 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:53,203 INFO  com.bankguru.payment.Payment - Actual = male
-2019-06-16 17:04:53,203 INFO  com.bankguru.payment.Payment - Expected = male
-2019-06-16 17:04:53,203 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,203 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:53,381 INFO  com.bankguru.payment.Payment - Actual = 1988-07-31
-2019-06-16 17:04:53,381 INFO  com.bankguru.payment.Payment - Expected = 1988-07-31
-2019-06-16 17:04:53,381 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,381 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:53,559 INFO  com.bankguru.payment.Payment - Actual = 100 Dia Chi
-2019-06-16 17:04:53,559 INFO  com.bankguru.payment.Payment - Expected = 100 Dia Chi
-2019-06-16 17:04:53,559 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,559 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:53,734 INFO  com.bankguru.payment.Payment - Actual = Ha Noi
-2019-06-16 17:04:53,734 INFO  com.bankguru.payment.Payment - Expected = Ha Noi
-2019-06-16 17:04:53,734 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,735 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:53,907 INFO  com.bankguru.payment.Payment - Actual = Hoan Kiem
-2019-06-16 17:04:53,907 INFO  com.bankguru.payment.Payment - Expected = Hoan Kiem
-2019-06-16 17:04:53,907 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:53,907 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:54,075 INFO  com.bankguru.payment.Payment - Actual = 600000
-2019-06-16 17:04:54,075 INFO  com.bankguru.payment.Payment - Expected = 600000
-2019-06-16 17:04:54,075 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:54,075 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:54,247 INFO  com.bankguru.payment.Payment - Actual = 0987654321
-2019-06-16 17:04:54,247 INFO  com.bankguru.payment.Payment - Expected = 0987654321
-2019-06-16 17:04:54,247 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:54,247 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:54,418 INFO  com.bankguru.payment.Payment - Actual = haitp872090@gmail.com
-2019-06-16 17:04:54,418 INFO  com.bankguru.payment.Payment - Expected = haitp872090@gmail.com
-2019-06-16 17:04:54,418 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:04:54,418 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:54,419 INFO  com.bankguru.payment.Payment - Payment_02: Step 01 - Click to 'Delete Customer' link
-2019-06-16 17:04:55,419 INFO  com.bankguru.payment.Payment - Payment_02: Step 02 - Input to 'Customer ID' textbox
-2019-06-16 17:04:55,657 INFO  com.bankguru.payment.Payment - Payment_02: Step 03 - Click to Submit textbox
-2019-06-16 17:04:56,537 INFO  com.bankguru.payment.Payment - Payment_02: Step 04 - Verify all informations of Customer are correct before starting edit
-2019-06-16 17:04:56,722 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:56,887 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,055 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,218 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,381 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,548 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,718 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:57,891 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:58,066 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:04:58,066 INFO  com.bankguru.payment.Payment - Payment_02: Step 05 - Clear 'Address' Text Area
-2019-06-16 17:04:58,236 INFO  com.bankguru.payment.Payment - Payment_02: Step 06 - Input to 'Address' Text Area
-2019-06-16 17:04:58,452 INFO  com.bankguru.payment.Payment - Payment_02: Step 07 - Clear 'City' textbox
-2019-06-16 17:04:58,629 INFO  com.bankguru.payment.Payment - Payment_02: Step 08 - Input to 'City' textbox
-2019-06-16 17:04:58,820 INFO  com.bankguru.payment.Payment - Payment_02: Step 09 - Clear 'State' textbox
-2019-06-16 17:04:58,989 INFO  com.bankguru.payment.Payment - Payment_02: Step 10 - Input to 'State' textbox
-2019-06-16 17:04:59,193 INFO  com.bankguru.payment.Payment - Payment_02: Step 11 - Clear 'PIN' textbox
-2019-06-16 17:04:59,368 INFO  com.bankguru.payment.Payment - Payment_02: Step 12 - Input to 'PIN' textbox
-2019-06-16 17:04:59,563 INFO  com.bankguru.payment.Payment - Payment_02: Step 13 - Clear 'Mobile Number' textbox
-2019-06-16 17:04:59,736 INFO  com.bankguru.payment.Payment - Payment_02: Step 14 - Input to 'Mobile Number' textbox
-2019-06-16 17:04:59,941 INFO  com.bankguru.payment.Payment - Payment_02: Step 15 - Clear 'Email' textbox
-2019-06-16 17:05:00,118 INFO  com.bankguru.payment.Payment - Payment_02: Step 16 - Input to 'Email' textbox
-2019-06-16 17:05:00,339 INFO  com.bankguru.payment.Payment - Payment_02: Step 17 - Click to Submit button
-2019-06-16 17:05:02,103 INFO  com.bankguru.payment.Payment - Payment_02: Step 18 - Verify 'Customer details updated Successfully!!!' message displayed
-2019-06-16 17:05:02,294 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:02,294 INFO  com.bankguru.payment.Payment - Payment_02: Step 19 - Verify all informations of edit customer are correct
-2019-06-16 17:05:02,467 INFO  com.bankguru.payment.Payment - Actual = 86619
-2019-06-16 17:05:02,467 INFO  com.bankguru.payment.Payment - Expected = 86619
-2019-06-16 17:05:02,467 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:02,467 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:02,632 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
-2019-06-16 17:05:02,632 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
-2019-06-16 17:05:02,632 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:02,632 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:02,793 INFO  com.bankguru.payment.Payment - Actual = male
-2019-06-16 17:05:02,793 INFO  com.bankguru.payment.Payment - Expected = male
-2019-06-16 17:05:02,793 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:02,793 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:02,954 INFO  com.bankguru.payment.Payment - Actual = 1988-07-31
-2019-06-16 17:05:02,954 INFO  com.bankguru.payment.Payment - Expected = 1988-07-31
-2019-06-16 17:05:02,954 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:02,954 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,122 INFO  com.bankguru.payment.Payment - Actual = 01 Nguyen Van Linh
-2019-06-16 17:05:03,122 INFO  com.bankguru.payment.Payment - Expected = 01 Nguyen Van Linh
-2019-06-16 17:05:03,122 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,122 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,284 INFO  com.bankguru.payment.Payment - Actual = Da Nang
-2019-06-16 17:05:03,284 INFO  com.bankguru.payment.Payment - Expected = Da Nang
-2019-06-16 17:05:03,284 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,284 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,446 INFO  com.bankguru.payment.Payment - Actual = Ngu Hanh Son
-2019-06-16 17:05:03,446 INFO  com.bankguru.payment.Payment - Expected = Ngu Hanh Son
-2019-06-16 17:05:03,446 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,446 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,609 INFO  com.bankguru.payment.Payment - Actual = 550000
-2019-06-16 17:05:03,609 INFO  com.bankguru.payment.Payment - Expected = 550000
-2019-06-16 17:05:03,609 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,609 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,772 INFO  com.bankguru.payment.Payment - Actual = 0975123456
-2019-06-16 17:05:03,772 INFO  com.bankguru.payment.Payment - Expected = 0975123456
-2019-06-16 17:05:03,772 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,772 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,939 INFO  com.bankguru.payment.Payment - Actual = hai.gsd@gmail.com
-2019-06-16 17:05:03,939 INFO  com.bankguru.payment.Payment - Expected = hai.gsd@gmail.com
-2019-06-16 17:05:03,939 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:03,939 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:03,940 INFO  com.bankguru.payment.Payment - Payment_03: Step 01 - Click to 'New Account' link
-2019-06-16 17:05:04,989 INFO  com.bankguru.payment.Payment - Payment_03: Step 02 - Input to 'Customer id' textbox
-2019-06-16 17:05:05,205 INFO  com.bankguru.payment.Payment - Payment_03: Step 03 - Select 'Current' in 'Account type' dropdown
-2019-06-16 17:05:05,262 INFO  com.bankguru.payment.Payment - Payment_03: Step 04 - Input to 'Initial deposit' textbox
-2019-06-16 17:05:05,459 INFO  com.bankguru.payment.Payment - Payment_03: Step 05 - Click to Submit button
-2019-06-16 17:05:06,860 INFO  com.bankguru.payment.Payment - Payment_03: Step 06 - Verify 'Account Generated Successfully' message displayed
-2019-06-16 17:05:07,031 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:07,031 INFO  com.bankguru.payment.Payment - Payment_03: Step 07 - Get Account ID infor
-2019-06-16 17:05:07,201 INFO  com.bankguru.payment.Payment - Payment_03: Step 08 - Verify all infor are correct
-2019-06-16 17:05:07,365 INFO  com.bankguru.payment.Payment - Actual = 86619
-2019-06-16 17:05:07,365 INFO  com.bankguru.payment.Payment - Expected = 86619
-2019-06-16 17:05:07,365 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:07,365 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:07,530 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
-2019-06-16 17:05:07,530 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
-2019-06-16 17:05:07,530 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:07,530 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:07,706 INFO  com.bankguru.payment.Payment - Actual = hai.gsd@gmail.com
-2019-06-16 17:05:07,706 INFO  com.bankguru.payment.Payment - Expected = hai.gsd@gmail.com
-2019-06-16 17:05:07,706 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:07,706 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:07,872 INFO  com.bankguru.payment.Payment - Actual = Savings
-2019-06-16 17:05:07,872 INFO  com.bankguru.payment.Payment - Expected = Savings
-2019-06-16 17:05:07,872 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:07,872 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:08,061 INFO  com.bankguru.payment.Payment - Actual = 2019-06-16
-2019-06-16 17:05:08,061 INFO  com.bankguru.payment.Payment - Expected = 2019-06-16
-2019-06-16 17:05:08,061 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:08,061 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:08,226 INFO  com.bankguru.payment.Payment - Actual = 50000
-2019-06-16 17:05:08,227 INFO  com.bankguru.payment.Payment - Expected = 50000
-2019-06-16 17:05:08,227 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:08,227 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:08,227 INFO  com.bankguru.payment.Payment - Payment_04: Step 01 - Click to 'Deposit' link 
-2019-06-16 17:05:09,468 INFO  com.bankguru.payment.Payment - Payment_04: Step 02 - Verify Amount Deposit form displayed
-2019-06-16 17:05:09,634 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:09,634 INFO  com.bankguru.payment.Payment - Payment_04: Step 03 - Input to 'Account Number' textbox
-2019-06-16 17:05:09,829 INFO  com.bankguru.payment.Payment - Payment_04: Step 04 - Input to 'Amount' textbox
-2019-06-16 17:05:10,024 INFO  com.bankguru.payment.Payment - Payment_04: Step 05 - Input to 'Description' textbox
-2019-06-16 17:05:10,219 INFO  com.bankguru.payment.Payment - Payment_04: Step 06 - Click to Submit button
-2019-06-16 17:05:11,143 INFO  com.bankguru.payment.Payment - Payment_04: Step 07 - Verify Tracsaction Details message displayed
-2019-06-16 17:05:11,348 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:11,348 INFO  com.bankguru.payment.Payment - Payment_04: Step 08 - Verify Current Balance and all infor are correct
-2019-06-16 17:05:11,514 INFO  com.bankguru.payment.Payment - Actual = 55000
-2019-06-16 17:05:11,514 INFO  com.bankguru.payment.Payment - Expected = 55000
-2019-06-16 17:05:11,514 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:11,514 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:11,685 INFO  com.bankguru.payment.Payment - Actual = 62418
-2019-06-16 17:05:11,685 INFO  com.bankguru.payment.Payment - Expected = 62418
-2019-06-16 17:05:11,685 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:11,685 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:11,853 INFO  com.bankguru.payment.Payment - Actual = 5000
-2019-06-16 17:05:11,853 INFO  com.bankguru.payment.Payment - Expected = 5000
-2019-06-16 17:05:11,853 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:11,853 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:12,023 INFO  com.bankguru.payment.Payment - Actual = Deposit
-2019-06-16 17:05:12,023 INFO  com.bankguru.payment.Payment - Expected = Deposit
-2019-06-16 17:05:12,023 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:12,023 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:12,190 INFO  com.bankguru.payment.Payment - Actual = Deposit
-2019-06-16 17:05:12,190 INFO  com.bankguru.payment.Payment - Expected = Deposit
-2019-06-16 17:05:12,191 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:12,191 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:12,191 INFO  com.bankguru.payment.Payment - Payment_05: Step 01 - Click to 'Withdrawal' link 
-2019-06-16 17:05:13,404 INFO  com.bankguru.payment.Payment - Payment_05: Step 02 - Verify Amount Withdraw form displayed
-2019-06-16 17:05:13,574 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:13,574 INFO  com.bankguru.payment.Payment - Payment_05: Step 03 - Input to 'Account Number' textbox
-2019-06-16 17:05:13,777 INFO  com.bankguru.payment.Payment - Payment_05: Step 04 - Input to 'Amount' textbox
-2019-06-16 17:05:13,969 INFO  com.bankguru.payment.Payment - Payment_05: Step 05 - Input to 'Description' textbox
-2019-06-16 17:05:14,157 INFO  com.bankguru.payment.Payment - Payment_05: Step 06 - Click to Submit button
-2019-06-16 17:05:15,288 INFO  com.bankguru.payment.Payment - Payment_05: Step 07 - Verify Tracsaction Details message displayed
-2019-06-16 17:05:15,517 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:15,517 INFO  com.bankguru.payment.Payment - Payment_05: Step 08 - Verify Current Balance and all infors are correct
-2019-06-16 17:05:15,682 INFO  com.bankguru.payment.Payment - Actual = 40000
-2019-06-16 17:05:15,682 INFO  com.bankguru.payment.Payment - Expected = 40000
-2019-06-16 17:05:15,682 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:15,682 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:15,848 INFO  com.bankguru.payment.Payment - Actual = 62418
-2019-06-16 17:05:15,848 INFO  com.bankguru.payment.Payment - Expected = 62418
-2019-06-16 17:05:15,848 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:15,848 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:16,017 INFO  com.bankguru.payment.Payment - Actual = 15000
-2019-06-16 17:05:16,017 INFO  com.bankguru.payment.Payment - Expected = 15000
-2019-06-16 17:05:16,017 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:16,017 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:16,180 INFO  com.bankguru.payment.Payment - Actual = Withdrawal
-2019-06-16 17:05:16,180 INFO  com.bankguru.payment.Payment - Expected = Withdrawal
-2019-06-16 17:05:16,180 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:16,180 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:16,342 INFO  com.bankguru.payment.Payment - Actual = Withdraw
-2019-06-16 17:05:16,342 INFO  com.bankguru.payment.Payment - Expected = Withdraw
-2019-06-16 17:05:16,342 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:16,342 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:16,343 INFO  com.bankguru.payment.Payment - Payment_06: Step 01 - Click to 'Fund Transfer' link 
-2019-06-16 17:05:17,851 INFO  com.bankguru.payment.Payment - Payment_06: Step 02 - Input to 'Payers Account Number' textbox 
-2019-06-16 17:05:18,053 INFO  com.bankguru.payment.Payment - Payment_06: Step 03 - Input to 'Payees Account Number' textbox 
-2019-06-16 17:05:18,247 INFO  com.bankguru.payment.Payment - Payment_06: Step 04 - Input to 'Amount' textbox 
-2019-06-16 17:05:18,434 INFO  com.bankguru.payment.Payment - Payment_06: Step 05 - Input to 'Description' textbox 
-2019-06-16 17:05:18,634 INFO  com.bankguru.payment.Payment - Payment_06: Step 06 - Click to Submit button
-2019-06-16 17:05:20,116 INFO  com.bankguru.payment.Payment - Payment_06: Step 07 - Verify FundTransfer Details message displayed
-2019-06-16 17:05:20,284 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:20,284 INFO  com.bankguru.payment.Payment - Payment_06: Step 08 - Verify Payers Account is correct
-2019-06-16 17:05:20,456 INFO  com.bankguru.payment.Payment - Actual = 62418
-2019-06-16 17:05:20,456 INFO  com.bankguru.payment.Payment - Expected = 62418
-2019-06-16 17:05:20,456 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:20,456 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:20,456 INFO  com.bankguru.payment.Payment - Payment_06: Step 09 - Verify Payees Account is correct
-2019-06-16 17:05:20,620 INFO  com.bankguru.payment.Payment - Actual = 62417
-2019-06-16 17:05:20,620 INFO  com.bankguru.payment.Payment - Expected = 62417
-2019-06-16 17:05:20,620 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:20,620 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:20,620 INFO  com.bankguru.payment.Payment - Payment_06: Step 10 - Verify Transferred amount is correct
-2019-06-16 17:05:20,785 INFO  com.bankguru.payment.Payment - Actual = 10000
-2019-06-16 17:05:20,785 INFO  com.bankguru.payment.Payment - Expected = 10000
-2019-06-16 17:05:20,785 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:20,785 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:20,785 INFO  com.bankguru.payment.Payment - Payment_06: Step 11 - Verify Description is correct
-2019-06-16 17:05:20,948 INFO  com.bankguru.payment.Payment - Actual = Transfer
-2019-06-16 17:05:20,948 INFO  com.bankguru.payment.Payment - Expected = Transfer
-2019-06-16 17:05:20,948 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:20,948 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:20,949 INFO  com.bankguru.payment.Payment - Payment_07: Step 01 - Click to 'Balance Enquiry' link 
-2019-06-16 17:05:21,931 INFO  com.bankguru.payment.Payment - Payment_07: Step 02 - Verify Balance Enquiry Form message displayed
-2019-06-16 17:05:22,113 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:22,113 INFO  com.bankguru.payment.Payment - Payment_07: Step 02 - Input to 'Account Number' textbox 
-2019-06-16 17:05:22,307 INFO  com.bankguru.payment.Payment - Payment_07: Step 03 - Click to Submit button
-2019-06-16 17:05:23,441 INFO  com.bankguru.payment.Payment - Payment_07: Step 04 - Verify Balance Details message displayed
-2019-06-16 17:05:23,621 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:23,621 INFO  com.bankguru.payment.Payment - Payment_07: Step 05 - Verify current balance after Transferring is correct
-2019-06-16 17:05:23,790 INFO  com.bankguru.payment.Payment - Actual = 30000
-2019-06-16 17:05:23,790 INFO  com.bankguru.payment.Payment - Expected = 30000
-2019-06-16 17:05:23,790 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:23,790 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:23,790 INFO  com.bankguru.payment.Payment - Payment_07: Step 06 - Verify Account Number and Type of Account are correct
-2019-06-16 17:05:23,959 INFO  com.bankguru.payment.Payment - Actual = 62418
-2019-06-16 17:05:23,959 INFO  com.bankguru.payment.Payment - Expected = 62418
-2019-06-16 17:05:23,959 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:23,959 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:24,128 INFO  com.bankguru.payment.Payment - Actual = Savings
-2019-06-16 17:05:24,128 INFO  com.bankguru.payment.Payment - Expected = Savings
-2019-06-16 17:05:24,129 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:24,129 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:24,129 INFO  com.bankguru.payment.Payment - Payment_08: Step 01 - Click to 'Delete Account' link 
-2019-06-16 17:05:25,143 INFO  com.bankguru.payment.Payment - Payment_08: Step 02 - Verify Delete Account Form message displayed
-2019-06-16 17:05:25,368 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:25,368 INFO  com.bankguru.payment.Payment - Payment_08: Step 03 - Input to 'Account Number' textbox 
-2019-06-16 17:05:25,563 INFO  com.bankguru.payment.Payment - Payment_08: Step 04 - Click to Submit button
-2019-06-16 17:05:25,636 INFO  com.bankguru.payment.Payment - Payment_08: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
-2019-06-16 17:05:25,646 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
-2019-06-16 17:05:25,646 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
-2019-06-16 17:05:25,646 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:25,646 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:25,646 INFO  com.bankguru.payment.Payment - Payment_08: Step 05 - Accept alert
-2019-06-16 17:05:25,654 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
-2019-06-16 17:05:25,985 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
-2019-06-16 17:05:25,985 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
-2019-06-16 17:05:25,985 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:25,985 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:25,985 INFO  com.bankguru.payment.Payment - Payment_08: Step 07 - Accept alert
-2019-06-16 17:05:25,991 INFO  com.bankguru.payment.Payment - Payment_08: Step 08 - Check Account does not exist anymore
-2019-06-16 17:05:27,607 INFO  com.bankguru.payment.Payment - Payment_08: Step 09 - Verify 'Do you really want to delete this Account?' alert displayed
-2019-06-16 17:05:27,611 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
-2019-06-16 17:05:27,611 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
-2019-06-16 17:05:27,611 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:27,611 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:27,611 INFO  com.bankguru.payment.Payment - Payment_08: Step 10 - Accept alert
-2019-06-16 17:05:27,618 INFO  com.bankguru.payment.Payment - Payment_08: Step 11 - Verify 'Account does not exist?' alert displayed
-2019-06-16 17:05:27,936 INFO  com.bankguru.payment.Payment - Actual = Account does not exist
-2019-06-16 17:05:27,936 INFO  com.bankguru.payment.Payment - Expected = Account does not exist
-2019-06-16 17:05:27,936 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:27,937 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:27,937 INFO  com.bankguru.payment.Payment - Payment_08: Step 12 - Accept alert
-2019-06-16 17:05:27,944 INFO  com.bankguru.payment.Payment - Payment_09: Step 01 - Click to 'Delete Customer' link 
-2019-06-16 17:05:29,456 INFO  com.bankguru.payment.Payment - Payment_09: Step 02 - Input to 'Customer ID' textbox 
-2019-06-16 17:05:29,669 INFO  com.bankguru.payment.Payment - Payment_09: Step 03 - Click to Submit button
-2019-06-16 17:05:29,743 INFO  com.bankguru.payment.Payment - Payment_09: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed
-2019-06-16 17:05:29,751 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Customer?
-2019-06-16 17:05:29,751 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Customer?
-2019-06-16 17:05:29,751 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:29,751 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:29,751 INFO  com.bankguru.payment.Payment - Payment_09: Step 05 - Accept alert
-2019-06-16 17:05:29,758 INFO  com.bankguru.payment.Payment - Payment_09: Step 06 - Verify 'Customer deleted Successfully' alert displayed
-2019-06-16 17:05:30,096 INFO  com.bankguru.payment.Payment - Actual = Customer deleted Successfully
-2019-06-16 17:05:30,096 INFO  com.bankguru.payment.Payment - Expected = Customer deleted Successfully
-2019-06-16 17:05:30,096 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:30,096 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:30,096 INFO  com.bankguru.payment.Payment - Payment_09: Step 07 - Accept alert
-2019-06-16 17:05:30,104 INFO  com.bankguru.payment.Payment - Payment_09: Step 08 - Click to 'Delete Customer' link 
-2019-06-16 17:05:31,372 INFO  com.bankguru.payment.Payment - Payment_09: Step 09 - Input to 'Customer ID' textbox 
-2019-06-16 17:05:31,594 INFO  com.bankguru.payment.Payment - Payment_09: Step 10 - Click to Submit button
-2019-06-16 17:05:31,668 INFO  com.bankguru.payment.Payment - Payment_09: Step 11 - Verify 'Do you really want to delete this Customer?' alert displayed
-2019-06-16 17:05:31,674 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Customer?
-2019-06-16 17:05:31,674 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Customer?
-2019-06-16 17:05:31,674 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:31,674 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:31,674 INFO  com.bankguru.payment.Payment - Payment_09: Step 12 - Accept alert
-2019-06-16 17:05:31,681 INFO  com.bankguru.payment.Payment - Payment_09: Step 13 - Verify 'Customer does not exist!' alert displayed
-2019-06-16 17:05:31,992 INFO  com.bankguru.payment.Payment - Actual = Customer does not exist!!
-2019-06-16 17:05:31,992 INFO  com.bankguru.payment.Payment - Expected = Customer does not exist!!
-2019-06-16 17:05:31,992 INFO  com.bankguru.payment.Payment - Compare value = true
-2019-06-16 17:05:31,992 INFO  com.bankguru.payment.Payment - ===PASSED===
-2019-06-16 17:05:31,992 INFO  com.bankguru.payment.Payment - Payment_09: Step 14 - Accept alert
-2019-06-16 17:05:32,001 INFO  com.bankguru.payment.Payment - OS name= windows 10
-2019-06-16 17:05:32,718 INFO  com.bankguru.payment.Payment - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
+2019-06-16 17:13:13,378 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 01 - open Login Page
+2019-06-16 17:13:13,382 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 02 - Verify Login Form displayed
+2019-06-16 17:13:13,569 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
+2019-06-16 17:13:13,570 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 03 - Click to 'here' link
+2019-06-16 17:13:15,363 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 04 - Verify Register Page displayed
+2019-06-16 17:13:15,544 INFO  com.bankguru.user.Common_01_RegisterToSystem - ===PASSED===
+2019-06-16 17:13:15,544 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 05 - Input to Email ID textbox
+2019-06-16 17:13:15,805 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 06 - Click to Submit button
+2019-06-16 17:13:16,691 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 07 - Get UserID and Password Infor
+2019-06-16 17:13:17,069 INFO  com.bankguru.user.Common_01_RegisterToSystem - CreateUser: Step 08 - Quit browser
+2019-06-16 17:13:17,069 INFO  com.bankguru.user.Common_01_RegisterToSystem - OS name= windows 10
+2019-06-16 17:13:17,829 INFO  com.bankguru.user.Common_01_RegisterToSystem - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
+2019-06-16 17:13:23,677 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 01 - Open Login Page
+2019-06-16 17:13:23,677 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 02 - Verify Login Form displayed
+2019-06-16 17:13:23,855 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:23,855 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-16 17:13:24,293 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 04 - Click to Login button to move to HomePage Url
+2019-06-16 17:13:25,781 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-16 17:13:25,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:25,962 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-16 17:13:26,133 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:26,133 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 07 - Click to 'New Customer' link
+2019-06-16 17:13:26,876 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 08 - Input to 'Customer Name' textbox
+2019-06-16 17:13:27,148 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 09 - Select Male gender
+2019-06-16 17:13:27,190 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 10 - Remove 'type' attribute of Date of Birth textbox
+2019-06-16 17:13:27,234 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 11 - Input to 'Date Of Birth' textbox
+2019-06-16 17:13:27,457 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 12 - Input to 'Adress' text area
+2019-06-16 17:13:27,678 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 13 - Input to 'City' textbox
+2019-06-16 17:13:27,889 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 14 - Input to 'State' textbox
+2019-06-16 17:13:28,102 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 15 - Input to 'Pin' textbox
+2019-06-16 17:13:28,311 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 16 - Input to 'Mobile Number' textbox
+2019-06-16 17:13:28,534 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 17 - Input to 'Email' textbox
+2019-06-16 17:13:28,806 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 18 - Input to 'Password' textbox
+2019-06-16 17:13:29,015 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 19 - Click to 'Submit' button
+2019-06-16 17:13:30,149 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 20 - Verify title 'Customer Registered Successfully!!!' displayed
+2019-06-16 17:13:30,340 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:30,340 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 21 - Get 'Customer ID'
+2019-06-16 17:13:30,517 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Precondition: Step 22 - Verify all infor of new customer are correct
+2019-06-16 17:13:30,694 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Tran Phuoc Hai
+2019-06-16 17:13:30,694 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Tran Phuoc Hai
+2019-06-16 17:13:30,694 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:30,694 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:30,871 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = male
+2019-06-16 17:13:30,871 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = male
+2019-06-16 17:13:30,871 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:30,871 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,047 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 1988-07-31
+2019-06-16 17:13:31,047 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 1988-07-31
+2019-06-16 17:13:31,047 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,047 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,224 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 100 Dia Chi
+2019-06-16 17:13:31,224 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 100 Dia Chi
+2019-06-16 17:13:31,224 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,224 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,398 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Ha Noi
+2019-06-16 17:13:31,398 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Ha Noi
+2019-06-16 17:13:31,398 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,398 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,576 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = Hoan Kiem
+2019-06-16 17:13:31,576 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = Hoan Kiem
+2019-06-16 17:13:31,576 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,576 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,749 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 600000
+2019-06-16 17:13:31,749 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 600000
+2019-06-16 17:13:31,749 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,749 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:31,923 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = 0987654321
+2019-06-16 17:13:31,923 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = 0987654321
+2019-06-16 17:13:31,923 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:31,923 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:32,103 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Actual = haitp426554@gmail.com
+2019-06-16 17:13:32,103 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Expected = haitp426554@gmail.com
+2019-06-16 17:13:32,103 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Compare value = true
+2019-06-16 17:13:32,103 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - ===PASSED===
+2019-06-16 17:13:32,103 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - OS name= windows 10
+2019-06-16 17:13:32,813 INFO  com.bankguru.customer.Common_02_CreateNewCustomer - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
+2019-06-16 17:13:38,561 INFO  com.bankguru.account.EditAccount - Precondition: Step 01 - Open Login Page
+2019-06-16 17:13:38,562 INFO  com.bankguru.account.EditAccount - Precondition: Step 02 - Verify Login Form displayed
+2019-06-16 17:13:38,738 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:38,738 INFO  com.bankguru.account.EditAccount - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-16 17:13:39,171 INFO  com.bankguru.account.EditAccount - Precondition: Step 04 - Click to Login button to move to HomePage Url
+2019-06-16 17:13:41,042 INFO  com.bankguru.account.EditAccount - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-16 17:13:41,218 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:41,218 INFO  com.bankguru.account.EditAccount - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-16 17:13:41,383 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:41,383 INFO  com.bankguru.account.EditAccount - Precondition: Step 07 - Click To 'New Account' link
+2019-06-16 17:13:42,166 INFO  com.bankguru.account.EditAccount - Precondition: Step 08 - Verify Title 'Add new account form' displayed
+2019-06-16 17:13:42,346 INFO  com.bankguru.account.EditAccount - Precondition: Step 09 - Input to 'Customer id' textbox 
+2019-06-16 17:13:42,552 INFO  com.bankguru.account.EditAccount - Precondition: Step 10 - select 'Current' in 'Account type' dropdown
+2019-06-16 17:13:42,648 INFO  com.bankguru.account.EditAccount - Precondition: Step 11 - Input to 'Initial deposit' textbox
+2019-06-16 17:13:42,844 INFO  com.bankguru.account.EditAccount - Precondition: Step 11 - Click to Submit button
+2019-06-16 17:13:43,989 INFO  com.bankguru.account.EditAccount - Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed
+2019-06-16 17:13:44,172 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:44,172 INFO  com.bankguru.account.EditAccount - Precondition: Step 13 - Veirfy current amount is correct
+2019-06-16 17:13:44,366 INFO  com.bankguru.account.EditAccount - Actual = 50000
+2019-06-16 17:13:44,366 INFO  com.bankguru.account.EditAccount - Expected = 50000
+2019-06-16 17:13:44,366 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:44,366 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:44,366 INFO  com.bankguru.account.EditAccount - Precondition: Step 14 - Get Account ID infor
+2019-06-16 17:13:44,538 INFO  com.bankguru.account.EditAccount - Precondition: Step 15 - Click to 'Edit Account' link
+2019-06-16 17:13:45,779 INFO  com.bankguru.account.EditAccount - Precondition: Step 16 - Veify 'Edit Account Form' title displayed
+2019-06-16 17:13:45,971 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:45,975 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:46,151 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox
+2019-06-16 17:13:46,335 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Press TAB key
+2019-06-16 17:13:46,518 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed
+2019-06-16 17:13:46,691 INFO  com.bankguru.account.EditAccount - Actual = Account Number must not be blank
+2019-06-16 17:13:46,691 INFO  com.bankguru.account.EditAccount - Expected = Account Number must not be blank
+2019-06-16 17:13:46,691 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:46,691 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:46,693 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:46,858 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:47,049 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-16 17:13:47,210 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
+2019-06-16 17:13:47,210 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
+2019-06-16 17:13:47,210 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:47,210 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:47,210 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:47,373 INFO  com.bankguru.account.EditAccount - AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:47,557 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-16 17:13:47,716 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
+2019-06-16 17:13:47,716 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
+2019-06-16 17:13:47,716 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:47,716 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:47,717 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:47,884 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:48,083 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-16 17:13:48,242 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
+2019-06-16 17:13:48,242 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
+2019-06-16 17:13:48,242 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:48,242 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:48,242 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:48,418 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:48,629 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-16 17:13:48,785 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
+2019-06-16 17:13:48,785 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
+2019-06-16 17:13:48,785 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:48,785 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:48,785 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:48,950 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:49,141 INFO  com.bankguru.account.EditAccount - AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed
+2019-06-16 17:13:49,300 INFO  com.bankguru.account.EditAccount - Actual = Special characters are not allowed
+2019-06-16 17:13:49,301 INFO  com.bankguru.account.EditAccount - Expected = Special characters are not allowed
+2019-06-16 17:13:49,301 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:49,301 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:49,301 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:49,467 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:49,634 INFO  com.bankguru.account.EditAccount - AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed
+2019-06-16 17:13:49,792 INFO  com.bankguru.account.EditAccount - Actual = Characters are not allowed
+2019-06-16 17:13:49,792 INFO  com.bankguru.account.EditAccount - Expected = Characters are not allowed
+2019-06-16 17:13:49,792 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:49,792 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:49,793 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 01 - Clear 'Account Number' textbox
+2019-06-16 17:13:49,958 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 02 - Input to 'Account Number' textbox
+2019-06-16 17:13:50,137 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 03 - Click to submit button
+2019-06-16 17:13:51,174 INFO  com.bankguru.account.EditAccount - ValidAccountNumber: Step 04 - Verify Edit Customer form displayed
+2019-06-16 17:13:51,357 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:51,358 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 01 - Select 'Saving' in 'Account type' dropdown
+2019-06-16 17:13:51,445 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 02 - Click to Submit button
+2019-06-16 17:13:52,825 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 03 - Verify 'Account details updated successfully!!!' message displayed
+2019-06-16 17:13:53,001 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:53,001 INFO  com.bankguru.account.EditAccount - EditAccountSuccess: Step 04 - Verify Account type is 'Savings'
+2019-06-16 17:13:53,170 INFO  com.bankguru.account.EditAccount - Actual = Savings
+2019-06-16 17:13:53,170 INFO  com.bankguru.account.EditAccount - Expected = Savings
+2019-06-16 17:13:53,170 INFO  com.bankguru.account.EditAccount - Compare value = true
+2019-06-16 17:13:53,170 INFO  com.bankguru.account.EditAccount - ===PASSED===
+2019-06-16 17:13:53,171 INFO  com.bankguru.account.EditAccount - OS name= windows 10
+2019-06-16 17:13:53,886 INFO  com.bankguru.account.EditAccount - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified
+2019-06-16 17:13:59,817 INFO  com.bankguru.payment.Payment - Precondition: Step 01 - Open Login Page
+2019-06-16 17:13:59,817 INFO  com.bankguru.payment.Payment - Precondition: Step 02 - Verify Login Form displayed
+2019-06-16 17:14:00,059 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:00,060 INFO  com.bankguru.payment.Payment - Precondition: Step 03 - Input to userID and 'Password' textboxes
+2019-06-16 17:14:00,476 INFO  com.bankguru.payment.Payment - Precondition: Step 04 - Click to Login button to move to HomePage Url
+2019-06-16 17:14:01,782 INFO  com.bankguru.payment.Payment - Precondition: Step 05 - Verify Welcome message of Home page displayed
+2019-06-16 17:14:01,960 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:01,960 INFO  com.bankguru.payment.Payment - Precondition: Step 06 - Verify User ID infor displayed
+2019-06-16 17:14:02,123 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:02,124 INFO  com.bankguru.payment.Payment - Payment_01: Step 01 - Click to 'New Customer' link
+2019-06-16 17:14:02,882 INFO  com.bankguru.payment.Payment - Payment_01: Step 02 - Input to 'Customer Name' textbox
+2019-06-16 17:14:03,136 INFO  com.bankguru.payment.Payment - Payment_01: Step 03 - Select Male gender
+2019-06-16 17:14:03,177 INFO  com.bankguru.payment.Payment - Payment_01: Step 04 - Remove 'type' attribute of Date of Birth textbox
+2019-06-16 17:14:03,212 INFO  com.bankguru.payment.Payment - Payment_01: Step 05 - Input to 'Date Of Birth' textbox
+2019-06-16 17:14:03,426 INFO  com.bankguru.payment.Payment - Payment_01: Step 06 - Input to 'Adress' text area
+2019-06-16 17:14:03,653 INFO  com.bankguru.payment.Payment - Payment_01: Step 07 - Input to 'City' textbox
+2019-06-16 17:14:03,858 INFO  com.bankguru.payment.Payment - Payment_01: Step 08 - Input to 'State' textbox
+2019-06-16 17:14:04,071 INFO  com.bankguru.payment.Payment - Payment_01: Step 09 - Input to 'Pin' textbox
+2019-06-16 17:14:04,281 INFO  com.bankguru.payment.Payment - Payment_01: Step 10 - Input to 'Mobile Number' textbox
+2019-06-16 17:14:04,493 INFO  com.bankguru.payment.Payment - Payment_01: Step 11 - Input to 'Email' textbox
+2019-06-16 17:14:04,745 INFO  com.bankguru.payment.Payment - Payment_01: Step 12 - Input to 'Password' textbox
+2019-06-16 17:14:04,954 INFO  com.bankguru.payment.Payment - Payment_01: Step 13 - Click to 'Submit' button
+2019-06-16 17:14:06,271 INFO  com.bankguru.payment.Payment - Payment_01: Step 14 - Verify title 'Customer Registered Successfully!!!' displayed
+2019-06-16 17:14:06,453 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:06,453 INFO  com.bankguru.payment.Payment - Payment_01: Step 15 - Get 'Customer ID'
+2019-06-16 17:14:06,645 INFO  com.bankguru.payment.Payment - Payment_01: Step 16 - Verify all informations of new customer are correct
+2019-06-16 17:14:06,821 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
+2019-06-16 17:14:06,821 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
+2019-06-16 17:14:06,821 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:06,821 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:06,989 INFO  com.bankguru.payment.Payment - Actual = male
+2019-06-16 17:14:06,989 INFO  com.bankguru.payment.Payment - Expected = male
+2019-06-16 17:14:06,989 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:06,989 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:07,161 INFO  com.bankguru.payment.Payment - Actual = 1988-07-31
+2019-06-16 17:14:07,161 INFO  com.bankguru.payment.Payment - Expected = 1988-07-31
+2019-06-16 17:14:07,161 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:07,161 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:07,334 INFO  com.bankguru.payment.Payment - Actual = 100 Dia Chi
+2019-06-16 17:14:07,334 INFO  com.bankguru.payment.Payment - Expected = 100 Dia Chi
+2019-06-16 17:14:07,334 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:07,334 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:07,503 INFO  com.bankguru.payment.Payment - Actual = Ha Noi
+2019-06-16 17:14:07,503 INFO  com.bankguru.payment.Payment - Expected = Ha Noi
+2019-06-16 17:14:07,503 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:07,503 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:07,674 INFO  com.bankguru.payment.Payment - Actual = Hoan Kiem
+2019-06-16 17:14:07,674 INFO  com.bankguru.payment.Payment - Expected = Hoan Kiem
+2019-06-16 17:14:07,674 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:07,674 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:07,842 INFO  com.bankguru.payment.Payment - Actual = 600000
+2019-06-16 17:14:07,843 INFO  com.bankguru.payment.Payment - Expected = 600000
+2019-06-16 17:14:07,843 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:07,843 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:08,013 INFO  com.bankguru.payment.Payment - Actual = 0987654321
+2019-06-16 17:14:08,013 INFO  com.bankguru.payment.Payment - Expected = 0987654321
+2019-06-16 17:14:08,013 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:08,013 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:08,184 INFO  com.bankguru.payment.Payment - Actual = haitp663800@gmail.com
+2019-06-16 17:14:08,184 INFO  com.bankguru.payment.Payment - Expected = haitp663800@gmail.com
+2019-06-16 17:14:08,184 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:08,184 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:08,186 INFO  com.bankguru.payment.Payment - Payment_02: Step 01 - Click to 'Delete Customer' link
+2019-06-16 17:14:09,173 INFO  com.bankguru.payment.Payment - Payment_02: Step 02 - Input to 'Customer ID' textbox
+2019-06-16 17:14:09,390 INFO  com.bankguru.payment.Payment - Payment_02: Step 03 - Click to Submit textbox
+2019-06-16 17:14:10,508 INFO  com.bankguru.payment.Payment - Payment_02: Step 04 - Verify all informations of Customer are correct before starting edit
+2019-06-16 17:14:10,682 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:10,850 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,019 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,183 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,349 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,516 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,683 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:11,850 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:12,013 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:12,013 INFO  com.bankguru.payment.Payment - Payment_02: Step 05 - Clear 'Address' Text Area
+2019-06-16 17:14:12,185 INFO  com.bankguru.payment.Payment - Payment_02: Step 06 - Input to 'Address' Text Area
+2019-06-16 17:14:12,402 INFO  com.bankguru.payment.Payment - Payment_02: Step 07 - Clear 'City' textbox
+2019-06-16 17:14:12,569 INFO  com.bankguru.payment.Payment - Payment_02: Step 08 - Input to 'City' textbox
+2019-06-16 17:14:12,765 INFO  com.bankguru.payment.Payment - Payment_02: Step 09 - Clear 'State' textbox
+2019-06-16 17:14:12,937 INFO  com.bankguru.payment.Payment - Payment_02: Step 10 - Input to 'State' textbox
+2019-06-16 17:14:13,144 INFO  com.bankguru.payment.Payment - Payment_02: Step 11 - Clear 'PIN' textbox
+2019-06-16 17:14:13,317 INFO  com.bankguru.payment.Payment - Payment_02: Step 12 - Input to 'PIN' textbox
+2019-06-16 17:14:13,502 INFO  com.bankguru.payment.Payment - Payment_02: Step 13 - Clear 'Mobile Number' textbox
+2019-06-16 17:14:13,675 INFO  com.bankguru.payment.Payment - Payment_02: Step 14 - Input to 'Mobile Number' textbox
+2019-06-16 17:14:13,876 INFO  com.bankguru.payment.Payment - Payment_02: Step 15 - Clear 'Email' textbox
+2019-06-16 17:14:14,047 INFO  com.bankguru.payment.Payment - Payment_02: Step 16 - Input to 'Email' textbox
+2019-06-16 17:14:14,267 INFO  com.bankguru.payment.Payment - Payment_02: Step 17 - Click to Submit button
+2019-06-16 17:14:16,000 INFO  com.bankguru.payment.Payment - Payment_02: Step 18 - Verify 'Customer details updated Successfully!!!' message displayed
+2019-06-16 17:14:16,174 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:16,174 INFO  com.bankguru.payment.Payment - Payment_02: Step 19 - Verify all informations of edit customer are correct
+2019-06-16 17:14:16,340 INFO  com.bankguru.payment.Payment - Actual = 38869
+2019-06-16 17:14:16,340 INFO  com.bankguru.payment.Payment - Expected = 38869
+2019-06-16 17:14:16,341 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:16,341 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:16,508 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
+2019-06-16 17:14:16,508 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
+2019-06-16 17:14:16,508 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:16,508 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:16,674 INFO  com.bankguru.payment.Payment - Actual = male
+2019-06-16 17:14:16,674 INFO  com.bankguru.payment.Payment - Expected = male
+2019-06-16 17:14:16,674 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:16,674 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:16,838 INFO  com.bankguru.payment.Payment - Actual = 1988-07-31
+2019-06-16 17:14:16,838 INFO  com.bankguru.payment.Payment - Expected = 1988-07-31
+2019-06-16 17:14:16,838 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:16,838 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,002 INFO  com.bankguru.payment.Payment - Actual = 01 Nguyen Van Linh
+2019-06-16 17:14:17,002 INFO  com.bankguru.payment.Payment - Expected = 01 Nguyen Van Linh
+2019-06-16 17:14:17,002 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,002 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,166 INFO  com.bankguru.payment.Payment - Actual = Da Nang
+2019-06-16 17:14:17,166 INFO  com.bankguru.payment.Payment - Expected = Da Nang
+2019-06-16 17:14:17,166 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,166 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,331 INFO  com.bankguru.payment.Payment - Actual = Ngu Hanh Son
+2019-06-16 17:14:17,331 INFO  com.bankguru.payment.Payment - Expected = Ngu Hanh Son
+2019-06-16 17:14:17,331 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,331 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,494 INFO  com.bankguru.payment.Payment - Actual = 550000
+2019-06-16 17:14:17,494 INFO  com.bankguru.payment.Payment - Expected = 550000
+2019-06-16 17:14:17,494 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,494 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,661 INFO  com.bankguru.payment.Payment - Actual = 0975123456
+2019-06-16 17:14:17,661 INFO  com.bankguru.payment.Payment - Expected = 0975123456
+2019-06-16 17:14:17,661 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,661 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,822 INFO  com.bankguru.payment.Payment - Actual = hai.gsd@gmail.com
+2019-06-16 17:14:17,822 INFO  com.bankguru.payment.Payment - Expected = hai.gsd@gmail.com
+2019-06-16 17:14:17,822 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:17,822 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:17,823 INFO  com.bankguru.payment.Payment - Payment_03: Step 01 - Click to 'New Account' link
+2019-06-16 17:14:18,576 INFO  com.bankguru.payment.Payment - Payment_03: Step 02 - Input to 'Customer id' textbox
+2019-06-16 17:14:18,801 INFO  com.bankguru.payment.Payment - Payment_03: Step 03 - Select 'Current' in 'Account type' dropdown
+2019-06-16 17:14:18,862 INFO  com.bankguru.payment.Payment - Payment_03: Step 04 - Input to 'Initial deposit' textbox
+2019-06-16 17:14:19,052 INFO  com.bankguru.payment.Payment - Payment_03: Step 05 - Click to Submit button
+2019-06-16 17:14:20,972 INFO  com.bankguru.payment.Payment - Payment_03: Step 06 - Verify 'Account Generated Successfully' message displayed
+2019-06-16 17:14:21,142 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:21,143 INFO  com.bankguru.payment.Payment - Payment_03: Step 07 - Get Account ID infor
+2019-06-16 17:14:21,307 INFO  com.bankguru.payment.Payment - Payment_03: Step 08 - Verify all infor are correct
+2019-06-16 17:14:21,475 INFO  com.bankguru.payment.Payment - Actual = 38869
+2019-06-16 17:14:21,475 INFO  com.bankguru.payment.Payment - Expected = 38869
+2019-06-16 17:14:21,475 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:21,475 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:21,647 INFO  com.bankguru.payment.Payment - Actual = Tran Phuoc Hai
+2019-06-16 17:14:21,647 INFO  com.bankguru.payment.Payment - Expected = Tran Phuoc Hai
+2019-06-16 17:14:21,647 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:21,647 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:21,810 INFO  com.bankguru.payment.Payment - Actual = hai.gsd@gmail.com
+2019-06-16 17:14:21,810 INFO  com.bankguru.payment.Payment - Expected = hai.gsd@gmail.com
+2019-06-16 17:14:21,810 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:21,810 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:21,980 INFO  com.bankguru.payment.Payment - Actual = Savings
+2019-06-16 17:14:21,980 INFO  com.bankguru.payment.Payment - Expected = Savings
+2019-06-16 17:14:21,980 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:21,980 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:22,172 INFO  com.bankguru.payment.Payment - Actual = 2019-06-16
+2019-06-16 17:14:22,172 INFO  com.bankguru.payment.Payment - Expected = 2019-06-16
+2019-06-16 17:14:22,172 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:22,172 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:22,340 INFO  com.bankguru.payment.Payment - Actual = 50000
+2019-06-16 17:14:22,340 INFO  com.bankguru.payment.Payment - Expected = 50000
+2019-06-16 17:14:22,340 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:22,340 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:22,341 INFO  com.bankguru.payment.Payment - Payment_04: Step 01 - Click to 'Deposit' link 
+2019-06-16 17:14:23,506 INFO  com.bankguru.payment.Payment - Payment_04: Step 02 - Verify Amount Deposit form displayed
+2019-06-16 17:14:23,684 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:23,684 INFO  com.bankguru.payment.Payment - Payment_04: Step 03 - Input to 'Account Number' textbox
+2019-06-16 17:14:23,900 INFO  com.bankguru.payment.Payment - Payment_04: Step 04 - Input to 'Amount' textbox
+2019-06-16 17:14:24,090 INFO  com.bankguru.payment.Payment - Payment_04: Step 05 - Input to 'Description' textbox
+2019-06-16 17:14:24,287 INFO  com.bankguru.payment.Payment - Payment_04: Step 06 - Click to Submit button
+2019-06-16 17:14:25,383 INFO  com.bankguru.payment.Payment - Payment_04: Step 07 - Verify Tracsaction Details message displayed
+2019-06-16 17:14:25,592 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:25,592 INFO  com.bankguru.payment.Payment - Payment_04: Step 08 - Verify Current Balance and all infor are correct
+2019-06-16 17:14:25,762 INFO  com.bankguru.payment.Payment - Actual = 55000
+2019-06-16 17:14:25,762 INFO  com.bankguru.payment.Payment - Expected = 55000
+2019-06-16 17:14:25,762 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:25,762 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:25,935 INFO  com.bankguru.payment.Payment - Actual = 62420
+2019-06-16 17:14:25,935 INFO  com.bankguru.payment.Payment - Expected = 62420
+2019-06-16 17:14:25,935 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:25,935 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:26,107 INFO  com.bankguru.payment.Payment - Actual = 5000
+2019-06-16 17:14:26,108 INFO  com.bankguru.payment.Payment - Expected = 5000
+2019-06-16 17:14:26,108 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:26,108 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:26,275 INFO  com.bankguru.payment.Payment - Actual = Deposit
+2019-06-16 17:14:26,275 INFO  com.bankguru.payment.Payment - Expected = Deposit
+2019-06-16 17:14:26,275 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:26,275 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:26,448 INFO  com.bankguru.payment.Payment - Actual = Deposit
+2019-06-16 17:14:26,448 INFO  com.bankguru.payment.Payment - Expected = Deposit
+2019-06-16 17:14:26,448 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:26,448 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:26,449 INFO  com.bankguru.payment.Payment - Payment_05: Step 01 - Click to 'Withdrawal' link 
+2019-06-16 17:14:27,657 INFO  com.bankguru.payment.Payment - Payment_05: Step 02 - Verify Amount Withdraw form displayed
+2019-06-16 17:14:27,829 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:27,829 INFO  com.bankguru.payment.Payment - Payment_05: Step 03 - Input to 'Account Number' textbox
+2019-06-16 17:14:28,026 INFO  com.bankguru.payment.Payment - Payment_05: Step 04 - Input to 'Amount' textbox
+2019-06-16 17:14:28,215 INFO  com.bankguru.payment.Payment - Payment_05: Step 05 - Input to 'Description' textbox
+2019-06-16 17:14:28,407 INFO  com.bankguru.payment.Payment - Payment_05: Step 06 - Click to Submit button
+2019-06-16 17:14:29,585 INFO  com.bankguru.payment.Payment - Payment_05: Step 07 - Verify Tracsaction Details message displayed
+2019-06-16 17:14:29,790 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:29,790 INFO  com.bankguru.payment.Payment - Payment_05: Step 08 - Verify Current Balance and all infors are correct
+2019-06-16 17:14:29,966 INFO  com.bankguru.payment.Payment - Actual = 40000
+2019-06-16 17:14:29,966 INFO  com.bankguru.payment.Payment - Expected = 40000
+2019-06-16 17:14:29,966 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:29,966 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:30,130 INFO  com.bankguru.payment.Payment - Actual = 62420
+2019-06-16 17:14:30,130 INFO  com.bankguru.payment.Payment - Expected = 62420
+2019-06-16 17:14:30,130 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:30,130 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:30,305 INFO  com.bankguru.payment.Payment - Actual = 15000
+2019-06-16 17:14:30,305 INFO  com.bankguru.payment.Payment - Expected = 15000
+2019-06-16 17:14:30,305 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:30,305 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:30,471 INFO  com.bankguru.payment.Payment - Actual = Withdrawal
+2019-06-16 17:14:30,471 INFO  com.bankguru.payment.Payment - Expected = Withdrawal
+2019-06-16 17:14:30,471 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:30,471 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:30,635 INFO  com.bankguru.payment.Payment - Actual = Withdraw
+2019-06-16 17:14:30,635 INFO  com.bankguru.payment.Payment - Expected = Withdraw
+2019-06-16 17:14:30,635 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:30,635 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:30,636 INFO  com.bankguru.payment.Payment - Payment_06: Step 01 - Click to 'Fund Transfer' link 
+2019-06-16 17:14:32,102 INFO  com.bankguru.payment.Payment - Payment_06: Step 02 - Input to 'Payers Account Number' textbox 
+2019-06-16 17:14:32,327 INFO  com.bankguru.payment.Payment - Payment_06: Step 03 - Input to 'Payees Account Number' textbox 
+2019-06-16 17:14:32,522 INFO  com.bankguru.payment.Payment - Payment_06: Step 04 - Input to 'Amount' textbox 
+2019-06-16 17:14:32,734 INFO  com.bankguru.payment.Payment - Payment_06: Step 05 - Input to 'Description' textbox 
+2019-06-16 17:14:32,928 INFO  com.bankguru.payment.Payment - Payment_06: Step 06 - Click to Submit button
+2019-06-16 17:14:34,037 INFO  com.bankguru.payment.Payment - Payment_06: Step 07 - Verify FundTransfer Details message displayed
+2019-06-16 17:14:34,224 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:34,224 INFO  com.bankguru.payment.Payment - Payment_06: Step 08 - Verify Payers Account is correct
+2019-06-16 17:14:34,393 INFO  com.bankguru.payment.Payment - Actual = 62420
+2019-06-16 17:14:34,393 INFO  com.bankguru.payment.Payment - Expected = 62420
+2019-06-16 17:14:34,393 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:34,393 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:34,393 INFO  com.bankguru.payment.Payment - Payment_06: Step 09 - Verify Payees Account is correct
+2019-06-16 17:14:34,561 INFO  com.bankguru.payment.Payment - Actual = 62419
+2019-06-16 17:14:34,561 INFO  com.bankguru.payment.Payment - Expected = 62419
+2019-06-16 17:14:34,561 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:34,561 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:34,561 INFO  com.bankguru.payment.Payment - Payment_06: Step 10 - Verify Transferred amount is correct
+2019-06-16 17:14:34,734 INFO  com.bankguru.payment.Payment - Actual = 10000
+2019-06-16 17:14:34,734 INFO  com.bankguru.payment.Payment - Expected = 10000
+2019-06-16 17:14:34,734 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:34,734 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:34,734 INFO  com.bankguru.payment.Payment - Payment_06: Step 11 - Verify Description is correct
+2019-06-16 17:14:34,897 INFO  com.bankguru.payment.Payment - Actual = Transfer
+2019-06-16 17:14:34,897 INFO  com.bankguru.payment.Payment - Expected = Transfer
+2019-06-16 17:14:34,897 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:34,897 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:34,898 INFO  com.bankguru.payment.Payment - Payment_07: Step 01 - Click to 'Balance Enquiry' link 
+2019-06-16 17:14:36,136 INFO  com.bankguru.payment.Payment - Payment_07: Step 02 - Verify Balance Enquiry Form message displayed
+2019-06-16 17:14:36,303 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:36,303 INFO  com.bankguru.payment.Payment - Payment_07: Step 02 - Input to 'Account Number' textbox 
+2019-06-16 17:14:36,498 INFO  com.bankguru.payment.Payment - Payment_07: Step 03 - Click to Submit button
+2019-06-16 17:14:37,619 INFO  com.bankguru.payment.Payment - Payment_07: Step 04 - Verify Balance Details message displayed
+2019-06-16 17:14:37,808 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:37,808 INFO  com.bankguru.payment.Payment - Payment_07: Step 05 - Verify current balance after Transferring is correct
+2019-06-16 17:14:37,974 INFO  com.bankguru.payment.Payment - Actual = 30000
+2019-06-16 17:14:37,974 INFO  com.bankguru.payment.Payment - Expected = 30000
+2019-06-16 17:14:37,974 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:37,974 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:37,974 INFO  com.bankguru.payment.Payment - Payment_07: Step 06 - Verify Account Number and Type of Account are correct
+2019-06-16 17:14:38,141 INFO  com.bankguru.payment.Payment - Actual = 62420
+2019-06-16 17:14:38,142 INFO  com.bankguru.payment.Payment - Expected = 62420
+2019-06-16 17:14:38,142 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:38,142 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:38,311 INFO  com.bankguru.payment.Payment - Actual = Savings
+2019-06-16 17:14:38,311 INFO  com.bankguru.payment.Payment - Expected = Savings
+2019-06-16 17:14:38,311 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:38,311 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:38,312 INFO  com.bankguru.payment.Payment - Payment_08: Step 01 - Click to 'Delete Account' link 
+2019-06-16 17:14:39,200 INFO  com.bankguru.payment.Payment - Payment_08: Step 02 - Verify Delete Account Form message displayed
+2019-06-16 17:14:39,422 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:39,422 INFO  com.bankguru.payment.Payment - Payment_08: Step 03 - Input to 'Account Number' textbox 
+2019-06-16 17:14:39,620 INFO  com.bankguru.payment.Payment - Payment_08: Step 04 - Click to Submit button
+2019-06-16 17:14:39,691 INFO  com.bankguru.payment.Payment - Payment_08: Step 04 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-16 17:14:39,697 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-16 17:14:39,698 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-16 17:14:39,698 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:39,698 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:39,698 INFO  com.bankguru.payment.Payment - Payment_08: Step 05 - Accept alert
+2019-06-16 17:14:39,707 INFO  com.bankguru.payment.Payment - DeleteAccount: Step 06 - Verify 'Account Deleted Sucessfully' alert displayed
+2019-06-16 17:14:40,285 INFO  com.bankguru.payment.Payment - Actual = Account Deleted Sucessfully
+2019-06-16 17:14:40,285 INFO  com.bankguru.payment.Payment - Expected = Account Deleted Sucessfully
+2019-06-16 17:14:40,285 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:40,285 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:40,285 INFO  com.bankguru.payment.Payment - Payment_08: Step 07 - Accept alert
+2019-06-16 17:14:40,291 INFO  com.bankguru.payment.Payment - Payment_08: Step 08 - Check Account does not exist anymore
+2019-06-16 17:14:42,211 INFO  com.bankguru.payment.Payment - Payment_08: Step 09 - Verify 'Do you really want to delete this Account?' alert displayed
+2019-06-16 17:14:42,216 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Account?
+2019-06-16 17:14:42,216 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Account?
+2019-06-16 17:14:42,216 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:42,216 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:42,216 INFO  com.bankguru.payment.Payment - Payment_08: Step 10 - Accept alert
+2019-06-16 17:14:42,224 INFO  com.bankguru.payment.Payment - Payment_08: Step 11 - Verify 'Account does not exist?' alert displayed
+2019-06-16 17:14:42,567 INFO  com.bankguru.payment.Payment - Actual = Account does not exist
+2019-06-16 17:14:42,568 INFO  com.bankguru.payment.Payment - Expected = Account does not exist
+2019-06-16 17:14:42,568 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:42,568 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:42,568 INFO  com.bankguru.payment.Payment - Payment_08: Step 12 - Accept alert
+2019-06-16 17:14:42,576 INFO  com.bankguru.payment.Payment - Payment_09: Step 01 - Click to 'Delete Customer' link 
+2019-06-16 17:14:44,387 INFO  com.bankguru.payment.Payment - Payment_09: Step 02 - Input to 'Customer ID' textbox 
+2019-06-16 17:14:44,589 INFO  com.bankguru.payment.Payment - Payment_09: Step 03 - Click to Submit button
+2019-06-16 17:14:44,665 INFO  com.bankguru.payment.Payment - Payment_09: Step 04 - Verify 'Do you really want to delete this Customer?' alert displayed
+2019-06-16 17:14:44,672 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Customer?
+2019-06-16 17:14:44,672 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Customer?
+2019-06-16 17:14:44,672 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:44,672 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:44,672 INFO  com.bankguru.payment.Payment - Payment_09: Step 05 - Accept alert
+2019-06-16 17:14:44,677 INFO  com.bankguru.payment.Payment - Payment_09: Step 06 - Verify 'Customer deleted Successfully' alert displayed
+2019-06-16 17:14:45,025 INFO  com.bankguru.payment.Payment - Actual = Customer deleted Successfully
+2019-06-16 17:14:45,025 INFO  com.bankguru.payment.Payment - Expected = Customer deleted Successfully
+2019-06-16 17:14:45,025 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:45,025 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:45,025 INFO  com.bankguru.payment.Payment - Payment_09: Step 07 - Accept alert
+2019-06-16 17:14:45,034 INFO  com.bankguru.payment.Payment - Payment_09: Step 08 - Click to 'Delete Customer' link 
+2019-06-16 17:14:46,367 INFO  com.bankguru.payment.Payment - Payment_09: Step 09 - Input to 'Customer ID' textbox 
+2019-06-16 17:14:46,579 INFO  com.bankguru.payment.Payment - Payment_09: Step 10 - Click to Submit button
+2019-06-16 17:14:46,653 INFO  com.bankguru.payment.Payment - Payment_09: Step 11 - Verify 'Do you really want to delete this Customer?' alert displayed
+2019-06-16 17:14:46,659 INFO  com.bankguru.payment.Payment - Actual = Do you really want to delete this Customer?
+2019-06-16 17:14:46,659 INFO  com.bankguru.payment.Payment - Expected = Do you really want to delete this Customer?
+2019-06-16 17:14:46,659 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:46,659 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:46,659 INFO  com.bankguru.payment.Payment - Payment_09: Step 12 - Accept alert
+2019-06-16 17:14:46,665 INFO  com.bankguru.payment.Payment - Payment_09: Step 13 - Verify 'Customer does not exist!' alert displayed
+2019-06-16 17:14:46,991 INFO  com.bankguru.payment.Payment - Actual = Customer does not exist!!
+2019-06-16 17:14:46,991 INFO  com.bankguru.payment.Payment - Expected = Customer does not exist!!
+2019-06-16 17:14:46,991 INFO  com.bankguru.payment.Payment - Compare value = true
+2019-06-16 17:14:46,991 INFO  com.bankguru.payment.Payment - ===PASSED===
+2019-06-16 17:14:46,991 INFO  com.bankguru.payment.Payment - Payment_09: Step 14 - Accept alert
+2019-06-16 17:14:47,000 INFO  com.bankguru.payment.Payment - OS name= windows 10
+2019-06-16 17:14:47,723 INFO  com.bankguru.payment.Payment - Cannot run program "taskkill/F": CreateProcess error=2, The system cannot find the file specified

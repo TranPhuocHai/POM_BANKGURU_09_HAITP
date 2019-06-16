@@ -1,12 +1,12 @@
 package commons;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -172,11 +172,32 @@ public class AbstractTest {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
+	public String getCurrentDay() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		return String.valueOf(nowUTC.getDayOfMonth());
+		
+	}
 	
-    public String TodayYYYYMMdd() {
-        Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd");
-        return formatter.format(date);
+	public String getCurrentMonth() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		int month = nowUTC.getMonthOfYear();
+		if (month <10) {
+			return "0"+month;
+		}
+		
+		return String.valueOf(month);
+		
+	}
+	
+	public String getCurrentYear() {
+		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
+		return String.valueOf(nowUTC.getYear());
+		
+	}
+	
+    public String getToday() {
+        String today = getCurrentYear() + "-" + getCurrentMonth()+ "-" + getCurrentDay();
+        return today;
     }
 
 }

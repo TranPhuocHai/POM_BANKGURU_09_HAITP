@@ -192,6 +192,7 @@ public class AbstractTest {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		return String.valueOf(nowUTC.getYear());
 	}
+	
     public String getToday() {
         String today = getCurrentYear() + "-" + getCurrentMonth()+ "-" + getCurrentDay();
         return today;

@@ -16,7 +16,6 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 	private LoginPageObject loginPage;
 	private RegisterPageObject registerPage;
 	public static String USER_ID_INFOR, PASSWORD_INFOR;
-	private String email = "tran.phuoc" + randomNumber() + "@gmail.com";
 
 	@Parameters({"browser","url"})
 	@BeforeTest
@@ -36,7 +35,7 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 		verifyTrue(registerPage.isRegisterPageDisplayed());
 
 		log.info("CreateUser: Step 05 - Input to Email ID textbox");
-		registerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", email);
+		registerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", RegisterToSystemTestData.EMAIL+ randomNumber() + "@gmail.com");
 
 		log.info("CreateUser: Step 06 - Click to Submit button");
 		registerPage.clickToDynamicButton(driver, "btnLogin");

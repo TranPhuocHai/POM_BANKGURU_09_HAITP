@@ -124,8 +124,15 @@ public class AbstractPage {
 		Select select = new Select(element);
 		select.selectByVisibleText(expectedValueInDropdown);
 	}
+	
+	public String getFirstSelectedItemInDropdown(WebDriver driver, String locator) {
+		element = driver.findElement(By.xpath(locator));
+		Select select = new Select(element);
+		return select.getFirstSelectedOption().getText();
+	}
 
-	public String getSelectedItemInDropdown(WebDriver driver, String locator) {
+	public String getFirstSelectedItemInDropdown(WebDriver driver, String locator, String...values) {
+		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
 		return select.getFirstSelectedOption().getText();
@@ -155,8 +162,14 @@ public class AbstractPage {
 
 		}
 	}
-
+	
 	public String getAttributeValue(WebDriver driver, String locator, String attributeName) {
+		element = driver.findElement(By.xpath(locator));
+		return element.getAttribute(attributeName);
+	}
+
+	public String getAttributeValue(WebDriver driver, String locator, String attributeName, String...values) {
+		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
 	}
@@ -576,14 +589,23 @@ public class AbstractPage {
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
-	public boolean isCorrectInforOfDynamicTextboxDisplayed (WebDriver driver, String fieldName, String value) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXTBOX_WITH_INFO, fieldName, value);
+	public String getTextValueInDynamicTextbox (WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		return getAttributeValue(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "value", fieldName);
 	}
-	public boolean isCorrectInforOfDynamicTextAreaDisplayed (WebDriver driver, String fieldName, String text) {
-		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
-		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_TEXT_AREA_WITH_INFO, fieldName, text);
+	
+	
+	public String getTextInDynamicTextArea (WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
+		return getTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 	}
+	
+	public String getSelectedItemInDynamicDropdown (WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
+		return getFirstSelectedItemInDropdown(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
+	}
+	
+	
 
 	/* =================== LIVEGURU Dynamic Locator method ==============================*/
 	

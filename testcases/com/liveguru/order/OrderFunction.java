@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import commons.AbstractTest;
 import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruPageObjects.HomePageObject;
@@ -12,7 +13,6 @@ import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
 import liveguruPageObjects.TVPageObject;
-import liveguruUI.LiveGuruAbstractPageUI;
 
 public class OrderFunction extends AbstractTest{
 	private WebDriver driver;

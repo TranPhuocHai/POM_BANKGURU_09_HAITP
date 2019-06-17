@@ -4,6 +4,7 @@
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="commons.RetryListener" />
 	</listeners>
 
 
@@ -15,22 +16,22 @@
 		</classes>
 	</test>
 
-<!-- 	<test name="Test on CHROME"> -->
-<!-- 		<parameter name="browser" value="chrome" /> -->
-<!-- 		<parameter name="url" value="livegurufrontend" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.liveguru.customer.FrontEndUserRole" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<!-- <test name="Test on CHROME"> -->
+	<!-- <parameter name="browser" value="chrome" /> -->
+	<!-- <parameter name="url" value="livegurufrontend" /> -->
+	<!-- <classes> -->
+	<!-- <class name="com.liveguru.customer.FrontEndUserRole" /> -->
+	<!-- </classes> -->
+	<!-- </test> -->
 
 
-<!-- 	<test name="Test on CHROME HEADLESS"> -->
-<!-- 		<parameter name="browser" value="chromeheadless" /> -->
-<!-- 		<parameter name="url" value="livegurufrontend" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.liveguru.customer.FrontEndUserRole" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<!-- <test name="Test on CHROME HEADLESS"> -->
+	<!-- <parameter name="browser" value="chromeheadless" /> -->
+	<!-- <parameter name="url" value="livegurufrontend" /> -->
+	<!-- <classes> -->
+	<!-- <class name="com.liveguru.customer.FrontEndUserRole" /> -->
+	<!-- </classes> -->
+	<!-- </test> -->
 
 	<!-- <test name="Test on IE"> -->
 	<!-- <parameter name="browser" value="ie" /> -->

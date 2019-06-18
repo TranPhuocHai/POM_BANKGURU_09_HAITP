@@ -10,11 +10,9 @@ public class CustomerTestData {
 	public static final String[] LESS_THAN_6_DIGITS_PIN_VALUE = new String[] { "1", "12", "321", "3214", "32147" };
 	public static final String[] INCORRECT_EMAILS = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 	
-	
 	public static final String VALID_NAME = "Tran Phuoc Hai";
 	public static final String EXPECTED_GENDER = "male";
 	public static final String VALID_DOB = "1988-07-31";
-	
 	
 	public static final String ADDRESS = "100 Dia Chi";
 	public static final String CITY = "Ha Noi";

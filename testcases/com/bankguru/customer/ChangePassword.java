@@ -7,6 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.user.Common_01_RegisterToSystem;
+import com.bankguru.validate.ValidateMessageTestData;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.ChangePasswordPageObject;
@@ -20,12 +21,6 @@ public class ChangePassword extends AbstractTest {
 	private HomePageObject homePage;
 	private ChangePasswordPageObject changePasswordPage;
 
-	private String withoutNumberNewPassword = "bab#nnam@sau";
-	private String withoutSpecialCharacterNewPassword = "bab1nnam4sau";
-	private String[] passwordStringNewPasswords = new String[] {"b@b#n1Password","b@b#n1password"};
-	
-	private String validNewPassword = "bs@#12jks";
-	private String confirmedPassword = "ba@#12jks";
 
 	@Parameters({"browser","url"})
 	@BeforeClass
@@ -74,7 +69,7 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "oldpassword");
 		
 		log.info("OldPasswordMustNotBeBank: Step 04 - Verify 'Old Password must not be blank' message displayed");
-		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "Old Password"), "Old Password must not be blank");
+		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "Old Password"), ValidateMessageTestData.OLD_PASSWORD_MUST_NOT_BE_BLANK);
 
 	}
 
@@ -91,7 +86,7 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "newpassword");
 		
 		log.info("NewPasswordMustNotBeBank: Step 04 - Verify 'New Password must not be blank' message displayed");
-		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), "New Password must not be blank");
+		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), ValidateMessageTestData.NEW_PASSWORD_MUST_NOT_BE_BLANK);
 
 	}
 
@@ -102,10 +97,10 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
 		
 		log.info("NewPasswordMustHaveAtLeastOneNumericValue: Step 02 - Input to 'New Password' textbox");
-		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", withoutNumberNewPassword);
+		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", CustomerTestData.WITHOUT_NUMBER_NEW_PASSWORD);
 		
 		log.info("NewPasswordMustHaveAtLeastOneNumericValue: Step 03 - Verify 'Enter at-least one numeric value' message displayed");
-		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), "Enter at-least one numeric value");
+		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), ValidateMessageTestData.ENTER_AT_LEAST_ONE_NUMERIC_VALUE);
 		
 	}
 	
@@ -116,16 +111,16 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
 		
 		log.info("NewPasswordMustHaveAtLeastOneSpecialCharacter: Step 02 - Input to 'New Password' textbox");
-		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", withoutSpecialCharacterNewPassword);
+		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", CustomerTestData.WITHOUT_SPECIAL_CHARACTER_NEW_PASSWORD);
 		
 		log.info("NewPasswordMustHaveAtLeastOneSpecialCharacter: Step 03 - Verify 'Enter at-least one special character' message displayed");
-		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), "Enter at-least one special character");
+		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), ValidateMessageTestData.ENTER_AT_LEAST_ONE_SPECIAL_VALUE);
 		
 	}
 	
 	@Test
 	public void CP_05_NewPasswordMustNotIncludeStringPassword() {
-		for (String passwordStringNewPassword: passwordStringNewPasswords) {
+		for (String passwordStringNewPassword: CustomerTestData.PASSWORD_STRING_NEW_PASSWORDS) {
 			
 			log.info("NewPasswordMustNotIncludeStringPassword: Step 01 - Clear 'New Password' textbox");
 			changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
@@ -134,7 +129,7 @@ public class ChangePassword extends AbstractTest {
 			changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", passwordStringNewPassword);
 			
 			log.info("NewPasswordMustNotIncludeStringPassword: Step 03 - Verify 'Choose a difficult Password' message displayed");
-			verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), "Choose a difficult Password");
+			verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "New Password"), ValidateMessageTestData.CHOOSE_A_DIFFICULT_PASSWORD);
 		}
 
 	}
@@ -146,19 +141,19 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
 		
 		log.info("ConfirmPasswordAndNewPasswordMustBeMatched: Step 02 - Input 'New Password' textbox");
-		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", validNewPassword);
+		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "newpassword", CustomerTestData.VALID_NEW_PASSWORD);
 		
 		log.info("ConfirmPasswordAndNewPasswordMustBeMatched: Step 03 - Clear 'Confirm Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "confirmpassword");
 		
 		log.info("ConfirmPasswordAndNewPasswordMustBeMatched: Step 04 - Input 'Confirm Password' textbox");
-		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "confirmpassword", confirmedPassword);
+		changePasswordPage.inputToDynamicTextboxOrTextArea(driver, "confirmpassword", CustomerTestData.CONFIRMED_PASSWORD);
 		
 		log.info("ConfirmPasswordAndNewPasswordMustBeMatched: Step 05 - Make sure 'New password' and 'Confirm password' are different");
-		verifyFalse(validNewPassword.equals(confirmedPassword));
+		verifyFalse(CustomerTestData.VALID_NEW_PASSWORD.equals(CustomerTestData.CONFIRMED_PASSWORD));
 		
 		log.info("ConfirmPasswordAndNewPasswordMustBeMatched: Step 06 - Verify 'Passwords do not Match' message displayed");
-		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "Confirm Password"), "Passwords do not Match");
+		verifyEquals(changePasswordPage.getTextDynamicValidateMessage(driver, "Confirm Password"), ValidateMessageTestData.PASSWORDS_DO_NOT_MATCH);
 		
 	}
 

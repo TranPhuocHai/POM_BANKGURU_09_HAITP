@@ -14,7 +14,8 @@
 		<parameter name="url" value="bankguru" />
 		<classes>
 			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
-			<class name="com.bankguru.payment.Payment" />
+			<class name="com.bankguru.customer.Common_02_CreateNewCustomer" />
+			<class name="com.bankguru.customer.EditCustomer" />
 		</classes>
 	</test>
 </suite> 

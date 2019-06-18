@@ -105,7 +105,7 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", CustomerTestData.BLANK_SPACE);
 
 		log.info("NameCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -122,13 +122,13 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "addr");
 
 		log.info("AddressCanNotBeEmpty: Step 04 - Verify 'Address Field must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "Address Field must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), ValidateMessageTestData.ADDRESS_FIELD_MUST_NOT_BE_BLANK);
 
 	}
 
 	@Test
 	public void NC_06_AdressCanNotHaveSpecialCharacters() {
-		for (String specialCharactersAddress : specialCharacters) {
+		for (String specialCharactersAddress : CustomerTestData.SPECIAL_VALUE) {
 
 			log.info("AdressCanNotHaveSpecialCharacters: Step 01 - Clear 'Address' text area");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
@@ -137,7 +137,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", specialCharactersAddress);
 
 			log.info("AdressCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "Special characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -148,10 +148,10 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
 
 		log.info("AddressCanNotHaveBlankSpace: Step 02 - Input to 'Address' text area");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", CustomerTestData.BLANK_SPACE);
 
 		log.info("AddressCanNotHaveBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Address"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -168,12 +168,12 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "city");
 
 		log.info("CityCanNotBeEmpty: Step 04 - Verify 'City Field must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), "City Field must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), ValidateMessageTestData.CITY_FIELD_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
 	public void NC_09_CityCanNotBeNumberic() {
-		for (String numericCity : numericValues) {
+		for (String numericCity : CustomerTestData.NUMERIC_VALUES) {
 
 			log.info("CityCanNotBeNumberic: Step 01 - Clear 'City' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
@@ -182,13 +182,13 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", numericCity);
 
 			log.info("CityCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), "Numbers are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), ValidateMessageTestData.NUMBERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
 	public void NC_10_CityCanNotHaveSpecialCharacters() {
-		for (String specialCharactersCity : specialCharacters) {
+		for (String specialCharactersCity : CustomerTestData.SPECIAL_VALUE) {
 
 			log.info("CityCanNotHaveSpecialCharacters: Step 01 - Clear 'City' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
@@ -197,7 +197,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", specialCharactersCity);
 
 			log.info("CityCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), "Special characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -208,10 +208,10 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
 
 		log.info("CityCanNotHaveFirstBlankSpace: Step 02 - Input to 'City' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", CustomerTestData.BLANK_SPACE);
 
 		log.info("CityCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "City"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -228,12 +228,12 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "state");
 
 		log.info("StateCanNotBeEmpty: Step 04 - Verify 'State must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), "State must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), ValidateMessageTestData.STATE_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
 	public void NC_13_StateCanNotBeNumberic() {
-		for (String numericState : numericValues) {
+		for (String numericState : CustomerTestData.NUMERIC_VALUES) {
 
 			log.info("StateCanNotBeNumberic: Step 01 - Clear 'State' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
@@ -242,13 +242,13 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", numericState);
 
 			log.info("StateCanNotBeNumberic: Step 03 - Verify 'Numbers are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), "Numbers are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), ValidateMessageTestData.NUMBERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
 	public void NC_14_StateCanNotHaveSpecialCharacters() {
-		for (String specialCharactersState : specialCharacters) {
+		for (String specialCharactersState : CustomerTestData.SPECIAL_VALUE) {
 
 			log.info("StateCanNotHaveSpecialCharacters: Step 01 - Clear 'State' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
@@ -257,7 +257,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", specialCharactersState);
 
 			log.info("StateCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), "Special characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -268,10 +268,10 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
 
 		log.info("StateCanNotHaveFirstBlankSpace: Step 02 - Input to 'State' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", CustomerTestData.BLANK_SPACE);
 
 		log.info("StateCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "State"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -288,12 +288,12 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "pinno");
 		
 		log.info("PinCanNotBeEmpty: Step 04 - Verify 'PIN Code must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), "PIN Code must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), ValidateMessageTestData.PIN_CODE_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
 	public void NC_17_PinMustBeNumeric() {
-		for (String characterPIN : characterPINs) {
+		for (String characterPIN : CustomerTestData.CHARACTER_PIN_VALUE) {
 
 			log.info("PinMustBeNumeric: Step 01 - Clear 'PIN' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
@@ -302,13 +302,13 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", characterPIN);
 			
 			log.info("PinMustBeNumeric: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), "Characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), ValidateMessageTestData.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
 	public void NC_18_PinMustHave6Degits() {
-		for (String lessThan6Digits : lessThan6DigitsList) {
+		for (String lessThan6Digits : CustomerTestData.LESS_THAN_6_DIGITS_PIN_VALUE) {
 
 			log.info("PinMustHave6Degits: Step 01 - Clear 'PIN' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
@@ -317,7 +317,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", lessThan6Digits);
 			
 			log.info("PinMustHave6Degits: Step 03 - Verify 'PIN Code must have 6 Digits' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), "PIN Code must have 6 Digits");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), ValidateMessageTestData.PIN_CODE_MUST_HAVE_6_DIGITS);
 		}
 	}
 
@@ -328,10 +328,10 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
 		
 		log.info("PinCanNotHaveFirstBlankSpace: Step 02 - Input to 'PIN' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", CustomerTestData.BLANK_SPACE);
 		
 		log.info("PinCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "PIN"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -348,7 +348,7 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "telephoneno");
 		
 		log.info("MobileNumberCanNotBeEmpty: Step 04 - Verify 'Mobile no must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), "Mobile no must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), ValidateMessageTestData.MOBILE_NO_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
@@ -358,16 +358,16 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
 		
 		log.info("MobileNumberCanNotHaveFirstBlankSpace: Step 02 - Input to 'Mobile Number' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", CustomerTestData.BLANK_SPACE);
 		
 		log.info("MobileNumberCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
 	@Test
 	public void NC_22_MobileNumberCharactersAreNotAllowed() {
-		for (String characterPhoneNumber : characterPhoneNumbers) {
+		for (String characterPhoneNumber : CustomerTestData.CHARACTER_VALUE) {
 
 			log.info("MobileNumberCharactersAreNotAllowed: Step 01 - Clear 'Mobile Number' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
@@ -376,14 +376,14 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", characterPhoneNumber);
 			
 			log.info("MobileNumberCharactersAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), "Characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), ValidateMessageTestData.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 
 	}
 
 	@Test
 	public void NC_23_MobileNumberCanNotHaveSpecialCharacters() {
-		for (String specialPhoneNumber : specialPhoneNumbers) {
+		for (String specialPhoneNumber : CustomerTestData.SPECIAL_VALUE) {
 
 			log.info("MobileNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Mobile Number' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
@@ -392,7 +392,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", specialPhoneNumber);
 			
 			log.info("MobileNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), "Special characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Mobile Number"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -409,12 +409,12 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "emailid");
 		
 		log.info("EmailCanNotBeEmpty: Step 04 - Verify 'Email-ID must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), "Email-ID must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), ValidateMessageTestData.EMAIL_ID_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
 	public void NC_25_EmailMustBeInCorrectFormat() {
-		for (String incorrectEmailID : incorrectEmailIDList) {
+		for (String incorrectEmailID : CustomerTestData.INCORRECT_EMAILS) {
 
 			log.info("EmailMustBeInCorrectFormat: Step 01 - Clear 'Email' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");
@@ -423,7 +423,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", incorrectEmailID);
 			
 			log.info("EmailMustBeInCorrectFormat: Step 03 - Verify 'Email-ID is not valid' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), "Email-ID is not valid");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), ValidateMessageTestData.EMAIL_ID_IS_NOT_VALID);
 		}
 	}
 
@@ -434,10 +434,10 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");
 		
 		log.info("EmailCanNotHaveFirstBlankSpace: Step 02 - input to 'Email' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", CustomerTestData.BLANK_SPACE);
 		
 		log.info("EmailCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), "First character can not have space");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "E-mail"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
@@ -454,7 +454,7 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "password");
 
 		log.info("PasswordCanNotBeEmpty: Step 04 - Verify 'Password must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Password"), "Password must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Password"), ValidateMessageTestData.PASSWORD_MUST_NOT_BE_BLANK);
 	}
 
 	@AfterClass(alwaysRun = true)

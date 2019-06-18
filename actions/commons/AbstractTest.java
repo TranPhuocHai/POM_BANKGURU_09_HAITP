@@ -46,9 +46,6 @@ public class AbstractTest {
 			driver = new InternetExplorerDriver();
 		}
 
-		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-
 		if (url.equalsIgnoreCase("bankguru")) {
 			driver.get(Constants.BANKGURU_DEV_APP_URL);
 		} else if (url.equalsIgnoreCase("livegurufrontend")) {
@@ -57,7 +54,9 @@ public class AbstractTest {
 			driver.get(Constants.LIVEGURU_BACK_END);
 		}
 
-			return driver;
+		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		return driver;
 	}
 
 	private boolean checkPassed(boolean condition) {
@@ -172,29 +171,29 @@ public class AbstractTest {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
-	
+
 	public String getCurrentDay() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		return String.valueOf(nowUTC.getDayOfMonth());
 	}
-	
+
 	public String getCurrentMonth() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		int month = nowUTC.getMonthOfYear();
-		if (month <10) {
-			return "0"+month;
-		} 
-		return String.valueOf(month);
+		if (month < 10) {
+			return "0" + month;
 		}
-	
+		return String.valueOf(month);
+	}
+
 	public String getCurrentYear() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
 		return String.valueOf(nowUTC.getYear());
 	}
-	
-    public String getToday() {
-        String today = getCurrentYear() + "-" + getCurrentMonth()+ "-" + getCurrentDay();
-        return today;
-    }
+
+	public String getToday() {
+		String today = getCurrentYear() + "-" + getCurrentMonth() + "-" + getCurrentDay();
+		return today;
+	}
 
 }

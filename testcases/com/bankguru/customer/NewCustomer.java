@@ -7,6 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.user.Common_01_RegisterToSystem;
+import com.bankguru.validate.ValidateMessageTestData;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.HomePageObject;
@@ -19,15 +20,6 @@ public class NewCustomer extends AbstractTest {
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private NewCustomerPageObject newCustomerPage;
-
-	private String blankSpace = " ";
-	private String[] numericValues = new String[] { "1234", "name123" };
-	private String[] specialCharacters = new String[] { "haitp!@#", "!@#" };
-	private String[] characterPINs = new String[] { "123PIN", "HAI321" };
-	private String[] lessThan6DigitsList = new String[] { "1", "12", "321", "3214", "32147" };
-	private String[] characterPhoneNumbers = new String[] { "haitp", "12 1234" };
-	private String[] specialPhoneNumbers = new String[] { "097@!13546", "!#123654", "0987654#@!" };
-	private String[] incorrectEmailIDList = new String[] { "guru99@gmail", "guru99", "guru99@", "guru99@gmail.", "guru99gmail.com" };
 
 	@Parameters({"browser","url"})
 	@BeforeClass
@@ -69,12 +61,12 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "name");
 
 		log.info("NameCanNotBeEmpty: Step 03 - Verify 'Customer name must not be blank' message displayed");
-		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Customer name must not be blank");
+		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), ValidateMessageTestData.CUSTOMER_NAME_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
 	public void NC_02_NameCanNotBeNumberic() {
-		for (String numericName : numericValues) {
+		for (String numericName : CustomerTestData.NUMERIC_VALUES) {
 
 			log.info("NameCanNotBeNumeric: Step 01 - Clear 'Customer Name' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
@@ -83,14 +75,14 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", numericName);
 
 			log.info("NameCanNotBeNumeric: Step 03 - Verify 'Numbers are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Numbers are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), ValidateMessageTestData.NUMBERS_ARE_NOT_ALLOWED);
 
 		}
 	}
 
 	@Test
 	public void NC_03_NameCanNotHaveSpecialCharacters() {
-		for (String specialCharactersName : specialCharacters) {
+		for (String specialCharactersName : CustomerTestData.SPECIAL_VALUE) {
 
 			log.info("NameCanNotHaveSpecialCharacters: Step 01 - Clear 'Customer Name' textbox");
 			newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
@@ -99,7 +91,7 @@ public class NewCustomer extends AbstractTest {
 			newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", specialCharactersName);
 
 			log.info("NameCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "Special characters are not allowed");
+			verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -110,7 +102,7 @@ public class NewCustomer extends AbstractTest {
 		newCustomerPage.clearDynamicTextboxOrTextArea(driver, "name");
 
 		log.info("NameCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer Name' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", blankSpace);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", CustomerTestData.BLANK_SPACE);
 
 		log.info("NameCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
 		verifyEquals(newCustomerPage.getTextDynamicValidateMessage(driver, "Customer Name"), "First character can not have space");

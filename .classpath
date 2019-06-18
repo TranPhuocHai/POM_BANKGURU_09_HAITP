@@ -6,7 +6,6 @@
 	<classpathentry kind="src" path="interfaces"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="lib" path="lib/bsh-2.0b4.jar"/>
 	<classpathentry kind="lib" path="lib/bson-3.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
@@ -30,7 +29,6 @@
 	<classpathentry kind="lib" path="lib/mockito-core-1.10.8.jar"/>
 	<classpathentry kind="lib" path="lib/owner-1.0.8.jar"/>
 	<classpathentry kind="lib" path="lib/reportng-1.1.4.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.141.0.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.24.jar"/>
 	<classpathentry kind="lib" path="lib/snakeyaml-1.15.jar"/>
 	<classpathentry kind="lib" path="lib/sqlite-jdbc-3.8.11.1.jar"/>
@@ -38,5 +36,6 @@
 	<classpathentry kind="lib" path="lib/velocity-dep-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/webdrivermanager-3.3.0.jar"/>
 	<classpathentry kind="lib" path="lib/joda-time-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-2.53.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

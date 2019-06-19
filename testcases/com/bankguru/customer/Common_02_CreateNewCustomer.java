@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import com.bankguru.common.TestData;
 import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 

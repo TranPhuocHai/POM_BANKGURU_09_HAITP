@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
-import com.bankguru.customer.TestData;
+import com.bankguru.common.TestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 

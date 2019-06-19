@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.customer.TestData;
+import com.bankguru.common.TestData;
 import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;

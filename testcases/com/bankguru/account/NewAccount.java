@@ -6,9 +6,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.customer.CustomerTestData;
+import com.bankguru.customer.TestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
-import com.bankguru.validate.ValidateMessageTestData;
+import com.bankguru.validate.ValidateMessage;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.HomePageObject;
@@ -65,7 +65,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessageTestData.CUSTOMER_ID_IS_REQUIRED);
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessage.CUSTOMER_ID_IS_REQUIRED);
 
 	}
 
@@ -76,16 +76,16 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox");
-		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", CustomerTestData.BLANK_SPACE);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", TestData.BLANK_SPACE);
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
 	@Test
 	public void NC_03_CustomerIDCharacterAreNotAllowed() {
-		for (String charactervalue : CustomerTestData.CHARACTER_VALUE) {
+		for (String charactervalue : TestData.CHARACTER_VALUE) {
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -94,14 +94,14 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", charactervalue);
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessageTestData.CHARACTERS_ARE_NOT_ALLOWED);
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 
 	}
 
 	@Test
 	public void NC_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialValue : CustomerTestData.SPECIAL_VALUE) {
+		for (String specialValue : TestData.SPECIAL_VALUE) {
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -110,7 +110,7 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", specialValue);
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessage.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
@@ -127,7 +127,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "inideposit");
 
 		log.info("InitialDepositCanNotBeEmpty: Step 04 - Verify 'Initial Deposit must not be blank' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessageTestData.INITIAL_DEPOSIT_MUST_NOT_BE_BLANK);
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessage.INITIAL_DEPOSIT_MUST_NOT_BE_BLANK);
 
 	}
 
@@ -138,16 +138,16 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 02 - Input to 'Initial deposit' textbox");
-		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", CustomerTestData.BLANK_SPACE);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", TestData.BLANK_SPACE);
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
+		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
 	@Test
 	public void NC_07_InitialDepositCharacterAreNotAllowed() {
-		for (String characterValue : CustomerTestData.CHARACTER_VALUE) {
+		for (String characterValue : TestData.CHARACTER_VALUE) {
 
 			log.info("InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
@@ -156,14 +156,14 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", characterValue);
 
 			log.info("InitialDepositCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessageTestData.CHARACTERS_ARE_NOT_ALLOWED);
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 
 	}
 
 	@Test
 	public void NC_08_InitialDepositCanNotHaveSpecialCharacters() {
-		for (String specialValue : CustomerTestData.SPECIAL_VALUE) {
+		for (String specialValue : TestData.SPECIAL_VALUE) {
 
 			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
@@ -172,7 +172,7 @@ public class NewAccount extends AbstractTest {
 			newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", specialValue);
 
 			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
+			verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessage.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 

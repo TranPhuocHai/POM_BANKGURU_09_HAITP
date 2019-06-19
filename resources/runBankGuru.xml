@@ -17,6 +17,7 @@
 			<class name="com.bankguru.customer.Common_02_CreateNewCustomer" />
 			<class name="com.bankguru.customer.NewCustomer" />
 			<class name="com.bankguru.customer.EditCustomer" />
+			<class name="com.bankguru.payment.Payment" />
 			<class name="com.bankguru.customer.DeleteCustomer" />
 			<class name="com.bankguru.customer.ChangePassword" />
 			<class name="com.bankguru.account.NewAccount" />

@@ -6,7 +6,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.bankguru.customer.TestData;
+import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
+import com.bankguru.validate.ValidateMessage;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.DeleteAccountPageObject;
@@ -19,10 +22,6 @@ public class DeleteAccount extends AbstractTest {
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private DeleteAccountPageObject deleteAccountPage;
-	
-	private String blankSpace = " ";
-	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
-	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters({"browser","url"})
 	@BeforeClass
@@ -52,66 +51,66 @@ public class DeleteAccount extends AbstractTest {
 		log.info("Precondition: Step 07 - Click to 'Delete Account' link");
 		homePage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
-		verifyTrue(deleteAccountPage.isDynamicPageTitleDisplayed(driver, "Delete Account Form"));
+		verifyTrue(deleteAccountPage.isDynamicPageTitleDisplayed(driver, PaymentTestData.DELETE_ACCOUNT_TITLE));
 	}
 
 	@Test
-	public void EA_01_AccountNumberCanNotBeEmpty() {
+	public void DeleteAccount_01_AccountNumberCanNotBeEmpty() {
 		
-		log.info("AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox");
+		log.info("DeleteAccount_01: Step 01 - Clear 'Account Number' textbox");
 		deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox");
+		log.info("DeleteAccount_01: Step 02 - Click to 'Account Number' textbox");
 		deleteAccountPage.clickToDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("AccountNumberCanNotBeEmpty: Step 03 - Press TAB key");
+		log.info("DeleteAccount_01: Step 03 - Press TAB key");
 		deleteAccountPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed");
-		verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Account Number must not be blank");
+		log.info("DeleteAccount_01: Step 04 - Verify 'Account Number must not be blank' message displayed");
+		verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.ACCOUNT_NUMBER_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
-	public void EA_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterAccountNo : characterAccountNos) {
+	public void DeleteAccount_02_AccountNumberCharacterAreNotAllowed() {
+		for (String characterAccountNo : TestData.CHARACTER_VALUE) {
 			
-			log.info("AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox");
+			log.info("DeleteAccount_02: Step 01 - Clear 'Account Number' textbox");
 			deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 			
-			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
+			log.info("DeleteAccount_02: Step 02 - Input to 'Account Number' textbox");
 			deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", characterAccountNo);
 			
-			log.info("AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
+			log.info("DeleteAccount_02: Step 03 - Verify 'Characters are not allowed' message displayed");
+			verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
-	public void EA_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialAccountNo : specialAccountNos) {
+	public void DeleteAccount_03_AccountNumberCanNotHaveSpecialCharacters() {
+		for (String specialAccountNo : TestData.SPECIAL_VALUE) {
 			
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox");
+			log.info("DeleteAccount_03: Step 01 - Clear 'Account Number' textbox");
 			deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 			
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox");
+			log.info("DeleteAccount_03: Step 02 - Input to 'Account Number' textbox");
 			deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", specialAccountNo);
 			
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Special characters are not allowed");
+			log.info("DeleteAccount_03: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
-	public void EA_04_AccountNumberFirstCharacterMustNotBeBlank() {
+	public void DeleteAccount_04_AccountNumberFirstCharacterMustNotBeBlank() {
 		
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox");
+		log.info("DeleteAccount_04: Step 01 - Clear 'Account Number' textbox");
 		deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox");
-		deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", blankSpace);
+		log.info("DeleteAccount_04: Step 02 - Input to 'Account Number' textbox");
+		deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", TestData.BLANK_SPACE);
 		
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
+		log.info("DeleteAccount_04: Step 03 - Verify 'Characters are not allowed' message displayed");
+		verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 
 	}
 	

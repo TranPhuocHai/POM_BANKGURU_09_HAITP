@@ -1,6 +1,6 @@
 package com.bankguru.customer;
 
-public class CustomerTestData {
+public class TestData {
 	
 	public static final String BLANK_SPACE = " ";
 	public static final String[] NUMERIC_VALUES = new String[] { "1234", "name123" };
@@ -22,11 +22,17 @@ public class CustomerTestData {
 	public static final String EMAIL = "haitp";
 	public static final String PASSWORD = "sdhgd3123";
 	
+	public static final String AMOUNT = "50000";
+	
 
 	public static final String WITHOUT_NUMBER_NEW_PASSWORD = "bab#nnam@sau";
 	public static final String WITHOUT_SPECIAL_CHARACTER_NEW_PASSWORD = "bab1nnam4sau";
 	public static final String[] PASSWORD_STRING_NEW_PASSWORDS = new String[] {"b@b#n1Password","b@b#n1password"};
 	public static final String VALID_NEW_PASSWORD = "bs@#12jks";
 	public static final String CONFIRMED_PASSWORD = "ba@#12jks";
+	
+	public static final String CHANGE_PASSWORD_TITLE = "Change Password";
+	public static final String CUSTOMIZED_STATEMENT_TITLE = "Customized Statement Form";
+	public static final String MINI_STATEMENT_TITLE = "Mini Statement Form";
 
 }

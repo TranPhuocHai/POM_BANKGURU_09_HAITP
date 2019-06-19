@@ -1,6 +1,6 @@
 package com.bankguru.validate;
 
-public class ValidateMessageTestData {
+public class ValidateMessage {
 	public static final String CUSTOMER_NAME_MUST_NOT_BE_BLANK = "Customer name must not be blank";
 	public static final String ADDRESS_FIELD_MUST_NOT_BE_BLANK = "Address Field must not be blank";
 	public static final String CITY_FIELD_MUST_NOT_BE_BLANK = "City Field must not be blank";
@@ -12,6 +12,11 @@ public class ValidateMessageTestData {
 	public static final String OLD_PASSWORD_MUST_NOT_BE_BLANK = "Old Password must not be blank";	
 	public static final String NEW_PASSWORD_MUST_NOT_BE_BLANK = "New Password must not be blank";	
 	public static final String INITIAL_DEPOSIT_MUST_NOT_BE_BLANK = "Initial Deposit must not be blank";	
+	public static final String ACCOUNT_NUMBER_MUST_NOT_BE_BLANK = "Account Number must not be blank";	
+	public static final String PAYERS_ACCOUNT_NUMBER_MUST_NOT_BE_BLANK = "Payers Account Number must not be blank";	
+	public static final String PAYEES_ACCOUNT_NUMBER_MUST_NOT_BE_BLANK = "Payees Account Number must not be blank";	
+	public static final String AMOUNT_FIELD_MUST_NOT_BE_BLANK = "Amount field must not be blank";	
+	public static final String DESCRIPTION_CAN_NOT_BE_BLANK = "Description can not be blank";	
 	
 	public static final String CUSTOMER_ID_IS_REQUIRED = "Customer ID is required";
 	

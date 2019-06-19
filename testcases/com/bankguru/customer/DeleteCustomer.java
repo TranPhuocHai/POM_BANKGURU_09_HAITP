@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.user.Common_01_RegisterToSystem;
-import com.bankguru.validate.ValidateMessageTestData;
+import com.bankguru.validate.ValidateMessage;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.DeleteCustomerPageObject;
@@ -52,64 +52,64 @@ public class DeleteCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void DC_01_CustomerIDCanNotBeEmpty() {
+	public void DeleteCustomer_01_CustomerIDCanNotBeEmpty() {
 
-		log.info("CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox");
+		log.info("DeleteCustomer_01: Step 01 - Clear 'Customer ID' textbox");
 		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
-		log.info("CustomerIDCanNotBeEmpty: Step 02 - Click to 'Customer ID' textbox");
+		log.info("DeleteCustomer_01: Step 02 - Click to 'Customer ID' textbox");
 		deleteCustomerPage.clickToDynamicTextboxOrTextArea(driver, "cusid");
 
-		log.info("CustomerIDCanNotBeEmpty: Step 03 - Press TAB key");
+		log.info("DeleteCustomer_01: Step 03 - Press TAB key");
 		deleteCustomerPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "cusid");
 
-		log.info("CustomerIDCanNotBeEmpty: Step 04 - Verify 'Customer ID is required' message displayed");
-		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessageTestData.CUSTOMER_ID_IS_REQUIRED);
+		log.info("DeleteCustomer_01: Step 04 - Verify 'Customer ID is required' message displayed");
+		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessage.CUSTOMER_ID_IS_REQUIRED);
 
 	}
 
 	@Test
-	public void DC_02_CustomerIDCanNotHaveFirstBlankSpace() {
+	public void DeleteCustomer_02_CustomerIDCanNotHaveFirstBlankSpace() {
 
-		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox");
+		log.info("DeleteCustomer_02: Step 01 - Clear 'Customer ID' textbox");
 		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
-		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox");
-		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", CustomerTestData.BLANK_SPACE);
+		log.info("DeleteCustomer_02: Step 02 - Input to 'Customer ID' textbox");
+		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", TestData.BLANK_SPACE);
 
-		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
-		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessageTestData.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
+		log.info("DeleteCustomer_02: Step 03 - Verify 'First character can not have space' message displayed");
+		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
 
 	}
 
 	@Test
-	public void DC_03_CustomerIDCharacterAreNotAllowed() {
-		for (String charactervalue : CustomerTestData.CHARACTER_VALUE) {
+	public void DeleteCustomer_03_CustomerIDCharacterAreNotAllowed() {
+		for (String charactervalue : TestData.CHARACTER_VALUE) {
 
-			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
+			log.info("DeleteCustomer_03: Step 01 - Customer ID Number textbox");
 			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
-			log.info("CustomerIDCharacterAreNotAllowed: Step 02 - Input to 'Customer ID' textbox");
+			log.info("DeleteCustomer_03: Step 02 - Input to 'Customer ID' textbox");
 			deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", charactervalue);
 
-			log.info("CustomerIDCharacterAreNotAllowed: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessageTestData.CHARACTERS_ARE_NOT_ALLOWED);
+			log.info("DeleteCustomer_03: Step 03 - Verify 'Characters are not allowed' message displayed");
+			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 
 	}
 
 	@Test
-	public void DC_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialValue : CustomerTestData.SPECIAL_VALUE) {
+	public void DeleteCustomer_04_CustomerIDCanNotHaveSpecialCharacters() {
+		for (String specialValue : TestData.SPECIAL_VALUE) {
 
-			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
+			log.info("DeleteCustomer_04: Step 01 - Customer ID Number textbox");
 			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
-			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 02 - Input to 'Customer ID' textbox");
+			log.info("DeleteCustomer_04: Step 02 - Input to 'Customer ID' textbox");
 			deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", specialValue);
 
-			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessageTestData.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
+			log.info("DeleteCustomer_04: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessage.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 

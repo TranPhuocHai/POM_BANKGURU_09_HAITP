@@ -7,7 +7,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
+import com.bankguru.customer.TestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
+import com.bankguru.validate.ValidateMessage;
 
 import bankguruPageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.HomePageObject;
@@ -20,11 +22,6 @@ public class MiniStatement extends AbstractTest {
 	private LoginPageObject loginPage;
 	private HomePageObject homePage;
 	private MiniStatementPageObject miniStatementPage;
-
-	
-	private String blankSpace = " ";
-	private String[] characterAccountNos = new String[] { "haitp", "12 1234" };
-	private String[] specialAccountNos = new String[] { "097@!13546", "!#123654", "0987654#@!" };
 
 	@Parameters({"browser","url"})
 	@BeforeClass
@@ -56,83 +53,83 @@ public class MiniStatement extends AbstractTest {
 		miniStatementPage = PageFactoryManager.getMiniStatementPage(driver);
 		
 		log.info("Precondition: Step 08 - Veify 'Mini Statement Form' title displayed");
-		verifyTrue(miniStatementPage.isDynamicPageTitleDisplayed(driver, "Mini Statement Form"));
+		verifyTrue(miniStatementPage.isDynamicPageTitleDisplayed(driver, TestData.MINI_STATEMENT_TITLE));
 	}
 
 	@Test
-	public void MS_01_AccountNumberCanNotBeEmpty() {
+	public void MiniStatement_01_AccountNumberCanNotBeEmpty() {
 
-		log.info("AccountNumberCanNotBeEmpty: Step 01 - Clear 'Account Number' textbox");
+		log.info("MiniStatement_01: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
-		log.info("AccountNumberCanNotBeEmpty: Step 02 - Click to 'Account Number' textbox");
+		log.info("MiniStatement_01: Step 02 - Click to 'Account Number' textbox");
 		miniStatementPage.clickToDynamicTextboxOrTextArea(driver, "accountno");
 
-		log.info("AccountNumberCanNotBeEmpty: Step 03 - Press TAB key");
+		log.info("MiniStatement_01: Step 03 - Press TAB key");
 		miniStatementPage.pressTABKeyToDynamicTextboxOrTextArea(driver, "accountno");
 
-		log.info("AccountNumberCanNotBeEmpty: Step 04 - Verify 'Account Number must not be blank' message displayed");
-		verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Account Number must not be blank");
+		log.info("MiniStatement_01: Step 04 - Verify 'Account Number must not be blank' message displayed");
+		verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.ACCOUNT_NUMBER_MUST_NOT_BE_BLANK);
 	}
 
 	@Test
-	public void MS_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterAccountNo : characterAccountNos) {
+	public void MiniStatement_02_AccountNumberCharacterAreNotAllowed() {
+		for (String characterAccountNo : TestData.CHARACTER_VALUE) {
 
-			log.info("AccountNumberCharacterAreNotAllowed: Step 01 - Clear 'Account Number' textbox");
+			log.info("MiniStatement_02: Step 01 - Clear 'Account Number' textbox");
 			miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 
-			log.info("AccountNumberCharacterAreNotAllowed: Step 02 - Input to 'Account Number' textbox");
+			log.info("MiniStatement_02: Step 02 - Input to 'Account Number' textbox");
 			miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", characterAccountNo);
 			
 
-			log.info("AccountNumberCanNotBeEmpty: Step 03 - Verify 'Characters are not allowed' message displayed");
-			verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
+			log.info("MiniStatement_02: Step 03 - Verify 'Characters are not allowed' message displayed");
+			verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
-	public void MS_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialAccountNo : specialAccountNos) {
+	public void MiniStatement_03_AccountNumberCanNotHaveSpecialCharacters() {
+		for (String specialAccountNo : TestData.SPECIAL_VALUE) {
 
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 01 - Clear 'Account Number' textbox");
+			log.info("MiniStatement_03: Step 01 - Clear 'Account Number' textbox");
 			miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 			
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 02 - Input to 'Account Number' textbox");
+			log.info("MiniStatement_03: Step 02 - Input to 'Account Number' textbox");
 			miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", specialAccountNo);
 			
-			log.info("AccountNumberCanNotHaveSpecialCharacters: Step 03 - Verify 'Special characters are not allowed' message displayed");
-			verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Special characters are not allowed");
+			log.info("MiniStatement_03: Step 03 - Verify 'Special characters are not allowed' message displayed");
+			verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.SPECIAL_CHARACTERS_ARE_NOT_ALLOWED);
 		}
 	}
 
 	@Test
-	public void MS_04_AccountNumberFirstCharacterMustNotBeBlank() {
+	public void MiniStatement_04_AccountNumberFirstCharacterMustNotBeBlank() {
 
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 01 - Clear 'Account Number' textbox");
+		log.info("MiniStatement_04: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 02 - Input to 'Account Number' textbox");
-		miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", blankSpace);
+		log.info("MiniStatement_04: Step 02 - Input to 'Account Number' textbox");
+		miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", TestData.BLANK_SPACE);
 		
-		log.info("AccountNumberFirstCharacterMustNotBeBlank: Step 03 - Verify 'Characters are not allowed' message displayed");
-		verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), "Characters are not allowed");
+		log.info("MiniStatement_04: Step 03 - Verify 'Characters are not allowed' message displayed");
+		verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);
 
 	}
 	
 	@Test
-	public void MS_05_ValidAccountNumber() {
+	public void MiniStatement_05_ValidAccountNumber() {
 		
-		log.info("ValidAccountNumber: Step 01 - Clear 'Account Number' textbox");
+		log.info("MiniStatement_05: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
-		log.info("ValidAccountNumber: Step 02 - Input to 'Account Number' textbox");
+		log.info("MiniStatement_05: Step 02 - Input to 'Account Number' textbox");
 		miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", EditAccount.ACCOUNT_ID);
 		
-		log.info("ValidAccountNumber: Step 03 - Click to submit button");
+		log.info("MiniStatement_05: Step 03 - Click to submit button");
 		miniStatementPage.clickToDynamicButton(driver, "AccSubmit");
 		
-		log.info("ValidAccountNumber: Step 04 - Verify Last Five Transaction Details message displayed");
+		log.info("MiniStatement_05: Step 04 - Verify Last Five Transaction Details message displayed");
 		verifyTrue(miniStatementPage.isLastFiveTransactionDetailsDispayed(EditAccount.ACCOUNT_ID));
 	}
 	

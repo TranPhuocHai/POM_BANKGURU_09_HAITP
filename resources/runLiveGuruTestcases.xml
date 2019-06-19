@@ -16,6 +16,7 @@
 		</classes>
 	</test>
 
+
 	<!-- <test name="Test on CHROME"> -->
 	<!-- <parameter name="browser" value="chrome" /> -->
 	<!-- <parameter name="url" value="livegurufrontend" /> -->

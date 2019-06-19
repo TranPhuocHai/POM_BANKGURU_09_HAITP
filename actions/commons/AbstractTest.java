@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -29,9 +28,8 @@ public class AbstractTest {
 
 	protected WebDriver openMultiBrowser(String browserName, String url) {
 		if (browserName.equalsIgnoreCase("firefox")) {
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setPreference("network.proxy.type", 0);
-			driver = new FirefoxDriver(profile);
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 		} else if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -42,7 +40,7 @@ public class AbstractTest {
 			option.addArguments("window-size=1366x768");
 			driver = new ChromeDriver(option);
 		} else if (browserName.equalsIgnoreCase("ie")) {
-			WebDriverManager.iedriver().setup();
+			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
 		}
 
@@ -141,6 +139,7 @@ public class AbstractTest {
 
 			String cmd = "";
 			if (driver != null) {
+				driver.manage().deleteAllCookies();
 				driver.quit();
 			}
 

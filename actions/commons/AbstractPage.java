@@ -667,11 +667,11 @@ public class AbstractPage {
 
 	}
 
-	public boolean isShoppingCartMessageDisplayed(WebDriver driver) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
-
-	}
+//	public boolean isShoppingCartMessageDisplayed(WebDriver driver) {
+//		waitForElementVisible(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
+//		return isControlDisplayed(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
+//
+//	}
 
 	public boolean isDynamicProductLinkDisplayed(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
@@ -737,9 +737,9 @@ public class AbstractPage {
 
 	}
 
-	public boolean isDynamicLiveGuruPageTitleDisplayed(WebDriver driver, String productName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, productName);
+	public boolean isDynamicLiveGuruPageTitleDisplayed(WebDriver driver, String pageTitle) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, pageTitle);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, pageTitle);
 	}
 
 	public boolean isYourWishListHasBeenSharedMessageDisplayed(WebDriver driver) {

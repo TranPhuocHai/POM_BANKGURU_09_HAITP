@@ -11,7 +11,7 @@ public class LiveGuruAbstractPageUI {
 	public static final String DYNAMIC_PRODUCT_PRICE_IN_LIST_PAGE = "//a[text()='%s']//parent::h2//following-sibling::div[@class='price-box']//span[@class='price']";
 	public static final String DYNAMIC_PRODUCT_PRICE_IN_DETAILS_PAGE = "//span[text()='%s']//parent::div//following-sibling::div[@class='price-info']//span[@class='price']";
 	public static final String DYNAMIC_PRODUCT_LINK = "//a[text()='%s']";
-	public static final String SHOPPING_CART_MESSAGE = "//h1[text()='Shopping Cart']";
+//	public static final String SHOPPING_CART_MESSAGE = "//h1[text()='Shopping Cart']";
 	public static final String DYNAMIC_DISCOUNT_TITLE = "//td[contains(text(),'Discount (%s)')]";
 	public static final String DYNAMIC_DISCOUNT_MONEY = "//td[contains(text(),'Discount (%s)')]/following-sibling::td/span[@class='price']";
 	public static final String GRANT_TOTAL_MONEY = "//strong[text()='Grand Total']/parent::td/following-sibling::td//span[@class='price']";
@@ -22,6 +22,7 @@ public class LiveGuruAbstractPageUI {
 	public static final String DYNAMIC_ADD_TO_CART_BUTTON = "//a[text()='%s']/parent::h2/following-sibling::div[@class='actions']//span[text()='Add to Cart']";
 	public static final String DYNAMIC_ADD_TO_COMPARE_LINK = "//a[text()='%s']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Compare']";
 	public static final String DYNAMIC_ADD_TO_WISHLIST_LINK = "//a[text()='%s']/parent::h2/following-sibling::div[@class='actions']//a[text()='Add to Wishlist']";
+	
 	public static final String DYNAMIC_TITLE = "//h1[text()='%s']";
 
 	public static final String DYNAMIC_WISHLIST_ADDED_MESSAGE = "//span[contains(text(),'%s has been added to your wishlist. Click')]";

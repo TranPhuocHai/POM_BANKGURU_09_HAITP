@@ -11,11 +11,6 @@ public class RegisterPageObject extends AbstractPage {
 	}
 
 	WebDriver driver;
-	
-	public boolean isResgisterFormDisplayed() {
-		waitForElementVisible(driver, RegisterPageUI.REGISTER_FORM);
-		return isControlDisplayed(driver, RegisterPageUI.REGISTER_FORM);
-	}
 
 	public boolean isRegisterSuccessMessageDisplayed() {
 		waitForElementVisible(driver, RegisterPageUI.REGISTER_SUCESS_MESSAGE);

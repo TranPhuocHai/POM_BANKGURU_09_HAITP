@@ -29,14 +29,14 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-<!-- 	<test name="Test on CHROME"> -->
-<!-- 		<parameter name="browser" value="chrome" /> -->
-<!-- 		<parameter name="url" value="bankguru" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
-<!-- 			<class name="com.bankguru.payment.Payment" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
+	<test name="Test on CHROME">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
 
 
 <!-- 	<test name="Test on CHROME HEADLESS"> -->
@@ -57,13 +57,13 @@
 <!-- 		</classes> -->
 <!-- 	</test> -->
 
-	<test name="Test on IE">
-		<parameter name="browser" value="ie" />
-		<parameter name="url" value="bankguru" />
-		<classes>
-			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
-			<class name="com.bankguru.payment.Payment" />
-		</classes>
-	</test>
+<!-- 	<test name="Test on IE"> -->
+<!-- 		<parameter name="browser" value="ie" /> -->
+<!-- 		<parameter name="url" value="bankguru" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
+<!-- 			<class name="com.bankguru.payment.Payment" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 </suite> 

@@ -124,14 +124,14 @@ public class AbstractPage {
 		Select select = new Select(element);
 		select.selectByVisibleText(expectedValueInDropdown);
 	}
-	
+
 	public String getFirstSelectedItemInDropdown(WebDriver driver, String locator) {
 		element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
 		return select.getFirstSelectedOption().getText();
 	}
 
-	public String getFirstSelectedItemInDropdown(WebDriver driver, String locator, String...values) {
+	public String getFirstSelectedItemInDropdown(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		Select select = new Select(element);
@@ -162,13 +162,13 @@ public class AbstractPage {
 
 		}
 	}
-	
+
 	public String getAttributeValue(WebDriver driver, String locator, String attributeName) {
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
 	}
 
-	public String getAttributeValue(WebDriver driver, String locator, String attributeName, String...values) {
+	public String getAttributeValue(WebDriver driver, String locator, String attributeName, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
@@ -406,6 +406,13 @@ public class AbstractPage {
 		javascriptExecutor.executeScript("arguments[0].click();", element);
 	}
 
+	public void clickToElementByJavascript(WebDriver driver, String locator, String... values) {
+		locator = String.format(locator, (Object[]) values);
+		javascriptExecutor = (JavascriptExecutor) driver;
+		element = driver.findElement(By.xpath(locator));
+		javascriptExecutor.executeScript("arguments[0].click();", element);
+	}
+
 	public void sendkeyToElementByJavascript(WebDriver driver, String locator, String value) {
 		javascriptExecutor = (JavascriptExecutor) driver;
 		element = driver.findElement(By.xpath(locator));
@@ -519,14 +526,18 @@ public class AbstractPage {
 
 	public void openMultiplePage(WebDriver driver, String pageName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
-		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
+		} else
+			clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 	}
 
 	public void overrideGlobleTimeout(WebDriver driver, int timeOut) {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
-	/* =========================== BANKGURU Dynamic Locator method =============================*/
+	/* =========================== BANKGURU Dynamic Locator method ============================= */
 
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TABLE_INFOR, fieldName);
@@ -564,7 +575,11 @@ public class AbstractPage {
 
 	public void clickToDynamicButton(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
-		checkToCheckBoxOrRadioButton(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
+		} else
+			clickToElement(driver, AbstractPageUI.DYNAMIC_BUTTON, fieldName);
 	}
 
 	public void selectItemInDynamicDropdown(WebDriver driver, String fieldName, String expectedValueInDropdown) {
@@ -589,32 +604,28 @@ public class AbstractPage {
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
-	public String getTextValueInDynamicTextbox (WebDriver driver, String fieldName) {
+	public String getTextValueInDynamicTextbox(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		return getAttributeValue(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "value", fieldName);
 	}
-	
-	
-	public String getTextInDynamicTextArea (WebDriver driver, String fieldName) {
+
+	public String getTextInDynamicTextArea(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		return getTextElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 	}
-	
-	public String getSelectedItemInDynamicDropdown (WebDriver driver, String fieldName) {
+
+	public String getSelectedItemInDynamicDropdown(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
 		return getFirstSelectedItemInDropdown(driver, AbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
 	}
-	
-	
 
-	/* =================== LIVEGURU Dynamic Locator method ==============================*/
-	
-	
+	/* =================== LIVEGURU Dynamic Locator method ============================== */
+
 	public void acceptAnyAlert(WebDriver driver) {
 		waitForAlertPresence(driver);
 		acceptAlert(driver);
 	}
-	
+
 	public String getTextAnyAlert(WebDriver driver) {
 		waitForAlertPresence(driver);
 		return getTextAlert(driver);
@@ -628,19 +639,30 @@ public class AbstractPage {
 
 	public void clickToAccountMenu(WebDriver driver) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
-		clickToElement(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
 
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
 	}
 
 	public void clickToDynamicLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
-		clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
 
 	}
 
 	public void clickToDynamicLiveGuruButton(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_BUTTON, fieldName);
 	}
 
 	public String getCostDynamicProductInMobileListPage(WebDriver driver, String productName) {
@@ -659,19 +681,22 @@ public class AbstractPage {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
 		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
 
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+
 	}
 
 	public void clickToDynamicAddToCartButton(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
 
 	}
-
-//	public boolean isShoppingCartMessageDisplayed(WebDriver driver) {
-//		waitForElementVisible(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
-//		return isControlDisplayed(driver, LiveGuruAbstractPageUI.SHOPPING_CART_MESSAGE);
-//
-//	}
 
 	public boolean isDynamicProductLinkDisplayed(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
@@ -716,7 +741,11 @@ public class AbstractPage {
 
 	public void clickToDynamiUpdateButton(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_UPDATE_BUTTON, productName);
 
 	}
 
@@ -727,13 +756,20 @@ public class AbstractPage {
 
 	public void clickToAddToCompareLinkOfDynamicProduct(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
 
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
 	}
 
 	public void clickToAddToWishlistLinkOfDynamicProduct(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
 
 	}
 

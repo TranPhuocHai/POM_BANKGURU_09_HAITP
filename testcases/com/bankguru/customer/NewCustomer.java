@@ -414,7 +414,7 @@ public class NewCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void NC_25_EmailMustBeInCorrectFormat() {
+	public void NewCustomer_25_EmailMustBeInCorrectFormat() {
 		for (String incorrectEmailID : TestData.INCORRECT_EMAILS) {
 
 			log.info("NewCustomer_25: Step 01 - Clear 'Email' textbox");

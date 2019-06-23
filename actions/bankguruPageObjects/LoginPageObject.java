@@ -24,7 +24,12 @@ public class LoginPageObject extends AbstractPage {
 
 	public RegisterPageObject clickToHereLink() {
 		waitForElementVisible(driver, LoginPageUI.HERE_LINK);
-		clickToElement(driver, LoginPageUI.HERE_LINK);
+		
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LoginPageUI.HERE_LINK);
+		} else
+			clickToElement(driver, LoginPageUI.HERE_LINK);
+		
 		return PageFactoryManager.getRegisterPage(driver);
 	}
 

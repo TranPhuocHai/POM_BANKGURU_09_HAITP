@@ -1,138 +1,138 @@
-2019-06-24 15:07:26,190 INFO  com.liveguru.order.OrderFunction - TC_01: Step 01 - Get HomePage
-2019-06-24 15:07:26,194 INFO  com.liveguru.order.OrderFunction - TC_01: Step 02 - Get HomePage Url
-2019-06-24 15:07:26,198 INFO  com.liveguru.order.OrderFunction - TC_01: Step 03 - Click to Account Menu
-2019-06-24 15:07:26,658 INFO  com.liveguru.order.OrderFunction - TC_01: Step 04 - Click to Register link
-2019-06-24 15:07:27,665 INFO  com.liveguru.order.OrderFunction - TC_01: Step 05 - Verify Create An Account form display
-2019-06-24 15:07:27,887 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:27,889 INFO  com.liveguru.order.OrderFunction - TC_01: Step 06 - Input to First Name textbox
-2019-06-24 15:07:28,098 INFO  com.liveguru.order.OrderFunction - TC_01: Step 07 - Input to Middle Name textbox
-2019-06-24 15:07:28,301 INFO  com.liveguru.order.OrderFunction - TC_01: Step 08 - Input to Last Name textbox
-2019-06-24 15:07:28,492 INFO  com.liveguru.order.OrderFunction - TC_01: Step 09 - Input to Email textbox
-2019-06-24 15:07:28,699 INFO  com.liveguru.order.OrderFunction - TC_01: Step 10 - Input to First Name textbox
-2019-06-24 15:07:28,901 INFO  com.liveguru.order.OrderFunction - TC_01: Step 11 - Input to First Name textbox
-2019-06-24 15:07:29,117 INFO  com.liveguru.order.OrderFunction - TC_01: Step 12 - Click to Register button
-2019-06-24 15:07:30,758 INFO  com.liveguru.order.OrderFunction - TC_01: Step 13 - Click to Register button
-2019-06-24 15:07:31,032 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:31,034 INFO  com.liveguru.order.OrderFunction - TC_02: Step 01 - open Home Page
-2019-06-24 15:07:32,142 INFO  com.liveguru.order.OrderFunction - TC_02: Step 02 - Click to Account Menu
-2019-06-24 15:07:32,681 INFO  com.liveguru.order.OrderFunction - TC_02: Step 03 - Click to My Account link
-2019-06-24 15:07:33,760 INFO  com.liveguru.order.OrderFunction - TC_02: Step 04 - Get Text Infor box
-2019-06-24 15:07:34,041 INFO  com.liveguru.order.OrderFunction - TC_02: Step 05 - verify infor box displayed correct full name and email
-2019-06-24 15:07:34,041 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:34,041 INFO  com.liveguru.order.OrderFunction - TC_02: Step 06 - Verify My Dasboard page displayed
-2019-06-24 15:07:34,299 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:34,299 INFO  com.liveguru.order.OrderFunction - TC_02: Step 07 - click to ACCOUNT INFORMATION link
-2019-06-24 15:07:35,074 INFO  com.liveguru.order.OrderFunction - TC_02: Step 08 - Verify First Name is correct
-2019-06-24 15:07:35,330 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:35,330 INFO  com.liveguru.order.OrderFunction - TC_02: Step 09 - Verify Middle Name is correct
-2019-06-24 15:07:35,662 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:35,662 INFO  com.liveguru.order.OrderFunction - TC_02: Step 10 - Verify Last Name is correct
-2019-06-24 15:07:35,962 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:35,962 INFO  com.liveguru.order.OrderFunction - TC_02: Step 11 - Verify Email is correct
-2019-06-24 15:07:36,186 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:36,191 INFO  com.liveguru.order.OrderFunction - TC_03: Step 01 - open Home Page
-2019-06-24 15:07:36,191 INFO  com.liveguru.order.OrderFunction - TC_03: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
-2019-06-24 15:07:37,301 INFO  com.liveguru.order.OrderFunction - TC_03: Step 03 - Get Cost of Sony Xperia in list page
-2019-06-24 15:07:37,564 INFO  com.liveguru.order.OrderFunction - TC_03: Step 04 - Click to Sony Xperia details
-2019-06-24 15:07:39,095 INFO  com.liveguru.order.OrderFunction - TC_03: Step 05 - Get Cost of Sony Xperia in details page
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - TC_03: Step 06 - Verify cost of product in list page and details page are equal
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - Actual = $100.00
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - Expected = $100.00
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:39,325 INFO  com.liveguru.order.OrderFunction - TC_04: Step 01 - open Home Page
-2019-06-24 15:07:40,225 INFO  com.liveguru.order.OrderFunction - TC_04: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
-2019-06-24 15:07:43,159 INFO  com.liveguru.order.OrderFunction - TC_04: Step 03 - Click Add to Cart IPhone
-2019-06-24 15:07:44,961 INFO  com.liveguru.order.OrderFunction - TC_04: Step 04 - Verify 'SHOPPING CART' message displayed
-2019-06-24 15:07:45,188 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:45,188 INFO  com.liveguru.order.OrderFunction - TC_04: Step 05 - Input Cupon code to 'DISCOUNT CODES' textbox
-2019-06-24 15:07:45,500 INFO  com.liveguru.order.OrderFunction - TC_04: Step 06 - Click APPLY button
-2019-06-24 15:07:47,263 INFO  com.liveguru.order.OrderFunction - TC_04: Step 07 - Verify Correct Discount title displayed
-2019-06-24 15:07:47,547 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:47,547 INFO  com.liveguru.order.OrderFunction - TC_04: Step 08 - Verify Correct Discount money appears
-2019-06-24 15:07:47,802 INFO  com.liveguru.order.OrderFunction - Actual = -$25.00
-2019-06-24 15:07:47,802 INFO  com.liveguru.order.OrderFunction - Expected = -$25.00
-2019-06-24 15:07:47,802 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:07:47,802 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:47,802 INFO  com.liveguru.order.OrderFunction - TC_04: Step 09 - Verify Grand Total are correct after discounting
-2019-06-24 15:07:48,080 INFO  com.liveguru.order.OrderFunction - Actual = $500.00
-2019-06-24 15:07:48,080 INFO  com.liveguru.order.OrderFunction - Expected = $500.00
-2019-06-24 15:07:48,080 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:07:48,080 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:48,080 INFO  com.liveguru.order.OrderFunction - TC_05: Step 01 - open Home Page
-2019-06-24 15:07:49,051 INFO  com.liveguru.order.OrderFunction - TC_05: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
-2019-06-24 15:07:50,333 INFO  com.liveguru.order.OrderFunction - TC_05: Step 03 - Click Add to Cart IPhone
-2019-06-24 15:07:52,069 INFO  com.liveguru.order.OrderFunction - TC_05: Step 04 - Verify 'SHOPPING CART' message displayed
-2019-06-24 15:07:52,302 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:52,302 INFO  com.liveguru.order.OrderFunction - TC_05: Step 05 - Clear QTY textbox of Sony Xperia
-2019-06-24 15:07:52,583 INFO  com.liveguru.order.OrderFunction - TC_05: Step 06 - Input To QTY textbox of Sony Xperia
-2019-06-24 15:07:52,867 INFO  com.liveguru.order.OrderFunction - TC_05: Step 07 - Click To UPDATE button of Sony Xperia
-2019-06-24 15:07:54,836 INFO  com.liveguru.order.OrderFunction - TC_05: Step 08 - Get text error message of Sony Xperia
-2019-06-24 15:07:55,082 INFO  com.liveguru.order.OrderFunction - TC_05: Step 09 - Verify '* The maximum quantity allowed for purchase is 500.' message of Sony Xperia displayed
-2019-06-24 15:07:55,082 INFO  com.liveguru.order.OrderFunction - Actual = * The maximum quantity allowed for purchase is 500.
-2019-06-24 15:07:55,082 INFO  com.liveguru.order.OrderFunction - Expected = * The maximum quantity allowed for purchase is 500.
-2019-06-24 15:07:55,082 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:07:55,082 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:07:55,084 INFO  com.liveguru.order.OrderFunction - TC_06: Step 01 - open Home Page
-2019-06-24 15:07:56,069 INFO  com.liveguru.order.OrderFunction - TC_06: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
-2019-06-24 15:07:57,223 INFO  com.liveguru.order.OrderFunction - TC_06: Step 03 - Add Sony Xepria to Compare list
-2019-06-24 15:07:58,667 INFO  com.liveguru.order.OrderFunction - TC_06: Step 04 - Add IPhone to Compare list
-2019-06-24 15:08:00,073 INFO  com.liveguru.order.OrderFunction - TC_06: Step 05 - Get Parent window
-2019-06-24 15:08:00,076 INFO  com.liveguru.order.OrderFunction - TC_06: Step 06 - Click to Compare Button
-2019-06-24 15:08:00,647 INFO  com.liveguru.order.OrderFunction - TC_06: Step 07 - Switch to COMPARE PRODUCTS window
-2019-06-24 15:08:00,665 INFO  com.liveguru.order.OrderFunction - TC_06: Step 08 - Verify COMPARE PRODUCTS text title displayed
-2019-06-24 15:08:01,894 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:01,894 INFO  com.liveguru.order.OrderFunction - TC_06: Step 09 - Verify that Sony Xparia displays in COMPARE PRODUCTS window
-2019-06-24 15:08:02,164 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:02,164 INFO  com.liveguru.order.OrderFunction - TC_06: Step 10 - Verify that IPhone displays in COMPARE PRODUCT window
-2019-06-24 15:08:02,433 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:02,433 INFO  com.liveguru.order.OrderFunction - TC_06: Step 11 - Close COMPARE PRODUCT window 
-2019-06-24 15:08:02,517 INFO  com.liveguru.order.OrderFunction - TC_07: Step 01 - open Home Page
-2019-06-24 15:08:03,280 INFO  com.liveguru.order.OrderFunction - TC_07: Step 02 - Click to 'TV' link and verify TV page displayed
-2019-06-24 15:08:04,498 INFO  com.liveguru.order.OrderFunction - TC_07: Step 03 - Click to 'Add to Wishlist' of LG LCD
-2019-06-24 15:08:06,639 INFO  com.liveguru.order.OrderFunction - TC_07: Step 04 - verify message 'LG LCD has been added to your wishlist. Click here to continue shopping.' displayed
-2019-06-24 15:08:06,923 INFO  com.liveguru.order.OrderFunction - Actual = LG LCD has been added to your wishlist. Click here to continue shopping.
-2019-06-24 15:08:06,923 INFO  com.liveguru.order.OrderFunction - Expected = LG LCD has been added to your wishlist. Click here to continue shopping.
-2019-06-24 15:08:06,923 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:08:06,923 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:06,923 INFO  com.liveguru.order.OrderFunction - TC_07: Step 05 - Click to 'SHARE WISHLIST' button
-2019-06-24 15:08:08,224 INFO  com.liveguru.order.OrderFunction - TC_07: Step 06 - Verify 'SHARE YOUR WISHLIST' page displayed
-2019-06-24 15:08:08,502 INFO  com.liveguru.order.OrderFunction - TC_07: Step 07 - Input to Email and Message text areas
-2019-06-24 15:08:09,025 INFO  com.liveguru.order.OrderFunction - TC_07: Step 08 - Click to 'SHARE WIHSLIST' button
-2019-06-24 15:08:11,063 INFO  com.liveguru.order.OrderFunction - TC_07: Step 09 - Verify 'Your Wishlist has been shared.'
-2019-06-24 15:08:11,328 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:11,328 INFO  com.liveguru.order.OrderFunction - TC_07: Step 10 - Verify there's 1 item LG LCD in 'MY WISHLIST' page
-2019-06-24 15:08:11,566 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:11,568 INFO  com.liveguru.order.OrderFunction - TC_08: Step 01 - open Home Page
-2019-06-24 15:08:12,088 INFO  com.liveguru.order.OrderFunction - TC_08: Step 02 - Click to 'TV' link and verify TV page displayed
-2019-06-24 15:08:13,360 INFO  com.liveguru.order.OrderFunction - TC_08: Step 03 - Click to 'SAMSUNG LCD' link
-2019-06-24 15:08:14,263 INFO  com.liveguru.order.OrderFunction - TC_08: Step 04 - Verify 'SAMSUNG LCD' title displayed 
-2019-06-24 15:08:14,509 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:14,509 INFO  com.liveguru.order.OrderFunction - TC_08: Step 05 - Click to 'Add Your Review' link
-2019-06-24 15:08:15,673 INFO  com.liveguru.order.OrderFunction - TC_08: Step 06 - Verify 'Let us know your thoughts' message displayed
-2019-06-24 15:08:15,871 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:15,871 INFO  com.liveguru.order.OrderFunction - TC_08: Step 07 - Verify 'Summary of Your Review' message displayed
-2019-06-24 15:08:16,066 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:16,066 INFO  com.liveguru.order.OrderFunction - TC_08: Step 08 - Verify 'What's your nickname?' message displayed
-2019-06-24 15:08:16,276 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:16,276 INFO  com.liveguru.order.OrderFunction - TC_08: Step 09 - input empty data to 3 fields thoughts/Review/Nickname
-2019-06-24 15:08:16,836 INFO  com.liveguru.order.OrderFunction - TC_08: Step 10 - Click 'SUBMIT REVIEW' button
-2019-06-24 15:08:17,276 INFO  com.liveguru.order.OrderFunction - TC_08: Step 11 - Verify validate message 'This is a required field.' displayed in 3 fields
-2019-06-24 15:08:17,466 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,466 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,466 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:08:17,466 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:17,655 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,655 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,655 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:08:17,655 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:17,838 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,838 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
-2019-06-24 15:08:17,838 INFO  com.liveguru.order.OrderFunction - Compare value = true
-2019-06-24 15:08:17,838 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:17,838 INFO  com.liveguru.order.OrderFunction - TC_08: Step 12 - Input valid datas for 3 fields
-2019-06-24 15:08:18,600 INFO  com.liveguru.order.OrderFunction - TC_08: Step 13 - Click 'SUBMIT REVIEW' button
-2019-06-24 15:08:20,106 INFO  com.liveguru.order.OrderFunction - TC_08: Step 14 - Verify message 'Your review has been accepted for moderation.' displayed 
-2019-06-24 15:08:20,421 INFO  com.liveguru.order.OrderFunction - ===PASSED===
-2019-06-24 15:08:20,421 INFO  com.liveguru.order.OrderFunction - OS name= windows 10
-2019-06-24 15:08:21,875 INFO  com.liveguru.order.OrderFunction - -------------QUIT BROWSER SUCCESSFULLY -----------------
+2019-06-24 21:32:12,512 INFO  com.liveguru.order.OrderFunction - TC_01: Step 01 - Get HomePage
+2019-06-24 21:32:12,515 INFO  com.liveguru.order.OrderFunction - TC_01: Step 02 - Get HomePage Url
+2019-06-24 21:32:12,518 INFO  com.liveguru.order.OrderFunction - TC_01: Step 03 - Click to Account Menu
+2019-06-24 21:32:12,927 INFO  com.liveguru.order.OrderFunction - TC_01: Step 04 - Click to Register link
+2019-06-24 21:32:13,537 INFO  com.liveguru.order.OrderFunction - TC_01: Step 05 - Verify Create An Account form display
+2019-06-24 21:32:13,722 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:13,725 INFO  com.liveguru.order.OrderFunction - TC_01: Step 06 - Input to First Name textbox
+2019-06-24 21:32:13,895 INFO  com.liveguru.order.OrderFunction - TC_01: Step 07 - Input to Middle Name textbox
+2019-06-24 21:32:14,061 INFO  com.liveguru.order.OrderFunction - TC_01: Step 08 - Input to Last Name textbox
+2019-06-24 21:32:14,226 INFO  com.liveguru.order.OrderFunction - TC_01: Step 09 - Input to Email textbox
+2019-06-24 21:32:14,391 INFO  com.liveguru.order.OrderFunction - TC_01: Step 10 - Input to First Name textbox
+2019-06-24 21:32:14,556 INFO  com.liveguru.order.OrderFunction - TC_01: Step 11 - Input to First Name textbox
+2019-06-24 21:32:14,728 INFO  com.liveguru.order.OrderFunction - TC_01: Step 12 - Click to Register button
+2019-06-24 21:32:16,364 INFO  com.liveguru.order.OrderFunction - TC_01: Step 13 - Click to Register button
+2019-06-24 21:32:16,543 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:16,544 INFO  com.liveguru.order.OrderFunction - TC_02: Step 01 - open Home Page
+2019-06-24 21:32:17,254 INFO  com.liveguru.order.OrderFunction - TC_02: Step 02 - Click to Account Menu
+2019-06-24 21:32:17,623 INFO  com.liveguru.order.OrderFunction - TC_02: Step 03 - Click to My Account link
+2019-06-24 21:32:18,202 INFO  com.liveguru.order.OrderFunction - TC_02: Step 04 - Get Text Infor box
+2019-06-24 21:32:18,375 INFO  com.liveguru.order.OrderFunction - TC_02: Step 05 - verify infor box displayed correct full name and email
+2019-06-24 21:32:18,375 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:18,375 INFO  com.liveguru.order.OrderFunction - TC_02: Step 06 - Verify My Dasboard page displayed
+2019-06-24 21:32:18,548 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:18,548 INFO  com.liveguru.order.OrderFunction - TC_02: Step 07 - click to ACCOUNT INFORMATION link
+2019-06-24 21:32:19,260 INFO  com.liveguru.order.OrderFunction - TC_02: Step 08 - Verify First Name is correct
+2019-06-24 21:32:19,431 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:19,431 INFO  com.liveguru.order.OrderFunction - TC_02: Step 09 - Verify Middle Name is correct
+2019-06-24 21:32:19,598 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:19,598 INFO  com.liveguru.order.OrderFunction - TC_02: Step 10 - Verify Last Name is correct
+2019-06-24 21:32:19,760 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:19,760 INFO  com.liveguru.order.OrderFunction - TC_02: Step 11 - Verify Email is correct
+2019-06-24 21:32:19,937 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:19,939 INFO  com.liveguru.order.OrderFunction - TC_03: Step 01 - open Home Page
+2019-06-24 21:32:19,940 INFO  com.liveguru.order.OrderFunction - TC_03: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
+2019-06-24 21:32:22,221 INFO  com.liveguru.order.OrderFunction - TC_03: Step 03 - Get Cost of Sony Xperia in list page
+2019-06-24 21:32:22,379 INFO  com.liveguru.order.OrderFunction - TC_03: Step 04 - Click to Sony Xperia details
+2019-06-24 21:32:25,590 INFO  com.liveguru.order.OrderFunction - TC_03: Step 05 - Get Cost of Sony Xperia in details page
+2019-06-24 21:32:25,750 INFO  com.liveguru.order.OrderFunction - TC_03: Step 06 - Verify cost of product in list page and details page are equal
+2019-06-24 21:32:25,750 INFO  com.liveguru.order.OrderFunction - Actual = $100.00
+2019-06-24 21:32:25,750 INFO  com.liveguru.order.OrderFunction - Expected = $100.00
+2019-06-24 21:32:25,750 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:25,750 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:25,751 INFO  com.liveguru.order.OrderFunction - TC_04: Step 01 - open Home Page
+2019-06-24 21:32:26,417 INFO  com.liveguru.order.OrderFunction - TC_04: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
+2019-06-24 21:32:27,247 INFO  com.liveguru.order.OrderFunction - TC_04: Step 03 - Click Add to Cart IPhone
+2019-06-24 21:32:28,991 INFO  com.liveguru.order.OrderFunction - TC_04: Step 04 - Verify 'SHOPPING CART' message displayed
+2019-06-24 21:32:29,160 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:29,160 INFO  com.liveguru.order.OrderFunction - TC_04: Step 05 - Input Cupon code to 'DISCOUNT CODES' textbox
+2019-06-24 21:32:29,322 INFO  com.liveguru.order.OrderFunction - TC_04: Step 06 - Click APPLY button
+2019-06-24 21:32:30,801 INFO  com.liveguru.order.OrderFunction - TC_04: Step 07 - Verify Correct Discount title displayed
+2019-06-24 21:32:30,996 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:30,996 INFO  com.liveguru.order.OrderFunction - TC_04: Step 08 - Verify Correct Discount money appears
+2019-06-24 21:32:31,152 INFO  com.liveguru.order.OrderFunction - Actual = -$25.00
+2019-06-24 21:32:31,152 INFO  com.liveguru.order.OrderFunction - Expected = -$25.00
+2019-06-24 21:32:31,152 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:31,153 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:31,153 INFO  com.liveguru.order.OrderFunction - TC_04: Step 09 - Verify Grand Total are correct after discounting
+2019-06-24 21:32:31,306 INFO  com.liveguru.order.OrderFunction - Actual = $500.00
+2019-06-24 21:32:31,306 INFO  com.liveguru.order.OrderFunction - Expected = $500.00
+2019-06-24 21:32:31,306 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:31,306 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:31,307 INFO  com.liveguru.order.OrderFunction - TC_05: Step 01 - open Home Page
+2019-06-24 21:32:31,727 INFO  com.liveguru.order.OrderFunction - TC_05: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
+2019-06-24 21:32:32,519 INFO  com.liveguru.order.OrderFunction - TC_05: Step 03 - Click Add to Cart IPhone
+2019-06-24 21:32:34,224 INFO  com.liveguru.order.OrderFunction - TC_05: Step 04 - Verify 'SHOPPING CART' message displayed
+2019-06-24 21:32:34,395 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:34,395 INFO  com.liveguru.order.OrderFunction - TC_05: Step 05 - Clear QTY textbox of Sony Xperia
+2019-06-24 21:32:34,551 INFO  com.liveguru.order.OrderFunction - TC_05: Step 06 - Input To QTY textbox of Sony Xperia
+2019-06-24 21:32:34,715 INFO  com.liveguru.order.OrderFunction - TC_05: Step 07 - Click To UPDATE button of Sony Xperia
+2019-06-24 21:32:36,035 INFO  com.liveguru.order.OrderFunction - TC_05: Step 08 - Get text error message of Sony Xperia
+2019-06-24 21:32:36,198 INFO  com.liveguru.order.OrderFunction - TC_05: Step 09 - Verify '* The maximum quantity allowed for purchase is 500.' message of Sony Xperia displayed
+2019-06-24 21:32:36,198 INFO  com.liveguru.order.OrderFunction - Actual = * The maximum quantity allowed for purchase is 500.
+2019-06-24 21:32:36,199 INFO  com.liveguru.order.OrderFunction - Expected = * The maximum quantity allowed for purchase is 500.
+2019-06-24 21:32:36,199 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:36,199 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:36,200 INFO  com.liveguru.order.OrderFunction - TC_06: Step 01 - open Home Page
+2019-06-24 21:32:36,697 INFO  com.liveguru.order.OrderFunction - TC_06: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed
+2019-06-24 21:32:37,480 INFO  com.liveguru.order.OrderFunction - TC_06: Step 03 - Add Sony Xepria to Compare list
+2019-06-24 21:32:38,734 INFO  com.liveguru.order.OrderFunction - TC_06: Step 04 - Add IPhone to Compare list
+2019-06-24 21:32:39,850 INFO  com.liveguru.order.OrderFunction - TC_06: Step 05 - Get Parent window
+2019-06-24 21:32:39,854 INFO  com.liveguru.order.OrderFunction - TC_06: Step 06 - Click to Compare Button
+2019-06-24 21:32:40,318 INFO  com.liveguru.order.OrderFunction - TC_06: Step 07 - Switch to COMPARE PRODUCTS window
+2019-06-24 21:32:40,332 INFO  com.liveguru.order.OrderFunction - TC_06: Step 08 - Verify COMPARE PRODUCTS text title displayed
+2019-06-24 21:32:41,775 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:41,775 INFO  com.liveguru.order.OrderFunction - TC_06: Step 09 - Verify that Sony Xparia displays in COMPARE PRODUCTS window
+2019-06-24 21:32:41,935 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:41,935 INFO  com.liveguru.order.OrderFunction - TC_06: Step 10 - Verify that IPhone displays in COMPARE PRODUCT window
+2019-06-24 21:32:42,099 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:42,099 INFO  com.liveguru.order.OrderFunction - TC_06: Step 11 - Close COMPARE PRODUCT window 
+2019-06-24 21:32:42,144 INFO  com.liveguru.order.OrderFunction - TC_07: Step 01 - open Home Page
+2019-06-24 21:32:42,616 INFO  com.liveguru.order.OrderFunction - TC_07: Step 02 - Click to 'TV' link and verify TV page displayed
+2019-06-24 21:32:43,610 INFO  com.liveguru.order.OrderFunction - TC_07: Step 03 - Click to 'Add to Wishlist' of LG LCD
+2019-06-24 21:32:44,983 INFO  com.liveguru.order.OrderFunction - TC_07: Step 04 - verify message 'LG LCD has been added to your wishlist. Click here to continue shopping.' displayed
+2019-06-24 21:32:45,146 INFO  com.liveguru.order.OrderFunction - Actual = LG LCD has been added to your wishlist. Click here to continue shopping.
+2019-06-24 21:32:45,146 INFO  com.liveguru.order.OrderFunction - Expected = LG LCD has been added to your wishlist. Click here to continue shopping.
+2019-06-24 21:32:45,146 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:45,146 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:45,146 INFO  com.liveguru.order.OrderFunction - TC_07: Step 05 - Click to 'SHARE WISHLIST' button
+2019-06-24 21:32:46,042 INFO  com.liveguru.order.OrderFunction - TC_07: Step 06 - Verify 'SHARE YOUR WISHLIST' page displayed
+2019-06-24 21:32:46,238 INFO  com.liveguru.order.OrderFunction - TC_07: Step 07 - Input to Email and Message text areas
+2019-06-24 21:32:46,586 INFO  com.liveguru.order.OrderFunction - TC_07: Step 08 - Click to 'SHARE WIHSLIST' button
+2019-06-24 21:32:47,609 INFO  com.liveguru.order.OrderFunction - TC_07: Step 09 - Verify 'Your Wishlist has been shared.'
+2019-06-24 21:32:47,890 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:47,890 INFO  com.liveguru.order.OrderFunction - TC_07: Step 10 - Verify there's 1 item LG LCD in 'MY WISHLIST' page
+2019-06-24 21:32:48,057 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:48,058 INFO  com.liveguru.order.OrderFunction - TC_08: Step 01 - open Home Page
+2019-06-24 21:32:48,741 INFO  com.liveguru.order.OrderFunction - TC_08: Step 02 - Click to 'TV' link and verify TV page displayed
+2019-06-24 21:32:49,611 INFO  com.liveguru.order.OrderFunction - TC_08: Step 03 - Click to 'SAMSUNG LCD' link
+2019-06-24 21:32:50,804 INFO  com.liveguru.order.OrderFunction - TC_08: Step 04 - Verify 'SAMSUNG LCD' title displayed 
+2019-06-24 21:32:50,976 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:50,976 INFO  com.liveguru.order.OrderFunction - TC_08: Step 05 - Click to 'Add Your Review' link
+2019-06-24 21:32:51,810 INFO  com.liveguru.order.OrderFunction - TC_08: Step 06 - Verify 'Let us know your thoughts' message displayed
+2019-06-24 21:32:51,993 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:51,994 INFO  com.liveguru.order.OrderFunction - TC_08: Step 07 - Verify 'Summary of Your Review' message displayed
+2019-06-24 21:32:52,161 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:52,161 INFO  com.liveguru.order.OrderFunction - TC_08: Step 08 - Verify 'What's your nickname?' message displayed
+2019-06-24 21:32:52,330 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:52,330 INFO  com.liveguru.order.OrderFunction - TC_08: Step 09 - input empty data to 3 fields thoughts/Review/Nickname
+2019-06-24 21:32:52,789 INFO  com.liveguru.order.OrderFunction - TC_08: Step 10 - Click 'SUBMIT REVIEW' button
+2019-06-24 21:32:53,169 INFO  com.liveguru.order.OrderFunction - TC_08: Step 11 - Verify validate message 'This is a required field.' displayed in 3 fields
+2019-06-24 21:32:53,324 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,324 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,324 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:53,324 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:53,484 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,484 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,484 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:53,484 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:53,641 INFO  com.liveguru.order.OrderFunction - Actual = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,642 INFO  com.liveguru.order.OrderFunction - Expected = THIS IS A REQUIRED FIELD.
+2019-06-24 21:32:53,642 INFO  com.liveguru.order.OrderFunction - Compare value = true
+2019-06-24 21:32:53,642 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:53,642 INFO  com.liveguru.order.OrderFunction - TC_08: Step 12 - Input valid datas for 3 fields
+2019-06-24 21:32:54,132 INFO  com.liveguru.order.OrderFunction - TC_08: Step 13 - Click 'SUBMIT REVIEW' button
+2019-06-24 21:32:55,762 INFO  com.liveguru.order.OrderFunction - TC_08: Step 14 - Verify message 'Your review has been accepted for moderation.' displayed 
+2019-06-24 21:32:55,941 INFO  com.liveguru.order.OrderFunction - ===PASSED===
+2019-06-24 21:32:55,942 INFO  com.liveguru.order.OrderFunction - OS name= windows 10
+2019-06-24 21:32:56,690 INFO  com.liveguru.order.OrderFunction - -------------QUIT BROWSER SUCCESSFULLY -----------------

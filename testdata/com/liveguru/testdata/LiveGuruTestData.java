@@ -26,5 +26,5 @@ public class LiveGuruTestData {
 	
 	public static final String COMPARE_PRODUCTS_WINDOW_TITLE = "Products Comparison List - Magento Commerce";
 	
-	public static final String PRODUCT_ADDED_TO_WISH_LIST_MESSAGE = " has been added to your wishlist. Click here to continue shopping.\"";
+	public static final String PRODUCT_ADDED_TO_WISH_LIST_MESSAGE = " has been added to your wishlist. Click here to continue shopping.";
 }

@@ -12,15 +12,10 @@ public class MyAccountPageObject extends AbstractPage {
 
 	WebDriver driver;
 
-	public void clickToDynamicMyAccountLink(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);
-		clickToElement(driver, MyAccountPageUI.MY_ACCOUNT_DYNAMIC_LINK, fieldName);
-		
-	}
 
-	public boolean isDynamicInforInTextboxCorrect(WebDriver driver, String FieldName, String valueToVerify) {
-		waitForElementVisible(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, FieldName, valueToVerify);		
-		return isControlDisplayed(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, FieldName, valueToVerify);	
+	public boolean isDynamicInforInTextboxCorrect(WebDriver driver, String fieldName, String valueToVerify) {
+		waitForElementVisible(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);		
+		return isControlDisplayed(driver, MyAccountPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);	
 	}
 
 	public String getTextInforBox(WebDriver driver) {

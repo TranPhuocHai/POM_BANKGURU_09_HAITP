@@ -102,7 +102,7 @@ public class OrderFunction extends AbstractTest{
 		verifyTrue(myAccountPage.isDynamicLiveGuruPageTitleDisplayed(driver, "My Dashboard"));
 		
 		log.info("TC_02: Step 07 - click to ACCOUNT INFORMATION link");
-		myAccountPage.clickToDynamicMyAccountLink(driver,"Account Information");
+		myAccountPage.clickToDynamicCommonLink(driver,"Account Information");
 		
 		log.info("TC_02: Step 08 - Verify First Name is correct");
 		verifyTrue(myAccountPage.isDynamicInforInTextboxCorrect(driver, "firstname", LiveGuruTestData.FIRST_NAME));
@@ -131,7 +131,7 @@ public class OrderFunction extends AbstractTest{
 		listCost = mobilePage.getCostDynamicProductInMobileListPage(driver, "Sony Xperia");
 		
 		log.info("TC_03: Step 04 - Click to Sony Xperia details");
-		mobilePage.clickToDynamicProductLink(driver, "Sony Xperia");
+		mobilePage.clickToDynamicCommonLink(driver, "Sony Xperia");
 		
 		log.info("TC_03: Step 05 - Get Cost of Sony Xperia in details page");
 		detailsCost = mobilePage.getCostDynamicProductInMobileDetailsPage(driver, "Sony Xperia");
@@ -262,7 +262,7 @@ public class OrderFunction extends AbstractTest{
 		log.info("TC_07: Step 02 - Click to 'TV' link and verify TV page displayed");
 		homePage.clickToDynamicLink(driver,"TV");
 		TVPage = LiveGuruPageFactoryManager.getTVPage(driver);
-		mobilePage.isDynamicLiveGuruPageTitleDisplayed(driver, "TV");
+		TVPage.isDynamicLiveGuruPageTitleDisplayed(driver, "TV");
 		
 		log.info("TC_07: Step 03 - Click to 'Add to Wishlist' of LG LCD");
 		TVPage.clickToAddToWishlistLinkOfDynamicProduct(driver, "LG LCD");
@@ -283,11 +283,75 @@ public class OrderFunction extends AbstractTest{
 		log.info("TC_07: Step 08 - Click to 'SHARE WIHSLIST' button");
 		TVPage.clickToDynamicLiveGuruButton(driver, "Share Wishlist");
 		
-		log.info("TC_07: Step 09 - Verify 'Your wishlist has been share'");
-		verifyTrue(TVPage.isYourWishListHasBeenSharedMessageDisplayed(driver));
+		log.info("TC_07: Step 09 - Verify 'Your Wishlist has been shared.'");
+		verifyTrue(TVPage.isDynamicMessageDisplayed(driver, "Your Wishlist has been shared."));
 		
 		log.info("TC_07: Step 10 - Verify there's 1 item LG LCD in 'MY WISHLIST' page");
 		verifyTrue(TVPage.isCorrectNumberItemOfDynamicProductDisplayed(driver, "LG LCD", "1"));
+		
+	}
+	
+	@Test
+	public void TC_08_VerifyYouCanAddYourReview() {
+		
+		log.info("TC_08: Step 01 - open Home Page");
+		TVPage.openAnyUrl(driver, HOME_PAGE_URL);
+		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
+		
+		log.info("TC_08: Step 02 - Click to 'TV' link and verify TV page displayed");
+		homePage.clickToDynamicLink(driver,"TV");
+		TVPage = LiveGuruPageFactoryManager.getTVPage(driver);
+		TVPage.isDynamicLiveGuruPageTitleDisplayed(driver, "TV");
+		
+		log.info("TC_08: Step 03 - Click to 'SAMSUNG LCD' link");
+		TVPage.clickToDynamicCommonLink(driver, "Samsung LCD");
+		
+		log.info("TC_08: Step 04 - Verify 'SAMSUNG LCD' title displayed ");
+		verifyTrue(TVPage.isDynamicProductDetailsTitleDisplayed(driver, "Samsung LCD"));
+		
+		log.info("TC_08: Step 05 - Click to 'Add Your Review' link");
+		TVPage.clickToDynamicCommonLink(driver, "Add Your Review");
+		
+		log.info("TC_08: Step 06 - Verify 'Let us know your thoughts' message displayed");
+		verifyTrue(TVPage.isDynamicCommonLabelDisplayed(driver, "Let us know your thoughts"));
+		
+		log.info("TC_08: Step 07 - Verify 'Summary of Your Review' message displayed");
+		verifyTrue(TVPage.isDynamicCommonLabelDisplayed(driver, "Summary of Your Review"));
+		
+		log.info("TC_08: Step 08 - Verify 'What's your nickname?' message displayed");
+		verifyTrue(TVPage.isDynamicCommonLabelDisplayed(driver, "What's your nickname?"));
+		
+		log.info("TC_08: Step 09 - input empty data to 3 fields thoughts/Review/Nickname");
+		TVPage.clearLiveGuruDynamicTextboxOrTextArea(driver, "detail");
+		TVPage.clearLiveGuruDynamicTextboxOrTextArea(driver, "title");
+		TVPage.clearLiveGuruDynamicTextboxOrTextArea(driver, "nickname");
+		
+		log.info("TC_08: Step 10 - Click 'SUBMIT REVIEW' button");
+		TVPage.clickToDynamicLiveGuruButton(driver, "Submit Review");
+		
+		log.info("TC_08: Step 11 - Verify validate message 'This is a required field.' displayed in 3 fields");
+		verifyEquals(TVPage.getTextLiveGuruValidateMessage(driver, "detail"),"THIS IS A REQUIRED FIELD.");
+		verifyEquals(TVPage.getTextLiveGuruValidateMessage(driver, "title"),"THIS IS A REQUIRED FIELD.");
+		verifyEquals(TVPage.getTextLiveGuruValidateMessage(driver, "nickname"),"THIS IS A REQUIRED FIELD.");
+		
+		log.info("TC_08: Step 12 - Input valid datas for 3 fields");
+		TVPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "detail", "It's Good");
+		TVPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "title", "Acceptable");
+		TVPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "nickname", "Hai");
+		
+		log.info("TC_08: Step 13 - Click 'SUBMIT REVIEW' button");
+		TVPage.clickToDynamicLiveGuruButton(driver, "Submit Review");
+		
+		log.info("TC_08: Step 14 - Verify message 'Your review has been accepted for moderation.' displayed ");
+		verifyTrue(TVPage.isDynamicMessageDisplayed(driver, "Your review has been accepted for moderation." ));
+		
+		
+		
+	}
+	
+	@Test
+	public void TC_09_VerifyUserIsAbleToPurchaseproduct() {
+		
 		
 	}
 	
@@ -296,3 +360,15 @@ public class OrderFunction extends AbstractTest{
 		closeBrowserAndDriver(driver);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

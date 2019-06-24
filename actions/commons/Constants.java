@@ -3,7 +3,7 @@ package commons;
 public class Constants {
 	
 	public static final int SHORT_TIMEOUT = 5;
-	public static final int LONG_TIMEOUT = 30;
+	public static final int LONG_TIMEOUT = 5;
 	public static final int HIGHLIGHT_ELEMENT_TIMEOUT_FOR_DEMO = 100;
 	
 	public static final String BANKGURU_DEV_APP_URL = "http://demo.guru99.com/v4/";

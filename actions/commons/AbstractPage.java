@@ -537,6 +537,16 @@ public class AbstractPage {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
+	public void acceptAnyAlert(WebDriver driver) {
+		waitForAlertPresence(driver);
+		acceptAlert(driver);
+	}
+
+	public String getTextAnyAlert(WebDriver driver) {
+		waitForAlertPresence(driver);
+		return getTextAlert(driver);
+	}
+
 	/* =========================== BANKGURU Dynamic Locator method ============================= */
 
 	public String getTextDynamicTableInfo(WebDriver driver, String fieldName) {
@@ -621,15 +631,6 @@ public class AbstractPage {
 
 	/* =================== LIVEGURU Dynamic Locator method ============================== */
 
-	public void acceptAnyAlert(WebDriver driver) {
-		waitForAlertPresence(driver);
-		acceptAlert(driver);
-	}
-
-	public String getTextAnyAlert(WebDriver driver) {
-		waitForAlertPresence(driver);
-		return getTextAlert(driver);
-	}
 
 	public void inputToDynamicTextboxTextAreaLiveGuru(WebDriver driver, String fieldName, String sendKeyValue) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
@@ -677,14 +678,13 @@ public class AbstractPage {
 
 	}
 
-	public void clickToDynamicProductLink(WebDriver driver, String productName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+	public void clickToDynamicCommonLink(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.COMMON_DYNAMIC_LINK, productName);
 
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
-			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.COMMON_DYNAMIC_LINK, productName);
 		} else
-			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+			clickToElement(driver, LiveGuruAbstractPageUI.COMMON_DYNAMIC_LINK, productName);
 
 	}
 
@@ -699,8 +699,8 @@ public class AbstractPage {
 	}
 
 	public boolean isDynamicProductLinkDisplayed(WebDriver driver, String productName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_PRODUCT_LINK, productName);
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.COMMON_DYNAMIC_LINK, productName);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.COMMON_DYNAMIC_LINK, productName);
 	}
 
 	public boolean isDiscountTitleDisplayed(WebDriver driver, String cuponCode) {
@@ -778,9 +778,9 @@ public class AbstractPage {
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_TITLE, pageTitle);
 	}
 
-	public boolean isYourWishListHasBeenSharedMessageDisplayed(WebDriver driver) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.YOUR_WISHLIST_HAS_BEEN_SHARED_MESSAGE);
+	public boolean isDynamicMessageDisplayed(WebDriver driver, String message) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_MESSAGE, message);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_MESSAGE, message);
 
 	}
 
@@ -789,5 +789,31 @@ public class AbstractPage {
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_WISHLIST_QTY, productName, numberOfItem);
 
 	}
+	
 
+	public boolean isDynamicProductDetailsTitleDisplayed(WebDriver driver, String productName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DETAILS_PRODUCT_TITLE, productName);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_DETAILS_PRODUCT_TITLE, productName);
+	}
+	
+	public boolean isDynamicCommonLabelDisplayed(WebDriver driver, String labelMessage) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_COMMON_LABEL, labelMessage);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_COMMON_LABEL, labelMessage);
+	}
+	
+	public void clearLiveGuruDynamicTextboxOrTextArea(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
+		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
+
+	}
+	
+	public String getTextLiveGuruValidateMessage(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_VALIDATE_MESSAGE_BELOW_TEXTBOX_TEXTAREA, fieldName);
+		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_VALIDATE_MESSAGE_BELOW_TEXTBOX_TEXTAREA, fieldName);
+	}
 }
+
+
+
+
+

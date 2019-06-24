@@ -17,13 +17,13 @@
 	</test>
 
 
-	<!-- <test name="Test on CHROME"> -->
-	<!-- <parameter name="browser" value="chrome" /> -->
-	<!-- <parameter name="url" value="livegurufrontend" /> -->
-	<!-- <classes> -->
-	<!-- <class name="com.liveguru.customer.FrontEndUserRole" /> -->
-	<!-- </classes> -->
-	<!-- </test> -->
+<!-- 	<test name="Test on CHROME"> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<parameter name="url" value="livegurufrontend" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.liveguru.order.OrderFunction" /> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
 
 
 	<!-- <test name="Test on CHROME HEADLESS"> -->

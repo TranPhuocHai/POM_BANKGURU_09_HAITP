@@ -17,6 +17,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import bankguruUI.AbstractPageUI;
+import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
+import liveguruPageObjects.MyAccountPageObject;
+import liveguruPageObjects.ShoppingCartPageObject;
 import liveguruUI.LiveGuruAbstractPageUI;
 
 public class AbstractPage {
@@ -688,13 +691,14 @@ public class AbstractPage {
 
 	}
 
-	public void clickToDynamicAddToCartButton(WebDriver driver, String productName) {
+	public ShoppingCartPageObject clickToDynamicAddToCartButton(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
 
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
 			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
+		return LiveGuruPageFactoryManager.getShoppingCartPage(driver);
 
 	}
 
@@ -763,13 +767,15 @@ public class AbstractPage {
 			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_COMPARE_LINK, productName);
 	}
 
-	public void clickToAddToWishlistLinkOfDynamicProduct(WebDriver driver, String productName) {
+	public MyAccountPageObject clickToAddToWishlistLinkOfDynamicProduct(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
 
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
 			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
+		
+		return LiveGuruPageFactoryManager.getMyAccountPage(driver);
 
 	}
 

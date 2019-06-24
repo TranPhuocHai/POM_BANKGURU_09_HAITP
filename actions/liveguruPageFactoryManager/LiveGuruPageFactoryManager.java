@@ -2,10 +2,12 @@ package liveguruPageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 
+import liveguruPageObjects.CompareProductPageObject;
 import liveguruPageObjects.HomePageObject;
 import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.RegisterPageObject;
+import liveguruPageObjects.ShoppingCartPageObject;
 import liveguruPageObjects.TVPageObject;
 
 public class LiveGuruPageFactoryManager {
@@ -28,6 +30,14 @@ public class LiveGuruPageFactoryManager {
 	
 	public static TVPageObject getTVPage(WebDriver driver) {
 		return new TVPageObject(driver);
+	}
+	
+	public static ShoppingCartPageObject getShoppingCartPage(WebDriver driver) {
+		return new ShoppingCartPageObject(driver);
+	}
+	
+	public static CompareProductPageObject getCompareProductPage(WebDriver driver) {
+		return new CompareProductPageObject(driver);
 	}
 	
 

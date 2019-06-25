@@ -636,8 +636,8 @@ public class AbstractPage {
 
 
 	public void inputToDynamicTextboxTextAreaLiveGuru(WebDriver driver, String fieldName, String sendKeyValue) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
-		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, sendKeyValue, fieldName);
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, fieldName);
+		sendKeyToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, sendKeyValue, fieldName);
 
 	}
 
@@ -725,12 +725,6 @@ public class AbstractPage {
 
 	}
 
-	public String getTextGrandTotalMoney(WebDriver driver) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.GRANT_TOTAL_MONEY);
-		return getTextElement(driver, LiveGuruAbstractPageUI.GRANT_TOTAL_MONEY);
-
-	}
-
 	public void clearDynamicQTYTextbox(WebDriver driver, String productName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
 		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_QTY_TEXTBOX, productName);
@@ -808,8 +802,8 @@ public class AbstractPage {
 	}
 	
 	public void clearLiveGuruDynamicTextboxOrTextArea(WebDriver driver, String fieldName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
-		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA, fieldName);
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, fieldName);
+		clearTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, fieldName);
 
 	}
 	
@@ -817,6 +811,24 @@ public class AbstractPage {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_VALIDATE_MESSAGE_BELOW_TEXTBOX_TEXTAREA, fieldName);
 		return getTextElement(driver, LiveGuruAbstractPageUI.DYNAMIC_VALIDATE_MESSAGE_BELOW_TEXTBOX_TEXTAREA, fieldName);
 	}
+	
+	public void selectItemInLiveGuruDynamicDropdown(WebDriver driver, String fieldName, String expectedValueInDropdown) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_DROPDOWN, fieldName);
+		selectItemInDropdown(driver, LiveGuruAbstractPageUI.DYNAMIC_DROPDOWN, expectedValueInDropdown, fieldName);
+	}
+	
+	public void checkToDynamicLiveGuruCheckboxOrRadioButton(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, fieldName);
+		checkToCheckBoxOrRadioButton(driver, LiveGuruAbstractPageUI.DYNAMIC_TEXTBOX_CHECKBOX_TEXTAREA_RADIO_BUTTON, fieldName);
+	}
+	
+
+	public boolean isDynamicInforInTextboxCorrect(WebDriver driver, String fieldName, String valueToVerify) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);
+		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);
+	}
+	
+	
 }
 
 

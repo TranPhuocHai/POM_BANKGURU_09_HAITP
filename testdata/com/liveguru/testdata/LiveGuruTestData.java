@@ -15,7 +15,8 @@ public class LiveGuruTestData {
 	public static final String CUPON_CODE = "GURU50";
 	public static final String DISCOUNT_MONEY = "-$25.00";
 	public static final String GRANT_TOTAL = "$500.00";
-	public static final String PRODUCT_QUANTITY = "501";
+	public static final String INVALID_PRODUCT_QUANTITY = "501";
+	public static final String VALID_PRODUCT_QUANTITY = "1";
 	
 	public static final String CREATE_AN_ACCOUNT_TITLE = "Create an Account";
 	public static final String SHOPPING_CART_TITLE = "Shopping Cart";

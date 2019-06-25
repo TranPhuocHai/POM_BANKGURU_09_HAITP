@@ -2,6 +2,7 @@ package liveguruPageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 
+import liveguruPageObjects.CheckOutPageObject;
 import liveguruPageObjects.CompareProductPageObject;
 import liveguruPageObjects.HomePageObject;
 import liveguruPageObjects.MobilePageObject;
@@ -38,6 +39,10 @@ public class LiveGuruPageFactoryManager {
 	
 	public static CompareProductPageObject getCompareProductPage(WebDriver driver) {
 		return new CompareProductPageObject(driver);
+	}
+	
+	public static CheckOutPageObject getCheckOutPage(WebDriver driver) {
+		return new CheckOutPageObject(driver);
 	}
 	
 

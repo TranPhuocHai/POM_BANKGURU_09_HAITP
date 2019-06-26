@@ -165,7 +165,7 @@ public class AbstractPage {
 
 		}
 	}
-
+	
 	public String getAttributeValue(WebDriver driver, String locator, String attributeName) {
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
@@ -465,12 +465,18 @@ public class AbstractPage {
 			startButton.click();
 		}
 	}
-
+	
 	public void waitForElementPresence(WebDriver driver, String locator) {
 		waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
 		byLocator = By.xpath(locator);
 		waitExplicit.until(ExpectedConditions.presenceOfElementLocated(byLocator));
 	}
+
+//	public void waitForAllElementsPresence(WebDriver driver, String locator) {
+//		waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
+//		byLocator = By.xpath(locator);
+//		waitExplicit.until(ExpectedConditions.presenceOfAllElementsLocatedBy(byLocator));
+//	}
 
 	public void waitForElementVisible(WebDriver driver, String locator) {
 		waitExplicit = new WebDriverWait(driver, Constants.LONG_TIMEOUT);
@@ -649,14 +655,24 @@ public class AbstractPage {
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.ACCOUNT_MENU);
 	}
-
-	public void clickToDynamicLink(WebDriver driver, String fieldName) {
+	
+	public void clickToHeaderDynamicLink(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
-
+		
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
 			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.HEADER_DYNAMIC_LINK, fieldName);
+		
+	}
+
+	public void clickToFooterDynamicLink(WebDriver driver, String fieldName) {
+		waitForElementVisible(driver, LiveGuruAbstractPageUI.FOOTER_DYNAMIC_LINK, fieldName);
+
+		if (driver.toString().toLowerCase().contains("internet explorer")) {
+			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.FOOTER_DYNAMIC_LINK, fieldName);
+		} else
+			clickToElement(driver, LiveGuruAbstractPageUI.FOOTER_DYNAMIC_LINK, fieldName);
 
 	}
 
@@ -827,6 +843,7 @@ public class AbstractPage {
 		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);
 	}
+
 	
 	
 }

@@ -15,6 +15,12 @@ public class ShoppingCartPageObject extends AbstractPage {
 	public String getTextGrandTotalMoney() {
 		waitForElementVisible(driver, ShoppingCartPageUI.GRANT_TOTAL_MONEY);
 		return getTextElement(driver, ShoppingCartPageUI.GRANT_TOTAL_MONEY);
+		
+	}
+	
+	public String getShippingCost() {
+		waitForElementVisible(driver, ShoppingCartPageUI.SHIPPING_COST);
+		return getTextElement(driver, ShoppingCartPageUI.SHIPPING_COST);
 
 	}
 	

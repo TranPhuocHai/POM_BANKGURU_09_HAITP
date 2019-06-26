@@ -20,6 +20,11 @@ public class LiveGuruAbstractPageUI {
 	public static final String DYNAMIC_DROPDOWN = "//select[@name='%s']";
 	
 	public static final String DYNAMIC_PRODUCT_PRICE_IN_LIST_PAGE = "//a[text()='%s']//parent::h2//following-sibling::div[@class='price-box']//span[@class='price']";
+	public static final String DYNAMIC_OLD_PRICE_IN_LIST_PAGE = "//a[text()='%s']//parent::h2//following-sibling::div[@class='price-box']//span[@class='price' and contains(@id,'old')]";
+	public static final String DYNAMIC_SPECIAL_PRICE_IN_LIST_PAGE = "//a[text()='%s']//parent::h2//following-sibling::div[@class='price-box']//span[@class='price' and contains(@id,'product-price')]";
+	
+	
+	
 	public static final String DYNAMIC_PRODUCT_PRICE_IN_DETAILS_PAGE = "//span[text()='%s']//parent::div//following-sibling::div[@class='price-info']//span[@class='price']";
 	public static final String DYNAMIC_DISCOUNT_TITLE = "//td[contains(text(),'Discount (%s)')]";
 	public static final String DYNAMIC_DISCOUNT_MONEY = "//td[contains(text(),'Discount (%s)')]/following-sibling::td/span[@class='price']";

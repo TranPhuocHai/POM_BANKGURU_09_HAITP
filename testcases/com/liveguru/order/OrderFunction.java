@@ -10,6 +10,7 @@ import com.liveguru.testdata.LiveGuruTestData;
 
 import commons.AbstractTest;
 import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
+import liveguruPageObjects.CatalogSearchPageObject;
 import liveguruPageObjects.CheckOutPageObject;
 import liveguruPageObjects.CompareProductPageObject;
 import liveguruPageObjects.HomePageObject;
@@ -29,10 +30,11 @@ public class OrderFunction extends AbstractTest {
 	private ShoppingCartPageObject shoppingCartPage;
 	private CompareProductPageObject compareProductPage;
 	private CheckOutPageObject checkOutPage;
+	private CatalogSearchPageObject catalogSearchPage;
 
 	private String email, listCost, detailsCost, errorMessage, inforBox;
-	String orderNumber;
-	public static String HOME_PAGE_URL;
+	private String orderNumber, grandCostAfterShipCost, grandCostBeforeShipCost, shippingCost;
+	public static String LIVE_GURU_HOME_PAGE_URL;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -48,13 +50,13 @@ public class OrderFunction extends AbstractTest {
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_01: Step 02 - Get HomePage Url");
-		HOME_PAGE_URL = homePage.getCurrentPageUrl(driver);
+		LIVE_GURU_HOME_PAGE_URL = homePage.getCurrentPageUrl(driver);
 
 		log.info("TC_01: Step 03 - Click to 'Account' menu button");
 		homePage.clickToAccountMenu(driver);
 
 		log.info("TC_01: Step 04 - Click to Register link");
-		homePage.clickToDynamicLink(driver, "Register");
+		homePage.clickToHeaderDynamicLink(driver, "Register");
 		registerPage = LiveGuruPageFactoryManager.getRegisterPage(driver);
 
 		log.info("TC_01: Step 05 - Verify Create An Account form display");
@@ -88,15 +90,15 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_02_VerifyUserInformation() {
 
-		log.info("TC_02: Step 01 - open Home Page");
-		registerPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_02: Step 01 - Open Home Page");
+		registerPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_02: Step 02 - Click to Account Menu");
 		homePage.clickToAccountMenu(driver);
 
 		log.info("TC_02: Step 03 - Click to My Account link");
-		homePage.clickToDynamicLink(driver, "My Account");
+		homePage.clickToHeaderDynamicLink(driver, "My Account");
 		myAccountPage = LiveGuruPageFactoryManager.getMyAccountPage(driver);
 
 		log.info("TC_02: Step 04 - Get Text Infor box");
@@ -126,11 +128,11 @@ public class OrderFunction extends AbstractTest {
 
 	@Test
 	public void TC_03_VerifyCostProduct() {
-		log.info("TC_03: Step 01 - open Home Page");
+		log.info("TC_03: Step 01 - Open Home Page");
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_03: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed");
-		homePage.clickToDynamicLink(driver, "Mobile");
+		homePage.clickToHeaderDynamicLink(driver, "Mobile");
 		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
 		mobilePage.isDynamicLiveGuruPageTitleDisplayed(driver, "Mobile");
 
@@ -151,12 +153,12 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_04_VerifyDiscountCuponWorksCorrectly() {
 
-		log.info("TC_04: Step 01 - open Home Page");
-		mobilePage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_04: Step 01 - Open Home Page");
+		mobilePage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_04: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed");
-		homePage.clickToDynamicLink(driver, "Mobile");
+		homePage.clickToHeaderDynamicLink(driver, "Mobile");
 		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
 		mobilePage.isDynamicLiveGuruPageTitleDisplayed(driver, "Mobile");
 
@@ -186,12 +188,12 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_05_CanNotAddMoreThan500Items() {
 
-		log.info("TC_05: Step 01 - open Home Page");
-		shoppingCartPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_05: Step 01 - Open Home Page");
+		shoppingCartPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_05: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed");
-		homePage.clickToDynamicLink(driver, "Mobile");
+		homePage.clickToHeaderDynamicLink(driver, "Mobile");
 		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
 		mobilePage.isDynamicLiveGuruPageTitleDisplayed(driver, "Mobile");
 
@@ -226,12 +228,12 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_06_CompareProducts() {
 
-		log.info("TC_06: Step 01 - open Home Page");
-		shoppingCartPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_06: Step 01 - Open Home Page");
+		shoppingCartPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_06: Step 02 - Click to 'MOBILE' link and verify MOBILE page displayed");
-		homePage.clickToDynamicLink(driver, "Mobile");
+		homePage.clickToHeaderDynamicLink(driver, "Mobile");
 		mobilePage = LiveGuruPageFactoryManager.getMobilePage(driver);
 		mobilePage.isDynamicLiveGuruPageTitleDisplayed(driver, "Mobile");
 
@@ -268,12 +270,12 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_07_SharingWishlist() {
 
-		log.info("TC_07: Step 01 - open Home Page");
-		compareProductPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_07: Step 01 - Open Home Page");
+		compareProductPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_07: Step 02 - Click to 'TV' link and verify TV page displayed");
-		homePage.clickToDynamicLink(driver, "TV");
+		homePage.clickToHeaderDynamicLink(driver, "TV");
 		TVPage = LiveGuruPageFactoryManager.getTVPage(driver);
 		TVPage.isDynamicLiveGuruPageTitleDisplayed(driver, "TV");
 
@@ -307,12 +309,12 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_08_VerifyYouCanAddYourReview() {
 
-		log.info("TC_08: Step 01 - open Home Page");
-		myAccountPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_08: Step 01 - Open Home Page");
+		myAccountPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_08: Step 02 - Click to 'TV' link and verify TV page displayed");
-		homePage.clickToDynamicLink(driver, "TV");
+		homePage.clickToHeaderDynamicLink(driver, "TV");
 		TVPage = LiveGuruPageFactoryManager.getTVPage(driver);
 		TVPage.isDynamicLiveGuruPageTitleDisplayed(driver, "TV");
 
@@ -363,15 +365,15 @@ public class OrderFunction extends AbstractTest {
 	@Test
 	public void TC_09_VerifyUserIsAbleToPurchaseProduct() {
 
-		log.info("TC_09: Step 01 - open Home Page");
-		TVPage.openAnyUrl(driver, HOME_PAGE_URL);
+		log.info("TC_09: Step 01 - Open Home Page");
+		TVPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
 		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
 
 		log.info("TC_09: Step 02 - Click To 'Account' menu button");
 		homePage.clickToAccountMenu(driver);
 
 		log.info("TC_09: Step 03 - Click to 'My Wishlist' link");
-		homePage.clickToDynamicLink(driver, "My Wishlist");
+		homePage.clickToHeaderDynamicLink(driver, "My Wishlist");
 		myAccountPage = LiveGuruPageFactoryManager.getMyAccountPage(driver);
 
 		log.info("TC_09: Step 04 - Verify 'MY WISHLIST' title displayed");
@@ -388,7 +390,7 @@ public class OrderFunction extends AbstractTest {
 		shoppingCartPage.isEstimateShippingAndTaxMessageDisplayed();
 		
 		log.info("TC_09: Step 08 - Get Grand Total Cost before adding ship cost");
-		String grandCostBeforeShipCost = shoppingCartPage.getTextGrandTotalMoney();
+		grandCostBeforeShipCost = shoppingCartPage.getTextGrandTotalMoney();
 		
 		log.info("TC_09: Step 09 - Select in 'COUNTRY' dropdown");
 		shoppingCartPage.selectItemInLiveGuruDynamicDropdown(driver, "country_id", "United States");
@@ -405,23 +407,28 @@ public class OrderFunction extends AbstractTest {
 		log.info("TC_09: Step 13 - Verify Flat Rate Information Displayed");
 		shoppingCartPage.isFlatRateInformationDisplayed();
 		
-		log.info("TC_09: Step 14 - Check To 'Fixed' radio button/Select shipping cost");
+		log.info("TC_09: Step 14 - Get textshipping cost");
+		shippingCost = shoppingCartPage.getShippingCost();		
+		
+		log.info("TC_09: Step 15 - Check To 'Fixed' radio button/Select shipping cost");
 		shoppingCartPage.checkToDynamicLiveGuruCheckboxOrRadioButton(driver, "estimate_method");
 		
-		log.info("TC_09: Step 15 - Click 'UPDATE TOTAL' button");
+		log.info("TC_09: Step 16 - Click 'UPDATE TOTAL' button");
 		shoppingCartPage.clickToDynamicLiveGuruButton(driver, "Update Total");
 		
-		log.info("TC_09: Step 16 - Click 'UPDATE TOTAL' button");
-		String grandCostAfterShipCost = shoppingCartPage.getTextGrandTotalMoney();
+		log.info("TC_09: Step 17 - Click 'UPDATE TOTAL' button");
+		grandCostAfterShipCost = shoppingCartPage.getTextGrandTotalMoney();
 		
-//		log.info("TC_09: Step 17 - Verify shipping cost added to Total");
-//		verifyFalse(grandCostBeforeShipCost.equals(grandCostAfterShipCost));
+		log.info("TC_09: Step 18 - Verify shipping cost added to Total");
+		if (shippingCost.equals("$0.00")) {
+		verifyTrue(grandCostBeforeShipCost.equals(grandCostAfterShipCost));
+		} else verifyFalse(grandCostBeforeShipCost.equals(grandCostAfterShipCost));
 		
-		log.info("TC_09: Step 18 - Click to 'PROCEED TO CHECKOUT' button");
+		log.info("TC_09: Step 19 - Click to 'PROCEED TO CHECKOUT' button");
 		shoppingCartPage.clickToDynamicLiveGuruButton(driver, "Proceed to Checkout");
 		checkOutPage = LiveGuruPageFactoryManager.getCheckOutPage(driver);
 		
-		log.info("TC_09: Step 19 - Verify 5 Categories displayed");
+		log.info("TC_09: Step 20 - Verify 5 Categories displayed");
 		checkOutPage.isDynamicNumberDisplayed("1");
 		checkOutPage.isDynamicNumberDisplayed("2");
 		checkOutPage.isDynamicNumberDisplayed("3");
@@ -434,68 +441,111 @@ public class OrderFunction extends AbstractTest {
 		checkOutPage.isDynamicCheckOutCategoryDisplayed("Payment Information");
 		checkOutPage.isDynamicCheckOutCategoryDisplayed("Order Review");
 		
-		log.info("TC_09: Step 20 - Verify First Name is correct");
+		log.info("TC_09: Step 21 - Verify First Name is correct");
 		verifyTrue(checkOutPage.isDynamicInforInTextboxCorrect(driver, "billing:firstname", LiveGuruTestData.FIRST_NAME));
 
-		log.info("TC_09: Step 21 - Verify Middle Name is correct");
+		log.info("TC_09: Step 22 - Verify Middle Name is correct");
 		verifyTrue(checkOutPage.isDynamicInforInTextboxCorrect(driver, "billing:middlename", LiveGuruTestData.MIDDLE_NAME));
 
-		log.info("TC_09: Step 22 - Verify Last Name is correct");
+		log.info("TC_09: Step 23 - Verify Last Name is correct");
 		verifyTrue(checkOutPage.isDynamicInforInTextboxCorrect(driver, "billing:lastname", LiveGuruTestData.LAST_NAME));
 		
-		log.info("TC_09: Step 23 - Input data to 'Company' textbox");
+		log.info("TC_09: Step 24 - Input data to 'Company' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[company]", "My Place");
 		
-		log.info("TC_09: Step 24 - Input data to 'Address' textbox");
+		log.info("TC_09: Step 25 - Input data to 'Address' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[street][]", "123 This place");
 		
-		log.info("TC_09: Step 25 - Input data to 'Company' textbox");
+		log.info("TC_09: Step 26 - Input data to 'Company' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[company]", "XYZ");
 		
-		log.info("TC_09: Step 26 - Input data to 'City' textbox");
+		log.info("TC_09: Step 27 - Input data to 'City' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[city]", "New York");
 		
-		log.info("TC_09: Step 27 - Select State/Province");
+		log.info("TC_09: Step 28 - Select State/Province");
 		checkOutPage.selectItemInLiveGuruDynamicDropdown(driver, "billing[region_id]", "New York");
 		
-		log.info("TC_09: Step 28 - Input data to 'Zip' textbox");
+		log.info("TC_09: Step 29 - Input data to 'Zip' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[postcode]", "543432");
 		
-		log.info("TC_09: Step 29 - Select Country");
+		log.info("TC_09: Step 30 - Select Country");
 		checkOutPage.selectItemInLiveGuruDynamicDropdown(driver, "billing[country_id]", "United States");
 		
-		log.info("TC_09: Step 30 - Input data to 'Telephone' textbox");
+		log.info("TC_09: Step 31 - Input data to 'Telephone' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[telephone]", "0987654321");
 		
-		log.info("TC_09: Step 31 - Input data to 'Fax' textbox");
+		log.info("TC_09: Step 32 - Input data to 'Fax' textbox");
 		checkOutPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "billing[fax]", "0987654321");
 		
-		log.info("TC_09: Step 32 - Check to radio button 'Ship to this address'");
+		log.info("TC_09: Step 33 - Check to radio button 'Ship to this address'");
 		checkOutPage.checkToDynamicLiveGuruCheckboxOrRadioButton(driver, "billing[use_for_shipping]");
 		
-		log.info("TC_09: Step 33 - Click to Billing 'CONTINUE' button");
+		log.info("TC_09: Step 34 - Click to Billing 'CONTINUE' button");
 		checkOutPage.clickToBillingContinueButton();
 		
-		log.info("TC_09: Step 34 - Click to Shipping 'CONTINUE' button");
+		log.info("TC_09: Step 35 - Click to Shipping 'CONTINUE' button");
 		checkOutPage.clickToShippingContinueButton();
 		
-		log.info("TC_09: Step 35 - Check to radio button 'Check / Money order'");
+		log.info("TC_09: Step 36 - Check to radio button 'Check / Money order'");
 		checkOutPage.checkToMoneyOrderRadioButton();
 		
-		log.info("TC_09: Step 36 - Click to Payment 'CONTINUE' button");
+		log.info("TC_09: Step 37 - Click to Payment 'CONTINUE' button");
 		checkOutPage.clickToPaymentContinueButton();
 		
-		log.info("TC_09: Step 37 - Click to 'PLACE ORDER' button");
+		log.info("TC_09: Step 38 - Click to 'PLACE ORDER' button");
 		checkOutPage.clickToPlaceOrderButton();
 		
-		log.info("TC_09: Step 38 - Verify 'Your order has been received.' title displayed");
+		log.info("TC_09: Step 39 - Verify 'Your order has been received.' title displayed");
 		checkOutPage.isDynamicLiveGuruPageTitleDisplayed(driver, "Your order has been received.");
 		
-		log.info("TC_09: Step 39 - Verify 'Thank you for your purchase!' message displayed");
+		log.info("TC_09: Step 40 - Verify 'Thank you for your purchase!' message displayed");
 		checkOutPage.isThankYouForYourPurchaseMessageDisplayed();
 		
-		log.info("TC_09: Step 40 - Get Order Numver"); 
+		log.info("TC_09: Step 41 - Get Order Numver"); 
 		orderNumber = checkOutPage.getTextOrderNumber();
+		
+	}
+	
+	@Test
+	public void TC_10_VerifySearchFunctionality() {
+		log.info("TC_10: Step 01 - Open Home Page");
+		checkOutPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
+		homePage = LiveGuruPageFactoryManager.getHomePage(driver);
+		
+		log.info("TC_10: Step 02 - Click to 'ADVANCE SEARCH' link");
+		homePage.clickToFooterDynamicLink(driver, "Advanced Search");
+		catalogSearchPage = LiveGuruPageFactoryManager.getCatalogSearchPage(driver);
+		
+		log.info("TC_10: Step 03 - Verify'CATALOG ADVANCED SEARCH' title displayed");
+		catalogSearchPage.isDynamicLiveGuruPageTitleDisplayed(driver, "Catalog Advanced Search");
+		
+		log.info("TC_10: Step 04 - Input to price range '0-150' in Price Field");
+		catalogSearchPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "price[from]", "1");
+		catalogSearchPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "price[to]", "150");
+		
+		log.info("TC_10: Step 05 - Click To Search Button");
+		catalogSearchPage.clickToSearchButton();
+		
+		log.info("TC_10: Step 05 - Print all Products and Prices to console");
+		catalogSearchPage.printAllProductsAndprices();
+		
+		log.info("TC_10: Step 06 - Click to 'ADVANCE SEARCH' link");
+		homePage.clickToFooterDynamicLink(driver, "Advanced Search");
+		catalogSearchPage = LiveGuruPageFactoryManager.getCatalogSearchPage(driver);
+		
+		log.info("TC_10: Step 07 - Verify'CATALOG ADVANCED SEARCH' title displayed");
+		catalogSearchPage.isDynamicLiveGuruPageTitleDisplayed(driver, "Catalog Advanced Search");
+		
+		log.info("TC_10: Step 08 - Input to price range '151-1000' in Price Field");
+		catalogSearchPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "price[from]", "151");
+		catalogSearchPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "price[to]", "1000");
+		
+		log.info("TC_10: Step 09 - Click To Search Button");
+		catalogSearchPage.clickToSearchButton();
+		
+		log.info("TC_10: Step 10 - Print all Products and Prices to console");
+		catalogSearchPage.printAllProductsAndprices();
+		
 		
 	}
 

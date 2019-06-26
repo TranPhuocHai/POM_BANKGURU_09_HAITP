@@ -22,6 +22,7 @@ public class AbstractTest {
 
 	private WebDriver driver;
 	protected final Log log;
+	private final String workingDir = System.getProperty("user.dir");
 
 	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
@@ -76,7 +77,10 @@ public class AbstractTest {
 	protected WebDriver openMultiBrowser(String browserName, String url) {
 		if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver",".\\resources\\geckodriver.exe");
-			driver = new FirefoxDriver();
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
+			FirefoxOptions options = new FirefoxOptions();
+			driver = new FirefoxDriver(options);
 		} else if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();

@@ -12,7 +12,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -80,7 +82,26 @@ public class AbstractTest {
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
 			FirefoxOptions options = new FirefoxOptions();
-			driver = new FirefoxDriver(options);
+			FirefoxProfile profile = new FirefoxProfile();
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			profile.setAcceptUntrustedCertificates(false);
+			profile.setAssumeUntrustedCertificateIssuer(true);
+			profile.setPreference("dom.webnotifications.enabled", false);
+			profile.setPreference("browser.download.folderList", 2);
+			profile.setPreference("browser.helperApps.alwaysAsk.force", false);
+			profile.setPreference("browser.download.manager.showWhenStarting", false);
+			profile.setPreference("browser.download.dir", "C:\\Downloads");
+			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
+			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
+			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
+			capability = DesiredCapabilities.firefox();
+			capability.setCapability(FirefoxDriver.PROFILE, profile);
+			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
+			
+			driver = new FirefoxDriver(capability);
+			
+			
+			
 		} else if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();

@@ -51,7 +51,7 @@ public class DeleteAccount extends AbstractTest {
 		log.info("Precondition: Step 07 - Click to 'Delete Account' link");
 		homePage.openMultiplePage(driver, "Delete Account");
 		deleteAccountPage = PageFactoryManager.getDeleteAccountPage(driver);
-		verifyTrue(deleteAccountPage.isDynamicPageTitleDisplayed(driver, PaymentTestData.DELETE_ACCOUNT_TITLE));
+		verifyTrue(deleteAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, PaymentTestData.DELETE_ACCOUNT_TITLE));
 	}
 
 	@Test

@@ -57,7 +57,7 @@ public class EditAccount extends AbstractTest {
 		newAccountPage = PageFactoryManager.getNewAccountPage(driver);
 		
 		log.info("Precondition: Step 08 - Verify Title 'Add new account form' displayed");
-		newAccountPage.isDynamicPageTitleDisplayed(driver, "Add new account form");
+		newAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, "Add new account form");
 
 		log.info("Precondition: Step 09 - Input to 'Customer id' textbox ");
 		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", Common_02_CreateNewCustomer.CUSTOMER_ID);
@@ -72,7 +72,7 @@ public class EditAccount extends AbstractTest {
 		newAccountPage.clickToDynamicButton(driver, "button2");
 
 		log.info("Precondition: Step 12 - Veirfy 'Account generated successfully' message displayed");
-		verifyTrue(newAccountPage.isDynamicPageTitleDisplayed(driver, PaymentTestData.ACCOUNT_GENERATED_SUCCESSFULLY_MESSAGE));
+		verifyTrue(newAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, PaymentTestData.ACCOUNT_GENERATED_SUCCESSFULLY_MESSAGE));
 
 		log.info("Precondition: Step 13 - Veirfy current amount is correct");
 		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), TestData.AMOUNT);
@@ -85,7 +85,7 @@ public class EditAccount extends AbstractTest {
 		editAccountPage = PageFactoryManager.getEditAccountPage(driver);
 		
 		log.info("Precondition: Step 16 - Veify 'Edit Account Form' title displayed");
-		verifyTrue(editAccountPage.isDynamicPageTitleDisplayed(driver, PaymentTestData.EDIT_ACCOUNT_TITLE));
+		verifyTrue(editAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, PaymentTestData.EDIT_ACCOUNT_TITLE));
 	}
 
 	@Test

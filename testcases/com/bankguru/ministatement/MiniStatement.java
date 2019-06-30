@@ -53,7 +53,7 @@ public class MiniStatement extends AbstractTest {
 		miniStatementPage = PageFactoryManager.getMiniStatementPage(driver);
 		
 		log.info("Precondition: Step 08 - Veify 'Mini Statement Form' title displayed");
-		verifyTrue(miniStatementPage.isDynamicPageTitleDisplayed(driver, TestData.MINI_STATEMENT_TITLE));
+		verifyTrue(miniStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, TestData.MINI_STATEMENT_TITLE));
 	}
 
 	@Test

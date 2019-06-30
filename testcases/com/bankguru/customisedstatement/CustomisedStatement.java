@@ -55,7 +55,7 @@ public class CustomisedStatement extends AbstractTest {
 		customisedStatementPage = PageFactoryManager.getCustomisedStatementPage(driver);
 		
 		log.info("Precondition: Step 08 - Verify 'Customized Statement Form' displayed");
-		verifyTrue(customisedStatementPage.isDynamicPageTitleDisplayed(driver, TestData.CUSTOMIZED_STATEMENT_TITLE));
+		verifyTrue(customisedStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, TestData.CUSTOMIZED_STATEMENT_TITLE));
 	}
 	
 	@Test

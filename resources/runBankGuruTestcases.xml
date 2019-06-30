@@ -6,13 +6,59 @@
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="commons.RetryListener" />
 	</listeners>
+	
+	<test name="Test on FIREFOX HEADLESS">
+		<parameter name="browser" value="firefoxheadless" />s
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
+
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
+	
+	<test name="Test on IE">
+		<parameter name="browser" value="ie" />
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
 
 
-<!-- 	<test name="Test on FIREFOX"> -->
-<!-- 		<parameter name="browser" value="firefox" /> -->
-<!-- 		<parameter name="url" value="bankguru" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
+	<test name="Test on CHROME">
+		<parameter name="browser" value="chrome" />
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
+
+
+	<test name="Test on CHROME HEADLESS">
+		<parameter name="browser" value="chromeheadless" />s
+		<parameter name="url" value="bankguru" />
+		<classes>
+			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
+			<class name="com.bankguru.payment.Payment" />
+		</classes>
+	</test>
+	
+	
+
+
+</suite> 
+
 <!-- 			<class name="com.bankguru.customer.Common_02_CreateNewCustomer" /> -->
 <!-- 			<class name="com.bankguru.customer.NewCustomer" /> -->
 <!-- 			<class name="com.bankguru.customer.EditCustomer" /> -->
@@ -25,45 +71,3 @@
 <!-- 			<class name="com.bankguru.customisedstatement.CustomisedStatement" /> -->
 <!-- 			<class name="com.bankguru.fundtransfer.FundTransfer" /> -->
 <!-- 			<class name="com.bankguru.customer.ChangePassword" /> -->
-<!-- 			<class name="com.bankguru.payment.Payment" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
-
-	<test name="Test on CHROME">
-		<parameter name="browser" value="chrome" />
-		<parameter name="url" value="bankguru" />
-		<classes>
-			<class name="com.bankguru.user.Common_01_RegisterToSystem" />
-			<class name="com.bankguru.payment.Payment" />
-		</classes>
-	</test>
-
-
-<!-- 	<test name="Test on CHROME HEADLESS"> -->
-<!-- 		<parameter name="browser" value="chromeheadless" />s -->
-<!-- 		<parameter name="url" value="bankguru" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
-<!-- 			<class name="com.bankguru.payment.Payment" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
-	
-<!-- 	<test name="Test on FIREFOX HEADLESS"> -->
-<!-- 		<parameter name="browser" value="firefoxheadless" />s -->
-<!-- 		<parameter name="url" value="bankguru" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
-<!-- 			<class name="com.bankguru.payment.Payment" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
-
-<!-- 	<test name="Test on IE"> -->
-<!-- 		<parameter name="browser" value="ie" /> -->
-<!-- 		<parameter name="url" value="bankguru" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.bankguru.user.Common_01_RegisterToSystem" /> -->
-<!-- 			<class name="com.bankguru.payment.Payment" /> -->
-<!-- 		</classes> -->
-<!-- 	</test> -->
-
-</suite> 

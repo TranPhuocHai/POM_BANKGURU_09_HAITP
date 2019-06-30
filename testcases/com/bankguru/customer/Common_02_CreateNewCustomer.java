@@ -59,7 +59,7 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		newCustomerPage.checkToDynamicCheckboxOrRadioButton(driver, "m");
 		
 		log.info("CreateNewCustomer: Step 10 - Remove 'type' attribute of Date of Birth textbox");
-		newCustomerPage.removeAtrributeDynamicTextbox(driver, "dob", "type");
+		newCustomerPage.removeAnyAtrributeOfDynamicTextbox(driver, "dob", "type");
 		
 		log.info("CreateNewCustomer: Step 11 - Input to 'Date Of Birth' textbox");
 		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "dob", TestData.VALID_DOB);
@@ -89,7 +89,7 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		newCustomerPage.clickToDynamicButton(driver, "sub");
 		
 		log.info("CreateNewCustomer: Step 20 - Verify title 'Customer Registered Successfully!!!' displayed");
-		verifyTrue(newCustomerPage.isDynamicPageTitleDisplayed(driver, PaymentTestData.CUSTOMER_REGISTERED_SUCCESSFULLY_MESSAGE));
+		verifyTrue(newCustomerPage.isDynamicPageTitleOrMessageDisplayed(driver, PaymentTestData.CUSTOMER_REGISTERED_SUCCESSFULLY_MESSAGE));
 		
 		log.info("CreateNewCustomer: Step 21 - Get 'Customer ID'");
 		CUSTOMER_ID = newCustomerPage.getTextDynamicTableInfo(driver, "Customer ID");

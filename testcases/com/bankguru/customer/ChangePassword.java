@@ -53,7 +53,7 @@ public class ChangePassword extends AbstractTest {
 		changePasswordPage = PageFactoryManager.getChangePasswordPage(driver);
 		
 		log.info("Precondition: Step 08 - Verify 'Change Password' message displayed");
-		verifyTrue(changePasswordPage.isDynamicPageTitleDisplayed(driver, TestData.CHANGE_PASSWORD_TITLE));
+		verifyTrue(changePasswordPage.isDynamicPageTitleOrMessageDisplayed(driver, TestData.CHANGE_PASSWORD_TITLE));
 
 	}
 

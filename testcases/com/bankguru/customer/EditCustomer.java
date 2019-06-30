@@ -127,7 +127,7 @@ public class EditCustomer extends AbstractTest {
 		editcustomerPage.clickToDynamicButton(driver, "AccSubmit");
 		
 		log.info("EditCustomer_05: Step 04 - Verify title 'Edit Customer' displayed");
-		verifyTrue(editcustomerPage.isDynamicPageTitleDisplayed(driver, "Edit Customer"));
+		verifyTrue(editcustomerPage.isDynamicPageTitleOrMessageDisplayed(driver, "Edit Customer"));
 		
 		log.info("EditCustomer_05: Step 05 - Clear 'Address' text area");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");

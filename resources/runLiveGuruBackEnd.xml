@@ -12,7 +12,7 @@
 		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="livegurubackend" />
 		<classes>
-			<class name="com.liveguru.order.OrderFunction" />
+			<class name="com.liveguru.backend.LiveGuruBackEnd" />
 		</classes>
 	</test>
 

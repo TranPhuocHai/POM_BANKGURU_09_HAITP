@@ -2,6 +2,8 @@ package liveguruPageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 
+import liveguruPageObjects.BackEndAdminPageObject;
+import liveguruPageObjects.BackEndLoginPageObject;
 import liveguruPageObjects.CatalogSearchPageObject;
 import liveguruPageObjects.CheckOutPageObject;
 import liveguruPageObjects.CompareProductPageObject;
@@ -48,6 +50,16 @@ public class LiveGuruPageFactoryManager {
 	
 	public static CatalogSearchPageObject getCatalogSearchPage(WebDriver driver) {
 		return new CatalogSearchPageObject(driver);
+	}
+	
+	
+	public static BackEndLoginPageObject getBackEndLoginPage(WebDriver driver) {
+		return new BackEndLoginPageObject(driver);
+	}
+	
+	
+	public static BackEndAdminPageObject getBackEndAdminPage(WebDriver driver) {
+		return new BackEndAdminPageObject(driver);
 	}
 	
 	

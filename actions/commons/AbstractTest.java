@@ -75,13 +75,14 @@ public class AbstractTest {
 //		
 //		return driver;
 //	}
-	
+
 	protected WebDriver openMultiBrowser(String browserName, String url) {
+
 		if (browserName.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver",".\\resources\\geckodriver.exe");
+//			WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", ".\\resources\\geckodriver.exe");
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
-			FirefoxOptions options = new FirefoxOptions();
 			FirefoxProfile profile = new FirefoxProfile();
 			DesiredCapabilities capability = DesiredCapabilities.firefox();
 			profile.setAcceptUntrustedCertificates(false);
@@ -96,24 +97,52 @@ public class AbstractTest {
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
 			capability = DesiredCapabilities.firefox();
 			capability.setCapability(FirefoxDriver.PROFILE, profile);
-			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
-			
+
 			driver = new FirefoxDriver(capability);
-			
-			
-			
+
 		} else if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
+//			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-			System.setProperty("webdriver.chrome.driver",".\\resources\\chromedriver.exe");
+//			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("headless");
 			option.addArguments("window-size=1366x768");
 			driver = new ChromeDriver(option);
 		} else if (browserName.equalsIgnoreCase("ie")) {
-			System.setProperty("webdriver.ie.driver",".\\resources\\IEDriverServer.exe");
+//			WebDriverManager.iedriver().arch32().setup();
+			System.setProperty("webdriver.ie.driver", ".\\resources\\IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
+		} else if (browserName.equalsIgnoreCase("firefoxheadless")) {
+//			WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", ".\\resources\\geckodriver.exe");
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
+
+			FirefoxProfile profile = new FirefoxProfile();
+			FirefoxOptions options = new FirefoxOptions();
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+
+			options.setHeadless(true);
+
+			profile.setAcceptUntrustedCertificates(false);
+			profile.setAssumeUntrustedCertificateIssuer(true);
+			profile.setPreference("dom.webnotifications.enabled", false);
+			profile.setPreference("browser.download.folderList", 2);
+			profile.setPreference("browser.helperApps.alwaysAsk.force", false);
+			profile.setPreference("browser.download.manager.showWhenStarting", false);
+			profile.setPreference("browser.download.dir", "C:\\Downloads");
+			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
+			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
+			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
+
+			capability = DesiredCapabilities.firefox();
+			capability.setCapability(FirefoxDriver.PROFILE, profile);
+			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
+
+			driver = new FirefoxDriver(capability);
 		}
 
 		if (url.equalsIgnoreCase("bankguru")) {
@@ -126,7 +155,7 @@ public class AbstractTest {
 
 		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		
+
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
 			try {
 				Thread.sleep(5000);
@@ -136,8 +165,6 @@ public class AbstractTest {
 		}
 		return driver;
 	}
-	
-	
 
 	private boolean checkPassed(boolean condition) {
 		boolean pass = true;

@@ -167,12 +167,14 @@ public class AbstractPage {
 	}
 	
 	public String getAttributeValue(WebDriver driver, String locator, String attributeName) {
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
 	}
 
 	public String getAttributeValue(WebDriver driver, String locator, String attributeName, String... values) {
 		locator = String.format(locator, (Object[]) values);
+		highlightElement(driver, locator);
 		element = driver.findElement(By.xpath(locator));
 		return element.getAttribute(attributeName);
 	}
@@ -612,18 +614,18 @@ public class AbstractPage {
 
 	}
 
-	public boolean isDynamicPageTitleDisplayed(WebDriver driver, String message) {
+	public boolean isDynamicPageTitleOrMessageDisplayed(WebDriver driver, String message) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
 		return isControlDisplayed(driver, AbstractPageUI.DYNAMIC_PAGE_TITLE, message);
 
 	}
 
-	public void removeAtrributeDynamicTextbox(WebDriver driver, String fieldName, String attribute) {
+	public void removeAnyAtrributeOfDynamicTextbox(WebDriver driver, String fieldName, String attribute) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		removeAttributeInDOM(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, attribute, fieldName);
 	}
 
-	public String getTextValueInDynamicTextbox(WebDriver driver, String fieldName) {
+	public String getValueInDynamicTextbox(WebDriver driver, String fieldName) {
 		waitForElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, fieldName);
 		return getAttributeValue(driver, AbstractPageUI.DYNAMIC_TEXTBOX_TEXTAREA, "value", fieldName);
 	}

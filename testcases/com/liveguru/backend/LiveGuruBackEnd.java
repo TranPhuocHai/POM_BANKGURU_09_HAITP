@@ -22,7 +22,9 @@ public class LiveGuruBackEnd extends AbstractTest {
   
   
   @Test
-  public void f() {
+  public void verifyInvoiceCanBePrinted() {
+	  
+	  
   }
   
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+
+	<listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="commons.RetryListener" />
+	</listeners>
+
+
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<parameter name="url" value="livegurubackend" />
+		<classes>
+			<class name="com.liveguru.order.OrderFunction" />
+		</classes>
+	</test>
+
+
+</suite> 

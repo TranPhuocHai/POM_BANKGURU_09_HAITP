@@ -30,52 +30,6 @@ public class AbstractTest {
 		log = LogFactory.getLog(getClass());
 	}
 
-//	protected WebDriver openMultiBrowser(String browserName, String url) {
-//		if (browserName.equalsIgnoreCase("firefox")) {
-//			WebDriverManager.firefoxdriver().setup();
-//			driver = new FirefoxDriver();
-//		} else if (browserName.equalsIgnoreCase("firefoxheadless")) {
-//			WebDriverManager.firefoxdriver().setup();
-//			FirefoxOptions option = new FirefoxOptions();
-//			option.setHeadless(true);
-//			driver = new FirefoxDriver(option);
-//			
-//		} else if (browserName.equalsIgnoreCase("chrome")) {
-//			WebDriverManager.chromedriver().setup();
-//			driver = new ChromeDriver();
-//		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-//			WebDriverManager.chromedriver().setup();
-//			ChromeOptions option = new ChromeOptions();
-//			option.addArguments("headless");
-//			option.addArguments("window-size=1366x768");
-//			driver = new ChromeDriver(option);
-//		} else if (browserName.equalsIgnoreCase("ie")) {
-//			WebDriverManager.iedriver().arch32().setup();
-//			driver = new InternetExplorerDriver();
-//		}
-//		
-//		if (url.equalsIgnoreCase("bankguru")) {
-//			driver.get(Constants.BANKGURU_DEV_APP_URL);
-//		} else if (url.equalsIgnoreCase("livegurufrontend")) {
-//			driver.get(Constants.LIVEGURU_FRONT_END);
-//		} else if (url.equalsIgnoreCase("livegurubackend")) {
-//			driver.get(Constants.LIVEGURU_BACK_END);
-//		}
-//		
-//		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
-//		
-//		if (driver.toString().toLowerCase().contains("internet explorer")) {
-//			try {
-//				Thread.sleep(5000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
-//		return driver;
-//	}
-
 	protected WebDriver openMultiBrowser(String browserName, String url) {
 
 		if (browserName.equalsIgnoreCase("firefox")) {

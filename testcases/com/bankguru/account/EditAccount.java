@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.payment.PaymentTestData;
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.customer.Common_02_CreateNewCustomer;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
@@ -66,7 +66,7 @@ public class EditAccount extends AbstractTest {
 		newAccountPage.selectItemInDynamicDropdown(driver, "selaccount", "Current");
 
 		log.info("Precondition: Step 11 - Input to 'Initial deposit' textbox");
-		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", TestData.AMOUNT);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", CommonTestData.AMOUNT);
 
 		log.info("Precondition: Step 11 - Click to Submit button");
 		newAccountPage.clickToDynamicButton(driver, "button2");
@@ -75,7 +75,7 @@ public class EditAccount extends AbstractTest {
 		verifyTrue(newAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, PaymentTestData.ACCOUNT_GENERATED_SUCCESSFULLY_MESSAGE));
 
 		log.info("Precondition: Step 13 - Veirfy current amount is correct");
-		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), TestData.AMOUNT);
+		verifyEquals(newAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), CommonTestData.AMOUNT);
 
 		log.info("Precondition: Step 14 - Get Account ID infor");
 		ACCOUNT_ID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
@@ -106,7 +106,7 @@ public class EditAccount extends AbstractTest {
 
 	@Test
 	public void EditAccount_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterAccountNo : TestData.CHARACTER_VALUE) {
+		for (String characterAccountNo : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("EditAccount_02: Step 01 - Clear 'Account Number' textbox");
 			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -122,7 +122,7 @@ public class EditAccount extends AbstractTest {
 
 	@Test
 	public void EditAccount_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialAccountNo : TestData.SPECIAL_VALUE) {
+		for (String specialAccountNo : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("EditAccount_03: Step 01 - Clear 'Account Number' textbox");
 			editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -142,7 +142,7 @@ public class EditAccount extends AbstractTest {
 		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
 		log.info("EditAccount_04: Step 02 - Input to 'Account Number' textbox");
-		editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", TestData.BLANK_SPACE);
+		editAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", CommonTestData.BLANK_SPACE);
 		
 		log.info("EditAccount_04: Step 03 - Verify 'Characters are not allowed' message displayed");
 		verifyEquals(editAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);

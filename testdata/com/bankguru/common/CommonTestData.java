@@ -1,6 +1,6 @@
 package com.bankguru.common;
 
-public class TestData {
+public class CommonTestData {
 	
 	public static final String BLANK_SPACE = " ";
 	public static final String[] NUMERIC_VALUES = new String[] { "1234", "name123" };

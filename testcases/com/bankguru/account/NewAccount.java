@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
@@ -76,7 +76,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 02 - Input to 'Customer ID' textbox");
-		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", TestData.BLANK_SPACE);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "cusid", CommonTestData.BLANK_SPACE);
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
 		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Customer id"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
@@ -85,7 +85,7 @@ public class NewAccount extends AbstractTest {
 
 	@Test
 	public void NC_03_CustomerIDCharacterAreNotAllowed() {
-		for (String charactervalue : TestData.CHARACTER_VALUE) {
+		for (String charactervalue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -101,7 +101,7 @@ public class NewAccount extends AbstractTest {
 
 	@Test
 	public void NC_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -138,7 +138,7 @@ public class NewAccount extends AbstractTest {
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 02 - Input to 'Initial deposit' textbox");
-		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", TestData.BLANK_SPACE);
+		newAccountPage.inputToDynamicTextboxOrTextArea(driver, "inideposit", CommonTestData.BLANK_SPACE);
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 03 - Verify 'First character can not have space' message displayed");
 		verifyEquals(newAccountPage.getTextDynamicValidateMessage(driver, "Initial deposit"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
@@ -147,7 +147,7 @@ public class NewAccount extends AbstractTest {
 
 	@Test
 	public void NC_07_InitialDepositCharacterAreNotAllowed() {
-		for (String characterValue : TestData.CHARACTER_VALUE) {
+		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
@@ -163,7 +163,7 @@ public class NewAccount extends AbstractTest {
 
 	@Test
 	public void NC_08_InitialDepositCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox");
 			newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");

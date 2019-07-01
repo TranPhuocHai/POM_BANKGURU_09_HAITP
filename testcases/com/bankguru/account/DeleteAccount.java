@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
@@ -72,7 +72,7 @@ public class DeleteAccount extends AbstractTest {
 
 	@Test
 	public void DeleteAccount_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterAccountNo : TestData.CHARACTER_VALUE) {
+		for (String characterAccountNo : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("DeleteAccount_02: Step 01 - Clear 'Account Number' textbox");
 			deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -87,7 +87,7 @@ public class DeleteAccount extends AbstractTest {
 
 	@Test
 	public void DeleteAccount_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialAccountNo : TestData.SPECIAL_VALUE) {
+		for (String specialAccountNo : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("DeleteAccount_03: Step 01 - Clear 'Account Number' textbox");
 			deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -107,7 +107,7 @@ public class DeleteAccount extends AbstractTest {
 		deleteAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
 		log.info("DeleteAccount_04: Step 02 - Input to 'Account Number' textbox");
-		deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", TestData.BLANK_SPACE);
+		deleteAccountPage.inputToDynamicTextboxOrTextArea(driver, "accountno", CommonTestData.BLANK_SPACE);
 		
 		log.info("DeleteAccount_04: Step 03 - Verify 'Characters are not allowed' message displayed");
 		verifyEquals(deleteAccountPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);

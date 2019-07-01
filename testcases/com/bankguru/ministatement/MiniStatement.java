@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
@@ -53,7 +53,7 @@ public class MiniStatement extends AbstractTest {
 		miniStatementPage = PageFactoryManager.getMiniStatementPage(driver);
 		
 		log.info("Precondition: Step 08 - Veify 'Mini Statement Form' title displayed");
-		verifyTrue(miniStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, TestData.MINI_STATEMENT_TITLE));
+		verifyTrue(miniStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, CommonTestData.MINI_STATEMENT_TITLE));
 	}
 
 	@Test
@@ -74,7 +74,7 @@ public class MiniStatement extends AbstractTest {
 
 	@Test
 	public void MiniStatement_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterAccountNo : TestData.CHARACTER_VALUE) {
+		for (String characterAccountNo : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("MiniStatement_02: Step 01 - Clear 'Account Number' textbox");
 			miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -90,7 +90,7 @@ public class MiniStatement extends AbstractTest {
 
 	@Test
 	public void MiniStatement_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialAccountNo : TestData.SPECIAL_VALUE) {
+		for (String specialAccountNo : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("MiniStatement_03: Step 01 - Clear 'Account Number' textbox");
 			miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -110,7 +110,7 @@ public class MiniStatement extends AbstractTest {
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
 		
 		log.info("MiniStatement_04: Step 02 - Input to 'Account Number' textbox");
-		miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", TestData.BLANK_SPACE);
+		miniStatementPage.inputToDynamicTextboxOrTextArea(driver, "accountno", CommonTestData.BLANK_SPACE);
 		
 		log.info("MiniStatement_04: Step 03 - Verify 'Characters are not allowed' message displayed");
 		verifyEquals(miniStatementPage.getTextDynamicValidateMessage(driver, "Account No"), ValidateMessage.CHARACTERS_ARE_NOT_ALLOWED);

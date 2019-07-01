@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
@@ -76,7 +76,7 @@ public class DeleteCustomer extends AbstractTest {
 		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
 
 		log.info("DeleteCustomer_02: Step 02 - Input to 'Customer ID' textbox");
-		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", TestData.BLANK_SPACE);
+		deleteCustomerPage.inputToDynamicTextboxOrTextArea(driver, "cusid", CommonTestData.BLANK_SPACE);
 
 		log.info("DeleteCustomer_02: Step 03 - Verify 'First character can not have space' message displayed");
 		verifyEquals(deleteCustomerPage.getTextDynamicValidateMessage(driver, "Customer ID"), ValidateMessage.FIRST_CHARACTER_CAN_NOT_HAVE_SPACE);
@@ -85,7 +85,7 @@ public class DeleteCustomer extends AbstractTest {
 
 	@Test
 	public void DeleteCustomer_03_CustomerIDCharacterAreNotAllowed() {
-		for (String charactervalue : TestData.CHARACTER_VALUE) {
+		for (String charactervalue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("DeleteCustomer_03: Step 01 - Customer ID Number textbox");
 			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -101,7 +101,7 @@ public class DeleteCustomer extends AbstractTest {
 
 	@Test
 	public void DeleteCustomer_04_CustomerIDCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("DeleteCustomer_04: Step 01 - Customer ID Number textbox");
 			deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");

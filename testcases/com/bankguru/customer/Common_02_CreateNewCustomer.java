@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
@@ -20,7 +20,7 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 	private HomePageObject homePage;
 	private NewCustomerPageObject newCustomerPage;
 	public static String CUSTOMER_ID;
-	private String email = TestData.EMAIL + randomNumber() + "@gmail.com";
+	private String email = CommonTestData.EMAIL + randomNumber() + "@gmail.com";
 
 
 	@Parameters({"browser","url"})
@@ -53,7 +53,7 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		newCustomerPage = PageFactoryManager.getNewCustomerPage(driver);
 
 		log.info("CreateNewCustomer: Step 08 - Input to 'Customer Name' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", TestData.VALID_NAME);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "name", CommonTestData.VALID_NAME);
 		
 		log.info("CreateNewCustomer: Step 09 - Select Male gender");
 		newCustomerPage.checkToDynamicCheckboxOrRadioButton(driver, "m");
@@ -62,28 +62,28 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		newCustomerPage.removeAnyAtrributeOfDynamicTextbox(driver, "dob", "type");
 		
 		log.info("CreateNewCustomer: Step 11 - Input to 'Date Of Birth' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "dob", TestData.VALID_DOB);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "dob", CommonTestData.VALID_DOB);
 		
 		log.info("CreateNewCustomer: Step 12 - Input to 'Adress' text area");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", TestData.ADDRESS);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "addr", CommonTestData.ADDRESS);
 		
 		log.info("CreateNewCustomer: Step 13 - Input to 'City' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", TestData.CITY);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "city", CommonTestData.CITY);
 		
 		log.info("CreateNewCustomer: Step 14 - Input to 'State' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", TestData.STATE);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "state", CommonTestData.STATE);
 		
 		log.info("CreateNewCustomer: Step 15 - Input to 'Pin' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", TestData.PIN);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "pinno", CommonTestData.PIN);
 		
 		log.info("CreateNewCustomer: Step 16 - Input to 'Mobile Number' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", TestData.MOBILE_NUMBER);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "telephoneno", CommonTestData.MOBILE_NUMBER);
 		
 		log.info("CreateNewCustomer: Step 17 - Input to 'Email' textbox");
 		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "emailid", email);
 		
 		log.info("CreateNewCustomer: Step 18 - Input to 'Password' textbox");
-		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "password", TestData.PASSWORD);
+		newCustomerPage.inputToDynamicTextboxOrTextArea(driver, "password", CommonTestData.PASSWORD);
 		
 		log.info("CreateNewCustomer: Step 19 - Click to 'Submit' button");
 		newCustomerPage.clickToDynamicButton(driver, "sub");
@@ -95,14 +95,14 @@ public class Common_02_CreateNewCustomer extends AbstractTest {
 		CUSTOMER_ID = newCustomerPage.getTextDynamicTableInfo(driver, "Customer ID");
 
 		log.info("CreateNewCustomer: Step 22 - Verify all infor of new customer are correct");
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Customer Name"), TestData.VALID_NAME);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Gender"), TestData.EXPECTED_GENDER);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Birthdate"), TestData.VALID_DOB);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Address"), TestData.ADDRESS);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "City"), TestData.ADDRESS);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "State"), TestData.STATE);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Pin"), TestData.PIN);
-		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), TestData.MOBILE_NUMBER);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Customer Name"), CommonTestData.VALID_NAME);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Gender"), CommonTestData.EXPECTED_GENDER);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Birthdate"), CommonTestData.VALID_DOB);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Address"), CommonTestData.ADDRESS);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "City"), CommonTestData.ADDRESS);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "State"), CommonTestData.STATE);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Pin"), CommonTestData.PIN);
+		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), CommonTestData.MOBILE_NUMBER);
 		verifyEquals(newCustomerPage.getTextDynamicTableInfo(driver, "Email"), email);
 		
 		closeBrowserAndDriver(driver);

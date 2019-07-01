@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
@@ -70,7 +70,7 @@ public class FundTransfer extends AbstractTest {
 	
 	@Test
 	public void FundTransfer_02_PayersAccountMustBeNumeric() {
-		for (String characterValue : TestData.CHARACTER_VALUE) {
+		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_02: Step 01 - Clear 'Payers Account' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
@@ -85,7 +85,7 @@ public class FundTransfer extends AbstractTest {
 	
 	@Test
 	public void FundTransfer_03_PayersAccountCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_03: Step 01 - Clear 'Payers Account' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
@@ -116,7 +116,7 @@ public class FundTransfer extends AbstractTest {
 	
 	@Test
 	public void FundTransfer_05_PayeesAccountMustBeNumeric() {
-		for (String characterValue : TestData.CHARACTER_VALUE) {
+		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_05: Step 01 - Clear 'Payees Account' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
@@ -131,7 +131,7 @@ public class FundTransfer extends AbstractTest {
 	
 	@Test
 	public void FundTransfer_06_PayeesAccountCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_06: Step 01 - Clear 'Payees Account' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
@@ -162,7 +162,7 @@ public class FundTransfer extends AbstractTest {
 
 	@Test
 	public void FundTransfer_08_AmountMustBeNumeric() {
-		for (String characterValue : TestData.CHARACTER_VALUE) {
+		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_08: Step 01 - Clear 'Amount' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");
@@ -177,7 +177,7 @@ public class FundTransfer extends AbstractTest {
 	
 	@Test
 	public void FundTransfer_09_AmountCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_09: Step 01 - Clear 'Amount' textbox");
 			fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");

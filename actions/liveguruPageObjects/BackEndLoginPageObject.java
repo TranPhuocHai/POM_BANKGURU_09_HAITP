@@ -13,9 +13,9 @@ public class BackEndLoginPageObject extends AbstractPage{
 
 	WebDriver driver;
 
-	public void isLoginTitleDisplayed() {
+	public boolean isLoginTitleDisplayed() {
 		waitForElementVisible(driver, BackEndLoginPageUI.LOG_IN_TITLE);
-		isControlDisplayed(driver, BackEndLoginPageUI.LOG_IN_TITLE);
+		return isControlDisplayed(driver, BackEndLoginPageUI.LOG_IN_TITLE);
 		
 	}
 

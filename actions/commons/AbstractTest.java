@@ -18,8 +18,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class AbstractTest {
 
 	private WebDriver driver;
@@ -99,6 +97,9 @@ public class AbstractTest {
 			driver = new FirefoxDriver(capability);
 		}
 
+		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+
 		if (url.equalsIgnoreCase("bankguru")) {
 			driver.get(Constants.BANKGURU_DEV_APP_URL);
 		} else if (url.equalsIgnoreCase("livegurufrontend")) {
@@ -107,15 +108,8 @@ public class AbstractTest {
 			driver.get(Constants.LIVEGURU_BACK_END);
 		}
 
-		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-
 		if (driver.toString().toLowerCase().contains("internet explorer")) {
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			sleepTimeInSecond(5);
 		}
 		return driver;
 	}
@@ -257,5 +251,15 @@ public class AbstractTest {
 		String today = getCurrentYear() + "-" + getCurrentMonth() + "-" + getCurrentDay();
 		return today;
 	}
+
+	public void sleepTimeInSecond(int second) {
+		try {
+			Thread.sleep(second * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 }

@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.bankguru.account.EditAccount;
-import com.bankguru.common.TestData;
+import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
@@ -55,7 +55,7 @@ public class CustomisedStatement extends AbstractTest {
 		customisedStatementPage = PageFactoryManager.getCustomisedStatementPage(driver);
 		
 		log.info("Precondition: Step 08 - Verify 'Customized Statement Form' displayed");
-		verifyTrue(customisedStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, TestData.CUSTOMIZED_STATEMENT_TITLE));
+		verifyTrue(customisedStatementPage.isDynamicPageTitleOrMessageDisplayed(driver, CommonTestData.CUSTOMIZED_STATEMENT_TITLE));
 	}
 	
 	@Test
@@ -76,7 +76,7 @@ public class CustomisedStatement extends AbstractTest {
 
 	@Test
 	public void CustomisedStatement_02_AccountNumberCharacterAreNotAllowed() {
-		for (String characterValue : TestData.CHARACTER_VALUE) {
+		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("CustomisedStatement_02: Step 01 - Clear 'Account Number' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -91,7 +91,7 @@ public class CustomisedStatement extends AbstractTest {
 
 	@Test
 	public void CS_03_AccountNumberCanNotHaveSpecialCharacters() {
-		for (String specialValue : TestData.SPECIAL_VALUE) {
+		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_03: Step 01 - Clear 'Account Number' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -120,7 +120,7 @@ public class CustomisedStatement extends AbstractTest {
 	
 	@Test
 	public void CustomisedStatement_05_MinimumTransactionValueCharacterAreNotAllowed() {
-		for (String characterMinimumTransactionValue : TestData.CHARACTER_VALUE) {
+		for (String characterMinimumTransactionValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("CustomisedStatement_05: Step 01 - Clear 'Minimum Transaction Value' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
@@ -135,7 +135,7 @@ public class CustomisedStatement extends AbstractTest {
 	
 	@Test
 	public void CustomisedStatement_06_MinimumTransactionValueCanNotHaveSpecialCharacters() {
-		for (String specialMinimumTransactionValue : TestData.SPECIAL_VALUE) {
+		for (String specialMinimumTransactionValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_06: Step 01 - Clear 'Minimum Transaction Value' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
@@ -165,7 +165,7 @@ public class CustomisedStatement extends AbstractTest {
 	
 	@Test
 	public void CustomisedStatement_08_NumberOfTransactionCharacterAreNotAllowed() {
-		for (String CharacterNumberOfTransaction : TestData.CHARACTER_VALUE) {
+		for (String CharacterNumberOfTransaction : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("CustomisedStatement_08: Step 01 - Clear 'Number of Transaction' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
@@ -180,7 +180,7 @@ public class CustomisedStatement extends AbstractTest {
 
 	@Test
 	public void CustomisedStatement_09_NumberOfTransactionCanNotHaveSpecialCharacters() {
-		for (String specialNumberOfTransaction : TestData.SPECIAL_VALUE) {
+		for (String specialNumberOfTransaction : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_09: Step 01 - Clear 'Number of Transaction' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
@@ -220,7 +220,7 @@ public class CustomisedStatement extends AbstractTest {
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 		
 		log.info("CustomisedStatement_11: Step 04 - Input to 'Minimum Transaction Value' textbox");
-		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", TestData.AMOUNT);
+		customisedStatementPage.inputToDynamicTextboxOrTextArea(driver, "amountlowerlimit", CommonTestData.AMOUNT);
 		
 		log.info("CustomisedStatement_11: Step 05 - Clear 'Number of Transaction' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");

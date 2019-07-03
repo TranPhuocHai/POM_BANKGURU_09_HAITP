@@ -45,6 +45,6 @@ public class LiveGuruAbstractPageUI {
 	/* ============== BACKEND Xpath=============== */
 
 	public static final String DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE = "//span[text()='%s']";
-	public static final String DYNAMIC_BACKEND_TITLE = "//div[@id='page:main-container']//h3[text()='%s']";
+	public static final String DYNAMIC_BACKEND_TITLE = "//div[@id='page:main-container']//h3[contains(text(),'%s')]";
 
 }

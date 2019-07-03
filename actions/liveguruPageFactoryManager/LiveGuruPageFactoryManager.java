@@ -10,6 +10,7 @@ import liveguruPageObjects.CompareProductPageObject;
 import liveguruPageObjects.HomePageObject;
 import liveguruPageObjects.MobilePageObject;
 import liveguruPageObjects.MyAccountPageObject;
+import liveguruPageObjects.ProductReviewPageObject;
 import liveguruPageObjects.RegisterPageObject;
 import liveguruPageObjects.ShoppingCartPageObject;
 import liveguruPageObjects.TVPageObject;
@@ -60,6 +61,10 @@ public class LiveGuruPageFactoryManager {
 	
 	public static BackEndAdminPageObject getBackEndAdminPage(WebDriver driver) {
 		return new BackEndAdminPageObject(driver);
+	}
+	
+	public static ProductReviewPageObject getProductReviewPage(WebDriver driver) {
+		return new ProductReviewPageObject(driver);
 	}
 	
 	

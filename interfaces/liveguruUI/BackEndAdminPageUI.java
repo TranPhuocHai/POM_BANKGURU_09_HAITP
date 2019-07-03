@@ -12,5 +12,12 @@ public class BackEndAdminPageUI {
 	public static final String LOADING_ICON = "//p[@class='loader']";
 
 	public static final String DYNAMIC_DROPDOWN_FOLLOW_LABEL = "//label[text()='%s']/following-sibling::select";
+	
+	public static final String DYNAMIC_SORT_BUTTON = "//a//span[@class='sort-title' and text()='%s']";
+	
+	public static final String LOGOUT_BUTTON = "//a[@class='link-logout']";
+	
+	public static final String DYNAMIC_EDIT_BUTTON_FOLLOW_REVIEW = "//td[contains(text(),\"%s\")]/following-sibling::td[contains(text(),\"%s\")]//following-sibling::td[contains(text(),\"%s\")]//following-sibling::td/a[text()='Edit']";
+	
 
 }

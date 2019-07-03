@@ -47,6 +47,26 @@ public class BackEndAdminPageObject extends AbstractPage {
 		selectItemInDropdown(driver, BackEndAdminPageUI.DYNAMIC_DROPDOWN_FOLLOW_LABEL, expectedValue, field);
 
 	}
+
+	public void clickToDynamicSortButton(String sortField) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, sortField);
+		clickToElement(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, sortField);
+		
+	}
+
+	public void clickToLogOutButton() {
+		waitForElementVisible(driver, BackEndAdminPageUI.LOGOUT_BUTTON);
+		clickToElement(driver, BackEndAdminPageUI.LOGOUT_BUTTON);
+		
+	}
+
+	public void clickToExpectedEditButton(String... values) {
+		String locator = BackEndAdminPageUI.DYNAMIC_EDIT_BUTTON_FOLLOW_REVIEW;
+		locator = String.format(locator, (Object[]) values);
+		List<WebElement> allExpectedEditButton = driver.findElements(By.xpath(locator));
+		allExpectedEditButton.get(0).click();
+		
+	}
 	
 	
 

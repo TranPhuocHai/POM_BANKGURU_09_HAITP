@@ -6,22 +6,22 @@ import org.testng.Assert;
 
 public class DownloadFileFunction {
 
-	public static void VerifyDownloadedSuccessfully()  {
-		String file = ".pdf";
-		// Xóa toàn bộ file trong thư mục
+	public static void VerifyDownloadedSuccessfully(String fileExtension) {
+		String file = fileExtension;
+		/* Delete all files in folder */
 		deleteAllFileInFolder();
-		// Verify có 1 file được tải về chứa đuôi file mở rộng là .xls
+		/* Verify Verify there's a file has been downloaded with any extension */
 		waitForDownloadFileContainsNameCompleted(file);
-		// Đếm số lượng file trong thư mục sau khi tải về
+		/* Count number of files on download folder before deleting */
 		int countFileBeforeDelete = countFilesInDirectory();
 		System.out.println("AFTER DOWNLOAD: " + countFileBeforeDelete);
-		// Verify số lượng file tải về bằng 1
+		/* Verify number of file equals to 1 */
 		Assert.assertEquals(countFileBeforeDelete, 1);
 		deleteFileContainName(file);
-		// Đếm số lượng file trong thư mục sau khi xóa
+		/* Count number of files on download folder after deleting */
 		int countFileAfterDelete = countFilesInDirectory();
 		System.out.println("AFTER DELETE: " + countFileAfterDelete);
-		// Verify số lượng file tải về bằng 0
+		/* Verify number of file equals to 0 */
 		Assert.assertEquals(countFileAfterDelete, 0);
 	}
 

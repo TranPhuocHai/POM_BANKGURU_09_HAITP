@@ -41,6 +41,6 @@
 	<classpathentry kind="lib" path="lib/httpclient-4.5.9.jar"/>
 	<classpathentry kind="lib" path="lib/jarchivelib-1.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/webdrivermanager-3.6.0.jar"/>
-	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="lib/selenium-server-standalone-3.14.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

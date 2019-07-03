@@ -18,6 +18,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class AbstractTest {
 
 	private WebDriver driver;
@@ -31,8 +33,7 @@ public class AbstractTest {
 	protected WebDriver openMultiBrowser(String browserName, String url) {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
-//			WebDriverManager.firefoxdriver().setup();
-			System.setProperty("webdriver.gecko.driver", ".\\resources\\geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
 			FirefoxProfile profile = new FirefoxProfile();
@@ -49,52 +50,50 @@ public class AbstractTest {
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
 			capability = DesiredCapabilities.firefox();
 			capability.setCapability(FirefoxDriver.PROFILE, profile);
+			driver = new FirefoxDriver(capability);
 
+		} else if (browserName.equalsIgnoreCase("firefoxheadless")) {
+			WebDriverManager.firefoxdriver().setup();
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
+			FirefoxProfile profile = new FirefoxProfile();
+			FirefoxOptions options = new FirefoxOptions();
+			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			options.setHeadless(true);
+			profile.setAcceptUntrustedCertificates(false);
+			profile.setAssumeUntrustedCertificateIssuer(true);
+			profile.setPreference("dom.webnotifications.enabled", false);
+			profile.setPreference("browser.download.folderList", 2);
+			profile.setPreference("browser.helperApps.alwaysAsk.force", false);
+			profile.setPreference("browser.download.manager.showWhenStarting", false);
+			profile.setPreference("browser.download.dir", "C:\\Downloads");
+			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
+			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
+			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
+			capability = DesiredCapabilities.firefox();
+			capability.setCapability(FirefoxDriver.PROFILE, profile);
+			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
 			driver = new FirefoxDriver(capability);
 
 		} else if (browserName.equalsIgnoreCase("chrome")) {
-//			WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
-			driver = new ChromeDriver();
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions option = new ChromeOptions();
+			option.addArguments("--incognito");
+			option.addArguments("--disable-extensions");
+			option.addArguments("--disable-infobars");
+			driver = new ChromeDriver(option);
+
 		} else if (browserName.equalsIgnoreCase("chromeheadless")) {
-//			WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver", ".\\resources\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			ChromeOptions option = new ChromeOptions();
 			option.addArguments("headless");
 			option.addArguments("window-size=1366x768");
 			driver = new ChromeDriver(option);
+
 		} else if (browserName.equalsIgnoreCase("ie")) {
-//			WebDriverManager.iedriver().arch32().setup();
-			System.setProperty("webdriver.ie.driver", ".\\resources\\IEDriverServer.exe");
+			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
-		} else if (browserName.equalsIgnoreCase("firefoxheadless")) {
-//			WebDriverManager.firefoxdriver().setup();
-			System.setProperty("webdriver.gecko.driver", ".\\resources\\geckodriver.exe");
-			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
 
-			FirefoxProfile profile = new FirefoxProfile();
-			FirefoxOptions options = new FirefoxOptions();
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
-
-			options.setHeadless(true);
-
-			profile.setAcceptUntrustedCertificates(false);
-			profile.setAssumeUntrustedCertificateIssuer(true);
-			profile.setPreference("dom.webnotifications.enabled", false);
-			profile.setPreference("browser.download.folderList", 2);
-			profile.setPreference("browser.helperApps.alwaysAsk.force", false);
-			profile.setPreference("browser.download.manager.showWhenStarting", false);
-			profile.setPreference("browser.download.dir", "C:\\Downloads");
-			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
-			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
-			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
-
-			capability = DesiredCapabilities.firefox();
-			capability.setCapability(FirefoxDriver.PROFILE, profile);
-			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
-
-			driver = new FirefoxDriver(capability);
 		}
 
 		driver.manage().timeouts().implicitlyWait(Constants.LONG_TIMEOUT, TimeUnit.SECONDS);
@@ -261,5 +260,13 @@ public class AbstractTest {
 		}
 	}
 
+	public void sleepTimeInMiliSecond(int miliSecond) {
+		try {
+			Thread.sleep(miliSecond);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 }

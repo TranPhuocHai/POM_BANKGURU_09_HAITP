@@ -402,6 +402,15 @@ public class AbstractPage {
 		}
 	}
 
+	public void sleepTimeInMiliSecond(int miliSecond) {
+		try {
+			Thread.sleep(miliSecond);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public void highlightElement(WebDriver driver, String locator) {
 		javascriptExecutor = (JavascriptExecutor) driver;
 		element = driver.findElement(By.xpath(locator));

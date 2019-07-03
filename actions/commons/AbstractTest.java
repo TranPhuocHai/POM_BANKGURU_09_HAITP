@@ -229,7 +229,11 @@ public class AbstractTest {
 
 	public String getCurrentDay() {
 		DateTime nowUTC = new DateTime(DateTimeZone.UTC);
-		return String.valueOf(nowUTC.getDayOfMonth());
+		int day = nowUTC.getDayOfMonth();
+		if (day < 10) {
+			return "0" + day;
+		}
+		return String.valueOf(day);
 	}
 
 	public String getCurrentMonth() {

@@ -36,7 +36,7 @@ public class Payment extends AbstractTest {
 	private DeleteAccountPageObject deleteAccountPage;
 	private DeleteCustomerPageObject deleteCustomerPage;
 	private String customerID, accountID, payeeAccountID;
-	private String email = PaymentTestData.EMAIL + "@gmail.com";
+	private String email = PaymentTestData.EMAIL + randomNumber() +"@gmail.com";
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass

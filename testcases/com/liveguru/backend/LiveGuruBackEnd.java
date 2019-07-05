@@ -116,7 +116,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 	public void TC_02_VerifyTheProductMechanism() {
 		log.info("======= LiveGuru BackEnd - TC_02: Verify The Product Mechanism =========");
 		
-		log.info("TC_02: Step 01 - Go to product link 'http://live.guru99.com/index.php/review/product/list/id/1'");
+		log.info("TC_02: Step 01 - Go to product link");
 		backEndLoginPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
 		productReviewPage = LiveGuruPageFactoryManager.getProductReviewPage(driver);
 		
@@ -189,7 +189,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 		log.info("TC_02: Step 23 - Click on 'Save Review' button ");
 		backEndAdminPage.clickToSaveReviewButton();
 		
-		log.info("TC_02: Step 24 - Go to product link 'http://live.guru99.com/index.php/review/product/list/id/1'");
+		log.info("TC_02: Step 24 - Go to product link");
 		backEndAdminPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
 		productReviewPage = LiveGuruPageFactoryManager.getProductReviewPage(driver);
 		

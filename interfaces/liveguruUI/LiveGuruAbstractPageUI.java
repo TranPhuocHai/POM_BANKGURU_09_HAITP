@@ -42,9 +42,4 @@ public class LiveGuruAbstractPageUI {
 
 	public static final String DYNAMIC_INFO_IN_TEXTBOX = "//input[@id='%s' and @value='%s']";
 
-	/* ============== BACKEND Xpath=============== */
-
-	public static final String DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE = "//span[text()='%s']";
-	public static final String DYNAMIC_BACKEND_TITLE = "//div[@id='page:main-container']//h3[contains(text(),'%s')]";
-
 }

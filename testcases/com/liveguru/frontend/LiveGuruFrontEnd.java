@@ -33,8 +33,8 @@ public class LiveGuruFrontEnd extends AbstractTest {
 	private CatalogSearchPageObject catalogSearchPage;
 
 	private String email, listCost, detailsCost, errorMessage, inforBox;
-	private String orderNumber, grandCostAfterShipCost, grandCostBeforeShipCost, shippingCost;
-	public static String LIVE_GURU_HOME_PAGE_URL;
+	private String grandCostAfterShipCost, grandCostBeforeShipCost, shippingCost;
+	public static String LIVE_GURU_HOME_PAGE_URL, ORDER_NUMBER;
 
 	@Parameters({ "browser", "url" })
 	@BeforeTest
@@ -524,7 +524,7 @@ public class LiveGuruFrontEnd extends AbstractTest {
 		checkOutPage.isThankYouForYourPurchaseMessageDisplayed();
 
 		log.info("TC_09: Step 41 - Get Order Numver");
-		orderNumber = checkOutPage.getTextOrderNumber();
+		ORDER_NUMBER = checkOutPage.getTextOrderNumber();
 
 	}
 

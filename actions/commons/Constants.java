@@ -11,7 +11,8 @@ public class Constants {
 	public static final String BANKGURU_STAGING_APP_URL = "http://demo.guru99.com/v2/";
 	public static final String BANKGURU_PRODUCTION_APP_URL = "http://demo.guru99.com/v1/";
 
-	public static final String LIVEGURU_FRONT_END = "http://live.guru99.com/";
-	public static final String LIVEGURU_BACK_END = "http://live.guru99.com/index.php/backendlogin";
+	public static final String LIVEGURU_FRONT_END_URL = "http://live.guru99.com/";
+	public static final String LIVEGURU_BACK_END_URL = "http://live.guru99.com/index.php/backendlogin";
+	
 
 }

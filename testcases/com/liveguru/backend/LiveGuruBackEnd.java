@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.liveguru.backend.testdata.LiveGuruBackEndTestData;
+import com.liveguru.backend.testdata.BackEndTestData;
 
 import commons.AbstractTest;
 import commons.DownloadFileFunction;
@@ -42,10 +42,10 @@ public class LiveGuruBackEnd extends AbstractTest {
 		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
 
 		log.info("TC_01: Step 03 - Input to 'Username' textbox");
-		backEndLoginPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "login[username]", LiveGuruBackEndTestData.USER_NAME);
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
 
 		log.info("TC_01: Step 04 - Input to 'Password' textbox");
-		backEndLoginPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "login[password]", LiveGuruBackEndTestData.PASSWORD);
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
 
 		log.info("TC_01: Step 05 - Click To 'Login' button");
 		backEndAdminPage = backEndLoginPage.clickToLoginButton();
@@ -54,22 +54,22 @@ public class LiveGuruBackEnd extends AbstractTest {
 		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
 
 		log.info("TC_01: Step 07 - Verify 'Manage Customer' title displays");
-		verifyTrue(backEndAdminPage.isDynamicBackendTitleDisplayed(driver, "Manage Customers"));
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
 
 		log.info("TC_01: Step 08 - Hover mouse to 'Sale' category");
-		backEndAdminPage.hoverMouseToDynamicCategory(driver, "Sales");
+		backEndAdminPage.hoverMouseToSaleCatogory();
 
 		log.info("TC_01: Step 09 - Click to 'Order' category");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Orders");
+		backEndAdminPage.clickToOrderCategory();
 
 		log.info("TC_01: Step 10 - Verify 'Orders' title displays");
-		verifyTrue(backEndAdminPage.isDynamicBackendTitleDisplayed(driver, "Orders"));
+		verifyTrue(backEndAdminPage.isOrdersTitleDisplayed());
 
 		log.info("TC_01: Step 11 - Select 'Cancelled' in 'Status' dropdown");
-		backEndAdminPage.selectItemInLiveGuruDynamicDropdown(driver, "status", "Canceled");
+		backEndAdminPage.selectAnyValueFromStatusDropdown("Canceled");
 
 		log.info("TC_01: Step 12 - Click To 'Search' button");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Search");
+		backEndAdminPage.clickToSearchButton();
 
 		log.info("TC_01: Step 13 - Wait for Loading icon invisible");
 		backEndAdminPage.waitForLoadingIconInvisible();
@@ -78,37 +78,37 @@ public class LiveGuruBackEnd extends AbstractTest {
 		backEndAdminPage.checkToCheckboxNextFirstOrder();
 
 		log.info("TC_01: Step 15 - Select 'Print Invoices' in 'Actions' dropdown");
-		backEndAdminPage.selectItemInDropdownFollowTable("Actions", "Print Invoices");
+		backEndAdminPage.selectAnyValueFromActionsDropdown("Print Invoices");
 
 		log.info("TC_01: Step 16 - Click 'Submit' button");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Submit");
+		backEndAdminPage.clickToSubmitButton();
 
 		log.info("TC_01: Step 17 - Verify 'There are no printable documents related to select' message displayed");
-		verifyTrue(backEndAdminPage.isDynamicErrorMessageDisplayed(driver, LiveGuruBackEndTestData.NO_PRINTABLE_DOCUMENTS_ERROR_MESSAGE));
+		verifyTrue(backEndAdminPage.isThereAreNoPrintableDocumentsRelatedToSelectMessageDisplayed());
 
 		log.info("TC_01: Step 18 - Select 'Complete' in 'Status' dropdown");
-		backEndAdminPage.selectItemInLiveGuruDynamicDropdown(driver, "status", "Complete");
+		backEndAdminPage.selectAnyValueFromStatusDropdown("Complete");
 
 		log.info("TC_01: Step 19 - Click To 'Search' button");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Search");
+		backEndAdminPage.clickToSearchButton();
 
 		log.info("TC_01: Step 20 - Wait for Loading icon invisible");
 		backEndAdminPage.waitForLoadingIconInvisible();
 
-		log.info("TC_01: Step 21 - Check to the 1st checkbox");
+		log.info("TC_01: Step 21 - Check to checkbox next first order");
 		backEndAdminPage.checkToCheckboxNextFirstOrder();
 
 		log.info("TC_01: Step 22 - Select 'Print Invoices' in 'Actions' dropdown");
-		backEndAdminPage.selectItemInDropdownFollowTable("Actions", "Print Invoices");
+		backEndAdminPage.selectAnyValueFromActionsDropdown("Print Invoices");
 
 		log.info("TC_01: Step 23 - Click 'Submit' button");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Submit");
+		backEndAdminPage.clickToSubmitButton();
 
 		log.info("TC_01: Step 24 - Verify Download successfully");
 		DownloadFileFunction.VerifyDownloadedSuccessfully(".pdf");
 		
 		log.info("TC_01: Post condition - Logout from Admin page");
-		backEndAdminPage.clickToLogOutButton();
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
 
 	}
 	
@@ -116,39 +116,38 @@ public class LiveGuruBackEnd extends AbstractTest {
 	public void TC_02_VerifyTheProductMechanism() {
 		log.info("======= LiveGuru BackEnd - TC_02: Verify The Product Mechanism =========");
 		
-		log.info("TC_02: Step 01 - Go to product link");
-		backEndAdminPage.openAnyUrl(driver, LiveGuruBackEndTestData.LIVE_GURU_PRODUCT_URL);
+		log.info("TC_02: Step 01 - Go to product link 'http://live.guru99.com/index.php/review/product/list/id/1'");
+		backEndLoginPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
 		productReviewPage = LiveGuruPageFactoryManager.getProductReviewPage(driver);
 		
 		log.info("TC_02: Step 02 - Verify 'Let us know your thoughts' message displayed");
-		verifyTrue(productReviewPage.isDynamicCommonLabelDisplayed(driver, "Let us know your thoughts"));
+		verifyTrue(productReviewPage.isLetUsKnowYourThoughtsMessageDisplayed());
 
 		log.info("TC_02: Step 03 - Verify 'Summary of Your Review' message displayed");
-		verifyTrue(productReviewPage.isDynamicCommonLabelDisplayed(driver, "Summary of Your Review"));
+		verifyTrue(productReviewPage.isSummaryOfYourReviewMessageDisplayed());
 
 		log.info("TC_02: Step 04 - Verify 'What's your nickname?' message displayed");
-		verifyTrue(productReviewPage.isDynamicCommonLabelDisplayed(driver, "What's your nickname?"));
+		verifyTrue(productReviewPage.isWhatsYourNicknameMessageDisplayed());
 		
 		log.info("TC_02: Step 05 - Input valid datas for 3 fields");
-		productReviewPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "detail", LiveGuruBackEndTestData.REVIEW_COMMENT_DETAILS);
-		productReviewPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "title", LiveGuruBackEndTestData.FINAL_REVIEW);
-		productReviewPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "nickname", LiveGuruBackEndTestData.NICK_NAME);
+		productReviewPage.inputToDetailsReviewTextArea(BackEndTestData.REVIEW_COMMENT_DETAILS);
+		productReviewPage.inputToFinalReviewTextbox(BackEndTestData.FINAL_REVIEW);
+		productReviewPage.inputToNicknameTextbox(BackEndTestData.NICK_NAME);
 		
 		log.info("TC_02: Step 06 - Click 'SUBMIT REVIEW' button");
-		productReviewPage.clickToDynamicLiveGuruButton(driver, "Submit Review");
+		productReviewPage.clickToSubmitReviewButton();
 		
 		log.info("TC_02: Step 07 - Go to Backend Login page");
-		productReviewPage.openAnyUrl(driver, backEndLoginUrl);
-		backEndLoginPage = LiveGuruPageFactoryManager.getBackEndLoginPage(driver);
-
+		backEndLoginPage = productReviewPage.openBackEndPage(backEndLoginUrl);
+		
 		log.info("TC_02: Step 08 - Verify Login Title 'Log in to Admin Pane' displays");
 		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
 
 		log.info("TC_02: Step 09 - Input to 'Username' textbox");
-		backEndLoginPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "login[username]", LiveGuruBackEndTestData.USER_NAME);
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
 
 		log.info("TC_02: Step 10 - Input to 'Password' textbox");
-		backEndLoginPage.inputToDynamicTextboxTextAreaLiveGuru(driver, "login[password]", LiveGuruBackEndTestData.PASSWORD);
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
 
 		log.info("TC_02: Step 11 - Click To 'Login' button");
 		backEndAdminPage = backEndLoginPage.clickToLoginButton();
@@ -157,45 +156,45 @@ public class LiveGuruBackEnd extends AbstractTest {
 		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
 
 		log.info("TC_02: Step 13 - Verify 'Manage Customer' title displays");
-		verifyTrue(backEndAdminPage.isDynamicBackendTitleDisplayed(driver, "Manage Customers"));
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
 		
 		log.info("TC_02: Step 14 - Hover mouse to 'Catalog' category");
-		backEndAdminPage.hoverMouseToDynamicCategory(driver, "Catalog");
+		backEndAdminPage.hoverMouseCatalogCategory();
 
 		log.info("TC_02: Step 15 - Hover mouse to 'Reviews and Ratings' category");
-		backEndAdminPage.hoverMouseToDynamicCategory(driver, "Reviews and Ratings");
+		backEndAdminPage.hoverMouseToReviewsAndRatingsCategory();
 		
 		log.info("TC_02: Step 16 - Hover mouse to 'Customer Reviews' category");
-		backEndAdminPage.hoverMouseToDynamicCategory(driver, "Customer Reviews");
+		backEndAdminPage.hoverMouseToCustomerReviewsCategory();
 		
 		log.info("TC_02: Step 17 - Click to 'Pending Reviews' category");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Pending Reviews");
+		backEndAdminPage.clickToPendingReviewsCategory();
 		
 		log.info("TC_02: Step 18 - Verify 'Pending Reviews' title displays");
-		verifyTrue(backEndAdminPage.isDynamicBackendTitleDisplayed(driver, "Pending Reviews"));
+		verifyTrue(backEndAdminPage.isPendingReviewsTitleDisplayed());
 		
-		log.info("TC_02: Step 19 - Sort table by ID until getting descending order (click twice on button)");
-		backEndAdminPage.clickToDynamicSortButton("ID");
-		backEndAdminPage.clickToDynamicSortButton("ID");
+		log.info("TC_02: Step 19 - Sort table by ID twice for getting descending order");
+		backEndAdminPage.clickToIDSortButton();
+		backEndAdminPage.clickToIDSortButton();
 		
 		log.info("TC_02: Step 20 - Click to the expected 'Edit' button");
-		backEndAdminPage.clickToExpectedEditButton(LiveGuruBackEndTestData.FINAL_REVIEW, LiveGuruBackEndTestData.NICK_NAME, LiveGuruBackEndTestData.REVIEW_COMMENT_DETAILS );
+		backEndAdminPage.clickToExpectedEditButton(BackEndTestData.FINAL_REVIEW, BackEndTestData.NICK_NAME, BackEndTestData.REVIEW_COMMENT_DETAILS );
 		
 		log.info("TC_02: Step 21 - Verify 'Edit review' title displays");
-		backEndAdminPage.isDynamicBackendTitleDisplayed(driver, "Edit Review ");
+		backEndAdminPage.isEditReviewTitleDisplayed(BackEndTestData.FINAL_REVIEW);
 		
-		log.info("TC_02: Step 22 - Verify 'Edit review' title displays");
-		backEndAdminPage.selectItemInLiveGuruDynamicDropdown(driver, "status_id", "Approved");
+		log.info("TC_02: Step 22 - Select 'Approved' from 'Status' dropdown in Review Details filed");
+		backEndAdminPage.selectAnyValueFromStatusDropdownInEditReviewPage("Approved");
 		
 		log.info("TC_02: Step 23 - Click on 'Save Review' button ");
-		backEndAdminPage.clickToDynamicCategoryOrButton(driver, "Save Review");
+		backEndAdminPage.clickToSaveReviewButton();
 		
-		log.info("TC_02: Step 24 - Go to product link");
-		backEndAdminPage.openAnyUrl(driver, LiveGuruBackEndTestData.LIVE_GURU_PRODUCT_URL);
+		log.info("TC_02: Step 24 - Go to product link 'http://live.guru99.com/index.php/review/product/list/id/1'");
+		backEndAdminPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
 		productReviewPage = LiveGuruPageFactoryManager.getProductReviewPage(driver);
 		
 		log.info("TC_02: Step 25 - Verify Your review displays");
-		productReviewPage.isReviewDisplayed(LiveGuruBackEndTestData.FINAL_REVIEW, LiveGuruBackEndTestData.REVIEW_COMMENT_DETAILS, LiveGuruBackEndTestData.NICK_NAME);
+		productReviewPage.isExpectedReviewDisplayed(BackEndTestData.FINAL_REVIEW, BackEndTestData.REVIEW_COMMENT_DETAILS, BackEndTestData.NICK_NAME);
 		
 	}
 

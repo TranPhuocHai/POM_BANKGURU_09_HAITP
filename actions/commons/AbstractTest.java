@@ -102,9 +102,9 @@ public class AbstractTest {
 		if (url.equalsIgnoreCase("bankguru")) {
 			driver.get(Constants.BANKGURU_DEV_APP_URL);
 		} else if (url.equalsIgnoreCase("livegurufrontend")) {
-			driver.get(Constants.LIVEGURU_FRONT_END);
+			driver.get(Constants.LIVEGURU_FRONT_END_URL);
 		} else if (url.equalsIgnoreCase("livegurubackend")) {
-			driver.get(Constants.LIVEGURU_BACK_END);
+			driver.get(Constants.LIVEGURU_BACK_END_URL);
 		}
 
 		if (driver.toString().toLowerCase().contains("internet explorer")) {

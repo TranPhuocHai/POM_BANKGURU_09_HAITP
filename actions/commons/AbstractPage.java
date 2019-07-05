@@ -875,30 +875,5 @@ public class AbstractPage {
 		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_INFO_IN_TEXTBOX, fieldName, valueToVerify);
 	}
 
-	/* =================== Only LIVEGURU BackEnd Dynamic Locator method ============================== */
-
-	public void hoverMouseToDynamicCategory(WebDriver driver, String categoryName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, categoryName);
-		hoverMouseToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, categoryName);
-
-	}
-
-	public void clickToDynamicCategoryOrButton(WebDriver driver, String categoryName) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, categoryName);
-		clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, categoryName);
-
-	}
-
-	public boolean isDynamicErrorMessageDisplayed(WebDriver driver, String errorMessage) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, errorMessage);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_CATEGORY_OR_BUTTON_OR_ERROR_MESSAGE, errorMessage);
-
-	}
-
-	public boolean isDynamicBackendTitleDisplayed(WebDriver driver, String title) {
-		waitForElementVisible(driver, LiveGuruAbstractPageUI.DYNAMIC_BACKEND_TITLE, title);
-		return isControlDisplayed(driver, LiveGuruAbstractPageUI.DYNAMIC_BACKEND_TITLE, title);
-
-	}
 
 }

@@ -12,7 +12,8 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="livegurubackend" />
 		<classes>
-			<class name="com.liveguru.backend.LiveGuruBackEnd" />
+<!-- 			<class name="com.liveguru.backend.LiveGuruBackEnd" /> -->
+			<class name="com.liveguru.backend.LiveGuruBackEnd_POM" />
 		</classes>
 	</test>
 

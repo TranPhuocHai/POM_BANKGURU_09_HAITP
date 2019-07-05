@@ -25,6 +25,17 @@ public class BackEndLoginPageObject extends AbstractPage{
 		return LiveGuruPageFactoryManager.getBackEndAdminPage(driver);
 		
 	}
-	
+
+	public void inputToUserNameTextbox(String userName) {
+		waitForElementVisible(driver, BackEndLoginPageUI.USER_NAME_TEXTBOX);
+		sendKeyToElement(driver, BackEndLoginPageUI.USER_NAME_TEXTBOX, userName);
+		
+	}
+
+	public void inputToPasswordTextbox(String password) {
+		waitForElementVisible(driver, BackEndLoginPageUI.PASSWORD_TEXTBOX);
+		sendKeyToElement(driver, BackEndLoginPageUI.PASSWORD_TEXTBOX, password);
+		
+	}
 
 }

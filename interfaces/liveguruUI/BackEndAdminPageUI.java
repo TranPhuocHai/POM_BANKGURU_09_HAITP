@@ -16,6 +16,7 @@ public class BackEndAdminPageUI {
 	public static final String ORDER_TITLE = "//div[@id='page:main-container']//h3[text()='Orders']";
 	public static final String PENDING_REVIEWS_TITLE = "//div[@id='page:main-container']//h3[text()='Pending Reviews']";
 	public static final String EDIT_REVIEW_TITLE = "//div[@id='page:main-container']//h3[text()=\"Edit Review '%s'\"]";
+	public static final String INVOICES_TITLE = "//div[@id='page:main-container']//h3[text()='Invoices']";
 	
 	public static final String SALE_CATEGORY = "//span[text()='Sales']";
 	public static final String ORDER_CATEGORY = "//span[text()='Orders']";
@@ -23,6 +24,8 @@ public class BackEndAdminPageUI {
 	public static final String REVIEWS_AND_RATINGS_CATEGORY = "//span[text()='Reviews and Ratings']";
 	public static final String CUSTOMER_REVIEWS_CATEGORY = "//span[text()='Customer Reviews']";
 	public static final String PENDING_REVIEWS_CATEGORY = "//span[text()='Pending Reviews']";
+	public static final String SALES_CATEGORY = "//span[text()='Sales']";
+	public static final String INVOICES_CATEGORY = "//span[text()='Invoices']";
 	
 	public static final String STATUS_DROPDOWN = "//select[@name='status']";
 	public static final String ACTIONS_DROPDOWN = "//label[text()='Actions']/following-sibling::select";
@@ -30,8 +33,12 @@ public class BackEndAdminPageUI {
 	
 	public static final String SEARCH_BUTTON = "//span[text()='Search']";
 	public static final String SUBMIT_BUTTON = "//span[text()='Submit']";
-	public static final String ID_SORT_BUTTON = "//span[text()='ID']";
 	public static final String SAVE_REVIEW_BUTTON = "//span[text()='Save Review']";
+	
+	public static final String ID_SORT_BUTTON = "//span[text()='ID']";
+	public static final String INVOICE_NUMBER_SORT_BUTTON = "//span[text()='Invoice #']";
+	public static final String INVOICE_NUMBER_SORT_DESCENDING_BUTTON = "//a[@title='desc']/span[text()='Invoice #']";
+	public static final String INVOICE_NUMBER_SORT_ASCENDING_BUTTON = "//a[@title='asc']/span[text()='Invoice #']";
 	
 	public static final String THERE_ARE_NO_PRINTABLE_DOCUMENTS_RELATED_TO_SELECT_MESSAGE = "//span[text()='There are no printable documents related to selected orders.']";
 	

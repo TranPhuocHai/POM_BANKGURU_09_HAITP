@@ -1,4 +1,4 @@
-package liveguruPageFactoryManager;
+package bankguruPageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 

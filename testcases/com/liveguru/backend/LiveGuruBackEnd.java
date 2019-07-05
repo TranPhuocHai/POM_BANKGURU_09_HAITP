@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 
 import com.liveguru.backend.testdata.BackEndTestData;
 
+import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractTest;
 import commons.DownloadFileFunction;
-import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruPageObjects.BackEndAdminPageObject;
 import liveguruPageObjects.BackEndLoginPageObject;
 import liveguruPageObjects.ProductReviewPageObject;
@@ -189,12 +189,62 @@ public class LiveGuruBackEnd extends AbstractTest {
 		log.info("TC_02: Step 23 - Click on 'Save Review' button ");
 		backEndAdminPage.clickToSaveReviewButton();
 		
-		log.info("TC_02: Step 24 - Go to product link");
-		backEndAdminPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
+		log.info("TC_02: Step 24 - Click on 'Logout' button ");
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		log.info("TC_02: Step 25 - Go to product link");
+		backEndLoginPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
 		productReviewPage = LiveGuruPageFactoryManager.getProductReviewPage(driver);
 		
-		log.info("TC_02: Step 25 - Verify Your review displays");
+		log.info("TC_02: Step 26 - Verify Your review displays");
 		productReviewPage.isExpectedReviewDisplayed(BackEndTestData.FINAL_REVIEW, BackEndTestData.REVIEW_COMMENT_DETAILS, BackEndTestData.NICK_NAME);
+		
+	}
+	
+	@Test
+	public void TC_03_VerifySortFunctionWorksCorrectly() {
+		log.info("=== LiveGuru BackEnd - TC_03: Verify Sort Function Works Correctly ====");
+		
+		log.info("TC_03: Step 01 - Go to Backend Login page");
+		backEndLoginPage = productReviewPage.openBackEndPage(backEndLoginUrl);
+		
+		log.info("TC_03: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
+		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
+
+		log.info("TC_03: Step 03 - Input to 'Username' textbox");
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
+
+		log.info("TC_03: Step 04 - Input to 'Password' textbox");
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
+
+		log.info("TC_03: Step 05 - Click To 'Login' button");
+		backEndAdminPage = backEndLoginPage.clickToLoginButton();
+
+		log.info("TC_03: Step 06 - Close Incoming message pop-up if it appears");
+		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
+
+		log.info("TC_03: Step 07 - Verify 'Manage Customer' title displays");
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
+		
+		log.info("TC_03: Step 08 - Hover mouse to 'Sales' category");
+		backEndAdminPage.hoverMouseToSalesCategory();
+		
+		log.info("TC_03: Step 09 - Click to 'Invoices' category");
+		backEndAdminPage.clickToInvoicesCategory();
+		
+		log.info("TC_03: Step 10 - Verify 'Invoices' title displays");
+		verifyTrue(backEndAdminPage.isInvoicesTitleDisplayed());
+		
+		log.info("TC_03: Step 11 - Click to sort 'Invoice #' button");
+		backEndAdminPage.clickToInvoiceNumberSortButton();
+		
+		log.info("TC_03: Step 12 - Verify sort 'Invoice #' descending button displays");
+		verifyTrue(backEndAdminPage.isDescendingSortInvoiceNumberButtonDisplayed());
+		
+		log.info("TC_03: Step 13 - Verify invoices number sort in ascending order correctly");
+		verifyTrue(backEndAdminPage.isInvoiceNumberSortInAscendingCorrectly());
+		
+		
 		
 	}
 

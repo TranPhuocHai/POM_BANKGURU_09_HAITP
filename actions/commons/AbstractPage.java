@@ -16,8 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
 import bankguruUI.AbstractPageUI;
-import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruPageObjects.MyAccountPageObject;
 import liveguruPageObjects.ShoppingCartPageObject;
 import liveguruUI.LiveGuruAbstractPageUI;

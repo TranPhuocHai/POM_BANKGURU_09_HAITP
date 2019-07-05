@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractPage;
-import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruUI.BackEndAdminPageUI;
 
 public class BackEndAdminPageObject extends AbstractPage {
@@ -172,6 +172,40 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.SAVE_REVIEW_BUTTON);
 		clickToElement(driver, BackEndAdminPageUI.SAVE_REVIEW_BUTTON);
 
+	}
+
+	public void hoverMouseToSalesCategory() {
+		waitForElementVisible(driver, BackEndAdminPageUI.SALES_CATEGORY);
+		hoverMouseToElement(driver, BackEndAdminPageUI.SALES_CATEGORY);
+
+	}
+
+	public void clickToInvoicesCategory() {
+		waitForElementVisible(driver, BackEndAdminPageUI.INVOICES_CATEGORY);
+		clickToElement(driver, BackEndAdminPageUI.INVOICES_CATEGORY);
+
+	}
+
+	public boolean isInvoicesTitleDisplayed() {
+		waitForElementVisible(driver, BackEndAdminPageUI.INVOICES_TITLE);
+		return isControlDisplayed(driver, BackEndAdminPageUI.INVOICES_TITLE);
+		
+	}
+
+	public void clickToInvoiceNumberSortButton() {
+		waitForElementVisible(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_BUTTON);
+		clickToElement(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_BUTTON);
+		
+	}
+
+	public boolean isDescendingSortInvoiceNumberButtonDisplayed() {
+		waitForElementVisible(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_DESCENDING_BUTTON);
+		return isControlDisplayed(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_DESCENDING_BUTTON);
+	}
+
+	public boolean isInvoiceNumberSortInAscendingCorrectly() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 
 import com.liveguru.frontend.testdata.LiveGuruFrontEndTestData;
 
+import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractTest;
-import liveguruPageFactoryManager.LiveGuruPageFactoryManager;
 import liveguruPageObjects.CatalogSearchPageObject;
 import liveguruPageObjects.CheckOutPageObject;
 import liveguruPageObjects.CompareProductPageObject;

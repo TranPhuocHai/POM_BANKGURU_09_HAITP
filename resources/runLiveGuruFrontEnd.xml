@@ -8,8 +8,8 @@
 	</listeners>
 
 
-	<test name="Test on FIREFOX">
-		<parameter name="browser" value="firefox" />
+	<test name="Test on FIREFOX HEADLESS">
+		<parameter name="browser" value="firefoxheadless" />
 		<parameter name="url" value="livegurufrontend" />
 		<classes>
 			<class name="com.liveguru.frontend.LiveGuruFrontEnd" />

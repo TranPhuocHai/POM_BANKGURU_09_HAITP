@@ -8,8 +8,8 @@
 	</listeners>
 
 
-	<test name="Test on CHROME">
-		<parameter name="browser" value="chrome" />
+	<test name="Test on FIREFOX">
+		<parameter name="browser" value="firefox" />
 		<parameter name="url" value="livegurubackend" />
 		<classes>
 			<class name="com.liveguru.backend.LiveGuruBackEnd" />

@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +15,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -37,7 +37,7 @@ public class AbstractTest {
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
 			FirefoxProfile profile = new FirefoxProfile();
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
+			FirefoxOptions options = new FirefoxOptions();
 			profile.setAcceptUntrustedCertificates(false);
 			profile.setAssumeUntrustedCertificateIssuer(true);
 			profile.setPreference("dom.webnotifications.enabled", false);
@@ -47,10 +47,11 @@ public class AbstractTest {
 			profile.setPreference("browser.download.dir", "C:\\Downloads");
 			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
 			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
-			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
-			capability = DesiredCapabilities.firefox();
-			capability.setCapability(FirefoxDriver.PROFILE, profile);
-			driver = new FirefoxDriver(capability);
+			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "pdf");
+			options.addPreference("pdfjs.enabledCache.state",false);
+			
+			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
 
 		} else if (browserName.equalsIgnoreCase("firefoxheadless")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -58,7 +59,6 @@ public class AbstractTest {
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, workingDir + "\\FirefoxLog.txt");
 			FirefoxProfile profile = new FirefoxProfile();
 			FirefoxOptions options = new FirefoxOptions();
-			DesiredCapabilities capability = DesiredCapabilities.firefox();
 			options.setHeadless(true);
 			profile.setAcceptUntrustedCertificates(false);
 			profile.setAssumeUntrustedCertificateIssuer(true);
@@ -70,10 +70,9 @@ public class AbstractTest {
 			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
 			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
-			capability = DesiredCapabilities.firefox();
-			capability.setCapability(FirefoxDriver.PROFILE, profile);
-			capability.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
-			driver = new FirefoxDriver(capability);
+			
+			options.setProfile(profile);
+			driver = new FirefoxDriver(options);
 
 		} else if (browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -267,6 +266,16 @@ public class AbstractTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean verifySortAscending(ArrayList<String> list) {
+		for (int i = 0; i <list.size()-1; i++) {
+			int compare = list.get(i).compareTo(list.get(i+1));
+			if (compare > 0) {
+				break;
+			} 
+		} return false;
+		
 	}
 
 }

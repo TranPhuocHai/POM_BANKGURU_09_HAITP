@@ -1,6 +1,5 @@
 package commons;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -268,13 +267,25 @@ public class AbstractTest {
 		}
 	}
 	
-	public boolean verifySortAscending(ArrayList<String> list) {
-		for (int i = 0; i <list.size()-1; i++) {
-			int compare = list.get(i).compareTo(list.get(i+1));
+	public boolean verifySortAscending(String[] list) {
+		for (int i = 0; i <list.length-1; i++) {
+			int compare = list[i].compareTo(list[i+1]);
+			System.out.println(compare);
 			if (compare > 0) {
-				break;
+				return false;
 			} 
-		} return false;
+		} return true;
+		
+	}
+	
+	public boolean verifySortDescending(String[] list) {
+		for (int i = 0; i <list.length-1; i++) {
+			int compare = list[i].compareTo(list[i+1]);
+			System.out.println(compare);
+			if (compare < 0) {
+				return false;
+			} 
+		} return true;
 		
 	}
 

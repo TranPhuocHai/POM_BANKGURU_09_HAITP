@@ -8,7 +8,6 @@ public class BackEndAdminPageUI {
 	public static final String ALL_CHECKBOXES = "//tr//td[@class='a-center ']//input";
 	public static final String LOADING_ICON = "//p[@class='loader']";
 	public static final String DYNAMIC_DROPDOWN_FOLLOW_LABEL = "//label[text()='%s']/following-sibling::select";
-	public static final String DYNAMIC_SORT_BUTTON = "//a//span[@class='sort-title' and text()='%s']";
 	public static final String LOGOUT_BUTTON = "//a[@class='link-logout']";
 	public static final String DYNAMIC_EDIT_BUTTON_FOLLOW_REVIEW = "//td[contains(text(),\"%s\")]/following-sibling::td[contains(text(),\"%s\")]//following-sibling::td[contains(text(),\"%s\")]//following-sibling::td/a[text()='Edit']";
 	
@@ -35,12 +34,19 @@ public class BackEndAdminPageUI {
 	public static final String SUBMIT_BUTTON = "//span[text()='Submit']";
 	public static final String SAVE_REVIEW_BUTTON = "//span[text()='Save Review']";
 	
-	public static final String ID_SORT_BUTTON = "//span[text()='ID']";
-	public static final String INVOICE_NUMBER_SORT_BUTTON = "//span[text()='Invoice #']";
-	public static final String INVOICE_NUMBER_SORT_DESCENDING_BUTTON = "//a[@title='desc']/span[text()='Invoice #']";
-	public static final String INVOICE_NUMBER_SORT_ASCENDING_BUTTON = "//a[@title='asc']/span[text()='Invoice #']";
+	
+	
+	public static final String DYNAMIC_SORT_BUTTON = "//span[text()='%s']";
+	public static final String DYNAMIC_SORT_DESCENDING_BUTTON = "//a[@title='desc']/span[text()='%s']";
+	public static final String DYNAMIC_SORT_ASCENDING_BUTTON = "//a[@title='asc']/span[text()='%s']";
+	
+	
+	
 	
 	public static final String THERE_ARE_NO_PRINTABLE_DOCUMENTS_RELATED_TO_SELECT_MESSAGE = "//span[text()='There are no printable documents related to selected orders.']";
+	
+	public static final String ALL_VALUE_OF_TABLE = "//div[@class='grid']//td";
+	public static final String ALL_SORT_COLUMN = "//tr[@class='headings']/th/span";
 	
 
 }

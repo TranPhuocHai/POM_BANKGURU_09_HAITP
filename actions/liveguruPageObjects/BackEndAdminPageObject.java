@@ -1,5 +1,6 @@
 package liveguruPageObjects;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -46,12 +47,6 @@ public class BackEndAdminPageObject extends AbstractPage {
 	public void selectItemInDropdownFollowTable(String field, String expectedValue) {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_DROPDOWN_FOLLOW_LABEL, field);
 		selectItemInDropdown(driver, BackEndAdminPageUI.DYNAMIC_DROPDOWN_FOLLOW_LABEL, expectedValue, field);
-
-	}
-
-	public void clickToDynamicSortButton(String sortField) {
-		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, sortField);
-		clickToElement(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, sortField);
 
 	}
 
@@ -149,10 +144,16 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.PENDING_REVIEWS_TITLE);
 		return isControlDisplayed(driver, BackEndAdminPageUI.PENDING_REVIEWS_TITLE);
 	}
+	
+	public void clickToDynamicSortButton(String columnField) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, columnField);
+		clickToElement(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, columnField);
+		
+	}
 
-	public void clickToIDSortButton() {
-		waitForElementVisible(driver, BackEndAdminPageUI.ID_SORT_BUTTON);
-		clickToElement(driver, BackEndAdminPageUI.ID_SORT_BUTTON);
+	public void clickToDynamicSortDescendingButton(String columnField) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
+		clickToElement(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
 
 	}
 
@@ -189,23 +190,45 @@ public class BackEndAdminPageObject extends AbstractPage {
 	public boolean isInvoicesTitleDisplayed() {
 		waitForElementVisible(driver, BackEndAdminPageUI.INVOICES_TITLE);
 		return isControlDisplayed(driver, BackEndAdminPageUI.INVOICES_TITLE);
-		
+
 	}
 
-	public void clickToInvoiceNumberSortButton() {
-		waitForElementVisible(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_BUTTON);
-		clickToElement(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_BUTTON);
-		
+	public boolean isDynamicDescendingSortButtonDisplayed(String columnField) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
+		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
+	}
+	
+	
+	public boolean isDynamicAscendingSortButtonDisplayed(String columnField) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
+		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
+	}
+	
+	public String[] getListValueOfEachColumn(int columnNo) {
+		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
+		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
+		String[] listItem = new String[listElements.size()];
+		String[] allItemsInEachColumn = new String[allSortColumn.size()];
+
+		for (int i = 0; i < listElements.size(); i++) {
+			String printToScreen = listElements.get(i).getText().trim();
+			listItem[i] = printToScreen;
+		}
+		for (int y = 0; y < allSortColumn.size(); y++) {
+			allItemsInEachColumn[y] = listItem[columnNo + (y * allSortColumn.size())].replace(",", "").replace("$", "").replace(".", "").replace(" ", "").replace(":", "").toLowerCase();
+		}
+		System.out.println(Arrays.toString(allItemsInEachColumn));
+
+		return allItemsInEachColumn;
 	}
 
-	public boolean isDescendingSortInvoiceNumberButtonDisplayed() {
-		waitForElementVisible(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_DESCENDING_BUTTON);
-		return isControlDisplayed(driver, BackEndAdminPageUI.INVOICE_NUMBER_SORT_DESCENDING_BUTTON);
+	public String[] getTextDynamicColumnSortName() {
+		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
+		String[] listColunnValue = new String[allSortColumn.size()];
+		for (int i=0; i<allSortColumn.size(); i++) {
+			listColunnValue[i] = allSortColumn.get(i).getText().trim();
+		} return listColunnValue;
 	}
 
-	public boolean isInvoiceNumberSortInAscendingCorrectly() {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

@@ -201,19 +201,36 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 	}
+	
+	public String[] getListValueOfEachColumnForVeiryingSort(int columnNo) {
+		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
+		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
+		String[] listItem = new String[allSortColumn.size()/listElements.size()];
+		String[] allItemsInEachColumn = new String[allSortColumn.size()];
+		
+		for (int i = 0; i < listElements.size(); i++) {
+			String printToScreen = listElements.get(i).getText().trim();
+			listItem[i] = printToScreen;
+		}
+		for (int y = 0; y < listElements.size()/allSortColumn.size(); y++) {
+			allItemsInEachColumn[y] = listItem[columnNo + (y * allSortColumn.size())].replace(",", "").replace("$", "").replace(".", "").replace(" ", "").replace(":", "").toLowerCase();
+		}
+		
+		return allItemsInEachColumn;
+	}
 
-	public String[] getListValueOfEachColumn(int columnNo) {
+	public String[] getListValueOfEachColumnForVeiryingSearch(int columnNo) {
 		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
 		String[] listItem = new String[listElements.size()];
-		String[] allItemsInEachColumn = new String[allSortColumn.size()];
+		String[] allItemsInEachColumn = new String[listElements.size()/allSortColumn.size()];
 
 		for (int i = 0; i < listElements.size(); i++) {
 			String printToScreen = listElements.get(i).getText().trim();
 			listItem[i] = printToScreen;
 		}
-		for (int y = 0; y < allSortColumn.size(); y++) {
-			allItemsInEachColumn[y] = listItem[columnNo + (y * allSortColumn.size())].replace(",", "").replace("$", "").replace(".", "").replace(" ", "").replace(":", "").toLowerCase();
+		for (int y = 0; y < listElements.size()/allSortColumn.size(); y++) {
+			allItemsInEachColumn[y] = listItem[columnNo-1 + (y * allSortColumn.size())];
 		}
 
 		return allItemsInEachColumn;
@@ -258,6 +275,31 @@ public class BackEndAdminPageObject extends AbstractPage {
 	public int getTotalColumnOfTableValue() {
 		List<WebElement> totalNumberOfColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		return totalNumberOfColumn.size();
+	}
+	
+
+	public void hoverMouseToCustomersCategory() {
+		waitForElementVisible(driver, BackEndAdminPageUI.CUSTOMERS_CATEGORY);
+		hoverMouseToElement(driver, BackEndAdminPageUI.CUSTOMERS_CATEGORY);
+
+	}
+
+	public void clickToManageCustomersCategory() {
+		waitForElementVisible(driver, BackEndAdminPageUI.MANAGE_CUSTOMERS_CATEGORY);
+		clickToElement(driver, BackEndAdminPageUI.MANAGE_CUSTOMERS_CATEGORY);
+
+	}
+
+	public void inputToDynamicSearchTextbox(String fieldName, String sendKeyValue) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SEARCH_TEXTBOX, fieldName);
+		sendKeyToElement(driver, BackEndAdminPageUI.DYNAMIC_SEARCH_TEXTBOX, sendKeyValue ,fieldName);
+		
+	}
+
+	public void selectCountryFromCountryDropdown(String country) {
+		waitForElementVisible(driver, BackEndAdminPageUI.COUNTRY_DROPDOWN);
+		selectItemInDropdown(driver, BackEndAdminPageUI.COUNTRY_DROPDOWN, country);
+		
 	}
 
 }

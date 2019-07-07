@@ -244,23 +244,23 @@ public class LiveGuruBackEnd extends AbstractTest {
 				backEndAdminPage.clickToDynamicSortButton(columnField);
 				backEndAdminPage.waitForLoadingIconInvisible();
 				verifyTrue(backEndAdminPage.isDynamicDescendingSortButtonDisplayed(columnField));
-				verifyTrue(verifySortAscending(backEndAdminPage.getListValueOfEachColumn(i)));
+				verifyTrue(verifySortAscending(backEndAdminPage.getListValueOfEachColumnForVeiryingSort(i)));
 				backEndAdminPage.clickToDynamicSortDescendingButton(columnField);
 				backEndAdminPage.waitForLoadingIconInvisible();
 				verifyTrue(backEndAdminPage.isDynamicAscendingSortButtonDisplayed(columnField));
-				verifyTrue(verifySortDescending(backEndAdminPage.getListValueOfEachColumn(i)));
+				verifyTrue(verifySortDescending(backEndAdminPage.getListValueOfEachColumnForVeiryingSort(i)));
 
 			}
 		}
-		
+
 		log.info("TC_03: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
 	}
-	
+
 //	@Test
 	public void TC_04_VeirfyPaginationFunctionWorksCorrectly() {
-		log.info("=== LiveGuru BackEnd - TC_03: Verify Pagination Function Works Correctly ====");
-		
+		log.info("=== LiveGuru BackEnd - TC_04: Verify Pagination Function Works Correctly ====");
+
 		log.info("TC_04: Step 01 - Go to Backend Login page");
 		backEndLoginPage.openBackEndPage(backEndLoginUrl);
 
@@ -290,24 +290,80 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_04: Step 10 - Verify 'Orders' title displays");
 		verifyTrue(backEndAdminPage.isOrdersTitleDisplayed());
-		
+
 		log.info("TC_04: Step 11 - Veirfy Pagination function works correctly");
 		backEndAdminPage.clickToPaginationDropdown();
 		paginationOptions = backEndAdminPage.getAllOptionsOfPaginationDropdown();
 		for (String option : paginationOptions) {
 			backEndAdminPage.selectDynamicValueInPaginationDropdown(option);
 			backEndAdminPage.waitForLoadingIconInvisible();
-			
+
 			int totalNumberValues = backEndAdminPage.getTotalNumberOfTableValue();
 			int numberOfColumn = backEndAdminPage.getTotalColumnOfTableValue();
-			int actualNumberOfRow = totalNumberValues/numberOfColumn;
-			
+			int actualNumberOfRow = totalNumberValues / numberOfColumn;
+
 			int expectedNumberOfRow = Integer.parseInt(option);
-			
+
 			verifyTrue(expectedNumberOfRow == actualNumberOfRow);
-			
+
 		}
-		
+		log.info("TC_04: Post condition - Logout from Admin page");
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+
+	}
+
+	@Test
+	public void TC_05_VeirfySearchFunctionWorksCorrectly() {
+		log.info("=== LiveGuru BackEnd - TC_05: Verify Search Function Works Correctly ====");
+
+		log.info("TC_05: Step 01 - Go to Backend Login page");
+//		backEndLoginPage.openBackEndPage(backEndLoginUrl);
+		backEndLoginPage = LiveGuruPageFactoryManager.getBackEndLoginPage(driver);
+
+		log.info("TC_05: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
+		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
+
+		log.info("TC_05: Step 03 - Input to 'Username' textbox");
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
+
+		log.info("TC_05: Step 04 - Input to 'Password' textbox");
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
+
+		log.info("TC_05: Step 05 - Click To 'Login' button");
+		backEndAdminPage = backEndLoginPage.clickToLoginButton();
+
+		log.info("TC_05: Step 06 - Close Incoming message pop-up if it appears");
+		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
+
+		log.info("TC_05: Step 07 - Verify 'Manage Customers' title displays");
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
+
+		log.info("TC_05: Step 08 - Hover mouse to 'Customers' category");
+		backEndAdminPage.hoverMouseToCustomersCategory();
+
+		log.info("TC_05: Step 09 - Click to 'Manage Customers' category");
+		backEndAdminPage.clickToManageCustomersCategory();
+
+		log.info("TC_05: Step 10 - Verify 'Manage Customers' title displays");
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
+
+		log.info("TC_05: Step 11 - Verify Search function of each field except is correct");
+		String[] dataForSearchList = { BackEndTestData.SEARCH_ID, BackEndTestData.SEARCH_NAME, BackEndTestData.SEARCH_EMAIL, BackEndTestData.SEARCH_TELEPHONE, BackEndTestData.SEARCH_ZIP, BackEndTestData.SEARCH_COUNTRY, BackEndTestData.SEARCH_STATE_PROVINCE };
+		int[] columnNumber = { 2, 3, 4, 6, 7, 8, 9 };
+		String[] fieldName = { BackEndTestData.ID_TO_SEARCH_NAME, BackEndTestData.NAME_SEARCH_NAME, BackEndTestData.EMAIL_SEARCH_NAME, BackEndTestData.TELEPHONE_SEARCH_NAME, BackEndTestData.ZIP_SEARCH_NAME, null, BackEndTestData.STATE_PROVINCE_SEARCH_NAME };
+
+		for (int i = 0; i < columnNumber.length; i++) {
+			if (i == 5) {
+				backEndAdminPage.selectCountryFromCountryDropdown(dataForSearchList[i]);
+			} else {
+				backEndAdminPage.inputToDynamicSearchTextbox(fieldName[i], dataForSearchList[i]);
+			}
+
+			backEndAdminPage.clickToSearchButton();
+			backEndAdminPage.waitForLoadingIconInvisible();
+			String[] allItemInEachColumn = backEndAdminPage.getListValueOfEachColumnForVeiryingSearch(columnNumber[i]);
+			verifyTrue(verifyItemIncludeInList(allItemInEachColumn, dataForSearchList[i]));
+		}
 	}
 
 	@AfterClass(alwaysRun = true)

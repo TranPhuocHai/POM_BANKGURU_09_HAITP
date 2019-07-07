@@ -270,7 +270,6 @@ public class AbstractTest {
 	public boolean verifySortAscending(String[] list) {
 		for (int i = 0; i <list.length-1; i++) {
 			int compare = list[i].compareTo(list[i+1]);
-			System.out.println(compare);
 			if (compare > 0) {
 				return false;
 			} 
@@ -281,11 +280,19 @@ public class AbstractTest {
 	public boolean verifySortDescending(String[] list) {
 		for (int i = 0; i <list.length-1; i++) {
 			int compare = list[i].compareTo(list[i+1]);
-			System.out.println(compare);
 			if (compare < 0) {
 				return false;
 			} 
 		} return true;
+		
+	}
+	
+	public boolean verifyItemIncludeInList(String[] list, String itemNeedToCompare) {
+		for (String eachItem : list) {
+			if (itemNeedToCompare.equals(eachItem)) {
+				return true;
+			} 
+		} return false;
 		
 	}
 

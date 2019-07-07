@@ -25,6 +25,8 @@ public class BackEndAdminPageUI {
 	public static final String PENDING_REVIEWS_CATEGORY = "//span[text()='Pending Reviews']";
 	public static final String SALES_CATEGORY = "//span[text()='Sales']";
 	public static final String INVOICES_CATEGORY = "//span[text()='Invoices']";
+	public static final String CUSTOMERS_CATEGORY = "//span[text()='Customers']";
+	public static final String MANAGE_CUSTOMERS_CATEGORY = "//span[text()='Manage Customers']";
 	
 	public static final String STATUS_DROPDOWN = "//select[@name='status']";
 	public static final String ACTIONS_DROPDOWN = "//label[text()='Actions']/following-sibling::select";
@@ -50,6 +52,8 @@ public class BackEndAdminPageUI {
 	
 	public static final String PAGINATION_DROPDOWN = "//select[@name='limit']";
 	public static final String ALL_PAGINATION_DROPDOWN_OPTIONS = "//select[@name='limit']//option";
+	public static final String COUNTRY_DROPDOWN = "//select[@id='customerGrid_filter_billing_country_id']";
 	
+	public static final String DYNAMIC_SEARCH_TEXTBOX = "//input[@type='text' and @name='%s']";
 
 }

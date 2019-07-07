@@ -1,6 +1,5 @@
 package liveguruPageObjects;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -76,15 +75,15 @@ public class BackEndAdminPageObject extends AbstractPage {
 
 	}
 
-	public void clickToOrderCategory() {
+	public void clickToOrdersCategory() {
 		waitForElementVisible(driver, BackEndAdminPageUI.ORDER_CATEGORY);
 		clickToElement(driver, BackEndAdminPageUI.ORDER_CATEGORY);
 
 	}
 
 	public boolean isOrdersTitleDisplayed() {
-		waitForElementVisible(driver, BackEndAdminPageUI.ORDER_TITLE);
-		return isControlDisplayed(driver, BackEndAdminPageUI.ORDER_TITLE);
+		waitForElementVisible(driver, BackEndAdminPageUI.ORDERS_TITLE);
+		return isControlDisplayed(driver, BackEndAdminPageUI.ORDERS_TITLE);
 	}
 
 	public void selectAnyValueFromStatusDropdown(String value) {
@@ -144,11 +143,11 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.PENDING_REVIEWS_TITLE);
 		return isControlDisplayed(driver, BackEndAdminPageUI.PENDING_REVIEWS_TITLE);
 	}
-	
+
 	public void clickToDynamicSortButton(String columnField) {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, columnField);
 		clickToElement(driver, BackEndAdminPageUI.DYNAMIC_SORT_BUTTON, columnField);
-		
+
 	}
 
 	public void clickToDynamicSortDescendingButton(String columnField) {
@@ -197,13 +196,12 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
 		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_DESCENDING_BUTTON, columnField);
 	}
-	
-	
+
 	public boolean isDynamicAscendingSortButtonDisplayed(String columnField) {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 	}
-	
+
 	public String[] getListValueOfEachColumn(int columnNo) {
 		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
@@ -217,7 +215,6 @@ public class BackEndAdminPageObject extends AbstractPage {
 		for (int y = 0; y < allSortColumn.size(); y++) {
 			allItemsInEachColumn[y] = listItem[columnNo + (y * allSortColumn.size())].replace(",", "").replace("$", "").replace(".", "").replace(" ", "").replace(":", "").toLowerCase();
 		}
-		System.out.println(Arrays.toString(allItemsInEachColumn));
 
 		return allItemsInEachColumn;
 	}
@@ -225,10 +222,42 @@ public class BackEndAdminPageObject extends AbstractPage {
 	public String[] getTextDynamicColumnSortName() {
 		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		String[] listColunnValue = new String[allSortColumn.size()];
-		for (int i=0; i<allSortColumn.size(); i++) {
+		for (int i = 0; i < allSortColumn.size(); i++) {
 			listColunnValue[i] = allSortColumn.get(i).getText().trim();
-		} return listColunnValue;
+		}
+		return listColunnValue;
 	}
 
+	public void selectDynamicValueInPaginationDropdown(String expectedValueInDropdown) {
+		waitForElementVisible(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN);
+		selectItemInDropdown(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN, expectedValueInDropdown);
+
+	}
+
+	public void clickToPaginationDropdown() {
+		waitForElementVisible(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN);
+		clickToElement(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN);
+
+	}
+
+	public String[] getAllOptionsOfPaginationDropdown() {
+		List<WebElement> allOptions = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_PAGINATION_DROPDOWN_OPTIONS));
+		String[] listOptions = new String[allOptions.size()];
+		for (int i = 0; i < allOptions.size(); i++) {
+			String eachOption = allOptions.get(i).getText().trim();
+			listOptions[i] = eachOption;
+		}
+		return listOptions;
+	}
+
+	public int getTotalNumberOfTableValue() {
+		List<WebElement> totalNumberOfTableValue = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
+		return totalNumberOfTableValue.size();
+	}
+
+	public int getTotalColumnOfTableValue() {
+		List<WebElement> totalNumberOfColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
+		return totalNumberOfColumn.size();
+	}
 
 }

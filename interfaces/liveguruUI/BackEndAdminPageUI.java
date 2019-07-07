@@ -12,7 +12,7 @@ public class BackEndAdminPageUI {
 	public static final String DYNAMIC_EDIT_BUTTON_FOLLOW_REVIEW = "//td[contains(text(),\"%s\")]/following-sibling::td[contains(text(),\"%s\")]//following-sibling::td[contains(text(),\"%s\")]//following-sibling::td/a[text()='Edit']";
 	
 	public static final String MANAGE_CUSTOMERS_TITLE = "//div[@id='page:main-container']//h3[text()='Manage Customers']";
-	public static final String ORDER_TITLE = "//div[@id='page:main-container']//h3[text()='Orders']";
+	public static final String ORDERS_TITLE = "//div[@id='page:main-container']//h3[text()='Orders']";
 	public static final String PENDING_REVIEWS_TITLE = "//div[@id='page:main-container']//h3[text()='Pending Reviews']";
 	public static final String EDIT_REVIEW_TITLE = "//div[@id='page:main-container']//h3[text()=\"Edit Review '%s'\"]";
 	public static final String INVOICES_TITLE = "//div[@id='page:main-container']//h3[text()='Invoices']";
@@ -47,6 +47,9 @@ public class BackEndAdminPageUI {
 	
 	public static final String ALL_VALUE_OF_TABLE = "//div[@class='grid']//td";
 	public static final String ALL_SORT_COLUMN = "//tr[@class='headings']/th/span";
+	
+	public static final String PAGINATION_DROPDOWN = "//select[@name='limit']";
+	public static final String ALL_PAGINATION_DROPDOWN_OPTIONS = "//select[@name='limit']//option";
 	
 
 }

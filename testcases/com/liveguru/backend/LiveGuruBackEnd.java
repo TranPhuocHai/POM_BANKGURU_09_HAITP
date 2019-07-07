@@ -21,6 +21,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 	private BackEndAdminPageObject backEndAdminPage;
 	private ProductReviewPageObject productReviewPage;
 	private String backEndLoginUrl;
+	private String[] paginationOptions;
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -60,7 +61,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 		backEndAdminPage.hoverMouseToSaleCatogory();
 
 		log.info("TC_01: Step 09 - Click to 'Order' category");
-		backEndAdminPage.clickToOrderCategory();
+		backEndAdminPage.clickToOrdersCategory();
 
 		log.info("TC_01: Step 10 - Verify 'Orders' title displays");
 		verifyTrue(backEndAdminPage.isOrdersTitleDisplayed());
@@ -201,13 +202,12 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 	}
 
-	@Test
+//	@Test
 	public void TC_03_VerifySortFunctionWorksCorrectly() {
 		log.info("=== LiveGuru BackEnd - TC_03: Verify Sort Function Works Correctly ====");
 
 		log.info("TC_03: Step 01 - Go to Backend Login page");
-		backEndLoginPage = LiveGuruPageFactoryManager.getBackEndLoginPage(driver);
-//		backEndLoginPage = productReviewPage.openBackEndPage(backEndLoginUrl);
+		backEndLoginPage = productReviewPage.openBackEndPage(backEndLoginUrl);
 
 		log.info("TC_03: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
 		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
@@ -241,21 +241,73 @@ public class LiveGuruBackEnd extends AbstractTest {
 		for (int i = 1; i < allColumnNames.length - 1; i++) {
 			if (i == 1 | i == 3 | i == 5 | i == 6) {
 				String columnField = allColumnNames[i];
-				System.out.println("--------------------------------------");
 				backEndAdminPage.clickToDynamicSortButton(columnField);
 				backEndAdminPage.waitForLoadingIconInvisible();
 				verifyTrue(backEndAdminPage.isDynamicDescendingSortButtonDisplayed(columnField));
 				verifyTrue(verifySortAscending(backEndAdminPage.getListValueOfEachColumn(i)));
-				System.out.println("--------------------------------------");
 				backEndAdminPage.clickToDynamicSortDescendingButton(columnField);
 				backEndAdminPage.waitForLoadingIconInvisible();
 				verifyTrue(backEndAdminPage.isDynamicAscendingSortButtonDisplayed(columnField));
 				verifyTrue(verifySortDescending(backEndAdminPage.getListValueOfEachColumn(i)));
 
 			}
-
 		}
+		
+		log.info("TC_03: Post condition - Logout from Admin page");
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+	}
+	
+//	@Test
+	public void TC_04_VeirfyPaginationFunctionWorksCorrectly() {
+		log.info("=== LiveGuru BackEnd - TC_03: Verify Pagination Function Works Correctly ====");
+		
+		log.info("TC_04: Step 01 - Go to Backend Login page");
+		backEndLoginPage.openBackEndPage(backEndLoginUrl);
 
+		log.info("TC_04: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
+		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
+
+		log.info("TC_04: Step 03 - Input to 'Username' textbox");
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
+
+		log.info("TC_04: Step 04 - Input to 'Password' textbox");
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
+
+		log.info("TC_04: Step 05 - Click To 'Login' button");
+		backEndAdminPage = backEndLoginPage.clickToLoginButton();
+
+		log.info("TC_04: Step 06 - Close Incoming message pop-up if it appears");
+		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
+
+		log.info("TC_04: Step 07 - Verify 'Manage Customer' title displays");
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
+
+		log.info("TC_04: Step 08 - Hover mouse to 'Sales' category");
+		backEndAdminPage.hoverMouseToSalesCategory();
+
+		log.info("TC_04: Step 09 - Click to 'Orders' category");
+		backEndAdminPage.clickToOrdersCategory();
+
+		log.info("TC_04: Step 10 - Verify 'Orders' title displays");
+		verifyTrue(backEndAdminPage.isOrdersTitleDisplayed());
+		
+		log.info("TC_04: Step 11 - Veirfy Pagination function works correctly");
+		backEndAdminPage.clickToPaginationDropdown();
+		paginationOptions = backEndAdminPage.getAllOptionsOfPaginationDropdown();
+		for (String option : paginationOptions) {
+			backEndAdminPage.selectDynamicValueInPaginationDropdown(option);
+			backEndAdminPage.waitForLoadingIconInvisible();
+			
+			int totalNumberValues = backEndAdminPage.getTotalNumberOfTableValue();
+			int numberOfColumn = backEndAdminPage.getTotalColumnOfTableValue();
+			int actualNumberOfRow = totalNumberValues/numberOfColumn;
+			
+			int expectedNumberOfRow = Integer.parseInt(option);
+			
+			verifyTrue(expectedNumberOfRow == actualNumberOfRow);
+			
+		}
+		
 	}
 
 	@AfterClass(alwaysRun = true)

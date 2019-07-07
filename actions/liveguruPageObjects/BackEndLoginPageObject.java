@@ -38,4 +38,9 @@ public class BackEndLoginPageObject extends AbstractPage{
 		
 	}
 
+	public BackEndLoginPageObject openBackEndPage(String backEndPageUrl) {
+		openAnyUrl(driver, backEndPageUrl);
+		return LiveGuruPageFactoryManager.getBackEndLoginPage(driver);
+	}
+
 }

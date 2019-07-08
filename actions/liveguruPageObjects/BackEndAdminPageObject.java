@@ -201,21 +201,21 @@ public class BackEndAdminPageObject extends AbstractPage {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_SORT_ASCENDING_BUTTON, columnField);
 	}
-	
+
 	public String[] getListValueOfEachColumnForVeiryingSort(int columnNo) {
 		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
-		String[] listItem = new String[allSortColumn.size()/listElements.size()];
+		String[] listItem = new String[listElements.size()];
 		String[] allItemsInEachColumn = new String[allSortColumn.size()];
-		
+
 		for (int i = 0; i < listElements.size(); i++) {
 			String printToScreen = listElements.get(i).getText().trim();
 			listItem[i] = printToScreen;
 		}
-		for (int y = 0; y < listElements.size()/allSortColumn.size(); y++) {
+		for (int y = 0; y < allSortColumn.size(); y++) {
 			allItemsInEachColumn[y] = listItem[columnNo + (y * allSortColumn.size())].replace(",", "").replace("$", "").replace(".", "").replace(" ", "").replace(":", "").toLowerCase();
 		}
-		
+
 		return allItemsInEachColumn;
 	}
 
@@ -223,14 +223,14 @@ public class BackEndAdminPageObject extends AbstractPage {
 		List<WebElement> allSortColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		List<WebElement> listElements = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_VALUE_OF_TABLE));
 		String[] listItem = new String[listElements.size()];
-		String[] allItemsInEachColumn = new String[listElements.size()/allSortColumn.size()];
+		String[] allItemsInEachColumn = new String[listElements.size() / allSortColumn.size()];
 
 		for (int i = 0; i < listElements.size(); i++) {
 			String printToScreen = listElements.get(i).getText().trim();
 			listItem[i] = printToScreen;
 		}
-		for (int y = 0; y < listElements.size()/allSortColumn.size(); y++) {
-			allItemsInEachColumn[y] = listItem[columnNo-1 + (y * allSortColumn.size())];
+		for (int y = 0; y < listElements.size() / allSortColumn.size(); y++) {
+			allItemsInEachColumn[y] = listItem[columnNo - 1 + (y * allSortColumn.size())];
 		}
 
 		return allItemsInEachColumn;
@@ -276,7 +276,6 @@ public class BackEndAdminPageObject extends AbstractPage {
 		List<WebElement> totalNumberOfColumn = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_SORT_COLUMN));
 		return totalNumberOfColumn.size();
 	}
-	
 
 	public void hoverMouseToCustomersCategory() {
 		waitForElementVisible(driver, BackEndAdminPageUI.CUSTOMERS_CATEGORY);
@@ -292,14 +291,58 @@ public class BackEndAdminPageObject extends AbstractPage {
 
 	public void inputToDynamicSearchTextbox(String fieldName, String sendKeyValue) {
 		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_SEARCH_TEXTBOX, fieldName);
-		sendKeyToElement(driver, BackEndAdminPageUI.DYNAMIC_SEARCH_TEXTBOX, sendKeyValue ,fieldName);
-		
+		sendKeyToElement(driver, BackEndAdminPageUI.DYNAMIC_SEARCH_TEXTBOX, sendKeyValue, fieldName);
+
 	}
 
 	public void selectCountryFromCountryDropdown(String country) {
 		waitForElementVisible(driver, BackEndAdminPageUI.COUNTRY_DROPDOWN);
 		selectItemInDropdown(driver, BackEndAdminPageUI.COUNTRY_DROPDOWN, country);
-		
+
+	}
+
+	public String getFirstSelectionOfPaginationDropdown() {
+		waitForElementVisible(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN);
+		return getFirstSelectedItemInDropdown(driver, BackEndAdminPageUI.PAGINATION_DROPDOWN);
+	}
+
+	public void clickToSelectVisibleLink() {
+		waitForElementVisible(driver, BackEndAdminPageUI.SELECT_VISIBLE_LINK);
+		clickToElement(driver, BackEndAdminPageUI.SELECT_VISIBLE_LINK);
+
+	}
+
+	public void clickToUnselectVisibleLink() {
+		waitForElementVisible(driver, BackEndAdminPageUI.UNSELECT_VISIBLE_LINK);
+		clickToElement(driver, BackEndAdminPageUI.UNSELECT_VISIBLE_LINK);
+
+	}
+
+	public boolean isDynamicItemSelectedMessageDisplayed(String number) {
+		waitForElementVisible(driver, BackEndAdminPageUI.DYNAMIC_NUMBER_TEXT, number);
+		return isControlDisplayed(driver, BackEndAdminPageUI.DYNAMIC_NUMBER_TEXT, number);
+
+	}
+
+	public boolean verifyAllCheckboxAreCheckedSuccessfully() {
+		List<WebElement> allCheckboxes = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_CHECKBOX));
+		for (WebElement eachCheckbox : allCheckboxes) {
+			if (!eachCheckbox.isSelected()) {
+				return false;
+			}
+		}
+		return true;
+
+	}
+
+	public boolean verifyAllCheckboxAreUncheckedSuccessfully() {
+		List<WebElement> allCheckboxes = driver.findElements(By.xpath(BackEndAdminPageUI.ALL_CHECKBOX));
+		for (WebElement eachCheckbox : allCheckboxes) {
+			if (eachCheckbox.isSelected()) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }

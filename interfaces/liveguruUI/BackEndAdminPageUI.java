@@ -36,14 +36,9 @@ public class BackEndAdminPageUI {
 	public static final String SUBMIT_BUTTON = "//span[text()='Submit']";
 	public static final String SAVE_REVIEW_BUTTON = "//span[text()='Save Review']";
 	
-	
-	
 	public static final String DYNAMIC_SORT_BUTTON = "//span[text()='%s']";
 	public static final String DYNAMIC_SORT_DESCENDING_BUTTON = "//a[@title='desc']/span[text()='%s']";
 	public static final String DYNAMIC_SORT_ASCENDING_BUTTON = "//a[@title='asc']/span[text()='%s']";
-	
-	
-	
 	
 	public static final String THERE_ARE_NO_PRINTABLE_DOCUMENTS_RELATED_TO_SELECT_MESSAGE = "//span[text()='There are no printable documents related to selected orders.']";
 	
@@ -56,4 +51,11 @@ public class BackEndAdminPageUI {
 	
 	public static final String DYNAMIC_SEARCH_TEXTBOX = "//input[@type='text' and @name='%s']";
 
+	public static final String ALL_CHECKBOX = "//input[@type='checkbox']";
+	
+	public static final String SELECT_VISIBLE_LINK = "//a[text()='Select Visible']";
+	public static final String UNSELECT_VISIBLE_LINK = "//a[text()='Unselect Visible']";
+	
+	public static final String DYNAMIC_NUMBER_TEXT = "//strong[@id='sales_order_grid_massaction-count' and text()='%s']";
+	
 }

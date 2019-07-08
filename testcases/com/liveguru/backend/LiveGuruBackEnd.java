@@ -30,7 +30,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 	}
 
-//	@Test
+	@Test
 	public void TC_01_VerifyInvoiceCanBePrinted() {
 
 		log.info("======= LiveGuru BackEnd - TC_01: Verify Invoice Can Be Printed =========");
@@ -113,7 +113,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 	}
 
-//	@Test
+	@Test
 	public void TC_02_VerifyTheProductMechanism() {
 		log.info("======= LiveGuru BackEnd - TC_02: Verify The Product Mechanism =========");
 
@@ -202,7 +202,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 	}
 
-//	@Test
+	@Test
 	public void TC_03_VerifySortFunctionWorksCorrectly() {
 		log.info("=== LiveGuru BackEnd - TC_03: Verify Sort Function Works Correctly ====");
 
@@ -257,7 +257,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
 	}
 
-//	@Test
+	@Test
 	public void TC_04_VeirfyPaginationFunctionWorksCorrectly() {
 		log.info("=== LiveGuru BackEnd - TC_04: Verify Pagination Function Works Correctly ====");
 
@@ -317,8 +317,7 @@ public class LiveGuruBackEnd extends AbstractTest {
 		log.info("=== LiveGuru BackEnd - TC_05: Verify Search Function Works Correctly ====");
 
 		log.info("TC_05: Step 01 - Go to Backend Login page");
-//		backEndLoginPage.openBackEndPage(backEndLoginUrl);
-		backEndLoginPage = LiveGuruPageFactoryManager.getBackEndLoginPage(driver);
+		backEndLoginPage.openBackEndPage(backEndLoginUrl);
 
 		log.info("TC_05: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
 		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
@@ -364,10 +363,76 @@ public class LiveGuruBackEnd extends AbstractTest {
 			String[] allItemInEachColumn = backEndAdminPage.getListValueOfEachColumnForVeiryingSearch(columnNumber[i]);
 			verifyTrue(verifyItemIncludeInList(allItemInEachColumn, dataForSearchList[i]));
 		}
+
+		log.info("TC_05: Post condition - Logout from Admin page");
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+	}
+
+	@Test
+	public void TC_06_VerifyCheckBoxSelectFunctionally() {
+		log.info("=== LiveGuru BackEnd - TC_06: Verify CheckBox Select Functionally ====");
+
+		log.info("TC_06: Step 01 - Go to Backend Login page");
+		backEndLoginPage.openBackEndPage(backEndLoginUrl);
+
+		log.info("TC_06: Step 02 - Verify Login Title 'Log in to Admin Pane' displays");
+		verifyTrue(backEndLoginPage.isLoginTitleDisplayed());
+
+		log.info("TC_06: Step 03 - Input to 'Username' textbox");
+		backEndLoginPage.inputToUserNameTextbox(BackEndTestData.USER_NAME);
+
+		log.info("TC_06: Step 04 - Input to 'Password' textbox");
+		backEndLoginPage.inputToPasswordTextbox(BackEndTestData.PASSWORD);
+
+		log.info("TC_06: Step 05 - Click To 'Login' button");
+		backEndAdminPage = backEndLoginPage.clickToLoginButton();
+
+		log.info("TC_06: Step 06 - Close Incoming message pop-up if it appears");
+		backEndAdminPage.closeIncomingMessagePopUpIfItDisplays();
+
+		log.info("TC_06: Step 07 - Verify 'Manage Customers' title displays");
+		verifyTrue(backEndAdminPage.isManageCustomersTitleDisplayed());
+
+		log.info("TC_06: Step 08 - Hover mouse to 'Sales' category");
+		backEndAdminPage.hoverMouseToSalesCategory();
+
+		log.info("TC_06: Step 09 - Click to 'Orders' category");
+		backEndAdminPage.clickToOrdersCategory();
+
+		log.info("TC_06: Step 10 - Verify 'Orders' title displays");
+		verifyTrue(backEndAdminPage.isOrdersTitleDisplayed());
+
+		log.info("TC_06: Step 11 - Verify '0' items select' message displayed");
+		verifyTrue(backEndAdminPage.isDynamicItemSelectedMessageDisplayed("0"));
+
+		log.info("TC_06: Step 12 - Get current text of first selection from pagination dropdown");
+		String currentPaginationOption = backEndAdminPage.getFirstSelectionOfPaginationDropdown();
+
+		log.info("TC_06: Step 13 - Click To 'Select Visible' link ");
+		backEndAdminPage.clickToSelectVisibleLink();
+
+		log.info("TC_06: Step 14 - Verify expected number items select message displayed");
+		verifyTrue(backEndAdminPage.isDynamicItemSelectedMessageDisplayed(currentPaginationOption));
+
+		log.info("TC_06: Step 15 - Verify all checkboxes are checked successfully");
+		verifyTrue(backEndAdminPage.verifyAllCheckboxAreCheckedSuccessfully());
+
+		log.info("TC_06: Step 16 - Click To 'Unselect Visible' link ");
+		backEndAdminPage.clickToUnselectVisibleLink();
+
+		log.info("TC_06: Step 17 - Verify '0' items select' message displayed");
+		verifyTrue(backEndAdminPage.isDynamicItemSelectedMessageDisplayed("0"));
+
+		log.info("TC_06: Step 18 - Verify all checkboxes are unchecked successfully");
+		verifyTrue(backEndAdminPage.verifyAllCheckboxAreUncheckedSuccessfully());
+
+		log.info("TC_06: Post condition - Logout from Admin page");
+		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
+
 		closeBrowserAndDriver(driver);
 	}
 

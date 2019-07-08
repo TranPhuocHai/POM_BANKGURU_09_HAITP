@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Run allI">
+<suite-files>
+	<suite-file path = "runBankGuruTestcases.xml"/>
+	<suite-file path = "runLiveGuruFrontEnd.xml"/>
+	<suite-file path = "runLiveGuruBackEnd.xml"/>
+</suite-files>
+  
+</suite> 

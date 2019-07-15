@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +17,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -27,6 +29,10 @@ public class AbstractTest {
 
 	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
+	}
+
+	public WebDriver getDriver() {
+		return driver;
 	}
 
 	protected WebDriver openMultiBrowser(String browserName, String url) {
@@ -47,8 +53,8 @@ public class AbstractTest {
 			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
 			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "pdf");
-			options.addPreference("pdfjs.enabledCache.state",false);
-			
+			options.addPreference("pdfjs.enabledCache.state", false);
+
 			options.setProfile(profile);
 			driver = new FirefoxDriver(options);
 
@@ -69,7 +75,7 @@ public class AbstractTest {
 			profile.setPreference("browser.download.downloadDir", "C:\\Downloads");
 			profile.setPreference("browser.download.defaultFolder", "C:\\Downloads");
 			profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/anytext,text/plain,text/html,application/plain");
-			
+
 			options.setProfile(profile);
 			driver = new FirefoxDriver(options);
 
@@ -266,34 +272,57 @@ public class AbstractTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public boolean verifySortAscending(String[] list) {
-		for (int i = 0; i <list.length-1; i++) {
-			int compare = list[i].compareTo(list[i+1]);
+		for (int i = 0; i < list.length - 1; i++) {
+			int compare = list[i].compareTo(list[i + 1]);
 			if (compare > 0) {
 				return false;
-			} 
-		} return true;
-		
+			}
+		}
+		return true;
+
 	}
-	
+
 	public boolean verifySortDescending(String[] list) {
-		for (int i = 0; i <list.length-1; i++) {
-			int compare = list[i].compareTo(list[i+1]);
+		for (int i = 0; i < list.length - 1; i++) {
+			int compare = list[i].compareTo(list[i + 1]);
 			if (compare < 0) {
 				return false;
-			} 
-		} return true;
-		
+			}
+		}
+		return true;
+
 	}
-	
+
 	public boolean verifyItemIncludeInList(String[] list, String itemNeedToCompare) {
 		for (String eachItem : list) {
 			if (itemNeedToCompare.equals(eachItem)) {
 				return true;
-			} 
-		} return false;
-		
+			}
+		}
+		return false;
+
+	}
+	
+	@BeforeSuite
+	public void deleteAllFilesInReportNGScreenShots() {
+		deleteAllFileInFolder("ReportNGScreenShots");
+	}
+
+	public void deleteAllFileInFolder(String expectFolder) {
+		try {
+			String pathFolderDownload = workingDir + "\\" +expectFolder;
+			File file = new File(pathFolderDownload);
+			File[] listOfFiles = file.listFiles();
+			for (int i = 0; i < listOfFiles.length; i++) {
+				if (listOfFiles[i].isFile()) {
+					new File(listOfFiles[i].toString()).delete();
+				}
+			}
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
 	}
 
 }

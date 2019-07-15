@@ -43,7 +43,6 @@ public class ReportNGListener extends AbstractTest implements ITestListener {
 
 		Object testClass = result.getInstance();
 		WebDriver webDriver = ((AbstractTest) testClass).getDriver();
-		captureScreenshot(webDriver, result.getName());
 
 		String screenshotPath = captureScreenshot(webDriver, result.getName());
 		Reporter.getCurrentTestResult();

@@ -1,13 +1,19 @@
 package commons;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -304,7 +310,7 @@ public class AbstractTest {
 		return false;
 
 	}
-	
+
 	@BeforeSuite
 	public void deleteAllFilesInReportNGScreenShots() {
 		deleteAllFileInFolder("ReportNGScreenShots");
@@ -312,7 +318,7 @@ public class AbstractTest {
 
 	public void deleteAllFileInFolder(String expectFolder) {
 		try {
-			String pathFolderDownload = workingDir + "\\" +expectFolder;
+			String pathFolderDownload = workingDir + "\\" + expectFolder;
 			File file = new File(pathFolderDownload);
 			File[] listOfFiles = file.listFiles();
 			for (int i = 0; i < listOfFiles.length; i++) {
@@ -325,4 +331,16 @@ public class AbstractTest {
 		}
 	}
 
+	public void captureAnyScreenshot(String methodName) {
+		try {
+			Calendar calendar = Calendar.getInstance();
+			SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
+			File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			String screenPath = System.getProperty("user.dir") + "\\ReportNGScreenShots\\" + methodName + "_" + formater.format(calendar.getTime()) + ".png";
+			FileUtils.copyFile(source, new File(screenPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

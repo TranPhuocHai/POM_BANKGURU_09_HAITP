@@ -1,5 +1,7 @@
 package com.bankguru.payment;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -40,7 +42,7 @@ public class Payment extends AbstractTest {
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
-	public void beforeClass(String browserName, String url) {
+	public void Payment_00_Precondition(String browserName, String url) {
 		driver = openMultiBrowser(browserName, url);
 
 		log.info("PaymentPrecondition: Step 01 - Get Login Page");
@@ -62,10 +64,11 @@ public class Payment extends AbstractTest {
 
 		log.info("PaymentPrecondition: Step 06 - Verify User ID infor displays");
 		verifyTrue(homePage.isUserIDDisplayed(Common_01_RegisterToSystem.USER_ID_INFOR));
+		
 	}
 
 	@Test
-	public void Payment_01_CreateNewCustomer() {
+	public void Payment_01_CreateNewCustomer(Method method) {
 		
 		log.info("============== PAYMENT - Testcase 01 : Create New Customer ==============");
 
@@ -128,10 +131,12 @@ public class Payment extends AbstractTest {
 
 		customerID = newCustomerPage.getTextDynamicTableInfo(driver, "Customer ID");
 		
+		captureAnyScreenshot(method.getName());
+		
 	}
 
 	@Test
-	public void Payment_02_EditCustomer() {
+	public void Payment_02_EditCustomer(Method method) {
 		
 		log.info("============== PAYMENT - Testcase 02 : Edit Customer ==============");
 
@@ -212,11 +217,13 @@ public class Payment extends AbstractTest {
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Pin"), PaymentTestData.EDIT_PIN);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Mobile No."), PaymentTestData.EDIT_PHONE_NUMBER);
 		verifyEquals(editcustomerPage.getTextDynamicTableInfo(driver, "Email"), PaymentTestData.EDIT_EMAIL);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_03_CreateNewAccountAndCheckAmount() {
+	public void Payment_03_CreateNewAccountAndCheckAmount(Method method) {
 		
 		log.info("====== PAYMENT - Testcase 03 : Create New Account And Check Amount ====");
 
@@ -252,10 +259,12 @@ public class Payment extends AbstractTest {
 
 		accountID = newAccountPage.getTextDynamicTableInfo(driver, "Account ID");
 		
+		captureAnyScreenshot(method.getName());
+		
 	}
 
 	@Test
-	public void Payment_04_EditAccount() {
+	public void Payment_04_EditAccount(Method method) {
 		
 		log.info("==================== PAYMENT - Testcase 04 : Edit Account ================");
 
@@ -294,11 +303,13 @@ public class Payment extends AbstractTest {
 		verifyEquals(editAccountPage.getTextDynamicTableInfo(driver, "Account Type"), PaymentTestData.CURRENT_ACCOUNT_TYPE);
 		verifyEquals(editAccountPage.getTextDynamicTableInfo(driver, "Date of Opening"), getToday());
 		verifyEquals(editAccountPage.getTextDynamicTableInfo(driver, "Current Amount"), PaymentTestData.INITIAL_AMOUNT);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_05_TransferMoneyToCurrentAccount() {
+	public void Payment_05_TransferMoneyToCurrentAccount(Method method) {
 		
 		log.info("===== PAYMENT - Testcase 05 : Transfer Money To Current Account =====");
 
@@ -330,11 +341,13 @@ public class Payment extends AbstractTest {
 		verifyEquals(depositPage.getTextDynamicTableInfo(driver, "Amount Credited"), PaymentTestData.DEPOSIT_AMOUNT);
 		verifyEquals(depositPage.getTextDynamicTableInfo(driver, "Type of Transaction"), "Deposit");
 		verifyEquals(depositPage.getTextDynamicTableInfo(driver, "Description"), PaymentTestData.DEPOSIT_DESCRIPTION);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_06_WithdrawalMoneyFromCurrentAccount() {
+	public void Payment_06_WithdrawalMoneyFromCurrentAccount(Method method) {
 		
 		log.info("===== PAYMENT - Testcase 06 : Withdrawal Money From Current Account =====");
 
@@ -366,11 +379,13 @@ public class Payment extends AbstractTest {
 		verifyEquals(withdrawalPage.getTextDynamicTableInfo(driver, "Amount Debited"), PaymentTestData.WITHDRAW_AMOUNT);
 		verifyEquals(withdrawalPage.getTextDynamicTableInfo(driver, "Type of Transaction"), "Withdrawal");
 		verifyEquals(withdrawalPage.getTextDynamicTableInfo(driver, "Description"), PaymentTestData.WITHDRAW_DESCRIPTION);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_07_TransferMoneyToAnotherAccount() {
+	public void Payment_07_TransferMoneyToAnotherAccount(Method method) {
 		
 		log.info("====== PAYMENT - Testcase 07 : Transfer Money To Another Account ======");
 		
@@ -443,11 +458,13 @@ public class Payment extends AbstractTest {
 
 		log.info("Payment_07: Step 20 - Verify Description is correct");
 		verifyEquals(fundTransferPage.getTextDynamicTableInfo(driver, "Description"), PaymentTestData.FUND_TRANSFER_DESCRIPTION);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_08_CheckCurrentAccountBalance() {
+	public void Payment_08_CheckCurrentAccountBalance(Method method) {
 		
 		log.info("====== PAYMENT - Testcase 08 : Check Current Account Balance ======");
 
@@ -473,11 +490,13 @@ public class Payment extends AbstractTest {
 		log.info("Payment_08: Step 06 - Verify Account Number and Type of Account are correct");
 		verifyEquals(balanceEnquiryPage.getTextDynamicTableInfo(driver, "Account No"), accountID);
 		verifyEquals(balanceEnquiryPage.getTextDynamicTableInfo(driver, "Type of Account"), PaymentTestData.CURRENT_ACCOUNT_TYPE);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_09_DeleteAccountsAndVerify() {
+	public void Payment_09_DeleteAccountsAndVerify(Method method) {
 		
 		log.info("=== PAYMENT - Testcase 09 : Delete Accounts And Verify Account Deleted Successfully ===");
 		
@@ -540,11 +559,12 @@ public class Payment extends AbstractTest {
 			deleteAccountPage.acceptAnyAlert(driver);
 
 		}
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void Payment_10_DeleteCustomerAndVerify() {
+	public void Payment_10_DeleteCustomerAndVerify(Method method) {
 		
 		log.info("=== PAYMENT - Testcase 09 : Delete Customer And Verify Customer Deleted Successfully ===");
 
@@ -603,6 +623,8 @@ public class Payment extends AbstractTest {
 
 		log.info("Payment_09: Step 15 - Accept alert");
 		deleteCustomerPage.acceptAnyAlert(driver);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 

@@ -19,7 +19,8 @@ public class Common_01_RegisterToSystem extends AbstractTest {
 
 	@Parameters({"browser","url"})
 	@BeforeTest
-	public void beforeClass(String browserName, String urlName) {
+	public void RegisterToSystem(String browserName, String urlName) {
+		
 		driver = openMultiBrowser(browserName, urlName);
 
 		log.info("CreateUser: Step 01 - open Login Page");

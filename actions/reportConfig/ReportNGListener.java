@@ -1,4 +1,4 @@
-package commons;
+package reportConfig;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,8 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+
+import commons.AbstractTest;
 
 public class ReportNGListener extends AbstractTest implements ITestListener {
 

@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
+import PageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractPage;
 import liveguruUI.BackEndAdminPageUI;
 

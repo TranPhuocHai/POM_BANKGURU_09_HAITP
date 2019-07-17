@@ -8,7 +8,7 @@ import com.bankguru.common.CommonTestData;
 import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 
-import bankguruPageFactoryManager.PageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.HomePageObject;
 import bankguruPageObjects.LoginPageObject;
 import bankguruPageObjects.NewCustomerPageObject;

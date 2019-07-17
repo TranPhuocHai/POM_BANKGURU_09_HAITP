@@ -8,7 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.bankguru.user.Common_01_RegisterToSystem;
-import bankguruPageFactoryManager.PageFactoryManager;
+
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.BalanceEnquiryPageObject;
 import bankguruPageObjects.DeleteAccountPageObject;
 import bankguruPageObjects.DeleteCustomerPageObject;
@@ -22,6 +23,7 @@ import bankguruPageObjects.NewAccountPageObject;
 import bankguruPageObjects.NewCustomerPageObject;
 import bankguruPageObjects.WithdrawalPageObject;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class Payment extends AbstractTest {
 	private WebDriver driver;
@@ -38,7 +40,7 @@ public class Payment extends AbstractTest {
 	private DeleteAccountPageObject deleteAccountPage;
 	private DeleteCustomerPageObject deleteCustomerPage;
 	private String customerID, accountID, payeeAccountID;
-	private String email = PaymentTestData.EMAIL + randomNumber() +"@gmail.com";
+	private String email = PaymentTestData.EMAIL+"@gmail.com";
 
 	@Parameters({ "browser", "url" })
 	@BeforeClass
@@ -70,7 +72,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_01_CreateNewCustomer(Method method) {
 		
-		log.info("============== PAYMENT - Testcase 01 : Create New Customer ==============");
+		ExtentTestManager.startTest(method.getName(), "Payment_01_CreateNewCustomer");
 
 		log.info("Payment_01: Step 01 - Click to 'New Customer' link");
 		homePage.openMultiplePage(driver, "New Customer");
@@ -138,7 +140,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_02_EditCustomer(Method method) {
 		
-		log.info("============== PAYMENT - Testcase 02 : Edit Customer ==============");
+		ExtentTestManager.startTest(method.getName(), "Payment_02_EditCustomer");
 
 		log.info("Payment_02: Step 01 - Click to 'Delete Customer' link");
 		newCustomerPage.openMultiplePage(driver, "Edit Customer");
@@ -225,7 +227,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_03_CreateNewAccountAndCheckAmount(Method method) {
 		
-		log.info("====== PAYMENT - Testcase 03 : Create New Account And Check Amount ====");
+		ExtentTestManager.startTest(method.getName(), "Payment_03_CreateNewAccountAndCheckAmount");
 
 		log.info("Payment_03: Step 01 - Click to 'New Account' link");
 		editcustomerPage.openMultiplePage(driver, "New Account");
@@ -266,7 +268,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_04_EditAccount(Method method) {
 		
-		log.info("==================== PAYMENT - Testcase 04 : Edit Account ================");
+		ExtentTestManager.startTest(method.getName(), "Payment_04_EditAccount");
 
 		log.info("Payment_04: Step 01 - Click to 'Edit Account' link");
 		newAccountPage.openMultiplePage(driver, "Edit Account");
@@ -311,7 +313,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_05_TransferMoneyToCurrentAccount(Method method) {
 		
-		log.info("===== PAYMENT - Testcase 05 : Transfer Money To Current Account =====");
+		ExtentTestManager.startTest(method.getName(), "Payment_05_TransferMoneyToCurrentAccount");
 
 		log.info("Payment_05: Step 01 - Click to 'Deposit' link");
 		editAccountPage.openMultiplePage(driver, "Deposit");
@@ -349,7 +351,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_06_WithdrawalMoneyFromCurrentAccount(Method method) {
 		
-		log.info("===== PAYMENT - Testcase 06 : Withdrawal Money From Current Account =====");
+		ExtentTestManager.startTest(method.getName(), "Payment_06_WithdrawalMoneyFromCurrentAccount");
 
 		log.info("Payment_06: Step 01 - Click to 'Withdrawal' link ");
 		depositPage.openMultiplePage(driver, "Withdrawal");
@@ -387,7 +389,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_07_TransferMoneyToAnotherAccount(Method method) {
 		
-		log.info("====== PAYMENT - Testcase 07 : Transfer Money To Another Account ======");
+		ExtentTestManager.startTest(method.getName(), "Payment_07_TransferMoneyToAnotherAccount");
 		
 		/* ========= Additional step: Create Payee Account ==========*/
 		log.info("Payment_07: Step 01 - Click to 'New Account' link");
@@ -466,7 +468,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_08_CheckCurrentAccountBalance(Method method) {
 		
-		log.info("====== PAYMENT - Testcase 08 : Check Current Account Balance ======");
+		ExtentTestManager.startTest(method.getName(), "Payment_08_CheckCurrentAccountBalance");
 
 		log.info("Payment_08: Step 01 - Click to 'Balance Enquiry' link ");
 		fundTransferPage.openMultiplePage(driver, "Balance Enquiry");
@@ -498,7 +500,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_09_DeleteAccountsAndVerify(Method method) {
 		
-		log.info("=== PAYMENT - Testcase 09 : Delete Accounts And Verify Account Deleted Successfully ===");
+		ExtentTestManager.startTest(method.getName(), "Payment_09_DeleteAccountsAndVerify");
 		
 		String[] allAccounts = { accountID, payeeAccountID };
 		log.info("Payment_09: Step 00 - Click to 'Delete Account' link");
@@ -566,7 +568,7 @@ public class Payment extends AbstractTest {
 	@Test
 	public void Payment_10_DeleteCustomerAndVerify(Method method) {
 		
-		log.info("=== PAYMENT - Testcase 09 : Delete Customer And Verify Customer Deleted Successfully ===");
+		ExtentTestManager.startTest(method.getName(), "Payment_10_DeleteCustomerAndVerify");
 
 		log.info("Payment_10: Step 01 - Click to 'Delete Customer' link ");
 		deleteAccountPage.openMultiplePage(driver, "Delete Customer");

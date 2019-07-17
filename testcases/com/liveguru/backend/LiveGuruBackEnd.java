@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.liveguru.backend.testdata.BackEndTestData;
 
-import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
+import PageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractTest;
 import commons.DownloadFileFunction;
 import liveguruPageObjects.BackEndAdminPageObject;

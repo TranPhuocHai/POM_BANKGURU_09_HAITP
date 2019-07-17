@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import com.liveguru.frontend.testdata.LiveGuruFrontEndTestData;
 
-import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
+import PageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractTest;
 import liveguruPageObjects.CatalogSearchPageObject;
 import liveguruPageObjects.CheckOutPageObject;

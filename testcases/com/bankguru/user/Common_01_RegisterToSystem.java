@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import bankguruPageFactoryManager.PageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.LoginPageObject;
 import bankguruPageObjects.RegisterPageObject;
 import commons.AbstractTest;

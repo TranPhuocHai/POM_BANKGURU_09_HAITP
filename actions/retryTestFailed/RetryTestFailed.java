@@ -1,4 +1,4 @@
-package commons;
+package retryTestFailed;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

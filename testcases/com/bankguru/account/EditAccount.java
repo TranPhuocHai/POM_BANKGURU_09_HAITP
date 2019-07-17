@@ -12,7 +12,7 @@ import com.bankguru.customer.Common_02_CreateNewCustomer;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
-import bankguruPageFactoryManager.PageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.EditAccountPageObject;
 import bankguruPageObjects.HomePageObject;
 import bankguruPageObjects.LoginPageObject;

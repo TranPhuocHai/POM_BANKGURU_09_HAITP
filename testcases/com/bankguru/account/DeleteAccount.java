@@ -11,7 +11,7 @@ import com.bankguru.payment.PaymentTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
-import bankguruPageFactoryManager.PageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.DeleteAccountPageObject;
 import bankguruPageObjects.HomePageObject;
 import bankguruPageObjects.LoginPageObject;

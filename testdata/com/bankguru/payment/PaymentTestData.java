@@ -10,7 +10,7 @@ public class PaymentTestData {
 	public static final String STATE = "Hoan Kiem";
 	public static final String PIN = "600000";
 	public static final String MOBILE_NUMBER = "0987654321";
-	public static final String EMAIL = "haitp";
+	public static final String EMAIL = "myque445";
 	public static final String PASSWORD = "sdhgd3123";
 	
 	public static final String EDIT_ADRESS = "01 Nguyen Van Linh";

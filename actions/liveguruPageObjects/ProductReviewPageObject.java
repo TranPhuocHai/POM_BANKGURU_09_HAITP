@@ -2,7 +2,7 @@ package liveguruPageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruPageFactoryManager.LiveGuruPageFactoryManager;
+import PageFactoryManager.LiveGuruPageFactoryManager;
 import commons.AbstractPage;
 import liveguruUI.ProductReviewPageUI;
 

@@ -10,7 +10,7 @@ import com.bankguru.common.CommonTestData;
 import com.bankguru.user.Common_01_RegisterToSystem;
 import com.bankguru.validate.ValidateMessage;
 
-import bankguruPageFactoryManager.PageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
 import bankguruPageObjects.HomePageObject;
 import bankguruPageObjects.LoginPageObject;
 import bankguruPageObjects.NewAccountPageObject;

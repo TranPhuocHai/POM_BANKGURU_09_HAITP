@@ -2,22 +2,34 @@ package PageFactoryManager;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruPageObjects.BalanceEnquiryPageObject;
-import bankguruPageObjects.ChangePasswordPageObject;
-import bankguruPageObjects.CustomisedStatementPageObject;
-import bankguruPageObjects.DeleteAccountPageObject;
-import bankguruPageObjects.DeleteCustomerPageObject;
-import bankguruPageObjects.DepositPageObject;
-import bankguruPageObjects.EditAccountPageObject;
-import bankguruPageObjects.EditCustomerPageObject;
-import bankguruPageObjects.FundTransferPageObject;
-import bankguruPageObjects.HomePageObject;
-import bankguruPageObjects.LoginPageObject;
-import bankguruPageObjects.MiniStatementPageObject;
-import bankguruPageObjects.NewAccountPageObject;
-import bankguruPageObjects.NewCustomerPageObject;
-import bankguruPageObjects.RegisterPageObject;
-import bankguruPageObjects.WithdrawalPageObject;
+import PageObjects.BackEndAdminPageObject;
+import PageObjects.BackEndLoginPageObject;
+import PageObjects.BalanceEnquiryPageObject;
+import PageObjects.CatalogSearchPageObject;
+import PageObjects.ChangePasswordPageObject;
+import PageObjects.CheckOutPageObject;
+import PageObjects.CompareProductPageObject;
+import PageObjects.CustomisedStatementPageObject;
+import PageObjects.DeleteAccountPageObject;
+import PageObjects.DeleteCustomerPageObject;
+import PageObjects.DepositPageObject;
+import PageObjects.EditAccountPageObject;
+import PageObjects.EditCustomerPageObject;
+import PageObjects.FundTransferPageObject;
+import PageObjects.HomePageObject;
+import PageObjects.LiveGuruHomePageObject;
+import PageObjects.LiveGuruRegisterPageObject;
+import PageObjects.LoginPageObject;
+import PageObjects.MiniStatementPageObject;
+import PageObjects.MobilePageObject;
+import PageObjects.MyAccountPageObject;
+import PageObjects.NewAccountPageObject;
+import PageObjects.NewCustomerPageObject;
+import PageObjects.ProductReviewPageObject;
+import PageObjects.RegisterPageObject;
+import PageObjects.ShoppingCartPageObject;
+import PageObjects.TVPageObject;
+import PageObjects.WithdrawalPageObject;
 
 public class PageFactoryManager {
 	
@@ -84,6 +96,57 @@ public class PageFactoryManager {
 	public static CustomisedStatementPageObject getCustomisedStatementPage(WebDriver driver) {
 		return new CustomisedStatementPageObject(driver);
 	}
+	
+	public static LiveGuruHomePageObject getLiveGuruHomePage(WebDriver driver) {
+		return new LiveGuruHomePageObject(driver);
+	}
+	
+	public static LiveGuruRegisterPageObject getLiveGuruRegisterPage(WebDriver driver) {
+		return new LiveGuruRegisterPageObject(driver);
+	}
+	
+	public static MyAccountPageObject getMyAccountPage(WebDriver driver) {
+		return new MyAccountPageObject(driver);
+	}
+	
+	public static MobilePageObject getMobilePage(WebDriver driver) {
+		return new MobilePageObject(driver);
+	}
+	
+	public static TVPageObject getTVPage(WebDriver driver) {
+		return new TVPageObject(driver);
+	}
+	
+	public static ShoppingCartPageObject getShoppingCartPage(WebDriver driver) {
+		return new ShoppingCartPageObject(driver);
+	}
+	
+	public static CompareProductPageObject getCompareProductPage(WebDriver driver) {
+		return new CompareProductPageObject(driver);
+	}
+	
+	public static CheckOutPageObject getCheckOutPage(WebDriver driver) {
+		return new CheckOutPageObject(driver);
+	}
+	
+	public static CatalogSearchPageObject getCatalogSearchPage(WebDriver driver) {
+		return new CatalogSearchPageObject(driver);
+	}
+	
+	
+	public static BackEndLoginPageObject getBackEndLoginPage(WebDriver driver) {
+		return new BackEndLoginPageObject(driver);
+	}
+	
+	
+	public static BackEndAdminPageObject getBackEndAdminPage(WebDriver driver) {
+		return new BackEndAdminPageObject(driver);
+	}
+	
+	public static ProductReviewPageObject getProductReviewPage(WebDriver driver) {
+		return new ProductReviewPageObject(driver);
+	}
+	
 	
 
 }

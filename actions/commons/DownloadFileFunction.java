@@ -4,7 +4,7 @@ import java.io.File;
 
 import org.testng.Assert;
 
-public class DownloadFileFunction {
+public class DownloadFileFunction extends AbstractTest{
 
 	public static void VerifyDownloadedSuccessfully(String fileExtension) {
 		String file = fileExtension;

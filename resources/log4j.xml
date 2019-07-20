@@ -25,77 +25,35 @@
 		</layout>
 	</appender>
 
-	<category name="com.bankguru.account">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.customer">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.customisedstatement">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.fundtransfer">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.ministatement">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.payment">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.user">
+	<category name="bankguru.commonFunction">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="com.liveguru.admin">
+	<category name="bankguru.payment">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="com.liveguru.customer">
+	<category name="bankguru.validateMessage">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="com.liveguru.frontend">
+	<category name="liveguru.frontend">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="com.liveguru.backend">
+	<category name="liveguru.backend">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />

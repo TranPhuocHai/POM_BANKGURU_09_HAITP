@@ -16,11 +16,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import PageFactoryManager.LiveGuruPageFactoryManager;
+import PageFactoryManager.PageFactoryManager;
+import PageObjects.MyAccountPageObject;
+import PageObjects.ShoppingCartPageObject;
 import bankguruUI.AbstractPageUI;
-import liveguruPageObjects.MyAccountPageObject;
-import liveguruPageObjects.ShoppingCartPageObject;
-import liveguruUI.LiveGuruAbstractPageUI;
+import bankguruUI.LiveGuruAbstractPageUI;
 
 public class AbstractPage {
 	WebElement element;
@@ -747,7 +747,7 @@ public class AbstractPage {
 			clickToElementByJavascript(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_CART_BUTTON, productName);
-		return LiveGuruPageFactoryManager.getShoppingCartPage(driver);
+		return PageFactoryManager.getShoppingCartPage(driver);
 
 	}
 
@@ -818,7 +818,7 @@ public class AbstractPage {
 		} else
 			clickToElement(driver, LiveGuruAbstractPageUI.DYNAMIC_ADD_TO_WISHLIST_LINK, productName);
 
-		return LiveGuruPageFactoryManager.getMyAccountPage(driver);
+		return PageFactoryManager.getMyAccountPage(driver);
 
 	}
 

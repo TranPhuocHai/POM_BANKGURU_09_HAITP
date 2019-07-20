@@ -14,5 +14,6 @@ public class Constants {
 	public static final String LIVEGURU_FRONT_END_URL = "http://live.guru99.com/";
 	public static final String LIVEGURU_BACK_END_URL = "http://live.guru99.com/index.php/backendlogin";
 	
+	public static final String UPLOAD_URL = "https://blueimp.github.io/jQuery-File-Upload/";
 
 }

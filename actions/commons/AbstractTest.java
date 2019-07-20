@@ -115,6 +115,8 @@ public class AbstractTest {
 			driver.get(Constants.LIVEGURU_FRONT_END_URL);
 		} else if (url.equalsIgnoreCase("livegurubackend")) {
 			driver.get(Constants.LIVEGURU_BACK_END_URL);
+		} else if (url.equalsIgnoreCase("uploadUrl")) {
+			driver.get(Constants.UPLOAD_URL);
 		}
 
 		if (driver.toString().toLowerCase().contains("internet explorer")) {

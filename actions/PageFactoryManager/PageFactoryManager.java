@@ -29,6 +29,7 @@ import PageObjects.ProductReviewPageObject;
 import PageObjects.RegisterPageObject;
 import PageObjects.ShoppingCartPageObject;
 import PageObjects.TVPageObject;
+import PageObjects.UploadPageObject;
 import PageObjects.WithdrawalPageObject;
 
 public class PageFactoryManager {
@@ -145,6 +146,10 @@ public class PageFactoryManager {
 	
 	public static ProductReviewPageObject getProductReviewPage(WebDriver driver) {
 		return new ProductReviewPageObject(driver);
+	}
+	
+	public static UploadPageObject getUploadPage(WebDriver driver) {
+		return new UploadPageObject(driver);
 	}
 	
 	

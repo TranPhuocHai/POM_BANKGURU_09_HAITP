@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,7 @@ import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class DeleteCustomer extends AbstractTest {
 	private WebDriver driver;
@@ -52,7 +55,9 @@ public class DeleteCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void DeleteCustomer_01_CustomerIDCanNotBeEmpty() {
+	public void DeleteCustomer_01_CustomerIDCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("DeleteCustomer_01: Step 01 - Clear 'Customer ID' textbox");
 		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -69,7 +74,9 @@ public class DeleteCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void DeleteCustomer_02_CustomerIDCanNotHaveFirstBlankSpace() {
+	public void DeleteCustomer_02_CustomerIDCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("DeleteCustomer_02: Step 01 - Clear 'Customer ID' textbox");
 		deleteCustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -83,7 +90,10 @@ public class DeleteCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void DeleteCustomer_03_CustomerIDCharacterAreNotAllowed() {
+	public void DeleteCustomer_03_CustomerIDCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String charactervalue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("DeleteCustomer_03: Step 01 - Customer ID Number textbox");
@@ -99,7 +109,10 @@ public class DeleteCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void DeleteCustomer_04_CustomerIDCanNotHaveSpecialCharacters() {
+	public void DeleteCustomer_04_CustomerIDCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("DeleteCustomer_04: Step 01 - Customer ID Number textbox");

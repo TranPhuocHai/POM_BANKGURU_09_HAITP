@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,8 +15,8 @@ import PageObjects.MiniStatementPageObject;
 import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
-import bankguru.validateMessage.EditAccount;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class MiniStatement extends AbstractTest {
 	private WebDriver driver;
@@ -56,7 +58,9 @@ public class MiniStatement extends AbstractTest {
 	}
 
 	@Test
-	public void MiniStatement_01_AccountNumberCanNotBeEmpty() {
+	public void MiniStatement_01_AccountNumberCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("MiniStatement_01: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -72,7 +76,10 @@ public class MiniStatement extends AbstractTest {
 	}
 
 	@Test
-	public void MiniStatement_02_AccountNumberCharacterAreNotAllowed() {
+	public void MiniStatement_02_AccountNumberCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterAccountNo : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("MiniStatement_02: Step 01 - Clear 'Account Number' textbox");
@@ -88,7 +95,10 @@ public class MiniStatement extends AbstractTest {
 	}
 
 	@Test
-	public void MiniStatement_03_AccountNumberCanNotHaveSpecialCharacters() {
+	public void MiniStatement_03_AccountNumberCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialAccountNo : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("MiniStatement_03: Step 01 - Clear 'Account Number' textbox");
@@ -103,7 +113,9 @@ public class MiniStatement extends AbstractTest {
 	}
 
 	@Test
-	public void MiniStatement_04_AccountNumberFirstCharacterMustNotBeBlank() {
+	public void MiniStatement_04_AccountNumberFirstCharacterMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("MiniStatement_04: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -117,7 +129,9 @@ public class MiniStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void MiniStatement_05_ValidAccountNumber() {
+	public void MiniStatement_05_ValidAccountNumber(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("MiniStatement_05: Step 01 - Clear 'Account Number' textbox");
 		miniStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");

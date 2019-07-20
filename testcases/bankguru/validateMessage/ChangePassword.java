@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,7 @@ import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class ChangePassword extends AbstractTest {
 	private WebDriver driver;
@@ -57,7 +60,9 @@ public class ChangePassword extends AbstractTest {
 	}
 
 	@Test
-	public void ChangePassword_01_OldPasswordMustNotBeBank() {
+	public void ChangePassword_01_OldPasswordMustNotBeBank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("ChangePassword_01: Step 01 - Clear 'Old Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "oldpassword");
@@ -74,7 +79,9 @@ public class ChangePassword extends AbstractTest {
 	}
 
 	@Test
-	public void ChangePassword_02_NewPasswordMustNotBeBank() {
+	public void ChangePassword_02_NewPasswordMustNotBeBank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("ChangePassword_02: Step 01 - Clear 'New Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
@@ -91,7 +98,9 @@ public class ChangePassword extends AbstractTest {
 	}
 
 	@Test
-	public void ChangePassword_03_NewPasswordMustHaveAtLeastOneNumericValue() {
+	public void ChangePassword_03_NewPasswordMustHaveAtLeastOneNumericValue(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("ChangePassword_03: Step 01 - Clear 'New Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
@@ -105,7 +114,9 @@ public class ChangePassword extends AbstractTest {
 	}
 	
 	@Test
-	public void ChangePassword_04_NewPasswordMustHaveAtLeastOneSpecialCharacter() {
+	public void ChangePassword_04_NewPasswordMustHaveAtLeastOneSpecialCharacter(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("ChangePassword_04: Step 01 - Clear 'New Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
@@ -119,9 +130,11 @@ public class ChangePassword extends AbstractTest {
 	}
 	
 	@Test
-	public void ChangePassword_05_NewPasswordMustNotIncludeStringPassword() {
+	public void ChangePassword_05_NewPasswordMustNotIncludeStringPassword(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String passwordStringNewPassword: CommonTestData.PASSWORD_STRING_NEW_PASSWORDS) {
-			
 			log.info("ChangePassword_05: Step 01 - Clear 'New Password' textbox");
 			changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");
 			
@@ -135,7 +148,9 @@ public class ChangePassword extends AbstractTest {
 	}
 	
 	@Test
-	public void ChangePassword_06_ConfirmPasswordAndNewPasswordMustBeMatched() {
+	public void ChangePassword_06_ConfirmPasswordAndNewPasswordMustBeMatched(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("ChangePassword_06: Step 01 - Clear 'New Password' textbox");
 		changePasswordPage.clearDynamicTextboxOrTextArea(driver, "newpassword");

@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,8 +15,8 @@ import PageObjects.LoginPageObject;
 import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
-import bankguru.validateMessage.EditAccount;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class CustomisedStatement extends AbstractTest {
 	private WebDriver driver;
@@ -58,7 +60,9 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_01_AccountNumberCanNotBeEmpty() {
+	public void CustomisedStatement_01_AccountNumberCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("CustomisedStatement_01: Step 01 - Clear 'Account Number' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -74,7 +78,10 @@ public class CustomisedStatement extends AbstractTest {
 	}
 
 	@Test
-	public void CustomisedStatement_02_AccountNumberCharacterAreNotAllowed() {
+	public void CustomisedStatement_02_AccountNumberCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("CustomisedStatement_02: Step 01 - Clear 'Account Number' textbox");
@@ -89,7 +96,10 @@ public class CustomisedStatement extends AbstractTest {
 	}
 
 	@Test
-	public void CS_03_AccountNumberCanNotHaveSpecialCharacters() {
+	public void CustomisedStatement_03_AccountNumberCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_03: Step 01 - Clear 'Account Number' textbox");
@@ -104,7 +114,9 @@ public class CustomisedStatement extends AbstractTest {
 	}
 
 	@Test
-	public void CustomisedStatement_04_AccountNumberFirstCharacterMustNotBeBlank() {
+	public void CustomisedStatement_04_AccountNumberFirstCharacterMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("CustomisedStatement_04: Step 01 - Clear 'Account Number' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -118,9 +130,11 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_05_MinimumTransactionValueCharacterAreNotAllowed() {
+	public void CustomisedStatement_05_MinimumTransactionValueCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterMinimumTransactionValue : CommonTestData.CHARACTER_VALUE) {
-			
 			log.info("CustomisedStatement_05: Step 01 - Clear 'Minimum Transaction Value' textbox");
 			customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
 			
@@ -133,7 +147,10 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_06_MinimumTransactionValueCanNotHaveSpecialCharacters() {
+	public void CustomisedStatement_06_MinimumTransactionValueCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialMinimumTransactionValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_06: Step 01 - Clear 'Minimum Transaction Value' textbox");
@@ -149,7 +166,9 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_07_MinimumTransactionValueFirstCharacterMustNotBeBlank() {
+	public void CustomisedStatement_07_MinimumTransactionValueFirstCharacterMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("CustomisedStatement_07: Step 01 - Clear 'Minimum Transaction Value' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "amountlowerlimit");
@@ -163,7 +182,10 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_08_NumberOfTransactionCharacterAreNotAllowed() {
+	public void CustomisedStatement_08_NumberOfTransactionCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String CharacterNumberOfTransaction : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("CustomisedStatement_08: Step 01 - Clear 'Number of Transaction' textbox");
@@ -178,7 +200,10 @@ public class CustomisedStatement extends AbstractTest {
 	}
 
 	@Test
-	public void CustomisedStatement_09_NumberOfTransactionCanNotHaveSpecialCharacters() {
+	public void CustomisedStatement_09_NumberOfTransactionCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialNumberOfTransaction : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("CustomisedStatement_09: Step 01 - Clear 'Number of Transaction' textbox");
@@ -193,7 +218,9 @@ public class CustomisedStatement extends AbstractTest {
 	}
 
 	@Test
-	public void CustomisedStatement_10_NumberOfTransactionFirstCharacterMustNotBeBlank() {
+	public void CustomisedStatement_10_NumberOfTransactionFirstCharacterMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("CustomisedStatement_10: Step 01 - Clear 'Number of Transaction' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "numtransaction");
@@ -207,7 +234,9 @@ public class CustomisedStatement extends AbstractTest {
 	}
 	
 	@Test
-	public void CustomisedStatement_11_InputValidInforAndVerifyCustomisedStatementDisplayed() {
+	public void CustomisedStatement_11_InputValidInforAndVerifyCustomisedStatementDisplayed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("CustomisedStatement_11: Step 01 - Clear 'Account Number' textbox");
 		customisedStatementPage.clearDynamicTextboxOrTextArea(driver, "accountno");

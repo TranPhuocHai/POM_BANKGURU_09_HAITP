@@ -1,5 +1,7 @@
 package liveguru.frontend;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -18,6 +20,7 @@ import PageObjects.ShoppingCartPageObject;
 import PageObjects.TVPageObject;
 import bankguru.testdata.FrontEndTestData;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class LiveGuruFrontEnd extends AbstractTest {
 	private WebDriver driver;
@@ -44,9 +47,9 @@ public class LiveGuruFrontEnd extends AbstractTest {
 	}
 
 	@Test()
-	public void TC_01_RegisterToSystem() {
+	public void TC_01_RegisterToSystem(Method method) {
 		
-		log.info("========= LiveGuru FrontEnd - Testcase 01: Register To System ============");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("TC_01: Step 01 - Get HomePage");
 		liveHomePage = PageFactoryManager.getLiveGuruHomePage(driver);
@@ -87,12 +90,14 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_01: Step 13 - Click to Register button");
 		verifyTrue(liveRegisterPage.isRegisterSuccessMessageDisplayed());
+		
+		captureAnyScreenshot(method.getName());
 	}
 
 	@Test
-	public void TC_02_VerifyUserInformation() {
+	public void TC_02_VerifyUserInformation(Method method) {
 		
-		log.info("========= LiveGuru FrontEnd - Testcase 02: Verify User Information ============");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_02: Step 01 - Open Home Page");
 		liveRegisterPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -128,12 +133,14 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_02: Step 11 - Verify Email is correct");
 		verifyTrue(myAccountPage.isDynamicInforInTextboxCorrect(driver, "email", email));
+		
+		captureAnyScreenshot(method.getName());
 	}
 
 	@Test
-	public void TC_03_VerifyCostProduct() {
+	public void TC_03_VerifyCostProduct(Method method) {
 		
-		log.info("========= LiveGuru FrontEnd - Testcase 03: Verify Cost Product ============");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("TC_03: Step 01 - Open Home Page");
 		liveHomePage = PageFactoryManager.getLiveGuruHomePage(driver);
@@ -154,13 +161,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_03: Step 06 - Verify cost of product in list page and details page are equal");
 		verifyEquals(listCost, detailsCost);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_04_VerifyDiscountCuponWorksCorrectly() {
+	public void TC_04_VerifyDiscountCuponWorksCorrectly(Method method) {
 		
-		log.info("====== LiveGuru FrontEnd - Testcase 04: Verify Discount Cupon Works Correctly =========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_04: Step 01 - Open Home Page");
 		mobilePage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -191,13 +200,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_04: Step 09 - Verify Grand Total are correct after discounting");
 		verifyEquals(shoppingCartPage.getTextGrandTotalMoney(), FrontEndTestData.GRANT_TOTAL);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_05_VeifyCanNotAddMoreThan500Items() {
+	public void TC_05_VeifyCanNotAddMoreThan500Items(Method method) {
 		
-		log.info("====== LiveGuru FrontEnd - Testcase 05: Veify Cannot Add More Than 500 Items =======");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_05: Step 01 - Open Home Page");
 		shoppingCartPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -233,13 +244,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 		shoppingCartPage.clearDynamicQTYTextbox(driver, "Sony Xperia");
 		shoppingCartPage.inputToDynamicQTYTextbox(driver, "Sony Xperia", FrontEndTestData.VALID_PRODUCT_QUANTITY);
 		shoppingCartPage.clickToDynamiUpdateButton(driver, "Sony Xperia");
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_06_CompareProductsFunction() {
+	public void TC_06_CompareProductsFunction(Method method) {
 		
-		log.info("========= LiveGuru FrontEnd - Testcase 06: Compare Products Function ==========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_06: Step 01 - Open Home Page");
 		shoppingCartPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -277,13 +290,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_06: Step 11 - Close COMPARE PRODUCT window ");
 		compareProductPage.closeAllExceptParentWindow(driver, parentID);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_07_SharingWishlistFunction() {
+	public void TC_07_SharingWishlistFunction(Method method) {
 		
-		log.info("========= LiveGuru FrontEnd - Testcase 07: Sharing Wish list Function ==========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_07: Step 01 - Open Home Page");
 		compareProductPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -318,13 +333,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_07: Step 10 - Verify there's 1 item LG LCD in 'MY WISHLIST' page");
 		verifyTrue(myAccountPage.isCorrectNumberItemOfDynamicProductDisplayed(driver, "LG LCD", "1"));
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_08_VerifyYouCanAddYourReview() {
+	public void TC_08_VerifyYouCanAddYourReview(Method method) {
 		
-		log.info("======= LiveGuru FrontEnd - Testcase 08: Verify You Can Add Your Review ========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_08: Step 01 - Open Home Page");
 		myAccountPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -376,13 +393,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_08: Step 14 - Verify message 'Your review has been accepted for moderation.' displayed ");
 		verifyTrue(TVPage.isDynamicMessageDisplayed(driver, "Your review has been accepted for moderation."));
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_09_VerifyUserIsAbleToPurchaseProduct() {
+	public void TC_09_VerifyUserIsAbleToPurchaseProduct(Method method) {
 		
-		log.info("======= LiveGuru FrontEnd - Testcase 09: Verify User Is Able To Purchase Product ========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 
 		log.info("TC_09: Step 01 - Open Home Page");
@@ -524,13 +543,15 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_09: Step 41 - Get Order Numver");
 		ORDER_NUMBER = checkOutPage.getTextOrderNumber();
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_10_VerifySearchFunctionality() {
+	public void TC_10_VerifySearchFunctionality(Method method) {
 		
-		log.info("============ LiveGuru FrontEnd - Testcase 10: Verify Search Functionality ============");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("TC_10: Step 01 - Open Home Page");
 		checkOutPage.openAnyUrl(driver, LIVE_GURU_HOME_PAGE_URL);
@@ -569,6 +590,8 @@ public class LiveGuruFrontEnd extends AbstractTest {
 
 		log.info("TC_10: Step 10 - Print all Products and Prices to console");
 		catalogSearchPage.printAllProductsAndprices();
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 

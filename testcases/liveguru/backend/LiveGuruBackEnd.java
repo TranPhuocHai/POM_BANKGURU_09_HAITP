@@ -1,5 +1,7 @@
 package liveguru.backend;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +15,7 @@ import PageObjects.ProductReviewPageObject;
 import bankguru.testdata.BackEndTestData;
 import commons.AbstractTest;
 import commons.DownloadFileFunction;
+import reportConfig.ExtentTestManager;
 
 public class LiveGuruBackEnd extends AbstractTest {
 	private WebDriver driver;
@@ -30,9 +33,9 @@ public class LiveGuruBackEnd extends AbstractTest {
 	}
 
 	@Test
-	public void TC_01_VerifyInvoiceCanBePrinted() {
+	public void TC_01_VerifyInvoiceCanBePrinted(Method method) {
 
-		log.info("======= LiveGuru BackEnd - TC_01: Verify Invoice Can Be Printed =========");
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_01: Step 01 - Get login page");
 		backEndLoginPage = PageFactoryManager.getBackEndLoginPage(driver);
@@ -109,12 +112,15 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_01: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_02_VerifyTheProductMechanism() {
-		log.info("======= LiveGuru BackEnd - TC_02: Verify The Product Mechanism =========");
+	public void TC_02_VerifyTheProductMechanism(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_02: Step 01 - Go to product link");
 		backEndLoginPage.openAnyUrl(driver, BackEndTestData.LIVE_GURU_PRODUCT_URL);
@@ -198,12 +204,15 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_02: Step 26 - Verify Your review displays");
 		productReviewPage.isExpectedReviewDisplayed(BackEndTestData.FINAL_REVIEW, BackEndTestData.REVIEW_COMMENT_DETAILS, BackEndTestData.NICK_NAME);
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_03_VerifySortFunctionWorksCorrectly() {
-		log.info("=== LiveGuru BackEnd - TC_03: Verify Sort Function Works Correctly ====");
+	public void TC_03_VerifySortFunctionWorksCorrectly(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_03: Step 01 - Go to Backend Login page");
 		backEndLoginPage = productReviewPage.openBackEndPage(backEndLoginUrl);
@@ -254,12 +263,15 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_03: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		captureAnyScreenshot(method.getName());
 	}
 
 	@Test
-	public void TC_04_VeirfyPaginationFunctionWorksCorrectly() {
-		log.info("=== LiveGuru BackEnd - TC_04: Verify Pagination Function Works Correctly ====");
+	public void TC_04_VeirfyPaginationFunctionWorksCorrectly(Method method) {
 
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		log.info("TC_04: Step 01 - Go to Backend Login page");
 		backEndLoginPage.openBackEndPage(backEndLoginUrl);
 
@@ -308,12 +320,15 @@ public class LiveGuruBackEnd extends AbstractTest {
 		}
 		log.info("TC_04: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		captureAnyScreenshot(method.getName());
 
 	}
 
 	@Test
-	public void TC_05_VeirfySearchFunctionWorksCorrectly() {
-		log.info("=== LiveGuru BackEnd - TC_05: Verify Search Function Works Correctly ====");
+	public void TC_05_VeirfySearchFunctionWorksCorrectly(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_05: Step 01 - Go to Backend Login page");
 		backEndLoginPage.openBackEndPage(backEndLoginUrl);
@@ -365,11 +380,15 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_05: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		captureAnyScreenshot(method.getName());
 	}
 
 	@Test
-	public void TC_06_VerifyCheckBoxSelectFunctionally() {
-		log.info("=== LiveGuru BackEnd - TC_06: Verify CheckBox Select Functionally ====");
+	public void TC_06_VerifyCheckBoxSelectFunctionally(Method method) {
+		
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("TC_06: Step 01 - Go to Backend Login page");
 		backEndLoginPage.openBackEndPage(backEndLoginUrl);
@@ -427,6 +446,8 @@ public class LiveGuruBackEnd extends AbstractTest {
 
 		log.info("TC_06: Post condition - Logout from Admin page");
 		backEndLoginPage = backEndAdminPage.clickToLogOutButton();
+		
+		captureAnyScreenshot(method.getName());
 	}
 
 	@AfterClass(alwaysRun = true)

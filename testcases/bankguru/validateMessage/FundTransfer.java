@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,7 @@ import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class FundTransfer extends AbstractTest {
 	private WebDriver driver;
@@ -52,7 +55,9 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_01_PayersAccountMustNotBeBlank() {
+	public void FundTransfer_01_PayersAccountMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("FundTransfer_01: Step 01 - Clear 'Payers Account' textbox");
 		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payersaccount");
@@ -68,7 +73,10 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_02_PayersAccountMustBeNumeric() {
+	public void FundTransfer_02_PayersAccountMustBeNumeric(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_02: Step 01 - Clear 'Payers Account' textbox");
@@ -83,7 +91,10 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_03_PayersAccountCanNotHaveSpecialCharacters() {
+	public void FundTransfer_03_PayersAccountCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_03: Step 01 - Clear 'Payers Account' textbox");
@@ -98,7 +109,9 @@ public class FundTransfer extends AbstractTest {
 	}
 
 	@Test
-	public void FundTransfer_04_PayeesAccountMustNotBeBlank() {
+	public void FundTransfer_04_PayeesAccountMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("FundTransfer_04: Step 01 - Clear 'Payees Account' textbox");
 		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "payeeaccount");
@@ -114,7 +127,10 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_05_PayeesAccountMustBeNumeric() {
+	public void FundTransfer_05_PayeesAccountMustBeNumeric(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_05: Step 01 - Clear 'Payees Account' textbox");
@@ -129,7 +145,10 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_06_PayeesAccountCanNotHaveSpecialCharacters() {
+	public void FundTransfer_06_PayeesAccountCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_06: Step 01 - Clear 'Payees Account' textbox");
@@ -144,7 +163,9 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_07_AmountMustNotBeBlank() {
+	public void FundTransfer_07_AmountMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("FundTransfer_07: Step 01 - Clear 'Amount' textbox");
 		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "ammount");
@@ -160,7 +181,10 @@ public class FundTransfer extends AbstractTest {
 	}
 
 	@Test
-	public void FundTransfer_08_AmountMustBeNumeric() {
+	public void FundTransfer_08_AmountMustBeNumeric(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("FundTransfer_08: Step 01 - Clear 'Amount' textbox");
@@ -175,7 +199,10 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_09_AmountCanNotHaveSpecialCharacters() {
+	public void FundTransfer_09_AmountCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("FundTransfer_09: Step 01 - Clear 'Amount' textbox");
@@ -190,7 +217,9 @@ public class FundTransfer extends AbstractTest {
 	}
 	
 	@Test
-	public void FundTransfer_10_DescriptionMustNotBeBlank() {
+	public void FundTransfer_10_DescriptionMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("FundTransfer_10: Step 01 - Clear 'Description' textbox");
 		fundTransferPage.clearDynamicTextboxOrTextArea(driver, "desc");

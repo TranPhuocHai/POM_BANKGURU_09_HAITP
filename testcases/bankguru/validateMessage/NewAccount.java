@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -14,6 +16,7 @@ import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class NewAccount extends AbstractTest {
 	private WebDriver driver;
@@ -52,7 +55,9 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_01_CustomerIDCanNotBeEmpty() {
+	public void NC_01_CustomerIDCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("CustomerIDCanNotBeEmpty: Step 01 - Clear 'Customer ID' textbox");
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -69,7 +74,9 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_02_CustomerIDCanNotHaveFirstBlankSpace() {
+	public void NC_02_CustomerIDCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("CustomerIDCanNotHaveFirstBlankSpace: Step 01 - Clear 'Customer ID' textbox");
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -83,7 +90,10 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_03_CustomerIDCharacterAreNotAllowed() {
+	public void NC_03_CustomerIDCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String charactervalue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("CustomerIDCharacterAreNotAllowed: Step 01 - Customer ID Number textbox");
@@ -99,7 +109,10 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_04_CustomerIDCanNotHaveSpecialCharacters() {
+	public void NC_04_CustomerIDCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("CustomerIDCanNotHaveSpecialCharacters: Step 01 - Customer ID Number textbox");
@@ -114,7 +127,9 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_05_InitialDepositCanNotBeEmpty() {
+	public void NC_05_InitialDepositCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("InitialDepositCanNotBeEmpty: Step 01 - Clear 'Initial deposit' textbox");
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
@@ -131,7 +146,9 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_06_InitialDepositCanNotHaveFirstBlankSpace() {
+	public void NC_06_InitialDepositCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("InitialDepositCanNotHaveFirstBlankSpace: Step 01 - Clear 'Initial deposit' textbox");
 		newAccountPage.clearDynamicTextboxOrTextArea(driver, "inideposit");
@@ -145,7 +162,10 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_07_InitialDepositCharacterAreNotAllowed() {
+	public void NC_07_InitialDepositCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterValue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("InitialDepositCharacterAreNotAllowed: Step 01 - Clear 'Initial deposit' textbox");
@@ -161,7 +181,10 @@ public class NewAccount extends AbstractTest {
 	}
 
 	@Test
-	public void NC_08_InitialDepositCanNotHaveSpecialCharacters() {
+	public void NC_08_InitialDepositCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("InitialDepositCanNotHaveSpecialCharacters: Step 01 - Clear 'Initial deposit' textbox");

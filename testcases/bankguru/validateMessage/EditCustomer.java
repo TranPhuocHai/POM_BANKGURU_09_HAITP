@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +17,7 @@ import bankguru.commonFunction.Common_02_CreateNewCustomer;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class EditCustomer extends AbstractTest {
 	private WebDriver driver;
@@ -53,7 +56,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_01_CustomerIDCanNotBeEmpty() {
+	public void EditCustomer_01_CustomerIDCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("EditCustomer_01: Step 01 - Clear 'Customer ID' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -70,7 +75,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_02_CustomerIDCanNotHaveFirstBlankSpace() {
+	public void EditCustomer_02_CustomerIDCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("EditCustomer_02: Step 01 - Clear 'Customer ID' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -84,7 +91,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_03_CustomerIDCharacterAreNotAllowed() {
+	public void EditCustomer_03_CustomerIDCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String charactervalue : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("EditCustomer_03: Step 01 - Customer ID Number textbox");
@@ -100,7 +110,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_04_CustomerIDCanNotHaveSpecialCharacters() {
+	public void EditCustomer_04_CustomerIDCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialValue : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("EditCustomer_04: Step 01 - Customer ID Number textbox");
@@ -115,7 +128,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_05_AddressCanNotBeEmpty() {
+	public void EditCustomer_05_AddressCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_05: Step 01 - 'Customer ID' Number textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "cusid");
@@ -144,7 +159,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_06_AdressCanNotHaveSpecialCharacters() {
+	public void EditCustomer_06_AdressCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialCharactersAddress : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("EditCustomer_06: Step 01 - Clear 'Address' text area");
@@ -159,7 +177,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_07_AddressCanNotHaveBlankSpace() {
+	public void EditCustomer_07_AddressCanNotHaveBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_07: Step 01 - Clear 'Address' text area");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "addr");
@@ -173,7 +193,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_08_CityCanNotBeEmpty() {
+	public void EditCustomer_08_CityCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_08: Step 01 - Clear 'City' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
@@ -189,7 +211,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_09_CityCanNotBeNumberic() {
+	public void EditCustomer_09_CityCanNotBeNumberic(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String numericCity : CommonTestData.NUMERIC_VALUES) {
 			
 			log.info("EditCustomer_09: Step 01 - Clear 'City' textbox");
@@ -204,7 +229,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_10_CityCanNotHaveSpecialCharacters() {
+	public void EditCustomer_10_CityCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialCharactersCity : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("EditCustomer_10: Step 01 - Clear 'City' textbox");
@@ -219,7 +247,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_11_CityCanNotHaveBlankSpace() {
+	public void EditCustomer_11_CityCanNotHaveBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_11: Step 01 - Clear 'City' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "city");
@@ -233,7 +263,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_12_StateCanNotBeEmpty() {
+	public void EditCustomer_12_StateCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_12: Step 01 - Clear 'State' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
@@ -249,7 +281,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_13_StateCanNotBeNumberic() {
+	public void EditCustomer_13_StateCanNotBeNumberic(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String numericState : CommonTestData.NUMERIC_VALUES) {
 			
 			log.info("EditCustomer_13: Step 01 - Clear 'State' textbox");
@@ -264,7 +299,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_14_StateCanNotHaveSpecialCharacters() {
+	public void EditCustomer_14_StateCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialCharactersState : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("EditCustomer_14: Step 01 - Clear 'State' textbox");
@@ -279,7 +317,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_15_StateCanNotHaveFirstBlankSpace() {
+	public void EditCustomer_15_StateCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_15: Step 01 - Clear 'State' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "state");
@@ -293,7 +333,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_16_PinCanNotBeEmpty() {
+	public void EditCustomer_16_PinCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_16: Step 01 - Clear 'PIN' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
@@ -309,7 +351,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_17_PinMustBeNumeric() {
+	public void EditCustomer_17_PinMustBeNumeric(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterPIN : CommonTestData.CHARACTER_PIN_VALUE) {
 			
 			log.info("EditCustomer_17: Step 01 - Clear 'PIN' textbox");
@@ -324,7 +369,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_18_PinMustHave6Degits() {
+	public void EditCustomer_18_PinMustHave6Degits(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String lessThan6Digits : CommonTestData.LESS_THAN_6_DIGITS_PIN_VALUE) {
 			
 			log.info("EditCustomer_18: Step 01 - Clear 'PIN' textbox");
@@ -339,7 +387,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_19_PinCanNotHaveFirstBlankSpace() {
+	public void EditCustomer_19_PinCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_19: Step 01 - Clear 'PIN' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "pinno");
@@ -353,7 +403,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_20_MobileNumberCanNotBeEmpty() {
+	public void EditCustomer_20_MobileNumberCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_20: Step 01 - Clear 'Mobile Number' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
@@ -369,7 +421,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_21_MobileNumberCanNotHaveFirstBlankSpace() {
+	public void EditCustomer_21_MobileNumberCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_21: Step 01 - Clear 'Mobile Number' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "telephoneno");
@@ -383,7 +437,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_22_MobileNumberCharactersAreNotAllowed() {
+	public void EditCustomer_22_MobileNumberCharactersAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterPhoneNumber : CommonTestData.CHARACTER_VALUE) {
 			
 			log.info("EditCustomer_22: Step 01 - Clear 'Mobile Number' textbox");
@@ -399,7 +456,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_23_MobileNumberCanNotHaveSpecialCharacters() {
+	public void EditCustomer_23_MobileNumberCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialPhoneNumber : CommonTestData.SPECIAL_VALUE) {
 			
 			log.info("EditCustomer_23: Step 01 - Clear 'Mobile Number' textbox");
@@ -414,7 +474,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_24_EmailCanNotBeEmpty() {
+	public void EditCustomer_24_EmailCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_24: Step 01 - Clear 'Email' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");
@@ -430,7 +492,10 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_25_EmailMustBeInCorrectFormat() {
+	public void EditCustomer_25_EmailMustBeInCorrectFormat(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String incorrectEmailID : CommonTestData.INCORRECT_EMAILS) {
 			
 			log.info("EditCustomer_25: Step 01 - Clear 'Email' textbox");
@@ -445,7 +510,9 @@ public class EditCustomer extends AbstractTest {
 	}
 
 	@Test
-	public void EditCustomer_26_EmailCanNotHaveFirstBlankSpace() {
+	public void EditCustomer_26_EmailCanNotHaveFirstBlankSpace(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 		
 		log.info("EditCustomer_26: Step 01 - Clear 'Email' textbox");
 		editcustomerPage.clearDynamicTextboxOrTextArea(driver, "emailid");

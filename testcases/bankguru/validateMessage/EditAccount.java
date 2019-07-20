@@ -1,5 +1,7 @@
 package bankguru.validateMessage;
 
+import java.lang.reflect.Method;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,6 +19,7 @@ import bankguru.testdata.CommonTestData;
 import bankguru.testdata.PaymentTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import reportConfig.ExtentTestManager;
 
 public class EditAccount extends AbstractTest {
 	private WebDriver driver;
@@ -88,7 +91,9 @@ public class EditAccount extends AbstractTest {
 	}
 
 	@Test
-	public void EditAccount_01_AccountNumberCanNotBeEmpty() {
+	public void EditAccount_01_AccountNumberCanNotBeEmpty(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("EditAccount_01: Step 01 - Clear 'Account Number' textbox");
 		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");
@@ -104,7 +109,10 @@ public class EditAccount extends AbstractTest {
 	}
 
 	@Test
-	public void EditAccount_02_AccountNumberCharacterAreNotAllowed() {
+	public void EditAccount_02_AccountNumberCharacterAreNotAllowed(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String characterAccountNo : CommonTestData.CHARACTER_VALUE) {
 
 			log.info("EditAccount_02: Step 01 - Clear 'Account Number' textbox");
@@ -120,7 +128,10 @@ public class EditAccount extends AbstractTest {
 	}
 
 	@Test
-	public void EditAccount_03_AccountNumberCanNotHaveSpecialCharacters() {
+	public void EditAccount_03_AccountNumberCanNotHaveSpecialCharacters(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
+		
 		for (String specialAccountNo : CommonTestData.SPECIAL_VALUE) {
 
 			log.info("EditAccount_03: Step 01 - Clear 'Account Number' textbox");
@@ -135,7 +146,9 @@ public class EditAccount extends AbstractTest {
 	}
 
 	@Test
-	public void EditAccount_04_AccountNumberFirstCharacterMustNotBeBlank() {
+	public void EditAccount_04_AccountNumberFirstCharacterMustNotBeBlank(Method method) {
+		
+		ExtentTestManager.startTest(method.getName(), method.getName());
 
 		log.info("EditAccount_04: Step 01 - Clear 'Account Number' textbox");
 		editAccountPage.clearDynamicTextboxOrTextArea(driver, "accountno");

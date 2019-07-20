@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.ShoppingCartPageUI;
+import PageUIs.ShoppingCartPageUI;
 import commons.AbstractPage;
 
 public class ShoppingCartPageObject extends AbstractPage {

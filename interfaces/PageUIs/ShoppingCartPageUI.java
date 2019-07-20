@@ -1,4 +1,4 @@
-package bankguruUI;
+package PageUIs;
 
 public class ShoppingCartPageUI {
 	public static final String GRANT_TOTAL_MONEY = "//strong[text()='Grand Total']/parent::td/following-sibling::td//span[@class='price']";

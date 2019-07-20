@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.CustomisedStatementPageUI;
+import PageUIs.CustomisedStatementPageUI;
 import commons.AbstractPage;
 
 public class CustomisedStatementPageObject extends AbstractPage {

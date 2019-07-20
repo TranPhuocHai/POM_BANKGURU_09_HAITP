@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.UploadPageUI;
+import PageUIs.UploadPageUI;
 import commons.AbstractPage;
 
 public class UploadPageObject extends AbstractPage {

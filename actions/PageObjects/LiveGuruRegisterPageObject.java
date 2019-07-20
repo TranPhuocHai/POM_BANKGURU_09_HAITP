@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.LiveGuruRegisterPageUI;
+import PageUIs.LiveGuruRegisterPageUI;
 import commons.AbstractPage;
 
 public class LiveGuruRegisterPageObject extends AbstractPage {

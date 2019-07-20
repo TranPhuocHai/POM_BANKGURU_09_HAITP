@@ -6,8 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import bankguruUI.CatalogSearchPageUI;
-import bankguruUI.LiveGuruAbstractPageUI;
+import PageUIs.CatalogSearchPageUI;
+import PageUIs.LiveGuruAbstractPageUI;
 import commons.AbstractPage;
 
 public class CatalogSearchPageObject extends AbstractPage {

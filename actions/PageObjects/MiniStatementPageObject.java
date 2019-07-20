@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.MiniStatementPageUI;
+import PageUIs.MiniStatementPageUI;
 import commons.AbstractPage;
 
 public class MiniStatementPageObject extends AbstractPage {

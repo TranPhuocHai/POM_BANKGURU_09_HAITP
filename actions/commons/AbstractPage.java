@@ -19,8 +19,8 @@ import org.testng.Reporter;
 import PageFactoryManager.PageFactoryManager;
 import PageObjects.MyAccountPageObject;
 import PageObjects.ShoppingCartPageObject;
-import bankguruUI.AbstractPageUI;
-import bankguruUI.LiveGuruAbstractPageUI;
+import PageUIs.AbstractPageUI;
+import PageUIs.LiveGuruAbstractPageUI;
 
 public class AbstractPage {
 	WebElement element;

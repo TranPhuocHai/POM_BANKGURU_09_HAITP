@@ -2,7 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import bankguruUI.CheckOutPageUI;
+import PageUIs.CheckOutPageUI;
 import commons.AbstractPage;
 
 public class CheckOutPageObject extends AbstractPage {

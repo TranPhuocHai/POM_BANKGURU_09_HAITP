@@ -1,4 +1,4 @@
-package bankguruUI;
+package PageUIs;
 
 public class CheckOutPageUI {
 	public static final String DYNAMIC_CHECKOUT_CATEGORY = "//h2[text()='%s']";

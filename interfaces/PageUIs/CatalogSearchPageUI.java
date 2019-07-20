@@ -1,4 +1,4 @@
-package bankguruUI;
+package PageUIs;
 
 public class CatalogSearchPageUI {
 	public static final String SEARCH_BUTTON = "//button[@class='button']//span//span[text()='Search']";

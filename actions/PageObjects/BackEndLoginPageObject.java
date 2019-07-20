@@ -3,7 +3,7 @@ package PageObjects;
 import org.openqa.selenium.WebDriver;
 
 import PageFactoryManager.PageFactoryManager;
-import bankguruUI.BackEndLoginPageUI;
+import PageUIs.BackEndLoginPageUI;
 import commons.AbstractPage;
 
 public class BackEndLoginPageObject extends AbstractPage{

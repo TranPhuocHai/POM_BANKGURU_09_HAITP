@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import PageFactoryManager.PageFactoryManager;
-import bankguruUI.BackEndAdminPageUI;
+import PageUIs.BackEndAdminPageUI;
 import commons.AbstractPage;
 
 public class BackEndAdminPageObject extends AbstractPage {

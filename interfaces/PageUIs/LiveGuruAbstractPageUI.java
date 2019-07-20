@@ -1,4 +1,4 @@
-package bankguruUI;
+package PageUIs;
 
 public class LiveGuruAbstractPageUI {
 	public static final String FOOTER_DYNAMIC_LINK = "//div[@class='footer']//a[text()='%s']";

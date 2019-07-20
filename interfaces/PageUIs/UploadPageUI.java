@@ -1,4 +1,4 @@
-package bankguruUI;
+package PageUIs;
 
 public class UploadPageUI {
 

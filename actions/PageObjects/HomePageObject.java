@@ -3,7 +3,7 @@ package PageObjects;
 import org.openqa.selenium.WebDriver;
 
 import PageFactoryManager.PageFactoryManager;
-import bankguruUI.HomePageUI;
+import PageUIs.HomePageUI;
 import commons.AbstractPage;
 
 public class HomePageObject extends AbstractPage {

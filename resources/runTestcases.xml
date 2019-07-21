@@ -14,7 +14,7 @@
 		<packages>
 			<package name="bankguru.commonFunction" />
 			<package name="bankguru.payment" />
-			<package name="bankguru.validateMessage" />
+<!-- 			<package name="bankguru.validateMessage" /> -->
 		</packages>
 	</test>
 

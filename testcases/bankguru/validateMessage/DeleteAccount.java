@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.DeleteAccountPageObject;
 import PageObjects.HomePageObject;
 import PageObjects.LoginPageObject;
@@ -17,6 +16,7 @@ import bankguru.testdata.CommonTestData;
 import bankguru.testdata.PaymentTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import commons.PageFactoryManager;
 import reportConfig.ExtentTestManager;
 
 public class DeleteAccount extends AbstractTest {

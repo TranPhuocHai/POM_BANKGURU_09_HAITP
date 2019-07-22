@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.CatalogSearchPageObject;
 import PageObjects.CheckOutPageObject;
 import PageObjects.CompareProductPageObject;
@@ -20,6 +19,7 @@ import PageObjects.ShoppingCartPageObject;
 import PageObjects.TVPageObject;
 import bankguru.testdata.FrontEndTestData;
 import commons.AbstractTest;
+import commons.PageFactoryManager;
 import reportConfig.ExtentTestManager;
 
 public class LiveGuruFrontEnd extends AbstractTest {

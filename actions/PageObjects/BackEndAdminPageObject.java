@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import PageFactoryManager.PageFactoryManager;
 import PageUIs.BackEndAdminPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class BackEndAdminPageObject extends AbstractPage {
 	public BackEndAdminPageObject(WebDriver driver) {

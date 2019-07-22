@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.BalanceEnquiryPageObject;
 import PageObjects.DeleteAccountPageObject;
 import PageObjects.DeleteCustomerPageObject;
@@ -24,6 +23,7 @@ import PageObjects.WithdrawalPageObject;
 import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.PaymentTestData;
 import commons.AbstractTest;
+import commons.PageFactoryManager;
 import reportConfig.ExtentTestManager;
 
 public class Payment extends AbstractTest {

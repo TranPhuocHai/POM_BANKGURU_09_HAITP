@@ -8,13 +8,13 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.BackEndAdminPageObject;
 import PageObjects.BackEndLoginPageObject;
 import PageObjects.ProductReviewPageObject;
 import bankguru.testdata.BackEndTestData;
 import commons.AbstractTest;
 import commons.DownloadFileFunction;
+import commons.PageFactoryManager;
 import reportConfig.ExtentTestManager;
 
 public class LiveGuruBackEnd extends AbstractTest {

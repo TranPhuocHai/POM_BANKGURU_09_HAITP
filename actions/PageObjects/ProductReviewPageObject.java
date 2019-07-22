@@ -2,9 +2,9 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import PageFactoryManager.PageFactoryManager;
 import PageUIs.ProductReviewPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class ProductReviewPageObject extends AbstractPage {
 	WebDriver driver;

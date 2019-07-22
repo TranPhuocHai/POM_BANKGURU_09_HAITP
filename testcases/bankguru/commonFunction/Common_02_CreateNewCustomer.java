@@ -4,14 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.HomePageObject;
 import PageObjects.LoginPageObject;
 import PageObjects.NewCustomerPageObject;
-import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.PaymentTestData;
 import commons.AbstractTest;
+import commons.PageFactoryManager;
 
 public class Common_02_CreateNewCustomer extends AbstractTest {
 	private WebDriver driver;

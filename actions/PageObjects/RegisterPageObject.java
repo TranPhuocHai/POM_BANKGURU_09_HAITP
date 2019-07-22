@@ -2,9 +2,9 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import PageFactoryManager.PageFactoryManager;
 import PageUIs.AbstractPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class RegisterPageObject extends AbstractPage{
 	WebDriver driver;

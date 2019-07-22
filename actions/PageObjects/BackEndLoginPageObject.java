@@ -2,9 +2,9 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import PageFactoryManager.PageFactoryManager;
 import PageUIs.BackEndLoginPageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class BackEndLoginPageObject extends AbstractPage{
 	public BackEndLoginPageObject(WebDriver driver) {

@@ -2,9 +2,9 @@ package PageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-import PageFactoryManager.PageFactoryManager;
 import PageUIs.HomePageUI;
 import commons.AbstractPage;
+import commons.PageFactoryManager;
 
 public class HomePageObject extends AbstractPage {
 	public HomePageObject(WebDriver driver) {

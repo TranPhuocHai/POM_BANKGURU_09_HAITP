@@ -1,4 +1,4 @@
-package PageFactoryManager;
+package commons;
 
 import org.openqa.selenium.WebDriver;
 

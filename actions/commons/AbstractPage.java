@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.MyAccountPageObject;
 import PageObjects.ShoppingCartPageObject;
 import PageUIs.AbstractPageUI;

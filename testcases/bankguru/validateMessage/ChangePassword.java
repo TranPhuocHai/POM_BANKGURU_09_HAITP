@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageFactoryManager.PageFactoryManager;
 import PageObjects.ChangePasswordPageObject;
 import PageObjects.HomePageObject;
 import PageObjects.LoginPageObject;
@@ -16,6 +15,7 @@ import bankguru.commonFunction.Common_01_RegisterToSystem;
 import bankguru.testdata.CommonTestData;
 import bankguru.testdata.ValidateMessage;
 import commons.AbstractTest;
+import commons.PageFactoryManager;
 import reportConfig.ExtentTestManager;
 
 public class ChangePassword extends AbstractTest {

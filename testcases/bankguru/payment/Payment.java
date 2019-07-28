@@ -143,7 +143,7 @@ public class Payment extends AbstractTest {
 		
 		ExtentTestManager.startTest(method.getName(), method.getName());
 
-		log.info("Payment_02: Step 01 - Click to 'Delete Customer' link");
+		log.info("Payment_02: Step 01 - Click to 'Edit Customer' link");
 		newCustomerPage.openMultiplePage(driver, "Edit Customer");
 		editcustomerPage = PageFactoryManager.getEditCustomerPage(driver);
 		

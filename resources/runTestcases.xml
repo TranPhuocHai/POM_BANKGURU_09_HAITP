@@ -8,13 +8,13 @@
 		<listener class-name="retryTestFailed.RetryListener" />
 	</listeners>
 
-	<test name="Test BANKGURU on CHROME">
+	<test name="Test com.bankguru on CHROME">
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="bankguru" />
 		<packages>
-			<package name="bankguru.commonFunction" />
-			<package name="bankguru.payment" />
-			<package name="bankguru.validateMessage" />
+			<package name="com.bankguru.commonFunction" />
+			<package name="com.bankguru.payment" />
+			<package name="com.bankguru.validateMessage" />
 		</packages>
 	</test>
 
@@ -22,7 +22,7 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="livegurufrontend" />
 		<classes>
-			<class name="liveguru.frontend.LiveGuruFrontEnd" />
+			<class name="com.liveguru.frontend.LiveGuruFrontEnd" />
 		</classes>
 	</test>
 
@@ -30,7 +30,7 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="url" value="livegurubackend" />
 		<classes>
-			<class name="liveguru.backend.LiveGuruBackEnd" />
+			<class name="com.liveguru.backend.LiveGuruBackEnd" />
 		</classes>
 	</test>
 
@@ -40,8 +40,8 @@
 	<!-- <parameter name="browser" value="firefox" /> -->
 	<!-- <parameter name="url" value="bankguru" /> -->
 	<!-- <classes> -->
-	<!-- <class name="bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
-	<!-- <class name="bankguru.payment.Payment" /> -->
+	<!-- <class name="com.bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
+	<!-- <class name="com.bankguru.payment.Payment" /> -->
 	<!-- </classes> -->
 	<!-- </test> -->
 
@@ -49,8 +49,8 @@
 	<!-- <parameter name="browser" value="firefoxheadless" /> -->
 	<!-- <parameter name="url" value="bankguru" /> -->
 	<!-- <classes> -->
-	<!-- <class name="bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
-	<!-- <class name="bankguru.payment.Payment" /> -->
+	<!-- <class name="com.bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
+	<!-- <class name="com.bankguru.payment.Payment" /> -->
 	<!-- </classes> -->
 	<!-- </test> -->
 
@@ -59,8 +59,8 @@
 	<!-- <parameter name="browser" value="ie" /> -->
 	<!-- <parameter name="url" value="bankguru" /> -->
 	<!-- <classes> -->
-	<!-- <class name="bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
-	<!-- <class name="bankguru.payment.Payment" /> -->
+	<!-- <class name="com.bankguru.commonFunction.Common_01_RegisterToSystem" /> -->
+	<!-- <class name="com.bankguru.payment.Payment" /> -->
 	<!-- </classes> -->
 	<!-- </test> -->
 

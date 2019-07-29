@@ -25,35 +25,35 @@
 		</layout>
 	</appender>
 
-	<category name="bankguru.commonFunction">
+	<category name="com.bankguru.commonFunction">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="bankguru.payment">
+	<category name="com.bankguru.payment">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="bankguru.validateMessage">
+	<category name="com.bankguru.validateMessage">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="liveguru.frontend">
+	<category name="com.liveguru.frontend">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
 		<appender-ref ref="testng" />
 	</category>
 	
-	<category name="liveguru.backend">
+	<category name="com.liveguru.backend">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />

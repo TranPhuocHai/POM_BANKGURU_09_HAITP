@@ -486,7 +486,7 @@ public class Payment extends AbstractTest {
 		balanceEnquiryPage.clickToDynamicButton(driver, "AccSubmit");
 
 		log.info("Payment_08: Step 04 - Verify Balance Details message displays");
-		verifyTrue(newAccountPage.isDynamicPageTitleOrMessageDisplayed(driver, ("Balance Details for Account " + accountID)));
+		verifyTrue(balanceEnquiryPage.isDynamicPageTitleOrMessageDisplayed(driver, ("Balance Details for Account " + accountID)));
 
 		log.info("Payment_08: Step 05 - Verify current balance after Transferring is correct");
 		verifyEquals(balanceEnquiryPage.getTextDynamicTableInfo(driver, "Balance"), PaymentTestData.AFTER_TRANSFER);
